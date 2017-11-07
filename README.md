@@ -20,6 +20,6 @@ OE UI v3.0 CSS has been developed to replace all existing CSS. It attempts to mi
 * SVGs are used in 2 ways, as a Sprite Sheet and as background-images in css
 
 
-## Styleguide
+## Styleguide
 
 Please read the styleguide
