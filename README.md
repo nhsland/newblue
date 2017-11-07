@@ -4,11 +4,11 @@ This repository allows the development of new UI (OE v3.n) pieces separately fro
 
 OE UI v3.0 CSS has been developed to replace all existing CSS. It attempts to minimise and clean the existing UI elements (CSS & DOM) to provide a more consistent UI approach (feel) for users throughout all of OpenEyes UI. It incorporates many improvements to data presentation and entry. 
 
-## UI approach
+## Approach
 
-* Clean, fast and easy to digest all presented data. 
+* Clean, fast and easy to read data. 
 * Avoid vertical scrolling where possible.
-* Avoid verbose naming and keep things succinct. e.g. for drop downs don't use '- Please Select -', use 'Select'. 
+* Avoid verbose naming and keep things succinct. e.g. for drop downs use 'Select', not: '- Please Select -'. 
 * Same applies to labels.
 
 
