@@ -1,0 +1,60 @@
+// OE Sidebar
+// 
+// 
+
+.sidebar {
+	
+	// order Events by...
+	.sidebar-grouping {
+		width:100%;	
+		padding-left:5px;
+		margin:4px 0 4px 0;
+
+		// <select> dropdown
+		.grouping-picker {
+			width:99%;
+			color:$oe-ui-user-input-text;
+			background:$oe-ui-user-selected;
+		}
+
+	}
+	
+	// container for Event Groups
+	.groupings {
+		padding-bottom:25px;
+	
+		// Event Group with header
+		.group-container {
+			position:relative;
+		
+			// <h3>
+			// clickable - fires the showhide btn
+			.group-header {
+				@include font-size(13);
+				font-weight:300;
+				color: $oe-ui-text-light ;
+				padding:10px 25px 5px 5px;
+				cursor:pointer;
+				
+				&:hover, &:focus {
+					color: $oe-ui-text;
+				}
+
+				.count {
+					@include font-size(10);
+					font-weight:400; 
+					color: $oe-ui-text-light ;
+				}
+			}
+			
+			// for the collapse or expand icon:
+			.group-showhide-btn {
+				display:block; 
+				position:absolute; 
+				top:5px; 
+				right:3px;
+			}
+		}
+	}
+}
+

@@ -1,0 +1,18 @@
+// OE Eyedraw APP
+// -----------------------------------
+// Eyedraw popup APP
+
+.oe-eyedraw-app {	
+	
+	// title: 'Right Eye' or 'Left Eye'
+	.ed-eye-side {
+		position:absolute;
+		bottom:10px;
+		right:$ed-padding;
+		@include font-size(42);
+		font-weight:200;
+		color: #669;
+	}
+
+	
+}

@@ -1,0 +1,42 @@
+// OE Popup - Quicklook
+// 
+// 
+
+.patient-popup-demographics {
+	
+	// Demographics  
+	.demographics {	
+		padding:0 5px; 
+		
+		// <table>	
+		.patient-summary {
+			width:100%;
+			border-collapse: collapse;
+			
+			tr {
+				border-bottom:1px dotted $oe-ui-line;
+				&:first-child {
+					border-top:1px dotted $oe-ui-line;
+				} 
+				
+				td {
+					margin:0;
+					padding:8px 0;
+					@include font-size(12);
+					color:$oe-ui-text;
+					line-height:1.5;
+					
+					&:first-child {
+						width:30%;
+						font-style: italic; 
+						color:$oe-ui-text-light;
+					}
+					
+					b { 
+						font-weight:400; 
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+// OE Popup wrapper
+// 
+
+// generic background cover and container for popup boxes
+.oe-popup-wrap {
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:$oe-z-popup;
+	height:100vh;
+	width:100vw;
+	background: rgba( $html-bg, 0.6 );
+	display:flex; // for centering content
+}

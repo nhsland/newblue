@@ -1,0 +1,79 @@
+// Create REM font-sizes. based on 16px base font-size
+// @access public
+// @param {sizePixel} $sizePixel - size as px
+@mixin font-size($sizePixel) {
+  font-size: ($sizePixel / 16) + rem;
+}
+
+// Media query wrapper
+@mixin media($width) {
+  @media only screen and (min-width: $width) {
+    @content;
+  }
+}
+
+// ------------------------------ CSS Tricks
+
+/// Slightly lighten a color
+/// @param {Color} $color - color to tint
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+/// Slightly darken a color
+/// @param {Color} $color - color to shade
+/// @param {Number} $percentage - percentage of `$color` in returned color
+/// @return {Color}
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+
+// ------------------------------ Inputs and Buttons
+
+$oe-selector-form-input-fields: 'input[type="text"],input[type="password"],input[type="date"],input[type="datetime"],input[type="datetime-local"],input[type="month"],input[type="week"],input[type="email"],input[type="number"],input[type="search"],input[type="tel"],input[type="time"],input[type="url"],textarea';
+$oe-selector-form-button-fields: 'button, .button, input[type="submit"]';
+$oe-selector-form-select-fields: "select";
+
+// Apply a set of rules to input form fields.
+@mixin input-form-fields {
+	#{$oe-selector-form-input-fields} {
+		@content;
+	}
+}
+
+// Apply a set of rules to button form fields.
+@mixin button-form-fields {
+	#{$oe-selector-form-button-fields} {
+		@content;
+	}
+}
+
+// Apply a set of rules to select form fields.
+@mixin select-form-fields {
+	#{$oe-selector-form-select-fields} {
+		@content;
+	}
+}
+
+// Apply a set of rules for all form fields.
+@mixin all-form-fields {
+	#{$oe-selector-form-input-fields},
+	#{$oe-selector-form-button-fields},
+	#{$oe-selector-form-select-fields} {
+		@content;
+	}
+}
+
+// Apply a set of rules to buttons.
+@mixin buttons {
+	button, .button, input[type="submit"] {
+		@content;
+	}
+}
+
+
+
+

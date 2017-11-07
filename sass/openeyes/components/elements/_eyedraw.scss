@@ -1,0 +1,40 @@
+// OE Element - Eyedraw - VIEW 
+// ---------------------------
+// Eyedraw VIEW mode Element
+// View mode and Edit mode are the same
+// Edit just has a '+' button that launches the Eyedraw App (popup)
+// for Eyedraw EDIT APP sass see: components > eyedraw
+
+.main-event {
+	.element {
+		// ---- element - VIEW & EDIT
+		.eyedraw {
+			position:relative;
+			background:$oe-ed-bg; // eyedraw blue
+			padding:0 5px; 
+			border-radius:5px;
+			
+			.eyedraw-data {
+				@include font-size(11);
+				padding:10px 5px 0 0;
+				width:150px;
+				.data-label {
+					@include font-size(10);
+					color:#666; // Always on the Eyedraw blue bg
+				}
+				.data-value {
+					padding-bottom:10px;
+					color:#333; // Always on the Eyedraw blue bg
+				}
+			}
+			
+			// --- only EDIT 
+			// position '+' button
+			.eyedraw-launch-edit-mode {
+				position: absolute;
+				bottom:5px;
+				right:0;
+			}
+		}
+	}
+}

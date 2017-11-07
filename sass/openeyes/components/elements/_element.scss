@@ -1,0 +1,89 @@
+// OE Element
+// 
+// Base set up for Elements in View & Edit mode
+// 
+
+.main-event {
+	
+	&.edit .element {
+		min-height:50px; // require to ensure element actions can be seen in pro mode
+	}
+	
+	&.view .element {
+		min-height:40px; // make sure element header that wraps onto 2 lines can be seen
+	}
+	
+	.element {
+		position:relative;
+		background:$oe-blue-darker;
+		padding:30px 5px 10px 10px; // provide top space for header/actions
+		margin:0 0 3px 0;
+		color:$oe-text;
+
+		&.eye-divider {
+			background: $oe-blue-darker url( svg-path-theme('element-divider') ) 50.4% 0 repeat-y;
+			background-size:19px;
+			
+			@include media($oe-extended-browser-size){
+				background-position-x: 54.5%; // needs offseting because headers have dropped left
+			}
+		}
+		
+		// provide desktop user with element header highlight
+		// highlight element focus
+		// stop the re-sizing effect of adding a border:
+		
+		border:1px solid $oe-blue-darker;
+		transition: border-color 0.2s ease-in; // animate
+		
+		&:hover, &:focus {
+			border-color:$oe-btn-blue;
+			.element-header {
+				.element-title, .subelement-title {
+					transition: color 0.5s ease-out;
+					color:$oe-text-highlight;
+				}
+			}
+		}
+		
+		// pop the element header to the left, if there is space:
+		@include media($oe-extended-browser-size){
+			padding:5px 30px 5px $oe-event-extension - 25px; // provide left space for header and right space for actions
+		}
+		
+		
+		.element-eyes {
+			// uses grid 'row'
+			// Right / Left Eye - 2 column layout:
+			.right-eye {
+				width:50%; 
+				float:left;
+				padding-left: 10px; // indent data
+				padding-right: 20px;
+			}
+			.left-eye {
+				width:50%; 
+				float:right;
+				padding-left: 10px; // indent data
+				padding-right: 20px;
+			}
+		}
+		
+		
+		// Field rows
+		// simple provide padding between 'rows' of data
+		// used in existing DOM so keeping for v3
+		.field-row  {
+			padding-bottom: 8px;
+			&:last-child {
+				padding-bottom: 0;
+			}
+		}	
+		
+		.field-row-pad-top {
+			padding-top: 8px;
+		}		
+	}
+	
+}
+

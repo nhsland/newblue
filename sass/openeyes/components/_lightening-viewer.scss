@@ -1,0 +1,88 @@
+// letter lightening viewer
+
+.lightening-viewer {
+	
+	// Year and Letter icons selector top bar
+	.oe-letter-timeline {
+		background:$oe-blue-dark;
+		padding:2px 4px 4px 10px;
+		
+		table {
+			border-collapse: collapse;
+			
+			td {
+				padding:6px 0 3px 4px;
+				color:$oe-text-light;
+				@include font-size(15);
+				font-weight:300;
+				border-left:1px solid $oe-line;
+				min-width:50px; // don't squash the years
+			}
+		}
+		
+		.letter-event {
+			position:relative;
+			display: inline-block;
+			padding:1px; // for border highlight effect
+			width:21px; 
+			height:21px;
+			
+			// when sliding over the letter js highlights the associated icon
+			&:hover, &.js-hover {
+				background-color:#fff; // this creates the border highlight
+				cursor:pointer;
+			}
+			
+			// underline selected letter icon
+			&.selected:after {
+				position: absolute;
+				left: 1px;
+				top: 100%;
+				content: " ";
+				height: 2px;
+				width: 19px;
+				border-bottom:3px solid #fff;
+			}
+		}
+	}
+	
+	// JS generated letter meta data
+	.oe-letter-meta {
+		position: relative;
+		width:180px; // make width enough to fit most names
+		margin:5px 0 0 10px;
+		padding:5px 3px 5px 8px;
+		@include font-size(12);
+		line-height:1.5;
+		color:$oe-text;
+		background:$oe-user-selected;
+		
+		.date { font-weight:500; }
+		.sender { font-style:italic;}
+	}
+	
+	// add arrow to oe-letter-meta box:
+	.oe-letter-meta:after{
+			left: 100%;
+			top: 50%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-left-color: $oe-user-selected;
+			border-width: 6px;
+			margin-top: -6px;
+	};
+	
+	// letter holder 
+	.oe-letter-quick-view { 
+		margin-top:5px; 
+		// text-align:center;
+		// img { width:100%; }
+
+	} 
+}
+
+

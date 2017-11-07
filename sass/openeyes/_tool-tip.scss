@@ -1,0 +1,12 @@
+// OE tooltip
+// DOM is created with JS and positioned by JS
+
+.oe-tooltip {
+	z-index:$oe-z-tooltip;
+	width:150px;
+	padding:5px 10px;
+	background:$oe-user-selected;
+	color:$oe-text-light;
+	@include font-size(10);
+	line-height:1.5;
+}

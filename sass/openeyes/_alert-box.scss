@@ -1,0 +1,44 @@
+// OE alert boxes
+// 
+// Standardised from v2.0 UI
+
+.alert-box {
+	padding:10px;
+	margin:5px;
+	
+	@include font-size(12);
+	color:$oe-ui-text;
+	line-height:1.4;
+	
+	border-radius:3px;
+	
+	strong {
+		font-weight:500;
+	}
+	
+	background: $oe-blue-dark;
+	
+	&.alert { 
+		background: $oe-blue-dark; 
+	}
+	
+	&.success, 
+	&.info {
+		background: $oe-btn-green;
+	}
+	
+	&.patient,
+	&.issue {
+		color: #fff;
+		background: $oe-warning-orange;
+	}
+	
+	&.warning,
+	&.error, 
+	&.injection-warning  {
+		color: #fff;
+		background: $oe-btn-red;
+	}
+   
+	
+}

@@ -1,0 +1,57 @@
+// OE Sidebar - EDIT
+// 
+// DOM for Element:
+// <li class="element"><a href="#" class="[error selected]">Element</a></li>
+//
+
+.sidebar { 
+	
+	// <ul>
+	.oe-element-list {
+		margin:0 1px 0 0; 
+		
+		// Elements <a>
+		a {
+			position:relative;
+			display:block;
+			margin:0 0 1px 0;
+			padding:0 5px 0 8px;
+			min-height:$oe-sidebar-event-height; // min-height to allow long names to wrap
+			line-height:$oe-sidebar-event-height;
+			
+			@include font-size(11); 
+			font-weight:400;
+			font-style: italic;
+			color:$oe-ui-text-light;
+			background:$oe-ui-blue; 
+			
+			
+			&:hover, &:focus {
+				color: $oe-ui-text-highlight;
+				background-color:$oe-ui-user-selected;
+			}
+			
+			&.selected {
+				color: $oe-ui-text; // electric blue was too much for select state
+				background-color:$oe-ui-user-selected;
+			}
+			
+			&.error {
+				color:#fff;
+				background-color: $oe-btn-red-hint; // flag error with element
+			}
+			
+			// add right arrow to the backround:
+			background-position:right center;
+			background-repeat: no-repeat;
+			background-size:13px;
+			background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><title>arrow-right</title><style>polygon{fill:#fff; opacity:0.5}</style><polygon points="3.99 10.5 11.18 10.5 7.99 13.69 9.41 15.1 13.59 10.91 15.01 9.5 13.59 8.09 9.41 3.9 7.99 5.31 11.18 8.5 3.99 8.5 3.99 10.5"/></svg>');
+			
+		
+		}
+			
+	}
+	
+}
+
+

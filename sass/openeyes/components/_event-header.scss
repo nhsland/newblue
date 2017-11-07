@@ -1,0 +1,58 @@
+// OE Event Header
+//
+// Add Event Button and Element Searchs are in 'sidebar-header'
+
+// Event header for all buttons above Event
+.event-header {
+	position:relative;
+	background:$oe-grey url( svg-path-theme('face') ) 50.2% 0 no-repeat;
+	
+	@include media($oe-extended-browser-size){
+		background-position-x: 54.8%; // face needs offseting because headers have dropped left
+	}
+	
+	// create 'tab' buttons
+	@include buttons {
+		vertical-align: top; // overwrite default 'bottom' to fix alignment issues
+		height:$oe-event-header-height;
+		padding:0 16px;
+		
+		// icon buttons in header
+		&.icon {
+			padding:0 0; // remove default padding
+			.oe-i {
+				padding:0 20px; // pad out icon instead (to make clickable)
+			}
+		}
+	}
+	
+	// event-action-options covers Event header 
+	// extra funcitonality - such "save as default'
+	// essentially it provides a space next to a button...
+	.event-action-options {
+		display:inline-flex;
+		justify-content:center;
+		align-items: center;
+		
+		height:$oe-event-header-height;
+		padding:0 16px 0 8px; // assume it's placed to the right
+		
+		@include font-size(10);
+		font-weight:400;
+		color: $oe-text-light;
+		background: $oe-user-inputs;
+		
+	}
+	
+	
+	// group buttons right
+	.buttons-right {
+		position: absolute;
+		top:0;
+		right:0;
+	}
+		
+}
+
+
+

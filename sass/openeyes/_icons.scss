@@ -1,0 +1,160 @@
+// General UI Icons
+// SVG icons
+// standard size is 19px x 19px
+// small: 13px, medium: 16px.
+// 
+
+// DOM 
+// <i class="oe-i [small] plus-icon"></i>
+
+.oe-i {
+	display:inline-block;
+	vertical-align: middle;
+	
+	$size:19px;
+	$size-medium:16px;
+	$size-small:13px;
+	
+	width:$size; 
+	height:$size;
+	background-size: $size;
+	background-repeat: no-repeat;
+	background-position: center center;
+	
+	// small icon
+	&.small-icon {
+		background-size: $size-small;
+	}
+	// medium icon
+	&.medium-icon {
+		background-size: $size-medium;
+	}
+	
+	// small icon AND physically smaller
+	&.small {
+		width:$size-small; 
+		height:$size-small;
+		background-size: $size-small;
+	}
+	
+	// medium icon AND physically smaller
+	&.medium {
+		width:$size-medium; 
+		height:$size-medium;
+		background-size: $size-medium;
+	}
+	
+	
+	// icon is used 'inline' with text (e.g. info)
+	&.inline {	
+		margin:0 4px;		
+	}
+	
+	// show interaction
+	cursor:pointer;
+	opacity: 0.5;
+	
+	&:hover, &:focus { 
+		opacity:1; 
+	}
+	
+	// Generally icons will be used for interaction
+	// sometimes however they are only used for graphical purposes
+	// use 'no-click' to turn off interaction behaviour
+	
+	&.start, &.stop, &.d-slash, // graphic icons only
+	&.no-click, {
+		cursor:default;
+		&:hover, &:focus, &:active { 
+			opacity:0.5; 
+		}
+	}
+	
+	// icons
+	// SVGs containing styling: fill:#fff;
+	&.plus 				{ background-image: url( svg-path-theme('plus') ); }
+	&.plus-circle 		{ background-image: url( svg-path-theme('plus-circle') ); }
+	&.minus 			{ background-image: url( svg-path-theme('minus') ); }
+	&.arrow-down 		{ background-image: url( svg-path-theme('arrow-down') ); }
+	&.arrow-up 			{ background-image: url( svg-path-theme('arrow-up') ); }
+	&.arrow-down-bold 	{ background-image: url( svg-path-theme('arrow-down-bold') ); }
+	&.arrow-up-bold 	{ background-image: url( svg-path-theme('arrow-up-bold') ); }
+	&.arrow-right 		{ background-image: url( svg-path-theme('arrow-right') ); }
+	&.child-arrow 		{ background-image: url( svg-path-theme('child-arrow') ); }
+	&.trash 			{ background-image: url( svg-path-theme('trash') ); }
+	&.print 			{ background-image: url( svg-path-theme('print') ); }
+	&.search 			{ background-image: url( svg-path-theme('search') ); }
+	&.remove 			{ background-image: url( svg-path-theme('remove') ); }
+	&.remove-circle 	{ background-image: url( svg-path-theme('remove-circle') ); }
+	&.duplicate 		{ background-image: url( svg-path-theme('duplicate') ); }
+	&.info 				{ background-image: url( svg-path-theme('info') ); }
+	&.eye 				{ background-image: url( svg-path-theme('eye') ); }
+	&.comments 			{ background-image: url( svg-path-theme('comments') ); }
+	&.start 			{ background-image: url( svg-path-theme('start') ); }
+	&.stop 				{ background-image: url( svg-path-theme('stop') ); }
+	&.d-slash 			{ background-image: url( svg-path-theme('double-slash') ); }
+	&.expand 			{ background-image: url( svg-path-theme('expand') ); }
+	&.collapse 			{ background-image: url( svg-path-theme('collapse') ); }
+	&.history 			{ background-image: url( svg-path-theme('history') ); }
+	
+	
+	// PRO theme icons (white)
+	// Here for use in Classic theme or OE UI theme areas
+	&.pro-theme {
+		&.trash 			{ background-image: url( svg-path('trash') ); }
+		&.comments 			{ background-image: url( svg-path('comments') ); }
+		&.remove 			{ background-image: url( svg-path('remove') ); }
+		&.remove-circle 	{ background-image: url( svg-path('remove-circle') ); }
+	}
+	 
+	
+	
+	// Eyedraw icons 
+	// these will not require theming as they are only used 
+	// in the Eyedraw app
+	
+	&.ed-reset			{ background-image: url( "../svg/in-css/eyedraw/ed-reset.svg" ); }
+	&.ed-zoom			{ background-image: url( "../svg/in-css/eyedraw/ed-zoom.svg" ); }
+	&.ed-lock			{ background-image: url( "../svg/in-css/eyedraw/ed-lock.svg" ); }
+	&.ed-trash			{ background-image: url( "../svg/in-css/eyedraw/ed-trash.svg" ); }
+	&.ed-move-back  	{ background-image: url( "../svg/in-css/eyedraw/ed-backward.svg" ); }
+	&.ed-move-forward 	{ background-image: url( "../svg/in-css/eyedraw/ed-forward.svg" ); }
+	
+	
+	// R = Green; L = Red; B = Green/Red 
+	// Eye icons are the same across both themes		
+	&.laterality {
+		// no interaction
+		opacity: 1;
+		cursor:auto; 
+		
+		// Right Eye
+		&.R {
+			background-image: url( svg-path('lat-R') );
+			
+			&.pos-shift {
+				position:relative;
+				left:0px;
+			}	
+		}
+		// Both Eyes (Bi-lateral)
+		&.B {
+			background-image: url( svg-path('lat-B') );	
+			&.pos-shift {
+				position:relative;
+				left:7px;
+			}
+		}
+		// Left Eye
+		&.L {
+			background-image: url( svg-path('lat-L') );
+			
+			&.pos-shift {
+				position:relative;
+				left:14px;
+			}
+
+		}
+	}
+}
+

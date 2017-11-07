@@ -1,0 +1,66 @@
+// OE Header area.
+// 
+// 
+
+.oe-nav {
+	position:absolute;
+	top:0; 
+	right:0;
+	height:$oe-header-height;
+	
+	// nav is ul list
+	.oe-big-icons {		
+		// li's 
+		.oe-nav-btn {
+			display:inline-block;
+			position: relative; // for submenu positioning
+			margin-left:1px;
+			
+			// simple <a> btns & js btns
+			> a , > .nav-js-btn	{
+				display: flex;
+				align-items: center;
+				height:$oe-header-height;
+			}
+			
+			// simple <a> requires psuedos:
+			> a {
+				&:hover, &:focus, &:active {
+					background:$oe-btn-blue;
+					.icon {
+						opacity: 1;
+					}
+				}
+			}
+			
+			// js controlled btn, needs to look like <a> 
+			> .nav-js-btn {
+				padding:0 10px;
+				cursor: pointer;
+				&.active {
+					background:$oe-btn-blue;
+					.icon {
+						opacity: 1;
+					}
+				}
+				
+				// Activity Panel requires 'click' to open
+				&.open {
+					.icon {
+						fill:#0ff;
+					}
+				}	
+			}
+			
+			// svg icon
+			.icon {
+				display:inline-block;
+				width:40px;  
+				height:20px;
+				fill:#fff;
+				opacity: 0.5;				
+			}	
+		}	
+	}
+}
+

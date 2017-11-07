@@ -1,0 +1,72 @@
+// * OE 3.0 Globals vars
+// * Note: some local variables are located in specific sass
+//  
+// * OE v3.0 has 1 main theme: PRO but it all provides a 'classic'
+// * theme for old users who prefer viewing the data in the old way
+// * however, in Classic some of the PRO theme is still used.  
+
+$font-stack: ('Roboto','Helvetica','Arial',sans-serif);
+
+// note: CSS3 grid is used for layouts, see structure
+
+// grid px
+$oe-header-height:						60px; 	// top UI bar
+$oe-event-header-height:				38px; 	// event header
+$oe-event-sidebar-width:				200px;	// event sidebar
+$oe-event-main-default-width:			1080px; // for average monitors
+$oe-activity-panel-width:				450px; 	// activity panel 
+$oe-eyedraw-app-width:					($oe-event-main-default-width + 80px);  // eyedraw popup app
+
+// Wide screen users
+// note: activity panel + extended event area + sidebar must NOT exceed 1920px (1910px ideally)
+$oe-event-extension:					160px; // this just works for laptop width (1440px)
+$oe-event-main-extended-width:			(1080px + $oe-event-extension); // 160px extra width to move headers left.
+$oe-extended-browser-size: 				(1280px + $oe-event-extension); // 1280px is default. 
+
+// z
+$oe-z-popup:			999; 
+$oe-z-tooltip:			990;
+$oe-z-logo:				101;
+$oe-z-shortcuts:		99;
+$oe-z-activity:			95;
+$oe-z-quicklook:		90; // quicklook, demographics, allergies & risks
+$oe-z-element-search:	80; 
+
+// UI colors 
+// (Pro theme, but here because of the need to keep some Pro theme elements in Classsic)
+
+$html-ui-bg: 			rgb(21,32,55);
+
+$oe-ui-text: 			rgba( #fff,0.8 );
+$oe-ui-text-light: 		rgba( #fff,0.5 );
+$oe-ui-text-highlight: 	rgb(0,255,255);;
+
+$oe-ui-blue:			rgb(30,46,66);
+$oe-ui-blue-dark: 		shade( $oe-ui-blue, 20% );
+$oe-ui-blue-darker: 	shade( $oe-ui-blue, 35% );
+$oe-ui-blue-light: 		tint( $oe-ui-blue, 10% );
+$oe-ui-blue-bright: 	tint( $oe-ui-blue, 60% );
+
+$oe-ui-grey:			rgb(40,52,66);
+
+$oe-ui-bg:				$oe-ui-blue-darker; // top header strip
+$oe-ui-line: 			rgba( #aad,0.2 );
+
+// input colours:
+$oe-ui-user-inputs: 	$oe-ui-blue;
+$oe-ui-user-input-text: $oe-ui-text;
+
+$oe-ui-user-selected:	rgb(55,71,85);
+
+
+// eyedraw
+$oe-ed-bg:				rgb(218,230,241); 
+$oe-ed-panels: 			shade( $oe-ed-bg,10 ); 
+
+
+// SVG paths - general UI SVGs
+@function svg-path($svg){
+	@return "../svg/in-css/" + $svg + ".svg";
+}
+
+

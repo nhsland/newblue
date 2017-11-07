@@ -1,0 +1,42 @@
+// OE Eyedraw APP
+// -----------------------------------
+// Eyedraw popup APP
+
+.oe-eyedraw-app {	
+	
+	// override UI colours for inputs
+
+	@include buttons {
+		color: rgba( #fff,0.8 );
+		background: shade( $oe-ed-panels,20 );
+		&.selected {
+			background: shade( $oe-ed-panels,50 );
+		}
+	}
+	
+	label, .label {
+		color: #333;
+		
+		// visually group label with input <label> wraps input
+		&.highlight {
+			background:$oe-ed-panels;	
+			&:hover, &:focus, &:active {
+				background:$oe-ed-bg;
+			}
+		}
+	}
+	
+	input, textarea, select {
+		color: rgba( #fff,0.8 );
+		background: shade( $oe-ed-panels,20 );
+	}
+	
+	a {
+		color:#06f;
+		text-decoration: none;
+		&:hover {
+			color:#00a;
+		}
+	}
+	
+}

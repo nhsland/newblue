@@ -1,0 +1,36 @@
+// OE Element - EDIT
+
+.main-event {
+	.element {
+		
+		// --- multi-list
+			
+		.multi-select-dropdown-container {
+			padding:0 0 5px 0;
+			.multi-select-list {
+				
+			}
+			.remove-all {
+				@include font-size(11);
+				margin:0 0 0 5px;
+			}
+		}
+		
+		.multi-select-selections {
+			li {
+				display:inline-flex;
+				align-items: center;
+				padding:5px; 
+				background: tint( $oe-user-inputs,5 );
+			}
+		}
+				
+		.multi-select-remove {
+			display:inline-flex;
+			align-items: center;
+			padding-left:5px; 
+		}	
+
+		
+	}
+}

@@ -1,0 +1,31 @@
+// OE SEM Events sidebar
+// 
+
+// local vars 
+$oe-sidebar-tag-size:19px;
+$oe-sidebar-sub-height:21px;
+$oe-sidebar-event-height:19px;
+
+.sidebar {
+	padding:2px 1px 50px 0;
+	background: $html-ui-bg;
+	
+}
+
+// VIEW states
+@import "sidebar/view";
+@import "sidebar/events";
+@import "sidebar/quicklook";
+@import "sidebar/list-controls";
+@import "sidebar/grouping";
+
+// EDIT 
+@import "sidebar/edit";
+
+
+
+
+
+
+
+

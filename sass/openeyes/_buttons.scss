@@ -1,0 +1,74 @@
+// OE Buttons
+// 
+// button, .button, input[type="submit"]
+
+@include buttons {
+	display:inline-flex;
+	justify-content:center;
+	align-items: center;
+	
+	// when used inline with other elements this is required 
+	// to stop it jumping up (baseline is default)
+	vertical-align:top; 
+	
+	// resets
+	border:0;
+	outline:0; // remove glow effect
+	border-radius:0 !important; // weird border-radius bug fix
+	
+	@include font-size(12);
+	font-weight:400;
+	color: $oe-text;
+	background: $oe-user-inputs;
+	cursor: pointer;
+	
+	// sizes - standard:
+	padding:0 8px;	// increase hit area
+	height:24px; 	// matches inputs heights
+	
+	// PRO theme 
+	// For individual styling of butons when in Classic theme	
+	&.pro-theme {
+		color: $oe-ui-text;
+		background: $oe-ui-user-inputs;
+	}
+	
+	&.selected {
+		color: $oe-text-highlight; 
+		background: $oe-btn-blue-hint;
+	}
+	
+	&:hover, &:focus, &:active {
+		color: #fff;
+		background: $oe-btn-blue;
+		
+		// if there is icon this make sure it shows the button hover effect
+		.oe-i {
+			opacity:1;
+		}
+	}	
+	
+	&.hint {
+		&.green {
+			background: $oe-btn-green-hint;
+		}
+		&.red {
+			background: $oe-btn-red-hint;
+		}
+	}
+	
+	&.green {
+		&:hover, &:focus, &:active {
+			color: #fff;
+			background: $oe-btn-green;
+		}	
+	}
+	
+	&.red {
+		&:hover, &:focus, &:active {
+			color: #fff;
+			background: $oe-btn-red;
+		}
+	}	
+	
+}

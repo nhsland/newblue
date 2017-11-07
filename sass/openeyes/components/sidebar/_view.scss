@@ -1,0 +1,94 @@
+// OE Sidebar - VIEW
+// 
+// 
+
+.sidebar { 
+	
+	// <li>
+	.subspecialty {
+		display:block;
+		margin:0 0 2px 0; 
+		
+		a {
+			padding-left: 10px;
+			height:$oe-sidebar-sub-height;
+			line-height:$oe-sidebar-sub-height;
+			
+			.tag {
+				position: absolute;
+				top:1px;
+				right:1px;
+			}
+		}
+	}
+	
+	// <li>
+	.event {
+		position: relative;
+		display:block;
+		margin: 0 0 1px 0;	
+		
+		a {
+			height:$oe-sidebar-event-height;
+			line-height:$oe-sidebar-event-height;
+			
+			.tag {
+				position: absolute;
+				top:0;
+				right:0;
+			}
+		}		
+	}
+	
+	.subspecialty, .event {
+		a {
+			display:block;
+			position:relative;
+	
+			@include font-size(12);
+			font-weight:400;
+			color: $oe-ui-text-light; 
+			background:$oe-ui-blue;
+			
+			&:hover, &:focus, &:active {
+				color:#fff;
+				background:$oe-btn-blue;
+				
+				.tag {
+					color:#fff;
+					background:transparent;
+				}
+			}
+		}
+		
+		.tag {
+			display:inline-flex;
+			justify-content:center;
+			align-items: center;
+			
+			width:$oe-sidebar-tag-size;
+			height:$oe-sidebar-tag-size;
+			
+			@include font-size(10);
+			font-weight:400;
+			
+			color: $oe-ui-text-light;
+			background:$oe-ui-blue-dark;
+		}
+		  
+		&.selected {
+			a {
+				color:$oe-ui-text-highlight;
+				background: $oe-ui-user-selected;
+				.tag {
+					color:$oe-ui-text-highlight;
+					background:transparent;
+				}
+			}	
+		}
+	}
+
+	
+}
+
+

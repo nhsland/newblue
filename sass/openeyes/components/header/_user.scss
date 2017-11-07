@@ -1,0 +1,52 @@
+// OE Header area.
+// 
+// 
+
+.oe-user {
+	position:absolute;
+	top:0; 
+	left:750px; // pos by eye
+	height:$oe-header-height;
+	display:flex;
+	
+	.oe-user-profile-context {
+		margin:auto 0 auto 5px;
+		color:$oe-ui-text;
+		width:320px;
+		
+		li {  
+			position: relative;
+			@include font-size(10); 
+			line-height:1.4;
+			opacity:0.8; 
+			padding-left:40px;
+			
+			em { 
+				position:absolute;
+				left:0;
+				top:0;
+				@include font-size(9); 
+				opacity:0.5; 
+				font-style:normal; 
+				font-weight:300; 
+			}
+			
+			a { 
+				@include font-size(9); 
+				color:#fff;
+				margin-left:10px; 
+				opacity:0.5;
+				
+				&:hover, &:focus, &:active {
+					opacity:1;
+					color:#0ff;
+				}
+				
+			}
+			
+		}
+								
+	}
+
+}
+

@@ -1,0 +1,55 @@
+// OE 3.0 globals
+// Note: some local variables are located in specific sass 
+
+
+// ----------------------
+// PRO theme colors
+// ----------------------
+
+// colours are mostly the default UI theme colours
+
+$html-bg:				$html-ui-bg;
+
+$oe-text: 				$oe-ui-text;
+$oe-text-light: 		$oe-ui-text-light;
+$oe-text-highlight:		$oe-ui-text-highlight;
+
+$oe-blue:				$oe-ui-blue;
+$oe-blue-dark: 			shade( $oe-blue, 20% );
+$oe-blue-darker: 		shade( $oe-blue, 35% );
+$oe-blue-light: 		tint( $oe-blue, 10% );
+$oe-blue-bright: 		tint( $oe-blue, 60% );
+
+$oe-grey:				rgb(40,52,66);
+$oe-line:				rgba( #ccc,0.1 );
+
+// interaction colors
+$oe-a-blue:				rgb(0,255,255);
+$oe-a-blue-hover:		rgb(200,255,255);
+
+// buttons
+$oe-btn-blue:			rgb(7,69,152);
+$oe-btn-green:			rgb(14,94,35);
+$oe-btn-red:			rgb(143,14,14);
+// hints
+$oe-btn-blue-hint: 		shade( $oe-btn-blue,40 );
+$oe-btn-green-hint: 	shade( $oe-btn-green,40 );
+$oe-btn-red-hint: 		shade( $oe-btn-red,40 );
+
+$oe-user-selected:		$oe-ui-user-selected;
+
+// input colours:
+$oe-user-inputs: 		$oe-blue;
+$oe-user-input-text: 	$oe-text;
+
+// flags
+$oe-warning-orange:		rgb(117,30,0);
+
+
+// ... different SVGs for 'pro' & 'classic' theme
+@function svg-path-theme($svg){
+	@return "../svg/in-css/" + $svg + ".svg";
+}
+
+
+

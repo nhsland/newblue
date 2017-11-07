@@ -1,0 +1,98 @@
+// OE Oescape
+// 
+// OEscape uses the full width of the screen, 2 areas:
+// 1) 'oescape-header' - <nav> title, view controls
+// 2) 'oescape' - <main> - highcharts, summary, OCTs
+
+.oescape-header {
+	position:relative;
+	background:$oe-grey;
+	padding:0 10px 0 0;
+
+	
+	.title {
+		position: absolute;
+		top:0;
+		right:60px;
+		color:$oe-text-light;
+		text-transform: uppercase;
+		@include font-size(24);
+		font-weight:200;
+		line-height:$oe-event-header-height;
+	}
+	
+	// create 'tab' buttons
+	@include buttons {
+		vertical-align: top; // overwrite default 'bottom' to fix alignment issues
+		height:$oe-event-header-height;
+		padding:0 16px;
+		
+		// icon buttons in header
+		&.icon {
+			padding:0 0; // remove default padding
+			.oe-i {
+				padding:0 20px; // pad out icon instead (to make clickable)
+			}
+		}
+	
+	}
+}
+
+.oescape {
+	background:$oe-ui-blue-darker;
+	
+	// oescape summary box
+	.oes-summary {
+		width:15%;
+		padding:20px 5px 0 20px;
+		background:$oe-blue-dark;
+		
+		.title  { 
+			margin:0 0 10px 0;
+			@include font-size(18);
+			font-weight:200; 
+			color:$oe-text-light; 
+		}
+		
+		// summary data groups
+		.data-label {
+			margin:0 0 3px 0;
+			@include font-size(11);
+			font-weight:400; 
+			color:$oe-text-light; 
+		}
+		.data-value {
+			margin:0 0 10px 0;
+			@include font-size(13);
+			font-weight:400; 
+			color:$oe-text; 
+		}
+		
+		
+	}
+	
+	// image stacks for OCT and FAA
+	.oescape-images {
+		background:$oe-blue-darker;
+		
+		.oes-stack-select {
+			background:$oe-blue;
+			text-align: center;
+			padding:5px;
+		}
+	
+		.oct-stack {
+			cursor:crosshair;
+			width:100%;
+			img {
+				width:100%;
+			}
+		}
+	}
+	
+}
+
+
+// @import "oescape";
+
+

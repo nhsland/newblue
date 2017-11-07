@@ -1,0 +1,52 @@
+// OE Add New Event Popup)
+// 
+// this is modified OEv2.0 CSS
+// 
+
+.oe-create-event-popup {
+	
+	.change-subspecialty {
+		position:relative;
+		background: shade( $oe-ui-user-selected,15% ); // required something different here 
+		border:1px solid $oe-btn-green;
+		padding:8px;
+		margin:10px 0 0 0;
+	
+		h6 {
+			@include font-size(12);
+			color:$oe-ui-text-light;
+			padding:0 0 0 2px; 
+			margin:0 0 5px 0;
+		}
+		
+		// no choice in the service
+		// only 1 option (a general behavour)
+		.fixed-service {
+			margin:10px 0 0 8px;
+			@include font-size(12);
+			color:$oe-ui-text; 
+		}
+		
+		// ... or there is a choice in the service 
+		// <select>
+		.select-service {
+			margin:10px 0 0 0;
+		}
+		
+		// button to add to sub-specialty list
+		// shows a new Sub-specialy Service group
+		.add-subspecialty-btn {
+			position:absolute;
+			bottom:5px;
+			right:0;
+		}
+	}	
+	
+}
+ 
+
+
+
+
+
+

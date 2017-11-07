@@ -1,0 +1,51 @@
+// OE Eyedraw APP
+// -----------------------------------
+// Eyedraw popup APP
+
+.oe-eyedraw-app {	
+
+	// Tools to select a Doodle
+	.ed-tools {
+		background: $oe-ed-panels;
+		padding:0 3px 0 3px;
+		width:400px;
+		
+		.ed-filter-tools {
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+			height:$ed-top-panel-height;
+		}
+		
+		.ed-icon-toolbox {			
+			.doodle-box {
+				height:300px; // matches canvas height (but could be more)
+				overflow-y: auto;
+				overflow-x: hidden;
+				// <ul>
+				.doodle-selection {
+					column-count:2;
+					column-gap:1px;
+					
+					li {
+						@include font-size(10);
+						background: $oe-ed-bg;
+						margin:0 0 1px 0;
+						padding:0;
+						cursor: pointer;
+						// handle very long names
+						white-space: nowrap; 
+						overflow: hidden;
+						
+						&:hover, &:focus, &:active {
+							background:#fff;
+						}
+						
+					}
+				}
+			}
+		}
+	}
+
+	
+}

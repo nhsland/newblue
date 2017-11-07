@@ -1,0 +1,31 @@
+// Typography
+//
+
+html {
+	// Experimented with this and decided to level it set to default value	
+	// However, may return to this in the future... so leaving it here
+	-webkit-font-smoothing: subpixel-antialiased; // this is the default in Chrome, including it incase it helps IE.
+	//-webkit-font-smoothing: antialiased; // this is crisper but looks shit
+	// text-rendering: optimizeLegibility; // default 'auto'
+}
+
+// default
+a {
+	color:$oe-a-blue;
+	text-decoration: none;
+	&:hover {
+		color:$oe-a-blue-hover;
+	}
+}
+
+// deliberately setup to be too big. 
+// all typography should be controlled specifically
+h1,h2,h3,h4,h5,h6,p {
+	@include font-size(16); // default 16px / 1rem
+	font-weight:400;
+}
+
+// strong normally looks a bit too heavy
+strong {
+	font-weight:500;
+}

@@ -1,0 +1,16 @@
+// OE Eyedraw APP
+// -----------------------------------
+// Eyedraw popup APP
+
+.oe-eyedraw-app {	
+
+	// close & save buttons
+	.ed-close-save {
+		position:absolute;
+		top:355px; // positioned below top row but above 'Right Eye'
+		right:$ed-padding;
+		z-index:1;
+	}
+
+	
+}

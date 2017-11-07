@@ -1,0 +1,73 @@
+// OE 3.0 globals
+// Note: some local variables are located in specific sass 
+
+
+// ----------------------
+// CLASSIC theme colors (sort of inverted)
+// ----------------------
+
+$html-bg:				rgb(172,172,180);
+
+$oe-text: 				rgb(34,34,34);
+$oe-text-light:			rgb(68,68,68);
+$oe-text-highlight:		rgb(0,68,187);
+
+// classic is based on old Eyedraw colour scheme
+$oe-blue:				rgb(250,250,250); 
+$oe-blue-darker: 		rgb(218,230,241); // element v2 blue bg
+$oe-blue-dark: 			shade( $oe-blue-darker, 10% );
+$oe-blue-light: 		shade( $oe-blue-darker, 5% );
+$oe-blue-bright: 		#fff;
+
+$oe-grey:				rgb(177,185,201); // event header bg
+$oe-line:				rgb(170,170,170);
+
+
+// interaction colors
+$oe-a-blue:				rgb(0,102,255);
+$oe-a-blue-hover:		rgb(0,153,255);
+// buttons
+$oe-btn-blue:			rgb(55,127,224);
+$oe-btn-green:			rgb(24,164,61);
+$oe-btn-red:			rgb(225,57,57);
+// hints
+$oe-btn-blue-hint: 		tint( $oe-btn-blue,50% );
+$oe-btn-green-hint: 	shade( $oe-btn-green,10% );
+$oe-btn-red-hint: 		shade( $oe-btn-red,10% );
+
+$oe-user-selected:		rgb(240,240,240);
+
+// input colours:
+$oe-user-inputs:		shade( $oe-blue-darker,10 );
+$oe-user-input-text: 	rgb(0,0,102);
+
+// flags
+$oe-warning-orange:		rgb(117,30,0);
+
+
+// ... different SVGs for 'pro' & 'classic' theme
+@function svg-path-theme($svg){
+	@return "../svg/in-css/_classic/" + $svg + ".svg";
+}
+
+
+/*
+//-------------------- GREY Classic (in case James flip-flops)
+$oe-text: #222;
+$oe-text-light:#444;
+$oe-text-highlight:#04b;
+
+// classic is based on Pro, hence the 'blue'
+$oe-blue:#888; 
+$oe-blue-dark: tint( $oe-blue, 20% );
+$oe-blue-darker: #bbb;
+$oe-blue-light: #ddd;
+$oe-blue-bright: #fff;
+
+$oe-grey:#bbb;
+$oe-line:#aaa;
+*/
+
+
+
+

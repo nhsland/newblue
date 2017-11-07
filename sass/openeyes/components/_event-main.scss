@@ -1,0 +1,36 @@
+// OE SEM Main Event Area
+
+.main-event {
+	position:relative; 
+	
+	background:$oe-blue-dark;
+	color:$oe-text;
+	padding:10px 0 40px 0; 
+	@include font-size(12);
+	line-height:1.5;
+	
+	// 2 main classes &.view and &.edit 
+	// are available but currently unused
+	
+	// Event title <h2>
+	.event-title {
+		@include font-size(18);
+		font-weight:300;
+		color:$oe-text-highlight;
+		padding:0 0 10px 10px;
+	}
+	
+	// event specific elements within the Event header space
+	// currently for injection:
+	.event-title-extra-info {
+		position:absolute;
+		top:10px;
+		right:20px;
+		
+		@include font-size(18);
+		font-weight:300;
+		color:$oe-text;
+		
+	}
+	
+}

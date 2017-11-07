@@ -1,0 +1,26 @@
+// OE Eyedraw APP
+// -----------------------------------
+// Eyedraw popup APP
+
+.oe-eyedraw-app {	
+
+	// Draw area - JS Canvas
+	
+	.ed-draw {
+		background: $oe-ed-panels;
+		padding:0 3px 3px 3px;
+		
+		// Reset and Zoom
+		// Doodle selection dropdown
+		.ed-draw-view {
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+			height:$ed-top-panel-height;
+			width:300px;
+		}
+		
+	}
+
+	
+}

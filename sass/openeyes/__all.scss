@@ -1,0 +1,39 @@
+// * OpenEyes UI v3.0
+// *
+// * (C) OpenEyes, 2017
+//
+// * Include ALL scss files here. Except the __config files
+
+
+/* GUI */
+@import "icons"; 							// oe icons 
+@import "icons-events"; 					// oe icons (Events only) 
+@import "lists"; 							// ul and ol defaults.
+@import "forms"; 							// form defaults.
+@import "typography"; 						// defaults and general typographics.
+@import "flex"; 							// flex layout
+@import "buttons"; 							// button and .button
+@import "alert-box"; 						// alerts
+@import "tool-tip"; 						// tool tip (js generated)
+@import "popup-wrap"; 						// covers and acts as container for ajax loads 
+@import "scrollbars"; 						// appy feel
+/* Structure */
+@import "structure/structure";				// DOM structure. CSS Grids for layout
+@import "components/logo";    				// OE logo and Version info
+@import "components/header";    			// site wide header bar: Logo, Patient & User Nav
+@import "components/activity-panel";    	// site wide RHS panel. Patients & Messages
+@import "components/patient-popups";    	// Patient: Quicklook & Demographics (summary)
+/* SEM Event Episodes */
+@import "components/event-header";    		// event header
+@import "components/add-new-event";    		// add new event popup
+@import "components/event-sidebar-header";  // event sidebar header (Add Event)
+@import "components/event-sidebar";    		// event sidebar
+@import "components/event-quickview-panel"; // event fast quickview preview panel
+@import "components/event-main";    		// event main area
+@import "components/event-elements";    	// event elements
+@import "components/eyedraw";    				// eyedraw app (popup)
+@import "components/misc/element-search-popup"; // element search filter popup - used in Examination Edit to find Elements
+/* Lightening viewer */
+@import "components/lightening-viewer";		// lightening viewer
+/* Oescape */
+@import "components/oescape";				// oescape

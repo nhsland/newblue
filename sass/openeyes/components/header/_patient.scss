@@ -1,0 +1,142 @@
+// OE Header area.
+// 
+// 
+
+.oe-patient {
+	position:absolute;
+	top:0; 
+	left:$oe-event-sidebar-width;
+	height:$oe-header-height;
+	width:545px;
+	
+	background:transparent url( svg-path('patient/patient-watermark') ) top -4px right 10px no-repeat;
+	background-size:90px 90px;	
+
+	color:$oe-ui-text;
+	@include font-size(11);
+	
+	$patient-padding:6px;
+	
+	.patient-name {
+		position:absolute;
+		top:12px; 
+		left:0;
+		@include font-size(17);
+		font-weight:300;
+	}
+	
+	.patient-details {
+		position:absolute;
+		bottom:0; 
+		left:0;
+
+	}
+	
+	.hospital-number, .nhs-number, .patient-gender, .patient-age, .warning {
+		display:inline-block;
+		padding:0 $patient-padding 5px $patient-padding;
+		border-left:1px solid $oe-ui-line;	
+		
+		span, em { opacity:0.5 }
+	}
+	
+	.hospital-number {
+		padding-left:0;
+		border-left:none;
+	}
+	
+	
+	// icons 
+	// - Quicklook : Medical data
+	// - Demographics : Patient summary data
+	// - Allergies & Risks
+	// - Letter Lightening viewer
+	.patient-quicklook, .patient-demographics, .patient-lightening-viewer,
+	.patient-allergies-risks {
+		position:absolute;
+		bottom:0;
+		padding:5px 10px 4px 10px; // increase icon hitarea
+		cursor:pointer;
+		
+		// svg icon btn
+		.icon {
+			display:inline-block;
+			fill:#fff;
+			opacity: 0.8;				
+		}	
+		
+	}
+	
+	// icon behaviour
+	.patient-quicklook, .patient-lightening-viewer,
+	.patient-demographics {
+		// js controlled interaction... 
+		&.open, &.active {
+			.icon {
+				fill: $oe-ui-text-highlight;
+			}
+		}
+	}
+	
+	// Allergies & Risks is always on a coloured background
+	// Either Red or Green (no risks or allergies)
+	.patient-allergies-risks {
+		// js controlled interaction... 
+		&.open, &.active {
+			background: $oe-ui-text-highlight;
+			color:$oe-ui-bg;
+			.icon {
+				fill: $oe-ui-bg;
+			}
+		}
+	}
+	
+	
+	// position and size icons
+	// position by eye
+	.patient-lightening-viewer {
+		right:0;	
+		.icon {
+			width:15px;  
+			height:15px;
+		}
+	}
+	
+	.patient-quicklook {
+		right:30px;	
+		.icon {
+			width:15px;  
+			height:15px;
+		}
+	}
+	
+	.patient-demographics {
+		right:60px;
+		padding-bottom:3px; // use pad to increase hitarea.
+		.icon {
+			width:18px;  
+			height:18px;
+		}
+	}
+	
+	.patient-allergies-risks {
+		right:105px;
+	
+		display:flex;
+		align-items:center;
+		padding:4px;
+		background: $oe-warning-orange;
+		
+		.patient-warning {
+			padding:0 4px 0 0;
+		}
+	
+		.icon {
+			width:15px;  
+			height:15px;
+		}
+	}
+
+
+}
+

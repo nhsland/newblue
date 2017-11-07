@@ -1,0 +1,76 @@
+// OE Event Quickview Preview Panel
+// 
+// Pop on Event hover to show quick PNG preview of Event
+// 
+// Event screen grabs *should* be saved as PNG 8-bit and at 50% size
+// For the purpose of IDG demo these are 520px width
+
+.oe-event-quickview-panel {
+	display:none; // js controlled.
+	z-index:$oe-z-activity; // overlays content
+	
+	position:fixed;
+	top: $oe-header-height;
+	left:$oe-event-sidebar-width;
+	height: calc(100vh - 60px); // this can't be SASS variable has to be written (must match $oe-header-height) 
+	overflow:hidden;
+	
+	background: $oe-ui-user-selected; // colour to match sidebar quicklook	
+	
+	// IDG demo PNGs are 520px wide
+	$png-width:520px;
+	$padding:5px;
+	$icons-space:30px; 
+	
+	width: ($png-width + $padding + $icons-space);
+	
+	// main wrapper
+	.event-quickview {
+		position: relative;
+		
+		.quickview-details {
+			height: $oe-event-header-height; // pushes down PNGs so that they line up with Event Header baseline
+			display:flex;
+			
+			.event-icon {
+				position:absolute;
+				top:0;
+				left:0;
+			}
+		
+			.event-date {
+				margin:auto; /* flex */
+				@include font-size(14);
+				color:$oe-ui-text;
+				font-weight:300;
+			}
+			
+			// touch devices will access this through a 'click'
+			// provide controls for these users: 
+			.step-through-arrows {
+				position:absolute;
+				top:$oe-event-header-height;
+				right:5px;
+			}
+		}
+		
+		.quickview-screen-grabs {
+			padding:0 0 0 $padding;
+			img {
+				width:$png-width;
+				height:auto;
+			}
+		}
+		
+	}
+
+	// Background ICON
+	// - lightening quickview icon bling!
+	background-position:right -3px top -8px;
+	background-repeat: no-repeat;
+	background-size:45px;		
+	background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><style>path{fill:#fff;opacity:0.1;}</style><path d="M14.91,16.37,7.75,18.25l4.72-18A15,15,0,0,0,8.4,28.46Z"/><path d="M22.3,1.9,15.89,12.27l8.51-2.12-15,18.76A15,15,0,0,0,22.3,1.9Z"/></svg>');
+	
+	
+}
+

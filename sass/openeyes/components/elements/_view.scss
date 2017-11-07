@@ -1,0 +1,57 @@
+// OE Element - VIEW
+//
+// Specific element view classes 
+// Elements in VIEW mode require mostly typographic treatment 
+// to increase speed of legabilty of data.
+
+.main-event {
+	.element {
+		
+		// element-data is ONLY used in VIEW mode (edit uses 'element-fields')
+		.element-data {
+			
+			// full width data-value elements require padding
+			.full-width {
+				padding:0 10px 0 10px; 
+			}
+			
+			// large text if needed, matches Element header size
+			.large-text {
+				@include font-size(14);
+				font-weight:300;
+			}
+			.fade {
+				opacity:0.8; // this will work across both PRO & Classic theme
+			}
+			
+			// table is style differnt in VIEW 
+			// this is done to help with user orientation
+			table {
+				width:100%;
+				th {
+					background:$oe-blue-dark;
+				}
+			}
+			
+			.data-value {
+				&.not-recorded {
+					margin:0 0 0 0;
+					text-align: center;
+					@include font-size(13);
+					font-weight:300;
+					opacity:0.5;
+					
+				}
+			}
+			
+			// used in medications to add a dividing line and gap between 
+			// current and stopped medication groups
+			.data-row-divider {
+				margin-top:8px;
+				padding-top:4px;
+				border-top:1px solid $oe-line;
+			}
+		}
+	
+	}
+}

@@ -1,0 +1,37 @@
+// OE Eyedraw APP
+// -----------------------------------
+// Eyedraw popup APP
+
+.oe-eyedraw-app {	
+
+	// Context sensitive panel - left
+	.ed-doodle-context {
+		background: $oe-ed-panels;
+		flex: 1; // try and fill remaining space
+		
+		// icon and text showing selected Doodle
+		.ed-doodle-active {
+			background: $oe-ed-bg;
+			margin:0 0 10px 0;
+		}
+		
+		.ed-doodle-toolbar {
+			display:flex;
+			justify-content:space-between;
+			align-items:center;
+			height:$ed-top-panel-height;
+		}
+		
+		.ed-doodle-controls {
+			padding:$ed-padding;
+			.doodle-option {
+				display:flex;
+				justify-content:space-between;
+				align-items:center;
+				margin:0 0 5px 0;
+			}
+		}
+	}
+
+	
+}

@@ -1,0 +1,52 @@
+// OE Element
+// 
+
+// elements
+.main-event {
+
+	.element-header {
+		position:absolute;
+		top:5px;
+		left:0;
+		width:100%; // full width to position actions
+		
+		@include media($oe-extended-browser-size){
+			width:$oe-event-extension; // make sure header isn't covering elements
+		}
+	
+		.element-title {
+			@include font-size(14);
+			color:$oe-text-light;
+			font-weight:300;
+			padding:0 0 0 10px;
+			
+			@include media($oe-extended-browser-size){
+				max-width:$oe-event-extension - 45px;	// force long names to wrap
+				@include font-size(14); 				// small font-size for Pro users
+				font-weight:300;
+				line-height:1.2;
+			}
+		}
+	}
+	
+	.element-actions {
+		position: absolute;
+		top:3px;
+		right:5px;
+		display:flex;
+		
+		.oe-i {
+			margin:0 0 5px 10px;	// pad out icons <i>
+		}
+	
+		@include media($oe-extended-browser-size){
+			// make icons stack up
+			max-width:30px; 	 
+			// reverses the order to ensure remove is ideally placed, can handle 3 icons
+			flex-direction: row;
+			flex-wrap: wrap-reverse;
+			justify-content: flex-end; 
+		}
+		
+	}
+}

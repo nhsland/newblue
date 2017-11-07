@@ -1,0 +1,14 @@
+// OE Header area.
+// 
+// 
+
+.oe-header {
+	background:$oe-ui-bg;
+	position:relative;
+}
+
+
+@import "header/patient"; 
+@import "header/user"; 
+@import "header/nav";
+@import "header/subnav-shortcuts";

@@ -1,0 +1,77 @@
+// OE Element - Tables
+
+.main-event {
+	.element {
+		
+		table {
+			border-collapse: collapse;
+			
+			// for tables that have icon as actions at the end (trash)
+			// <th> should be blank but in case something is added
+			&.row-end-icon-action {
+				td:last-child, th:last-child {
+					text-align: right;
+				}
+			}
+			
+			// in View mode for simple label > value lists
+			&.label-value {
+				td:first-child {
+					opacity:0.6; // this works across themes
+				}
+			}
+			
+			// add line to help with reading data
+			tr {
+				border-bottom:1px solid $oe-line;
+				&:last-child { 
+					border-bottom: none;
+				}
+			}
+			
+			th, td, {
+				@include font-size(12);
+				padding:1px 0 1px 4px;
+				
+				&.nowrap {
+					width:1%;
+					white-space: nowrap;
+					padding-right:10px;
+				}
+				
+				&.center {
+					text-align: center;
+					padding:0 10px;
+				}
+			}
+			
+			// <th>
+			th {
+				text-align: left;  // overide default 'middle'
+				font-weight: 300;
+				color:$oe-text-light;
+			}
+			
+			// <td>
+			td {
+				vertical-align: middle;
+				height:28px; 	
+				
+				&.nowrap {
+					width:1%;
+					white-space: nowrap;
+					padding-right:10px;
+				}
+				
+				&.center {
+					text-align: center;
+					padding:0 10px;
+				}
+				
+				textarea {
+					vertical-align: middle; // ensure correct vertical alignment in <td>
+				}
+			}
+		}
+	}
+}

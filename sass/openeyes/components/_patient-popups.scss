@@ -1,0 +1,68 @@
+// OE Patient Popups.
+// 
+
+// --- patient allergies & risks, quicklook and demographics
+
+.patient-popup-allergies-risks, .patient-popup-quicklook, 
+.patient-popup-demographics {
+	
+	display:none; // js controlled.
+	z-index:$oe-z-quicklook;
+	position: fixed;
+	top:$oe-header-height;
+	left:$oe-event-sidebar-width;
+	width:$oe-event-main-default-width;
+	
+	background:$oe-ui-bg;
+	border:1px solid $oe-ui-text-highlight;
+	padding:10px;
+	
+	// overflow wrappers alerts and summary-data
+	.oe-popup-overflow {	
+		max-height: 415px; 
+		overflow: auto;
+		padding:0 3px 0 0;
+	}
+	
+	// area subtitles
+	.subtitle { 
+		position:relative;
+		display:block;
+		margin:5px 0 10px 0;
+		padding:10px 0 0 0;
+		@include font-size(18);
+		font-weight:200; 
+		color:$oe-ui-text-light; 
+	}
+	
+	// added to areas that can be collapsed / expanded
+	// js controlled
+	.hideshow {
+		position:relative;
+		.hideshow-btn {
+			display:block;
+			position: absolute;
+			top:9px; 
+			right:5px;
+			z-index:1;
+		}
+		.hideshow-content {
+			// not used
+		}
+	}
+}
+
+// Patient Quicklook
+@import "popup-quicklook/summary-data"; 
+@import "popup-quicklook/management";
+@import "popup-quicklook/problems-plans"; 
+
+// Patient Demographics
+@import "popup-demographics/demographics"; 
+
+// Patient Allergies & Risks
+@import "popup-allergies-risks/allergies-risks"; 
+
+
+
+

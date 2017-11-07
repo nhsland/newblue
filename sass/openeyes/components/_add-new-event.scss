@@ -1,0 +1,43 @@
+// OE Add New Event Popup)
+// 
+// this is modified OEv2.0 CSS
+
+.oe-create-event-popup {
+	margin:auto; /* flex (wrapper) */ 
+	position:relative;
+	background: $oe-ui-user-selected;
+	width: $oe-eyedraw-app-width; 
+	padding:20px;
+
+	.title {
+		@include font-size(18);
+		font-weight:300;
+		color:$oe-ui-text;
+		padding:0 0 10px 0;
+	}
+	
+	// close and cancel 
+	.close-btn {
+		position:absolute;
+		top:20px;
+		right:20px;
+	}
+	
+	// step sub-titles
+	h3 {
+		@include font-size(12);
+		color:$oe-ui-text-light;
+		margin:0 0 10px 0;
+	}
+
+}
+
+@import "add-new-event/step-element";
+@import "add-new-event/step-through-layout";
+@import "add-new-event/change_subspecialty"; // add / change new sub-specialty
+@import "add-new-event/step1-subspecialty";
+
+
+
+
+

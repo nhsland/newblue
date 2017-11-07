@@ -1,0 +1,33 @@
+// OE Sidebar Header
+//
+
+.sidebar-header {
+	
+	display:flex;
+	background:$oe-ui-grey;
+	
+	.add-event {
+		height:$oe-event-header-height;
+		width:100%;
+		color: $oe-ui-user-input-text; 		// UI theme
+		background: $oe-ui-user-inputs; 	// UI theme
+		border-radius:0;
+	}
+	
+	.title {
+		@include font-size(11);
+		color:$oe-ui-text-light;			// UI theme
+		margin:auto;
+	}
+	
+	// anything in here should be UI themed 
+	input, textarea, select {
+		color: $oe-ui-user-input-text;
+		background-color: $oe-ui-user-inputs;
+		border-radius:0;
+	}
+	
+}
+
+
+

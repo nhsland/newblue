@@ -1,0 +1,16 @@
+// OE Scrollbars 
+// Chrome & Safari... (make it Appy!)
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {  
+	background: tint( $html-bg,2 );
+}
+::-webkit-scrollbar-track-piece { 
+	background: tint( $html-bg,2 );
+}
+::-webkit-scrollbar-thumb { 
+	background-color: $oe-text-light;
+}

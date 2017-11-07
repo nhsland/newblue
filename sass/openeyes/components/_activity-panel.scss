@@ -1,0 +1,40 @@
+// OE Activity Panel (RHS)
+// On minimum 1280px displays hidden, on 1920px+ displayed right hand side (RHS)
+// 
+
+.oe-activity-panel {
+	display:none; // js controlled.
+	z-index:$oe-z-activity; // overlays content
+			
+	position:fixed;
+	top:$oe-header-height;
+	right:0;
+	height: calc(100vh - 60px); 	// this can't be SASS variable has to be written (must match $oe-header-height)
+	overflow-y:auto;				// otherwise this over-flow doesn't work... Not sure why
+	
+	width:$oe-activity-panel-width;
+	background:tint( $oe-ui-bg,10 );
+	padding:10px 0 20px 0;	
+	
+	.overview {
+		padding:0 10px 5px 15px; 
+		h3 {
+			@include font-size(18);
+			color: shade( $oe-ui-text,10 );
+			font-weight:300;
+			
+			.count {
+				display: inline-block;
+				margin:0 0 0 5px;
+				padding:0 0 0 10px;
+				border-left:1px solid $oe-ui-line;
+				opacity:0.5;
+			}
+		}
+	}
+}
+
+
+@import "activity-panel/patient-list";
+@import "activity-panel/msg-timeline";
+
