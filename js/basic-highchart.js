@@ -30,7 +30,14 @@ var bannerBox1, bannerBox1Label = null;
       fontWeight: '300',
     }).add();
 
-  }
+  };
+  
+  function chartOct(num){
+	$('#oct_img_'+oct).hide();
+	$('#oct_img_'+num).removeClass('hidden').show();
+
+	oct = num;
+};
 
 
 		
@@ -44,6 +51,7 @@ var bannerBox1, bannerBox1Label = null;
 		        redraw: function(){
 		          drawBanner(this);
 		        }
+		        
 		      },
 			renderTo: 'chart',
 		    backgroundColor:'#141f2c',
@@ -141,6 +149,9 @@ var bannerBox1, bannerBox1Label = null;
 	                events: {
 	                    click: function (e) {
 	                      	console.log( this.options );
+	                    }, 
+	                    mouseOver: function( e ){
+		                    chartOct( this.x );
 	                    }
 	                }
 	            },
@@ -164,12 +175,12 @@ var bannerBox1, bannerBox1Label = null;
 	
 	    series: [{
 		    name: '(VA) ETDRS (R)',
-	        data: [55,61,70,76,[6,80],[8,90],[10,85]],
+	        data: [55,61,70,76,[6,80],[8,90],[9,85]],
 	        color:eyeR,
 	    },{
 	       name: 'CRT (R)',
 	       dashStyle: "shortdot",
-	       data: [300,265,190,180,[6,170],[8,200],[10,195]],
+	       data: [300,265,190,180,[6,170],[8,200],[9,195]],
 	       color:eyeR,
 	    },{
 		    name: "Placeholder Data Point",
@@ -202,11 +213,11 @@ var bannerBox1, bannerBox1Label = null;
 		        "title": "R"
 		      },
 		      {
-		        "x": 9,
+		        "x": 8,
 		        "title": "R"
 		      },
 		      {
-		        "x": 9.4,
+		        "x": 8.4,
 		        "title": "R"
 		      }]
 

@@ -2975,6 +2975,11 @@ html {
   background: #141e2b;
 }
 
+.oescape .chart-area {
+  background: #141e2b;
+  padding: 10px 0 0 0;
+}
+
 .oescape .oes-summary {
   width: 15%;
   padding: 20px 5px 0 20px;
@@ -3007,7 +3012,7 @@ html {
 }
 
 .oescape .oescape-images .oes-stack-select {
-  background: #1e2e42;
+  background: #141e2b;
   text-align: center;
   padding: 5px;
 }
@@ -3019,6 +3024,26 @@ html {
 
 .oescape .oescape-images .oct-stack img {
   width: 100%;
+}
+
+.oescape .oes-assessment-panel {
+  padding: 10px 0;
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.oescape .oes-assessment-panel table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.oescape .oes-assessment-panel table td {
+  text-align: center;
+  border-left: 1px solid rgba(204, 204, 204, 0.1);
+}
+
+.oescape .oes-assessment-panel table td:first-child {
+  border-left: none;
 }
 
 /* ------------------------ */
