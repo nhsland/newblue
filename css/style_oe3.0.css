@@ -2971,13 +2971,19 @@ html {
   padding: 0 20px;
 }
 
+.oescape-header .svg-size-icon {
+  fill: none;
+  stroke: #888;
+  stroke-miterlimit: 10;
+}
+
 .oescape {
   background: #141e2b;
 }
 
 .oescape .chart-area {
   background: #141e2b;
-  padding: 10px 0 0 0;
+  padding: 20px 0 0 0;
 }
 
 .oescape .oes-summary {
@@ -3007,6 +3013,17 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.oescape .management-summary {
+  padding: 20px 0 20px 20px;
+}
+
+.oescape .management-summary h3 {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 10px 0;
+}
+
 .oescape .oescape-images {
   background: #141e2b;
 }
@@ -3017,12 +3034,14 @@ html {
   padding: 5px;
 }
 
-.oescape .oescape-images .oct-stack {
+.oescape .oescape-images .oct-stack, .oescape .oescape-images .ffa-stack,
+.oescape .oescape-images .img-stack {
   cursor: crosshair;
   width: 100%;
 }
 
-.oescape .oescape-images .oct-stack img {
+.oescape .oescape-images .oct-stack img, .oescape .oescape-images .ffa-stack img,
+.oescape .oescape-images .img-stack img {
   width: 100%;
 }
 
@@ -3030,6 +3049,10 @@ html {
   padding: 10px 0;
   font-size: 0.6875rem;
   color: rgba(255, 255, 255, 0.5);
+}
+
+.oescape .oes-assessment-panel input[type="checkbox"] {
+  background: pink;
 }
 
 .oescape .oes-assessment-panel table {

@@ -25,6 +25,7 @@ var config = {
 	sass:'sass/style_oe3.0_pro.scss',					// root scss file for OE v3.0  (Pro, default theme)
 	classic:'sass/style_oe3.0_classic.scss', 			// ... scss for Classic theme
 	eyedrawSass:'sass/style_eyedraw-draw-icons.scss', 	// eyedraw draw doodle icons
+	highchart:'sass/highcharts.scss',					// highStocks CSS (Styled mode)
 	css:'css',
 }
 
@@ -38,7 +39,7 @@ gulp.task('default',['eyedraw_sprites','eyedraw_sass','event_sprites','sass','wa
 *  (note: not watching Eyedraw scss, as only updated ocassionaly)	
 */
 gulp.task('watch-sass', function() {
-    gulp.watch( 'sass/**/*.scss', ['sass','sass-classic']);
+    gulp.watch( 'sass/**/*.scss', ['sass','sass-classic','sass-highcharts']);
 });
 
 /*
@@ -75,6 +76,21 @@ gulp.task('sass-classic',function(){
 		.pipe( autoprefixer() ) 				
 		.pipe( gulp.dest( config.css ) );
 });
+
+/*
+*  JS HighStocks CSS (v3.0) 
+*  only create compressed css	
+*/
+gulp.task('sass-highcharts',function(){
+	
+	return gulp.src( config.highchart )
+		.pipe( sass( {outputStyle:'compressed'} ) )
+		.pipe( rename('highcharts.css') )
+		.pipe( autoprefixer() ) 				
+		.pipe( gulp.dest( config.css ) );
+});
+
+
 
 /*
 *  Eyedraw Draw Icons. 

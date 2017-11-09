@@ -36,16 +36,29 @@
 		}
 	
 	}
+	
+	// SVG inline icons for resizing the chart
+	.svg-size-icon {
+		fill:none;
+		stroke:#888;
+		stroke-miterlimit:10;
+	}
+
+	
 }
 
+
 .oescape {
+	
+	
+	
 	background:$oe-blue-darker;
 	
 	// highchart wrapper
 	// style MUST be inline to stop intital redraw issues
 	.chart-area {
 		background: $oe-ui-blue-darker;
-		padding:10px 0 0 0;
+		padding:20px 0 0 0;
 	}
 	
 	// oescape summary box
@@ -76,6 +89,19 @@
 		}
 	}
 	
+	.management-summary {
+		padding:20px 0 20px 20px;
+		
+		h3 {
+			@include font-size(14);
+			font-weight:300; 
+			color:$oe-text-light;
+			margin:0 0 10px 0; 
+		}
+		
+		
+	}
+	
 	// image stacks for OCT and FAA
 	.oescape-images {
 		background:$oe-blue-darker;
@@ -86,7 +112,8 @@
 			padding:5px;
 		}
 	
-		.oct-stack {
+		.oct-stack, .ffa-stack, 
+		.img-stack {
 			cursor:crosshair;
 			width:100%;
 			img {
@@ -99,6 +126,10 @@
 		padding:10px 0;
 		@include font-size(11);
 		color:$oe-text-light;
+		
+		input[type="checkbox"] {
+			background:pink;
+		}
 		
 		table {
 			width:100%;

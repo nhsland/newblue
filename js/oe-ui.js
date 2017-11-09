@@ -549,8 +549,12 @@ var oeui = {
 	
 };
 
-// init
-oeui.init();
+
+$(document).ready(function() {
+	// init
+	oeui.init();
+});
+
 
 
 
