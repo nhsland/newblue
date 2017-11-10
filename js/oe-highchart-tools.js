@@ -31,30 +31,11 @@ function chartNavigation(){
 		},
 		menuItemStyle: {
             color: '#fff',
-            boxShadow: 0,
         },
         menuStyle: {
             background: chartColor.bg,
+            "box-shadow": "none",
         }
-		
-/*
-		// this is for burger menu icon but instead I'm setting in exporting 
-        buttonOptions: {
-            theme: {
-	            fill: '#f00',
-	            stroke: '#0f0',
-                states: {
-                    hover: {   			// undocumented in API!!
-                        fill: chartColor.blue,
-                    },
-                    select: {			// undocumented in API!!
-                        stroke: '#039',
-                        fill: '#00f'
-                    }
-                }
-            }
-        }
-*/
     }
 }
 
@@ -62,11 +43,6 @@ function chartTitle(title){
 	return {
         text: title,
         align: 'center',    
-	      style: {
-	        color: chartColor.txt,
-	        fontSize: '14px',
-	        fontWeight: 'normal',
-	      }
     }  
 }
 
@@ -102,43 +78,16 @@ function chartLegend(){
         layout: 'vertical',
         align: 'left',
         verticalAlign: 'top',
-        backgroundColor: chartColor.bg,
         width: null,
         floating:true,
 		symbolWidth: 40, // make this wide enought to see the line styles
-		 
-        itemStyle: { 
-	        color: chartColor.txt, 
-	        fontSize:'10px',
-	        fontWeight:'normal',
-	         
-	    },
-        itemHoverStyle: { 
-	        color: chartColor.txtHighlight 
-	    }
 	}
-}
-
-function chartTooltip(){
-	return {
-		 	backgroundColor: '#141f2c',
-		 	borderColor: '#0ff',
-		 	borderRadius: 0,
-		 	style: {
-	            color: '#fff',
-	            fontWeight: 'bold'
-	        },
-	 	
-		}
 }
 
 function chartNavigator(){
 	return  {
         	enabled: true,
-        	maskFill: 'rgba(102,133,214,0.1)',
-        	outlineColor: '#099',
         	xAxis: {
-	        	gridLineColor:"#336",
 	        	labels : {
 		        	enabled: false,
 	        	}
@@ -196,8 +145,8 @@ function buildBanners( highChart, drugStr ){
 	  zIndex: 5
 	})
 	.css({
-	  color: '#ccc',
-	  fontSize: '12px',
+	  //color: '#ccc',
+	  //fontSize: '12px',
 	}).add();
 	
 	drugBanners.push(banner);

@@ -1,0 +1,312 @@
+// * OpenEyes UI v3.0
+// *
+// * (C) OpenEyes, 2017
+// 
+// * Highstock CSS styling to replace JS options 
+//
+// Based on https://code.highcharts.com/css/highcharts.css
+
+// -- NOTE: SVG !! 
+$oe-hs-eye-left:	rgb(254,103,103); 			// red
+$oe-hs-eye-right:	rgb(159,236,109);			// green
+$oe-hs-eye-left-dull:	shade( $oe-hs-eye-left,40 ); 		
+$oe-hs-eye-right-dull:	shade( $oe-hs-eye-right,40 );			
+$oe-hs-axes: 		rgb(150,150,150);
+$oe-hs-bg: 			$oe-ui-blue-darker;
+$oe-hs-blue:		rgb(61,176,251);  			// highlight blue
+
+
+.highcharts-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  text-align: left;
+  line-height: 1.2;
+  z-index: 0;
+  -webkit-tap-highlight-color: transparent;
+  @include font-size(12);
+}
+
+.highcharts-background {
+  fill: $oe-hs-bg;
+}
+
+
+// ------  SVG <svg>
+// 
+.highcharts-root {
+	// SVG <text>
+	text {
+		fill:$oe-ui-text-light;
+		stroke-width: 0;
+	}
+}
+
+// general styling
+.highcharts-strong {
+  font-weight: 400;
+}
+
+.highcharts-emphasized {
+  font-style: italic;
+}
+
+.highcharts-anchor {
+  cursor: pointer;
+}
+
+.highcharts-plot-border, .highcharts-plot-background,
+.highcharts-label-box {
+  fill: none;
+}
+
+.highcharts-button-box {
+  fill: inherit;
+}
+
+// ---------------------  Title of chart
+.highcharts-title {
+	@include font-size(16);
+	font-weight:300;
+}
+
+// ---------------------  Legend
+.highcharts-legend-box {
+  fill: $oe-hs-bg;
+  stroke-width: 0;
+}
+
+.highcharts-legend-item {
+	text {
+	  fill: $oe-ui-text-light;
+	  cursor: pointer;
+	  stroke-width: 0;
+	  @include font-size(11);
+	  
+	  &:hover {
+		  fill: $oe-ui-text;	
+	  }
+	}
+	
+	// clicking on the legend item deactivates the series
+	&.highcharts-legend-item-hidden {
+		text {
+			fill: shade( $oe-ui-text-light,15 );
+		}
+	}
+}
+
+// Legend hover affects points and series - turned off 
+
+
+// ---------------------  Axes & grid
+// X axis
+.highcharts-xaxis {
+	stroke: $oe-hs-axes;
+	.highcharts-tick {	// axis line increments
+		stroke: $oe-hs-axes;
+	}
+}
+
+// Y Axis Grid (yAxis lines across chart) 
+.highcharts-yaxis-grid {
+	.highcharts-grid-line {
+		stroke: tint( $oe-hs-bg,13 );
+	}
+}
+
+// grid lines on graph
+.highcharts-grid-line {
+	stroke: tint( $oe-hs-bg,2 ); // provide a visual X & Y hint
+}
+
+// -------------------  Tooltips
+.highcharts-tooltip {
+	cursor: default;
+	pointer-events: none;
+	white-space: nowrap;
+	transition: stroke 150ms;
+	
+	text {
+		fill: $oe-ui-text;
+	}
+}
+.highcharts-tooltip-box {
+	fill: $oe-hs-bg;
+	stroke: $oe-hs-blue;
+	stroke-width: 2;
+	stroke-dasharray: none;  // overide eye line styles
+	
+	// marker dot is showing in tooltip as "•" text 
+	// <tspan class="highcharts-color-12">●</tspan>	
+	// this means I can not apply left / right styling to the dot
+	// because it is only using the colorindex! - bugger
+
+}
+
+// -------------------  Eye Colour & Line styles
+
+// colorIndex is assigned in JS 
+// (we have to use colorIndex rather than className because it's used everywhere unlike className)
+// colorIndex assigns a class which CSS uses to set color and style:
+// Right Eye: 	10 - fill, 11 - stroke, solid, 12 - stroke, dotted, 13 - stroke, dashed
+// Left Eye: 	20 - fill, 21 - stroke, solid, 22 - stroke, dotted, 23 - stroke, dashed
+
+// --- Right Eye
+
+// Fill
+.highcharts-color-10 {
+	stroke:none;
+	stroke-width:0;
+	fill: $oe-hs-eye-right;
+	
+	// flags
+	.highcharts-label {
+		.highcharts-label-box {
+			cursor: pointer;
+			fill: $oe-hs-eye-right-dull;
+		}
+	}
+}
+
+// Stoke
+.highcharts-color-11, 
+.highcharts-color-12, 
+.highcharts-color-13 {
+	stroke:$oe-hs-eye-right;
+	fill: $oe-hs-eye-right;
+}
+
+.highcharts-color-12 {
+	stroke-dasharray: 2,2;  // space | pattern e.g dash,gap etc!
+}
+.highcharts-color-13 {
+	stroke-dasharray: 3,6;  // space | pattern e.g dash,gap etc! 
+}
+
+// series lines
+.highcharts-series {
+	stroke-width:2;	
+	* { 
+		fill:none; 
+	}
+}
+
+
+highcharts-markers highcharts-series-4 highcharts-areaspline-series highcharts-color-11 highcharts-navigator-series
+
+.highcharts-markers {
+	cursor: pointer;
+	stroke: #00f; 					// set to red to highlight where styling is required.
+	
+	// flags (drug banner)
+	.highcharts-label {
+		.highcharts-label-box {
+			stroke-width:0; 		// both stroke-width and stroke none are required for crisp edge
+			stroke:none;
+		}
+		text {
+			fill:#fff;
+		}
+	}
+}
+
+.highcharts-point {
+	stroke:none;
+	stroke-width: 0;
+}
+
+// marker highlight
+.highcharts-halo {
+	fill-opacity: 0.1;
+	stroke-width: 0;
+	fill:#fff;
+}
+
+.highcharts-crosshair {
+	stroke: $oe-hs-blue;
+}
+
+// sometimes a hidden data plot is require to increase the yAxis
+.oes-eye-placeholder-hidden {
+	fill:none !important;
+	stroke:none !important;
+}
+
+
+// LEFT eye colours
+.oes-eye-l { 
+	// series plot line (and in Legend)
+	&.highcharts-series, &.highcharts-line-series {
+		stroke: $oe-hs-eye-left;
+	}
+	
+	&.highcharts-markers {
+		.highcharts-label {
+			.highcharts-label-box {
+				fill: $oe-hs-eye-left-dull;
+			}
+		}
+	}
+	// path for marker in Legend 
+	.highcharts-point {
+		fill:$oe-hs-eye-left;
+	}
+}
+
+
+// ------------- Navigator
+
+
+.highcharts-navigator-mask-outside {
+  fill-opacity: 0;
+}
+
+.highcharts-navigator-mask-inside {
+  fill: $oe-hs-blue;
+  // navigator.maskFill option
+  fill-opacity: 0.3;
+  cursor: ew-resize;
+}
+
+.highcharts-navigator-outline {
+  stroke: $oe-hs-blue;
+  fill: none;
+}
+
+.highcharts-navigator-handle {
+  stroke: #999;
+  fill: #777;
+  cursor: ew-resize;
+}
+
+.highcharts-navigator-series {
+  stroke-width:1;
+}
+
+.highcharts-navigator-xaxis {
+	
+	.highcharts-axis-line {
+		stroke-width: 0; // hide
+	}
+	
+	.highcharts-grid-line {
+	  stroke-width: 1px;
+	  stroke: tint( $oe-hs-bg,5) ;
+	}
+}
+
+.highcharts-navigator-yaxis .highcharts-grid-line {
+  stroke-width: 0; // hide
+}
+
+	
+
+
+
+
+
+
+
+
+

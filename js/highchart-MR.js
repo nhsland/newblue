@@ -1,21 +1,18 @@
-var eyeR = chartColor.eyeR // green
-var eyeL = "#fe6767"; // red
-var blue = "#00aeff";	
-var bannerColor = '#384855';
-
 // highSTOCK https://api.highcharts.com/highstock/
 
 var drugs = ['Lucentis (7)','Eylea (4)'];
 var chartHeight = 650;
 var xAxisOffset = 60 * drugs.length; // offset xAxis to allow space for drug banners
+var flagYoffset = -35; // drug flags are positioned relative to xAxis 
 
 // resize chart area
 function updateChartSize(size){
 	chart.setSize( size, chartHeight, false );
 }
 
-// HighChart options
-// MR VA Right Eyes
+/*
+ * Highchart options (data and positioning only) - all UI stylng is handled in CSS
+*/
 var options = {
 		chart: {
 		    events: {
@@ -27,100 +24,52 @@ var options = {
 		        }
 		    },
 			renderTo: 'chart', 					// <div> id
-		    backgroundColor: chartColor.bg, 	// outline
+			className: 'oes-chart-mr-right',	// suffix: -right -left or -both (eyes)
 		    height: chartHeight, 				// px
+		    marginTop:60,						// make px space for Legend
 		    // spacing: [10, 10, 15, 10], 		// default: [10, 10, 15, 10] outer edge of the chart and the content (doesn't effect SVG banners)
 		    // type: 'line' 					// Can be any of the chart types listed under plotOptions. ('line' default)	
 		   
 		},
-		
-		colors:['#00f'], // default colors for the chart's series (shows if not set elsewhere)
-		
+			
 		credits: { enabled: false }, // highcharts url (logo) removed
 		
-		navigation: chartNavigation(),
+		//--- turned off because it now fails as the CSS is doing all the styling:
+		// navigation: 	chartNavigation(), // export burger menu popup (module still styled by JS)
+		// exporting:	chartExporting(),  
 		
 	    title: 		chartTitle('Retinal thickness-Visual acuity (Right Eye)'),
 	    
 	    legend: 	chartLegend(),
-
-	    tooltip: 	chartTooltip(),
 		
-		navigator: 	chartNavigator(),
+		navigator: 	chartNavigator(),	// chart Navigator
 		
-		exporting:	chartExporting(), 
-		
-		
-		// labels are HTML overlays that can be positioned on the chart
-		// They are not moved or affected by the navigator
-/*
-		labels: {
-			items:[{
-				html:'Hi ya!',
-				style: {
-				    left: '100px',
-				    top: '100px'
-				}	
-			}],
-		},
-*/
-	
 	    yAxis: [{
-		    opposite: true,
-		      title: {
-		        text: 'CRT (um)',
-		        style: {
-		          color: '#ccc'
-		        }
-		      },
-		    
-	       	        
-	        gridLineColor: '#777',
-	         
-	        labels: {
-	            style: {
-	                  "color": "#fff",
-	            }
-	        },
-	        
+			title: {
+				text: 'CRT (um)',
+			}, 
+			opposite: true,   
 	        reversed: false,
 	         
 	    },{
-		    gridLineColor: '#777',
-			opposite: false,
-	      title: {
-	        text: 'VA (ETDRS)',
-	        style: {
-	          color: '#ccc',
-	        }
-	      },
-	      labels: {
-	        format: '{value}',
-	        style: {
-	          color: '#fff'
-	        }
-	      },
-      
+			title: {
+	        	text: 'VA (ETDRS)',
+	      	},
+	      	opposite: false,
     	}],
 	    
+	    
 	    xAxis: {
-		    offset: 120,   // this moves the chart up to allow for the banners
+		    offset: xAxisOffset,   // this moves the chart up to allow for the banners
 	        title: {
 	            text: 'Time Months',
 	        },
 	        
-	         crosshair: {
-        color: '#3db0fb',
-        snap: true
-      },
-	        
-	        lineColor: '#aaa',
-	        
-	        labels: {
-	            style: {
-	                  "color": "#fff",
-	            },
-	            
+	        crosshair: {
+			 	snap: true
+      		},
+	       
+	        labels: {  
 	            y:25,
 	        }
 	    },
@@ -128,19 +77,17 @@ var options = {
 	
 	    plotOptions: {
 	        series: {
-		        cursor: 'pointer',
 		        animation:false,
-	            pointStart: 1,
-	            
 	            point: {
 	                events: {
-	                    click: function (e) {
-	                      	console.log( this.options );
-	                    }, 
 	                    mouseOver: function( e ){
-		                    oes.changeOCT( this.oct );
+		                    oes.changeOCT( this.oct ); // link chart points to OCTs
 	                    }
 	                }
+	            },
+	            
+	            label: {
+		            enabled:false,
 	            },
 	            
 	            marker: {
@@ -149,34 +96,24 @@ var options = {
 	        },
 	        
 	        flags: {
-		        fillColor: "#696",
 		        shape: "square",
-		        lineWidth: 0,
-		        style: {
-				 	color: "#fff",
-		    	},
-		    	
-		    	
 		    	showInLegend: false,
 		    	tooltip: {
 			    	pointFormatter : function () {
 							var s = '<b>'+this.info+'</b>';
-	
 							return s;
 	        		},
 		    	},
-		    	states: {
-			    	hover: {
-				    	brightness: 0.1,
-				    	fillColor: '#060',
-			    	}
-		    	}
 	        }
 	    },
 	    
 	
 	    series: [{
 		    name: '(VA) ETDRS (R)',
+		    type:'line',
+		    className: 'oes-eye-r',		// CSS class name: 'oes-eye-r' or 'oes-eye-l'
+		    colorIndex: 11,				// OES lines 11-13 (right eye): 11 - solid; 12 - dotted; 13 - dashed
+		    yAxis: 1,					// link to yAxis
 		    showInNavigator: true,
 	        data: [		{x:1,y:55,oct:1},
 	        			{x:2,y:61,oct:2},
@@ -188,15 +125,14 @@ var options = {
 	        			{x:14,y:60,oct:8},
 	        			{x:18,y:55,oct:9},
 	        ],
-	        		
-	        		
-	        		
-	        color:eyeR,
-	    },{
+	    },{ 
 	       name: 'CRT (R)',
+	       type:'line',
+	       className: 'oes-eye-r',		// CSS class name: 'oes-eye-r' or 'oes-eye-l'
+		   colorIndex: 12,				// OES lines 11-13 (right eye): 11 - solid; 12 - dotted; 13 - dashed
+		   yAxis: 0,					// link to yAxis
 	       showInNavigator: true,
-	       dashStyle: "shortdot",
-	        data: [		{x:1,y:300,oct:1},
+	       data: [		{x:1,y:300,oct:1},
 	        			{x:2,y:265,oct:2},
 	        			{x:3,y:190,oct:3},
 	        			{x:4,y:180,oct:4},
@@ -206,19 +142,12 @@ var options = {
 	        			{x:14,y:223,oct:8},
 	        			{x:18,y:267,oct:9},
 	        ],
-	        	
-	       color:eyeR,
 	    },{
-		    name: "Placeholder Data Point",
-			color: "rgba(90, 90, 90, 0.0)",
-			showInLegend: false,
-			enableMouseTracking: false,
-			data: [550] 
-	    },{
+		    name: "Lucentis", 			// chart label is drawn using drawBanners() helper
 		    type: "flags",
-		    name: "Drug name",
-		   
-		    y: -85, // position over banner rect
+			className: 'oes-eye-r',		// CSS class name: 'oes-eye-r' or 'oes-eye-l'
+			colorIndex:10,				// OES eye fill: 10 - right eye
+		    y: flagYoffset - 50, 		// position over banner rect
 		    "data": [
 		      {
 		        "x": 1,
@@ -257,9 +186,11 @@ var options = {
 		      }]
 
 	    },{
+		    name: "Eylea", 				// chart label is drawn using drawBanners() helper
 		    type: "flags",
-		    name: "Drug name",
-		    y: -35, // position over banner rect
+			className: 'oes-eye-r',		// CSS class name: 'oes-eye-r' or 'oes-eye-l'
+			colorIndex:10,				// OES eye fill: 10 - right eye
+		    y: flagYoffset, 			// position over banner rect
 		    "data": [
 		      {
 		        "x": 12,
