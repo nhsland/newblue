@@ -193,8 +193,6 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 }
 
 
-highcharts-markers highcharts-series-4 highcharts-areaspline-series highcharts-color-11 highcharts-navigator-series
-
 .highcharts-markers {
 	cursor: pointer;
 	stroke: #00f; 					// set to red to highlight where styling is required.
@@ -233,31 +231,42 @@ highcharts-markers highcharts-series-4 highcharts-areaspline-series highcharts-c
 	stroke:none !important;
 }
 
+// ------------- Banners
+.oes-banner-bg {
+	stroke-width: 0;
+	stroke: #384855;
+	fill: #384855;
+	zIndex: 1;
+}
 
-// LEFT eye colours
-.oes-eye-l { 
-	// series plot line (and in Legend)
-	&.highcharts-series, &.highcharts-line-series {
-		stroke: $oe-hs-eye-left;
-	}
-	
-	&.highcharts-markers {
-		.highcharts-label {
-			.highcharts-label-box {
-				fill: $oe-hs-eye-left-dull;
-			}
-		}
-	}
-	// path for marker in Legend 
-	.highcharts-point {
-		fill:$oe-hs-eye-left;
+.oes-banner-title {
+	@include font-size(12);
+	tspan {
+		fill:$oe-ui-text;
 	}
 }
 
 
+
+// ------------- buttons
+.highcharts-button {
+	cursor: pointer;
+	fill: $oe-ui-blue;
+	&:hover {
+		text {
+			fill:$oe-text;
+		}
+	}
+}
+
+.highcharts-range-selector-buttons {
+	// hide the 'Zoom'
+	> text {
+		display:none;
+	}
+}
+
 // ------------- Navigator
-
-
 .highcharts-navigator-mask-outside {
   fill-opacity: 0;
 }
@@ -299,6 +308,7 @@ highcharts-markers highcharts-series-4 highcharts-areaspline-series highcharts-c
 .highcharts-navigator-yaxis .highcharts-grid-line {
   stroke-width: 0; // hide
 }
+
 
 	
 

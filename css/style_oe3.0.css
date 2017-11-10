@@ -3204,17 +3204,17 @@ html {
   fill: none;
 }
 
-highcharts-markers highcharts-series-4 highcharts-areaspline-series highcharts-color-11 highcharts-navigator-series .highcharts-markers {
+.highcharts-markers {
   cursor: pointer;
   stroke: #00f;
 }
 
-highcharts-markers highcharts-series-4 highcharts-areaspline-series highcharts-color-11 highcharts-navigator-series .highcharts-markers .highcharts-label .highcharts-label-box {
+.highcharts-markers .highcharts-label .highcharts-label-box {
   stroke-width: 0;
   stroke: none;
 }
 
-highcharts-markers highcharts-series-4 highcharts-areaspline-series highcharts-color-11 highcharts-navigator-series .highcharts-markers .highcharts-label text {
+.highcharts-markers .highcharts-label text {
   fill: #fff;
 }
 
@@ -3238,16 +3238,32 @@ highcharts-markers highcharts-series-4 highcharts-areaspline-series highcharts-c
   stroke: none !important;
 }
 
-.oes-eye-l.highcharts-series, .oes-eye-l.highcharts-line-series {
-  stroke: #fe6767;
+.oes-banner-bg {
+  stroke-width: 0;
+  stroke: #384855;
+  fill: #384855;
+  zIndex: 1;
 }
 
-.oes-eye-l.highcharts-markers .highcharts-label .highcharts-label-box {
-  fill: #983e3e;
+.oes-banner-title {
+  font-size: 0.75rem;
 }
 
-.oes-eye-l .highcharts-point {
-  fill: #fe6767;
+.oes-banner-title tspan {
+  fill: rgba(255, 255, 255, 0.8);
+}
+
+.highcharts-button {
+  cursor: pointer;
+  fill: #1e2e42;
+}
+
+.highcharts-button:hover text {
+  fill: rgba(255, 255, 255, 0.8);
+}
+
+.highcharts-range-selector-buttons > text {
+  display: none;
 }
 
 .highcharts-navigator-mask-outside {

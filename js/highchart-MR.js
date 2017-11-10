@@ -1,9 +1,12 @@
 // highSTOCK https://api.highcharts.com/highstock/
 
-var drugs = ['Lucentis (7)','Eylea (4)'];
-var chartHeight = 650;
-var xAxisOffset = 60 * drugs.length; // offset xAxis to allow space for drug banners
-var flagYoffset = -35; // drug flags are positioned relative to xAxis 
+var drugs = ['Lucentis (7)','Eylea (4)'];	// drug banners
+
+var chartHeight = 650;					// fixed height
+var xAxisOffset = 60 * drugs.length; 	// offset xAxis to allow space for drug banners
+var flagYoffset = -35; 					// drug flags are positioned relative to xAxis 
+
+var chart; // highCharts.Chart()
 
 // resize chart area
 function updateChartSize(size){
@@ -14,66 +17,61 @@ function updateChartSize(size){
  * Highchart options (data and positioning only) - all UI stylng is handled in CSS
 */
 var options = {
+	
 		chart: {
 		    events: {
 		        load: function() {
-		          	drawBanners(this,drugs);
+		          	highHelp.drawBanners(this,drugs);
 		        },
 		        redraw: function(){
-		         	drawBanners(this,drugs);
+		         	highHelp.drawBanners(this,drugs);
 		        }
 		    },
 			renderTo: 'chart', 					// <div> id
 			className: 'oes-chart-mr-right',	// suffix: -right -left or -both (eyes)
 		    height: chartHeight, 				// px
-		    marginTop:60,						// make px space for Legend
-		    // spacing: [10, 10, 15, 10], 		// default: [10, 10, 15, 10] outer edge of the chart and the content (doesn't effect SVG banners)
-		    // type: 'line' 					// Can be any of the chart types listed under plotOptions. ('line' default)	
-		   
+		    marginTop:80,						// make px space for Legend
+			spacing: [30, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
+		    type: 'line' 						// Can be any of the chart types listed under plotOptions. ('line' default)	 
 		},
 			
-		credits: { enabled: false }, // highcharts url (logo) removed
+		credits: 	{ enabled: false }, // highcharts url (logo) removed
 		
-		//--- turned off because it now fails as the CSS is doing all the styling:
-		// navigation: 	chartNavigation(), // export burger menu popup (module still styled by JS)
-		// exporting:	chartExporting(),  
-		
-	    title: 		chartTitle('Retinal thickness-Visual acuity (Right Eye)'),
-	    
-	    legend: 	chartLegend(),
-		
-		navigator: 	chartNavigator(),	// chart Navigator
+	    title: 			highHelp.chartTitle('Retinal thickness-Visual acuity (Right Eye)'),
+	    legend: 		highHelp.chartLegend(),
+		navigator: 		highHelp.chartNavigator(),				
+		rangeSelector: 	highHelp.chartRangeSelector(-60,-25),	// offset from bottom right (x,y)
 		
 	    yAxis: [{
 			title: {
-				text: 'CRT (um)',
+				text: 'CRT (um)'
 			}, 
 			opposite: true,   
 	        reversed: false,
 	         
 	    },{
 			title: {
-	        	text: 'VA (ETDRS)',
+	        	text: 'VA (ETDRS)'
 	      	},
 	      	opposite: false,
     	}],
 	    
 	    
 	    xAxis: {
-		    offset: xAxisOffset,   // this moves the chart up to allow for the banners
 	        title: {
-	            text: 'Time Months',
+	            text: 'Time (months)',
 	        },
-	        
 	        crosshair: {
-			 	snap: true
+			 	snap: true			// blue line
       		},
-	       
 	        labels: {  
-	            y:25,
-	        }
+	            y:25				// move labels below ticks
+	        },
+	        offset: xAxisOffset,   	// this moves the chart up to allow for the banners
+	        min:0, 					// show first tick
+	        max:18,					// show last tick
+			tickPixelInterval: 50,  // if this is too high the last tick isn't shown (default 100) 
 	    },
-	   
 	
 	    plotOptions: {
 	        series: {
@@ -217,4 +215,4 @@ var options = {
 
 	};
 	
-var chart = new Highcharts.Chart(options);
+chart = new Highcharts.Chart(options);
