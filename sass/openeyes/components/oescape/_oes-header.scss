@@ -1,0 +1,45 @@
+// OE Oescape
+// 
+// Oescape Header
+
+.oescape-header {
+	position:relative;
+	background:$oe-grey;
+	padding:0 10px 0 0;
+
+	.title {
+		position: absolute;
+		top:0;
+		right:60px;
+		color:$oe-text-light;
+		text-transform: uppercase;
+		@include font-size(24);
+		font-weight:200;
+		line-height:$oe-event-header-height;
+	}
+	
+	// create 'tab' buttons
+	@include buttons {
+		vertical-align: top; // overwrite default 'bottom' to fix alignment issues
+		height:$oe-event-header-height;
+		padding:0 16px;
+		
+		// icon buttons in header
+		&.icon {
+			padding:0 0; // remove default padding
+			.oe-i {
+				padding:0 20px; // pad out icon instead (to make clickable)
+			}
+		}
+	}
+	
+	// inline SVG icons for resizing the chart
+	.svg-size-icon {
+		fill:none;
+		stroke:#888;
+		stroke-miterlimit:10;
+	}	
+}
+
+
+

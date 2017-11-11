@@ -88,10 +88,14 @@ var highHelp = {
 	
 	
 	buildBanners:function( highChart, drugStr ){
-		var yOffset = (highHelp.drugBanners.length * 50) + 10;
+		// space is made for banners by offsetting the xAxis
+		// find the xAxis line and position banners relative to it
+		var xAxisYpos = highChart.chartHeight - ( highChart.xAxis[0].bottom - highChart.xAxis[0].offset); 
+		
+		var yOffset = ( (highHelp.drugBanners.length + 1) * 50) + 10;
 		var padding = 10;
 		var x = padding;
-		var y = highChart.chartHeight - ( highChart.xAxis[0].bottom - yOffset ); 
+		var y = xAxisYpos - yOffset;
 		var h = 45;
 		var w = highChart.chartWidth - (padding * 2 );
 		

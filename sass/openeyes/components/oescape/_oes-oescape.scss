@@ -1,0 +1,98 @@
+// OE Oescape
+// 
+// 
+
+.oescape {
+	background:$oe-blue-darker;
+	
+	// highchart wrapper
+	// the 'min-width' must be inline to stop intital redraw issues (see DOM)
+	.chart-area {
+		background: $oe-ui-blue-darker;
+		padding:20px 0 0 0;
+	}
+	
+	.management-summary {
+		padding:20px 0 20px 20px;
+		h3 {
+			@include font-size(14);
+			font-weight:300; 
+			color:$oe-text-light;
+			margin:0 0 10px 0; 
+		}
+	}
+	
+	// image stacks for OCT and FAA
+	.oescape-images {
+		background:$oe-blue-darker;
+		
+		.oes-stack-select {
+			background:$oe-blue-darker;
+			text-align: center;
+			padding:5px;
+		}
+	
+		.oct-stack, .ffa-stack, 
+		.img-stack {
+			cursor:crosshair;
+			width:100%;
+			img {
+				width:100%;
+			}
+		}
+	}
+	
+	.oes-assessment-panel {
+		padding:10px 0;
+		@include font-size(11);
+		color:$oe-text-light;
+		
+		input[type="checkbox"] {
+			background:pink;
+		}
+		
+		table {
+			width:100%;
+			border-collapse:collapse;
+			
+			td {
+				text-align: center;
+				border-left:1px solid $oe-line;
+				&:first-child {
+					border-left:none;
+				}
+			}
+		}
+	}
+	
+	// oescape summary box
+	.oes-summary {
+		width:15%;
+		padding:20px 5px 0 20px;
+		background:$oe-blue-dark;
+		
+		.title  { 
+			margin:0 0 10px 0;
+			@include font-size(18);
+			font-weight:200; 
+			color:$oe-text-light; 
+		}
+		
+		// summary data groups
+		.data-label {
+			margin:0 0 3px 0;
+			@include font-size(11);
+			font-weight:400; 
+			color:$oe-text-light; 
+		}
+		.data-value {
+			margin:0 0 10px 0;
+			@include font-size(13);
+			font-weight:400; 
+			color:$oe-text; 
+		}
+	}
+	
+}
+
+
