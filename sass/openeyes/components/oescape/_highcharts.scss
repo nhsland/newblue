@@ -116,6 +116,38 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 		stroke-dasharray: 3,6;  // space | pattern e.g dash,gap etc! 
 	}
 	
+	// Axis plot lines (Targets, Date lines)
+	.oes-hs-plotline-right {
+		stroke:$oe-hs-eye-right; 
+		stroke-dasharray: 2,8;
+	}
+	
+	.oes-hs-plotline-left {
+		stroke:$oe-hs-eye-left; 
+		stroke-dasharray: 2,8;
+	}
+
+	.oes-hs-plotline-right-tight {
+		stroke:$oe-hs-eye-right; 
+		stroke-dasharray: 1,2;
+	}
+	
+	.oes-hs-plotline-left-tight {
+		stroke:$oe-hs-eye-left; 
+		stroke-dasharray: 1,2;
+	}
+		
+	.oes-hs-plotline-blue {
+		stroke:#ccc; 
+		stroke-dasharray: 1,2;
+	}
+	
+	.highcharts-plot-line-label {
+		@include font-size(11);
+		fill: $oe-hs-blue;
+	}
+	
+	
 	// turn off the fill for specific series
 	.highcharts-series {
 		&.highcharts-line-series {

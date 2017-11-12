@@ -3142,6 +3142,36 @@ html {
   stroke-dasharray: 3,6;
 }
 
+.highcharts-root .oes-hs-plotline-right {
+  stroke: #9fec6d;
+  stroke-dasharray: 2,8;
+}
+
+.highcharts-root .oes-hs-plotline-left {
+  stroke: #fe6767;
+  stroke-dasharray: 2,8;
+}
+
+.highcharts-root .oes-hs-plotline-right-tight {
+  stroke: #9fec6d;
+  stroke-dasharray: 1,2;
+}
+
+.highcharts-root .oes-hs-plotline-left-tight {
+  stroke: #fe6767;
+  stroke-dasharray: 1,2;
+}
+
+.highcharts-root .oes-hs-plotline-blue {
+  stroke: #ccc;
+  stroke-dasharray: 1,2;
+}
+
+.highcharts-root .highcharts-plot-line-label {
+  font-size: 0.6875rem;
+  fill: #3db0fb;
+}
+
 .highcharts-root .highcharts-series.highcharts-line-series {
   stroke-width: 2;
 }

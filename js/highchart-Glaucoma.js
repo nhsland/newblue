@@ -7,13 +7,11 @@ var MedChart, IOPchart, VAchart;
  * Highchart options (data and positioning only) - all UI stylng is handled in CSS
 */
 
-$(document).ready(function(){
-	// create the Medication chart
-	MedChart = new Highcharts.chart({
+var optionsMeds = {
 		chart: {
 			renderTo: 'chart-meds', 					// <div> id
 			className: 'oes-chart-medications-both',	// suffix: -right -left or -both (eyes)
-		    height: (8 * 40), 					// needs to be based on the number of series data
+		    height: (8 * 35), 					// needs to be based on the number of series data
 			spacing: [15, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
 		    type: 'columnrange', 				// Can be any of the chart types listed under plotOptions. ('line' default)	 
 		    inverted: true,
@@ -30,15 +28,15 @@ $(document).ready(function(){
 	
 	    xAxis: {
 	        visible: false,
+	        
     	},
 
 		yAxis: {
 			title:'',
 			type: 'datetime',
-            labels: {
-                // enabled: false
-            },
-            min: Date.UTC(2012, 11, 01)  // push yAxis (xAxis because inverted) out to show labels
+            min: Date.UTC(2012, 11, 1),  // push yAxis (xAxis because inverted) out to show labels
+            max: Date.UTC(2017, 6, 1),  // push yAxis (xAxis because inverted) out to show labels
+            // tickPixelInterval: 50,  // if this is too high the last tick isn't shown (default 100)
     	},
     	tooltip: {
             useHtml: true,
@@ -79,101 +77,87 @@ $(document).ready(function(){
 	    },
 
 	    series: [
-				   {
-					  name:"Latanoprost",
-					  className:"oes-hs-eye-right-dull",
-				      data:[
-				         [
-				            1365811200000,
-				            1373673600000
-				         ]
-				      ]
-				   },
-				   {
-				      name:"Ganfort",
-				      className:"oes-hs-eye-right-dull",
-					  data:[
-				         [
-				            1373673600000,
-				            1460592000000
-				         ]
-				      ]
-				   },
-				   {
-				      name:"Latanoprost",
-					  className:"oes-hs-eye-left-dull",
-				      data:[
-				         [
-				            1365811200000,
-				            1373673600000
-				         ]
-				      ]
-				   },
-				   {
-				      name:"Ganfort",
-					  className:"oes-hs-eye-left-dull",
-				      data:[
-				         [
-				            1373673600000,
-				            1436918400000
-				         ]
-				      ]
-				   },
-				   {
-				      name:"Brinzolamide",
-				      className:"oes-hs-eye-left-dull",
-				      data:[
-				         [
-				            1420848000000,
-				            1436918400000
-				         ]
-				      ]
-				   },
-				   {
-				      name:"PredForte",
-				      className:"oes-hs-eye-left-dull",
-				      data:[
-				         [
-				            1437004800000,
-				            1460592000000
-				         ]
-				      ]
-				   },
-				   {
-				      name:"Chloramphenicol",
-					  className:"oes-hs-eye-left-dull",
-				      data:[
-				         [
-				            1437004800000,
-				            1439424000000
-				         ]
-				      ]
-				   },
-				   {
-				      name:"Cosopt",
-					  className:"oes-hs-eye-left-dull",
-				      "data":[
-				         [
-				            1445472000000,
-				            1460592000000
-				         ]
-				      ]
-				   }
-				]
-	});
+		   {
+			  name:"Latanoprost",
+			  className:"oes-hs-eye-right-dull",
+		      data:[
+		         [ 1365811200000, 1373673600000 ]
+		      ]
+		   },
+		   {
+		      name:"Ganfort",
+		      className:"oes-hs-eye-right-dull",
+			  data:[
+		         [ 1373673600000, 1460592000000 ]
+		      ]
+		   },
+		   {
+		      name:"Latanoprost",
+			  className:"oes-hs-eye-left-dull",
+		      data:[
+		         [ 1365811200000, 1373673600000 ]
+		      ]
+		   },
+		   {
+		      name:"Ganfort",
+			  className:"oes-hs-eye-left-dull",
+		      data:[
+		         [ 1373673600000, 1436918400000 ]
+		      ]
+		   },
+		   {
+		      name:"Brinzolamide",
+		      className:"oes-hs-eye-left-dull",
+		      data:[
+		         [ 1420848000000, 1436918400000 ]
+		      ]
+		   },
+		   {
+		      name:"PredForte",
+		      className:"oes-hs-eye-left-dull",
+		      data:[
+		         [ 1437004800000, 1460592000000 ]
+		      ]
+		   },
+		   {
+		      name:"Chloramphenicol",
+			  className:"oes-hs-eye-left-dull",
+		      data:[
+		         [ 1437004800000, 1439424000000 ]
+		      ]
+		   },
+		   {
+		      name:"Cosopt",
+			  className:"oes-hs-eye-left-dull",
+		      "data":[
+		         [ 1445472000000, 1460592000000 ]
+		      ]
+		   }
+		]
+	};
 	
-	// Create the IOP chart
-    IOPchart = new Highcharts.StockChart({
+var optionsIOP = {
         chart: {
             animation: false,
             renderTo: 'chart-IOP',
-            height:500,
+            height:400,
             spacing: [15, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
         },
+        
+        credits: 		{ enabled: false },  // highcharts url (logo) removed
+        navigator: 		{ enabled: false },
+        scrollbar : 	{ enabled: false },
         
         title: {
             align: 'center',
             text: 'IOP',
+        },
+        
+        
+        legend: highHelp.chartLegend(),
+        
+        rangeSelector: {
+	        enabled: false,
         },
 
         tooltip: {
@@ -184,6 +168,9 @@ $(document).ready(function(){
 
         plotOptions: {
             series: {
+	            animation: {
+					duration: 0, // disable the inital draw animation 
+            	},
                 marker: {
                     enabled: true,
                     radius: 4,
@@ -195,138 +182,182 @@ $(document).ready(function(){
             }
         },
 
-        xAxis:{
-            labels: {
-                enabled: false
-            },
-            crosshair: {
-                snap: false,
-                enabled: true
-            },
-            type: 'datetime',
-            plotLines: [{
-   
+		yAxis: {
+			title: {
+				text: ''
+			}, 
+			opposite: true,   
+	        reversed: false,
+	        min:0,
+	        plotLines: [{
+		        className: 'oes-hs-plotline-right',
+	            value: 15,
+	            width: 1,
+	            label: {
+	                text: 'Target IOP (R)',
+	                align: 'left',
+	                y: -5,
+	                x: 0
+	            },
+	            zIndex:1,
+	        },{
+		        className: 'oes-hs-plotline-left',
+	            value: 10,
+	            width: 1,
+	            label: {
+	                text: 'Target IOP (L)',
+	                align: 'left',
+	                y: -5,
+	                x: 0
+	            },
+	            zIndex:1,
+	        }] 
+	    },
+	    
+	    xAxis: {
+		    type: 'datetime',
+	        title: {
+	            text: '',
+	        },
+	        crosshair: {
+			 	snap: true			// blue line
+      		},
+	        labels: {  
+	            y:25				// move labels below ticks
+	        },
+	        min: Date.UTC(2012, 11, 1),  // push yAxis (xAxis because inverted) out to show labels
+            max: Date.UTC(2017, 6, 1),  // push yAxis (xAxis because inverted) out to show labels
+			tickPixelInterval: 50,  // if this is too high the last tick isn't shown (default 100) 
+			
+			plotLines: [{
+                className: 'oes-hs-plotline-blue',
                 width: 1,
                 value: Date.UTC(2015,07,16),
                 label: {
                     text: 'M',
                     rotation: 90,
-                    
+                    x: 2,
                 },
                 zIndex: 1
             },{
+                className: 'oes-hs-plotline-blue',
                 width: 1,
                 value: Date.UTC(2015,08,06),
                 label: {
                     text: 'SC5FU/Dex',
                     rotation: 90,
-                    
+                    x: 2,
                 },
                 zIndex: 1
             },{
-                width: 1,
-                value: Date.UTC(2015,09,03),
-                label: {
-                    text: 'M',
-                    rotation: 90,
-                   
-                },
-                zIndex: 1
-            },{
+                className: 'oes-hs-plotline-blue',
                 width: 1,
                 value: Date.UTC(2015,09,03),
                 label: {
                     text: 'SC Dex',
                     rotation: 90,
-                    style: {
-                        color: '#61899b'
-                    }
+                    x: 2,
                 },
                 zIndex: 1
             },{
+                className: 'oes-hs-plotline-blue',
                 width: 1,
                 value: Date.UTC(2015,11,19),
                 label: {
                     text: 'Needling 5FU',
                     rotation: 90,
-                    style: {
-                        color: '#61899b'
-                    }
+                    x: 2,
                 },
                 zIndex: 1
+            },{
+                className: 'oes-hs-plotline-blue',
+                width: 1,
+                value: Date.UTC(2016,11,19),
+                label: {
+                    text: 'Needling 5FU',
+                    rotation: 90,
+                    x: 2,
+                },
+                zIndex: 1
+            },{
+	            className: 'oes-hs-plotline-left-tight',
+                width: 1,
+                value: Date.UTC(2017,4,21),
+                label: {
+                    text: 'Phakoemulsification and IOL',
+                    rotation: 90,
+                    x: 2,
+                },
+                zIndex: 1
+	            
+	            
             }]
-        },
 
-        yAxis: {
-            min: 0,
-            max: 60,
-            opposite: false,
-            labels: {
-                enabled: true,
-                align: 'left',
-                x: -20,
-                y: -2,
-                style: {
-                  color: '#fff'
-                }
-            },
-            style: {
-                color: '#fff'
-            },
-            plotLines: [{
-       
-                width: 1,
-              
-                label: {
-                    text: 'Target IOP ()',
-                
-                },
-                zIndex: 5
-            },
-            {
-              
-                width: 1,
-             
-                label: {
-                    text: 'Target IOP ()',
-                    
-                },
-                zIndex: 5
-            }
-            ]
-        },
-
-        credits: {
-            enabled: false
-        },
-
-        navigator: {
-            enabled: false
-        },
-
-        scrollbar : {
-            enabled : false
-        },
+			
+	    },
         
         series: [
         	{
-		    name: '(VA) ETDRS (R)',
+		    name: 'IOP (R)',
 		    type:'line',
 		    colorIndex: 11,				// Right Eye 11-13: 11 - solid; 12 - dotted; 13 - dashed
-	        data: [		{x:1,	y:55,	oct:1},
-	        			{x:2,	y:61,	oct:2},
-	        			{x:3,	y:70,	oct:3},
-	        			{x:4,	y:76,	oct:4},
-	        			{x:6,	y:80,	oct:5},
-	        			{x:8,	y:90,	oct:6},
-	        			{x:10,	y:85,	oct:7},
-	        			{x:14,	y:60,	oct:8},
-	        			{x:18,	y:55,	oct:9},
+	        data: [	{ x:Date.UTC(2013, 03, 05), y:21 },
+	        		{ x:Date.UTC(2014, 05, 20), y:15 },
+	        		{ x:Date.UTC(2014, 10, 21), y:12 },	
+	        		{ x:Date.UTC(2015, 03, 24), y:11 },	
+	        		{ x:Date.UTC(2015, 06, 23), y:11 },
+	        		{ x:Date.UTC(2015, 9, 8),	y:7 },
+	        		{ x:Date.UTC(2015, 11, 17), y:10 },
+	        		{ x:Date.UTC(2016, 1, 12), y:10 },
+	        		{ x:Date.UTC(2016, 2, 23), y:15 },
+	        		{ x:Date.UTC(2016, 11, 25), y:7 },
+	        		{ x:Date.UTC(2016, 11, 30), y:14 },
+	        		{ x:Date.UTC(2017, 2, 13), y:6 },
+	        		{ x:Date.UTC(2017, 4, 21), y:4 },
+	        		{ x:Date.UTC(2017, 5, 5), y:4 },
+	        		{ x:Date.UTC(2017, 5, 15), y:6 },
+	        		{ x:Date.UTC(2017, 5, 17), y:10 },
+	        		{ x:Date.UTC(2017, 5, 20), y:15 },
+	        ],
+			},{
+		    name: 'IOP (L)',
+		    type:'line',
+		    colorIndex: 21,				// Right Eye 11-13: 11 - solid; 12 - dotted; 13 - dashed
+	        data: [	{ x:Date.UTC(2013, 03, 05), y:20 },
+	        		{ x:Date.UTC(2014, 05, 20), y:11 },
+	        		{ x:Date.UTC(2014, 10, 21), y:12 },	
+	        		{ x:Date.UTC(2015, 03, 24), y:8 },	
+	        		{ x:Date.UTC(2015, 06, 23), y:12 },
+	        		{ x:Date.UTC(2015, 9, 8),	y:8 },
+	        		{ x:Date.UTC(2015, 11, 17), y:9 },
+	        		{ x:Date.UTC(2016, 1, 12), y:12 },
+	        		{ x:Date.UTC(2016, 2, 23), y:16 },
+	        		{ x:Date.UTC(2016, 11, 25), y:6 },
+	        		{ x:Date.UTC(2016, 11, 30), y:9 },
+	        		{ x:Date.UTC(2017, 2, 13), y:6 },
+	        		{ x:Date.UTC(2017, 2, 16), y:6 },
+	        		{ x:Date.UTC(2017, 4, 21), y:15 },
+	        		{ x:Date.UTC(2017, 5, 5), y:2},
+	        		{ x:Date.UTC(2017, 5, 15), y:5 },
+	        		{ x:Date.UTC(2017, 5, 17), y:14 },
+	        		{ x:Date.UTC(2017, 5, 20), y:4 },
 	        ],
 			}
 	    ]
         
-    });
+    };
+
+
+
+$(document).ready(function(){
+	// Highcharts.chart 
+	// Highchart.StockChart  // Stock Chart has different defaults
+	
+	// create the Medication chart
+	MedChart = new Highcharts.chart( optionsMeds );
+	
+	// Create the IOP chart
+    IOPchart = new Highcharts.chart( optionsIOP );
 	
 	
 }); // ready! 
