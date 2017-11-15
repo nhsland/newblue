@@ -32,7 +32,6 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
   fill: $oe-hs-bg;
 }
 
-
 // SVG <svg>
 // 
 .highcharts-root {
@@ -161,6 +160,8 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 		}
 	}
 	
+	
+	
 	// set up Markers - flags over drug banners
 	.highcharts-markers {
 		cursor: pointer;
@@ -274,6 +275,12 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 	stroke: $oe-hs-axes;
 	.highcharts-tick {	// axis line increments
 		stroke: $oe-hs-axes;
+	}
+	
+	// use this class to 'hide' if you can't make it visible:false
+	// e.g. you need the plotLines to show up on the xAxis
+	&.oes-hide-xAxis-lines { 
+		display:none;
 	}
 }
 

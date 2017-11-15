@@ -3,6 +3,19 @@
 
 var chartHeight = 350;					// fixed height
 var MedChart, IOPchart, VAchart;
+
+// set the axes MIN and Max to the same
+var axisMin = Date.UTC(2012, 11, 1); // push axis out to show Medication labels
+var axisMax = Date.UTC(2017, 12, 1);
+
+// resize chart area
+// called on resize
+function updateChartSize(size){
+	MedChart.setSize( size, MedChart.height, false );
+	IOPchart.setSize( size, IOPchart.height, false );
+	VAchart.setSize( size, VAchart.height, false );
+}
+
 /*
  * Highchart options (data and positioning only) - all UI stylng is handled in CSS
 */
@@ -11,7 +24,8 @@ var optionsMeds = {
 		chart: {
 			renderTo: 'chart-meds', 					// <div> id
 			className: 'oes-chart-medications-both',	// suffix: -right -left or -both (eyes)
-		    height: (8 * 35), 					// needs to be based on the number of series data
+		    height: (3 * 42), 					// needs to be based on the number of series data
+		    marginRight: 85,					// plot to chart edge (align right side)
 			spacing: [15, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
 		    type: 'columnrange', 				// Can be any of the chart types listed under plotOptions. ('line' default)	 
 		    inverted: true,
@@ -20,7 +34,7 @@ var optionsMeds = {
 		credits: { enabled: false },  // highcharts url (logo) removed
 		
 	    title: {
-	        text: 'Medications',
+	        text: 'Medications, IOP, VA & MD',
 	        align: 'center',
 	        margin:0,
 	        y:0, 				// title needs offset to not go under legend in small mode
@@ -34,9 +48,15 @@ var optionsMeds = {
 		yAxis: {
 			title:'',
 			type: 'datetime',
-            min: Date.UTC(2012, 11, 1),  // push yAxis (xAxis because inverted) out to show labels
-            max: Date.UTC(2017, 6, 1),  // push yAxis (xAxis because inverted) out to show labels
-            // tickPixelInterval: 50,  // if this is too high the last tick isn't shown (default 100)
+			labels: {  
+		        enabled:false,
+	        },
+			crosshair: {
+		    	snap:false,    
+		    },
+            min: axisMin,  
+            max: axisMax, 
+            tickPixelInterval: 100,  // if this is too high the last tick isn't shown (default 100)  
     	},
     	tooltip: {
             useHtml: true,
@@ -81,56 +101,21 @@ var optionsMeds = {
 			  name:"Latanoprost",
 			  className:"oes-hs-eye-right-dull",
 		      data:[
-		         [ 1365811200000, 1373673600000 ]
+		         [ Date.UTC(2013,03,05), Date.UTC(2013,09,30) ]
 		      ]
 		   },
 		   {
 		      name:"Ganfort",
 		      className:"oes-hs-eye-right-dull",
 			  data:[
-		         [ 1373673600000, 1460592000000 ]
+		         [ Date.UTC(2013,09,30), axisMax ]
 		      ]
 		   },
 		   {
-		      name:"Latanoprost",
-			  className:"oes-hs-eye-left-dull",
-		      data:[
-		         [ 1365811200000, 1373673600000 ]
-		      ]
-		   },
-		   {
-		      name:"Ganfort",
-			  className:"oes-hs-eye-left-dull",
-		      data:[
-		         [ 1373673600000, 1436918400000 ]
-		      ]
-		   },
-		   {
-		      name:"Brinzolamide",
-		      className:"oes-hs-eye-left-dull",
-		      data:[
-		         [ 1420848000000, 1436918400000 ]
-		      ]
-		   },
-		   {
-		      name:"PredForte",
-		      className:"oes-hs-eye-left-dull",
-		      data:[
-		         [ 1437004800000, 1460592000000 ]
-		      ]
-		   },
-		   {
-		      name:"Chloramphenicol",
-			  className:"oes-hs-eye-left-dull",
-		      data:[
-		         [ 1437004800000, 1439424000000 ]
-		      ]
-		   },
-		   {
-		      name:"Cosopt",
-			  className:"oes-hs-eye-left-dull",
-		      "data":[
-		         [ 1445472000000, 1460592000000 ]
+		      name:"Azopt",
+		      className:"oes-hs-eye-right-dull",
+			  data:[
+		         [ Date.UTC(2015,03,24), axisMax ]
 		      ]
 		   }
 		]
@@ -139,7 +124,8 @@ var optionsMeds = {
 var optionsIOP = {
         chart: {
             renderTo: 'chart-IOP',
-            height:400,
+            height:300,
+            marginRight: 85,					// plot to chart edge (align right side)
             spacing: [15, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
         },
         
@@ -149,7 +135,7 @@ var optionsIOP = {
         
         title: {
             align: 'center',
-            text: 'IOP',
+            text: '',
         },
         
         
@@ -160,9 +146,8 @@ var optionsIOP = {
         },
 
         tooltip: {
-            shared:true,
-            followTouchMove: false,
-            xDateFormat: '<b>%d/%m/%Y</b>',
+            shared:false,
+            xDateFormat: '%d/%m/%Y',
         },
 
         plotOptions: {
@@ -175,6 +160,7 @@ var optionsIOP = {
                     radius: 4,
                     symbol: "circle"
                 },
+                
             },
             line: {
                 showInLegend: true
@@ -214,19 +200,23 @@ var optionsIOP = {
 	    },
 	    
 	    xAxis: {
+		    className: "oes-hide-xAxis-lines", // can't make visible: false because of the plotlines!
 		    type: 'datetime',
 	        title: {
 	            text: '',
 	        },
+	        
 	        crosshair: {
-			 	snap: true			// blue line
-      		},
+		    	snap:false,    
+		    },
+	        
 	        labels: {  
+		        enabled:false,
 	            y:25				// move labels below ticks
 	        },
-	        min: Date.UTC(2012, 11, 1),  // push yAxis (xAxis because inverted) out to show labels
-            max: Date.UTC(2017, 6, 1),  // push yAxis (xAxis because inverted) out to show labels
-			tickPixelInterval: 50,  // if this is too high the last tick isn't shown (default 100) 
+	        min: axisMin,  
+            max: axisMax,
+			tickPixelInterval: 100,  // if this is too high the last tick isn't shown (default 100) 
 			
 			plotLines: [{
                 className: 'oes-hs-plotline-blue',
@@ -283,7 +273,7 @@ var optionsIOP = {
                 width: 1,
                 value: Date.UTC(2017,4,21),
                 label: {
-                    text: 'Phakoemulsification and IOL',
+                    text: 'Phaco + IOL',
                     rotation: 90,
                     x: 2,
                 },
@@ -314,7 +304,9 @@ var optionsIOP = {
 	        		{ x:Date.UTC(2017, 5, 17), 	y:10 },
 	        		{ x:Date.UTC(2017, 5, 20), 	y:15 },
 	        ],
-			},{
+			},
+/*
+			{
 		    name: 'IOP (L)',
 		    type:'line',
 		    colorIndex: 21,				// Right Eye 11-13: 11 - solid; 12 - dotted; 13 - dashed
@@ -338,6 +330,7 @@ var optionsIOP = {
 	        		{ x:Date.UTC(2017, 5, 20), 	y:4 },
 	        ],
 			}
+*/
 	    ] 
     };
     
@@ -346,20 +339,34 @@ var optionsVA = {
 		chart: {
             renderTo: 'chart-VA-MD',
             height:400,
+            marginRight: 85,					// plot to chart edge (align right side)
             spacing: [15, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
         },
         
         credits: 		{ enabled: false },  // highcharts url (logo) removed
-        navigator: 		{ enabled: false },
-        scrollbar: 	{ enabled: false },
+        scrollbar: 		{ enabled: false },
         
         title: {
             align: 'center',
-            text: 'VA / MD',
+            text: '',
         },
 
-        legend: 		highHelp.chartLegend(),
-        navigator: 		highHelp.chartNavigator(),
+        legend: highHelp.chartLegend(),
+        
+        tooltip: {
+            shared:false,
+            xDateFormat: '%d/%m/%Y',
+        },
+        
+        navigator: {
+        	enabled: true,
+        	xAxis: {
+	        	labels : {
+		        	enabled: false,
+	        	}
+        	}
+    	},
+    	
         rangeSelector: 	highHelp.chartRangeSelector(-20,-10),	// offset from bottom right (x,y) "Show all" button
         
         plotOptions: {
@@ -383,40 +390,64 @@ var optionsVA = {
 	        title: {
 	            text: '',
 	        },
+	        
 	        crosshair: {
-			 	snap: true			// blue line
-      		},
+		    	snap:false,    
+		    },
+	        
 	        labels: {  
 	            y:25				// move labels below ticks
 	        },
-	        min: Date.UTC(2012, 11, 1),  // push yAxis (xAxis because inverted) out to show labels
-            max: Date.UTC(2017, 6, 1),  // push yAxis (xAxis because inverted) out to show labels
-			tickPixelInterval: 50,  // if this is too high the last tick isn't shown (default 100) 
+	        min: axisMin,  
+            max: axisMax,
+			tickPixelInterval: 100,  // if this is too high the last tick isn't shown (default 100) 
 		},
 		
-		yAxis: {
+		yAxis: [{
 			title: {
 				text: ''
 			}, 
 			opposite: true,   
 	        reversed: false,
-	    },
+	    },{
+		    title: {
+				text: ''
+			}, 
+			opposite: true,   
+	        reversed: false,
+	        labels: {
+		        format: '{value} dB',
+	        },
+	    }],
 
 		series: [
 			{
 		    name: 'VA (R)',
 		    type:'line',
 		    colorIndex: 11,				// Right Eye 11-13: 11 - solid; 12 - dotted; 13 - dashed
+		    yAxis:0,
+		    showInNavigator: true,
 		    data: [
 		    [1362445200000,1],[1362445200000,0.48],[1364860800000,0.26],[1367884800000,0.1],[1371513600000,0],[1374537600000,0.1],[1381795200000,0.1],[1386032400000,0.2],[1394499600000,0.4],[1397520000000,0.2],[1400544000000,0.18],[1413849600000,0.2],[1420506000000,0.22],[1427158800000,0.2],[1435017600000,0.34],[1441670400000,0.3],[1447722000000,0.34],[1452560400000,0.4],[1456189200000,0.4],[1480035600000,-0.08],[1480467600000,0.3],[1486342800000,-0.08],[1487552400000,-0.32],[1488243600000,-0.18],[1488502800000,0.18],[1489626000000,0.18],[1492732800000,0.18],[1493769600000,0.18],[1493942400000,-0.08],[1494806400000,0.18],[1494979200000,-0.08],[1496448000000,0.3],[1496620800000,0],[1496966400000,-0.18],[1502668800000,0.18],[1503619200000,0.18],[1508976000000,-0.08]
 		    ],
 			},{
-		    name: 'VA (L)',
+		    name: 'MD (R)',
 		    type:'line',
-		    colorIndex: 21,				// Right Eye 11-13: 11 - solid; 12 - dotted; 13 - dashed
+		    colorIndex: 12,				// Right Eye 11-13: 11 - solid; 12 - dotted; 13 - dashed
+		    yAxis:1,
+		    showInNavigator: false,
 		    data: [
-		    [1362445200000,0.48],[1362445200000,0.18],[1364860800000,0.06],[1367884800000,0],[1371513600000,0.06],[1374537600000,0.02],[1381795200000,-0.06],[1386032400000,0.08],[1394499600000,0.1],[1397520000000,0],[1400544000000,-0.06],[1413849600000,0.06],[1420506000000,0.16],[1427158800000,-0.06],[1435017600000,0.04],[1441670400000,-0.04],[1447722000000,-0.06],[1452560400000,0.02],[1456189200000,0],[1480035600000,-0.08],[1480467600000,0],[1486342800000,-0.18],[1487552400000,-0.18],[1488243600000,-0.18],[1488502800000,0.18],[1489626000000,0.18],[1492732800000,0.48],[1493769600000,0],[1493942400000,-0.08],[1494806400000,0.18],[1494979200000,0],[1496448000000,0.6],[1496620800000,-0.18],[1496966400000,-0.18],[1502668800000,0.18],[1503619200000,0],[1508976000000,-0.08]
-		    ],
+		    [Date.UTC(2013, 03,05),-3.5],
+			[Date.UTC(2013, 7,23),-4.5],
+			[Date.UTC(2013, 12,3),-4.5],
+			[Date.UTC(2014, 5,20),-6.7],
+			[Date.UTC(2014, 10,21),-9.2],
+			[Date.UTC(2015, 3,24),-6.2],
+			[Date.UTC(2015, 6,23),-5.7],
+			[Date.UTC(2015, 11,17),-6.2],
+			[Date.UTC(2016, 11,25),-8.9],
+			[Date.UTC(2017, 6,05),-14.8]
+			]
 			}
 		] 
 
@@ -424,9 +455,29 @@ var optionsVA = {
 	};
 
 
+
+  
+
+
 $(document).ready(function(){
 	// Highcharts.chart 
 	// Highchart.StockChart  // Stock Chart has different defaults
+
+    /**
+	 * In order to synchronize tooltips and crosshairs, override the
+	 * built-in events with handlers defined on the parent element.
+	 */
+	$('#charts-container').bind('mousemove touchmove touchstart', function (e) {
+	  	
+       var event = IOPchart.pointer.normalize(e.originalEvent); // Find coordinates within the chart
+       var point = IOPchart.series[0].searchPoint(event, true); // Get the hovered point
+ 
+       VAchart.xAxis[0].drawCrosshair(event);
+       IOPchart.xAxis[0].drawCrosshair(event);
+       MedChart.yAxis[0].drawCrosshair(event);
+
+	});
+	
 	
 	// create the Medication chart
 	MedChart = new Highcharts.chart( optionsMeds );
@@ -436,7 +487,18 @@ $(document).ready(function(){
     
     // VA & MD
     VAchart = new Highcharts.chart( optionsVA );
+    
+    
+     // VA has Navigator
+    Highcharts.addEvent(VAchart.xAxis[0], 'afterSetExtremes', function (e) {
+	   // match Extremes on other charts to VA:
+	   IOPchart.xAxis[0].setExtremes( e.min, e.max);
+	   MedChart.yAxis[0].setExtremes( e.min, e.max);   	
+
+    });
 	
+
+		
 	
 }); // ready! 
 

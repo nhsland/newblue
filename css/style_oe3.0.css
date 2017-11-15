@@ -2997,6 +2997,12 @@ html {
   margin: 0 0 10px 0;
 }
 
+.oescape #vfcp-date-text-range {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+}
+
 .oescape .oescape-images {
   background: #141e2b;
 }
@@ -3007,15 +3013,19 @@ html {
   padding: 5px;
 }
 
-.oescape .oescape-images .oct-stack, .oescape .oescape-images .ffa-stack,
+.oescape .oescape-images .oct-stack, .oescape .oescape-images .ffa-stack, .oescape .oescape-images .vf-stack,
 .oescape .oescape-images .img-stack {
   cursor: crosshair;
   width: 100%;
 }
 
-.oescape .oescape-images .oct-stack img, .oescape .oescape-images .ffa-stack img,
+.oescape .oescape-images .oct-stack img, .oescape .oescape-images .ffa-stack img, .oescape .oescape-images .vf-stack img,
 .oescape .oescape-images .img-stack img {
   width: 100%;
+}
+
+.oescape .oes-data-container {
+  padding: 20px;
 }
 
 .oescape .oes-assessment-panel {
@@ -3283,6 +3293,10 @@ html {
 
 .highcharts-xaxis .highcharts-tick {
   stroke: #969696;
+}
+
+.highcharts-xaxis.oes-hide-xAxis-lines {
+  display: none;
 }
 
 .highcharts-yaxis-grid .highcharts-grid-line {

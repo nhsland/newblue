@@ -94,8 +94,8 @@ var oeui = {
 		});
 		
   		function checkBrowserSize(){
-	  		// not in MR OEscape!
-	  		var el = document.getElementById('chart');
+	  		// not in OEscape mode.
+	  		var el = document.getElementById('oescape-layout');
 	  		if(el !== null) return; 
 	  		
 	  		// min width for fixing Activity Panel (allows some resizing)	

@@ -17,7 +17,10 @@ var oes = {
 		oes.tabButtons();
 		
 		// stackAnimations
-		oes.stackAnimation( $('.oct-stack'),9,oes.changeOCT );
+		console.log( $('.oct-stack').children().length-1 );
+		
+		
+		oes.stackAnimation( $('.oct-stack'),$('.oct-stack').children().length,oes.changeOCT );
 		oes.stackAnimation( $('.ffa-stack'),2,oes.changeFFA );
 	
 	},
@@ -35,7 +38,11 @@ var oes = {
 		
 		oes.octNum = n;
 		
-		changeAssessmentPanel(n);	// MR demo of Assessment Panel
+		// MR demo of Assessment Panel only:
+		var el = document.getElementById('ass-right');
+	    if(el !== null){
+			changeAssessmentPanel(n);	
+		} 
 	},
 	
 	/*
@@ -74,50 +81,7 @@ var oes = {
 	* - tab buttons for OCT, FFA, Images
 	*/
 	tabButtons:function(){
-		var octBtn = $('#js-oct-btn');
-		var ffaBtn = $('#js-ffa-btn');
-		var imgBtn = $('#js-img-btn');
 		
-		var stackOCT = $('.oct-stack');
-		var stackFFA = $('.ffa-stack');
-		var stactIMG = $('.img-stack');
-		var assPanel = $('.oes-assessment-panel');
-		
-		// default
-		octBtn.addClass('selected');
-		
-		octBtn.click( function(){
-			resetStacks();
-			stackOCT.show();
-			assPanel.show();
-			
-			$(this).addClass('selected');
-		});
-		
-		ffaBtn.click( function(){
-			resetStacks();
-			stackFFA.removeClass('hidden').show();
-			assPanel.show();
-			
-			$(this).addClass('selected');
-		});
-		
-		imgBtn.click( function(){
-			resetStacks();
-			stactIMG.removeClass('hidden').show();
-			
-			$(this).addClass('selected');
-		});
-		
-		function resetStacks(){
-			ffaBtn.removeClass('selected');
-			octBtn.removeClass('selected');
-			imgBtn.removeClass('selected');
-			
-			stackOCT.hide();
-			stackFFA.hide();
-			stactIMG.hide();
-		}
 		
 	}
 		

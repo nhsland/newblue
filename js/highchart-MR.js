@@ -68,7 +68,7 @@ var options = {
 	            text: 'Time (months)',
 	        },
 	        crosshair: {
-			 	snap: true			// blue line
+			 	snap: false,			// blue line
       		},
 	        labels: {  
 	            y:25				// move labels below ticks
