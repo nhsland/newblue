@@ -1,11 +1,5 @@
 var fixedPoint = {point: undefined, side: undefined, color: undefined};
-var marginLeft = 95,
-    marginRight = 50,
-    backgroundColor = '#5a5a5a',
-    plotBackgroundColor = '#5a5a5a',
-    lineWidth = 1,
-    radius = 4;
-    
+var lineWidth = 1;
 var VFImages;    
 var RegChart;
 var lastIndex = 0;
@@ -15,10 +9,10 @@ var dateIndexes = [];
 
 var optionsReg = {
 		chart: {
-			animation:false,
-            renderTo: 'chart-regression',
+            renderTo: 'js-hs-chart-regression',
             height:300,
-            spacing: [15, 50, 15, 50], 			// then make space for title - default: [10, 10, 15, 10] 
+            width:400,							// fixed because it was messing up the flex-layout
+            spacing: [20, 10, 20, 10], 			// then make space for title - default: [10, 10, 15, 10] 
         },
         
         credits: 		{ enabled: false },  // highcharts url (logo) removed
@@ -43,7 +37,6 @@ var optionsReg = {
             	},
                 marker: {
                     enabled: true,
-                    radius: 4,
                     symbol: "circle"
                 },
             },
@@ -97,15 +90,17 @@ var optionsReg = {
                 name: 'Observations',
                 data: [],
                 marker: {
-                    radius: radius,
                     symbol: 'circle'
                 }
             }]
 
 	
 	};
-
-
+	
+/**
+	Imported JS from OE to demo VF plots. 
+	Original code by Tamas Vedelek and modified for IDG demo		
+**/
 
 $(document).ready(function(){
 	// Highcharts.chart 
@@ -138,10 +133,7 @@ $(document).ready(function(){
 	    $('#vfcp-date-text-range').text( 'Plots: 1 to ' + (val+1) );
 	    
 	    changeVFImages( val, $('#vfgreyscale_right').width() );
-	    setPlotColours(2,currentIndexDate);
-	    
-	    
-	    
+	    setPlotColours(2,currentIndexDate); 
     });
     
 		
@@ -150,10 +142,10 @@ $(document).ready(function(){
 
 function loadAllVFImages(){
     $.ajax({
-        url: '/newblue/js/vf.json',
+        url: '/newblue/js/highchart-demo-js/fields.json',
         type: "GET",
         dataType: "json",
-        data : {
+        data: {
             eventType: 'OphInVisualfields',
             mediaType: 'vfgreyscale',
         },

@@ -10,15 +10,6 @@ It is simply provided to demo & review UI design work on IDG idg.knowego.com
 
 var highHelp = {
 	
-	chartTitle:function(title){
-		return {
-	        text: title,
-	        align: 'center',
-	        margin:60,
-	        y:-10, // title needs offset to not go under legend in small mode
-	    }  
-	},
-	
 	chartLegend:function (){
 		return {
 			enabled:true, 
@@ -65,6 +56,7 @@ var highHelp = {
 	},
 	
 	// --------------------  Drug Banner Area under xAxis
+	// this needs some work to be more flexible but will do for now
 	
 	drugBanners:[],
 	

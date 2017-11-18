@@ -82,6 +82,11 @@ td {
   padding: 0;
 }
 
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 ::selection {
   background: #89d8e9;
   text-shadow: none;
@@ -633,6 +638,10 @@ strong {
 
 .flex-layout.flex-left {
   justify-content: flex-start;
+}
+
+.flex-layout.flex-center {
+  justify-content: center;
 }
 
 .flex-layout.flex-top {
@@ -1412,8 +1421,6 @@ html {
 .patient-popup-quicklook .summary-data table {
   margin: 20px 0 0 0;
   width: 99%;
-  border-spacing: 0;
-  border-collapse: collapse;
 }
 
 .patient-popup-quicklook .summary-data table th, .patient-popup-quicklook .summary-data table td {
@@ -1540,7 +1547,6 @@ html {
 
 .patient-popup-demographics .demographics .patient-summary {
   width: 100%;
-  border-collapse: collapse;
 }
 
 .patient-popup-demographics .demographics .patient-summary tr {
@@ -1571,7 +1577,6 @@ html {
 
 .patient-popup-allergies-risks table {
   margin: 15px 0 0 0;
-  border-collapse: collapse;
 }
 
 .patient-popup-allergies-risks table tr {
@@ -2391,10 +2396,6 @@ html {
   position: relative;
 }
 
-.main-event .element table {
-  border-collapse: collapse;
-}
-
 .main-event .element table.row-end-icon-action td:last-child, .main-event .element table.row-end-icon-action th:last-child {
   text-align: right;
 }
@@ -2866,10 +2867,6 @@ html {
   padding: 2px 4px 4px 10px;
 }
 
-.lightening-viewer .oe-letter-timeline table {
-  border-collapse: collapse;
-}
-
 .lightening-viewer .oe-letter-timeline table td {
   padding: 6px 0 3px 4px;
   color: rgba(255, 255, 255, 0.5);
@@ -2981,75 +2978,106 @@ html {
   background: #141e2b;
 }
 
-.oescape .chart-area {
+.oescape .oes-left-side {
   background: #141e2b;
-  padding: 20px 0 0 0;
+  padding: 20px 0 20px 0;
 }
 
-.oescape .management-summary {
-  padding: 20px 0 20px 20px;
-}
-
-.oescape .management-summary h3 {
-  font-size: 0.875rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
-  margin: 0 0 10px 0;
-}
-
-.oescape #vfcp-date-text-range {
-  font-size: 0.6875rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.oescape .oescape-images {
+.oescape .oes-right-side {
   background: #141e2b;
+  margin: 0 10px 0 20px;
 }
 
-.oescape .oescape-images .oes-stack-select {
+.oescape .oes-right-side .oes-stack-select {
   background: #141e2b;
   text-align: center;
   padding: 5px;
 }
 
-.oescape .oescape-images .oct-stack, .oescape .oescape-images .ffa-stack, .oescape .oescape-images .vf-stack,
-.oescape .oescape-images .img-stack {
+.oescape .oes-right-side .oes-image-stack {
   cursor: crosshair;
   width: 100%;
 }
 
-.oescape .oescape-images .oct-stack img, .oescape .oescape-images .ffa-stack img, .oescape .oescape-images .vf-stack img,
-.oescape .oescape-images .img-stack img {
+.oescape .oes-right-side .oes-image-stack img {
   width: 100%;
+}
+
+.oescape .oes-right-side .oes-image-stack.portrait-images {
+  text-align: center;
+  width: 100%;
+}
+
+.oescape .oes-right-side .oes-image-stack.portrait-images img {
+  width: 70%;
+}
+
+.oescape .highchart-area {
+  background: #141e2b;
 }
 
 .oescape .oes-data-container {
   padding: 20px;
 }
 
-.oescape .oes-assessment-panel {
-  padding: 10px 0;
+.oescape .oes-data-row-input {
+  margin: 25px 0 25px 0;
   font-size: 0.6875rem;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.oescape .oes-assessment-panel input[type="checkbox"] {
-  background: pink;
+.oescape .oes-data-row-input .data-row-title {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.oescape .oes-assessment-panel table {
+.oescape .oes-data-row-input table {
   width: 100%;
-  border-collapse: collapse;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.oescape .oes-assessment-panel table td {
+.oescape .oes-data-row-input table td {
   text-align: center;
   border-left: 1px solid rgba(204, 204, 204, 0.1);
 }
 
-.oescape .oes-assessment-panel table td:first-child {
+.oescape .oes-data-row-input table td:first-child {
   border-left: none;
+}
+
+.oescape .oes-data-element-input {
+  margin: 25px auto;
+  max-width: 900px;
+}
+
+.oescape .oes-data-element-input h3 {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 10px 0;
+}
+
+.oescape .oes-visual-fields {
+  width: 70%;
+  margin: 10px auto;
+}
+
+.oescape .oes-visual-fields .vfcolorplot svg {
+  width: 70%;
+}
+
+.oescape .oes-visual-fields .vfimage {
+  background: #fff;
+  padding: 0 3px;
+  border-radius: 3px;
+  width: 55%;
+}
+
+.oescape #vfcp-date-text-range {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .oescape .oes-summary {

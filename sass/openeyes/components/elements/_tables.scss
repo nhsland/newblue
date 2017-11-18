@@ -4,8 +4,7 @@
 	.element {
 		
 		table {
-			border-collapse: collapse;
-			
+						
 			// for tables that have icon as actions at the end (trash)
 			// <th> should be blank but in case something is added
 			&.row-end-icon-action {

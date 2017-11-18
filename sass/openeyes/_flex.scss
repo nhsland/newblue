@@ -3,20 +3,23 @@
 .flex-layout {
 	display:flex;
 	align-items:center;				// vertical alignment (no stretch)
-	justify-content:space-between; 	// make sure items align to left and right edge;
+	justify-content:space-between; 	// make sure items align to left AND right edge;
 	
+	// horizontal alignments
 	&.flex-right {
 		justify-content:flex-end; 	// group items to the right
 	}
-	
 	&.flex-left {
 		justify-content:flex-start; // group items to the left
 	}
+	&.flex-center {
+		justify-content:center; // group items to the left
+	}
 	
+	// verical alignments
 	&.flex-top {
 		align-items:flex-start;		// vertical top
 	}
-	
 	&.flex-stretch {
 		align-items:stretch;		// vertical alignment (no stretch)
 	}

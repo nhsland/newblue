@@ -1,8 +1,8 @@
 // highSTOCK https://api.highcharts.com/highstock/
 
 
-var chartHeight = 350;					// fixed height
-var MedChart, IOPchart, VAchart;
+var marginRight = 90;	// plot to chart edge (to align right side)
+
 
 // set the axes MIN and Max to the same
 var axisMin = Date.UTC(2012, 11, 1); // push axis out to show Medication labels
@@ -11,9 +11,7 @@ var axisMax = Date.UTC(2017, 12, 1);
 // resize chart area
 // called on resize
 function updateChartSize(size){
-	MedChart.setSize( size, MedChart.height, false );
-	IOPchart.setSize( size, IOPchart.height, false );
-	VAchart.setSize( size, VAchart.height, false );
+	
 }
 
 /*
@@ -25,7 +23,7 @@ var optionsMeds = {
 			renderTo: 'chart-meds', 					// <div> id
 			className: 'oes-chart-medications-both',	// suffix: -right -left or -both (eyes)
 		    height: (3 * 42), 					// needs to be based on the number of series data
-		    marginRight: 85,					// plot to chart edge (align right side)
+		    marginRight: marginRight,					// plot to chart edge (align right side)
 			spacing: [15, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
 		    type: 'columnrange', 				// Can be any of the chart types listed under plotOptions. ('line' default)	 
 		    inverted: true,
@@ -125,7 +123,7 @@ var optionsIOP = {
         chart: {
             renderTo: 'chart-IOP',
             height:300,
-            marginRight: 85,					// plot to chart edge (align right side)
+            marginRight: marginRight,					// plot to chart edge (align right side)
             spacing: [15, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
         },
         
@@ -303,34 +301,8 @@ var optionsIOP = {
 	        		{ x:Date.UTC(2017, 5, 15), 	y:6 },
 	        		{ x:Date.UTC(2017, 5, 17), 	y:10 },
 	        		{ x:Date.UTC(2017, 5, 20), 	y:15 },
-	        ],
-			},
-/*
-			{
-		    name: 'IOP (L)',
-		    type:'line',
-		    colorIndex: 21,				// Right Eye 11-13: 11 - solid; 12 - dotted; 13 - dashed
-	        data: [	{ x:Date.UTC(2013, 03, 05), y:20 },
-	        		{ x:Date.UTC(2014, 05, 20), y:11 },
-	        		{ x:Date.UTC(2014, 10, 21), y:12 },	
-	        		{ x:Date.UTC(2015, 03, 24), y:8 },	
-	        		{ x:Date.UTC(2015, 06, 23), y:12 },
-	        		{ x:Date.UTC(2015, 9, 8),	y:8 },
-	        		{ x:Date.UTC(2015, 11, 17), y:9 },
-	        		{ x:Date.UTC(2016, 1, 12), 	y:12 },
-	        		{ x:Date.UTC(2016, 2, 23), 	y:16 },
-	        		{ x:Date.UTC(2016, 11, 25), y:6 },
-	        		{ x:Date.UTC(2016, 11, 30), y:9 },
-	        		{ x:Date.UTC(2017, 2, 13), 	y:6 },
-	        		{ x:Date.UTC(2017, 2, 16), 	y:6 },
-	        		{ x:Date.UTC(2017, 4, 21), 	y:15 },
-	        		{ x:Date.UTC(2017, 5, 5), 	y:2},
-	        		{ x:Date.UTC(2017, 5, 15), 	y:5 },
-	        		{ x:Date.UTC(2017, 5, 17), 	y:14 },
-	        		{ x:Date.UTC(2017, 5, 20), 	y:4 },
-	        ],
+					],
 			}
-*/
 	    ] 
     };
     
@@ -339,7 +311,7 @@ var optionsVA = {
 		chart: {
             renderTo: 'chart-VA-MD',
             height:400,
-            marginRight: 85,					// plot to chart edge (align right side)
+            marginRight: marginRight,					// plot to chart edge (align right side)
             spacing: [15, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
         },
         
@@ -367,7 +339,7 @@ var optionsVA = {
         	}
     	},
     	
-        rangeSelector: 	highHelp.chartRangeSelector(-20,-10),	// offset from bottom right (x,y) "Show all" button
+        rangeSelector: 	highHelp.chartRangeSelector(-42,-5),	// offset from bottom right (x,y) "Show all" button
         
         plotOptions: {
             series: {
@@ -455,52 +427,6 @@ var optionsVA = {
 	};
 
 
-
-  
-
-
-$(document).ready(function(){
-	// Highcharts.chart 
-	// Highchart.StockChart  // Stock Chart has different defaults
-
-    /**
-	 * In order to synchronize tooltips and crosshairs, override the
-	 * built-in events with handlers defined on the parent element.
-	 */
-	$('#charts-container').bind('mousemove touchmove touchstart', function (e) {
-	  	
-       var event = IOPchart.pointer.normalize(e.originalEvent); // Find coordinates within the chart
-       var point = IOPchart.series[0].searchPoint(event, true); // Get the hovered point
- 
-       VAchart.xAxis[0].drawCrosshair(event);
-       IOPchart.xAxis[0].drawCrosshair(event);
-       MedChart.yAxis[0].drawCrosshair(event);
-
-	});
-	
-	
-	// create the Medication chart
-	MedChart = new Highcharts.chart( optionsMeds );
-	
-	// Create the IOP chart
-    IOPchart = new Highcharts.chart( optionsIOP );
-    
-    // VA & MD
-    VAchart = new Highcharts.chart( optionsVA );
-    
-    
-     // VA has Navigator
-    Highcharts.addEvent(VAchart.xAxis[0], 'afterSetExtremes', function (e) {
-	   // match Extremes on other charts to VA:
-	   IOPchart.xAxis[0].setExtremes( e.min, e.max);
-	   MedChart.yAxis[0].setExtremes( e.min, e.max);   	
-
-    });
-	
-
-		
-	
-}); // ready! 
 
 
 	

@@ -5,67 +5,74 @@
 .oescape {
 	background:$oe-blue-darker;
 	
-	// highchart wrapper
-	// the 'min-width' must be inline to stop intital redraw issues (see DOM)
-	.chart-area {
-		background: $oe-ui-blue-darker;
-		padding:20px 0 0 0;
+	// left side 'column', this side is controller
+	// by the js area resizer and the 'min-width' 
+	// must be inline to stop intital redraw issues (see DOM)
+	.oes-left-side {
+		background: $oe-ui-blue-darker; // Pro-themed only! 
+		padding:20px 0 20px 0;
 	}
 	
-	.management-summary {
-		padding:20px 0 20px 20px;
-		h3 {
-			@include font-size(14);
-			font-weight:300; 
-			color:$oe-text-light;
-			margin:0 0 10px 0; 
-		}
-	}
-	
-	// demo 
-	#vfcp-date-text-range {
-		@include font-size(11);
-		font-weight:400; 
-		color:$oe-text-light;
-	}
-	
-	// image stacks for OCT and FAA
-	.oescape-images {
-		background:$oe-blue-darker;
+	// righ side 'column'
+	// this width is controller by the browser through flex
+	// generally it contains image-stacks
+	.oes-right-side {
+		background:$oe-blue-darker;   // theme changed
+		margin:0 10px 0 20px;
 		
 		.oes-stack-select {
 			background:$oe-blue-darker;
 			text-align: center;
 			padding:5px;
 		}
-	
-		.oct-stack, .ffa-stack, .vf-stack, 
-		.img-stack {
+		
+		// images stacks
+		.oes-image-stack {
 			cursor:crosshair;
 			width:100%;
 			img {
 				width:100%;
 			}
+			
+			// layout is designed for landscape images by default
+			&.portrait-images {
+				text-align: center;
+				width:100%;
+				img {
+					width:70%;
+				}
+			}
 		}
 	}
 	
+	// pro-theme only for highcharts, provide a background color area for all Highcharts
+	.highchart-area {
+		background:$oe-ui-blue-darker; 
+	}
+	
+	// basic data wrapper
 	.oes-data-container {
 		padding:20px;
 	}
-	
-	.oes-assessment-panel {
-		padding:10px 0;
+		
+	// wraps a table
+	// only expecting table to be 2 rows 
+	.oes-data-row-input {
+		margin:25px 0 25px 0; // may need changing haven't seen 2 stack up yet
+		
 		@include font-size(11);
 		color:$oe-text-light;
 		
-		input[type="checkbox"] {
-			background:pink;
+		// for example a drug
+		.data-row-title {
+			@include font-size(12);
+			color:$oe-text;
 		}
 		
 		table {
-			width:100%;
-			border-collapse:collapse;
-			
+			width:100%;	
+			max-width:900px; // on large monitors avoid over-stretching	data
+			margin:0 auto;	
 			td {
 				text-align: center;
 				border-left:1px solid $oe-line;
@@ -76,6 +83,46 @@
 		}
 	}
 	
+	// an Event edit style Element input area
+	.oes-data-element-input {
+		margin:25px auto; 
+		max-width:900px; // on large monitors avoid over-stretching	data
+		
+		h3 {
+			@include font-size(14);
+			font-weight:300; 
+			color:$oe-text-light;
+			margin:0 0 10px 0; 
+		}
+	}
+	
+	// visual fields requires some tweaking to get it working 
+	.oes-visual-fields {
+		width:70%;
+		margin:10px auto;
+		.vfcolorplot {
+			svg {
+				width:70%;
+			}
+		}
+		.vfimage {
+			background:#fff; // tidy up jpegs
+			padding:0 3px;
+			border-radius:3px;
+			width:55%;
+		}
+	}
+	
+	// demo only 
+	// this needs more work
+	#vfcp-date-text-range {
+		@include font-size(11);
+		font-weight:400; 
+		color:$oe-text-light;
+	}
+	
+	
+	// currently unused...
 	// oescape summary box
 	.oes-summary {
 		width:15%;

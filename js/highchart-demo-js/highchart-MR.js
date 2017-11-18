@@ -1,29 +1,21 @@
 // highSTOCK https://api.highcharts.com/highstock/
 
 /*
-Positioning of Elements below the xAxis.
-The xAxis is offset to allow space for the banners
-Banners and data Flags are drawn from the xAxis up.	
+* Positioning of Elements below the xAxis.
+* The xAxis is offset to allow space for the banners
+* Banners and data Flags are drawn from the xAxis up.	
 */
 
 var drugs = ['Ranibizumab (4)','Eylea (7)'];	// drug banners
-
-var chartHeight = 650;					// fixed height
-var bannersOffset = 65 * drugs.length; 	// offset xAxis to allow space for drug banners
-var xAxisOffset = bannersOffset + 10 	// + 20 for >5 flags
-var flagYoffset = -35; 					// drug flags are positioned relative to xAxis 
-
-var chart; // highCharts.Chart()
-
-// resize chart area
-function updateChartSize(size){
-	chart.setSize( size, chartHeight, false );
-}
+var bannersOffset = 65 * drugs.length; 			// offset xAxis to allow space for drug banners
+var xAxisOffset = bannersOffset + 10 			// allow for the '>5' flags
+var flagYoffset = -35; 							// drug flags are positioned relative to xAxis 
 
 /*
- * Highchart options (data and positioning only) - all UI stylng is handled in CSS
+* Highchart options (data and positioning only)
+* all UI stylng is handled in CSS
 */
-var options = {
+var options_MR = {
 		chart: {
 		    events: {
 		        load: function() {
@@ -33,9 +25,8 @@ var options = {
 		         	highHelp.drawBanners(this,drugs);
 		        }
 		    },
-			renderTo: 'chart', 					// <div> id
 			className: 'oes-chart-mr-right',	// suffix: -right -left or -both (eyes)
-		    height: chartHeight, 				// px
+		    height: 650, 						// chart height fixed px
 		    marginTop:80,						// make px space for Legend
 			spacing: [30, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
 		    type: 'line' 						// Can be any of the chart types listed under plotOptions. ('line' default)	 
@@ -43,20 +34,28 @@ var options = {
 			
 		credits: { enabled: false },  // highcharts url (logo) removed
 		
-	    title: 			highHelp.chartTitle('Retinal thickness-Visual acuity (Right Eye)'),
+	    title: 	{
+	        text: "Retinal thickness-Visual acuity (Right Eye)",
+	        align: 'center',
+	        margin:60,
+	        y:-10, // title needs offset to not go under legend in small mode
+	    },
+	    
+	    // standard settings
 	    legend: 		highHelp.chartLegend(),
 		navigator: 		highHelp.chartNavigator(),				
 		rangeSelector: 	highHelp.chartRangeSelector(-60,-25),	// offset from bottom right (x,y) "Show all" button
 		
-	    yAxis: [{
+	    yAxis: [{ 
+		    // primary y axis
 			title: {
 				text: 'CRT (um)'
 			}, 
 			opposite: true,   
 	        reversed: false,
-	         
 	    },{
-			title: {
+	     	// secondary y axis
+		 	title: {
 	        	text: 'VA (ETDRS)'
 	      	},
 	      	opposite: false,
@@ -68,7 +67,7 @@ var options = {
 	            text: 'Time (months)',
 	        },
 	        crosshair: {
-			 	snap: false,			// blue line
+			 	snap: false,		// blue line smooth
       		},
 	        labels: {  
 	            y:25				// move labels below ticks
@@ -76,7 +75,7 @@ var options = {
 	        offset: xAxisOffset,   	// this moves the chart up to allow for the banners and other flags
 	        min:0, 					// show first tick
 	        max:18,					// show last tick
-			tickPixelInterval: 50,  // if this is too high the last tick isn't shown (default 100) 
+			tickPixelInterval: 50,  // if this is too high the last tick isn't shown (default 100) but depends on chart width
 	    },
 	
 	    plotOptions: {
@@ -85,7 +84,7 @@ var options = {
 	            point: {
 	                events: {
 	                    mouseOver: function( e ){
-		                    oes.changeOCT( this.oct ); // link chart points to OCTs
+		                    octImgStack.setImg( this.oct ); // link chart points to OCTs
 	                    }
 	                }
 	            },
@@ -111,11 +110,12 @@ var options = {
 	        }
 	    },
 	    
-	
+		// ----------------------  Medical Retina Data
+		
 	    series: [{
 		    name: '(VA) ETDRS (R)',
 		    type:'line',
-		    colorIndex: 11,				// Right Eye 11-13: 11 - solid; 12 - dotted; 13 - dashed
+		    colorIndex: 11,				// Right Eye 11-13: 11-solid; 12-dotted; 13-dashed
 		    yAxis: 1,					// link to yAxis
 		    showInNavigator: true,
 	        data: [		{x:1,	y:55,	oct:1},
@@ -142,8 +142,7 @@ var options = {
 	    },{ 
 	       name: 'CRT (R)',
 	       type:'line',
-	       className: 'oes-eye-r',		// CSS class name: 'oes-eye-r' or 'oes-eye-l'
-		   colorIndex: 12,				// Right Eye 11-13: 11 - solid; 12 - dotted; 13 - dashed
+		   colorIndex: 12,				// Right Eye 11-13: 11-solid; 12-dotted; 13-dashed
 		   yAxis: 0,					// link to yAxis
 	       showInNavigator: true,
 	       data: [		{x:1,	y:300,	oct:1},
@@ -161,41 +160,41 @@ var options = {
 		    type: "flags",
 			className: 'oes-hs-eye-right-dull',		// Not shown in Legend or Navigator color with specific class
 		    y: flagYoffset - 50, 					// position over banner rect
-		    "data": [
+		    data: [
 		      {
-		        "x": 0,
-		        "title": "R",
-		        "info" : "0.4 M, 11D"
+		        x: 0,
+		        title: "R",
+		        info : "0.4 M, 11D"
 		      },
 		      {
-		        "x": 2.5,
-		        "title": "R",
-		        "info" : "0.4 M, 11D"
+		        x: 2.5,
+		        title: "R",
+		        info : "0.4 M, 11D"
 		      },
 		      {
-		        "x": 2.8,
-		        "title": "R",
-		        "info" : "0.4 M, 11D"
+		        x: 2.8,
+		        title: "R",
+		        info : "0.4 M, 11D"
 		      },
 		      {
-		        "x": 4,
-		        "title": "R",
-		        "info" : "0.4 M, 11D"
+		        x: 4,
+		        title: "R",
+		        info : "0.4 M, 11D"
 		      },
 		      {
-		        "x": 5,
-		        "title": "R",
-		        "info" : "0.4 M, 11D"
+		        x: 5,
+		        title: "R",
+		        info : "0.4 M, 11D"
 		      },
 		      {
-		        "x": 8,
-		        "title": "R",
-		        "info" : "0.4 M, 11D"
+		        x: 8,
+		        title: "R",
+		        info : "0.4 M, 11D"
 		      },
 		      {
-		        "x": 8.4,
-		        "title": "R",
-		        "info" : "0.4 M, 11D"
+		        x: 8.4,
+		        title: "R",
+		        info : "0.4 M, 11D"
 		      }]
 
 	    },{
@@ -203,35 +202,28 @@ var options = {
 		    type: "flags",
 			className: 'oes-hs-eye-right-dull',		// Not shown in Legend or Navigator color with specific class
 		    y: flagYoffset, 						// position over banner rect
-		    "data": [
+		    data: [
 		      {
-		        "x": 12,
-		        "title": "R",
-		        "info" : "0.4 M, 11D"
+		        x: 12,
+		        title: "R",
+		        info : "0.4 M, 11D"
 		      },
 		      {
-		        "x": 13,
-		        "title": "R",
-		        "info" : "0.4 M, 11D"
+		        x: 13,
+		        title: "R",
+		        info : "0.4 M, 11D"
 		      },
 		      {
-		        "x": 15.5,
-		        "title": "R",
-		        "info" : "0.4 M, 11D"
+		        x: 15.5,
+		        title: "R",
+		        info : "0.4 M, 11D"
 		      },
 		      {
-		        "x": 16,
-		        "title": "R",
-		        "info" : "0.4 M, 11D"
+		        x: 16,
+		        title: "R",
+		        info : "0.4 M, 11D"
 		      }]
 
 	    }]
 
 	};
-
-$(document).ready(function(){
-	chart = new Highcharts.Chart(options);
-});
-
-
-	
