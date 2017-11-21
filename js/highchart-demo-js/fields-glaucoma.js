@@ -2,6 +2,8 @@
 Visual Fields SVG plots and Linear Regression
 for single Eye (either Right or Left)
 
+Imported JS from OE to demo VF plots and modified for new IDG interaction
+
 Note: this is currently set up to run of IDG json data file which has fake date data
 This will need adjusting for proper UTC date keys in JSON
 **/
@@ -9,7 +11,7 @@ This will need adjusting for proper UTC date keys in JSON
 var vf = {
 	
 	init:function( eyeSide, highChart ){
-		this.eyeSide = eyeSide // 'left' or 'right'
+		this.eyeSide = eyeSide 				// 'left' or 'right'
 		this.highChart = highChart;
 		this.VFdata = [];
 		this.user = { $color: null, $grey: null, fixed:false, };
@@ -47,19 +49,21 @@ var vf = {
 	},
 	
 	/**
-	use chart to set colour plots for a specific plots
+	using chart to set colour plot date range
 	**/
 	userOverChart:function( x ){
-		 vf.setPlotColours( vf.VFdata[ x-1 ].date );
+		// 
+		vf.setPlotColours( vf.VFdata[ x-1 ].date );
+		vf.setPlotGreys( x - 1 );
 		 
-		 // show plot range on chart: 
-		 vf.highChart.xAxis[0].removePlotBand('plot-range-end');
-		 vf.highChart.xAxis[0].addPlotLine({
-            value: x,
-            zIndex:2,
-            className:'oes-hs-plotline-blue',
-            id: 'plot-range-end'
-        });
+		// show plot range on chart: 
+		vf.highChart.xAxis[0].removePlotBand('plot-range-end');
+		vf.highChart.xAxis[0].addPlotLine({
+			value: x,
+			zIndex:2,
+			className:'oes-hs-plotline-blue',
+			id: 'plot-range-end'
+		});
 	},
 	
 	/**
@@ -94,7 +98,7 @@ var vf = {
 					// Make sure there is Right data:
 	                if (data[2] !== null && typeof data[2] !== 'undefined') {
 	                   
-						// build Right Eye data:
+						// build Right Eye VF data:
 						right.date = parseInt(index); 			// month string (IDG fake data but should be UTC) 	
 						right.plots = JSON.parse( data[2][1] ); // convert JSON string array		
 	                    vf.VFdata.push( right ); 
@@ -102,15 +106,27 @@ var vf = {
 	            });
 	
 	           vf.setPlotColours( Date.now() ); // set dateIndex to be greater than last date entry to show all data
+	           vf.setPlotGreys( vf.VFdata.length - 1 );
 	        },
 	        cache: false
 	    });
 	}, 
+	/**
+	Set Grey Plots
+	Data is already provide in Greyscale just needs converting to RGB	
+	**/
+	setPlotGreys:function( dateIndex ){
+		var dateArray = vf.VFdata[dateIndex].plots;
+		for( var i=0; i < 54; i++ ){
+			var greyHex = Math.floor(dateArray[i] * 7.285).toString(16); // greyscale range 0 - 35 
+			vf.setSVGfill( '#vfgrey_' + vf.eyeSide + '_' + i, '#'+ greyHex + greyHex + greyHex );
+		}	
+	},
 	
 	/**
 	Set all Colours Plots for Eye
-	54 dots (SVG). Linear Regression create from the GreyScale data.
-	Then Linear Regression is used to create colour plots	
+	54 dots (SVG). Linear Regression is created from the GreyScale data.
+	Linear Regression then is used to create colour plots	
 	**/
 	setPlotColours:function( dateIndex ){
 	    var regression;
@@ -385,8 +401,8 @@ Options for Regression HighChart
 var optionsReg = {
 		chart: {
             renderTo: 'js-hs-chart-regression',
-            height:300,
-            width:400,							// fixed because it was messing up the flex-layout
+            height:350,
+            // width:400,							// fixed because it was messing up the flex-layout
             spacing: [20, 10, 20, 10], 			// then make space for title - default: [10, 10, 15, 10] 
         },
         
@@ -416,8 +432,6 @@ var optionsReg = {
 	                events: {
 		                mouseOver: function(){
 			                vf.userOverChart(this.x);
-			                
-			                
 		                }
 	                }
                 },
@@ -425,7 +439,6 @@ var optionsReg = {
         },
         
         xAxis: {
-		    // visible:false,
 	        title: {
 	            text: 'Time',
 	        },
@@ -434,7 +447,7 @@ var optionsReg = {
 	        labels: {  
 	            y:25				// move labels below ticks
 	        },
-			tickPixelInterval: 25,  // if this is too high the last tick isn't shown (default 100) 
+			tickPixelInterval: 50,  // if this is too high the last tick isn't shown (default 100) 
 		},
 		
 		yAxis: {
@@ -466,37 +479,7 @@ var optionsReg = {
             }]
 	
 	};
-	
-/**
-	Imported JS from OE to demo VF plots. 
-	Original code by Tamas Vedelek and modified for IDG demo		
-**/
 
-$(document).ready(function(){
-	// Highcharts.chart 
-	// Highchart.StockChart  // Stock Chart has different defaults
-	
-	// Regression Chart for Fields
-	var RegChart = new Highcharts.chart( optionsReg );
-	
-	/**
-	init VF js
-	@param - eye side "right" or "left"
-	@param - highChart
-	**/
-	vf.init( 'right', RegChart );
-
-	// Colour Plot User Interaction
-	$( '.colourplot_right' ).bind( "mouseenter touchenter", function( e ) {
-		e.stopPropagation();
-		vf.userSelectsColorPlot( $(this) );
-	}).click( function( e ){
-		// click to fix / unfix
-		e.stopPropagation();
-		vf.userFixChangePlot( $(this) );
-	});
-    		
-}); // ready! 
 
 
 

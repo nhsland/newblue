@@ -161,6 +161,10 @@ textarea {
   width: 20%;
 }
 
+.cols-center {
+  margin: 0 auto;
+}
+
 .columns, .column {
   padding-left: 10px;
   padding-right: 10px;
