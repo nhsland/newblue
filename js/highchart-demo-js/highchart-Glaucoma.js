@@ -1,18 +1,10 @@
 // highSTOCK https://api.highcharts.com/highstock/
 
-
 var marginRight = 90;	// plot to chart edge (to align right side)
-
 
 // set the axes MIN and Max to the same
 var axisMin = Date.UTC(2012, 11, 1); // push axis out to show Medication labels
 var axisMax = Date.UTC(2017, 12, 1);
-
-// resize chart area
-// called on resize
-function updateChartSize(size){
-	
-}
 
 /*
  * Highchart options (data and positioning only) - all UI stylng is handled in CSS
@@ -20,7 +12,6 @@ function updateChartSize(size){
 
 var optionsMeds = {
 		chart: {
-			renderTo: 'chart-meds', 					// <div> id
 			className: 'oes-chart-medications-both',	// suffix: -right -left or -both (eyes)
 		    height: (3 * 42), 					// needs to be based on the number of series data
 		    marginRight: marginRight,					// plot to chart edge (align right side)
@@ -121,9 +112,8 @@ var optionsMeds = {
 	
 var optionsIOP = {
         chart: {
-            renderTo: 'chart-IOP',
             height:300,
-            marginRight: marginRight,					// plot to chart edge (align right side)
+            marginRight: marginRight,			// plot to chart edge (align right side)
             spacing: [15, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
         },
         
@@ -175,7 +165,6 @@ var optionsIOP = {
 	        plotLines: [{
 		        className: 'oes-hs-plotline-right',
 	            value: 15,
-	            width: 1,
 	            label: {
 	                text: 'Target IOP (R)',
 	                align: 'left',
@@ -186,7 +175,6 @@ var optionsIOP = {
 	        },{
 		        className: 'oes-hs-plotline-left',
 	            value: 10,
-	            width: 1,
 	            label: {
 	                text: 'Target IOP (L)',
 	                align: 'left',
@@ -217,8 +205,7 @@ var optionsIOP = {
 			tickPixelInterval: 100,  // if this is too high the last tick isn't shown (default 100) 
 			
 			plotLines: [{
-                className: 'oes-hs-plotline-blue',
-                width: 1,
+                className: 'oes-hs-plotline-grey',
                 value: Date.UTC(2015,07,16),
                 label: {
                     text: 'M',
@@ -227,8 +214,7 @@ var optionsIOP = {
                 },
                 zIndex: 1
             },{
-                className: 'oes-hs-plotline-blue',
-                width: 1,
+                className: 'oes-hs-plotline-grey',
                 value: Date.UTC(2015,08,06),
                 label: {
                     text: 'SC5FU/Dex',
@@ -237,8 +223,7 @@ var optionsIOP = {
                 },
                 zIndex: 1
             },{
-                className: 'oes-hs-plotline-blue',
-                width: 1,
+                className: 'oes-hs-plotline-grey',
                 value: Date.UTC(2015,09,03),
                 label: {
                     text: 'SC Dex',
@@ -247,8 +232,7 @@ var optionsIOP = {
                 },
                 zIndex: 1
             },{
-                className: 'oes-hs-plotline-blue',
-                width: 1,
+                className: 'oes-hs-plotline-grey',
                 value: Date.UTC(2015,11,19),
                 label: {
                     text: 'Needling 5FU',
@@ -257,8 +241,7 @@ var optionsIOP = {
                 },
                 zIndex: 1
             },{
-                className: 'oes-hs-plotline-blue',
-                width: 1,
+                className: 'oes-hs-plotline-grey',
                 value: Date.UTC(2016,11,19),
                 label: {
                     text: 'Needling 5FU',
@@ -268,7 +251,6 @@ var optionsIOP = {
                 zIndex: 1
             },{
 	            className: 'oes-hs-plotline-left-tight',
-                width: 1,
                 value: Date.UTC(2017,4,21),
                 label: {
                     text: 'Phaco + IOL',
@@ -309,9 +291,8 @@ var optionsIOP = {
 
 var optionsVA = {
 		chart: {
-            renderTo: 'chart-VA-MD',
             height:400,
-            marginRight: marginRight,					// plot to chart edge (align right side)
+            marginRight: marginRight,			// plot to chart edge (align right side)
             spacing: [15, 10, 15, 10], 			// then make space for title - default: [10, 10, 15, 10] 
         },
         

@@ -2989,7 +2989,6 @@ html {
 }
 
 .oescape .oes-right-side .oes-stack-select {
-  background: #141e2b;
   text-align: center;
   padding: 5px;
 }
@@ -3039,7 +3038,7 @@ html {
 
 .oescape .oes-data-row-input table td {
   text-align: center;
-  border-left: 1px solid rgba(204, 204, 204, 0.1);
+  border-left: 1px solid rgba(170, 170, 221, 0.2);
 }
 
 .oescape .oes-data-row-input table td:first-child {
@@ -3059,12 +3058,25 @@ html {
 }
 
 .oescape .oes-visual-fields {
-  width: 70%;
+  width: 65%;
   margin: 10px auto;
 }
 
-.oescape .oes-visual-fields .vfcolorplot svg {
-  width: 70%;
+.oescape .oes-visual-fields .vfcolorplot svg, .oescape .oes-visual-fields .vfgreyplot svg {
+  width: 100%;
+}
+
+.oescape .oes-visual-fields .vfcolorplot .selected-plot, .oescape .oes-visual-fields .vfgreyplot .selected-plot {
+  stroke-width: 8;
+  stroke: #3db0fb;
+}
+
+.oescape .oes-visual-fields .vfcolorplot {
+  margin: 0 40px 0 0;
+}
+
+.oescape .oes-visual-fields .vfgreyplot {
+  margin: 0 0 0 40px;
 }
 
 .oescape .oes-visual-fields .vfimage {
@@ -3201,6 +3213,11 @@ html {
 }
 
 .highcharts-root .oes-hs-plotline-blue {
+  stroke: #3db0fb;
+  stroke-dasharray: 1,2;
+}
+
+.highcharts-root .oes-hs-plotline-grey {
   stroke: #ccc;
   stroke-dasharray: 1,2;
 }

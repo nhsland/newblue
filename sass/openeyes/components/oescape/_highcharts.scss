@@ -137,6 +137,11 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 	}
 		
 	.oes-hs-plotline-blue {
+		stroke:$oe-hs-blue; 
+		stroke-dasharray: 1,2;
+	}
+	
+	.oes-hs-plotline-grey {
 		stroke:#ccc; 
 		stroke-dasharray: 1,2;
 	}

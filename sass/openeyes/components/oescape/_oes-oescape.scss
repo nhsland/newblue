@@ -1,15 +1,17 @@
 // OE Oescape
 // 
-// 
+// Pro-theme only.
+// Classic not available in OEscape, although the header will change
+// to show that something happened
 
 .oescape {
-	background:$oe-blue-darker;
+	background:$oe-ui-blue-darker;
 	
 	// left side 'column', this side is controller
 	// by the js area resizer and the 'min-width' 
 	// must be inline to stop intital redraw issues (see DOM)
 	.oes-left-side {
-		background: $oe-ui-blue-darker; // Pro-themed only! 
+		background: $oe-ui-blue-darker; 
 		padding:20px 0 20px 0;
 	}
 	
@@ -17,11 +19,10 @@
 	// this width is controller by the browser through flex
 	// generally it contains image-stacks
 	.oes-right-side {
-		background:$oe-blue-darker;   // theme changed
+		background:$oe-ui-blue-darker;  
 		margin:0 10px 0 20px;
 		
 		.oes-stack-select {
-			background:$oe-blue-darker;
 			text-align: center;
 			padding:5px;
 		}
@@ -61,12 +62,12 @@
 		margin:25px 0 25px 0; // may need changing haven't seen 2 stack up yet
 		
 		@include font-size(11);
-		color:$oe-text-light;
+		color:$oe-ui-text-light;
 		
 		// for example a drug
 		.data-row-title {
 			@include font-size(12);
-			color:$oe-text;
+			color:$oe-ui-text;
 		}
 		
 		table {
@@ -75,7 +76,7 @@
 			margin:0 auto;	
 			td {
 				text-align: center;
-				border-left:1px solid $oe-line;
+				border-left:1px solid $oe-ui-line;
 				&:first-child {
 					border-left:none;
 				}
@@ -91,20 +92,35 @@
 		h3 {
 			@include font-size(14);
 			font-weight:300; 
-			color:$oe-text-light;
+			color:$oe-ui-text-light;
 			margin:0 0 10px 0; 
 		}
 	}
 	
 	// visual fields requires some tweaking to get it working 
 	.oes-visual-fields {
-		width:70%;
+		width:65%;
 		margin:10px auto;
-		.vfcolorplot {
+		.vfcolorplot, .vfgreyplot {
 			svg {
-				width:70%;
+				width:100%;
+			}
+			
+			.selected-plot {
+				stroke-width:8;
+				stroke: rgb(61,176,251); // highCharts CSS highlight blue
 			}
 		}
+		// this assumes color plot is on the left
+		.vfcolorplot {
+			margin:0 40px 0 0;
+		}
+		.vfgreyplot {
+			margin:0 0 0 40px;
+		}
+		
+		
+		// vfimage was replaced by SVG grey plot
 		.vfimage {
 			background:#fff; // tidy up jpegs
 			padding:0 3px;
@@ -118,7 +134,7 @@
 	#vfcp-date-text-range {
 		@include font-size(11);
 		font-weight:400; 
-		color:$oe-text-light;
+		color:$oe-ui-text-light;
 	}
 	
 	
@@ -127,13 +143,13 @@
 	.oes-summary {
 		width:15%;
 		padding:20px 5px 0 20px;
-		background:$oe-blue-dark;
+		background:$oe-ui-blue-dark;
 		
 		.title  { 
 			margin:0 0 10px 0;
 			@include font-size(18);
 			font-weight:200; 
-			color:$oe-text-light; 
+			color:$oe-ui-text-light; 
 		}
 		
 		// summary data groups
@@ -141,13 +157,13 @@
 			margin:0 0 3px 0;
 			@include font-size(11);
 			font-weight:400; 
-			color:$oe-text-light; 
+			color:$oe-ui-text-light; 
 		}
 		.data-value {
 			margin:0 0 10px 0;
 			@include font-size(13);
 			font-weight:400; 
-			color:$oe-text; 
+			color:$oe-ui-text; 
 		}
 	}
 	
