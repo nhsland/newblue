@@ -400,9 +400,7 @@ Options for Regression HighChart
 **/
 var optionsReg = {
 		chart: {
-            renderTo: 'js-hs-chart-regression',
-            height:350,
-            // width:400,							// fixed because it was messing up the flex-layout
+            height:380,
             spacing: [20, 10, 20, 10], 			// then make space for title - default: [10, 10, 15, 10] 
         },
         

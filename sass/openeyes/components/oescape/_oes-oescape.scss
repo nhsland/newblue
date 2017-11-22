@@ -98,28 +98,33 @@
 	}
 	
 	// visual fields requires some tweaking to get it working 
+	// control width of plots and chart
+	#oes-fields {
+		margin:0 10%;
+	}
+	
 	.oes-visual-fields {
-		width:65%;
+		width:80%;				// make plots a bit smaller (arbitrary)
 		margin:10px auto;
 		.vfcolorplot, .vfgreyplot {
 			svg {
-				width:100%;
+				width:100%;		// SVG fill space
 			}
-			
+			// users mouse over or clicks on a plot
 			.selected-plot {
-				stroke-width:8;
-				stroke: rgb(61,176,251); // highCharts CSS highlight blue
+				stroke-width:6;
+				stroke: rgb(255,255,255);
 			}
 		}
-		// this assumes color plot is on the left
+		// space out the plots
+		// it assumes color plot is on the left
 		.vfcolorplot {
 			margin:0 40px 0 0;
 		}
 		.vfgreyplot {
 			margin:0 0 0 40px;
 		}
-		
-		
+
 		// vfimage was replaced by SVG grey plot
 		.vfimage {
 			background:#fff; // tidy up jpegs
@@ -128,15 +133,7 @@
 			width:55%;
 		}
 	}
-	
-	// demo only 
-	// this needs more work
-	#vfcp-date-text-range {
-		@include font-size(11);
-		font-weight:400; 
-		color:$oe-ui-text-light;
-	}
-	
+
 	
 	// currently unused...
 	// oescape summary box

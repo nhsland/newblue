@@ -630,6 +630,10 @@ strong {
   font-weight: 500;
 }
 
+.warning {
+  background-color: #751e00;
+}
+
 .flex-layout {
   display: flex;
   align-items: center;
@@ -3061,8 +3065,12 @@ html {
   margin: 0 0 10px 0;
 }
 
+.oescape #oes-fields {
+  margin: 0 10%;
+}
+
 .oescape .oes-visual-fields {
-  width: 65%;
+  width: 80%;
   margin: 10px auto;
 }
 
@@ -3071,8 +3079,8 @@ html {
 }
 
 .oescape .oes-visual-fields .vfcolorplot .selected-plot, .oescape .oes-visual-fields .vfgreyplot .selected-plot {
-  stroke-width: 8;
-  stroke: #3db0fb;
+  stroke-width: 6;
+  stroke: white;
 }
 
 .oescape .oes-visual-fields .vfcolorplot {
@@ -3088,12 +3096,6 @@ html {
   padding: 0 3px;
   border-radius: 3px;
   width: 55%;
-}
-
-.oescape #vfcp-date-text-range {
-  font-size: 0.6875rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .oescape .oes-summary {
