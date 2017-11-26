@@ -4,7 +4,6 @@
 //
 // * Include ALL scss files here. Except the __config files
 
-
 /* GUI */
 @import "icons"; 							// oe icons 
 @import "icons-events"; 					// oe icons (Events only) 
@@ -23,6 +22,8 @@
 @import "components/header";    			// site wide header bar: Logo, Patient & User Nav
 @import "components/activity-panel";    	// site wide RHS panel. Patients & Messages
 @import "components/patient-popups";    	// Patient: Quicklook & Demographics (summary)
+/* Full width layout */
+@import "components/full-width";			// Full width layout for clinic list, etc
 /* SEM Event Episodes */
 @import "components/event-header";    		// event header
 @import "components/add-new-event";    		// add new event popup
@@ -37,3 +38,5 @@
 @import "components/lightening-viewer";		// lightening viewer
 /* Oescape */
 @import "components/oescape";				// oescape
+/* Clinic List */
+@import "components/clinic-list";			// clinic list

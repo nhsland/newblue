@@ -1,0 +1,18 @@
+// OE Clinic List
+// 
+// 
+
+
+.oe-clinic {
+	background:$oe-blue-dark;
+	
+	// set up SVG circle defaults
+	svg.duration-graphic {
+		fill:#999;
+	}	
+}
+
+
+@import "clinic-list/table";
+@import "clinic-list/pathway-steps";
+@import "clinic-list/add-new-pathway";

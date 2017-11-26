@@ -1,0 +1,88 @@
+// OE Clinic List
+// 
+// 
+
+.oe-clinic {
+	
+	// container for pathway-steps, used by js
+	.pathway {
+		display:inline-block;
+		vertical-align: middle; // align +icon correctly
+	}
+	
+	// pathway-steps created by js
+	.pathway-step {
+		// <span>  
+		position: relative;
+		display:inline-block;
+		margin:0 3px 0 0;
+		padding:0 8px;
+		height:38px;
+		line-height:25px;
+		@include font-size(12);
+		font-style: italic;
+		border-radius:3px;
+		
+		.time {
+			position:absolute; 
+			bottom:3px; 
+			left:5px; 
+			@include font-size(10);
+			line-height:normal;
+			opacity:0.6;
+		}
+		
+		// Steps are either Pathway Events or meeting with Dr
+		// the colouring for Dr is white with border colour.
+		// Colour indicates whether on or behind schedule
+		
+		// for consistent vertical positioning
+		border:2px solid transparent;
+		
+		// these colours must work in both themes
+		background:		rgb(100,100,100); // default 
+		$text-grey:		rgb(50,50,50);
+		$step-white: 	rgb(240,240,240);
+		$step-green: 	rgb(20,100,0);
+		$step-orange:	rgb(180,80,22);
+		$step-red:		rgb(210,50,10);
+		
+		// text for all colours
+		color:$step-white;
+		&.dr {
+			color:$text-grey;
+		}
+		
+		// create step-colors
+		@mixin step-colors( $color ) {
+			background:$color; 
+			&.dr {
+				background:tint( $color, 80 ); 
+				border-color:$color; 
+			}
+		}
+		
+		// colours:
+		&.green { 
+			@include step-colors( $step-green );
+		}
+		
+		&.orange { 
+			@include step-colors( $step-orange );
+		}
+	
+		&.red { 
+			@include step-colors( $step-red );
+		}
+		
+		&.next-step {
+			cursor:pointer;
+			
+			&:hover, &.dr:hover {
+				// background:#666 url('../img/_elements/btns/oe-cross-icon.png') center center no-repeat;	
+				background:$oe-btn-blue;
+			}
+			
+		}
+	}
+}

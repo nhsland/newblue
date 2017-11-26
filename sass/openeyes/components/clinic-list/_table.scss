@@ -1,0 +1,71 @@
+// OE Clinic List
+// 
+// 
+
+table.oe-clinic-list {	
+	width:100%;
+	margin:1px 0 0 0;
+	
+	thead {
+		tr {
+			background:$oe-grey;
+			height:30px;
+		}
+	}
+	
+	tbody {
+		// add line to help with reading data
+		tr {
+			border-bottom:1px solid $oe-line;
+			&:last-child { 
+				border-bottom: none;
+			}
+			
+			&:hover {
+				background-color: $oe-blue-darker;
+			}
+		}
+	}
+				
+
+	th, td, {
+		@include font-size(14);
+
+		&:first-child {
+			padding-left:45px; // align with title
+		}
+
+		&.nowrap {
+			width:1%;
+			white-space: nowrap;
+			padding-right:10px;
+		}
+	}
+	
+	// <th>
+	th {
+		text-align: left;  // overide default 'middle'
+		font-weight: 300;
+		color:$oe-text-light;
+	}
+	
+	// <td>
+	td {
+		color:$oe-text;
+		vertical-align: middle;	
+		padding:5px 0;
+		
+		&.nowrap {
+			width:1%;
+			white-space: nowrap;
+			padding-right:10px;
+		}
+		
+		&.center {
+			text-align: center;
+			padding:0 10px;
+		}
+	}
+}
+
+

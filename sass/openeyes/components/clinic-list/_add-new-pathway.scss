@@ -1,0 +1,31 @@
+// OE Clinic List
+// 
+// 
+
+.oe-clinic {
+	position:relative;
+	
+	.add-new-pathway {
+		position:absolute;
+		top:0;
+		left:0;
+		z-index:$oe-z-tooltip;
+		background:$oe-blue-darker;
+		border:1px solid $oe-text-highlight;
+		padding:10px 30px 10px 15px;
+		max-width:300px;
+		
+		// cross icon
+		.js-close-btn {
+			position: absolute;
+			top:5px;
+			right:5px;
+		}
+		
+		// overwrite default height (no time shown)
+		.pathway-step {
+			height:auto;
+		}
+	}
+}
+

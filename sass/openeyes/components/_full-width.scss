@@ -1,0 +1,20 @@
+// OE Full width layout
+// use for Clinic area, etc
+
+.oe-full-header {
+	position:relative;
+	background:$oe-grey;
+	padding:0 0 0 45px;
+
+	.title {
+		color:$oe-text-light;
+		text-transform: uppercase;
+		@include font-size(24);
+		font-weight:200;
+		line-height:$oe-event-header-height;
+	}
+}
+
+.oe-full-content {
+	
+}
