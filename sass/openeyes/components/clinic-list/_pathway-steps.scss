@@ -15,7 +15,7 @@
 		// <span>  
 		position: relative;
 		display:inline-block;
-		margin:0 3px 0 0;
+		margin:1px 3px 1px 0;
 		padding:0 8px;
 		height:38px;
 		line-height:25px;
@@ -75,12 +75,29 @@
 			@include step-colors( $step-red );
 		}
 		
-		&.next-step {
+		// used in the popup box to add new steps
+		&.next-step-add {
 			cursor:pointer;
 			
-			&:hover, &.dr:hover {
-				// background:#666 url('../img/_elements/btns/oe-cross-icon.png') center center no-repeat;	
+			&.dr {
+				color:$step-white;
+				border-color:rgb(200,200,200);
+			}
+			
+			&:hover, &:active, &:focus {
 				background:$oe-btn-blue;
+			}				
+		}
+		
+		// used in pathway (has remove icon)
+		&.next-step {
+			@extend .next-step-add;
+			&:hover, &:active, &:focus {
+				color: transparent; 
+				background-image: url( "../svg/in-css/remove-circle.svg" );
+				background-size: 13px;
+				background-repeat: no-repeat;
+				background-position: center center;
 			}
 			
 		}

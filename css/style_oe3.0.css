@@ -3493,13 +3493,7 @@ table.oe-clinic-list th, table.oe-clinic-list td {
 }
 
 table.oe-clinic-list th:first-child, table.oe-clinic-list td:first-child {
-  padding-left: 45px;
-}
-
-table.oe-clinic-list th.nowrap, table.oe-clinic-list td.nowrap {
-  width: 1%;
-  white-space: nowrap;
-  padding-right: 10px;
+  padding-left: 20px;
 }
 
 table.oe-clinic-list th {
@@ -3517,7 +3511,7 @@ table.oe-clinic-list td {
 table.oe-clinic-list td.nowrap {
   width: 1%;
   white-space: nowrap;
-  padding-right: 10px;
+  padding-right: 20px;
 }
 
 table.oe-clinic-list td.center {
@@ -3533,7 +3527,7 @@ table.oe-clinic-list td.center {
 .oe-clinic .pathway-step {
   position: relative;
   display: inline-block;
-  margin: 0 3px 0 0;
+  margin: 1px 3px 1px 0;
   padding: 0 8px;
   height: 38px;
   line-height: 25px;
@@ -3585,12 +3579,25 @@ table.oe-clinic-list td.center {
   border-color: #d2320a;
 }
 
-.oe-clinic .pathway-step.next-step {
+.oe-clinic .pathway-step.next-step-add, .oe-clinic .pathway-step.next-step {
   cursor: pointer;
 }
 
-.oe-clinic .pathway-step.next-step:hover, .oe-clinic .pathway-step.next-step.dr:hover {
+.oe-clinic .pathway-step.next-step-add.dr, .oe-clinic .pathway-step.dr.next-step {
+  color: #f0f0f0;
+  border-color: #c8c8c8;
+}
+
+.oe-clinic .pathway-step.next-step-add:hover, .oe-clinic .pathway-step.next-step:hover, .oe-clinic .pathway-step.next-step-add:active, .oe-clinic .pathway-step.next-step:active, .oe-clinic .pathway-step.next-step-add:focus, .oe-clinic .pathway-step.next-step:focus {
   background: #074598;
+}
+
+.oe-clinic .pathway-step.next-step:hover, .oe-clinic .pathway-step.next-step:active, .oe-clinic .pathway-step.next-step:focus {
+  color: transparent;
+  background-image: url("../svg/in-css/remove-circle.svg");
+  background-size: 13px;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .oe-clinic {
@@ -3604,18 +3611,68 @@ table.oe-clinic-list td.center {
   z-index: 990;
   background: #141e2b;
   border: 1px solid cyan;
-  padding: 10px 30px 10px 15px;
+  padding: 15px 30px 15px 15px;
   max-width: 300px;
 }
 
 .oe-clinic .add-new-pathway .js-close-btn {
   position: absolute;
   top: 5px;
-  right: 5px;
+  right: 8px;
 }
 
 .oe-clinic .add-new-pathway .pathway-step {
   height: auto;
+}
+
+.oe-clinic .add-new-pathway:after {
+  right: 100%;
+  top: 22px;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-right-color: cyan;
+  border-width: 9px;
+  margin-top: -9px;
+}
+
+.oe-clinic-assignment {
+  display: inline-block;
+  position: relative;
+  background: #3e4855;
+  height: 38px;
+  padding: 0 10px;
+  margin: 0 3px 0 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.oe-clinic-assignment .name {
+  font-size: 0.75rem;
+  margin: 5px 0 0 0;
+}
+
+.oe-clinic-assignment .code {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  font-size: 0.625rem;
+  opacity: 0.5;
+}
+
+.oe-clinic-assignment .count {
+  font-size: 0.625rem;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+}
+
+.oe-clinic-assignment .count .current {
+  color: cyan;
+  font-weight: 500;
 }
 
 /* ------------------------ */

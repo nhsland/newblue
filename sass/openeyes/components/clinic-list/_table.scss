@@ -30,15 +30,8 @@ table.oe-clinic-list {
 
 	th, td, {
 		@include font-size(14);
-
 		&:first-child {
-			padding-left:45px; // align with title
-		}
-
-		&.nowrap {
-			width:1%;
-			white-space: nowrap;
-			padding-right:10px;
+			padding-left:20px; // align with title
 		}
 	}
 	
@@ -58,7 +51,7 @@ table.oe-clinic-list {
 		&.nowrap {
 			width:1%;
 			white-space: nowrap;
-			padding-right:10px;
+			padding-right:20px;
 		}
 		
 		&.center {

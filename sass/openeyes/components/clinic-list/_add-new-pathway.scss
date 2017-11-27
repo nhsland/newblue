@@ -12,14 +12,14 @@
 		z-index:$oe-z-tooltip;
 		background:$oe-blue-darker;
 		border:1px solid $oe-text-highlight;
-		padding:10px 30px 10px 15px;
+		padding:15px 30px 15px 15px;
 		max-width:300px;
 		
 		// cross icon
 		.js-close-btn {
 			position: absolute;
 			top:5px;
-			right:5px;
+			right:8px;
 		}
 		
 		// overwrite default height (no time shown)
@@ -27,5 +27,22 @@
 			height:auto;
 		}
 	}
+	
+	// arrow left
+	.add-new-pathway:after {
+		right: 100%;
+		top: 22px;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(0, 0, 0, 0);
+		border-right-color: $oe-text-highlight;
+		border-width: 9px;
+		margin-top: -9px;
+	}
+	
 }
 

@@ -9,63 +9,8 @@ var clinic = {
 	init:function(){
 		
 		this.patientPathwayNum = 0;
-
-		var source = document.getElementById( 'js-clinic-template' ).innerHTML, 
-			tbody =  document.getElementById( 'js-clinic-list-patients' ), 
-			template = Handlebars.compile( source );
-	
-		this.clinicData = [
-			{ id:'1008005', t:'9:00', n:'TOMKIN, Robert', a:52, g:'Male', d:123, 
-				path:[	{n:'VA', t:'9.15', css:'green'},
-						{n:'RB', t:'9.35', css:'green dr'},
-						{n:'ORTH', t:'9.45', css:'green'},
-						{n:'Dilate', t:'11.02', css:'orange'} ]},
-						
-			{ id:'1008002', t:'9:10', n:'REESE, Charlene', a:52, g:'Female', d:105, 
-				path:[	{n:'VA',t:'9.15', css:'green'}] },
-		];	
 		
-		// build clinic list
-		for(var i = 0, len = this.clinicData.length; i < len; i++){
-			var data = this.clinicData[i];
-			
-			// handleBars template
-			var html = template({
-				time: 		data.t,
-				number:		data.id,
-				age:		data.a,
-				gender:		data.g,
-				name:		data.n,
-				duration: 	data.d,
-			});	
-			
-			// build <tr> for patient
-			$('#js-clinic-list-patients').append( html );
-
-			// set duration graphic wait lights
-			(function( id, duration ){
-				var $svg = $('#'+id+' .duration-graphic' );
-				if (duration > 90) { 
-					$svg.children('.c4').css({ fill: "#f00" });
-				} else if (val > 60) { 
-					$svg.children('.c3').css({ fill: "#f60" });
-				} else if (val > 40) { 
-					$svg.children('.c2').css({ fill: "#ebcd00" });
-				} else {
-					$svg.children('.c1').css({ fill: "#0c0" });	
-				}
-			})( data.id, data.d );
-			
-			// build the pathway from data
-			(function( id, path ){
-				var $container = $('#'+id+' .pathway' ); 			
-				for( var i = 0, len = path.length; i < len; i++){
-					var $step = $("<span>", {'class':'pathway-step ' + path[i].css} );
-					$step.html( path[i].n + '<span class="time">' + path[i].t + '</span>' );
-					$container.append( $step ); 	
-				}
-			})( data.id, data.path );
-		};
+		this.setDurationGraphics();
 		
 		/**
 		set up interaction 	
@@ -73,8 +18,9 @@ var clinic = {
 		// + icon to add more pathways
 		$('.js-add-pathway').click(function( e ){
 			e.stopPropagation();
-			// need to know where to insert new pathways:
+			// need to know where to insert new pathways
 			clinic.patientPathwayNum = $(this).data('id')
+			// position popup
 			clinic.addPathway( $(this).position() );
 		});
 		
@@ -82,20 +28,32 @@ var clinic = {
 		next steps in the popup. this is in the DOM but hidden
 		but when fired be sure to insert into the correct row. 
 		**/
-		$('#js-add-new-pathway .next-step').click(function( e ){
+		$('#js-add-new-pathway .next-step-add').click(function( e ){
 			e.stopPropagation();
 			
 			// clone DOM and insert into patient pathway
 			var $newStep = $(this).clone().unbind( "click");
+			$newStep
+				.removeClass('next-step-add')
+				.addClass('next-step')
+				.click(function( e ){
+					e.stopPropagation();
+					$(this).remove();
+				});
+
+			
 			var $patientPathway = $('#'+clinic.patientPathwayNum+' .pathway' );
 			$patientPathway.append( $newStep );
-			 
-			// shift over
-			var pathPos = $patientPathway.position();
-			var left = pathPos.left + $patientPathway.width();
-			$('#js-add-new-pathway').css({'left':left});
-			
 		});
+		
+		/** 
+		Allow any user to remove any next-steps	
+		**/
+		$('.next-step').click(function( e ){
+			e.stopPropagation();
+			$(this).remove();
+		});
+		
 
 	},	
 	
@@ -120,9 +78,30 @@ var clinic = {
 	  		$('#js-add-new-pathway').hide();
   		});
   		
+	}, 
+	
+	/** 
+	set waiting light graphics based on the duration minutes
+	**/
+	setDurationGraphics:function(){
+		
+		$('.duration-mins').each(function(){
+			var time = parseInt( $(this).text() );
+			if( time > 0){	
+				var $svg = $(this).parent().children('.duration-graphic'); 
+
+					if (time > 90) { 
+						$svg.children('.c4').css({ fill: "#f00" });
+					} else if (time > 60) { 
+						$svg.children('.c3').css({ fill: "#f60" });
+					} else if (time > 40) { 
+						$svg.children('.c2').css({ fill: "#ebcd00" });
+					} else {
+						$svg.children('.c1').css({ fill: "#0c0" });	
+					}	
+			}
+		});		
 	}
-	
-	
 };
 
 
