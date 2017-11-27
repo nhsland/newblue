@@ -1,0 +1,40 @@
+// OE Clinic List - Assignments
+// 
+// 
+
+.oe-clinic-assignment {
+	display:inline-block;
+	position:relative;
+	background: tint( $oe-grey,10);
+	height:$oe-event-header-height;
+	padding:0 10px;
+	margin:0 3px 0 0;
+	
+	color:$oe-text-light;
+	
+	.name {
+		@include font-size(12);
+		margin:5px 0 0 0;
+	}
+	
+	.code {
+		position: absolute;
+		bottom:5px; 
+		left:10px; 
+		@include font-size(10);
+		opacity:0.5;
+	}
+	
+	.count {
+		@include font-size(10);
+		position: absolute;
+		bottom:5px; 
+		right:10px; 
+		
+		.current {
+			color:$oe-text-highlight;
+			font-weight:500;
+		}
+	}
+	
+}
