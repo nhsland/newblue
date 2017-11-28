@@ -847,6 +847,12 @@ html {
   }
 }
 
+@media only screen and (min-width: 1800px) {
+  .oe-grid .oe-full-header, .oe-grid .oe-full-content {
+    width: 1350px;
+  }
+}
+
 .oe-grid .event-header {
   z-index: 1;
   height: 38px;
@@ -1658,6 +1664,10 @@ html {
   font-size: 1.5rem;
   font-weight: 200;
   line-height: 38px;
+}
+
+.oe-full-header .title.wordcaps {
+  text-transform: capitalize;
 }
 
 /* SEM Event Episodes */
@@ -3508,6 +3518,11 @@ table.oe-clinic-list td {
   padding: 5px 0;
 }
 
+table.oe-clinic-list td .specialty {
+  font-size: 0.6875rem;
+  opacity: 0.5;
+}
+
 table.oe-clinic-list td.nowrap {
   width: 1%;
   white-space: nowrap;
@@ -3586,6 +3601,10 @@ table.oe-clinic-list td.center {
 .oe-clinic .pathway-step.next-step-add.dr, .oe-clinic .pathway-step.dr.next-step {
   color: #f0f0f0;
   border-color: #c8c8c8;
+}
+
+.oe-clinic .pathway-step.next-step-add.waiting, .oe-clinic .pathway-step.waiting.next-step {
+  border-color: #d2320a;
 }
 
 .oe-clinic .pathway-step.next-step-add:hover, .oe-clinic .pathway-step.next-step:hover, .oe-clinic .pathway-step.next-step-add:active, .oe-clinic .pathway-step.next-step:active, .oe-clinic .pathway-step.next-step-add:focus, .oe-clinic .pathway-step.next-step:focus {

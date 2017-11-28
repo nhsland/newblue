@@ -68,12 +68,21 @@
 		overflow-y:auto;
 	}
 	
-	// Fix width to better handle layout
+	// 2 fix widths to better handle complex data layouts
 	.event-header, .lightening-viewer,
 	.main-event {
 		width:$oe-event-main-default-width;
 		@include media($oe-extended-browser-size){
 			width:$oe-event-main-extended-width;
+		}
+	}
+	
+	// full width header and content must allow for the 
+	// activity panel which is fixed at large resolutions. 
+	// JS controls the fixing and it's fixed at 1800px;
+	.oe-full-header, .oe-full-content {
+		@include media($oe-browser-size-activity-panel-fixed){
+			width: $oe-browser-size-activity-panel-fixed - $oe-activity-panel-width;
 		}
 	}
 	

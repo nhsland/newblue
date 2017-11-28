@@ -8,18 +8,16 @@ var clinic = {
 	
 	init:function(){
 		
-		this.patientPathwayNum = 0;
-		
+		this.patientPathwayID = 0;
 		this.setDurationGraphics();
 		
 		/**
-		set up interaction 	
+		+ icon to add more pathways to patient
 		**/
-		// + icon to add more pathways
 		$('.js-add-pathway').click(function( e ){
 			e.stopPropagation();
 			// need to know where to insert new pathways
-			clinic.patientPathwayNum = $(this).data('id')
+			clinic.patientPathwayID = $(this).data('id')
 			// position popup
 			clinic.addPathway( $(this).position() );
 		});
@@ -41,21 +39,108 @@ var clinic = {
 					$(this).remove();
 				});
 
-			
-			var $patientPathway = $('#'+clinic.patientPathwayNum+' .pathway' );
+			var $patientPathway = $('#patient-'+clinic.patientPathwayID+' .pathway' );
 			$patientPathway.append( $newStep );
 		});
 		
 		/** 
-		Allow any user to remove any next-steps	
+		Allow user to remove any next-steps	
 		**/
 		$('.next-step').click(function( e ){
 			e.stopPropagation();
 			$(this).remove();
 		});
 		
-
+		/** 
+		Assignment init.
+		All need initiating but for the purposes of IDG demo the 
+		patients are also pre-assigned here too. 
+		**/
+		clinic.demoSetup('JEM',[]);
+		clinic.demoSetup('CW',[]);
+		clinic.demoSetup('AB',[ 1008002, 1008003 ]); 
+		clinic.demoSetup('RB',[ 1008005 ]);
+		clinic.demoSetup('AG',[ 1008001 ]);
+		clinic.showUnassignedCount();
+		
+		
+		var previous;
+		// update all the assigned 
+		$("select").on('focus', function () {
+			// get current value on focus
+			previous = this.value;
+		}).change(function() {
+			var patientID = $(this).data('id');
+			clinic.changeAssignment( previous, this.value, patientID );
+		});
 	},	
+	
+	/**
+	idg demo setup
+	@param who - id string
+	@param patients - Array of patient numbers
+	**/
+	demoSetup:function(who,patients){
+		$('#assign-'+who).data( "patients", patients ); 
+		for(var i=0; i<patients.length; i++){
+			$('#patient-'+ patients[i] +' .clinic-assign-options').val( who );	
+		}
+		// show assignment count
+		$('#assign-'+ who + ' .current').text( patients.length );
+	},
+	
+	
+	/**
+	count all the unassigned dropdowns
+	**/
+	showUnassignedCount:function(){
+		var count = 0
+		$('.clinic-assign-options').each( function(){
+			if( $(this).val() == 0){
+				count += 1;
+			}
+		});
+		// show unassigned total count
+		$('#unassigned .current').text( count );	
+	},
+	
+	/**
+	add / remove assignment to doctor	
+	**/
+	changeAssignment:function( prevDr, newDr, patientID ){
+		
+		patientID = parseInt( patientID )
+		
+		// remove previous assigned doctor if it wasn't unassigned
+		if( prevDr != 0){
+			var patients = getData( prevDr );
+			var index = patients.indexOf( patientID );
+			if (index > -1) {
+				patients.splice(index, 1);
+			}
+			updateDrData( prevDr, patients  ) 
+		}
+		
+		// add patient to new doctor, if not unassigned
+		if( newDr != 0){
+			var patients = $('#assign-'+newDr).data( "patients" );
+			patients.push( patientID );
+			// show assignment count
+			updateDrData( newDr, patients  ) 	
+		}
+		
+		clinic.showUnassignedCount();
+		
+		function getData( drCode ){
+			return $( '#assign-' + drCode ).data( "patients" );
+		}
+		
+		function updateDrData( drCode, patients ){
+			$( '#assign-' + drCode ).data( "patients", patients )
+			$( '#assign-' + drCode + ' .current').text( patients.length );
+		}
+	},
+	
 	
 	/**
 	Show popup containing all options for adding pathways
@@ -90,15 +175,15 @@ var clinic = {
 			if( time > 0){	
 				var $svg = $(this).parent().children('.duration-graphic'); 
 
-					if (time > 90) { 
-						$svg.children('.c4').css({ fill: "#f00" });
-					} else if (time > 60) { 
-						$svg.children('.c3').css({ fill: "#f60" });
-					} else if (time > 40) { 
-						$svg.children('.c2').css({ fill: "#ebcd00" });
-					} else {
-						$svg.children('.c1').css({ fill: "#0c0" });	
-					}	
+				if (time > 90) { 
+					$svg.children('.c4').css({ fill: "#f00" });
+				} else if (time > 60) { 
+					$svg.children('.c3').css({ fill: "#f60" });
+				} else if (time > 40) { 
+					$svg.children('.c2').css({ fill: "#ebcd00" });
+				} else {
+					$svg.children('.c1').css({ fill: "#0c0" });	
+				}	
 			}
 		});		
 	}

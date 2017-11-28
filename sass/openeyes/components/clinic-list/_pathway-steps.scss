@@ -84,6 +84,10 @@
 				border-color:rgb(200,200,200);
 			}
 			
+			&.waiting {
+				border-color: $step-red;
+			}
+			
 			&:hover, &:active, &:focus {
 				background:$oe-btn-blue;
 			}				
