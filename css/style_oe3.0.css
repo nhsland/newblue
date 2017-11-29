@@ -3523,6 +3523,17 @@ table.oe-clinic-list td .specialty {
   opacity: 0.5;
 }
 
+table.oe-clinic-list td.late {
+  background-position: left top;
+  background-repeat: repeat-y;
+  background-size: 5px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="5" height="5" viewBox="0 0 5 5"><style> rect{ fill:#f90; }</style><rect x="0" y="0" width="5" height="5"/></svg>');
+}
+
+table.oe-clinic-list td.late .late-time {
+  opacity: 0.5;
+}
+
 table.oe-clinic-list td.nowrap {
   width: 1%;
   white-space: nowrap;
@@ -3666,6 +3677,7 @@ table.oe-clinic-list td.center {
   height: 38px;
   padding: 0 10px;
   margin: 0 3px 0 0;
+  cursor: pointer;
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -3692,6 +3704,15 @@ table.oe-clinic-list td.center {
 .oe-clinic-assignment .count .current {
   color: cyan;
   font-weight: 500;
+}
+
+.oe-clinic-assignment:hover, .oe-clinic-assignment:active, .oe-clinic-assignment:focus, .oe-clinic-assignment.selected {
+  background: #074598;
+  color: #fff;
+}
+
+.oe-clinic-assignment:hover .current, .oe-clinic-assignment:active .current, .oe-clinic-assignment:focus .current, .oe-clinic-assignment.selected .current {
+  color: #fff;
 }
 
 /* ------------------------ */

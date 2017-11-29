@@ -9,6 +9,7 @@
 	height:$oe-event-header-height;
 	padding:0 10px;
 	margin:0 3px 0 0;
+	cursor:pointer;
 	
 	color:$oe-text-light;
 	
@@ -34,6 +35,14 @@
 		.current {
 			color:$oe-text-highlight;
 			font-weight:500;
+		}
+	}
+	
+	&:hover, &:active, &:focus, &.selected {
+		background:$oe-btn-blue;
+		color:#fff;
+		.current {
+			color:#fff;
 		}
 	}
 	

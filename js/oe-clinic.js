@@ -63,17 +63,84 @@ var clinic = {
 		clinic.demoSetup('AG',[ 1008001 ]);
 		clinic.showUnassignedCount();
 		
+		/**
+		Setup a late person example
+		**/
+		$('#patient-'+1009112+' td')
+			.first()
+			.addClass('late')
+			.append( '<div class="late-time">09:52</div>' );
 		
+			
+		
+		/**
+		When dropdown assignment is changed update assignments	
+		**/
 		var previous;
-		// update all the assigned 
 		$("select").on('focus', function () {
-			// get current value on focus
-			previous = this.value;
+			previous = this.value; // get current value on focus
 		}).change(function() {
 			var patientID = $(this).data('id');
 			clinic.changeAssignment( previous, this.value, patientID );
 		});
+		
+		/**
+		Doctor clinic list filters.
+		Default set up is 'All'	
+		**/
+		$('#view-all-assigned').addClass('selected');
+	
+		$('.oe-clinic-assignment').click( function( e ){
+			e.stopPropagation();
+			clinic.filterList( $(this) );
+		});
+		
+		
+		
 	},	
+	
+	/**
+	Clicking on the doctors allows you to filter the list view	
+	**/
+	filterList:function( $dr ){
+		var id = $dr.data( 'id' );
+		var patients = $dr.data( 'patients' );
+		var $el = $('#assign-'+ id );
+		
+		
+		if( id == "all" ){
+			
+			$('.oe-clinic-list tbody tr').show();
+			$el = $('#view-all-assigned');
+			
+		} else if( id == 'none' ){
+			
+			// this has to work a bit harder, check each <tr>:
+			$('.oe-clinic-list tbody tr').each( function(){
+				var $dropdown = $(this).find('.clinic-assign-options');
+				if( $dropdown.val() == '0' ){
+					$(this).show();
+				} else {
+					$(this).hide()
+				}
+			});
+			$el = $('#unassigned');
+			
+		} else {
+			
+			$('.oe-clinic-list tbody tr').hide();
+			
+			for(var i=0; i<patients.length; i++){
+				$('#patient-' + patients[i]).show();
+			}
+			
+		}
+		
+		// update UI for doctors
+		$('.oe-clinic-assignment').removeClass('selected');
+		$el.addClass('selected');
+	},
+	
 	
 	/**
 	idg demo setup
