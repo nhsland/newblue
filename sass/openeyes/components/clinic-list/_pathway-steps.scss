@@ -15,6 +15,7 @@
 		// <span>  
 		position: relative;
 		display:inline-block;
+		min-width:35px;
 		margin:1px 3px 1px 0;
 		padding:0 8px;
 		height:38px;
@@ -26,10 +27,10 @@
 		.time {
 			position:absolute; 
 			bottom:3px; 
-			left:5px; 
+			left:3px; 
 			@include font-size(10);
 			line-height:normal;
-			opacity:0.6;
+			opacity:0.7;
 		}
 		
 		// Steps are either Pathway Events or meeting with Dr
@@ -45,7 +46,7 @@
 		$step-white: 	rgb(240,240,240);
 		$step-green: 	rgb(20,100,0);
 		$step-orange:	rgb(180,80,22);
-		$step-red:		rgb(210,50,10);
+		$step-red:		rgb(160,40,10);
 		
 		// text for all colours
 		color:$step-white;
@@ -71,9 +72,19 @@
 			@include step-colors( $step-orange );
 		}
 	
-		&.red { 
+		&.red, &.dna { 
 			@include step-colors( $step-red );
 		}
+		
+		&.blue { 
+			background:$oe-grey; 
+			color:$oe-text;
+			
+			&.late {
+				border-color:rgb(230,150,0); // this matches table late flag
+			}
+		}
+		
 		
 		// used in the popup box to add new steps
 		&.next-step-add {

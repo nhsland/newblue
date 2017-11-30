@@ -64,15 +64,42 @@ var clinic = {
 		clinic.showUnassignedCount();
 		
 		/**
-		Setup a late person example
+		Update UI for late and DNAs
 		**/
-		$('#patient-'+1009112+' td')
-			.first()
-			.addClass('late')
-			.append( '<div class="late-time">09:52</div>' );
-		
+		$('.pathway').each(function(){
+			var firstStep = $(this).children('.pathway-step').first();
 			
+			if( firstStep.hasClass( 'late' ) ){
+				var tr = $(this).parents('tr');
+				tr.find('td').first().addClass('time-flag late');
+			}
+			
+			if( firstStep.hasClass( 'dna' ) ){
+				var tr = $(this).parents('tr');
+				tr.find('td').first().addClass('time-flag dna');
+				tr.find('.clinic-assign-options').hide();
+				tr.find('.js-add-pathway').hide();
+				tr.find('.duration-graphic').css('opacity','0.3');
+				tr.find('.duration-mins').hide();
+				
+				
+				var dnaCount = parseInt( $('#DNA').find('.current').text() );
+				$('#DNA').find('.current').text( dnaCount + 1);
+			}
+		});
+			
+		/** 
+		Show a completed pathway exmaple	
+		**/	
+		var tr = $( '#patient-'+1152572 );
+		var duration = tr.find('.duration-graphic');
+		duration.hide();
+		duration.parent().addClass('complete');
+		duration.parent().children('.duration-mins').append(' mins');
+		tr.find('.clinic-assign-options').hide();
+		tr.find('.js-add-pathway').hide();
 		
+
 		/**
 		When dropdown assignment is changed update assignments	
 		**/
