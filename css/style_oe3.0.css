@@ -964,7 +964,7 @@ html {
   left: 200px;
   height: 60px;
   width: 545px;
-  background: transparent url("../svg/in-css/patient/patient-watermark.svg") top -4px right 10px no-repeat;
+  background: transparent url("../svg/in-css/backgrounds/patient-watermark.svg") top -4px right 10px no-repeat;
   background-size: 90px 90px;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.6875rem;
@@ -1115,7 +1115,7 @@ html {
 
 .oe-user .oe-user-profile-context li a:hover, .oe-user .oe-user-profile-context li a:focus, .oe-user .oe-user-profile-context li a:active {
   opacity: 1;
-  color: #0ff;
+  color: cyan;
 }
 
 .oe-nav {
@@ -1194,6 +1194,43 @@ html {
 .oe-nav .oe-nav-shortcuts li > a:hover, .oe-nav .oe-nav-shortcuts li > a:focus, .oe-nav .oe-nav-shortcuts li > a:active {
   color: #fff;
   background-color: #06377a;
+}
+
+.oe-clinic-management {
+  position: absolute;
+  top: 0;
+  left: 200px;
+  height: 60px;
+  width: 545px;
+  background: transparent url("../svg/in-css/backgrounds/clinic-watermark.svg") top 0 right 10px no-repeat;
+  background-size: 70px;
+  font-size: 0.6875rem;
+}
+
+.oe-clinic-management .current-clinic {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  font-size: 1.4375rem;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.oe-clinic-management .change-clinic {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+}
+
+.oe-clinic-management .change-clinic a {
+  font-size: 0.625rem;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.oe-clinic-management .change-clinic a:hover, .oe-clinic-management .change-clinic a:focus, .oe-clinic-management .change-clinic a:active {
+  opacity: 1;
+  color: cyan;
 }
 
 .oe-activity-panel {
@@ -1655,7 +1692,7 @@ html {
 .oe-full-header {
   position: relative;
   background: #283442;
-  padding: 0 0 0 45px;
+  padding: 0 0 0 20px;
 }
 
 .oe-full-header .title {
@@ -3609,6 +3646,7 @@ table.oe-clinic-list td.center {
 
 .oe-clinic .pathway-step.red, .oe-clinic .pathway-step.dna {
   background: #a0280a;
+  line-height: 34px;
 }
 
 .oe-clinic .pathway-step.red.dr, .oe-clinic .pathway-step.dna.dr {
@@ -3675,22 +3713,7 @@ table.oe-clinic-list td.center {
   height: auto;
 }
 
-.oe-clinic .add-new-pathway:after {
-  right: 100%;
-  top: 22px;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-color: transparent;
-  border-right-color: cyan;
-  border-width: 9px;
-  margin-top: -9px;
-}
-
-.oe-clinic-assignment {
+.oe-clinic-filter {
   display: inline-block;
   position: relative;
   background: #3e4855;
@@ -3701,12 +3724,12 @@ table.oe-clinic-list td.center {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.oe-clinic-assignment .name {
+.oe-clinic-filter .name {
   font-size: 0.75rem;
   margin: 5px 0 0 0;
 }
 
-.oe-clinic-assignment .code {
+.oe-clinic-filter .code {
   position: absolute;
   bottom: 5px;
   left: 10px;
@@ -3714,24 +3737,24 @@ table.oe-clinic-list td.center {
   opacity: 0.5;
 }
 
-.oe-clinic-assignment .count {
+.oe-clinic-filter .count {
   font-size: 0.625rem;
   position: absolute;
   bottom: 5px;
   right: 10px;
 }
 
-.oe-clinic-assignment .count .current {
+.oe-clinic-filter .count .current {
   color: cyan;
   font-weight: 500;
 }
 
-.oe-clinic-assignment:hover, .oe-clinic-assignment:active, .oe-clinic-assignment:focus, .oe-clinic-assignment.selected {
+.oe-clinic-filter:hover, .oe-clinic-filter:active, .oe-clinic-filter:focus, .oe-clinic-filter.selected {
   background: #074598;
   color: #fff;
 }
 
-.oe-clinic-assignment:hover .current, .oe-clinic-assignment:active .current, .oe-clinic-assignment:focus .current, .oe-clinic-assignment.selected .current {
+.oe-clinic-filter:hover .current, .oe-clinic-filter:active .current, .oe-clinic-filter:focus .current, .oe-clinic-filter.selected .current {
   color: #fff;
 }
 

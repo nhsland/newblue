@@ -74,6 +74,7 @@
 	
 		&.red, &.dna { 
 			@include step-colors( $step-red );
+			line-height:34px;
 		}
 		
 		&.blue { 

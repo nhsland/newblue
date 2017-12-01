@@ -4,7 +4,7 @@
 .oe-full-header {
 	position:relative;
 	background:$oe-grey;
-	padding:0 0 0 45px;
+	padding:0 0 0 20px;
 
 	.title {
 		color:$oe-text-light;
@@ -16,6 +16,7 @@
 		&.wordcaps {
 			text-transform: capitalize;
 		}
+		
 		
 	}
 }

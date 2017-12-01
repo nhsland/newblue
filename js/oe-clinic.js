@@ -6,102 +6,46 @@ JS provided to demo & review UI design work on IDG idg.knowego.com
 
 var clinic = {
 	
-	init:function(){
+	/**
+	The main function of JS is to provide
+	ways to filter the clinic list view
+	and to add new steps to a patient pathway.
+	@para data - Object containing setup info: { id:[ patients Array ] }
+	**/
+	init:function( data ){
 		
-		this.patientPathwayID = 0;
-		this.setDurationGraphics();
+		this.data = data; // reference data Obj.
+		this.activePathwayID = 0;
 		
 		/**
-		+ icon to add more pathways to patient
+		all '+' icons to add pathways to patient
 		**/
 		$('.js-add-pathway').click(function( e ){
 			e.stopPropagation();
 			// need to know where to insert new pathways
-			clinic.patientPathwayID = $(this).data('id')
+			clinic.activePathwayID = $(this).data('id')
 			// position popup
 			clinic.addPathway( $(this).position() );
 		});
 		
 		/**
-		next steps in the popup. this is in the DOM but hidden
-		but when fired be sure to insert into the correct row. 
+		add pathway steps popup. Hidden in DOM 
 		**/
 		$('#js-add-new-pathway .next-step-add').click(function( e ){
 			e.stopPropagation();
-			
-			// clone DOM and insert into patient pathway
-			var $newStep = $(this).clone().unbind( "click");
-			$newStep
-				.removeClass('next-step-add')
-				.addClass('next-step')
-				.click(function( e ){
-					e.stopPropagation();
-					$(this).remove();
-				});
-
-			var $patientPathway = $('#patient-'+clinic.patientPathwayID+' .pathway' );
-			$patientPathway.append( $newStep );
+			clinic.createNewPathway( $(this) );
 		});
 		
 		/** 
-		Allow user to remove any next-steps	
+		Allow user to remove any next-steps (grey ones)	
 		**/
 		$('.next-step').click(function( e ){
 			e.stopPropagation();
 			$(this).remove();
 		});
 		
-		/** 
-		Assignment init.
-		All need initiating but for the purposes of IDG demo the 
-		patients are also pre-assigned here too. 
-		**/
-		clinic.demoSetup('JEM',[]);
-		clinic.demoSetup('CW',[]);
-		clinic.demoSetup('AB',[ 1008002, 1008003 ]); 
-		clinic.demoSetup('RB',[ 1008005 ]);
-		clinic.demoSetup('AG',[ 1008001 ]);
-		clinic.showUnassignedCount();
-		
 		/**
-		Update UI for late and DNAs
-		**/
-		$('.pathway').each(function(){
-			var firstStep = $(this).children('.pathway-step').first();
-			
-			if( firstStep.hasClass( 'late' ) ){
-				var tr = $(this).parents('tr');
-				tr.find('td').first().addClass('time-flag late');
-			}
-			
-			if( firstStep.hasClass( 'dna' ) ){
-				var tr = $(this).parents('tr');
-				tr.find('td').first().addClass('time-flag dna');
-				tr.find('.clinic-assign-options').hide();
-				tr.find('.js-add-pathway').hide();
-				tr.find('.duration-graphic').css('opacity','0.3');
-				tr.find('.duration-mins').hide();
-				
-				
-				var dnaCount = parseInt( $('#DNA').find('.current').text() );
-				$('#DNA').find('.current').text( dnaCount + 1);
-			}
-		});
-			
-		/** 
-		Show a completed pathway exmaple	
-		**/	
-		var tr = $( '#patient-'+1152572 );
-		var duration = tr.find('.duration-graphic');
-		duration.hide();
-		duration.parent().addClass('complete');
-		duration.parent().children('.duration-mins').append(' mins');
-		tr.find('.clinic-assign-options').hide();
-		tr.find('.js-add-pathway').hide();
-		
-
-		/**
-		When dropdown assignment is changed update assignments	
+		select dropdown assignment	
 		**/
 		var previous;
 		$("select").on('focus', function () {
@@ -112,37 +56,61 @@ var clinic = {
 		});
 		
 		/**
-		Doctor clinic list filters.
-		Default set up is 'All'	
+		clinic list filters.
 		**/
-		$('#view-all-assigned').addClass('selected');
-	
-		$('.oe-clinic-assignment').click( function( e ){
+		$('#view-all-patients').addClass('selected');
+		$('.oe-clinic-filter').click( function( e ){
 			e.stopPropagation();
 			clinic.filterList( $(this) );
 		});
 		
+		/**
+		ultimately this will be handled by backend
+		for now easier to setup DOM in JS	
+		**/
+		this.setupDemoUI();
 		
-		
+		/**
+		filters based on DOM so run after demo setup
+		**/
+		this.setupFilters();
+		this.setDurationGraphics();	
 	},	
 	
 	/**
-	Clicking on the doctors allows you to filter the list view	
+	Clicking on All, Doctors, Unassigned, DNA and Task 
+	allows the user to filter the list view	
 	**/
-	filterList:function( $dr ){
-		var id = $dr.data( 'id' );
-		var patients = $dr.data( 'patients' );
-		var $el = $('#assign-'+ id );
+	filterList:function( $filter ){
+		var id = $filter.data( 'id' ); 
+		var patients = $filter.data( 'patients' );
+		var $el = $('#doctor-'+ id );
 		
+/*
+		if( patients != undefined ){
+			// only doctors have an assigned patient list.
+			$('.oe-clinic-list tbody tr').hide();
+			for(var i=0; i<patients.length; i++){
+				$('#patient-' + patients[i]).show(); // show Dr assigned patients
+			}
+			
+		} else {
+			// All, none (unassigned), dna or task filters. 
+			switch( id ){
+				case 'all':
+					$('.oe-clinic-list tbody tr').show();
+					$el = $('#view-all-assigned');
+				break;
+				case 'none': // unassigned
+					$el = $('#unassigned');
+					findUnassigned();
+				break; 
+				
+				default: // not used.
+			}
+		}
 		
-		if( id == "all" ){
-			
-			$('.oe-clinic-list tbody tr').show();
-			$el = $('#view-all-assigned');
-			
-		} else if( id == 'none' ){
-			
-			// this has to work a bit harder, check each <tr>:
+		function findUnassigned(){
 			$('.oe-clinic-list tbody tr').each( function(){
 				var $dropdown = $(this).find('.clinic-assign-options');
 				if( $dropdown.val() == '0' ){
@@ -151,55 +119,47 @@ var clinic = {
 					$(this).hide()
 				}
 			});
-			$el = $('#unassigned');
-			
-		} else {
-			
-			$('.oe-clinic-list tbody tr').hide();
-			
-			for(var i=0; i<patients.length; i++){
-				$('#patient-' + patients[i]).show();
-			}
-			
 		}
+*/
 		
-		// update UI for doctors
-		$('.oe-clinic-assignment').removeClass('selected');
+		// update UI for Filter buttons
+		$('.oe-clinic-filter').removeClass('selected');
 		$el.addClass('selected');
 	},
 	
 	
 	/**
-	idg demo setup
-	@param who - id string
-	@param patients - Array of patient numbers
+	set up ALL filter buttons, use init data
 	**/
-	demoSetup:function(who,patients){
-		$('#assign-'+who).data( "patients", patients ); 
-		for(var i=0; i<patients.length; i++){
-			$('#patient-'+ patients[i] +' .clinic-assign-options').val( who );	
+	setupFilters:function(){
+		// All is selected by default
+		$('#filter-all').addClass('selected');
+		
+		// set up assignment dropdowns for doctors & show count
+		for(obj in clinic.data){
+			var patients = clinic.data[obj];
+			var id = obj.toString();
+			for(var i=0; i<patients.length; i++){
+				$('#patient-'+ patients[i] +' .clinic-assign-options').val( id );	
+			}
+			$('#filter-'+ id + ' .current').text( patients.length );
 		}
-		// show assignment count
-		$('#assign-'+ who + ' .current').text( patients.length );
-	},
-	
-	
-	/**
-	count all the unassigned dropdowns
-	**/
-	showUnassignedCount:function(){
-		var count = 0
+		
+		/**
+		build the data for unassigned from the DOM
+		note: js has setup the DOM demo
+		**/
 		$('.clinic-assign-options').each( function(){
-			if( $(this).val() == 0){
-				count += 1;
+			if( $(this).val() == 0 && $(this).is(":visible") ){
+				var trID = $(this).parents('tr').data('id')
+				clinic.data['none'].push( parseInt(trID) );
 			}
 		});
-		// show unassigned total count
-		$('#unassigned .current').text( count );	
+		$('#filter-unassigned .current').text( clinic.data['none'].length );
 	},
 	
 	/**
-	add / remove assignment to doctor	
+	add/remove assignment to doctor	
 	**/
 	changeAssignment:function( prevDr, newDr, patientID ){
 		
@@ -256,8 +216,24 @@ var clinic = {
 	  		e.stopPropagation();
 	  		$('#js-add-new-pathway').hide();
   		});
-  		
 	}, 
+	
+	/**
+	Create new pathway step in patient
+	**/
+	createNewPathway:function( $step ){
+		// clone DOM and insert into patient pathway
+		var $newStep = $step.clone().unbind('click');
+		$newStep
+			.removeClass('next-step-add')
+			.addClass('next-step')
+			.click(function( e ){
+				e.stopPropagation();
+				$(this).remove();
+			});
+
+		$('#patient-'+clinic.activePathwayID+' .pathway' ).append( $newStep );
+	},
 	
 	/** 
 	set waiting light graphics based on the duration minutes
@@ -280,16 +256,51 @@ var clinic = {
 				}	
 			}
 		});		
-	}
+	},
+	
+	/** 
+	UI setup DEMO (based on DOM elements)
+	**/
+	setupDemoUI:function(){
+		
+		/**
+		Update UI for Late and DNA
+		**/
+		$('.pathway').each(function(){
+			var firstStep = $(this).children('.pathway-step').first();
+			
+			// late! 
+			if( firstStep.hasClass( 'late' ) ){
+				var tr = $(this).parents('tr');
+				tr.find('td').first().addClass('time-flag late');
+			}
+			
+			// DNA! 
+			if( firstStep.hasClass( 'dna' ) ){
+				var tr = $(this).parents('tr');
+				tr.find('td').first().addClass('time-flag dna');
+				tr.find('.clinic-assign-options').hide();
+				tr.find('.js-add-pathway').hide();
+				tr.find('.duration-graphic').css('opacity','0.3');
+				tr.find('.duration-mins').hide();
+			}
+		});
+		
+		/** 
+		Show a completed pathway exmaple	
+		**/	
+		var tr = $( '#patient-'+1152572 );
+		var duration = tr.find('.duration-graphic');
+		var td = duration.parent();
+		duration.hide();
+		td.addClass('complete');
+		td.children('.duration-mins').append(' mins');
+		tr.find('.clinic-assign-options').hide();
+		tr.find('.js-add-pathway').hide();
+		
+		
+	},
 };
-
-
-$(document).ready(function() {
-	// init
-	clinic.init();
-});
-
-
 
 
 
