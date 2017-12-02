@@ -16,6 +16,7 @@ table.oe-clinic-list {
 	tbody {
 		// add line to help with reading data
 		tr {
+			background:$oe-blue-dark;
 			border-bottom:1px solid $oe-line;
 			&:last-child { 
 				border-bottom: none;
@@ -24,7 +25,16 @@ table.oe-clinic-list {
 			&:hover {
 				background-color: $oe-blue-darker;
 			}
-		}
+			
+			&.future {
+				background-color: tint( $oe-blue-dark, 5);
+				
+				&:hover {
+					background-color: tint( $oe-blue-darker, 5 );
+				}
+				
+			}
+		}	
 	}
 				
 

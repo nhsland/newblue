@@ -4,7 +4,23 @@
 
 
 .oe-clinic {
+	position:relative;
 	background:$oe-blue-dark;
+	
+	// show the current time in the clinic
+	.clinic-time {
+		position:absolute;
+		top:100%;  // make sure it animates from the bottom up.
+		left:0;
+		z-index: $oe-z-tooltip;
+		background:$oe-text-highlight;
+		@include font-size(10);
+		color:$oe-blue-darker;
+		padding:3px 23px 3px 23px;
+		
+		transition:top 0.3s ease-out; 
+		
+	}
 	
 	// set up SVG circle defaults
 	svg.duration-graphic {

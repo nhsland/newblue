@@ -38,6 +38,7 @@ var clinic = {
 		
 		/** 
 		Allow user to remove any next-steps (grey ones)	
+		that have been added to pathway
 		**/
 		$('.next-step').click(function( e ){
 			e.stopPropagation();
@@ -45,20 +46,25 @@ var clinic = {
 		});
 		
 		/**
-		select dropdown assignment	
+		select dropdown assignment capture inital value 
 		**/
-		var previous;
-		$("select").on('focus', function () {
-			previous = this.value; // get current value on focus
-		}).change(function() {
-			var patientID = $(this).data('id');
-			clinic.changeAssignment( previous, this.value, patientID );
+		$('.clinic-assign-options').each( function(){
+			var value = $(this).val();
+			$(this).data('previous',value);
 		});
 		
 		/**
-		clinic list filters.
+		select dropdown assignment watch for changes 
 		**/
-		$('#view-all-patients').addClass('selected');
+		$('.clinic-assign-options').change(function() {
+			var patientID = $(this).data('id');
+			clinic.changeAssignment( $(this).data('previous'), this.value, patientID );
+			$(this).data('previous',this.value);
+		});
+		
+		/**
+		clinic list filters
+		**/
 		$('.oe-clinic-filter').click( function( e ){
 			e.stopPropagation();
 			clinic.filterList( $(this) );
@@ -75,56 +81,39 @@ var clinic = {
 		**/
 		this.setupFilters();
 		this.setDurationGraphics();	
+		this.showCurrentTime();
 	},	
 	
 	/**
-	Clicking on All, Doctors, Unassigned, DNA and Task 
-	allows the user to filter the list view	
+	All, Doctors, Unassigned, DNA and Tasks
+	allows the user to filter the patient list	
 	**/
 	filterList:function( $filter ){
-		var id = $filter.data( 'id' ); 
-		var patients = $filter.data( 'patients' );
-		var $el = $('#doctor-'+ id );
-		
-/*
-		if( patients != undefined ){
-			// only doctors have an assigned patient list.
-			$('.oe-clinic-list tbody tr').hide();
-			for(var i=0; i<patients.length; i++){
-				$('#patient-' + patients[i]).show(); // show Dr assigned patients
-			}
-			
-		} else {
-			// All, none (unassigned), dna or task filters. 
-			switch( id ){
-				case 'all':
-					$('.oe-clinic-list tbody tr').show();
-					$el = $('#view-all-assigned');
-				break;
-				case 'none': // unassigned
-					$el = $('#unassigned');
-					findUnassigned();
-				break; 
-				
-				default: // not used.
-			}
-		}
-		
-		function findUnassigned(){
-			$('.oe-clinic-list tbody tr').each( function(){
-				var $dropdown = $(this).find('.clinic-assign-options');
-				if( $dropdown.val() == '0' ){
-					$(this).show();
-				} else {
-					$(this).hide()
-				}
-			});
-		}
-*/
-		
-		// update UI for Filter buttons
+		var id = $filter.data( 'id' );
+		// update UI
 		$('.oe-clinic-filter').removeClass('selected');
-		$el.addClass('selected');
+		$('#filter-'+ id ).addClass('selected');
+		
+		/** 
+		'All' and 'Tasks' are the exceptions to the standard filtering	
+		**/
+		if( id == 'all' ) {
+			
+			$('.oe-clinic-list tbody tr').show();
+		
+		} else if (id == 'tasks') {
+			
+		
+		} else {
+			// Doctors, Unassigned and DNA
+			// hide others...
+			$('.oe-clinic-list tbody tr').hide();
+			
+			var patients = clinic.data[id];
+			for(var i=0; i<patients.length; i++){
+				$('#patient-' + patients[i]).show(); // show assigned patients 			
+			}
+		}
 	},
 	
 	
@@ -132,6 +121,7 @@ var clinic = {
 	set up ALL filter buttons, use init data
 	**/
 	setupFilters:function(){
+		
 		// All is selected by default
 		$('#filter-all').addClass('selected');
 		
@@ -147,54 +137,37 @@ var clinic = {
 		
 		/**
 		build the data for unassigned from the DOM
-		note: js has setup the DOM demo
+		note: js has setup the DOM for IDG demo
 		**/
 		$('.clinic-assign-options').each( function(){
-			if( $(this).val() == 0 && $(this).is(":visible") ){
+			if( $(this).val() == 'unassigned' && $(this).is(":visible") ){
 				var trID = $(this).parents('tr').data('id')
-				clinic.data['none'].push( parseInt(trID) );
+				clinic.data['unassigned'].push( parseInt(trID) );
 			}
 		});
-		$('#filter-unassigned .current').text( clinic.data['none'].length );
+		$('#filter-unassigned .current').text( clinic.data['unassigned'].length );
 	},
 	
 	/**
-	add/remove assignment to doctor	
+	users adds/removes assignment to doctor	
 	**/
-	changeAssignment:function( prevDr, newDr, patientID ){
+	changeAssignment:function( prevAssign, newAssign, patientID ){
+		patientID = parseInt( patientID );
+	
+		// remove 
+		var index = clinic.data[ prevAssign ].indexOf( patientID );
+		if (index > -1) clinic.data[ prevAssign ].splice( index, 1 );
+
+		// add
+		clinic.data[ newAssign ].push( patientID );
 		
-		patientID = parseInt( patientID )
+		updateCount( prevAssign );
+		updateCount( newAssign );
 		
-		// remove previous assigned doctor if it wasn't unassigned
-		if( prevDr != 0){
-			var patients = getData( prevDr );
-			var index = patients.indexOf( patientID );
-			if (index > -1) {
-				patients.splice(index, 1);
-			}
-			updateDrData( prevDr, patients  ) 
-		}
-		
-		// add patient to new doctor, if not unassigned
-		if( newDr != 0){
-			var patients = $('#assign-'+newDr).data( "patients" );
-			patients.push( patientID );
-			// show assignment count
-			updateDrData( newDr, patients  ) 	
-		}
-		
-		clinic.showUnassignedCount();
-		
-		function getData( drCode ){
-			return $( '#assign-' + drCode ).data( "patients" );
-		}
-		
-		function updateDrData( drCode, patients ){
-			$( '#assign-' + drCode ).data( "patients", patients )
-			$( '#assign-' + drCode + ' .current').text( patients.length );
+		function updateCount( code ){
+			$('#filter-'+ code +' .current').text( clinic.data[ code ].length );
 		}
 	},
-	
 	
 	/**
 	Show popup containing all options for adding pathways
@@ -259,6 +232,29 @@ var clinic = {
 	},
 	
 	/** 
+	show 'current' time in clinic patient list
+	faked for demo purposes
+	**/
+	showCurrentTime:function(){
+		var nowTime = "10:35";
+		var future = false;
+		$('.oe-clinic-list tbody tr').each( function(){
+			var td = $(this).find('td').first();
+			
+			if(td.text() == "10:35"){
+				future = true;
+				
+				var pos = td.position();
+				$('.clinic-time').css( {'top':pos.top - 7 } );
+			}
+		
+			if( future ){
+				$(this).addClass('future');
+			}
+		});	
+	},
+	
+	/** 
 	UI setup DEMO (based on DOM elements)
 	**/
 	setupDemoUI:function(){
@@ -296,7 +292,9 @@ var clinic = {
 		td.addClass('complete');
 		td.children('.duration-mins').append(' mins');
 		tr.find('.clinic-assign-options').hide();
+		tr.find('.clinic-assign-options').parent().text('Dr Amit Baum (AB)');
 		tr.find('.js-add-pathway').hide();
+		$('#filter-AB .total').text(1);
 		
 		
 	},

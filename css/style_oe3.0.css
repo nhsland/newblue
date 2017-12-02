@@ -3506,7 +3506,20 @@ html {
 
 /* Clinic List */
 .oe-clinic {
+  position: relative;
   background: #182535;
+}
+
+.oe-clinic .clinic-time {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 990;
+  background: cyan;
+  font-size: 0.625rem;
+  color: #141e2b;
+  padding: 3px 23px 3px 23px;
+  transition: top 0.3s ease-out;
 }
 
 .oe-clinic svg.duration-graphic {
@@ -3524,6 +3537,7 @@ table.oe-clinic-list thead tr {
 }
 
 table.oe-clinic-list tbody tr {
+  background: #182535;
   border-bottom: 1px solid rgba(204, 204, 204, 0.1);
 }
 
@@ -3533,6 +3547,14 @@ table.oe-clinic-list tbody tr:last-child {
 
 table.oe-clinic-list tbody tr:hover {
   background-color: #141e2b;
+}
+
+table.oe-clinic-list tbody tr.future {
+  background-color: #24303f;
+}
+
+table.oe-clinic-list tbody tr.future:hover {
+  background-color: #202936;
 }
 
 table.oe-clinic-list th, table.oe-clinic-list td {
