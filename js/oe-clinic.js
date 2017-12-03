@@ -22,44 +22,18 @@ var clinic = {
 		**/
 		$('.js-add-pathway').click(function( e ){
 			e.stopPropagation();
-			// need to know where to insert new pathways
-			clinic.activePathwayID = $(this).data('id')
-			// position popup
-			clinic.addPathway( $(this).position() );
-		});
-		
-		/**
-		add pathway steps popup. Hidden in DOM 
-		**/
-		$('#js-add-new-pathway .next-step-add').click(function( e ){
-			e.stopPropagation();
-			clinic.createNewPathway( $(this) );
+			clinic.activePathwayID = $(this).data('id'); 		// need to know where to insert new pathways
+			var pos = $(this).position();						// position addPathway popup
+			clinic.addPathway.show( pos.left, pos.top - 15 );
 		});
 		
 		/** 
-		Allow user to remove any next-steps (grey ones)	
-		that have been added to pathway
+		Allow users to remove any next-steps (grey ones)	
+		that have been added to any pathway
 		**/
 		$('.next-step').click(function( e ){
 			e.stopPropagation();
 			$(this).remove();
-		});
-		
-		/**
-		select dropdown assignment capture inital value 
-		**/
-		$('.clinic-assign-options').each( function(){
-			var value = $(this).val();
-			$(this).data('previous',value);
-		});
-		
-		/**
-		select dropdown assignment watch for changes 
-		**/
-		$('.clinic-assign-options').change(function() {
-			var patientID = $(this).data('id');
-			clinic.changeAssignment( $(this).data('previous'), this.value, patientID );
-			$(this).data('previous',this.value);
 		});
 		
 		/**
@@ -72,14 +46,16 @@ var clinic = {
 		
 		/**
 		ultimately this will be handled by backend
-		for now easier to setup DOM in JS	
+		for now easier to setup demo DOM in JS	
 		**/
-		this.setupDemoUI();
+		this.setupDemoUI();	// ---- for IDG demo
 		
 		/**
-		filters based on DOM so run after demo setup
+		setup
 		**/
-		this.setupFilters();
+		this.setupAddPathway();
+		this.setupAssignments();
+		this.setupFilters(); 				
 		this.setDurationGraphics();	
 		this.showCurrentTime();
 	},	
@@ -149,6 +125,25 @@ var clinic = {
 	},
 	
 	/**
+	setup assignment dropdowns	
+	**/
+	setupAssignments:function(){
+		
+		// store inital value 
+		$('.clinic-assign-options').each( function(){
+			var value = $(this).val();
+			$(this).data('previous',value);
+		});
+		
+		// when changed update value and store new value
+		$('.clinic-assign-options').change(function() {
+			var patientID = $(this).data('id');
+			clinic.changeAssignment( $(this).data('previous'), this.value, patientID );
+			$(this).data('previous',this.value);
+		});
+	},
+	
+	/**
 	users adds/removes assignment to doctor	
 	**/
 	changeAssignment:function( prevAssign, newAssign, patientID ){
@@ -169,44 +164,117 @@ var clinic = {
 		}
 	},
 	
-	/**
-	Show popup containing all options for adding pathways
-	This is pre-built in the DOM 
-	**/
-	addPathway:function( pos ){
-		var left = pos.left, 
-			top = pos.top - 15; 
-		
-		$('#js-add-new-pathway')
-			.removeClass('hidden')
-			.show()
-			.css({'left':left, 'top':top })
-			.mouseleave(function(){
-				$(this).hide();
-	  		});
-  		
-  		$('#js-add-new-pathway .js-close-btn').click(function( e ){
-	  		e.stopPropagation();
-	  		$('#js-add-new-pathway').hide();
-  		});
-	}, 
 	
 	/**
-	Create new pathway step in patient
+	popup containing all options for adding pathways
+	This is pre-built and 'hidden' in the DOM 
 	**/
-	createNewPathway:function( $step ){
-		// clone DOM and insert into patient pathway
-		var $newStep = $step.clone().unbind('click');
-		$newStep
-			.removeClass('next-step-add')
-			.addClass('next-step')
-			.click(function( e ){
+	setupAddPathway:function(){
+		
+		/**
+		Events
+		**/
+		$('#js-add-new-pathway .js-close-btn').click(function( e ){
+	  		e.stopPropagation();
+	  		clinic.addPathway.hide();
+  		});
+  		
+		$('#js-add-new-pathway .next-step-add').click(function( e ){
+			e.stopPropagation();
+			clinic.addPathway.addStep( $(this) );
+		});
+		
+		/**
+		Clone step to add it to pathway
+		**/
+		function cloneStep( $step ){
+			var $new = $step.clone().unbind('click');
+			$new
+				.removeClass('next-step-add')
+				.addClass('next-step')
+				.click(function( e ){
+					e.stopPropagation();
+					$(this).remove();
+				});
+			return $new;
+		}
+		
+		/**
+		Add step to selected pathway
+		**/
+		function appendNewStep( $appendStep ){
+			$appendStep.click(function( e ){
 				e.stopPropagation();
 				$(this).remove();
 			});
+			$('#patient-'+clinic.activePathwayID+' .pathway' ).append( $appendStep );
+		}
+		
+		/**
+		Dilate is a special case. 
+		**/
+		function addDilate( $step ){
+			// check Dilate options
+			var fixedSet = $('input[name=fixed]:checked').val();
+			console.log(fixedSet);
+			
+			
+			var $first = cloneStep( $step );
+			appendNewStep( $first.removeClass('next-step').addClass('orange') );
+			appendNewStep( cloneStep( $step ) );
+			appendNewStep( cloneStep( $step ) );
+		}
+		
+		/**
+		Handle addPathway application logic
+		**/
+		clinic.addPathway = {
+	
+			show:function( left, top ){
+				var me = this;
+				$('#js-add-new-pathway')
+					.removeClass('hidden')
+					.show()
+					.css({'left':left, 'top':top })
+					.mouseleave(function(){
+						$(this).hide();
+						me.reset();
+			  		});				
+			}, 
+			
+			addStep:function( $step ){
+				var me = this;
+				
+				if( $step.data('id') == "dilate" ){
+					// hide pathway steps
+					$('#js-add-new-pathway .new-pathway-steps').hide();
+					// show dilate options
+					$('#add-dilate-options').removeClass('hidden').show();
+					// set up Add button
+					$('#js-dilate-add-btn').click( function(){
+						addDilate( $step );					
+						me.reset();
+					});
+					
+				} else {
+					// insert clone DOM straight into selected patient pathway		
+					appendNewStep( cloneStep( $step ) );
+				}
+			}, 
+			
+			reset:function(){
+				$('#add-dilate-options .option-list input').prop('checked',false);
+				$('#add-dilate-options').hide();
+				$('#js-add-new-pathway .new-pathway-steps').show();
+			}, 
+			
+			hide:function(){
+				this.reset();
+				$('#js-add-new-pathway').hide();
+			}
+		};	
+	},	
 
-		$('#patient-'+clinic.activePathwayID+' .pathway' ).append( $newStep );
-	},
 	
 	/** 
 	set waiting light graphics based on the duration minutes

@@ -3517,6 +3517,7 @@ html {
   z-index: 990;
   background: cyan;
   font-size: 0.625rem;
+  font-weight: 500;
   color: #141e2b;
   padding: 3px 23px 3px 23px;
   transition: top 0.3s ease-out;
@@ -3695,7 +3696,7 @@ table.oe-clinic-list td.center {
 }
 
 .oe-clinic .pathway-step.next-step-add.waiting, .oe-clinic .pathway-step.waiting.next-step {
-  border-color: #a0280a;
+  border-color: cyan;
 }
 
 .oe-clinic .pathway-step.next-step-add:hover, .oe-clinic .pathway-step.next-step:hover, .oe-clinic .pathway-step.next-step-add:active, .oe-clinic .pathway-step.next-step:active, .oe-clinic .pathway-step.next-step-add:focus, .oe-clinic .pathway-step.next-step:focus {
@@ -3714,6 +3715,14 @@ table.oe-clinic-list td.center {
   position: relative;
 }
 
+.oe-clinic .new-pathway-steps {
+  padding: 0 0 0 0;
+}
+
+.oe-clinic .new-pathway-steps .group {
+  padding: 5px 0;
+}
+
 .oe-clinic .add-new-pathway {
   position: absolute;
   top: 0;
@@ -3721,18 +3730,37 @@ table.oe-clinic-list td.center {
   z-index: 990;
   background: #141e2b;
   border: 1px solid cyan;
-  padding: 15px 30px 15px 15px;
+  padding: 0 30px 15px 15px;
   max-width: 300px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.oe-clinic .add-new-pathway h3 {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  padding: 10px 0;
 }
 
 .oe-clinic .add-new-pathway .js-close-btn {
   position: absolute;
-  top: 5px;
-  right: 8px;
+  top: 8px;
+  right: 9px;
 }
 
 .oe-clinic .add-new-pathway .pathway-step {
   height: auto;
+}
+
+.oe-clinic .pathway-extra-options .option-list label {
+  margin-bottom: 5px;
+}
+
+.oe-clinic .pathway-extra-options .add-btn {
+  margin: 10px 0 0 0;
+  text-align: right;
 }
 
 .oe-clinic-filter {
