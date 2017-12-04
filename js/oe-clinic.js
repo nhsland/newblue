@@ -2,6 +2,11 @@
 
 JS provided to demo & review UI design work on IDG idg.knowego.com
 
+currently the logic for the steps is:
+Green - done (but may have extra info if required)
+Orange - in progress. must have info (to remove at least)
+Grey - future event can be directly removed
+
 */
 
 var clinic = {
@@ -58,7 +63,21 @@ var clinic = {
 		this.setupFilters(); 				
 		this.setDurationGraphics();	
 		this.showCurrentTime();
-	},	
+	},
+	
+	
+	/** 
+	what is the last step state in pathway?
+	**/	
+	makeNewStepActive:function(){
+		var last = $('#patient-'+clinic.activePathwayID+' .pathway-step' ).last();
+		if( last.hasClass('green') ){
+			return true;
+		} else {
+			return false;
+		}
+	},
+	
 	
 	/**
 	All, Doctors, Unassigned, DNA and Tasks
@@ -179,23 +198,38 @@ var clinic = {
 	  		clinic.addPathway.hide();
   		});
   		
+  		// next steps 
 		$('#js-add-new-pathway .next-step-add').click(function( e ){
 			e.stopPropagation();
 			clinic.addPathway.addStep( $(this) );
 		});
 		
+		// dilate options ('hidden')
+		$('#js-dilate-add-btn').click( function( e ){
+			e.stopPropagation();
+			addDilate();					
+		});
+		
 		/**
-		Clone step to add it to pathway
+		Create new step by cloning to add it to pathway
 		**/
-		function cloneStep( $step ){
-			var $new = $step.clone().unbind('click');
-			$new
-				.removeClass('next-step-add')
-				.addClass('next-step')
-				.click(function( e ){
-					e.stopPropagation();
-					$(this).remove();
-				});
+		function createNewStep( $step, active, dataObj = false ){
+			var $new = $step.clone();
+			$new.removeClass('next-step-add');
+			
+			if( dataObj != false ){
+				$new.data( dataObj )
+			}
+			
+			if(active){
+				$new.addClass('orange');
+			} else {
+				$new.addClass('next-step');
+				$new.click(function( e ){
+						e.stopPropagation();
+						$(this).remove();
+					});
+			}
 			return $new;
 		}
 		
@@ -203,64 +237,81 @@ var clinic = {
 		Add step to selected pathway
 		**/
 		function appendNewStep( $appendStep ){
-			$appendStep.click(function( e ){
-				e.stopPropagation();
-				$(this).remove();
-			});
 			$('#patient-'+clinic.activePathwayID+' .pathway' ).append( $appendStep );
 		}
 		
 		/**
 		Dilate is a special case. 
 		**/
-		function addDilate( $step ){
-			// check Dilate options
+		function addDilate(){
+			// addPathway stores selected step
+			var $step = clinic.addPathway.selectedStep; 
+			var data = {};
+			
+			// check Dilate options and add data to step
+			
+			// Fixed set of 3?
 			var fixedSet = $('input[name=fixed]:checked').val();
-			console.log(fixedSet);
+			if( fixedSet !== undefined){
+				data.type = "fixed";
+				data.set = fixedSet;
+				
+				var active = clinic.makeNewStepActive();
+				appendNewStep( createNewStep( $step, active, data ) );
+				appendNewStep( createNewStep( $step, active, data ) );
+				appendNewStep( createNewStep( $step, active, data ) );
+				
+				clinic.addPathway.reset();	
 			
-			
-			var $first = cloneStep( $step );
-			appendNewStep( $first.removeClass('next-step').addClass('orange') );
-			appendNewStep( cloneStep( $step ) );
-			appendNewStep( cloneStep( $step ) );
+			} else {
+				
+				// single Dilate?
+				var drugs = $('.option-list input:checkbox:checked');	
+				if( drugs.length ){
+					data.type = "drugs";
+					data.drugs = [];
+					for( var i = 0; i < drugs.length; i++ ){
+						data.drugs.push( drugs[i].value );
+					}
+					
+					appendNewStep( createNewStep( $step, clinic.makeNewStepActive(), data ) );
+					
+					clinic.addPathway.reset();		
+				}
+			}
 		}
 		
 		/**
 		Handle addPathway application logic
 		**/
 		clinic.addPathway = {
+			
+			selectedStep:null,
 	
 			show:function( left, top ){
-				var me = this;
 				$('#js-add-new-pathway')
 					.removeClass('hidden')
 					.show()
-					.css({'left':left, 'top':top })
-					.mouseleave(function(){
-						$(this).hide();
-						me.reset();
-			  		});				
+					.css({'left':left, 'top':top });			
 			}, 
 			
 			addStep:function( $step ){
-				var me = this;
-				
 				if( $step.data('id') == "dilate" ){
-					// hide pathway steps
-					$('#js-add-new-pathway .new-pathway-steps').hide();
-					// show dilate options
-					$('#add-dilate-options').removeClass('hidden').show();
-					// set up Add button
-					$('#js-dilate-add-btn').click( function(){
-						addDilate( $step );					
-						me.reset();
-					});
-					
+					this.selectedStep = $step;			// store until dilate options are set
+					this.showDilateOptions();
 				} else {
 					// insert clone DOM straight into selected patient pathway		
-					appendNewStep( cloneStep( $step ) );
+					appendNewStep( createNewStep( $step, clinic.makeNewStepActive() ) );
+					this.selectedStep = null;
 				}
-			}, 
+			},
+			
+			showDilateOptions:function(){
+				// hide pathway steps
+				$('#js-add-new-pathway .new-pathway-steps').hide();
+				// show dilate options
+				$('#add-dilate-options').removeClass('hidden').show();
+			},
 			
 			reset:function(){
 				$('#add-dilate-options .option-list input').prop('checked',false);
@@ -336,13 +387,13 @@ var clinic = {
 			// late! 
 			if( firstStep.hasClass( 'late' ) ){
 				var tr = $(this).parents('tr');
-				tr.find('td').first().addClass('time-flag late');
+				// tr.find('td').first().addClass('time-flag late');
 			}
 			
 			// DNA! 
 			if( firstStep.hasClass( 'dna' ) ){
 				var tr = $(this).parents('tr');
-				tr.find('td').first().addClass('time-flag dna');
+				// tr.find('td').first().addClass('time-flag dna');
 				tr.find('.clinic-assign-options').hide();
 				tr.find('.js-add-pathway').hide();
 				tr.find('.duration-graphic').css('opacity','0.3');

@@ -32,12 +32,10 @@ table.oe-clinic-list {
 				&:hover {
 					background-color: tint( $oe-blue-darker, 5 );
 				}
-				
 			}
 		}	
 	}
 				
-
 	th, td, {
 		@include font-size(14);
 		&:first-child {

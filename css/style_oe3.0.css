@@ -3524,7 +3524,7 @@ html {
 }
 
 .oe-clinic svg.duration-graphic {
-  fill: #999;
+  fill: rgba(150, 150, 150, 0.4);
 }
 
 table.oe-clinic-list {
@@ -3653,18 +3653,8 @@ table.oe-clinic-list td.center {
   background: #146400;
 }
 
-.oe-clinic .pathway-step.green.dr {
-  background: #d0e0cc;
-  border-color: #146400;
-}
-
 .oe-clinic .pathway-step.orange {
   background: #b45016;
-}
-
-.oe-clinic .pathway-step.orange.dr {
-  background: #f0dcd0;
-  border-color: #b45016;
 }
 
 .oe-clinic .pathway-step.red, .oe-clinic .pathway-step.dna {

@@ -55,6 +55,7 @@
 		}
 		
 		// create step-colors
+		// dr colouring has been removed
 		@mixin step-colors( $color ) {
 			background:$color; 
 			&.dr {
@@ -63,13 +64,21 @@
 			}
 		}
 		
-		// colours:
+		// colours
+		// currently the logic is:
+		// green - done (but may have extra info if required)
+		// orange - in progress. must have info (to remove at least)
+		// grey - future event can be directly removed
+		
 		&.green { 
-			@include step-colors( $step-green );
+			background:$step-green; 
+			// @include step-colors( $step-green );
 		}
 		
+		
 		&.orange { 
-			@include step-colors( $step-orange );
+			background:$step-orange; 
+			//@include step-colors( $step-orange );
 		}
 	
 		&.red, &.dna { 
@@ -77,10 +86,11 @@
 			line-height:34px;
 		}
 		
+		
+		// currently unused
 		&.blue { 
 			background:$oe-grey; 
-			color:$oe-text;
-			
+			color:$oe-text;	
 			&.late {
 				border-color:rgb(230,150,0); // this matches table late flag
 			}

@@ -24,8 +24,9 @@
 	}
 	
 	// set up SVG circle defaults
+	// must work across both themes
 	svg.duration-graphic {
-		fill:#999;
+		fill: rgba( 150,150,150,0.4 );
 	}	
 }
 
