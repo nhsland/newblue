@@ -19,7 +19,7 @@
 		margin:1px 3px 1px 0;
 		padding:0 8px;
 		height:38px;
-		line-height:25px;
+		line-height:23px; // shift the text up
 		@include font-size(12);
 		font-style: italic;
 		border-radius:3px;
@@ -43,26 +43,10 @@
 		// these colours must work in both themes
 		background:		rgb(100,100,100); // default 
 		$text-grey:		rgb(50,50,50);
-		$step-white: 	rgb(240,240,240);
-		$step-green: 	rgb(20,100,0);
-		$step-orange:	rgb(180,80,22);
-		$step-red:		rgb(160,40,10);
+		$text-white: 	rgb(240,240,240); // need a bright white for the colours (same for both themes)
 		
 		// text for all colours
-		color:$step-white;
-		&.dr {
-			color:$text-grey;
-		}
-		
-		// create step-colors
-		// dr colouring has been removed
-		@mixin step-colors( $color ) {
-			background:$color; 
-			&.dr {
-				background:tint( $color, 80 ); 
-				border-color:$color; 
-			}
-		}
+		color:$text-white;
 		
 		// colours
 		// currently the logic is:
@@ -71,43 +55,43 @@
 		// grey - future event can be directly removed
 		
 		&.green { 
-			background:$step-green; 
-			// @include step-colors( $step-green );
+			background:$oe-clinic-green; 
 		}
 		
-		
 		&.orange { 
-			background:$step-orange; 
-			//@include step-colors( $step-orange );
+			background-color:$oe-clinic-orange; 
+			background-position:bottom 1px center;
+			background-repeat: no-repeat;
+			background-size:13px;
+			
+			// info icon
+			background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19"><title>info</title><style>*{fill:#fff;opacity:0.8}</style><path d="M9.5,0A9.5,9.5,0,1,0,19,9.5,9.5,9.5,0,0,0,9.5,0Zm2.12,16.69v-7L6.05,12.18l0,.64.52-.16a1.14,1.14,0,0,1,.83,0,.78.78,0,0,1,.44.49A6.29,6.29,0,0,1,8,14.79l0,2a7.51,7.51,0,1,1,3.68-.15Z"/><circle cx="9.5" cy="6.59" r="2.12"/></svg>');
+			
+			cursor: pointer;
 		}
 	
 		&.red, &.dna { 
-			@include step-colors( $step-red );
-			line-height:34px;
+			background:$oe-clinic-red; 
+			line-height:34px;		// center text (no time)
 		}
-		
-		
-		// currently unused
+			
+		// currently unused but kept incase. 
 		&.blue { 
 			background:$oe-grey; 
-			color:$oe-text;	
+			color:$text-white;	
 			&.late {
 				border-color:rgb(230,150,0); // this matches table late flag
 			}
 		}
 		
 		
-		// used in the popup box to add new steps
+		// used in the addPathway popup box to add new steps
 		&.next-step-add {
 			cursor:pointer;
 			
 			&.dr {
-				color:$step-white;
-				border-color:rgb(200,200,200);
-			}
-			
-			&.waiting {
-				border-color: $oe-text-highlight;
+				color:$text-white;
+				border-color:$text-white;
 			}
 			
 			&:hover, &:active, &:focus {

@@ -1,6 +1,12 @@
 // OE Clinic List
 // 
 // 
+// Clinic step colours 
+// must work across both themes
+
+$oe-clinic-green: 	rgb(20,100,0);
+$oe-clinic-orange:	rgb(180,80,22);
+$oe-clinic-red:		rgb(160,40,10);
 
 
 .oe-clinic {
@@ -34,4 +40,5 @@
 @import "clinic-list/table";
 @import "clinic-list/pathway-steps";
 @import "clinic-list/add-new-pathway";
+@import "clinic-list/active-step-info";
 @import "clinic-list/filters";

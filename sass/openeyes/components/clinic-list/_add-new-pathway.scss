@@ -3,7 +3,6 @@
 // 
 
 .oe-clinic {
-	position:relative;
 	
 	.new-pathway-steps {
 		padding:0 0 0 0;
@@ -19,8 +18,8 @@
 		z-index:$oe-z-tooltip;
 		background:$oe-blue-darker;
 		border:1px solid $oe-text-highlight;
-		padding:0 30px 15px 15px;
-		max-width:300px;
+		padding:0 30px 30px 15px;
+		width:330px;
 		border-radius:3px;
 		
 		@include font-size(12);
@@ -31,6 +30,11 @@
 			color:$oe-text-light;
 			font-weight:300;
 			padding:10px 0;
+			
+			&.title {
+				@include font-size(15);
+				color:$oe-text;	
+			}
 		}
 		
 		// cross icon
@@ -40,19 +44,31 @@
 			right:9px;
 		}
 		
+		.make-active {
+			position:absolute;
+			right:10px; 
+			bottom:10px; 
+			label.highlight {
+				background:$oe-clinic-orange;
+			}
+		}
+		
 		// overwrite default height (no time shown)
 		.pathway-step {
 			height:auto;
 		}
+		
+	
+		
 	}
 	
+	// Dilate options
 	.pathway-extra-options {
 		.option-list {
 			label {
 				margin-bottom:5px; 
 			}
 		}
-		
 		.add-btn {
 			margin:10px 0 0 0;
 			text-align: right;

@@ -372,6 +372,10 @@ textarea {
   background-image: url("../svg/in-css/history.svg");
 }
 
+.oe-i.tick {
+  background-image: url("../svg/in-css/tick.svg");
+}
+
 .oe-i.pro-theme.trash {
   background-image: url("../svg/in-css/trash.svg");
 }
@@ -3627,7 +3631,7 @@ table.oe-clinic-list td.center {
   margin: 1px 3px 1px 0;
   padding: 0 8px;
   height: 38px;
-  line-height: 25px;
+  line-height: 23px;
   font-size: 0.75rem;
   font-style: italic;
   border-radius: 3px;
@@ -3645,16 +3649,17 @@ table.oe-clinic-list td.center {
   opacity: 0.7;
 }
 
-.oe-clinic .pathway-step.dr {
-  color: #323232;
-}
-
 .oe-clinic .pathway-step.green {
   background: #146400;
 }
 
 .oe-clinic .pathway-step.orange {
-  background: #b45016;
+  background-color: #b45016;
+  background-position: bottom 1px center;
+  background-repeat: no-repeat;
+  background-size: 13px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19"><title>info</title><style>*{fill:#fff;opacity:0.8}</style><path d="M9.5,0A9.5,9.5,0,1,0,19,9.5,9.5,9.5,0,0,0,9.5,0Zm2.12,16.69v-7L6.05,12.18l0,.64.52-.16a1.14,1.14,0,0,1,.83,0,.78.78,0,0,1,.44.49A6.29,6.29,0,0,1,8,14.79l0,2a7.51,7.51,0,1,1,3.68-.15Z"/><circle cx="9.5" cy="6.59" r="2.12"/></svg>');
+  cursor: pointer;
 }
 
 .oe-clinic .pathway-step.red, .oe-clinic .pathway-step.dna {
@@ -3662,14 +3667,9 @@ table.oe-clinic-list td.center {
   line-height: 34px;
 }
 
-.oe-clinic .pathway-step.red.dr, .oe-clinic .pathway-step.dna.dr {
-  background: #ecd4ce;
-  border-color: #a0280a;
-}
-
 .oe-clinic .pathway-step.blue {
   background: #283442;
-  color: rgba(255, 255, 255, 0.8);
+  color: #f0f0f0;
 }
 
 .oe-clinic .pathway-step.blue.late {
@@ -3682,11 +3682,7 @@ table.oe-clinic-list td.center {
 
 .oe-clinic .pathway-step.next-step-add.dr, .oe-clinic .pathway-step.dr.next-step {
   color: #f0f0f0;
-  border-color: #c8c8c8;
-}
-
-.oe-clinic .pathway-step.next-step-add.waiting, .oe-clinic .pathway-step.waiting.next-step {
-  border-color: cyan;
+  border-color: #f0f0f0;
 }
 
 .oe-clinic .pathway-step.next-step-add:hover, .oe-clinic .pathway-step.next-step:hover, .oe-clinic .pathway-step.next-step-add:active, .oe-clinic .pathway-step.next-step:active, .oe-clinic .pathway-step.next-step-add:focus, .oe-clinic .pathway-step.next-step:focus {
@@ -3699,10 +3695,6 @@ table.oe-clinic-list td.center {
   background-size: 13px;
   background-repeat: no-repeat;
   background-position: center center;
-}
-
-.oe-clinic {
-  position: relative;
 }
 
 .oe-clinic .new-pathway-steps {
@@ -3720,8 +3712,8 @@ table.oe-clinic-list td.center {
   z-index: 990;
   background: #141e2b;
   border: 1px solid cyan;
-  padding: 0 30px 15px 15px;
-  max-width: 300px;
+  padding: 0 30px 30px 15px;
+  width: 330px;
   border-radius: 3px;
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
@@ -3734,10 +3726,25 @@ table.oe-clinic-list td.center {
   padding: 10px 0;
 }
 
+.oe-clinic .add-new-pathway h3.title {
+  font-size: 0.9375rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .oe-clinic .add-new-pathway .js-close-btn {
   position: absolute;
   top: 8px;
   right: 9px;
+}
+
+.oe-clinic .add-new-pathway .make-active {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.oe-clinic .add-new-pathway .make-active label.highlight {
+  background: #b45016;
 }
 
 .oe-clinic .add-new-pathway .pathway-step {
@@ -3751,6 +3758,60 @@ table.oe-clinic-list td.center {
 .oe-clinic .pathway-extra-options .add-btn {
   margin: 10px 0 0 0;
   text-align: right;
+}
+
+.oe-clinic .active-step-info {
+  position: absolute;
+  top: 0;
+  left: 100px;
+  z-index: 990;
+  background: #141e2b;
+  border: 1px solid cyan;
+  padding: 0 30px 45px 15px;
+  width: 250px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.oe-clinic .active-step-info h3 {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  padding: 10px 0;
+}
+
+.oe-clinic .active-step-info .eye {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+  padding: 0 0 10px 0;
+}
+
+.oe-clinic .active-step-info .data {
+  padding: 0 0 10px 0;
+}
+
+.oe-clinic .active-step-info .js-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+}
+
+.oe-clinic .active-step-info .input-confirmation {
+  padding: 5px;
+  background: #146400;
+  border-radius: 3px;
+}
+
+.oe-clinic .active-step-info .input-confirmation input {
+  text-align: center;
+}
+
+.oe-clinic .active-step-info .remove {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
 }
 
 .oe-clinic-filter {
