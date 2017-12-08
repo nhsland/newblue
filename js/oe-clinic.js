@@ -38,11 +38,11 @@ var clinic = {
 		Allow users to remove any next-steps (grey ones)	
 		that have been added to any pathway
 		**/
-		$('.next-step').click(function( e ){
+		$('.next-step').on('click',function( e ){
 			e.stopPropagation();
 			$(this).remove();
-		});
-		
+		});  
+			
 		/**
 		clinic list filters
 		**/
@@ -190,13 +190,40 @@ var clinic = {
 	Active (orange) step	
 	**/
 	makeActiveStep:function( $step ){
-		
-		$step.click( function( e ){
+		$step.addClass('orange');
+		$step.on('click', function( e ){
 			e.stopPropagation();
 			var pos = $(this).position();
 			clinic.activeInfo.show( pos.left, pos.top, $(this) );
 		});
 	},
+	
+	makeCompleteStep:function( $step ){
+		$step
+			.off('click')
+			.removeClass('orange')
+			.addClass('green');	
+		
+		$step.children('.time').text('10:35');
+	},
+	
+	/** 
+	Step completed (PIN entered correctly)	
+	**/
+	stepComplete:function( $step ){
+		clinic.makeCompleteStep( $step );
+		
+		var $next = $step.next();
+		if( $next.length && $next.hasClass('next-step') ){
+			
+			$next
+				.off('click')
+				.removeClass('next-step');
+			
+			clinic.makeActiveStep( $next );
+		}
+	},
+	
 	
 	/** 
 	Inital setup for Active steps
@@ -214,7 +241,7 @@ var clinic = {
   		
   		// tick icon
   		$('#js-submit-pin').click(function( e ){
-	  		// submit PIN
+	  		clinic.activeInfo.pin( $('#js-user-pin').val() );
   		});
   		
   		// trash icon 
@@ -222,6 +249,7 @@ var clinic = {
 	  		clinic.activeInfo.removeStep();
   		});
   		
+ 		
   		
   		/**
 	  	Handle active-step-info application logic 
@@ -235,7 +263,22 @@ var clinic = {
 		  		this.hide();
 	  		},
 	  		
+	  		pin:function( code ){
+		  		if( code === '1234'){
+			  		
+			  		clinic.stepComplete( this.activeStep );
+			  		this.hide();
+			  		
+		  		} else {
+			  		$('.input-confirmation').addClass('wrong-pin');
+			  		$('#js-user-pin').focus();
+		  		}
+	  		},
+	  		
 	  		show:function( left, top, $step ){
+		  		
+		  		clinic.addPathway.hide() // hide addPathway options
+		  		
 		  		this.activeStep = $step;
 		  		var data = $step.data('data');
 		  		/**
@@ -254,6 +297,7 @@ var clinic = {
   			
   			hide:function(){
 	  			this.activeStep = null
+	  			$('.input-confirmation').removeClass('wrong-pin');
 				$('#js-active-step-info').hide();
 			}
   		};
@@ -295,6 +339,7 @@ var clinic = {
 		
 		/**
 		Create new step by cloning to add it to pathway
+		@return - Returns $new
 		**/
 		function createNewStep( $step, dataObj = false ){
 			// user can push active, else depends on previous pathway step
@@ -304,11 +349,10 @@ var clinic = {
 			$new.removeClass('next-step-add');
 			$new.data( 'data',dataObj );
 			
-			console.log( $new.data('data') )
-			
 			if(active){
-				$new.addClass('orange');
+				
 				clinic.makeActiveStep( $new );
+			
 			} else {
 				$new
 					.addClass('next-step')
@@ -378,6 +422,9 @@ var clinic = {
 			makeActive:false,  	// user has opiton to make step 'active' where ever it is in the pathway
 	
 			show:function( left, top ){
+				
+				clinic.activeInfo.hide(); // hide activeInfo popup
+				
 				$('#js-add-new-pathway')
 					.removeClass('hidden')
 					.show()

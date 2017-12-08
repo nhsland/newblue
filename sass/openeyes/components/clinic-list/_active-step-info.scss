@@ -51,6 +51,10 @@
 				text-align: center;
 			}
 			
+			&.wrong-pin {
+				background:$oe-clinic-red;
+			}
+			
 		}
 		
 		// trash can

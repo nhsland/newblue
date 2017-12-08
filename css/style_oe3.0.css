@@ -3808,6 +3808,10 @@ table.oe-clinic-list td.center {
   text-align: center;
 }
 
+.oe-clinic .active-step-info .input-confirmation.wrong-pin {
+  background: #a0280a;
+}
+
 .oe-clinic .active-step-info .remove {
   position: absolute;
   left: 10px;
