@@ -1,0 +1,16 @@
+// OE Clinic List - Add to all patients
+// 
+// 
+
+.oe-clinic-add-to-all {
+	display:inline-block;
+	vertical-align: top;
+	.add-icon {
+		display:flex;
+		height:$oe-event-header-height;
+		width:50px;
+		.oe-i {
+			margin:auto;
+		}
+	}
+}

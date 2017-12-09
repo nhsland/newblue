@@ -60,6 +60,7 @@ var clinic = {
 		/**
 		setup UI
 		**/
+		this.setupAddToAll();
 		this.setupAddPathway();
 		this.setupActiveInfo();
 		this.setupAssignments();
@@ -185,6 +186,29 @@ var clinic = {
 		}
 	},
 
+	
+	/**
+	Create a pathway step
+	@param 'css' - 'orange' or 'next-step'
+	@return - new $obj
+	**/
+	createPathwayStep:function( name, css ){
+		var $span = $("<span>", {"class": "pathway-step "+css});
+		$span.text(name);
+		$span.append('<span class="time"></span>');
+		return $span;
+	},
+	
+	/**
+	Create a default data obj for a pathway step
+	@return step data obj
+	**/
+	createDefaultData:function( ){
+		return { 	eye:'Both',
+					n:'Not Set',
+					t:'Currently no data is being generated for this step' };
+	},
+	
 	
 	/** 
 	Active (orange) step	
@@ -414,7 +438,7 @@ var clinic = {
 		}
 		
 		/**
-		Handle addPathway application logic
+		addPathway application logic
 		**/
 		clinic.addPathway = {
 			
@@ -446,7 +470,7 @@ var clinic = {
 					this.showDilateOptions();
 				} else {
 					// insert clone DOM straight into selected patient pathway		
-					appendNewStep( createNewStep( $step, {eye:'Both',n:'No Data',t:'Currently no data is being generated for this step'} ) );
+					appendNewStep( createNewStep( $step, clinic.createDefaultData() ) );
 					this.selectedStep = null;
 				}
 			},
@@ -470,8 +494,132 @@ var clinic = {
 			}
 		};	
 	},	
-
 	
+	/** 
+	setup Add to All patients
+	**/
+	setupAddToAll:function(){
+		/**
+		Events
+		**/
+		$('#js-add-to-all-pathways .js-close-btn').click(function( e ){
+	  		e.stopPropagation();
+	  		clinic.addToAll.hide();
+  		});
+  		
+		// Add icon in Filters
+		$('#js-add-to-all').on('click', function( e ){
+	  		e.stopPropagation();
+	  		clinic.addToAll.show();
+	  		
+  		});
+  		
+  		// set options
+		$('#js-add-all-set-btn').click( function( e ){
+			e.stopPropagation();
+			addSet();					
+		});
+  		
+  		// Select / Deselect all Patients
+  		$('#js-add-to-all-pathways .select-deselect-all input').change( function(){
+	  		$('.js-add-all-select').prop("checked", this.checked );
+  		});
+  		
+  		
+  		/**
+	  	Add a set of steps	
+	  	**/
+	  	function addSet(){
+		  	var set = $('#js-add-to-all-pathways input[name=userset]:checked').val();
+		  	if( set !== undefined){
+				if( set == 1){
+					
+					var $step1 = clinic.createPathwayStep( 'VA','orange' );
+					$step1.data('data',{'eye':'left','n':'Visual Acuity','t':'In progress'} );
+					
+					var $step2 = clinic.createPathwayStep( 'Dilate','next-step' );
+					$step2.data('data',{'eye':'left','n':'Dilate','t':'Tropicamide'} );
+					
+					var steps = $step1.add( $step2 );
+					console.log( steps );
+					
+					allPatients( appendStepToSelected, steps );
+				}
+				if( set == 2){
+					
+				}
+			}
+	  	};
+	  	
+	  	/**
+	  	ignore if pathway is completed or patient was DNA	
+	  	'active' = 'patient in clinic'
+	  	'inactive' = 'patient not yet arrived'
+	  	**/
+	  	function allPatients( callBack, arg ){
+		  	$('.oe-clinic-list tbody tr').each( function(){
+			  	var state = $(this).data('state');	
+		  		if( state == 'active' || state == 'inactive' ){
+			  		callBack( this, arg );
+			  	}
+			});
+	  	}
+	  	
+	  	/**
+		Append new steps to selected rows 
+		**/
+		function appendStepToSelected( tr, $new ){
+			
+			var copy = $new.clone();
+			$('.pathway', tr ).append( copy );
+			
+		}
+		
+  		
+  		/**
+	  	Turn + icons to checkboxes
+	  	**/
+  		function showSelectPatients( tr ){
+	  		$('.js-add-pathway', tr ).hide();	
+			  		
+	  		// show the check box
+	  		$('.js-add-all-select', tr )
+	  			.removeClass('hidden')
+	  			.prop( "checked", true ) 	// default to checked
+	  			.show();	  	
+  		}
+  		
+  		/**
+	  	Hide checkboxes and show + icon again
+	  	**/
+  		function hideSelectPatient( tr ){
+	  		$('.js-add-pathway', tr ).show();	 	// + icon
+			$('.js-add-all-select', tr ).hide();	// checkbox
+  		}
+  		
+  		/**
+	  	add-to-all-pathways appplication logic
+	  	**/
+  		clinic.addToAll = {
+	  		
+	  		show:function(){
+		  		$('#js-add-to-all-pathways')
+		  			.removeClass('hidden')
+		  			.show();
+		  		
+		  		// set up check boxes for patient selection
+		  		$('#js-add-to-all-pathways .select-deselect-all input:checkbox').prop( "checked", true ); 
+		  		allPatients( showSelectPatients );
+	  		},
+	  		
+	  		hide:function(){
+		  		allPatients( hideSelectPatient );
+		  		$('#js-add-to-all-pathways').hide();
+	  		}
+  		};
+  	},
+
+
 	/** 
 	set waiting light graphics based on the duration minutes
 	**/
@@ -530,14 +678,16 @@ var clinic = {
 			var firstStep = $(this).children('.pathway-step').first();
 			
 			// late! 
+/*
 			if( firstStep.hasClass( 'late' ) ){
 				var tr = $(this).parents('tr');
-				// tr.find('td').first().addClass('time-flag late'); -- turned off
+				tr.find('td').first().addClass('time-flag late'); -- turned off
 			}
-			
+*/
 			// DNA! 
 			if( firstStep.hasClass( 'dna' ) ){
 				var tr = $(this).parents('tr');
+				tr.data('state','dna');
 				tr.find('.clinic-assign-options').hide();
 				tr.find('.js-add-pathway').hide();
 				tr.find('.duration-graphic').css('opacity','0.3');
@@ -550,6 +700,7 @@ var clinic = {
 		Show a completed pathway exmaple	
 		**/	
 		var tr = $( '#patient-'+1152572 );
+		tr.data('state','complete');
 		var duration = tr.find('.duration-graphic');
 		var td = duration.parent();
 		duration.hide();
@@ -559,7 +710,6 @@ var clinic = {
 		tr.find('.clinic-assign-options').parent().text('Dr Amit Baum (AB)');
 		tr.find('.js-add-pathway').hide();
 		$('#filter-AB .total').text(1);
-		
 		
 	},
 };

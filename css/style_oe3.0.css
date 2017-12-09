@@ -751,7 +751,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .oe-tooltip {
-  z-index: 990;
+  z-index: 60;
   width: 150px;
   padding: 5px 10px;
   background: #374755;
@@ -764,7 +764,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 70;
   height: 100vh;
   width: 100vw;
   background: rgba(21, 32, 55, 0.6);
@@ -3518,7 +3518,7 @@ html {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 990;
+  z-index: 60;
   background: cyan;
   font-size: 0.625rem;
   font-weight: 500;
@@ -3705,66 +3705,79 @@ table.oe-clinic-list td.center {
   padding: 5px 0;
 }
 
+.oe-clinic .add-to-all-pathways {
+  position: fixed;
+  top: 98px;
+  right: 0;
+  z-index: 60;
+  height: calc(100vh - 98px);
+  border-left: 1px solid cyan;
+  padding: 0 30px 15px 15px;
+  width: 310px;
+}
+
 .oe-clinic .add-new-pathway {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 990;
-  background: #141e2b;
+  z-index: 60;
   border: 1px solid cyan;
-  padding: 0 30px 30px 15px;
+  padding: 0 30px 15px 15px;
   width: 330px;
   border-radius: 3px;
+}
+
+.oe-clinic .add-new-pathway, .oe-clinic .add-to-all-pathways {
+  background: #141e2b;
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.oe-clinic .add-new-pathway h3 {
+.oe-clinic .add-new-pathway h3, .oe-clinic .add-to-all-pathways h3 {
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
-  padding: 10px 0;
+  margin: 20px 0 5px 0;
 }
 
-.oe-clinic .add-new-pathway h3.title {
+.oe-clinic .add-new-pathway h3.title, .oe-clinic .add-to-all-pathways h3.title {
   font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.8);
+  margin: 10px 0 15px 0;
 }
 
-.oe-clinic .add-new-pathway .js-close-btn {
+.oe-clinic .add-new-pathway .js-close-btn, .oe-clinic .add-to-all-pathways .js-close-btn {
   position: absolute;
   top: 8px;
   right: 9px;
 }
 
-.oe-clinic .add-new-pathway .make-active {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
+.oe-clinic .add-new-pathway .make-active, .oe-clinic .add-to-all-pathways .make-active {
+  text-align: right;
 }
 
-.oe-clinic .add-new-pathway .make-active label.highlight {
+.oe-clinic .add-new-pathway .make-active label.highlight, .oe-clinic .add-to-all-pathways .make-active label.highlight {
   background: #b45016;
 }
 
-.oe-clinic .add-new-pathway .pathway-step {
+.oe-clinic .add-new-pathway .pathway-step, .oe-clinic .add-to-all-pathways .pathway-step {
   height: auto;
 }
 
-.oe-clinic .pathway-extra-options .option-list label {
+.oe-clinic .add-new-pathway .option-list label, .oe-clinic .add-to-all-pathways .option-list label {
   margin-bottom: 5px;
 }
 
-.oe-clinic .pathway-extra-options .add-btn {
+.oe-clinic .add-new-pathway .add-btn, .oe-clinic .add-to-all-pathways .add-btn {
   margin: 10px 0 0 0;
-  text-align: right;
+  text-align: left;
 }
 
 .oe-clinic .active-step-info {
   position: absolute;
   top: 0;
   left: 100px;
-  z-index: 990;
+  z-index: 60;
   background: #141e2b;
   border: 1px solid cyan;
   padding: 0 30px 45px 15px;
@@ -3861,6 +3874,21 @@ table.oe-clinic-list td.center {
 
 .oe-clinic-filter:hover .current, .oe-clinic-filter:active .current, .oe-clinic-filter:focus .current, .oe-clinic-filter.selected .current {
   color: #fff;
+}
+
+.oe-clinic-add-to-all {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.oe-clinic-add-to-all .add-icon {
+  display: flex;
+  height: 38px;
+  width: 50px;
+}
+
+.oe-clinic-add-to-all .add-icon .oe-i {
+  margin: auto;
 }
 
 /* ------------------------ */

@@ -1,6 +1,6 @@
 // OE Clinic List
 // 
-// 
+// - Add New Pathway for Individual and for ALL patients
 
 .oe-clinic {
 	
@@ -11,17 +11,33 @@
 		}
 	}
 	
+	// Add to all is fixed and fills screen to emphasis it's function
+	.add-to-all-pathways {
+		position:fixed;	
+		top:$oe-header-height + $oe-event-header-height;
+		right:0;
+		z-index:$oe-z-tooltip;
+		height: calc(100vh - 98px); 	// this can't be SASS variable, has to be written (must match 'top')
+		border-left:1px solid $oe-text-highlight;
+		padding:0 30px 15px 15px;
+		width:310px;
+	}
+	
+	// Add to individual pathway
 	.add-new-pathway {
 		position:absolute;
 		top:0;
 		left:0;
 		z-index:$oe-z-tooltip;
-		background:$oe-blue-darker;
 		border:1px solid $oe-text-highlight;
-		padding:0 30px 30px 15px;
+		padding:0 30px 15px 15px;
 		width:330px;
 		border-radius:3px;
-		
+	}
+	
+	
+	.add-new-pathway, .add-to-all-pathways {
+		background:$oe-blue-darker;
 		@include font-size(12);
 		color:$oe-text;
 		
@@ -29,11 +45,12 @@
 			@include font-size(13);
 			color:$oe-text-light;
 			font-weight:300;
-			padding:10px 0;
+			margin:20px 0 5px 0;
 			
 			&.title {
 				@include font-size(15);
 				color:$oe-text;	
+				margin:10px 0 15px 0;
 			}
 		}
 		
@@ -45,9 +62,7 @@
 		}
 		
 		.make-active {
-			position:absolute;
-			right:10px; 
-			bottom:10px; 
+			text-align: right; 
 			label.highlight {
 				background:$oe-clinic-orange;
 			}
@@ -58,12 +73,7 @@
 			height:auto;
 		}
 		
-	
-		
-	}
-	
-	// Dilate options
-	.pathway-extra-options {
+		// Dilate options
 		.option-list {
 			label {
 				margin-bottom:5px; 
@@ -71,9 +81,10 @@
 		}
 		.add-btn {
 			margin:10px 0 0 0;
-			text-align: right;
+			text-align: left;
 		}
 	}
 	
+	// .pathway-extra-options {}
 }
 

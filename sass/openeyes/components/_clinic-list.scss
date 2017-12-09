@@ -14,7 +14,7 @@ $oe-clinic-red:		rgb(160,40,10);
 	background:$oe-blue-dark;
 	
 	// show the current time in the clinic
-	// controlled and positioned as it ticks by js
+	// controlled and positioned by js
 	.clinic-time {
 		position:absolute;
 		top:100%;  // make sure it animates from the bottom up.
@@ -42,3 +42,4 @@ $oe-clinic-red:		rgb(160,40,10);
 @import "clinic-list/add-new-pathway";
 @import "clinic-list/active-step-info";
 @import "clinic-list/filters";
+@import "clinic-list/add-to-all";
