@@ -3708,12 +3708,18 @@ table.oe-clinic-list td.center {
 .oe-clinic .add-to-all-pathways {
   position: fixed;
   top: 98px;
-  right: 0;
+  left: calc(100vw - 310px);
   z-index: 60;
   height: calc(100vh - 98px);
   border-left: 1px solid cyan;
   padding: 0 30px 15px 15px;
   width: 310px;
+}
+
+@media only screen and (min-width: 1800px) {
+  .oe-clinic .add-to-all-pathways {
+    left: 1040px;
+  }
 }
 
 .oe-clinic .add-new-pathway {

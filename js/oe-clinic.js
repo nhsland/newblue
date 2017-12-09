@@ -189,11 +189,10 @@ var clinic = {
 	
 	/**
 	Create a pathway step
-	@param 'css' - 'orange' or 'next-step'
 	@return - new $obj
 	**/
-	createPathwayStep:function( name, css ){
-		var $span = $("<span>", {"class": "pathway-step "+css});
+	createPathwayStep:function( name ){
+		var $span = $("<span>", {"class": "pathway-step"});
 		$span.text(name);
 		$span.append('<span class="time"></span>');
 		return $span;
@@ -210,6 +209,23 @@ var clinic = {
 	},
 	
 	
+	/**
+	Create new next-step
+	@return - Returns new next-step
+	**/
+	createNewStep:function( $step, dataObj, active = false ){
+		var $new = $step.clone();
+		$new.removeClass('next-step-add');
+		$new.data( 'data',dataObj );
+		
+		if(active){
+			clinic.makeActiveStep( $new );
+		} else {
+			clinic.makeNextStep( $new );
+		}
+		return $new;
+	},
+	
 	/** 
 	Active (orange) step	
 	**/
@@ -222,6 +238,21 @@ var clinic = {
 		});
 	},
 	
+	/** 
+	Make next-step (grey)
+	**/
+	makeNextStep:function( $step ){
+		$step.addClass('next-step');
+		$step.click(function( e ){
+			e.stopPropagation();
+			$(this).remove();
+		});	
+	},
+	
+	
+	/** 
+	Complete a step (green)	
+	**/
 	makeCompleteStep:function( $step ){
 		$step
 			.off('click')
@@ -361,32 +392,6 @@ var clinic = {
 			addDilate();					
 		});
 		
-		/**
-		Create new step by cloning to add it to pathway
-		@return - Returns $new
-		**/
-		function createNewStep( $step, dataObj = false ){
-			// user can push active, else depends on previous pathway step
-			var active = clinic.addPathway.makeActive ? true : clinic.isNewStepActive();
-			
-			var $new = $step.clone();
-			$new.removeClass('next-step-add');
-			$new.data( 'data',dataObj );
-			
-			if(active){
-				
-				clinic.makeActiveStep( $new );
-			
-			} else {
-				$new
-					.addClass('next-step')
-					.click(function( e ){
-						e.stopPropagation();
-						$(this).remove();
-					});
-			}
-			return $new;
-		}
 		
 		/**
 		Add step to selected pathway
@@ -403,6 +408,9 @@ var clinic = {
 			var $step = clinic.addPathway.selectedStep; 
 			var data = {};
 			
+			// user can push active or it depends on previous pathway step
+			var active = clinic.addPathway.makeActive ? true : clinic.isNewStepActive();
+			
 			// check Dilate options and add data to step
 			var eye = $('input[name=eye]:checked').val();
 			data.eye = eye;
@@ -412,11 +420,11 @@ var clinic = {
 			if( fixedSet !== undefined){
 				data.n = "Fixed Dilate Set";
 				data.t = fixedSet;
-				appendNewStep( createNewStep( $step, data ) );
+				appendNewStep( clinic.createNewStep( $step, data, active ) );
 				data.n = "Fixed Dilate Set";
-				appendNewStep( createNewStep( $step, data ) );
+				appendNewStep( clinic.createNewStep( $step, data, active ) );
 				data.n = "Fixed Dilate Set";
-				appendNewStep( createNewStep( $step, data ) );
+				appendNewStep( clinic.createNewStep( $step, data, active ) );
 				
 				clinic.addPathway.reset();	
 			
@@ -431,7 +439,7 @@ var clinic = {
 						data.t +=  drugs[i].value + "<br>";
 					}
 				
-					appendNewStep( createNewStep( $step, data ) );	
+					appendNewStep( clinic.createNewStep( $step, data, active ) );	
 					clinic.addPathway.reset();		
 				}
 			}
@@ -470,7 +478,7 @@ var clinic = {
 					this.showDilateOptions();
 				} else {
 					// insert clone DOM straight into selected patient pathway		
-					appendNewStep( createNewStep( $step, clinic.createDefaultData() ) );
+					appendNewStep( clinic.createNewStep( $step, clinic.createDefaultData() ) );
 					this.selectedStep = null;
 				}
 			},
@@ -519,6 +527,12 @@ var clinic = {
 			e.stopPropagation();
 			addSet();					
 		});
+		
+		// next steps (all)
+		$('#js-add-to-all-pathways .next-step-add').click(function( e ){
+			e.stopPropagation();
+			addStep( $(this) );
+		});
   		
   		// Select / Deselect all Patients
   		$('#js-add-to-all-pathways .select-deselect-all input').change( function(){
@@ -534,14 +548,15 @@ var clinic = {
 		  	if( set !== undefined){
 				if( set == 1){
 					
-					var $step1 = clinic.createPathwayStep( 'VA','orange' );
+					var $step1 = clinic.createPathwayStep( 'VA' );
+					clinic.makeActiveStep( $step1 );
 					$step1.data('data',{'eye':'left','n':'Visual Acuity','t':'In progress'} );
 					
-					var $step2 = clinic.createPathwayStep( 'Dilate','next-step' );
+					var $step2 = clinic.createPathwayStep( 'Dilate' );
+					clinic.makeNextStep( $step2 );
 					$step2.data('data',{'eye':'left','n':'Dilate','t':'Tropicamide'} );
 					
 					var steps = $step1.add( $step2 );
-					console.log( steps );
 					
 					allPatients( appendStepToSelected, steps );
 				}
@@ -551,6 +566,14 @@ var clinic = {
 			}
 	  	};
 	  	
+	  	/**
+		Add a single step 
+		**/
+		function addStep( $step ){
+			var $new = clinic.createNewStep( $step, clinic.createDefaultData() )
+			allPatients( appendStepToSelected, $new );
+		}
+		
 	  	/**
 	  	ignore if pathway is completed or patient was DNA	
 	  	'active' = 'patient in clinic'
@@ -569,14 +592,16 @@ var clinic = {
 		Append new steps to selected rows 
 		**/
 		function appendStepToSelected( tr, $new ){
+			var checked =  $('.js-add-all-select', tr ).is(':checked');
+			var hidden = $(tr).is(':hidden');
 			
-			var copy = $new.clone();
-			$('.pathway', tr ).append( copy );
-			
+			if( checked && ! hidden ){
+				var copy = $new.clone( true ); 		// clone events and data! 
+				$('.pathway', tr ).append( copy );
+			}
 		}
 		
-  		
-  		/**
+   		/**
 	  	Turn + icons to checkboxes
 	  	**/
   		function showSelectPatients( tr ){
@@ -598,7 +623,7 @@ var clinic = {
   		}
   		
   		/**
-	  	add-to-all-pathways appplication logic
+	  	add-to-all-pathways dom control
 	  	**/
   		clinic.addToAll = {
 	  		
