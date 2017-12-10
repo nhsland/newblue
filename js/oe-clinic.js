@@ -451,7 +451,7 @@ var clinic = {
 		clinic.addPathway = {
 			
 			selectedStep:null,
-			makeActive:false,  	// user has opiton to make step 'active' where ever it is in the pathway
+			makeActive:false,  	// opiton to make step 'active' -- NOT required but kept in case
 	
 			show:function( left, top ){
 				
@@ -549,7 +549,7 @@ var clinic = {
 				if( set == 1){
 					
 					var $step1 = clinic.createPathwayStep( 'VA' );
-					clinic.makeActiveStep( $step1 );
+					clinic.makeNextStep( $step1 );
 					$step1.data('data',{'eye':'left','n':'Visual Acuity','t':'In progress'} );
 					
 					var $step2 = clinic.createPathwayStep( 'Dilate' );
@@ -596,7 +596,13 @@ var clinic = {
 			var hidden = $(tr).is(':hidden');
 			
 			if( checked && ! hidden ){
+				var active = $('.pathway-step',tr ).last().hasClass('green');
 				var copy = $new.clone( true ); 		// clone events and data! 
+				
+				if( active ){
+					clinic.makeActiveStep( copy.first() );
+				}
+								
 				$('.pathway', tr ).append( copy );
 			}
 		}
