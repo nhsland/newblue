@@ -3651,14 +3651,11 @@ table.oe-clinic-list td.center {
 
 .oe-clinic .pathway-step.green {
   background: #146400;
+  cursor: pointer;
 }
 
 .oe-clinic .pathway-step.orange {
-  background-color: #b45016;
-  background-position: bottom 1px center;
-  background-repeat: no-repeat;
-  background-size: 13px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19"><title>info</title><style>*{fill:#fff;opacity:0.8}</style><path d="M9.5,0A9.5,9.5,0,1,0,19,9.5,9.5,9.5,0,0,0,9.5,0Zm2.12,16.69v-7L6.05,12.18l0,.64.52-.16a1.14,1.14,0,0,1,.83,0,.78.78,0,0,1,.44.49A6.29,6.29,0,0,1,8,14.79l0,2a7.51,7.51,0,1,1,3.68-.15Z"/><circle cx="9.5" cy="6.59" r="2.12"/></svg>');
+  background: #b45016;
   cursor: pointer;
 }
 
@@ -3669,32 +3666,24 @@ table.oe-clinic-list td.center {
 
 .oe-clinic .pathway-step.blue {
   background: #283442;
-  color: #f0f0f0;
+  cursor: pointer;
 }
 
 .oe-clinic .pathway-step.blue.late {
   border-color: #e69600;
 }
 
-.oe-clinic .pathway-step.next-step-add, .oe-clinic .pathway-step.next-step {
+.oe-clinic .pathway-step.next-step {
   cursor: pointer;
 }
 
-.oe-clinic .pathway-step.next-step-add.dr, .oe-clinic .pathway-step.dr.next-step {
+.oe-clinic .pathway-step.next-step-add.dr {
   color: #f0f0f0;
   border-color: #f0f0f0;
 }
 
-.oe-clinic .pathway-step.next-step-add:hover, .oe-clinic .pathway-step.next-step:hover, .oe-clinic .pathway-step.next-step-add:active, .oe-clinic .pathway-step.next-step:active, .oe-clinic .pathway-step.next-step-add:focus, .oe-clinic .pathway-step.next-step:focus {
+.oe-clinic .pathway-step.next-step-add:hover, .oe-clinic .pathway-step.next-step-add:active, .oe-clinic .pathway-step.next-step-add:focus {
   background: #074598;
-}
-
-.oe-clinic .pathway-step.next-step:hover, .oe-clinic .pathway-step.next-step:active, .oe-clinic .pathway-step.next-step:focus {
-  color: transparent;
-  background-image: url("../svg/in-css/remove-circle.svg");
-  background-size: 13px;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
 
 .oe-clinic .new-pathway-steps {
@@ -3758,14 +3747,6 @@ table.oe-clinic-list td.center {
   right: 9px;
 }
 
-.oe-clinic .add-new-pathway .make-active, .oe-clinic .add-to-all-pathways .make-active {
-  text-align: right;
-}
-
-.oe-clinic .add-new-pathway .make-active label.highlight, .oe-clinic .add-to-all-pathways .make-active label.highlight {
-  background: #b45016;
-}
-
 .oe-clinic .add-new-pathway .pathway-step, .oe-clinic .add-to-all-pathways .pathway-step {
   height: auto;
 }
@@ -3808,7 +3789,7 @@ table.oe-clinic-list td.center {
 }
 
 .oe-clinic .active-step-info .data {
-  padding: 0 0 10px 0;
+  padding: 0 0 20px 0;
 }
 
 .oe-clinic .active-step-info .js-close-btn {
@@ -3817,18 +3798,33 @@ table.oe-clinic-list td.center {
   right: 9px;
 }
 
-.oe-clinic .active-step-info .input-confirmation {
+.oe-clinic .active-step-info .make-active {
+  text-align: right;
+}
+
+.oe-clinic .active-step-info .make-active button {
+  background: #b45016;
+}
+
+.oe-clinic .active-step-info .eye-confirmation {
   padding: 5px;
+  margin: 0 3px 0 0;
   background: #146400;
   border-radius: 3px;
 }
 
-.oe-clinic .active-step-info .input-confirmation input {
+.oe-clinic .active-step-info .eye-confirmation input {
   text-align: center;
 }
 
-.oe-clinic .active-step-info .input-confirmation.wrong-pin {
+.oe-clinic .active-step-info .eye-confirmation.wrong-pin {
   background: #a0280a;
+}
+
+.oe-clinic .active-step-info .who-completed {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
 }
 
 .oe-clinic .active-step-info .remove {

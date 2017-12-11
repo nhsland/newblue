@@ -33,7 +33,7 @@
 		}
 		
 		.data {
-			padding:0 0 10px 0;
+			padding:0 0 20px 0;
 		}
 		
 		// cross icon
@@ -43,8 +43,16 @@
 			right:9px;
 		}
 		
-		.input-confirmation {
+		.make-active {
+			text-align: right; 
+			button {
+				background:$oe-clinic-orange;
+			}
+		}
+		
+		.eye-confirmation {
 			padding:5px;
+			margin: 0 3px 0 0;
 			background:$oe-clinic-green;
 			border-radius:3px;
 			input {
@@ -54,7 +62,12 @@
 			&.wrong-pin {
 				background:$oe-clinic-red;
 			}
-			
+		}
+		
+		.who-completed {
+			@include font-size(14);
+			color:$oe-text;
+			font-weight:300;
 		}
 		
 		// trash can
