@@ -15,17 +15,17 @@
 	.add-to-all-pathways {
 		position:fixed;	
 		top:$oe-header-height + $oe-event-header-height;
-		left: calc(100vw - 310px);
+		left: 100%;
 		z-index:$oe-z-tooltip;
 		height: calc(100vh - 98px); 	// this can't be SASS variable, has to be written (must match 'top')
 		border-left:1px solid $oe-text-highlight;
 		padding:0 30px 15px 15px;
 		width:310px;
+		transform: translateX( -310px ); // and shift left
 		
 		@include media($oe-browser-size-activity-panel-fixed){
-			left: $oe-browser-size-activity-panel-fixed - $oe-activity-panel-width - 310px;
+			left: $oe-browser-size-activity-panel-fixed - $oe-activity-panel-width;
 		}
-		
 	}
 	
 	// Add to individual pathway
