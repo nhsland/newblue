@@ -54,7 +54,7 @@
 	cursor:pointer;
 	opacity: 0.5;
 	
-	&:hover, &:focus { 
+	&:hover, &:focus, &:active, .active, .selected { 
 		opacity:1; 
 	}
 	
@@ -97,6 +97,7 @@
 	&.collapse 			{ background-image: url( svg-path-theme('collapse') ); }
 	&.history 			{ background-image: url( svg-path-theme('history') ); }
 	&.tick 				{ background-image: url( svg-path-theme('tick') ); }
+	&.triangle 			{ background-image: url( svg-path-theme('warning') ); }  // can't call it 'warning'
 	
 	
 	// PRO theme icons (white)

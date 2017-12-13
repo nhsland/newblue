@@ -1,0 +1,43 @@
+// OE Clinic List - Patient Quicklook
+// 
+// note: The styling of the Quicklook content is set in: popup-quicklook/ '_summary-data' and '_management'
+
+.patient-clinic-quicklook {
+	position:absolute;
+	top:0;
+	left:350px;
+	z-index:$oe-z-tooltip;
+	background:$oe-blue-darker;
+	border:1px solid $oe-text-highlight;
+	padding:5px 8px 15px 8px;
+	width:500px;
+	border-radius:3px;
+	
+	// specific to clinic quicklook
+	.patient-details {
+		color:$oe-ui-text;
+		@include font-size(14);
+		padding:5px;
+		
+		.name {
+			@include font-size(18);
+		}
+	}
+	
+	// slight changes to main quicklook popup styles
+	.summary-data {
+		.row {
+			.label {
+				@include font-size(14);
+			}
+		}
+	}
+	
+	.subtitle { 
+		margin:10px 3px 5px 0;
+		@include font-size(14);
+		font-weight:200; 
+		color:$oe-ui-text-light; 
+		text-align: right;
+	}
+}

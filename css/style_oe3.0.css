@@ -7,11 +7,13 @@ html {
 }
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 b,
@@ -85,6 +87,11 @@ td {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+::-moz-selection {
+  background: #89d8e9;
+  text-shadow: none;
 }
 
 ::selection {
@@ -264,7 +271,7 @@ textarea {
   margin: 0 4px;
 }
 
-.oe-i:hover, .oe-i:focus {
+.oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i .active, .oe-i .selected {
   opacity: 1;
 }
 
@@ -374,6 +381,10 @@ textarea {
 
 .oe-i.tick {
   background-image: url("../svg/in-css/tick.svg");
+}
+
+.oe-i.triangle {
+  background-image: url("../svg/in-css/warning.svg");
 }
 
 .oe-i.pro-theme.trash {
@@ -553,6 +564,18 @@ input {
   height: auto;
 }
 
+input::-webkit-input-placeholder {
+  color: rgba(185, 185, 185, 0.84);
+}
+
+input:-ms-input-placeholder {
+  color: rgba(185, 185, 185, 0.84);
+}
+
+input::-ms-input-placeholder {
+  color: rgba(185, 185, 185, 0.84);
+}
+
 input::placeholder {
   color: rgba(185, 185, 185, 0.84);
 }
@@ -639,35 +662,57 @@ strong {
 }
 
 .flex-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .flex-layout.flex-right {
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .flex-layout.flex-left {
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .flex-layout.flex-center {
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .flex-layout.flex-top {
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .flex-layout.flex-stretch {
-  align-items: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 button, .button, input[type="submit"] {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   vertical-align: top;
   border: 0;
   outline: 0;
@@ -768,6 +813,8 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   height: 100vh;
   width: 100vw;
   background: rgba(21, 32, 55, 0.6);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -1063,8 +1110,12 @@ html {
 
 .oe-patient .patient-allergies-risks {
   right: 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 4px;
   background: #751e00;
 }
@@ -1083,6 +1134,8 @@ html {
   top: 0;
   left: 750px;
   height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -1136,8 +1189,12 @@ html {
 }
 
 .oe-nav .oe-big-icons .oe-nav-btn > a, .oe-nav .oe-big-icons .oe-nav-btn > .nav-js-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 60px;
 }
 
@@ -1444,20 +1501,20 @@ html {
   z-index: 1;
 }
 
-.patient-popup-quicklook .summary-data {
+.patient-popup-quicklook .summary-data, .patient-clinic-quicklook .summary-data {
   margin: 10px 0 0 0;
   font-size: 0.6875rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-quicklook .summary-data .row {
+.patient-popup-quicklook .summary-data .row, .patient-clinic-quicklook .summary-data .row {
   position: relative;
   margin: 0 0 3px 0;
   background: #1e2e42;
 }
 
-.patient-popup-quicklook .summary-data .row .label {
+.patient-popup-quicklook .summary-data .row .label, .patient-clinic-quicklook .summary-data .row .label {
   z-index: 1;
   position: absolute;
   top: 1px;
@@ -1467,18 +1524,18 @@ html {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.patient-popup-quicklook .summary-data .row .data {
+.patient-popup-quicklook .summary-data .row .data, .patient-clinic-quicklook .summary-data .row .data {
   z-index: 2;
   padding: 5px;
   line-height: 1.6;
 }
 
-.patient-popup-quicklook .summary-data table {
+.patient-popup-quicklook .summary-data table, .patient-clinic-quicklook .summary-data table {
   margin: 20px 0 0 0;
   width: 99%;
 }
 
-.patient-popup-quicklook .summary-data table th, .patient-popup-quicklook .summary-data table td {
+.patient-popup-quicklook .summary-data table th, .patient-popup-quicklook .summary-data table td, .patient-clinic-quicklook .summary-data table th, .patient-clinic-quicklook .summary-data table td {
   vertical-align: middle;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.6875rem;
@@ -1487,20 +1544,20 @@ html {
   line-height: 1.4;
 }
 
-.patient-popup-quicklook .summary-data table th.right, .patient-popup-quicklook .summary-data table td.right {
+.patient-popup-quicklook .summary-data table th.right, .patient-popup-quicklook .summary-data table td.right, .patient-clinic-quicklook .summary-data table th.right, .patient-clinic-quicklook .summary-data table td.right {
   text-align: right;
 }
 
-.patient-popup-quicklook .summary-data table strong {
+.patient-popup-quicklook .summary-data table strong, .patient-clinic-quicklook .summary-data table strong {
   font-weight: 400;
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries {
+.patient-popup-quicklook .popup-management-summaries .management-summaries, .patient-clinic-quicklook .popup-management-summaries .management-summaries {
   padding: 0;
   margin: 0;
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries li {
+.patient-popup-quicklook .popup-management-summaries .management-summaries li, .patient-clinic-quicklook .popup-management-summaries .management-summaries li {
   display: block;
   width: 100%;
   padding: 3px 5px 2px 5px;
@@ -1509,7 +1566,7 @@ html {
   border-top: 1px dotted rgba(204, 204, 255, 0.2);
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries li p {
+.patient-popup-quicklook .popup-management-summaries .management-summaries li p, .patient-clinic-quicklook .popup-management-summaries .management-summaries li p {
   margin: 0 0 0 180px;
   padding: 5px 0px 3px 0px;
   font-size: 0.6875rem;
@@ -1517,7 +1574,7 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries li h6 {
+.patient-popup-quicklook .popup-management-summaries .management-summaries li h6, .patient-clinic-quicklook .popup-management-summaries .management-summaries li h6 {
   margin: 0;
   padding: 5px 0 0 0;
   font-size: 0.8125rem;
@@ -1738,9 +1795,15 @@ html {
 }
 
 .event-header .event-action-options {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 38px;
   padding: 0 16px 0 8px;
   font-size: 0.625rem;
@@ -1850,7 +1913,8 @@ html {
 }
 
 .oe-create-event-popup .event-type-list {
-  column-count: 2;
+  -webkit-column-count: 2;
+          column-count: 2;
 }
 
 .oe-create-event-popup .change-subspecialty {
@@ -1904,9 +1968,15 @@ html {
 }
 
 .oe-create-event-popup .tag {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 21px;
   height: 21px;
   font-size: 0.6875rem;
@@ -1948,6 +2018,8 @@ html {
 }
 
 .sidebar-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   background: #283442;
 }
@@ -2031,9 +2103,15 @@ html {
 }
 
 .sidebar .subspecialty .tag, .sidebar .event .tag {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 19px;
   height: 19px;
   font-size: 0.625rem;
@@ -2260,6 +2338,8 @@ html {
 
 .oe-event-quickview-panel .event-quickview .quickview-details {
   height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -2332,6 +2412,7 @@ html {
   margin: 0 0 3px 0;
   color: rgba(255, 255, 255, 0.8);
   border: 1px solid #141e2b;
+  -webkit-transition: border-color 0.2s ease-in;
   transition: border-color 0.2s ease-in;
 }
 
@@ -2351,6 +2432,7 @@ html {
 }
 
 .main-event .element:hover .element-header .element-title, .main-event .element:hover .element-header .subelement-title, .main-event .element:focus .element-header .element-title, .main-event .element:focus .element-header .subelement-title {
+  -webkit-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
   color: cyan;
 }
@@ -2402,13 +2484,17 @@ html {
 }
 
 .main-event .element .inactive-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
 }
 
 .main-event .element .inactive-form .add-side {
   margin: 10px auto;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 .main-event .element-header {
@@ -2444,6 +2530,8 @@ html {
   position: absolute;
   top: 3px;
   right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -2454,9 +2542,15 @@ html {
 @media only screen and (min-width: 1440px) {
   .main-event .element-actions {
     max-width: 30px;
-    flex-direction: row;
-    flex-wrap: wrap-reverse;
-    justify-content: flex-end;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
@@ -2466,7 +2560,8 @@ html {
 }
 
 .main-event .element .flex-layout .flex-valign-bottom {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   position: relative;
 }
 
@@ -2591,15 +2686,23 @@ html {
 }
 
 .main-event .element .multi-select-selections li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 5px;
   background: #29384b;
 }
 
 .main-event .element .multi-select-remove {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-left: 5px;
 }
 
@@ -2679,9 +2782,15 @@ html {
 }
 
 .oe-eyedraw-app .ed-editor {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  align-items: stretch;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
 .oe-eyedraw-app ::-webkit-scrollbar-track {
@@ -2749,16 +2858,24 @@ html {
 }
 
 .oe-eyedraw-app .ed-draw .ed-draw-view {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 32px;
   width: 300px;
 }
 
 .oe-eyedraw-app .ed-doodle-context {
   background: #c4cfd9;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 .oe-eyedraw-app .ed-doodle-context .ed-doodle-active {
@@ -2767,9 +2884,15 @@ html {
 }
 
 .oe-eyedraw-app .ed-doodle-context .ed-doodle-toolbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 32px;
 }
 
@@ -2778,9 +2901,15 @@ html {
 }
 
 .oe-eyedraw-app .ed-doodle-context .ed-doodle-controls .doodle-option {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 0 0 5px 0;
 }
 
@@ -2791,9 +2920,15 @@ html {
 }
 
 .oe-eyedraw-app .ed-tools .ed-filter-tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 32px;
 }
 
@@ -2804,8 +2939,10 @@ html {
 }
 
 .oe-eyedraw-app .ed-tools .ed-icon-toolbox .doodle-box .doodle-selection {
-  column-count: 2;
-  column-gap: 1px;
+  -webkit-column-count: 2;
+          column-count: 2;
+  -webkit-column-gap: 1px;
+          column-gap: 1px;
 }
 
 .oe-eyedraw-app .ed-tools .ed-icon-toolbox .doodle-box .doodle-selection li {
@@ -2823,8 +2960,12 @@ html {
 }
 
 .oe-eyedraw-app .ed-data-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin: 10px 0 10px 10px;
 }
 
@@ -3428,6 +3569,7 @@ html {
   cursor: default;
   pointer-events: none;
   white-space: nowrap;
+  -webkit-transition: stroke 150ms;
   transition: stroke 150ms;
 }
 
@@ -3524,6 +3666,7 @@ html {
   font-weight: 500;
   color: #141e2b;
   padding: 3px 23px 3px 23px;
+  -webkit-transition: top 0.3s ease-out;
   transition: top 0.3s ease-out;
 }
 
@@ -3703,13 +3846,13 @@ table.oe-clinic-list td.center {
   border-left: 1px solid cyan;
   padding: 0 30px 15px 15px;
   width: 310px;
-  transform: translateX(-310px);
+  -webkit-transform: translateX(-310px);
+          transform: translateX(-310px);
 }
 
 @media only screen and (min-width: 1800px) {
   .oe-clinic .add-to-all-pathways {
-    left: 1040px;
-    transform: translateX(0);
+    left: 1350px;
   }
 }
 
@@ -3886,6 +4029,8 @@ table.oe-clinic-list td.center {
 }
 
 .oe-clinic-add-to-all .add-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: 38px;
   width: 50px;
@@ -3893,6 +4038,40 @@ table.oe-clinic-list td.center {
 
 .oe-clinic-add-to-all .add-icon .oe-i {
   margin: auto;
+}
+
+.patient-clinic-quicklook {
+  position: absolute;
+  top: 0;
+  left: 350px;
+  z-index: 60;
+  background: #141e2b;
+  border: 1px solid cyan;
+  padding: 5px 8px 15px 8px;
+  width: 500px;
+  border-radius: 3px;
+}
+
+.patient-clinic-quicklook .patient-details {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  padding: 5px;
+}
+
+.patient-clinic-quicklook .patient-details .name {
+  font-size: 1.125rem;
+}
+
+.patient-clinic-quicklook .summary-data .row .label {
+  font-size: 0.875rem;
+}
+
+.patient-clinic-quicklook .subtitle {
+  margin: 10px 3px 5px 0;
+  font-size: 0.875rem;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: right;
 }
 
 /* ------------------------ */
@@ -3903,7 +4082,8 @@ table.oe-clinic-list td.center {
   border-radius: 3px;
   display: inline-block;
   position: absolute;
-  touch-action: manipulation;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
   font-size: 0.75rem;
 }
 
@@ -3961,6 +4141,8 @@ table.oe-clinic-list td.center {
 
 .pickmeup .pmu-instance nav {
   color: rgba(255, 255, 255, 0.8);
+  display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   line-height: 2em;
 }
