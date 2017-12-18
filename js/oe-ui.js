@@ -40,6 +40,11 @@ var oeui = {
 												$('#patient-popup-allergies-risks'),
 												null,true
 										);
+		// tasks
+		oeui.tasks = new oeui.JsBtn(		  	$('#js-tasks-btn'),
+												$('#patient-popup-tasks'),
+												null,true
+										);
 										
 		// activity panel
 		var activity = new oeui.JsBtn(		$('#js-nav-activity-btn'),
@@ -450,6 +455,7 @@ var oeui = {
 		oeui.quicklook.hide();
 		oeui.demographics.hide();
 		oeui.risks.hide();
+		oeui.tasks.hide();
 	},
 
 	/*

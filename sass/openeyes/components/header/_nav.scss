@@ -51,6 +51,7 @@
 					}
 				}	
 			}
+		
 			
 			// svg icon
 			.icon {
@@ -58,7 +59,11 @@
 				width:40px;  
 				height:20px;
 				fill:#fff;
-				opacity: 0.5;				
+				opacity: 0.5;	
+				
+				&.open {
+					fill:#0ff;
+				}			
 			}	
 		}	
 	}

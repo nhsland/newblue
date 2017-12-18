@@ -51,7 +51,7 @@
 	// - Demographics : Patient summary data
 	// - Allergies & Risks
 	// - Letter Lightening viewer
-	.patient-quicklook, .patient-demographics, .patient-lightening-viewer,
+	.patient-quicklook, .patient-demographics, .patient-lightening-viewer, .patient-tasks,
 	.patient-allergies-risks {
 		position:absolute;
 		bottom:0;
@@ -68,7 +68,7 @@
 	}
 	
 	// icon behaviour
-	.patient-quicklook, .patient-lightening-viewer,
+	.patient-quicklook, .patient-lightening-viewer, .patient-tasks,
 	.patient-demographics {
 		// js controlled interaction... 
 		&.open, &.active {
@@ -94,7 +94,9 @@
 	
 	// position and size icons
 	// position by eye
-	.patient-lightening-viewer {
+	// position and size icons
+	// position by eye
+	.patient-tasks {
 		right:0;	
 		.icon {
 			width:15px;  
@@ -102,8 +104,17 @@
 		}
 	}
 	
+	
+	.patient-lightening-viewer {
+		right:25px;	
+		.icon {
+			width:15px;  
+			height:15px;
+		}
+	}
+	
 	.patient-quicklook {
-		right:30px;	
+		right:50px;	
 		.icon {
 			width:15px;  
 			height:15px;
@@ -111,7 +122,7 @@
 	}
 	
 	.patient-demographics {
-		right:60px;
+		right:75px;
 		padding-bottom:3px; // use pad to increase hitarea.
 		.icon {
 			width:18px;  
@@ -120,7 +131,7 @@
 	}
 	
 	.patient-allergies-risks {
-		right:105px;
+		right:115px;
 	
 		display:flex;
 		align-items:center;

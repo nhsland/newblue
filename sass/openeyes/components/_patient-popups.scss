@@ -5,7 +5,7 @@
 //
 // note: Clinic Quicklook is cut down verions of Quicklook for Clinic lists
 
-.patient-popup-allergies-risks, .patient-popup-quicklook, 
+.patient-popup-allergies-risks, .patient-popup-quicklook, .patient-popup-tasks, 
 .patient-popup-demographics {
 	
 	display:none; // js controlled.
@@ -54,16 +54,11 @@
 	}
 }
 
-// Patient Quicklook
-@import "popup-quicklook/summary-data"; 
-@import "popup-quicklook/management";
-@import "popup-quicklook/problems-plans"; 
-
-// Patient Demographics
-@import "popup-demographics/demographics"; 
-
-// Patient Allergies & Risks
-@import "popup-allergies-risks/allergies-risks"; 
+@import "patient-popups/summary-data"; 
+@import "patient-popups/management";
+@import "patient-popups/problems-plans"; 
+@import "patient-popups/demographics"; 
+@import "patient-popups/allergies-risks"; 
 
 
 

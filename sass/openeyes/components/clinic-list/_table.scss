@@ -56,6 +56,14 @@ table.oe-clinic-list {
 		vertical-align: middle;	
 		padding:5px 0;
 		
+		// patient links
+		a {
+			color:$oe-text;
+			&:hover, &:focus, &:active {
+				color:$oe-text-highlight;
+			}
+		}
+		
 		.specialty {
 			@include font-size(11);
 			opacity:0.5;

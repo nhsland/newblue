@@ -5,12 +5,12 @@
 .patient-clinic-quicklook {
 	position:absolute;
 	top:0;
-	left:350px;
+	left:10px; // 325px
 	z-index:$oe-z-tooltip;
-	background:$oe-blue-darker;
+	background:$oe-ui-blue-darker;
 	border:1px solid $oe-text-highlight;
 	padding:5px 8px 15px 8px;
-	width:500px;
+	width:470px;
 	border-radius:3px;
 	
 	// specific to clinic quicklook

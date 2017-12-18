@@ -2,95 +2,94 @@
 // 
 // 
 
-.oe-clinic {
+
 	
-	// container for pathway-steps, used by js
-	.pathway {
-		display:inline-block;
-		vertical-align: middle; // align +icon correctly
+// container for pathway-steps, used by js
+.pathway {
+	display:inline-block;
+	vertical-align: middle; // align +icon correctly
+}
+
+// pathway-steps created by js
+.pathway-step {
+	// <span>  
+	position: relative;
+	display:inline-block;
+	min-width:35px;
+	margin:1px 3px 1px 0;
+	padding:0 8px;
+	height:38px;
+	line-height:23px; // shift the text up
+	@include font-size(12);
+	font-style: italic;
+	border-radius:3px;
+	
+	.time {
+		position:absolute; 
+		bottom:3px; 
+		left:3px; 
+		@include font-size(10);
+		line-height:normal;
+		opacity:0.7;
 	}
 	
-	// pathway-steps created by js
-	.pathway-step {
-		// <span>  
-		position: relative;
-		display:inline-block;
-		min-width:35px;
-		margin:1px 3px 1px 0;
-		padding:0 8px;
-		height:38px;
-		line-height:23px; // shift the text up
-		@include font-size(12);
-		font-style: italic;
-		border-radius:3px;
-		
-		.time {
-			position:absolute; 
-			bottom:3px; 
-			left:3px; 
-			@include font-size(10);
-			line-height:normal;
-			opacity:0.7;
-		}
-		
-		// Steps are either Pathway Events or meeting with Dr
-		// the colouring for Dr is white with border colour.
-		// Colour indicates whether on or behind schedule
-		
-		// for consistent vertical positioning
-		border:2px solid transparent;
-		
-		$text-grey:		rgb(50,50,50);
-		$text-white: 	rgb(240,240,240); // need a bright white for the colours (same for both themes)
-		
-		// these colours must work in both themes:
-		background:		rgb(100,100,100); 	// default grey
-		color:			$text-white;
-		
-		// colours
-		// currently the logic is:
-		// green - done (but may have extra info if required)
-		// orange - in progress. must have info (to remove at least)
-		// grey - future event can be directly removed
-		
-		&.green { 
-			background:$oe-clinic-green; 
-			cursor: pointer;
-		}
-		
-		&.orange { 
-			background:$oe-clinic-orange; 	
-			cursor: pointer;
-		}
+	// Steps are either Pathway Events or meeting with Dr
+	// the colouring for Dr is white with border colour.
+	// Colour indicates whether on or behind schedule
 	
-		&.red, &.dna { 
-			background:$oe-clinic-red; 
-			line-height:34px;		// center text (no time)
+	// for consistent vertical positioning
+	border:2px solid transparent;
+	
+	$text-grey:		rgb(50,50,50);
+	$text-white: 	rgb(240,240,240); // need a bright white for the colours (same for both themes)
+	
+	// these colours must work in both themes:
+	background:		rgb(100,100,100); 	// default grey
+	color:			$text-white;
+	
+	// colours
+	// currently the logic is:
+	// green - done (but may have extra info if required)
+	// orange - in progress. must have info (to remove at least)
+	// grey - future event can be directly removed
+	
+	&.green { 
+		background:$oe-clinic-green; 
+		cursor: pointer;
+	}
+	
+	&.orange { 
+		background:$oe-clinic-orange; 	
+		cursor: pointer;
+	}
+
+	&.red, &.dna { 
+		background:$oe-clinic-red; 
+		line-height:34px;		// center text (no time)
+	}
+		
+	// complete pathway! 
+	&.blue { 
+		background:$oe-grey; 
+		cursor: pointer;
+		&.late {
+			border-color:rgb(230,150,0); // not currently used
 		}
-			
-		// complete pathway! 
-		&.blue { 
-			background:$oe-grey; 
-			cursor: pointer;
-			&.late {
-				border-color:rgb(230,150,0); // not currently used
-			}
+	}
+	
+	&.next-step {
+		cursor:pointer;
+	}
+	
+	// used in the addPathway popup box to add new steps
+	&.next-step-add {	
+		&.dr {
+			color:$text-white;
+			border-color:$text-white;
 		}
 		
-		&.next-step {
-			cursor:pointer;
-		}
-		
-		// used in the addPathway popup box to add new steps
-		&.next-step-add {	
-			&.dr {
-				color:$text-white;
-				border-color:$text-white;
-			}
-			
-			&:hover, &:active, &:focus {
-				background:$oe-btn-blue;
-			}				
-		}
+		&:hover, &:active, &:focus {
+			background:$oe-btn-blue;
+		}				
 	}
 }

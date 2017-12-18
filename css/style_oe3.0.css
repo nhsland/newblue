@@ -271,7 +271,7 @@ textarea {
   margin: 0 4px;
 }
 
-.oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i .active, .oe-i .selected {
+.oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i.active, .oe-i.selected {
   opacity: 1;
 }
 
@@ -1050,7 +1050,7 @@ html {
   border-left: none;
 }
 
-.oe-patient .patient-quicklook, .oe-patient .patient-demographics, .oe-patient .patient-lightening-viewer,
+.oe-patient .patient-quicklook, .oe-patient .patient-demographics, .oe-patient .patient-lightening-viewer, .oe-patient .patient-tasks,
 .oe-patient .patient-allergies-risks {
   position: absolute;
   bottom: 0;
@@ -1058,14 +1058,14 @@ html {
   cursor: pointer;
 }
 
-.oe-patient .patient-quicklook .icon, .oe-patient .patient-demographics .icon, .oe-patient .patient-lightening-viewer .icon,
+.oe-patient .patient-quicklook .icon, .oe-patient .patient-demographics .icon, .oe-patient .patient-lightening-viewer .icon, .oe-patient .patient-tasks .icon,
 .oe-patient .patient-allergies-risks .icon {
   display: inline-block;
   fill: #fff;
   opacity: 0.8;
 }
 
-.oe-patient .patient-quicklook.open .icon, .oe-patient .patient-quicklook.active .icon, .oe-patient .patient-lightening-viewer.open .icon, .oe-patient .patient-lightening-viewer.active .icon,
+.oe-patient .patient-quicklook.open .icon, .oe-patient .patient-quicklook.active .icon, .oe-patient .patient-lightening-viewer.open .icon, .oe-patient .patient-lightening-viewer.active .icon, .oe-patient .patient-tasks.open .icon, .oe-patient .patient-tasks.active .icon,
 .oe-patient .patient-demographics.open .icon,
 .oe-patient .patient-demographics.active .icon {
   fill: cyan;
@@ -1080,8 +1080,17 @@ html {
   fill: #141e2b;
 }
 
-.oe-patient .patient-lightening-viewer {
+.oe-patient .patient-tasks {
   right: 0;
+}
+
+.oe-patient .patient-tasks .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.oe-patient .patient-lightening-viewer {
+  right: 25px;
 }
 
 .oe-patient .patient-lightening-viewer .icon {
@@ -1090,7 +1099,7 @@ html {
 }
 
 .oe-patient .patient-quicklook {
-  right: 30px;
+  right: 50px;
 }
 
 .oe-patient .patient-quicklook .icon {
@@ -1099,7 +1108,7 @@ html {
 }
 
 .oe-patient .patient-demographics {
-  right: 60px;
+  right: 75px;
   padding-bottom: 3px;
 }
 
@@ -1109,7 +1118,7 @@ html {
 }
 
 .oe-patient .patient-allergies-risks {
-  right: 105px;
+  right: 115px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1229,6 +1238,10 @@ html {
   height: 20px;
   fill: #fff;
   opacity: 0.5;
+}
+
+.oe-nav .oe-big-icons .oe-nav-btn .icon.open {
+  fill: #0ff;
 }
 
 .oe-nav .oe-nav-shortcuts {
@@ -1456,7 +1469,7 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-allergies-risks, .patient-popup-quicklook,
+.patient-popup-allergies-risks, .patient-popup-quicklook, .patient-popup-tasks,
 .patient-popup-demographics {
   display: none;
   z-index: 90;
@@ -1469,14 +1482,14 @@ html {
   padding: 10px;
 }
 
-.patient-popup-allergies-risks .oe-popup-overflow, .patient-popup-quicklook .oe-popup-overflow,
+.patient-popup-allergies-risks .oe-popup-overflow, .patient-popup-quicklook .oe-popup-overflow, .patient-popup-tasks .oe-popup-overflow,
 .patient-popup-demographics .oe-popup-overflow {
   max-height: 415px;
   overflow: auto;
   padding: 0 3px 0 0;
 }
 
-.patient-popup-allergies-risks .subtitle, .patient-popup-quicklook .subtitle,
+.patient-popup-allergies-risks .subtitle, .patient-popup-quicklook .subtitle, .patient-popup-tasks .subtitle,
 .patient-popup-demographics .subtitle {
   position: relative;
   display: block;
@@ -1487,12 +1500,12 @@ html {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.patient-popup-allergies-risks .hideshow, .patient-popup-quicklook .hideshow,
+.patient-popup-allergies-risks .hideshow, .patient-popup-quicklook .hideshow, .patient-popup-tasks .hideshow,
 .patient-popup-demographics .hideshow {
   position: relative;
 }
 
-.patient-popup-allergies-risks .hideshow .hideshow-btn, .patient-popup-quicklook .hideshow .hideshow-btn,
+.patient-popup-allergies-risks .hideshow .hideshow-btn, .patient-popup-quicklook .hideshow .hideshow-btn, .patient-popup-tasks .hideshow .hideshow-btn,
 .patient-popup-demographics .hideshow .hideshow-btn {
   display: block;
   position: absolute;
@@ -1501,20 +1514,26 @@ html {
   z-index: 1;
 }
 
-.patient-popup-quicklook .summary-data, .patient-clinic-quicklook .summary-data {
+.patient-popup-quicklook .summary-data,
+.patient-clinic-quicklook .summary-data,
+.patient-popup-tasks .summary-data {
   margin: 10px 0 0 0;
   font-size: 0.6875rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-quicklook .summary-data .row, .patient-clinic-quicklook .summary-data .row {
+.patient-popup-quicklook .summary-data .row,
+.patient-clinic-quicklook .summary-data .row,
+.patient-popup-tasks .summary-data .row {
   position: relative;
   margin: 0 0 3px 0;
   background: #1e2e42;
 }
 
-.patient-popup-quicklook .summary-data .row .label, .patient-clinic-quicklook .summary-data .row .label {
+.patient-popup-quicklook .summary-data .row .label,
+.patient-clinic-quicklook .summary-data .row .label,
+.patient-popup-tasks .summary-data .row .label {
   z-index: 1;
   position: absolute;
   top: 1px;
@@ -1524,31 +1543,57 @@ html {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.patient-popup-quicklook .summary-data .row .data, .patient-clinic-quicklook .summary-data .row .data {
+.patient-popup-quicklook .summary-data .row .data,
+.patient-clinic-quicklook .summary-data .row .data,
+.patient-popup-tasks .summary-data .row .data {
   z-index: 2;
   padding: 5px;
   line-height: 1.6;
 }
 
-.patient-popup-quicklook .summary-data table, .patient-clinic-quicklook .summary-data table {
+.patient-popup-quicklook .summary-data table,
+.patient-clinic-quicklook .summary-data table,
+.patient-popup-tasks .summary-data table {
   margin: 20px 0 0 0;
   width: 99%;
 }
 
-.patient-popup-quicklook .summary-data table th, .patient-popup-quicklook .summary-data table td, .patient-clinic-quicklook .summary-data table th, .patient-clinic-quicklook .summary-data table td {
-  vertical-align: middle;
+.patient-popup-quicklook .summary-data table th,
+.patient-clinic-quicklook .summary-data table th,
+.patient-popup-tasks .summary-data table th {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.patient-popup-quicklook .summary-data table td,
+.patient-clinic-quicklook .summary-data table td,
+.patient-popup-tasks .summary-data table td {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.patient-popup-quicklook .summary-data table th, .patient-popup-quicklook .summary-data table td,
+.patient-clinic-quicklook .summary-data table th,
+.patient-clinic-quicklook .summary-data table td,
+.patient-popup-tasks .summary-data table th,
+.patient-popup-tasks .summary-data table td {
+  vertical-align: middle;
   font-size: 0.6875rem;
   font-weight: 400;
   padding: 2px 0 2px 5px;
   line-height: 1.4;
+  text-align: left;
 }
 
-.patient-popup-quicklook .summary-data table th.right, .patient-popup-quicklook .summary-data table td.right, .patient-clinic-quicklook .summary-data table th.right, .patient-clinic-quicklook .summary-data table td.right {
+.patient-popup-quicklook .summary-data table th.right, .patient-popup-quicklook .summary-data table td.right,
+.patient-clinic-quicklook .summary-data table th.right,
+.patient-clinic-quicklook .summary-data table td.right,
+.patient-popup-tasks .summary-data table th.right,
+.patient-popup-tasks .summary-data table td.right {
   text-align: right;
 }
 
-.patient-popup-quicklook .summary-data table strong, .patient-clinic-quicklook .summary-data table strong {
+.patient-popup-quicklook .summary-data table strong,
+.patient-clinic-quicklook .summary-data table strong,
+.patient-popup-tasks .summary-data table strong {
   font-weight: 400;
 }
 
@@ -3725,6 +3770,14 @@ table.oe-clinic-list td {
   padding: 5px 0;
 }
 
+table.oe-clinic-list td a {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+table.oe-clinic-list td a:hover, table.oe-clinic-list td a:focus, table.oe-clinic-list td a:active {
+  color: cyan;
+}
+
 table.oe-clinic-list td .specialty {
   font-size: 0.6875rem;
   opacity: 0.5;
@@ -3762,12 +3815,12 @@ table.oe-clinic-list td.center {
   padding: 0 10px;
 }
 
-.oe-clinic .pathway {
+.pathway {
   display: inline-block;
   vertical-align: middle;
 }
 
-.oe-clinic .pathway-step {
+.pathway-step {
   position: relative;
   display: inline-block;
   min-width: 35px;
@@ -3783,7 +3836,7 @@ table.oe-clinic-list td.center {
   color: #f0f0f0;
 }
 
-.oe-clinic .pathway-step .time {
+.pathway-step .time {
   position: absolute;
   bottom: 3px;
   left: 3px;
@@ -3792,40 +3845,40 @@ table.oe-clinic-list td.center {
   opacity: 0.7;
 }
 
-.oe-clinic .pathway-step.green {
+.pathway-step.green {
   background: #146400;
   cursor: pointer;
 }
 
-.oe-clinic .pathway-step.orange {
+.pathway-step.orange {
   background: #b45016;
   cursor: pointer;
 }
 
-.oe-clinic .pathway-step.red, .oe-clinic .pathway-step.dna {
+.pathway-step.red, .pathway-step.dna {
   background: #a0280a;
   line-height: 34px;
 }
 
-.oe-clinic .pathway-step.blue {
+.pathway-step.blue {
   background: #283442;
   cursor: pointer;
 }
 
-.oe-clinic .pathway-step.blue.late {
+.pathway-step.blue.late {
   border-color: #e69600;
 }
 
-.oe-clinic .pathway-step.next-step {
+.pathway-step.next-step {
   cursor: pointer;
 }
 
-.oe-clinic .pathway-step.next-step-add.dr {
+.pathway-step.next-step-add.dr {
   color: #f0f0f0;
   border-color: #f0f0f0;
 }
 
-.oe-clinic .pathway-step.next-step-add:hover, .oe-clinic .pathway-step.next-step-add:active, .oe-clinic .pathway-step.next-step-add:focus {
+.pathway-step.next-step-add:hover, .pathway-step.next-step-add:active, .pathway-step.next-step-add:focus {
   background: #074598;
 }
 
@@ -3835,6 +3888,10 @@ table.oe-clinic-list td.center {
 
 .oe-clinic .new-pathway-steps .group {
   padding: 5px 0;
+}
+
+.oe-clinic .new-pathway-steps.padtop {
+  padding: 10px 0 0 0;
 }
 
 .oe-clinic .add-to-all-pathways {
@@ -4043,12 +4100,12 @@ table.oe-clinic-list td.center {
 .patient-clinic-quicklook {
   position: absolute;
   top: 0;
-  left: 350px;
+  left: 10px;
   z-index: 60;
   background: #141e2b;
   border: 1px solid cyan;
   padding: 5px 8px 15px 8px;
-  width: 500px;
+  width: 470px;
   border-radius: 3px;
 }
 

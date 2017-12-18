@@ -496,6 +496,16 @@ var clinic = {
 			addDilate();					
 		});
 		
+		// If a step has options (such as Dilate) need to provide a
+		// way of getting back to the steps
+		$('#js-pathway-back').click( function( e ) {
+			e.preventDefault();
+			e.stopPropagation();
+			clinic.addPathway.back();	
+		});
+		
+		$('#js-pathway-back').hide(); // hide it 
+		
 		
 		/**
 		Add step to selected pathway
@@ -597,12 +607,25 @@ var clinic = {
 				$('#js-add-new-pathway .new-pathway-steps').hide();
 				// show dilate options
 				$('#add-dilate-options').removeClass('hidden').show();
+				
+				$('#js-pathway-events-title span').hide();
+				$('#js-pathway-back').show();
+			},
+			
+			back:function(){
+				// reverse showDilateOptions
+				$('#js-add-new-pathway .new-pathway-steps').show();
+				$('#add-dilate-options').hide();
+				$('#js-pathway-events-title span').show();
+				$('#js-pathway-back').hide();
 			},
 			
 			reset:function(){
 				$('#add-dilate-options .option-list input').prop('checked',false);
 				$('#add-dilate-options').hide();
 				$('#js-add-new-pathway .new-pathway-steps').show();
+				$('#js-pathway-events-title span').show();
+				$('#js-pathway-back').hide();
 			}, 
 			
 			hide:function(){
@@ -747,6 +770,9 @@ var clinic = {
   		clinic.addToAll = {
 	  		
 	  		show:function(){
+		  		
+		  		clinic.addPathway.hide();
+		  		
 		  		$('#js-add-to-all-pathways')
 		  			.removeClass('hidden')
 		  			.show();
@@ -845,7 +871,7 @@ var clinic = {
 		});
 		
 		function showQuicklook( $wrapper, top ){
-			offsetTop = top - 30;
+			offsetTop = top + 30;
 			$popup.find('.patient-details .name').text( $wrapper.data('name') );
 			$popup.find('.patient-details .number').text( $wrapper.data('id') );
 			
@@ -917,9 +943,9 @@ var clinic = {
 		Flag some Risks / Allergies	
 		**/
 		var tr = $( '#patient-'+1008002 );
-		tr.find('.js-clinic-quicklook').append('<i class="oe-i triangle inline small">');
+		tr.find('.js-clinic-quicklook').append('<i class="oe-i triangle active inline small">');
 		var tr = $( '#patient-'+ 1897143 );
-		tr.find('.js-clinic-quicklook').append('<i class="oe-i triangle inline small">');
+		tr.find('.js-clinic-quicklook').append('<i class="oe-i triangle active inline small">');
 		
 	},
 };
