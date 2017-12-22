@@ -3869,7 +3869,7 @@ table.oe-clinic-list td.center {
   border-color: #e69600;
 }
 
-.pathway-step.next-step {
+.pathway-step.next-step, .pathway-step.next-step-add {
   cursor: pointer;
 }
 

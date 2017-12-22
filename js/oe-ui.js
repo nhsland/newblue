@@ -12,44 +12,11 @@ var oeui = {
 	
 	init:function(){
 		
-		// OpeEyes logo
-		var openeyes = new oeui.JsBtn(		$('#js-openeyes-btn'),
-											$('#js-openeyes-info')
-										);
 		
-		// Shortcuts Nav in <header> 
-		var shortcuts = new oeui.JsBtn( 	$('#js-nav-shortcuts-btn'),
-											$('#js-nav-shortcuts-subnav'),
-											$('#js-nav-shortcuts')  
-										);
 		
-		// patient quicklook
-		oeui.quicklook = new oeui.JsBtn(		$('#js-quicklook-btn'),
-												$('#patient-summary-quicklook'),
-												null,true
-										);
+		
 										
-		// patient demographics
-		oeui.demographics = new oeui.JsBtn(		$('#js-demographics-btn'),
-												$('#patient-popup-demographics'),
-												null,true
-										);
-										
-		// patient allergies and risks
-		oeui.risks = new oeui.JsBtn(		  	$('#js-allergies-risks-btn'),
-												$('#patient-popup-allergies-risks'),
-												null,true
-										);
-		// tasks
-		oeui.tasks = new oeui.JsBtn(		  	$('#js-tasks-btn'),
-												$('#patient-popup-tasks'),
-												null,true
-										);
-										
-		// activity panel
-		var activity = new oeui.JsBtn(		$('#js-nav-activity-btn'),
-											$('#js-activity-panel')
-										);
+		
 										
 		// basic side bar event popup 
 		// (desktop users only currently, although could be made available for touch)								
@@ -89,27 +56,6 @@ var oeui = {
 		oeui.lighteningViewer();
 		
 
-		/*
-		check browser size for fixing Activity Panel
-		*/						
-		checkBrowserSize();
-		
-		$( window ).resize(function() {
-			checkBrowserSize();
-		});
-		
-  		function checkBrowserSize(){
-	  		// not in OEscape mode.
-	  		var el = document.getElementById('oescape-layout');
-	  		if(el !== null) return; 
-	  		
-	  		// min width for fixing Activity Panel (allows some resizing)	
-	  		if( $( window ).width() > 1800){
-				activity.makeFixed( true );
-			} else {
-				activity.makeFixed( false );
-			}
-  		}
 	},
 	
 	/*
