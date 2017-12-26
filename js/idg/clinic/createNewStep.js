@@ -2,7 +2,9 @@
 Create new next-step
 @return - Returns new next-step
 **/
-clinic.createNewStep = function( $step, dataObj, active = false ){
+clinic.createNewStep = function( $step, dataObj, active ){
+	
+	if(active === undefined) active = false;
 	
 	var data = $.extend( {}, dataObj );
 	var $new = $step.clone();

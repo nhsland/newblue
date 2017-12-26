@@ -21,6 +21,7 @@ var spritesmith 	= require('gulp.spritesmith');
 // js
 var concat       	= require('gulp-concat');
 var uglify       	= require('gulp-uglify'); 
+var pump 			= require('pump');
 // files
 var rename 			= require('gulp-rename');
 var es 				= require('event-stream');
@@ -49,14 +50,14 @@ default
 - Build CSS for Pro and Classic themes 
 - watch...
 **/
-gulp.task('default',['eyedraw_sprites','eyedraw_sass','event_sprites','sass','demoJS','watch-build']);
+gulp.task('default',['eyedraw_sprites','eyedraw_sass','event_sprites','sass','uglyJS','readJS','watch-build']);
 
 /**
 watch scss (Pro & Classic themes)	
 **/
 gulp.task('watch-build', function() {
     gulp.watch( config.watchSass , ['sass','sass-classic']);
-    gulp.watch( config.idgJS , ['demoJS'] ); // IDG demo JS files
+    gulp.watch( config.idgJS , ['readJS','uglyJS'] ); // IDG demo JS files
 });
 
 /**
@@ -193,12 +194,24 @@ IDG demo JS
 Using to gulp to handle all the JS for IDG demos
 This is NOT meant for production.
 **/
-gulp.task( 'demoJS', function() {	
-
+gulp.task( 'readJS', function() {	
 	gulp.src( config.idgJS )
 	.pipe( concat( 'idg-oe.js' ) )
 	.pipe( gulp.dest( './js' ) );
+});
 
+/**
+Use Pump to get readable Ugilfy errors
+**/
+gulp.task('uglyJS', function (cb) {
+  pump([
+      gulp.src( config.idgJS ),
+      concat( 'idg-oe.min.js' ),
+      uglify(),
+      gulp.dest('./js')
+    ],
+    cb
+  );
 });
 
 

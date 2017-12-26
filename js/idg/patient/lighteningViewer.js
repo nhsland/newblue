@@ -23,4 +23,4 @@ idg.lighteningViewer = function(){
 	.mouseleave(function(){
 		$(this).removeClass( 'active' ); 
 	});	
-},
+}
