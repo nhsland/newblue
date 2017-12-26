@@ -7,7 +7,7 @@ Create 'buttons' for nav menus, 3 different flavours: standard, wrapped and fixe
 @ $content - DOM content to show on click 
 @ wrap - shortcuts has a DOM wrapper, this displays on hover.
 **/
-idg.PopupBtn = function(id,$btn,$content){
+idg.NavBtnPopup = function(id,$btn,$content){
 		
 	// private
 	var id = id,
@@ -30,7 +30,7 @@ idg.PopupBtn = function(id,$btn,$content){
 	this.inGroup = inGroup;
 	
 		
-	init(); // all are initiate, but useWrapperEvents modifies the eventObj
+	init(); // all are initiated but useWrapperEvents modifies the eventObj then re-initiates
 		
 	/**
 	provide a way for shortcuts to re-assign
@@ -94,7 +94,7 @@ idg.PopupBtn = function(id,$btn,$content){
 	Need to shift the events to the wrapper DOM rather than the $btn	
 	**/
 	function useWrapperEvents( DOMwrapper ){
-		eventObj.off('click mouseenter mouseleave');
+		eventObj.off( 'click mouseenter mouseleave' );
 		eventObj = DOMwrapper;
 		css.open = css.active; // wrap only has 1 class
 		useMouseEvents = true;
@@ -119,7 +119,6 @@ idg.PopupBtn = function(id,$btn,$content){
 	Group popups to stop overlapping	
 	**/
 	function inGroup( controller ){
-		console.log( controller );
 		isGrouped = true;
 		groupController = controller;
 	}	

@@ -235,6 +235,10 @@ textarea {
 /* ------ PRO theme ------- */
 /* OpenEyes CSS */
 /* GUI */
+.inline {
+  display: inline-block;
+}
+
 .oe-i {
   display: inline-block;
   vertical-align: middle;
@@ -657,10 +661,6 @@ strong {
   font-weight: 500;
 }
 
-.warning {
-  background-color: #751e00;
-}
-
 .flex-layout {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -701,6 +701,22 @@ strong {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+}
+
+.collapse-group {
+  position: relative;
+}
+
+.collapse-group .collapse-group-icon {
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 3px;
+  cursor: pointer;
+}
+
+.collapse-group .collapse-group-header {
+  cursor: pointer;
 }
 
 button, .button, input[type="submit"] {
@@ -785,14 +801,13 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   background: #0e5e23;
 }
 
-.alert-box.patient, .alert-box.issue {
+.alert-box.patient, .alert-box.issue, .alert-box.warning, .alert-box.error, .alert-box.injection-warning {
   color: #fff;
   background: #751e00;
 }
 
-.alert-box.warning, .alert-box.error, .alert-box.injection-warning {
-  color: #fff;
-  background: #8f0e0e;
+.warning-flag-bg {
+  background-color: #751e00;
 }
 
 .oe-tooltip {
@@ -1469,7 +1484,9 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-allergies-risks, .patient-popup-quicklook, .patient-popup-tasks,
+.patient-popup-allergies-risks,
+.patient-popup-quicklook,
+.patient-popup-tasks,
 .patient-popup-demographics {
   display: none;
   z-index: 90;
@@ -1479,17 +1496,21 @@ html {
   width: 1080px;
   background: #141e2b;
   border: 1px solid cyan;
-  padding: 10px;
+  padding: 10px 10px 15px 10px;
 }
 
-.patient-popup-allergies-risks .oe-popup-overflow, .patient-popup-quicklook .oe-popup-overflow, .patient-popup-tasks .oe-popup-overflow,
+.patient-popup-allergies-risks .oe-popup-overflow,
+.patient-popup-quicklook .oe-popup-overflow,
+.patient-popup-tasks .oe-popup-overflow,
 .patient-popup-demographics .oe-popup-overflow {
   max-height: 415px;
   overflow: auto;
   padding: 0 3px 0 0;
 }
 
-.patient-popup-allergies-risks .subtitle, .patient-popup-quicklook .subtitle, .patient-popup-tasks .subtitle,
+.patient-popup-allergies-risks .subtitle,
+.patient-popup-quicklook .subtitle,
+.patient-popup-tasks .subtitle,
 .patient-popup-demographics .subtitle {
   position: relative;
   display: block;
@@ -1498,20 +1519,6 @@ html {
   font-size: 1.125rem;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.5);
-}
-
-.patient-popup-allergies-risks .hideshow, .patient-popup-quicklook .hideshow, .patient-popup-tasks .hideshow,
-.patient-popup-demographics .hideshow {
-  position: relative;
-}
-
-.patient-popup-allergies-risks .hideshow .hideshow-btn, .patient-popup-quicklook .hideshow .hideshow-btn, .patient-popup-tasks .hideshow .hideshow-btn,
-.patient-popup-demographics .hideshow .hideshow-btn {
-  display: block;
-  position: absolute;
-  top: 9px;
-  right: 5px;
-  z-index: 1;
 }
 
 .patient-popup-quicklook .summary-data,
@@ -1536,9 +1543,9 @@ html {
 .patient-popup-tasks .summary-data .row .label {
   z-index: 1;
   position: absolute;
-  top: 1px;
+  top: 5px;
   right: 3px;
-  font-size: 1.125rem;
+  font-size: 0.9375rem;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -1547,7 +1554,7 @@ html {
 .patient-clinic-quicklook .summary-data .row .data,
 .patient-popup-tasks .summary-data .row .data {
   z-index: 2;
-  padding: 5px;
+  padding: 5px 10px;
   line-height: 1.6;
 }
 
@@ -1555,7 +1562,13 @@ html {
 .patient-clinic-quicklook .summary-data table,
 .patient-popup-tasks .summary-data table {
   margin: 20px 0 0 0;
-  width: 99%;
+  width: 100%;
+}
+
+.patient-popup-quicklook .summary-data table tr:hover,
+.patient-clinic-quicklook .summary-data table tr:hover,
+.patient-popup-tasks .summary-data table tr:hover {
+  background: #182535;
 }
 
 .patient-popup-quicklook .summary-data table th,
@@ -1591,18 +1604,28 @@ html {
   text-align: right;
 }
 
+.patient-popup-quicklook .summary-data table th:first-child, .patient-popup-quicklook .summary-data table td:first-child,
+.patient-clinic-quicklook .summary-data table th:first-child,
+.patient-clinic-quicklook .summary-data table td:first-child,
+.patient-popup-tasks .summary-data table th:first-child,
+.patient-popup-tasks .summary-data table td:first-child {
+  padding-left: 0;
+}
+
 .patient-popup-quicklook .summary-data table strong,
 .patient-clinic-quicklook .summary-data table strong,
 .patient-popup-tasks .summary-data table strong {
   font-weight: 400;
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries, .patient-clinic-quicklook .popup-management-summaries .management-summaries {
+.patient-popup-quicklook .popup-management-summaries .management-summaries,
+.patient-clinic-quicklook .popup-management-summaries .management-summaries {
   padding: 0;
   margin: 0;
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries li, .patient-clinic-quicklook .popup-management-summaries .management-summaries li {
+.patient-popup-quicklook .popup-management-summaries .management-summaries li,
+.patient-clinic-quicklook .popup-management-summaries .management-summaries li {
   display: block;
   width: 100%;
   padding: 3px 5px 2px 5px;
@@ -1611,7 +1634,8 @@ html {
   border-top: 1px dotted rgba(204, 204, 255, 0.2);
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries li p, .patient-clinic-quicklook .popup-management-summaries .management-summaries li p {
+.patient-popup-quicklook .popup-management-summaries .management-summaries li p,
+.patient-clinic-quicklook .popup-management-summaries .management-summaries li p {
   margin: 0 0 0 180px;
   padding: 5px 0px 3px 0px;
   font-size: 0.6875rem;
@@ -1619,7 +1643,8 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries li h6, .patient-clinic-quicklook .popup-management-summaries .management-summaries li h6 {
+.patient-popup-quicklook .popup-management-summaries .management-summaries li h6,
+.patient-clinic-quicklook .popup-management-summaries .management-summaries li h6 {
   margin: 0;
   padding: 5px 0 0 0;
   font-size: 0.8125rem;
@@ -1879,7 +1904,7 @@ html {
   padding: 0 0 10px 0;
 }
 
-.oe-create-event-popup .close-btn {
+.oe-create-event-popup .close-icon-btn {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -2295,33 +2320,19 @@ html {
   padding-bottom: 25px;
 }
 
-.sidebar .groupings .group-container {
-  position: relative;
-}
-
-.sidebar .groupings .group-container .group-header {
+.sidebar .groupings .collapse-group-header {
   font-size: 0.8125rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.5);
   padding: 10px 25px 5px 5px;
-  cursor: pointer;
 }
 
-.sidebar .groupings .group-container .group-header:hover, .sidebar .groupings .group-container .group-header:focus {
+.sidebar .groupings .collapse-group-header:hover, .sidebar .groupings .collapse-group-header:focus {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.sidebar .groupings .group-container .group-header .count {
+.sidebar .groupings .collapse-group-header .count {
   font-size: 0.625rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.sidebar .groupings .group-container .group-showhide-btn {
-  display: block;
-  position: absolute;
-  top: 5px;
-  right: 3px;
 }
 
 .sidebar .oe-element-list {
@@ -2361,7 +2372,7 @@ html {
   background-color: #560808;
 }
 
-.oe-event-quickview-panel {
+.oe-event-quickview {
   display: none;
   z-index: 95;
   position: fixed;
@@ -2377,24 +2388,24 @@ html {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><style>path{fill:#fff;opacity:0.1;}</style><path d="M14.91,16.37,7.75,18.25l4.72-18A15,15,0,0,0,8.4,28.46Z"/><path d="M22.3,1.9,15.89,12.27l8.51-2.12-15,18.76A15,15,0,0,0,22.3,1.9Z"/></svg>');
 }
 
-.oe-event-quickview-panel .event-quickview {
+.oe-event-quickview .event-quickview {
   position: relative;
 }
 
-.oe-event-quickview-panel .event-quickview .quickview-details {
+.oe-event-quickview .event-quickview .quickview-details {
   height: 38px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.oe-event-quickview-panel .event-quickview .quickview-details .event-icon {
+.oe-event-quickview .event-quickview .quickview-details .event-icon {
   position: absolute;
   top: 0;
   left: 0;
 }
 
-.oe-event-quickview-panel .event-quickview .quickview-details .event-date {
+.oe-event-quickview .event-quickview .quickview-details .event-date {
   margin: auto;
   /* flex */
   font-size: 0.875rem;
@@ -2402,17 +2413,17 @@ html {
   font-weight: 300;
 }
 
-.oe-event-quickview-panel .event-quickview .quickview-details .step-through-arrows {
+.oe-event-quickview .event-quickview .quickview-details .step-through-arrows {
   position: absolute;
   top: 38px;
   right: 5px;
 }
 
-.oe-event-quickview-panel .event-quickview .quickview-screen-grabs {
+.oe-event-quickview .event-quickview .quickview-screenshots {
   padding: 0 0 0 5px;
 }
 
-.oe-event-quickview-panel .event-quickview .quickview-screen-grabs img {
+.oe-event-quickview .event-quickview .quickview-screenshots img {
   width: 520px;
   height: auto;
 }
@@ -3058,7 +3069,7 @@ html {
   padding: 10px;
 }
 
-.elements-search-results .elements-search-results-close {
+.elements-search-results .close-icon-btn {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -4117,10 +4128,6 @@ table.oe-clinic-list td.center {
 
 .patient-clinic-quicklook .patient-details .name {
   font-size: 1.125rem;
-}
-
-.patient-clinic-quicklook .summary-data .row .label {
-  font-size: 0.875rem;
 }
 
 .patient-clinic-quicklook .subtitle {

@@ -5,7 +5,7 @@
 // Event screen grabs *should* be saved as PNG 8-bit and at 50% size
 // For the purpose of IDG demo these are 520px width
 
-.oe-event-quickview-panel {
+.oe-event-quickview {
 	display:none; // js controlled.
 	z-index:$oe-z-activity; // overlays content
 	
@@ -54,7 +54,7 @@
 			}
 		}
 		
-		.quickview-screen-grabs {
+		.quickview-screenshots {
 			padding:0 0 0 $padding;
 			img {
 				width:$png-width;

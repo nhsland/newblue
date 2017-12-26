@@ -5,12 +5,14 @@
 // * Include ALL scss files here. Except the __config files
 
 /* GUI */
+@import "ui"; 								// oe general UI 
 @import "icons"; 							// oe icons 
 @import "icons-events"; 					// oe icons (Events only) 
 @import "lists"; 							// ul and ol defaults.
 @import "forms"; 							// form defaults.
 @import "typography"; 						// defaults and general typographics.
 @import "flex"; 							// flex layout
+@import "collapse-group"; 					// collapse and expand content
 @import "buttons"; 							// button and .button
 @import "alert-box"; 						// alerts
 @import "tool-tip"; 						// tool tip (js generated)
@@ -25,13 +27,13 @@
 /* Full width layout */
 @import "components/full-width";			// Full width layout for clinic list, etc
 /* SEM Event Episodes */
-@import "components/event-header";    		// event header
+@import "components/sem-header";    		// event header
 @import "components/add-new-event";    		// add new event popup
-@import "components/event-sidebar-header";  // event sidebar header (Add Event)
-@import "components/event-sidebar";    		// event sidebar
-@import "components/event-quickview-panel"; // event fast quickview preview panel
-@import "components/event-main";    		// event main area
-@import "components/event-elements";    	// event elements
+@import "components/sem-sidebar-header";  // event sidebar header (Add Event)
+@import "components/sem-sidebar";    		// event sidebar
+@import "components/sem-quickview-panel"; // event fast quickview preview panel
+@import "components/sem-main";    		// event main area
+@import "components/sem-elements";    	// event elements
 @import "components/eyedraw";    				// eyedraw app (popup)
 @import "components/misc/element-search-popup"; // element search filter popup - used in Examination Edit to find Elements
 /* Lightening viewer */

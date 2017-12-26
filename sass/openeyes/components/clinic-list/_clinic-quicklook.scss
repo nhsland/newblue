@@ -24,15 +24,6 @@
 		}
 	}
 	
-	// slight changes to main quicklook popup styles
-	.summary-data {
-		.row {
-			.label {
-				@include font-size(14);
-			}
-		}
-	}
-	
 	.subtitle { 
 		margin:10px 3px 5px 0;
 		@include font-size(14);

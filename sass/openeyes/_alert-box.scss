@@ -28,17 +28,16 @@
 	}
 	
 	&.patient,
-	&.issue {
-		color: #fff;
-		background: $oe-warning-orange;
-	}
-	
+	&.issue,
 	&.warning,
 	&.error, 
 	&.injection-warning  {
 		color: #fff;
-		background: $oe-btn-red;
+		background: $oe-warning-orange;
 	}
-   
-	
+}
+
+// warning text
+.warning-flag-bg {
+	background-color:$oe-warning-orange;
 }

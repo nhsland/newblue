@@ -16,8 +16,8 @@
 		padding:0 0 10px 0;
 	}
 	
-	// close and cancel 
-	.close-btn {
+	// wraps the remove icon
+	.close-icon-btn {
 		position:absolute;
 		top:20px;
 		right:20px;
@@ -36,8 +36,5 @@
 @import "add-new-event/step-through-layout";
 @import "add-new-event/change_subspecialty"; // add / change new sub-specialty
 @import "add-new-event/step1-subspecialty";
-
-
-
 
 

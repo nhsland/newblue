@@ -19,42 +19,26 @@
 
 	}
 	
-	// container for Event Groups
+	// container for Event Element Groups
 	.groupings {
 		padding-bottom:25px;
-	
-		// Event Group with header
-		.group-container {
-			position:relative;
-		
-			// <h3>
-			// clickable - fires the showhide btn
-			.group-header {
-				@include font-size(13);
-				font-weight:300;
-				color: $oe-ui-text-light ;
-				padding:10px 25px 5px 5px;
-				cursor:pointer;
-				
-				&:hover, &:focus {
-					color: $oe-ui-text;
-				}
 
-				.count {
-					@include font-size(10);
-					font-weight:400; 
-					color: $oe-ui-text-light ;
-				}
+		// <h3>
+		.collapse-group-header {
+			@include font-size(13);
+			font-weight:300;
+			color: $oe-ui-text-light ;
+			padding:10px 25px 5px 5px;
+			
+			&:hover, &:focus {
+				color: $oe-ui-text;
 			}
 			
-			// for the collapse or expand icon:
-			.group-showhide-btn {
-				display:block; 
-				position:absolute; 
-				top:5px; 
-				right:3px;
+			// used to show the number of events in the group
+			.count {
+				@include font-size(10);
 			}
-		}
+		}	
 	}
 }
 

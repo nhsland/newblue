@@ -21,9 +21,9 @@
 			.label { 
 				z-index:1; // below data
 				position:absolute;
-				top:1px;
+				top:5px;
 				right:3px; 
-				@include font-size(18);
+				@include font-size(15);
 				font-weight:200;
 			 	color: rgba( #fff,0.3 ); 
 			}
@@ -31,7 +31,7 @@
 			// basic data list, uses <br>
 			.data {
 				z-index:2; // above label
-				padding:5px;
+				padding:5px 10px;
 				line-height:1.6;
 			}
 		} 
@@ -39,15 +39,16 @@
 		// table layout for more complex data:
 		table {
 			margin:20px 0 0 0;
-			width:99%;
+			width:100%;
 			
-			th {
-				color:$oe-ui-text-light;
-			}
+			tr {
+				&:hover {
+					background:$oe-ui-blue-dark;
+				}
+			} 
 			
-			td {
-				color:$oe-ui-text;
-			}
+			th { color:$oe-ui-text-light; }
+			td { color:$oe-ui-text; }
 			
 			th, td {
 				vertical-align: middle;
@@ -59,6 +60,10 @@
 				
 				&.right {
 					text-align: right;
+				}
+				
+				&:first-child {
+					padding-left:0;
 				}
 			}
 			

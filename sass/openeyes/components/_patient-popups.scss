@@ -5,7 +5,9 @@
 //
 // note: Clinic Quicklook is cut down verions of Quicklook for Clinic lists
 
-.patient-popup-allergies-risks, .patient-popup-quicklook, .patient-popup-tasks, 
+.patient-popup-allergies-risks, 
+.patient-popup-quicklook, 
+.patient-popup-tasks, 
 .patient-popup-demographics {
 	
 	display:none; // js controlled.
@@ -17,7 +19,7 @@
 	
 	background:$oe-ui-bg;
 	border:1px solid $oe-ui-text-highlight;
-	padding:10px;
+	padding:10px 10px 15px 10px;
 	
 	// overflow wrappers alerts and summary-data
 	.oe-popup-overflow {	
@@ -35,22 +37,6 @@
 		@include font-size(18);
 		font-weight:200; 
 		color:$oe-ui-text-light; 
-	}
-	
-	// added to areas that can be collapsed / expanded
-	// js controlled
-	.hideshow {
-		position:relative;
-		.hideshow-btn {
-			display:block;
-			position: absolute;
-			top:9px; 
-			right:5px;
-			z-index:1;
-		}
-		.hideshow-content {
-			// not used
-		}
 	}
 }
 

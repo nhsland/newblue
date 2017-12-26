@@ -1,0 +1,23 @@
+// OE Collapsible Groups
+// based on a consistent DOM of
+// container - plus/minus icon - content
+// these are also the js hooks
+
+.collapse-group {
+	position:relative;
+	
+	// container for plus/minus icon
+	.collapse-group-icon {
+		display:block; 
+		position:absolute; 
+		top:5px; 					// position is based on event edit sidebars 
+		right:3px;
+		cursor: pointer;
+	}
+	
+	.collapse-group-header {		// header is clickable, style relatively
+		cursor: pointer;
+	} 		
+	.collapse-group-content {}		// content area to expand/collapse
+	
+}

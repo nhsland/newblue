@@ -2,9 +2,10 @@
 // 
 // note: patient-clinic-quicklook is used in Clinic List
 
-.patient-popup-quicklook, .patient-clinic-quicklook {
+.patient-popup-quicklook, 
+.patient-clinic-quicklook {
+	
 	.popup-management-summaries {
-		
 		// <ul>		
 		.management-summaries {
 			padding:0;
@@ -25,7 +26,7 @@
 					line-height:1.4;
 					color:$oe-ui-text;
 				}
-
+	
 				h6 {
 					margin:0; 
 					padding:5px 0 0 0;
@@ -36,5 +37,6 @@
 				}
 			}
 		}
-	} 	
+	} 
+		
 }
