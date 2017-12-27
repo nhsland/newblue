@@ -634,7 +634,7 @@ Create new next-step
 **/
 clinic.createNewStep = function( $step, dataObj, active ){
 	
-	if(active === undefined) active = false;
+	if(typeof active === "undefined") active = false;
 	
 	var data = $.extend( {}, dataObj );
 	var $new = $step.clone();
@@ -1042,9 +1042,7 @@ oes.initStack = function(container,img_id_prefix,callBack){
 		
 		updateImageStack(num); 
 			
-		if(callBack !== undefined){
-			callBack(num);
-		}			
+		if(typeof callBack === "function") callBack(num);			
 	});
 	
 	// update images
@@ -1091,9 +1089,8 @@ oes.setupAreaTabButtons = function( tabBtnInfo, callBack ){
 			resetStacks();
 			$(this).addClass('selected');
 			content.removeClass('hidden').show();
-			if(callBack !== undefined){
-				callBack(i);
-			}
+			
+			if(typeof callBack === "function") callBack(i);
 		});		
 	}
 
@@ -1141,9 +1138,7 @@ oes.setupResizeButtons = function( callBack ){
 			right.show();	
 		}
 		
-		if(callBack !== undefined ){
-			callBack(size);
-		}	
+		if(typeof callBack === "function" ) callBack(size);	
 	});
 }
 /*

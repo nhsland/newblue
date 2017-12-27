@@ -27,9 +27,8 @@ oes.setupAreaTabButtons = function( tabBtnInfo, callBack ){
 			resetStacks();
 			$(this).addClass('selected');
 			content.removeClass('hidden').show();
-			if(callBack !== undefined){
-				callBack(i);
-			}
+			
+			if(typeof callBack === "function") callBack(i);
 		});		
 	}
 

@@ -34,8 +34,6 @@ oes.setupResizeButtons = function( callBack ){
 			right.show();	
 		}
 		
-		if(callBack !== undefined ){
-			callBack(size);
-		}	
+		if(typeof callBack === "function" ) callBack(size);	
 	});
 }

@@ -27,9 +27,7 @@ oes.initStack = function(container,img_id_prefix,callBack){
 		
 		updateImageStack(num); 
 			
-		if(callBack !== undefined){
-			callBack(num);
-		}			
+		if(typeof callBack === "function") callBack(num);			
 	});
 	
 	// update images

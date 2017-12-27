@@ -4,7 +4,7 @@ Create new next-step
 **/
 clinic.createNewStep = function( $step, dataObj, active ){
 	
-	if(active === undefined) active = false;
+	if(typeof active === "undefined") active = false;
 	
 	var data = $.extend( {}, dataObj );
 	var $new = $step.clone();
