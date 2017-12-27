@@ -5,11 +5,10 @@ Popup to add selected list to element
 No functionality, demoing basic UI & UX
 */
 idg.elementAddSearchType = function(){
-	
+		
 		$('.js-add-select-type').each(function(){
 			var addBtn = new AddSearchType( 	$(this),
 												$(this).parent().children('.oe-add-select-type') );
-			
 		});
 	
 		function AddSearchType( $btn, $popup ){
@@ -17,6 +16,7 @@ idg.elementAddSearchType = function(){
 	  		var auto = $popup.find('.type-search-autocomplete'),
 	  			results = $popup.find('.type-search-results'),
 	  			cancelBtn = $popup.find('.oe-add-select-type-cancel');
+			
 			
 			
 			$btn.click( function( e ){

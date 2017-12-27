@@ -3207,7 +3207,7 @@ html {
   margin-top: 5px;
 }
 
-/* Oescape */
+/* OEscape */
 .oescape-header {
   position: relative;
   background: #283442;
@@ -3706,7 +3706,7 @@ html {
   stroke-width: 0;
 }
 
-/* Clinic List */
+/* Clinic */
 .oe-clinic {
   position: relative;
   background: #182535;
@@ -3893,19 +3893,19 @@ table.oe-clinic-list td.center {
   background: #074598;
 }
 
-.oe-clinic .new-pathway-steps {
+.oec-new-pathway-steps {
   padding: 0 0 0 0;
 }
 
-.oe-clinic .new-pathway-steps .group {
+.oec-new-pathway-steps .group {
   padding: 5px 0;
 }
 
-.oe-clinic .new-pathway-steps.padtop {
+.oec-new-pathway-steps.padtop {
   padding: 10px 0 0 0;
 }
 
-.oe-clinic .add-to-all-pathways {
+.oec-add-to-all-pathways {
   position: fixed;
   top: 98px;
   left: 100%;
@@ -3919,12 +3919,12 @@ table.oe-clinic-list td.center {
 }
 
 @media only screen and (min-width: 1800px) {
-  .oe-clinic .add-to-all-pathways {
+  .oec-add-to-all-pathways {
     left: 1350px;
   }
 }
 
-.oe-clinic .add-new-pathway {
+.oec-add-new-pathway {
   position: absolute;
   top: 0;
   left: 0;
@@ -3935,45 +3935,45 @@ table.oe-clinic-list td.center {
   border-radius: 3px;
 }
 
-.oe-clinic .add-new-pathway, .oe-clinic .add-to-all-pathways {
+.oec-add-new-pathway, .oec-add-to-all-pathways {
   background: #141e2b;
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.oe-clinic .add-new-pathway h3, .oe-clinic .add-to-all-pathways h3 {
+.oec-add-new-pathway h3, .oec-add-to-all-pathways h3 {
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
   margin: 20px 0 5px 0;
 }
 
-.oe-clinic .add-new-pathway h3.title, .oe-clinic .add-to-all-pathways h3.title {
+.oec-add-new-pathway h3.title, .oec-add-to-all-pathways h3.title {
   font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.8);
   margin: 10px 0 15px 0;
 }
 
-.oe-clinic .add-new-pathway .js-close-btn, .oe-clinic .add-to-all-pathways .js-close-btn {
+.oec-add-new-pathway .close-icon-btn, .oec-add-to-all-pathways .close-icon-btn {
   position: absolute;
   top: 8px;
   right: 9px;
 }
 
-.oe-clinic .add-new-pathway .pathway-step, .oe-clinic .add-to-all-pathways .pathway-step {
+.oec-add-new-pathway .pathway-step, .oec-add-to-all-pathways .pathway-step {
   height: auto;
 }
 
-.oe-clinic .add-new-pathway .option-list label, .oe-clinic .add-to-all-pathways .option-list label {
+.oec-add-new-pathway .option-list label, .oec-add-to-all-pathways .option-list label {
   margin-bottom: 5px;
 }
 
-.oe-clinic .add-new-pathway .add-btn, .oe-clinic .add-to-all-pathways .add-btn {
+.oec-add-new-pathway .add-btn, .oec-add-to-all-pathways .add-btn {
   margin: 10px 0 0 0;
   text-align: left;
 }
 
-.oe-clinic .active-step-info {
+.oec-active-step-info {
   position: absolute;
   top: 0;
   left: 100px;
@@ -3987,60 +3987,60 @@ table.oe-clinic-list td.center {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.oe-clinic .active-step-info h3 {
+.oec-active-step-info h3 {
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
   padding: 10px 0;
 }
 
-.oe-clinic .active-step-info .eye {
+.oec-active-step-info .eye {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
   padding: 0 0 10px 0;
 }
 
-.oe-clinic .active-step-info .data {
+.oec-active-step-info .data {
   padding: 0 0 20px 0;
 }
 
-.oe-clinic .active-step-info .js-close-btn {
+.oec-active-step-info .close-icon-btn {
   position: absolute;
   top: 8px;
   right: 9px;
 }
 
-.oe-clinic .active-step-info .make-active {
+.oec-active-step-info .make-active {
   text-align: right;
 }
 
-.oe-clinic .active-step-info .make-active button {
+.oec-active-step-info .make-active button {
   background: #b45016;
 }
 
-.oe-clinic .active-step-info .eye-confirmation {
+.oec-active-step-info .eye-confirmation {
   padding: 5px;
   margin: 0 3px 0 0;
   background: #146400;
   border-radius: 3px;
 }
 
-.oe-clinic .active-step-info .eye-confirmation input {
+.oec-active-step-info .eye-confirmation input {
   text-align: center;
 }
 
-.oe-clinic .active-step-info .eye-confirmation.wrong-pin {
+.oec-active-step-info .eye-confirmation.wrong-pin {
   background: #a0280a;
 }
 
-.oe-clinic .active-step-info .who-completed {
+.oec-active-step-info .who-completed {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
 }
 
-.oe-clinic .active-step-info .remove {
+.oec-active-step-info .remove {
   position: absolute;
   left: 10px;
   bottom: 10px;

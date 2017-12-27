@@ -7,7 +7,7 @@ clinic.setupActiveInfo = function(){
 	/**
   	Events
   	**/
-	$('#js-active-step-info .js-close-btn').click(function( e ){
+	$('#js-active-step-info .close-icon-btn').click(function( e ){
   		e.stopPropagation();
   		clinic.activeInfo.hide();
 	});

@@ -6,7 +6,7 @@ clinic.setupAddPathway = function(){
 	/**
 	Events
 	**/
-	$('#js-add-new-pathway .js-close-btn').click(function( e ){
+	$('#js-add-new-pathway .close-icon-btn').click(function( e ){
   		e.stopPropagation();
   		clinic.addPathway.hide();
 		});
@@ -131,7 +131,7 @@ clinic.setupAddPathway = function(){
 		
 		showDilateOptions:function(){
 			// hide pathway steps
-			$('#js-add-new-pathway .new-pathway-steps').hide();
+			$('#js-add-new-pathway .oec-new-pathway-steps').hide();
 			// show dilate options
 			$('#add-dilate-options').removeClass('hidden').show();
 			
@@ -141,7 +141,7 @@ clinic.setupAddPathway = function(){
 		
 		back:function(){
 			// reverse showDilateOptions
-			$('#js-add-new-pathway .new-pathway-steps').show();
+			$('#js-add-new-pathway .oec-new-pathway-steps').show();
 			$('#add-dilate-options').hide();
 			$('#js-pathway-events-title span').show();
 			$('#js-pathway-back').hide();
@@ -150,7 +150,7 @@ clinic.setupAddPathway = function(){
 		reset:function(){
 			$('#add-dilate-options .option-list input').prop('checked',false);
 			$('#add-dilate-options').hide();
-			$('#js-add-new-pathway .new-pathway-steps').show();
+			$('#js-add-new-pathway .oec-new-pathway-steps').show();
 			$('#js-pathway-events-title span').show();
 			$('#js-pathway-back').hide();
 		}, 

@@ -1,4 +1,4 @@
-// OE Clinic List
+// OE Clinic
 // 
 // 
 // Clinic step colours 
@@ -37,10 +37,10 @@ $oe-clinic-red:		rgb(160,40,10);
 }
 
 
-@import "clinic-list/table";
-@import "clinic-list/pathway-steps";
-@import "clinic-list/add-new-pathway";
-@import "clinic-list/active-step-info";
-@import "clinic-list/filters";
-@import "clinic-list/add-to-all";
-@import "clinic-list/clinic-quicklook";
+@import "clinic/table";
+@import "clinic/pathway-steps";
+@import "clinic/add-new-pathway";
+@import "clinic/active-step-info";
+@import "clinic/filters";
+@import "clinic/add-to-all";
+@import "clinic/clinic-quicklook";

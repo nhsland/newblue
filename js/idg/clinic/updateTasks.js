@@ -14,8 +14,6 @@ clinic.updateTasks = function( ){
 			var index = clinic.data['tasks'].indexOf( id );
 			var taskSteps = $('.pathway-step.orange', this);
 			
-			console.log('id = '+ id + 'taskSteps = '+taskSteps.length  );
-			
 			if( taskSteps.length ){
 				// add id if not there...
 				if (index == -1) clinic.data['tasks'].push( id );

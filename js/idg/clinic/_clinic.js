@@ -28,7 +28,7 @@ clinic.init = function( data ){
 		e.stopPropagation();
 		clinic.activePathwayID = $(this).data('id'); 		// need to know where to insert new pathways
 		clinic.activePathwayName = $(this).data('name'); 	// Patient name
-		var pos = clinic.getPosition( $(this) );						// position addPathway popup
+		var pos = clinic.getPosition( $(this) );			// position 
 		clinic.addPathway.show( pos.left, pos.top - 15 );
 	});
 	

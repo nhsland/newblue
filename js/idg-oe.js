@@ -110,7 +110,7 @@ clinic.init = function( data ){
 		e.stopPropagation();
 		clinic.activePathwayID = $(this).data('id'); 		// need to know where to insert new pathways
 		clinic.activePathwayName = $(this).data('name'); 	// Patient name
-		var pos = clinic.getPosition( $(this) );						// position addPathway popup
+		var pos = clinic.getPosition( $(this) );			// position 
 		clinic.addPathway.show( pos.left, pos.top - 15 );
 	});
 	
@@ -163,7 +163,7 @@ clinic.setupActiveInfo = function(){
 	/**
   	Events
   	**/
-	$('#js-active-step-info .js-close-btn').click(function( e ){
+	$('#js-active-step-info .close-icon-btn').click(function( e ){
   		e.stopPropagation();
   		clinic.activeInfo.hide();
 	});
@@ -291,7 +291,7 @@ clinic.setupAddPathway = function(){
 	/**
 	Events
 	**/
-	$('#js-add-new-pathway .js-close-btn').click(function( e ){
+	$('#js-add-new-pathway .close-icon-btn').click(function( e ){
   		e.stopPropagation();
   		clinic.addPathway.hide();
 		});
@@ -416,7 +416,7 @@ clinic.setupAddPathway = function(){
 		
 		showDilateOptions:function(){
 			// hide pathway steps
-			$('#js-add-new-pathway .new-pathway-steps').hide();
+			$('#js-add-new-pathway .oec-new-pathway-steps').hide();
 			// show dilate options
 			$('#add-dilate-options').removeClass('hidden').show();
 			
@@ -426,7 +426,7 @@ clinic.setupAddPathway = function(){
 		
 		back:function(){
 			// reverse showDilateOptions
-			$('#js-add-new-pathway .new-pathway-steps').show();
+			$('#js-add-new-pathway .oec-new-pathway-steps').show();
 			$('#add-dilate-options').hide();
 			$('#js-pathway-events-title span').show();
 			$('#js-pathway-back').hide();
@@ -435,7 +435,7 @@ clinic.setupAddPathway = function(){
 		reset:function(){
 			$('#add-dilate-options .option-list input').prop('checked',false);
 			$('#add-dilate-options').hide();
-			$('#js-add-new-pathway .new-pathway-steps').show();
+			$('#js-add-new-pathway .oec-new-pathway-steps').show();
 			$('#js-pathway-events-title span').show();
 			$('#js-pathway-back').hide();
 		}, 
@@ -453,7 +453,7 @@ clinic.setupAddToAll = function(){
 	/**
 	Events
 	**/
-	$('#js-add-to-all-pathways .js-close-btn').click(function( e ){
+	$('#js-add-to-all-pathways .close-icon-btn').click(function( e ){
   		e.stopPropagation();
   		clinic.addToAll.hide();
 	});
@@ -987,8 +987,6 @@ clinic.updateTasks = function( ){
 			var index = clinic.data['tasks'].indexOf( id );
 			var taskSteps = $('.pathway-step.orange', this);
 			
-			console.log('id = '+ id + 'taskSteps = '+taskSteps.length  );
-			
 			if( taskSteps.length ){
 				// add id if not there...
 				if (index == -1) clinic.data['tasks'].push( id );
@@ -1240,11 +1238,10 @@ Popup to add selected list to element
 No functionality, demoing basic UI & UX
 */
 idg.elementAddSearchType = function(){
-	
+		
 		$('.js-add-select-type').each(function(){
 			var addBtn = new AddSearchType( 	$(this),
 												$(this).parent().children('.oe-add-select-type') );
-			
 		});
 	
 		function AddSearchType( $btn, $popup ){
@@ -1252,6 +1249,7 @@ idg.elementAddSearchType = function(){
 	  		var auto = $popup.find('.type-search-autocomplete'),
 	  			results = $popup.find('.type-search-results'),
 	  			cancelBtn = $popup.find('.oe-add-select-type-cancel');
+			
 			
 			
 			$btn.click( function( e ){

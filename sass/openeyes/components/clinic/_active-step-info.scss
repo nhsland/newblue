@@ -1,0 +1,82 @@
+// OE Clinic List
+// 
+// - Step popup info: Eye, Data, who
+// - Also used in SEM Exam (Orders element)
+
+.oec-active-step-info {
+	position:absolute;
+	top:0;
+	left:100px;
+	z-index:$oe-z-tooltip;
+	background:$oe-blue-darker;
+	border:1px solid $oe-text-highlight;
+	padding:0 30px 45px 15px;
+	width:250px;
+	border-radius:3px;
+	
+	@include font-size(12);
+	color:$oe-text;
+	
+	h3 {
+		@include font-size(13);
+		color:$oe-text-light;
+		font-weight:300;
+		padding:10px 0;
+	}
+	
+	.eye {
+		@include font-size(16);
+		color:$oe-text;
+		font-weight:300;
+		padding:0 0 10px 0;
+	}
+	
+	.data {
+		padding:0 0 20px 0;
+	}
+	
+	// cross icon
+	.close-icon-btn {
+		position: absolute;
+		top:8px;
+		right:9px;
+	}
+	
+	.make-active {
+		text-align: right; 
+		button {
+			background:$oe-clinic-orange;
+		}
+	}
+	
+	.eye-confirmation {
+		padding:5px;
+		margin: 0 3px 0 0;
+		background:$oe-clinic-green;
+		border-radius:3px;
+		input {
+			text-align: center;
+		}
+		
+		&.wrong-pin {
+			background:$oe-clinic-red;
+		}
+	}
+	
+	.who-completed {
+		@include font-size(14);
+		color:$oe-text;
+		font-weight:300;
+	}
+	
+	// trash can
+	.remove {
+		position:absolute;
+		left:10px; 
+		bottom:10px;
+	}
+	
+}
+	
+
+

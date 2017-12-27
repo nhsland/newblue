@@ -5,7 +5,7 @@ clinic.setupAddToAll = function(){
 	/**
 	Events
 	**/
-	$('#js-add-to-all-pathways .js-close-btn').click(function( e ){
+	$('#js-add-to-all-pathways .close-icon-btn').click(function( e ){
   		e.stopPropagation();
   		clinic.addToAll.hide();
 	});

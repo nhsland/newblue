@@ -13,8 +13,7 @@
 ## JS hooks
 
 * If a CSS class is being added for JS only purposes (and not being used by CSS to style)
-  pls prefix it with 'js-'. There are some exceptions to this rule such as 'js-close-btn'
-  used by JS to close a popup it's positioned by CSS
+  prefix it with 'js-'. 
   
 ## Icons
 
