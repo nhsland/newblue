@@ -6,11 +6,10 @@
 	
 	.element {
 		.oe-add-select-type	{
-			display:none; // displayed by JS 
-			z-index:9; // make sure it floats over elements
 			position:absolute; 
 			bottom:0; 
 			right:0; 
+			z-index:$oe-z-tooltip; // make sure it floats over elements
 			width:420px; // fixed width because of the auto-complete options
 			background:$oe-user-selected;
 			border:3px solid $oe-blue-darker;

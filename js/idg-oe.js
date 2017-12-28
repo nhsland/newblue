@@ -1245,13 +1245,13 @@ idg.elementAddSearchType = function(){
 		});
 	
 		function AddSearchType( $btn, $popup ){
-
+			
+			$popup.removeClass('hidden').hide();
+			
 	  		var auto = $popup.find('.type-search-autocomplete'),
 	  			results = $popup.find('.type-search-results'),
 	  			cancelBtn = $popup.find('.oe-add-select-type-cancel');
-			
-			
-			
+
 			$btn.click( function( e ){
 				e.stopPropagation();
 				open();

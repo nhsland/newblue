@@ -2464,7 +2464,7 @@ html {
 .main-event .element {
   position: relative;
   background: #141e2b;
-  padding: 30px 5px 10px 10px;
+  padding: 35px 5px 10px 10px;
   margin: 0 0 3px 0;
   color: rgba(255, 255, 255, 0.8);
   border: 1px solid #141e2b;
@@ -2503,14 +2503,14 @@ html {
   width: 50%;
   float: left;
   padding-left: 10px;
-  padding-right: 20px;
+  padding-right: 25px;
 }
 
 .main-event .element .element-eyes .left-eye {
   width: 50%;
   float: right;
   padding-left: 10px;
-  padding-right: 20px;
+  padding-right: 25px;
 }
 
 .main-event .element .field-row, .main-event .element .eyedraw-row {
@@ -2536,7 +2536,7 @@ html {
 .main-event .element .active-form .remove-side {
   position: absolute;
   top: -2px;
-  right: -17px;
+  right: -22px;
 }
 
 .main-event .element .inactive-form {
@@ -2680,11 +2680,10 @@ html {
 }
 
 .main-event .element .oe-add-select-type {
-  display: none;
-  z-index: 9;
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: 60;
   width: 420px;
   background: #374755;
   border: 3px solid #141e2b;
@@ -2805,13 +2804,13 @@ html {
 }
 
 .main-event .element .eyedraw .eyedraw-data {
-  font-size: 0.6875rem;
-  padding: 10px 5px 0 0;
-  width: 150px;
+  font-size: 0.625rem;
+  font-weight: 500;
+  padding: 10px 5px 20px 0;
+  width: 140px;
 }
 
 .main-event .element .eyedraw .eyedraw-data .data-label {
-  font-size: 0.625rem;
   color: #666;
 }
 
