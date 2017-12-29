@@ -74,7 +74,7 @@ idg.init = function(){
 	idg.comments();
 	
 	// Add Search and Autocomplete
-	idg.elementAddSearchType();
+	idg.elementAddSelectSearch();
 	
 										
 };

@@ -1,0 +1,87 @@
+// OE Element - Add - Select or Search
+// Popup box showing the common options 
+// and an input to allow search with autocomplete
+
+.oe-add-select-search {
+	position:absolute; 
+	top:0; 
+	right:0; 
+	z-index:$oe-z-tooltip; 				// make sure it floats over elements
+	background:$oe-user-selected;
+	padding:10px 45px 10px 10px; 		// allow for icon-btns
+	min-height:150px;
+	
+	// popup widths
+	// history has 5 inputs lists, pro
+	width:400px; 						// default width
+	&.input-width-medium {
+		width:600px;
+	}
+	&.input-width-wide {
+		
+	}
+	
+	.close-icon-btn {
+		position: absolute;
+		top:10px;
+		right:15px;
+	}
+	
+	.select-icon-btn {
+		position: absolute;
+		top:41px;
+		right:14px;
+	}
+	
+	.search-icon-btn {
+		position: absolute;
+		top:70px;
+		right:14px;
+	}
+	
+	.add-icon-btn {
+		position: absolute;
+		bottom:10px;
+		right:8px;
+	}
+	
+	// input
+	.type-search-autocomplete {
+		margin:8px 0 4px 0;
+	}
+	
+	// All options lists:
+	ul.add-options{
+		
+		max-height:200px;		// limit the displayed results.
+		overflow-y: auto;
+		margin:0 10px 0 0;
+		
+		li {
+			cursor: pointer;
+			padding:2px 8px 2px 6px;
+			margin:0 0 2px 0;
+			color:$oe-text;
+			border-radius:3px;
+			background: shade( $oe-user-selected, 10 );
+			
+			&:hover, &:focus, &:active, &.selected {
+				color:#fff;
+				background:$oe-btn-blue;
+			}
+			
+			&.active {
+				color:$oe-text-highlight;
+			}
+		}
+	}
+	
+	// Search for Options, replaces ALL options (where offered)
+	.search-options {
+		width:340px;
+		.add-options {
+			margin:0 0 0 0;
+		}
+	}
+}
+
