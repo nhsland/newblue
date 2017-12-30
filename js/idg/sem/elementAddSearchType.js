@@ -68,12 +68,42 @@ idg.elementAddSelectSearch = function(){
 		  		select.children('.oe-i').toggleClass('selected');
 		  		search.children('.oe-i').toggleClass('selected');
 	  		}
-
+	  		
+	  		/*
+		  	Faking interaction:
+		  	if we have 'search' option (ajax search options)
+		  	- make list elements multi-selectable 
+		  	else 
+		  	- hide the menu icon, hide the + icon
+		  	- make the list items single selct only	
+		  	*/
+	  		
 			// faking interaction of selecting an item, does nothing.
-	  		$popup.find('.add-options li').click(function(e){
-		  		e.stopPropagation();
-		  		$(this).toggleClass('selected'); 
-	  		});
+			// if search is avaiable
+	  		if( search.length ){
+		  		search.click(function(e){
+		  			e.stopPropagation();
+		  			addSearch();
+		  			iconSelected();
+	  			});
+	  			
+	  			$popup.find('.add-options li').click(function(e){
+		  			e.stopPropagation();
+		  			$(this).toggleClass('selected'); 
+	  			});
+	  			
+	  			
+	  		} else {
+		  		select.hide();
+		  		add.hide();
+		  		
+		  		$popup.find('.add-options li').click(function(e){
+		  			e.stopPropagation();
+		  			closeAdd(); 
+	  			});
+	  		}
+			
+
 	  		
 	  		// remove icon & plus icon button
 	  		close.click(function(e){
@@ -92,14 +122,7 @@ idg.elementAddSelectSearch = function(){
 	  			if( search.length ) iconSelected();
   			});
 	  		
-	  		// if search is avaiable
-	  		if( search.length ){
-		  		search.click(function(e){
-		  			e.stopPropagation();
-		  			addSearch();
-		  			iconSelected();
-	  			});
-	  		}
+	  		
 		
 		}
 }

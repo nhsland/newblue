@@ -2694,8 +2694,12 @@ html {
   width: 400px;
 }
 
-.oe-add-select-search.input-width-medium {
+.oe-add-select-search.width-3 {
   width: 600px;
+}
+
+.oe-add-select-search.width-5 {
+  width: 800px;
 }
 
 .oe-add-select-search .close-icon-btn {
