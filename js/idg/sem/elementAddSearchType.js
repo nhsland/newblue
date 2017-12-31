@@ -23,6 +23,16 @@ idg.elementAddSelectSearch = function(){
 	  		$popup.removeClass('hidden').hide();
 	  		results.removeClass('hidden').hide();
 	  		
+	  		// top element popup will disappear behind header
+	  		
+	  		
+	  		if($btn.offset().top < 400){
+		  		
+		  		var vOffset = $btn.offset().top - 310;
+		  		$popup.css({bottom:vOffset});
+		  	
+		  	}
+	  		
 
 			$btn.click( function( e ){
 				e.stopPropagation();
@@ -61,7 +71,6 @@ idg.elementAddSelectSearch = function(){
 	  		function addSelect(){
 		  		$('.flex-layout > .add-options').show();
 		  		results.hide();
-		  		
 	  		}
 	  		
 	  		function iconSelected(){

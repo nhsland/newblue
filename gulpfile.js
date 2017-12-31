@@ -60,6 +60,15 @@ gulp.task('watch-build', function() {
     gulp.watch( config.idgJS , ['readJS','uglyJS'] ); // IDG demo JS files
 });
 
+
+/**
+working on Event icons
+**/
+gulp.task('watch-icons', function() {
+    gulp.watch( 'img/icons-events/76x76/*.png', ['event_sprites']);
+    gulp.watch( config.watchSass , ['sass']);
+});
+
 /**
 PRO theme (v3.0) 
 create readable and compressed css	
