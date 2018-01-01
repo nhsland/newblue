@@ -12,7 +12,7 @@ $ed-top-panel-height:32px;
 	margin: auto; // flex magic (because of popup wrapper)
 	width: $oe-eyedraw-app-width;
 	min-height:200px;
-	border-radius:$ed-padding; 
+	// border-radius:$ed-padding; 
 	padding:$ed-padding; 
 	background:$oe-ed-bg;
 	@include font-size(12);

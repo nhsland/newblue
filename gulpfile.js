@@ -31,7 +31,8 @@ var header 			= require('gulp-header');
 
 /**
 Config
-(sprite config in functions)
+- sprite config var in functions
+- don't use relative paths if you want to watch new or deleted files
 **/ 
 var config = {
 	sass:			'./sass/style_oe3.0_pro.scss',					// root scss file for OE v3.0  (Pro, default theme)
@@ -65,7 +66,7 @@ gulp.task('watch-build', function() {
 working on Event icons
 **/
 gulp.task('watch-icons', function() {
-    gulp.watch( 'img/icons-events/76x76/*.png', ['event_sprites']);
+    gulp.watch( 'img/icons-events/76x76/*.png', ['event_sprites']); // don't use relative paths if you want to catch new / deleted files
     gulp.watch( config.watchSass , ['sass']);
 });
 

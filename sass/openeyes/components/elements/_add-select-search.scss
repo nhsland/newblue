@@ -13,14 +13,12 @@
 	
 	// popup widths
 	// history has 5 inputs lists, pro
-	width:400px; 						// default width
-	&.width-3 {
-		width:600px;
+	width:400px; 
+	min-width: 400px;					// default width
+	&.width-auto {
+		width:auto;
+		
 	}
-	&.width-5 {
-		width:800px;
-	}
-	
 	.close-icon-btn {
 		position: absolute;
 		top:10px;
@@ -59,11 +57,14 @@
 		
 		li {
 			cursor: pointer;
-			padding:2px 8px 2px 6px;
+			padding:2px 16px 2px 8px;
 			margin:0 0 2px 0;
 			color:$oe-text;
 			border-radius:3px;
 			background: shade( $oe-user-selected, 10 );
+			// required to stop the lists being squeezed by flex 
+			// however, might be an issue for long inputs
+			white-space: nowrap; 	
 			
 			&:hover, &:focus, &:active, &.selected {
 				color:#fff;

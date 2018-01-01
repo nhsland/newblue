@@ -5,11 +5,20 @@ Popup to add selected list to element
 No functionality, demoing basic UI & UX
 */
 idg.elementAddSelectSearch = function(){
+	
+		var all = [];
 		
 		$('.js-add-select-search').each(function(){
 			var addBtn = new AddSelectSearch( 	$(this),
 												$(this).parent().children('.oe-add-select-search') );
+			all.push(addBtn);																
 		});
+		
+		function closeAll(){
+			for(var i=0; i < all.length; i++){
+				all[i].closePopup();
+			}
+		}
 	
 		function AddSelectSearch( $btn, $popup ){
 			
@@ -23,9 +32,11 @@ idg.elementAddSelectSearch = function(){
 	  		$popup.removeClass('hidden').hide();
 	  		results.removeClass('hidden').hide();
 	  		
-	  		// top element popup will disappear behind header
 	  		
+	  		// pubilc
+	  		this.closePopup = closeAdd;
 	  		
+	  		// top element popup will disappear behind header, so adjust it's position:
 	  		if($btn.offset().top < 400){
 		  		
 		  		var vOffset = $btn.offset().top - 310;
@@ -40,6 +51,7 @@ idg.elementAddSelectSearch = function(){
 			});
 			
 			function openAdd(){
+				closeAll();
 				addSelect();
 				$popup.show();
 				select.children('.oe-i').addClass('selected');
