@@ -30,6 +30,10 @@ idg.elementAddSelectSearch = function(){
   			addBtn 		= $popup.find('.add-icon-btn'),
   			searchInput = $popup.find('.js-search-autocomplete');
   			
+  		var resetPopupData = true;
+  		if($popup.prop('id') == 'add-to-history') resetPopupData = false;
+  		if($popup.prop('id') == 'add-to-risks') resetPopupData = false;
+  			
   		/*
 	  	All lists
 	  	store the list objects and then 
@@ -163,17 +167,20 @@ idg.elementAddSelectSearch = function(){
 					  		
 		}
 		
+		
+		
 		// Close and reset
   		function closeCancel(){
 	  		search.hide();
 	  		searchInput.val('');
 	  		$popup.hide();
-	  		$popup.find('.add-options li').removeClass('selected');
-	  		
-	  		for(var i = 0; i<lists.length; i++){
-		  		lists[i].clearData();
-		  	}
-	  		
+	
+	  		if(resetPopupData){
+		  		$popup.find('.add-options li').removeClass('selected');
+		  		for(var i = 0; i<lists.length; i++){
+			  		lists[i].clearData();
+			  	}
+			}
 	  		
   		}
   		
@@ -262,10 +269,8 @@ idg.elementAddSelectSearch = function(){
 	  		}
 	  		
 	  		
-	  		
 	  		// clean up!
 	  		closeCancel();
-	  		
   		}
   		
   		function addSearch(){
