@@ -22,17 +22,7 @@ $ed-top-panel-height:32px;
 		display:flex;
 		justify-content:flex-start;
 		align-items:stretch;
-	}
-	
-	// overwrite general UI colours for scrollbars (chrome)
-	::-webkit-scrollbar-track {  
-		background: tint( $oe-ed-bg,2 );
-	}
-	::-webkit-scrollbar-track-piece { 
-		background: tint( $oe-ed-bg,2 );
-	}		
-		
-	
+	}	
 }
 
 @import "eyedraw/ed-app-title"; 

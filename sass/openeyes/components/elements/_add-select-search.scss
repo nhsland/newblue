@@ -48,25 +48,65 @@
 		margin:8px 0 4px 0;
 	}
 	
-	// All options lists:
-	ul.add-options{
+	// Select lists
+	// are group in <td>
+	table.select-options {	
 		
+		th {
+			@include font-size(11);
+			padding:0 0 5px 0;
+		}
+		
+		td {
+			vertical-align: top;
+			padding:0 15px 0 0; // space the list groups 
+			
+			&:last-child {
+				padding:0 0 0 0;
+			}
+		}		
+	}
+
+	// All options lists <ul>:
+	.add-options{
 		max-height:200px;		// limit the displayed results.
 		overflow-y: auto;
-		margin:0 10px 0 0;
+		margin:0 5px 0 0;
+		
+		&:last-child {
+			margin:0 0 0 0;
+		}
 		
 		li {
+			display:block;
 			cursor: pointer;
-			padding:2px 16px 2px 8px;
+			padding:2px 8px 2px 8px;
 			margin:0 0 2px 0;
 			color:$oe-text;
 			border-radius:3px;
 			background: shade( $oe-user-selected, 10 );
-			// required to stop the lists being squeezed by flex 
-			// however, might be an issue for long inputs
-			white-space: nowrap; 	
+			
+			// data has a span wrapper to control the width
+			// not possible through the li css
+			// this assumes a text value:
+			.restrict-width {
+				display:inline-block;
+				min-width:120px;
+				max-width:130px;
+			}
+			
+			// this is for numerics (i.e. 1,2,3 and 0.35)
+			.auto-width {
+				white-space:nowrap;
+			}
+			
 			
 			&:hover, &:focus, &:active, &.selected {
+				color:#fff;
+				background: shade( $oe-user-selected, 30 );
+			}
+			
+			&.selected {
 				color:#fff;
 				background:$oe-btn-blue;
 			}
@@ -80,8 +120,9 @@
 	// Search for Options, replaces ALL options (where offered)
 	.search-options {
 		width:340px;
+		height:180px;
 		.add-options {
-			margin:0 0 0 0;
+			max-height:160px;
 		}
 	}
 }

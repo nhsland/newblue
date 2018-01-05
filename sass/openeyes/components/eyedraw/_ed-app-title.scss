@@ -11,7 +11,7 @@
 		right:$ed-padding;
 		@include font-size(42);
 		font-weight:200;
-		color: #669;
+		color: shade($oe-ed-panels,20);
 	}
 
 	

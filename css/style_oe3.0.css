@@ -1283,6 +1283,14 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   background-color: rgba(255, 255, 255, 0.5);
 }
 
+.oe-eyedraw-app ::-webkit-scrollbar-track {
+  background: #dee9f2;
+}
+
+.oe-eyedraw-app ::-webkit-scrollbar-track-piece {
+  background: #e5eef5;
+}
+
 /* Structure */
 html {
   background: #152037;
@@ -3157,37 +3165,71 @@ html {
   margin: 8px 0 4px 0;
 }
 
-.oe-add-select-search ul.add-options {
-  max-height: 200px;
-  overflow-y: auto;
-  margin: 0 10px 0 0;
+.oe-add-select-search table.select-options th {
+  font-size: 0.6875rem;
+  padding: 0 0 5px 0;
 }
 
-.oe-add-select-search ul.add-options li {
+.oe-add-select-search table.select-options td {
+  vertical-align: top;
+  padding: 0 15px 0 0;
+}
+
+.oe-add-select-search table.select-options td:last-child {
+  padding: 0 0 0 0;
+}
+
+.oe-add-select-search .add-options {
+  max-height: 200px;
+  overflow-y: auto;
+  margin: 0 5px 0 0;
+}
+
+.oe-add-select-search .add-options:last-child {
+  margin: 0 0 0 0;
+}
+
+.oe-add-select-search .add-options li {
+  display: block;
   cursor: pointer;
-  padding: 2px 16px 2px 8px;
+  padding: 2px 8px 2px 8px;
   margin: 0 0 2px 0;
   color: rgba(255, 255, 255, 0.8);
   border-radius: 3px;
   background: #32404d;
+}
+
+.oe-add-select-search .add-options li .restrict-width {
+  display: inline-block;
+  min-width: 120px;
+  max-width: 130px;
+}
+
+.oe-add-select-search .add-options li .auto-width {
   white-space: nowrap;
 }
 
-.oe-add-select-search ul.add-options li:hover, .oe-add-select-search ul.add-options li:focus, .oe-add-select-search ul.add-options li:active, .oe-add-select-search ul.add-options li.selected {
+.oe-add-select-search .add-options li:hover, .oe-add-select-search .add-options li:focus, .oe-add-select-search .add-options li:active, .oe-add-select-search .add-options li.selected {
+  color: #fff;
+  background: #27323c;
+}
+
+.oe-add-select-search .add-options li.selected {
   color: #fff;
   background: #074598;
 }
 
-.oe-add-select-search ul.add-options li.active {
+.oe-add-select-search .add-options li.active {
   color: cyan;
 }
 
 .oe-add-select-search .search-options {
   width: 340px;
+  height: 180px;
 }
 
 .oe-add-select-search .search-options .add-options {
-  margin: 0 0 0 0;
+  max-height: 160px;
 }
 
 .main-event .element .multi-select-dropdown-container {
@@ -3306,21 +3348,13 @@ html {
           align-items: stretch;
 }
 
-.oe-eyedraw-app ::-webkit-scrollbar-track {
-  background: #dbe7f1;
-}
-
-.oe-eyedraw-app ::-webkit-scrollbar-track-piece {
-  background: #dbe7f1;
-}
-
 .oe-eyedraw-app .ed-eye-side {
   position: absolute;
   bottom: 10px;
   right: 7px;
   font-size: 2.625rem;
   font-weight: 200;
-  color: #669;
+  color: #9da6ae;
 }
 
 .oe-eyedraw-app button, .oe-eyedraw-app .button, .oe-eyedraw-app input[type="submit"] {
