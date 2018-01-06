@@ -31,14 +31,15 @@ idg.elementAddSelectSearch = function(){
   			searchInput = $popup.find('.js-search-autocomplete');
   			
   		var resetPopupData = true;
+  		
+  		// but for these popups remember the data added:
   		if($popup.prop('id') == 'add-to-history') resetPopupData = false;
   		if($popup.prop('id') == 'add-to-risks') resetPopupData = false;
   			
   		/*
 	  	All lists
 	  	store the list objects and then 
-	  	itterate over them to build the
-	  	inputs
+	  	iterate over them to build the inputs
 	  	*/	
   		var lists = [];
   		
