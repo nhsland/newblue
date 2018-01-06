@@ -415,6 +415,14 @@ textarea {
   background-image: url("../svg/in-css/plus.svg");
 }
 
+.oe-i.pro-theme.minus {
+  background-image: url("../svg/in-css/minus.svg");
+}
+
+.oe-i.pro-theme.eye {
+  background-image: url("../svg/in-css/eye.svg");
+}
+
 .oe-i.ed-reset {
   background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
 }

@@ -76,6 +76,9 @@ idg.init = function(){
 	// Add Search and Autocomplete
 	idg.elementAddSelectSearch();
 	
+	// Toggle Radio Buttons R / L
+	idg.toggleRadio();
+	
 										
 };
 
