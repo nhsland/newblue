@@ -2,11 +2,19 @@
 
 .main-event {
 	.element {
-		
 		.element-fields {
 			.data-label {
 				color:$oe-text-light;
 			}
+		}
+		
+		// Within Elements there may be text that isn't
+		// data, an example of this is in VA: "Not recorded"
+		// note styles this text slightly different 
+		.note {
+			color:$oe-text-light;
+			font-weight:300;
+			margin:0 5px;
 		}
 		
 		// left / right side 
@@ -28,7 +36,5 @@
 				 align-self: center;
 			}
 		}
-
-		
 	}
 }
