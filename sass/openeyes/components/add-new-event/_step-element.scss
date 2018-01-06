@@ -17,8 +17,8 @@
 		
 		@include font-size(12);
 		font-weight:400;
-		color: $oe-ui-text-light; 
-		background: shade( $oe-ui-user-selected,11% ); // required something different here 
+		color: $oe-pro-text-light; 
+		background: shade( $oe-pro-user-selected,11% ); // required something different here 
 		
 		cursor: pointer;
 		
@@ -29,7 +29,7 @@
 			
 			.tag { 
 				background:shade($oe-btn-blue, 20%);
-				color:$oe-ui-text-highlight; 
+				color:$oe-pro-text-highlight; 
 			}
 		}
 		

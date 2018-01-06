@@ -8,17 +8,19 @@
 
 // colours are mostly the default UI theme colours
 
-$html-bg:				$html-ui-bg;
+$html-bg:				$html-pro-bg;
 
-$oe-text: 				$oe-ui-text;
-$oe-text-light: 		$oe-ui-text-light;
-$oe-text-highlight:		$oe-ui-text-highlight;
+$oe-text: 				$oe-pro-text;
+$oe-text-light: 		$oe-pro-text-light;
+$oe-text-highlight:		$oe-pro-text-highlight;
 
-$oe-blue:				$oe-ui-blue;
-$oe-blue-dark: 			shade( $oe-blue, 20% );
-$oe-blue-darker: 		shade( $oe-blue, 35% );
-$oe-blue-light: 		tint( $oe-blue, 10% );
-$oe-blue-bright: 		tint( $oe-blue, 60% );
+$oe-blue:				$oe-pro-blue;
+$oe-blue-dark: 			$oe-pro-blue-dark;
+$oe-blue-dark2: 		$oe-pro-blue-dark2;
+$oe-blue-dark3:			$oe-pro-blue-dark3;
+$oe-blue-light: 		$oe-pro-blue-light;
+$oe-blue-light2: 		$oe-pro-blue-light2;
+$oe-blue-light3: 		$oe-pro-blue-light3;
 
 $oe-grey:				rgb(40,52,66);
 $oe-line:				rgba( #ccc,0.1 );
@@ -36,7 +38,7 @@ $oe-btn-blue-hint: 		shade( $oe-btn-blue,40 );
 $oe-btn-green-hint: 	shade( $oe-btn-green,40 );
 $oe-btn-red-hint: 		shade( $oe-btn-red,40 );
 
-$oe-user-selected:		$oe-ui-user-selected;
+$oe-user-selected:		$oe-pro-user-selected;
 
 // input colours:
 $oe-user-inputs: 		$oe-blue;

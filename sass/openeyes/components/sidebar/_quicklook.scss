@@ -12,8 +12,8 @@
 	  width:100%;
 	  
 	  @include font-size(11);
-	  color:$oe-ui-text;
-	  background:$oe-ui-user-selected;
+	  color:$oe-pro-text;
+	  background:$oe-pro-user-selected;
 	  padding:5px 0;
 	  
 	  &.makestatic {

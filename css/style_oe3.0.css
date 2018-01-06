@@ -411,6 +411,10 @@ textarea {
   background-image: url("../svg/in-css/remove-circle.svg");
 }
 
+.oe-i.pro-theme.plus {
+  background-image: url("../svg/in-css/plus.svg");
+}
+
 .oe-i.ed-reset {
   background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
 }
@@ -1241,6 +1245,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .warning-flag-bg {
+  color: rgba(255, 255, 255, 0.8);
   background-color: #751e00;
 }
 
@@ -3283,10 +3288,6 @@ html {
 
 .main-event .element .element-data table {
   width: 100%;
-}
-
-.main-event .element .element-data table th {
-  background: #182535;
 }
 
 .main-event .element .element-data .data-value.not-recorded {

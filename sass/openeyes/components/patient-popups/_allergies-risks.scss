@@ -11,7 +11,7 @@
 			margin:15px 0 0 0;
 				
 			tr {
-				border-bottom: 1px dotted $oe-ui-line;
+				border-bottom: 1px dotted $oe-pro-line;
 				&:last-child { 
 					border-bottom: none;
 				}
@@ -22,7 +22,7 @@
 				padding:1px 0 1px 4px;
 				vertical-align: middle;
 				height:28px; 
-				color:$oe-ui-text;
+				color:$oe-pro-text;
 				
 				&:last-child {
 					text-align: right;
@@ -52,7 +52,7 @@
 				text-align: left;
 				padding:1px 0 1px 4px;
 				font-weight: 300;
-				color:$oe-ui-text-light;
+				color:$oe-pro-text-light;
 				
 				&.nowrap {
 					width:1%;

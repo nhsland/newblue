@@ -13,22 +13,22 @@
 			width:100%;
 			
 			tr {
-				border-bottom:1px dotted $oe-ui-line;
+				border-bottom:1px dotted $oe-pro-line;
 				&:first-child {
-					border-top:1px dotted $oe-ui-line;
+					border-top:1px dotted $oe-pro-line;
 				} 
 				
 				td {
 					margin:0;
 					padding:8px 0;
 					@include font-size(12);
-					color:$oe-ui-text;
+					color:$oe-pro-text;
 					line-height:1.5;
 					
 					&:first-child {
 						width:30%;
 						font-style: italic; 
-						color:$oe-ui-text-light;
+						color:$oe-pro-text-light;
 					}
 					
 					b { 

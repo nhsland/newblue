@@ -5,13 +5,13 @@
 // to show that something happened
 
 .oescape {
-	background:$oe-ui-blue-darker;
+	background:$oe-pro-blue-dark2;
 	
 	// left side 'column', this side is controller
 	// by the js area resizer and the 'min-width' 
 	// must be inline to stop intital redraw issues (see DOM)
 	.oes-left-side {
-		background: $oe-ui-blue-darker; 
+		background: $oe-pro-blue-dark2; 
 		padding:20px 0 20px 0;
 	}
 	
@@ -19,7 +19,7 @@
 	// this width is controller by the browser through flex
 	// generally it contains image-stacks
 	.oes-right-side {
-		background:$oe-ui-blue-darker;  
+		background:$oe-pro-blue-dark2;  
 		margin:0 10px 0 20px;
 		
 		.oes-stack-select {
@@ -48,7 +48,7 @@
 	
 	// pro-theme only for highcharts, provide a background color area for all Highcharts
 	.highchart-area {
-		background:$oe-ui-blue-darker; 
+		background:$oe-pro-blue-dark2; 
 	}
 	
 	// basic data wrapper
@@ -62,12 +62,12 @@
 		margin:25px 0 25px 0; // may need changing haven't seen 2 stack up yet
 		
 		@include font-size(11);
-		color:$oe-ui-text-light;
+		color:$oe-pro-text-light;
 		
 		// for example a drug
 		.data-row-title {
 			@include font-size(12);
-			color:$oe-ui-text;
+			color:$oe-pro-text;
 		}
 		
 		table {
@@ -76,7 +76,7 @@
 			margin:0 auto;	
 			td {
 				text-align: center;
-				border-left:1px solid $oe-ui-line;
+				border-left:1px solid $oe-pro-line;
 				&:first-child {
 					border-left:none;
 				}
@@ -92,7 +92,7 @@
 		h3 {
 			@include font-size(14);
 			font-weight:300; 
-			color:$oe-ui-text-light;
+			color:$oe-pro-text-light;
 			margin:0 0 10px 0; 
 		}
 	}
@@ -140,13 +140,13 @@
 	.oes-summary {
 		width:15%;
 		padding:20px 5px 0 20px;
-		background:$oe-ui-blue-dark;
+		background:$oe-pro-blue-dark;
 		
 		.title  { 
 			margin:0 0 10px 0;
 			@include font-size(18);
 			font-weight:200; 
-			color:$oe-ui-text-light; 
+			color:$oe-pro-text-light; 
 		}
 		
 		// summary data groups
@@ -154,13 +154,13 @@
 			margin:0 0 3px 0;
 			@include font-size(11);
 			font-weight:400; 
-			color:$oe-ui-text-light; 
+			color:$oe-pro-text-light; 
 		}
 		.data-value {
 			margin:0 0 10px 0;
 			@include font-size(13);
 			font-weight:400; 
-			color:$oe-ui-text; 
+			color:$oe-pro-text; 
 		}
 	}
 	

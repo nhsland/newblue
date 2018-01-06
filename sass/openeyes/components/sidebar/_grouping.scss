@@ -13,8 +13,8 @@
 		// <select> dropdown
 		.grouping-picker {
 			width:99%;
-			color:$oe-ui-user-input-text;
-			background:$oe-ui-user-selected;
+			color:$oe-pro-user-input-text;
+			background:$oe-pro-user-selected;
 		}
 
 	}
@@ -27,11 +27,11 @@
 		.collapse-group-header {
 			@include font-size(13);
 			font-weight:300;
-			color: $oe-ui-text-light ;
+			color: $oe-pro-text-light ;
 			padding:10px 25px 5px 5px;
 			
 			&:hover, &:focus {
-				color: $oe-ui-text;
+				color: $oe-pro-text;
 			}
 			
 			// used to show the number of events in the group

@@ -23,7 +23,7 @@
 		left:0;
 		@include font-size(23);
 		font-weight:200;
-		color:$oe-ui-text-light;
+		color:$oe-pro-text-light;
 	}
 	
 	.change-clinic {
@@ -36,7 +36,7 @@
 			opacity:0.5;
 			&:hover, &:focus, &:active {
 				opacity:1;
-				color:$oe-ui-text-highlight;
+				color:$oe-pro-text-highlight;
 			}	
 		}
 	}

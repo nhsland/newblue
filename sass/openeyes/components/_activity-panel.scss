@@ -13,21 +13,21 @@
 	overflow-y:auto;				// otherwise this over-flow doesn't work... Not sure why
 	
 	width:$oe-activity-panel-width;
-	background:tint( $oe-ui-bg,10 );
+	background:tint( $oe-pro-bg,10 );
 	padding:10px 0 20px 0;	
 	
 	.overview {
 		padding:0 10px 5px 15px; 
 		h3 {
 			@include font-size(18);
-			color: shade( $oe-ui-text,10 );
+			color: shade( $oe-pro-text,10 );
 			font-weight:300;
 			
 			.count {
 				display: inline-block;
 				margin:0 0 0 5px;
 				padding:0 0 0 10px;
-				border-left:1px solid $oe-ui-line;
+				border-left:1px solid $oe-pro-line;
 				opacity:0.5;
 			}
 		}

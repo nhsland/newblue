@@ -7,7 +7,7 @@
 	margin:5px;
 	
 	@include font-size(12);
-	color:$oe-ui-text;
+	color:$oe-pro-text;
 	line-height:1.4;
 	
 	border-radius:3px;
@@ -39,5 +39,6 @@
 
 // warning text
 .warning-flag-bg {
+	color:$oe-pro-text;
 	background-color:$oe-warning-orange;
 }

@@ -22,18 +22,18 @@
 			@include font-size(11); 
 			font-weight:400;
 			font-style: italic;
-			color:$oe-ui-text-light;
-			background:$oe-ui-blue; 
+			color:$oe-pro-text-light;
+			background:$oe-pro-blue; 
 			
 			
 			&:hover, &:focus {
-				color: $oe-ui-text-highlight;
-				background-color:$oe-ui-user-selected;
+				color: $oe-pro-text-highlight;
+				background-color:$oe-pro-user-selected;
 			}
 			
 			&.selected {
-				color: $oe-ui-text; // electric blue was too much for select state
-				background-color:$oe-ui-user-selected;
+				color: $oe-pro-text; // electric blue was too much for select state
+				background-color:$oe-pro-user-selected;
 			}
 			
 			&.error {

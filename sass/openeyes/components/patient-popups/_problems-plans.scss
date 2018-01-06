@@ -19,9 +19,9 @@
 				width:100%;
 				padding:8px 5px; 
 				margin:0 0 1px 0;
-				background: $oe-ui-blue-dark;
+				background: $oe-pro-blue-dark;
 				@include font-size(12);
-				color:$oe-ui-text;
+				color:$oe-pro-text;
 
 				.drag-handle {
 					padding:0 3px;
@@ -65,13 +65,13 @@
 			input { 
 				@include font-size(13);
 				font-weight: 300;
-				background: tint( $oe-ui-blue-dark,10 );
+				background: tint( $oe-pro-blue-dark,10 );
 				outline:none;
 				border:0;
 				width:100%; 
 				padding:5px;
 				border-radius:3px;
-				color:$oe-ui-text;
+				color:$oe-pro-text;
 				
 			}
 		

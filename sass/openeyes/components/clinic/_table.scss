@@ -23,14 +23,14 @@ table.oe-clinic-list {
 			}
 			
 			&:hover {
-				background-color: $oe-blue-darker;
+				background-color: $oe-blue-dark2;
 			}
 			
 			&.future {
 				background-color: tint( $oe-blue-dark, 5);
 				
 				&:hover {
-					background-color: tint( $oe-blue-darker, 5 );
+					background-color: tint( $oe-blue-dark2, 5 );
 				}
 			}
 		}	

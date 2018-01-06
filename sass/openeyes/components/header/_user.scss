@@ -11,7 +11,7 @@
 	
 	.oe-user-profile-context {
 		margin:auto 0 auto 5px;
-		color:$oe-ui-text;
+		color:$oe-pro-text;
 		width:320px;
 		
 		li {  
@@ -39,7 +39,7 @@
 				
 				&:hover, &:focus, &:active {
 					opacity:1;
-					color:$oe-ui-text-highlight;
+					color:$oe-pro-text-highlight;
 				}
 				
 			}

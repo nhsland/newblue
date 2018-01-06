@@ -17,8 +17,8 @@
 	left:$oe-event-sidebar-width;
 	width:$oe-event-main-default-width;
 	
-	background:$oe-ui-bg;
-	border:1px solid $oe-ui-text-highlight;
+	background:$oe-pro-bg;
+	border:1px solid $oe-pro-text-highlight;
 	padding:10px 10px 15px 10px;
 	
 	// overflow wrappers alerts and summary-data
@@ -36,7 +36,7 @@
 		padding:10px 0 0 0;
 		@include font-size(18);
 		font-weight:200; 
-		color:$oe-ui-text-light; 
+		color:$oe-pro-text-light; 
 	}
 }
 

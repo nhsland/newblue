@@ -13,7 +13,7 @@ $oe-hs-eye-right:	rgb(159,236,109);			// green
 $oe-hs-eye-left-dull:	shade( $oe-hs-eye-left,40 ); 		
 $oe-hs-eye-right-dull:	shade( $oe-hs-eye-right,40 );			
 $oe-hs-axes: 		rgb(150,150,150);
-$oe-hs-bg: 			$oe-ui-blue-darker;
+$oe-hs-bg: 			$oe-pro-blue-dark2;
 $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 
 
@@ -38,7 +38,7 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 	// SVG <text>
 	// default styling for all SVG text
 	text {
-		fill:$oe-ui-text-light;
+		fill:$oe-pro-text-light;
 		stroke-width: 0;
 	}
 }
@@ -190,9 +190,9 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 	
 	.oes-banner-title {
 		@include font-size(12);
-		fill:$oe-ui-text;
+		fill:$oe-pro-text;
 		* {
-			fill:$oe-ui-text; // sometimes text is wrapped in <tspan>
+			fill:$oe-pro-text; // sometimes text is wrapped in <tspan>
 		}
 	}
 	
@@ -201,7 +201,7 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 		@include font-size(11);
 		
 		text {
-			fill: $oe-ui-text;
+			fill: $oe-pro-text;
 		}
 		
 		.highcharts-data-label-box {
@@ -262,14 +262,14 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 	  cursor: pointer;
 	  @include font-size(11);
 	  &:hover {
-		  fill: $oe-ui-text;	
+		  fill: $oe-pro-text;	
 	  }
 	}
 	
 	// clicking on the legend item deactivates the series
 	&.highcharts-legend-item-hidden {
 		text {
-			fill: shade( $oe-ui-text-light,15 );
+			fill: shade( $oe-pro-text-light,15 );
 		}
 	}
 }
@@ -309,7 +309,7 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 	transition: stroke 150ms;
 	
 	text {
-		fill: $oe-ui-text;
+		fill: $oe-pro-text;
 	}
 }
 .highcharts-tooltip-box {
@@ -339,7 +339,7 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 // ------------- buttons
 .highcharts-button {
 	cursor: pointer;
-	fill: $oe-ui-blue;
+	fill: $oe-pro-blue;
 	&:hover {
 		text {
 			fill:$oe-text;

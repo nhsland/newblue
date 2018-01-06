@@ -102,12 +102,13 @@
 	
 	
 	// PRO theme icons (white)
-	// Here for use in Classic theme or OE UI theme areas
+	// Here for use in Classic theme or OE static PRO theme areas
 	&.pro-theme {
 		&.trash 			{ background-image: url( svg-path('trash') ); }
 		&.comments 			{ background-image: url( svg-path('comments') ); }
 		&.remove 			{ background-image: url( svg-path('remove') ); }
 		&.remove-circle 	{ background-image: url( svg-path('remove-circle') ); }
+		&.plus 				{ background-image: url( svg-path('plus') ); }
 	}
 	 
 	

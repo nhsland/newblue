@@ -29,7 +29,7 @@ $oe-browser-size-activity-panel-fixed:	1800px; // this is based on the JS settin
 $oe-z-logo:				101;
 $oe-z-shortcuts:		99;
 $oe-z-activity:			95;
-$oe-z-quicklook:		90; // quicklook, demographics, allergies & risks
+$oe-z-quicklook:		90; // & demographics, allergies & risks
 $oe-z-element-search:	80; 
 $oe-z-popup:			70; 
 $oe-z-tooltip:			60;
@@ -38,29 +38,30 @@ $oe-z-tooltip:			60;
 // UI colors 
 // (Pro theme, but here because of the need to keep some Pro theme elements in Classsic)
 
-$html-ui-bg: 			rgb(21,32,55);
+$html-pro-bg: 			rgb(21,32,55);
 
-$oe-ui-text: 			rgba( #fff,0.8 );
-$oe-ui-text-light: 		rgba( #fff,0.5 );
-$oe-ui-text-highlight: 	rgb(0,255,255);;
+$oe-pro-text: 			rgba( #fff,0.8 );
+$oe-pro-text-light: 	rgba( #fff,0.5 );
+$oe-pro-text-highlight: rgb(0,255,255);;
 
-$oe-ui-blue:			rgb(30,46,66);
-$oe-ui-blue-dark: 		shade( $oe-ui-blue, 20% );
-$oe-ui-blue-darker: 	shade( $oe-ui-blue, 35% );
-$oe-ui-blue-light: 		tint( $oe-ui-blue, 10% );
-$oe-ui-blue-bright: 	tint( $oe-ui-blue, 60% );
+$oe-pro-blue:			rgb(30,46,66);
+$oe-pro-blue-dark: 		shade( $oe-pro-blue, 20% );
+$oe-pro-blue-dark2: 	shade( $oe-pro-blue, 35% );
+$oe-pro-blue-dark3: 	shade( $oe-pro-blue, 45% );
+$oe-pro-blue-light: 	tint( $oe-pro-blue, 10% );
+$oe-pro-blue-light2: 	tint( $oe-pro-blue, 30% );
+$oe-pro-blue-light3: 	tint( $oe-pro-blue, 60% );
 
-$oe-ui-grey:			rgb(40,52,66);
+$oe-pro-grey:			rgb(40,52,66);
 
-$oe-ui-bg:				$oe-ui-blue-darker; // top header strip
-$oe-ui-line: 			rgba( #aad,0.2 );
+$oe-pro-bg:				$oe-pro-blue-dark2; // top header strip
+$oe-pro-line: 			rgba( #aad,0.2 );
 
 // input colours:
-$oe-ui-user-inputs: 	$oe-ui-blue;
-$oe-ui-user-input-text: $oe-ui-text;
+$oe-pro-user-inputs: 	$oe-pro-blue;
+$oe-pro-user-input-text: $oe-pro-text;
 
-$oe-ui-user-selected:	rgb(55,71,85);
-
+$oe-pro-user-selected:	rgb(55,71,85);
 
 // eyedraw
 $oe-ed-bg:				rgb(218,230,241); 

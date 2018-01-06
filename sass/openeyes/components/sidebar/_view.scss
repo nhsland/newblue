@@ -47,8 +47,8 @@
 	
 			@include font-size(12);
 			font-weight:400;
-			color: $oe-ui-text-light; 
-			background:$oe-ui-blue;
+			color: $oe-pro-text-light; 
+			background:$oe-pro-blue;
 			
 			&:hover, &:focus, &:active {
 				color:#fff;
@@ -72,16 +72,16 @@
 			@include font-size(10);
 			font-weight:400;
 			
-			color: $oe-ui-text-light;
-			background:$oe-ui-blue-dark;
+			color: $oe-pro-text-light;
+			background:$oe-pro-blue-dark;
 		}
 		  
 		&.selected {
 			a {
-				color:$oe-ui-text-highlight;
-				background: $oe-ui-user-selected;
+				color:$oe-pro-text-highlight;
+				background: $oe-pro-user-selected;
 				.tag {
-					color:$oe-ui-text-highlight;
+					color:$oe-pro-text-highlight;
 					background:transparent;
 				}
 			}	

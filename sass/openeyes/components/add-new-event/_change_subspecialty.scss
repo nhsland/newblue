@@ -7,14 +7,14 @@
 	
 	.change-subspecialty {
 		position:relative;
-		background: shade( $oe-ui-user-selected,15% ); // required something different here 
+		background: shade( $oe-pro-user-selected,15% ); // required something different here 
 		border:1px solid $oe-btn-green;
 		padding:8px;
 		margin:10px 0 0 0;
 	
 		h6 {
 			@include font-size(12);
-			color:$oe-ui-text-light;
+			color:$oe-pro-text-light;
 			padding:0 0 0 2px; 
 			margin:0 0 5px 0;
 		}
@@ -24,7 +24,7 @@
 		.fixed-service {
 			margin:10px 0 0 8px;
 			@include font-size(12);
-			color:$oe-ui-text; 
+			color:$oe-pro-text; 
 		}
 		
 		// ... or there is a choice in the service 

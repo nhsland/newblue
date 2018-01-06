@@ -14,12 +14,12 @@
 			
 			@include font-size(13);
 			font-weight:400;
-			color:$oe-ui-text-light;
-			background:tint( $oe-ui-bg,5 );
+			color:$oe-pro-text-light;
+			background:tint( $oe-pro-bg,5 );
 			
 			&:hover, &:focus, &:active {
-				color:$oe-ui-text;
-				background: $oe-ui-bg;
+				color:$oe-pro-text;
+				background: $oe-pro-bg;
 			}
 					
 			.num {

@@ -5,14 +5,14 @@
 .oe-create-event-popup {
 	margin:auto; /* flex (wrapper) */ 
 	position:relative;
-	background: $oe-ui-user-selected;
+	background: $oe-pro-user-selected;
 	width: $oe-eyedraw-app-width; 
 	padding:20px;
 
 	.title {
 		@include font-size(18);
 		font-weight:300;
-		color:$oe-ui-text;
+		color:$oe-pro-text;
 		padding:0 0 10px 0;
 	}
 	
@@ -26,7 +26,7 @@
 	// step sub-titles
 	h3 {
 		@include font-size(12);
-		color:$oe-ui-text-light;
+		color:$oe-pro-text-light;
 		margin:0 0 10px 0;
 	}
 
