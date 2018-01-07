@@ -1513,7 +1513,7 @@ html {
 .oe-patient .hospital-number, .oe-patient .nhs-number, .oe-patient .patient-gender, .oe-patient .patient-age, .oe-patient .warning {
   display: inline-block;
   padding: 0 6px 5px 6px;
-  border-left: 1px solid #a0a0c8;
+  border-left: 1px solid #26303d;
 }
 
 .oe-patient .hospital-number span, .oe-patient .hospital-number em, .oe-patient .nhs-number span, .oe-patient .nhs-number em, .oe-patient .patient-gender span, .oe-patient .patient-gender em, .oe-patient .patient-age span, .oe-patient .patient-age em, .oe-patient .warning span, .oe-patient .warning em {
@@ -1809,7 +1809,7 @@ html {
   display: inline-block;
   margin: 0 0 0 5px;
   padding: 0 0 0 10px;
-  border-left: 1px solid #a0a0c8;
+  border-left: 1px solid #26303d;
   opacity: 0.5;
 }
 
@@ -1892,14 +1892,14 @@ html {
   position: relative;
   margin: 0 0 8px 0;
   padding: 0 0 8px 0;
-  border-bottom: 1px solid #a0a0c8;
+  border-bottom: 1px solid #26303d;
 }
 
 .oe-activity-panel .msg-timeline .timeline {
   position: absolute;
   top: 0;
   left: 0;
-  background: #a0a0c8;
+  background: #26303d;
   height: 22px;
   line-height: 22px;
   padding: 0 5px 0 5px;
@@ -1916,7 +1916,7 @@ html {
   width: 0;
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
-  border-left: 11px solid #a0a0c8;
+  border-left: 11px solid #26303d;
 }
 
 .oe-activity-panel .msg-timeline .subject {
@@ -2192,11 +2192,11 @@ html {
 }
 
 .patient-popup-demographics .demographics .patient-summary tr {
-  border-bottom: 1px dotted #a0a0c8;
+  border-bottom: 1px dotted #26303d;
 }
 
 .patient-popup-demographics .demographics .patient-summary tr:first-child {
-  border-top: 1px dotted #a0a0c8;
+  border-top: 1px dotted #26303d;
 }
 
 .patient-popup-demographics .demographics .patient-summary tr td {
@@ -2222,7 +2222,7 @@ html {
 }
 
 .patient-popup-allergies-risks table tr {
-  border-bottom: 1px dotted #a0a0c8;
+  border-bottom: 1px dotted #26303d;
 }
 
 .patient-popup-allergies-risks table tr:last-child {
@@ -2413,7 +2413,7 @@ html {
 
 .oe-create-event-popup .oe-create-event-step-through td {
   vertical-align: top;
-  border-left: 1px solid #a0a0c8;
+  border-left: 1px solid #26303d;
   padding: 0 8px 0 8px;
   max-height: 450px;
 }
@@ -3151,7 +3151,7 @@ html {
   min-width: 400px;
 }
 
-.oe-add-select-search.width-auto {
+.oe-add-select-search.auto-width {
   width: auto;
 }
 
@@ -3814,7 +3814,7 @@ html {
 
 .oescape .oes-data-row-input table td {
   text-align: center;
-  border-left: 1px solid #a0a0c8;
+  border-left: 1px solid #26303d;
 }
 
 .oescape .oes-data-row-input table td:first-child {

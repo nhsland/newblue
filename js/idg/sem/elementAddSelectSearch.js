@@ -33,8 +33,13 @@ idg.elementAddSelectSearch = function(){
   		var resetPopupData = true;
   		
   		// but for these popups remember the data added:
-  		if($popup.prop('id') == 'add-to-history') resetPopupData = false;
-  		if($popup.prop('id') == 'add-to-risks') resetPopupData = false;
+  		switch( $popup.prop('id') ){
+	  		case "add-to-history":
+	  		case "add-to-risks":
+	  		case "add-to-follow-up":
+	  		resetPopupData = false;
+	  		break;
+  		}
   			
   		/*
 	  	All lists
@@ -87,12 +92,16 @@ idg.elementAddSelectSearch = function(){
   		// list have 2 states multi or single 
   		$('.add-options',$popup).each( function(){
 	  		var multi = $(this).data('multi');
-	  		lists.push( new OptionsList( $(this), multi ) );
+	  		
+	  		lists.push( new OptionsList( $(this), 
+	  									 $(this).data('multi'),
+	  									 $(this).data('clickadd') ) );
   		});
   		
   		
-		function OptionsList( $ul, multi ){
+		function OptionsList( $ul, multi, clickAdd ){
 			var multi = multi;
+			var clickAdd = clickAdd; 
 			var $active = null; // if only single entry 
 			var selectedData = [];
 			
@@ -110,6 +119,7 @@ idg.elementAddSelectSearch = function(){
 				$('li', $ul).click(function(e){
 		  			e.stopPropagation();
 		  			updateListOptions( $(this) );
+		  			if(clickAdd) closeAdd();
 	  			});
 			}
 	
@@ -231,16 +241,29 @@ idg.elementAddSelectSearch = function(){
 				$('#js-refraction-input-cylinder').val( cylinder );
 				$('#js-refraction-input-axis').val( axis );
 				$('#js-refraction-input-type').val( type );
-				
-				
 			}
+			
+			if($popup.prop('id') == 'add-to-pupils-left'){
+				$('#js-pupil-left-text').text( lists[0].getData('') );
+			}
+			
+			if($popup.prop('id') == 'add-to-pupils-right'){
+				$('#js-pupil-right-text').text( lists[0].getData('') );
+			}
+			
 		 
 		 
 		  	/*
-			history
+			Text inputs
 			*/
-		  	if($popup.prop('id') == 'add-to-history'){
-			  	var inputs = [];
+		  	if($popup.prop('id') == 'add-to-history')		showInputString('history');
+		  	if($popup.prop('id') == 'add-to-risks')			showInputString('risks');
+		  	if($popup.prop('id') == 'add-to-follow-up')		showInputString('follow-up');
+	  		
+	
+	  		function showInputString(id){
+		  		var id = '#js-'+id+'-input-demo';
+		  		var inputs = [];
 		  		for(var i = 0; i<lists.length; i++){
 			  		var data = lists[i].getData(', ');
 			  		if(data != ""){
@@ -248,27 +271,9 @@ idg.elementAddSelectSearch = function(){
 			  		}
 		  		}
 		  		
-		  		$('#js-history-input-demo').val( inputs.join(', ') );
-		  		autosize.update($('#js-history-input-demo'));
+		  		$(id).val( inputs.join(', ') );
+		  		autosize.update( $(id) );
 	  		}
-	  		
-	  		
-	  		/*
-			Risks
-			*/
-		  	if($popup.prop('id') == 'add-to-risks'){
-			  	var inputs = [];
-		  		for(var i = 0; i<lists.length; i++){
-			  		var data = lists[i].getData(', ');
-			  		if(data != ""){
-				  		inputs.push(data);
-			  		}
-		  		}
-		  		
-		  		$('#js-risks-input-demo').val( inputs.join(', ') );
-		  		autosize.update($('#js-risks-input-demo'));
-	  		}
-	  		
 	  		
 	  		// clean up!
 	  		closeCancel();

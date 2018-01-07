@@ -84,6 +84,666 @@ idg.init = function(){
 
 
 /*
+SEM Element - Add or Search
+Popup to add selected list to element
+(optional - autocomplete field)
+No functionality, demoing basic UI & UX
+*/
+idg.elementAddSelectSearch = function(){
+	
+	var all = [];
+	
+	$('.js-add-select-search').each(function(){
+		var addBtn = new AddSelectSearch( 	$(this),
+											$(this).parent().children('.oe-add-select-search') );
+		all.push(addBtn);																
+	});
+	
+	function closeAll(){
+		for(var i=0; i < all.length; i++){
+			all[i].closePopup();
+		}
+	}
+
+	function AddSelectSearch( $btn, $popup ){
+		
+  		var search 		= $popup.find('.search-options'),
+  			select 		= $popup.find('.select-options'),
+  			closeBtn 	= $popup.find('.close-icon-btn'),
+  			selectBtn 	= $popup.find('.select-icon-btn'),
+  			searchBtn 	= $popup.find('.search-icon-btn'),
+  			addBtn 		= $popup.find('.add-icon-btn'),
+  			searchInput = $popup.find('.js-search-autocomplete');
+  			
+  		var resetPopupData = true;
+  		
+  		// but for these popups remember the data added:
+  		switch( $popup.prop('id') ){
+	  		case "add-to-history":
+	  		case "add-to-risks":
+	  		case "add-to-follow-up":
+	  		resetPopupData = false;
+	  		break;
+  		}
+  			
+  		/*
+	  	All lists
+	  	store the list objects and then 
+	  	iterate over them to build the inputs
+	  	*/	
+  		var lists = [];
+  		
+  		$popup.removeClass('hidden').hide();
+  		search.removeClass('hidden').hide();
+
+  		/*
+	  	pubilc methods
+  		used to close all popups
+  		*/
+  		this.closePopup = closeCancel;
+
+  		/*
+	  	Events	
+	  	*/
+  		closeBtn.click(function(e){
+	  		e.stopPropagation();
+	  		closeCancel();
+  		});
+  		
+  		selectBtn.click(function(e){
+  			e.stopPropagation();
+  			addSelect();
+  			if( searchBtn.length ) iconSelected();
+		});
+			
+			
+		// setup based on the DOM
+		if(addBtn.length){
+	  		addBtn.click(function(e){
+	  			e.stopPropagation();
+	  			closeAdd();
+  			});
+  		}
+  		
+  		if(searchBtn.length){
+	  		searchBtn.click(function(e){
+	  			e.stopPropagation();
+	  			addSearch();
+	  			iconSelected();
+  			});
+  		}
+  	
+  		
+  		// list have 2 states multi or single 
+  		$('.add-options',$popup).each( function(){
+	  		var multi = $(this).data('multi');
+	  		
+	  		lists.push( new OptionsList( $(this), 
+	  									 $(this).data('multi'),
+	  									 $(this).data('clickadd') ) );
+  		});
+  		
+  		
+		function OptionsList( $ul, multi, clickAdd ){
+			var multi = multi;
+			var clickAdd = clickAdd; 
+			var $active = null; // if only single entry 
+			var selectedData = [];
+			
+			if(multi){
+				$('li', $ul).click(function(e){
+		  			e.stopPropagation();
+		  			$(this).toggleClass('selected'); 
+		  			if($(this).hasClass('selected')){
+			  			addData($(this).data('str'));
+		  			} else {
+			  			removeData($(this).data('str'));
+		  			}
+	  			});
+			} else {
+				$('li', $ul).click(function(e){
+		  			e.stopPropagation();
+		  			updateListOptions( $(this) );
+		  			if(clickAdd) closeAdd();
+	  			});
+			}
+	
+			function updateListOptions( $new ){
+				if($active != null) {
+					$active.removeClass('selected');
+					removeData( $active.data('str') );
+				}
+				$new.addClass('selected');
+				addData( $new.data('str') );
+				$active = $new;
+			}
+			
+			function addData(data){
+				selectedData.push(data);
+			}
+			
+			function removeData(data){
+				var index = selectedData.indexOf(data);   
+				if (index !== -1) {
+				    selectedData.splice(index, 1);
+				}
+			}
+			
+			/*
+			Public methods	
+			*/
+			this.getData = function ( join ){
+				return selectedData.join(join);
+			}
+			
+			this.clearData = function(){
+				selectedData = [];
+			}
+		}  		
+
+  		
+  		// top element popup will disappear behind header, so adjust it's position:
+  		if($btn.offset().top < 400){
+	  		var vOffset = $btn.offset().top - 310;
+	  		$popup.css({bottom:vOffset});
+	  	}
+  		
+
+		$btn.click( function( e ){
+			e.stopPropagation();
+			openAdd();
+		});
+		
+		function openAdd(){
+			closeAll();
+			addSelect();
+			$popup.show();
+			selectBtn.children('.oe-i').addClass('selected');
+			searchBtn.children('.oe-i').removeClass('selected');
+					  		
+		}
+		
+		
+		
+		// Close and reset
+  		function closeCancel(){
+	  		search.hide();
+	  		searchInput.val('');
+	  		$popup.hide();
+	
+	  		if(resetPopupData){
+		  		$popup.find('.add-options li').removeClass('selected');
+		  		for(var i = 0; i<lists.length; i++){
+			  		lists[i].clearData();
+			  	}
+			}
+	  		
+  		}
+  		
+  		function closeAdd(){
+	  			
+	  		/*
+		  	IDG specific elements limited functionality demos
+		  	*/
+	
+		  	/*
+			Refraction	
+			*/
+			if($popup.prop('id') == 'add-to-refraction'){
+				
+				var sphere = "", 
+					cylinder = "", 
+					axis = "";
+					type = ""
+					
+				for(var i = 0; i<lists.length; i++){
+			  		var data = lists[i].getData('');
+			  		
+			  		switch(i){
+				  		case 0:
+				  		case 1:
+				  		case 2:
+				  		sphere += data;
+				  		break;
+				  		
+				  		case 3:
+				  		case 4:
+				  		case 5:
+				  		cylinder += data;
+				  		break;
+				  		
+				  		case 6: 
+				  		axis = data;
+				  		break;
+				  		
+				  		case 7:
+				  		type = data;
+				  		break;
+			  		}
+		  		}
+				
+				$('#js-refraction-input-sphere').val( sphere );
+				$('#js-refraction-input-cylinder').val( cylinder );
+				$('#js-refraction-input-axis').val( axis );
+				$('#js-refraction-input-type').val( type );
+			}
+			
+			if($popup.prop('id') == 'add-to-pupils-left'){
+				$('#js-pupil-left-text').text( lists[0].getData('') );
+			}
+			
+			if($popup.prop('id') == 'add-to-pupils-right'){
+				$('#js-pupil-right-text').text( lists[0].getData('') );
+			}
+			
+		 
+		 
+		  	/*
+			Text inputs
+			*/
+		  	if($popup.prop('id') == 'add-to-history')		showInputString('history');
+		  	if($popup.prop('id') == 'add-to-risks')			showInputString('risks');
+		  	if($popup.prop('id') == 'add-to-follow-up')		showInputString('follow-up');
+	  		
+	
+	  		function showInputString(id){
+		  		var id = '#js-'+id+'-input-demo';
+		  		var inputs = [];
+		  		for(var i = 0; i<lists.length; i++){
+			  		var data = lists[i].getData(', ');
+			  		if(data != ""){
+				  		inputs.push(data);
+			  		}
+		  		}
+		  		
+		  		$(id).val( inputs.join(', ') );
+		  		autosize.update( $(id) );
+	  		}
+	  		
+	  		// clean up!
+	  		closeCancel();
+  		}
+  		
+  		function addSearch(){
+	  		select.hide();
+	  		search.show();
+	  		searchInput.focus();
+	  		
+	  		// fake ajax search
+	  		var fakeAjax = $('.js-search-results').hide();
+	  		searchInput.keypress(function() {
+		  		if(searchInput.val() === 'au'){
+			  		fakeAjax.show(); // show fake autocomplete results
+		  		}
+			})
+  		}
+  		
+  		function addSelect(){
+	  		select.show();
+	  		search.hide();
+	  		searchInput.val('');
+  		}
+  		
+  		function iconSelected(){
+	  		selectBtn.children('.oe-i').toggleClass('selected');
+	  		searchBtn.children('.oe-i').toggleClass('selected');
+  		}
+	
+	}
+}
+/*
+Right Left Element searching in Examination Edit mode
+All content in popup is static and the inputs only 
+show the popup behaviour
+*/
+idg.examElementSearchPopup = function(){
+	var el = document.getElementById('elements-search-results');
+	if(el === null) return; 
+	
+	// inputs
+	$('#js-element-search-right').focus(function(){
+		showPopup();
+	}).focusout(function(){
+		$(this).val('');
+	});
+	
+	$('#js-element-search-left').focus(function(){
+		showPopup();
+	}).focusout(function(){
+		$(this).val('');
+	});
+
+	
+	// popup
+	function showPopup(){
+		$('#elements-search-results').show();
+	
+		$('.lvl1').click(function(){
+			$('#elements-search-results').hide();
+		})
+		$('.close-icon-btn').click(function(){
+			$('#elements-search-results').hide();
+		});
+	}		
+}
+/*
+Sidebar Events Quicklook & Quickview
+- Quicklook: Event Title and Message
+- Quickview: Popup with event Screenshot
+*/
+idg.sidebarQuickInfo = function(){
+	
+	if( $('.events').length == 0 ) return;
+	
+	$('.events .event').each(function(){	
+		var quicklook = new Quicklook( $('.event-type', this),
+									   $('.quicklook', this) );
+	});
+	
+	function Quicklook( $icon, $quicklook ){
+		
+		$icon.hover(function(){
+			$quicklook.removeClass('hidden').show();
+			showQuickView( $(this).data('id'), $(this).data('date') );
+		},function(){
+			$quicklook.hide();
+			hideQuickView();
+		});
+	}
+	
+	/**
+	Demo the Quick View for Events
+	Shows a scaled screen-shot of the event page
+	**/
+	
+	// hide all QuickView screen shots
+	$("[id^=quickview]").hide();
+
+	var prevID = null;
+	var $quickView = $('#js-event-quickview'); 
+	
+	function showQuickView( id, date ){
+		$quickView.stop().fadeIn(50);
+		$('#quickview-'+prevID).hide();
+		$('#quickview-'+id).show();
+		$('#js-quickview-date').text( date );
+		prevID = id;
+	}
+	
+	function hideQuickView(){
+		$quickView.stop().fadeOut(150);	// Using fadeOut to stop a flicking effect
+	}
+
+}
+/**
+Create 'buttons' for nav menus, 3 different flavours: standard, wrapped and fixed
+- standard: $btn open/closes the popup $content (seperate DOM element). MouseEnter/Leave provides increased functionality for non-touch users
+- wrapped: 'btn' & popup $content wrapped by shared DOM (shortcuts menu), wrapper is used for the eventObj
+- fixed: When the browser width is wide enough CSS fixes open the Activity Panel 
+@ $btn - structurally as <a> but without CSS pseudos :hover, :focus, :active
+@ $content - DOM content to show on click 
+@ wrap - shortcuts has a DOM wrapper, this displays on hover.
+**/
+idg.NavBtnPopup = function(id,$btn,$content){
+		
+	// private
+	var id = id,
+		eventObj = $btn,
+		useMouseEvents = false,
+		isGrouped = false, 		// e.g. patient popups 
+		groupController = null,
+		isFixed = false,
+		css = { 
+			active:'active', 	// hover
+			open:'open' 		// clicked 
+		};	
+		
+	/**
+	public methods
+	**/
+	this.hide = hide;	
+	this.useWrapper = useWrapperEvents;
+	this.fixed = fixed;
+	this.inGroup = inGroup;
+	
+		
+	init(); // all are initiated but useWrapperEvents modifies the eventObj then re-initiates
+		
+	/**
+	provide a way for shortcuts to re-assign
+	the Events to the DOM wrapper
+	**/
+	function init(){
+		// Events
+		eventObj.click(function( e ){
+			e.stopPropagation();
+			// use $btn class as boolean
+			changeContent( $btn.hasClass( css.open ) );
+		})
+		.mouseenter(function(){
+			$btn.addClass( css.active ); 
+			if( useMouseEvents ) show();
+		})
+		.mouseleave(function(){
+			$btn.removeClass( css.active ); 
+			if( useMouseEvents ) hide();
+		});
+	}
+
+	function changeContent( isOpen ){
+		if(isFixed) return; // if popup is fixed
+			
+		if( isOpen ){
+			hide();
+		} else {
+			if(isGrouped) groupController.closeAll(); 
+			show();
+		}
+	}
+	
+	function show(){
+		$btn.addClass( css.open );
+		$content.show();
+		if( ! useMouseEvents &&  ! isFixed  ) addContentEvents();
+	}
+	
+	function hide(){
+		$btn.removeClass( css.open );
+		$content.hide();
+	}	
+	
+	/**
+	Enhance $content behaviour for non-touch users
+	Allow mouseLeave to close $content popup
+	**/
+	function addContentEvents(){
+  		$content.mouseenter(function(){
+	  		$(this).off( 'mouseenter' ); // clean up
+			$(this).mouseleave(function(){
+				$(this).off( 'mouseleave' ); // clean up
+				hide();
+			});
+		});
+	}
+
+	/**
+	DOM structure for the Shortcuts dropdown list is different
+	Need to shift the events to the wrapper DOM rather than the $btn	
+	**/
+	function useWrapperEvents( DOMwrapper ){
+		eventObj.off( 'click mouseenter mouseleave' );
+		eventObj = DOMwrapper;
+		css.open = css.active; // wrap only has 1 class
+		useMouseEvents = true;
+		init(); // re initiate with new eventObj
+	}
+	
+	/**
+	Activity Panel needs to be fixable when the browsers is wide enough
+	(but not in oescape mode)	
+	**/
+	function fixed( b ){
+		isFixed = b;
+		if( b ){
+			$content.off( 'mouseenter mouseleave' );  		
+			show();
+		} else {
+			hide(); 
+		}
+	}
+	
+	/**
+	Group popups to stop overlapping	
+	**/
+	function inGroup( controller ){
+		isGrouped = true;
+		groupController = controller;
+	}	
+}
+
+
+
+/**
+Collapse Group
+Uses the DOM and CSS hooks
+**/
+idg.collapseGroups = function(){
+	// find and set up all collapse-groups
+	$('.collapse-group').each(function(){
+		var group = new CollapseGroup( 	$(this).find( '.collapse-group-icon .oe-i' ), 
+										$(this).find( '.collapse-group-header' ), 
+										$(this).find( '.collapse-group-content' ),
+										$(this).data('collapse') );
+	});
+	
+	function CollapseGroup( icon, header, content, initialState ){
+		var $icon = icon, 
+			$header = header, 
+			$content = content,
+			expanded = initialState == 'expanded' ? true : false;
+			
+		$icon.click(function(){
+			change();
+		});	
+	
+		$header.click(function(){
+			change();
+		});	
+		
+		function change(){
+			if(expanded){
+				$content.hide();
+			} else {
+				$content.removeClass('hidden').show();
+			}
+			
+			$icon.toggleClass('minus plus');
+			expanded = !expanded;
+		}	
+	}	
+}
+/**
+Comments
+**/
+idg.comments = function(){
+	/**
+	Comments icon is clicked on to reveal 
+	commets input field. Either:
+	1) Textarea switches places with icon button
+	2) Textarea is shown in different DOM placement  
+	**/
+	$('.js-add-comments').click(function( e ){
+		e.stopPropagation();
+		$(this).hide();
+		
+		var textAreaID = $(this).data('input');
+		if(textAreaID == 'next'){
+			$(this).next().removeClass('hidden').focus();
+		} else {
+			$(textAreaID).removeClass('hidden').focus();
+		}
+	});
+}
+/**
+Load content as Overlay
+- Eyedraw App
+- Add New Event	
+@param {btn} - ID or Class of btn 
+@param {phpToLoad} - PHP file name 
+@param {closeBtnID} - ID of close button in overlay content
+@param {callBack} - Optional Callback
+**/
+idg.overlayPopup = function( btn, phpToLoad, closeBtnID, callBack ){
+	
+	// check DOM exists
+	if( $(btn).length ){
+		
+		$(btn).click(function( e ){
+			e.stopPropagation();
+			loadOverlay();
+		});
+	}
+	  	
+	/**
+	Create full screen cover using 'oe-popup-wrap'
+	CSS handles the positioning of the loaded DOM
+	**/  	
+	function loadOverlay(){
+		var $overlay = $('<div>');
+  		$overlay.addClass('oe-popup-wrap');
+  		$overlay.load('/php/v3.0/_load/' + phpToLoad,function(){
+	  		closeOverlayBtn( $(closeBtnID, this ), $(this) );
+	  		if(callBack) callBack( $overlay );
+  		});
+  		
+  		$('body').prepend($overlay);
+	}
+	
+	/**
+	Set up a close button	
+	**/
+	function closeOverlayBtn( $closeBtn, $overlay ){
+		$closeBtn.click(function(){
+		  	$overlay.remove();
+	  	});
+	}
+	
+}
+/**
+Toggle Radio Checked
+**/
+idg.toggleRadio = function(){
+	/**
+	With the L / R option as radio
+	we need to be able to toggle there
+	checked state
+	**/
+	$('.js-toggle-radio-checked').each(function(){
+		var checked = true;
+		$(this).click( function(){
+			$(this).prop('checked', checked);
+			checked = !checked;
+		});
+	});
+}
+/*
+Basic tooltip functionality. Quick for IDG demo
+*/
+idg.tooltips = function(){
+	$('.js-has-tooltip').hover(
+		function(){
+			var text = $(this).data('tooltip-content');
+			var offset = $(this).offset();
+			var html = '<div class="oe-tooltip" style="position:fixed; left:'+(offset.left + 20)+'px; top:'+(offset.top + - 10)+'px;">'+ text +'</div>';
+			$(this).data( "tooltip", html );
+			$('body').append(html);
+		},
+		function(){
+			$('body').find( ".oe-tooltip" ).remove();
+		}
+	);	
+}
+/*
 Clinic JS
 
 The logic for the pathway steps is:
@@ -1233,659 +1893,4 @@ idg.problemsPlans = function(){
 	$('#problems-plans-sortable .remove').click(function(){ 
   		$(this).parent().remove(); 
   	});
-}
-/*
-SEM Element - Add or Search
-Popup to add selected list to element
-(optional - autocomplete field)
-No functionality, demoing basic UI & UX
-*/
-idg.elementAddSelectSearch = function(){
-	
-	var all = [];
-	
-	$('.js-add-select-search').each(function(){
-		var addBtn = new AddSelectSearch( 	$(this),
-											$(this).parent().children('.oe-add-select-search') );
-		all.push(addBtn);																
-	});
-	
-	function closeAll(){
-		for(var i=0; i < all.length; i++){
-			all[i].closePopup();
-		}
-	}
-
-	function AddSelectSearch( $btn, $popup ){
-		
-  		var search 		= $popup.find('.search-options'),
-  			select 		= $popup.find('.select-options'),
-  			closeBtn 	= $popup.find('.close-icon-btn'),
-  			selectBtn 	= $popup.find('.select-icon-btn'),
-  			searchBtn 	= $popup.find('.search-icon-btn'),
-  			addBtn 		= $popup.find('.add-icon-btn'),
-  			searchInput = $popup.find('.js-search-autocomplete');
-  			
-  		var resetPopupData = true;
-  		
-  		// but for these popups remember the data added:
-  		if($popup.prop('id') == 'add-to-history') resetPopupData = false;
-  		if($popup.prop('id') == 'add-to-risks') resetPopupData = false;
-  			
-  		/*
-	  	All lists
-	  	store the list objects and then 
-	  	iterate over them to build the inputs
-	  	*/	
-  		var lists = [];
-  		
-  		$popup.removeClass('hidden').hide();
-  		search.removeClass('hidden').hide();
-
-  		/*
-	  	pubilc methods
-  		used to close all popups
-  		*/
-  		this.closePopup = closeCancel;
-
-  		/*
-	  	Events	
-	  	*/
-  		closeBtn.click(function(e){
-	  		e.stopPropagation();
-	  		closeCancel();
-  		});
-  		
-  		selectBtn.click(function(e){
-  			e.stopPropagation();
-  			addSelect();
-  			if( searchBtn.length ) iconSelected();
-		});
-			
-			
-		// setup based on the DOM
-		if(addBtn.length){
-	  		addBtn.click(function(e){
-	  			e.stopPropagation();
-	  			closeAdd();
-  			});
-  		}
-  		
-  		if(searchBtn.length){
-	  		searchBtn.click(function(e){
-	  			e.stopPropagation();
-	  			addSearch();
-	  			iconSelected();
-  			});
-  		}
-  	
-  		
-  		// list have 2 states multi or single 
-  		$('.add-options',$popup).each( function(){
-	  		var multi = $(this).data('multi');
-	  		lists.push( new OptionsList( $(this), multi ) );
-  		});
-  		
-  		
-		function OptionsList( $ul, multi ){
-			var multi = multi;
-			var $active = null; // if only single entry 
-			var selectedData = [];
-			
-			if(multi){
-				$('li', $ul).click(function(e){
-		  			e.stopPropagation();
-		  			$(this).toggleClass('selected'); 
-		  			if($(this).hasClass('selected')){
-			  			addData($(this).data('str'));
-		  			} else {
-			  			removeData($(this).data('str'));
-		  			}
-	  			});
-			} else {
-				$('li', $ul).click(function(e){
-		  			e.stopPropagation();
-		  			updateListOptions( $(this) );
-	  			});
-			}
-	
-			function updateListOptions( $new ){
-				if($active != null) {
-					$active.removeClass('selected');
-					removeData( $active.data('str') );
-				}
-				$new.addClass('selected');
-				addData( $new.data('str') );
-				$active = $new;
-			}
-			
-			function addData(data){
-				selectedData.push(data);
-			}
-			
-			function removeData(data){
-				var index = selectedData.indexOf(data);   
-				if (index !== -1) {
-				    selectedData.splice(index, 1);
-				}
-			}
-			
-			/*
-			Public methods	
-			*/
-			this.getData = function ( join ){
-				return selectedData.join(join);
-			}
-			
-			this.clearData = function(){
-				selectedData = [];
-			}
-		}  		
-
-  		
-  		// top element popup will disappear behind header, so adjust it's position:
-  		if($btn.offset().top < 400){
-	  		var vOffset = $btn.offset().top - 310;
-	  		$popup.css({bottom:vOffset});
-	  	}
-  		
-
-		$btn.click( function( e ){
-			e.stopPropagation();
-			openAdd();
-		});
-		
-		function openAdd(){
-			closeAll();
-			addSelect();
-			$popup.show();
-			selectBtn.children('.oe-i').addClass('selected');
-			searchBtn.children('.oe-i').removeClass('selected');
-					  		
-		}
-		
-		
-		
-		// Close and reset
-  		function closeCancel(){
-	  		search.hide();
-	  		searchInput.val('');
-	  		$popup.hide();
-	
-	  		if(resetPopupData){
-		  		$popup.find('.add-options li').removeClass('selected');
-		  		for(var i = 0; i<lists.length; i++){
-			  		lists[i].clearData();
-			  	}
-			}
-	  		
-  		}
-  		
-  		function closeAdd(){
-	  			
-	  		/*
-		  	IDG specific elements limited functionality demos
-		  	*/
-	
-		  	/*
-			Refraction	
-			*/
-			if($popup.prop('id') == 'add-to-refraction'){
-				
-				var sphere = "", 
-					cylinder = "", 
-					axis = "";
-					type = ""
-					
-				for(var i = 0; i<lists.length; i++){
-			  		var data = lists[i].getData('');
-			  		
-			  		switch(i){
-				  		case 0:
-				  		case 1:
-				  		case 2:
-				  		sphere += data;
-				  		break;
-				  		
-				  		case 3:
-				  		case 4:
-				  		case 5:
-				  		cylinder += data;
-				  		break;
-				  		
-				  		case 6: 
-				  		axis = data;
-				  		break;
-				  		
-				  		case 7:
-				  		type = data;
-				  		break;
-			  		}
-		  		}
-				
-				$('#js-refraction-input-sphere').val( sphere );
-				$('#js-refraction-input-cylinder').val( cylinder );
-				$('#js-refraction-input-axis').val( axis );
-				$('#js-refraction-input-type').val( type );
-				
-				
-			}
-		 
-		 
-		  	/*
-			history
-			*/
-		  	if($popup.prop('id') == 'add-to-history'){
-			  	var inputs = [];
-		  		for(var i = 0; i<lists.length; i++){
-			  		var data = lists[i].getData(', ');
-			  		if(data != ""){
-				  		inputs.push(data);
-			  		}
-		  		}
-		  		
-		  		$('#js-history-input-demo').val( inputs.join(', ') );
-		  		autosize.update($('#js-history-input-demo'));
-	  		}
-	  		
-	  		
-	  		/*
-			Risks
-			*/
-		  	if($popup.prop('id') == 'add-to-risks'){
-			  	var inputs = [];
-		  		for(var i = 0; i<lists.length; i++){
-			  		var data = lists[i].getData(', ');
-			  		if(data != ""){
-				  		inputs.push(data);
-			  		}
-		  		}
-		  		
-		  		$('#js-risks-input-demo').val( inputs.join(', ') );
-		  		autosize.update($('#js-risks-input-demo'));
-	  		}
-	  		
-	  		
-	  		// clean up!
-	  		closeCancel();
-  		}
-  		
-  		function addSearch(){
-	  		select.hide();
-	  		search.show();
-	  		searchInput.focus();
-	  		
-	  		// fake ajax search
-	  		var fakeAjax = $('.js-search-results').hide();
-	  		searchInput.keypress(function() {
-		  		if(searchInput.val() === 'au'){
-			  		fakeAjax.show(); // show fake autocomplete results
-		  		}
-			})
-  		}
-  		
-  		function addSelect(){
-	  		select.show();
-	  		search.hide();
-	  		searchInput.val('');
-  		}
-  		
-  		function iconSelected(){
-	  		selectBtn.children('.oe-i').toggleClass('selected');
-	  		searchBtn.children('.oe-i').toggleClass('selected');
-  		}
-	
-	}
-}
-/*
-Right Left Element searching in Examination Edit mode
-All content in popup is static and the inputs only 
-show the popup behaviour
-*/
-idg.examElementSearchPopup = function(){
-	var el = document.getElementById('elements-search-results');
-	if(el === null) return; 
-	
-	// inputs
-	$('#js-element-search-right').focus(function(){
-		showPopup();
-	}).focusout(function(){
-		$(this).val('');
-	});
-	
-	$('#js-element-search-left').focus(function(){
-		showPopup();
-	}).focusout(function(){
-		$(this).val('');
-	});
-
-	
-	// popup
-	function showPopup(){
-		$('#elements-search-results').show();
-	
-		$('.lvl1').click(function(){
-			$('#elements-search-results').hide();
-		})
-		$('.close-icon-btn').click(function(){
-			$('#elements-search-results').hide();
-		});
-	}		
-}
-/*
-Sidebar Events Quicklook & Quickview
-- Quicklook: Event Title and Message
-- Quickview: Popup with event Screenshot
-*/
-idg.sidebarQuickInfo = function(){
-	
-	if( $('.events').length == 0 ) return;
-	
-	$('.events .event').each(function(){	
-		var quicklook = new Quicklook( $('.event-type', this),
-									   $('.quicklook', this) );
-	});
-	
-	function Quicklook( $icon, $quicklook ){
-		
-		$icon.hover(function(){
-			$quicklook.removeClass('hidden').show();
-			showQuickView( $(this).data('id'), $(this).data('date') );
-		},function(){
-			$quicklook.hide();
-			hideQuickView();
-		});
-	}
-	
-	/**
-	Demo the Quick View for Events
-	Shows a scaled screen-shot of the event page
-	**/
-	
-	// hide all QuickView screen shots
-	$("[id^=quickview]").hide();
-
-	var prevID = null;
-	var $quickView = $('#js-event-quickview'); 
-	
-	function showQuickView( id, date ){
-		$quickView.stop().fadeIn(50);
-		$('#quickview-'+prevID).hide();
-		$('#quickview-'+id).show();
-		$('#js-quickview-date').text( date );
-		prevID = id;
-	}
-	
-	function hideQuickView(){
-		$quickView.stop().fadeOut(150);	// Using fadeOut to stop a flicking effect
-	}
-
-}
-/**
-Create 'buttons' for nav menus, 3 different flavours: standard, wrapped and fixed
-- standard: $btn open/closes the popup $content (seperate DOM element). MouseEnter/Leave provides increased functionality for non-touch users
-- wrapped: 'btn' & popup $content wrapped by shared DOM (shortcuts menu), wrapper is used for the eventObj
-- fixed: When the browser width is wide enough CSS fixes open the Activity Panel 
-@ $btn - structurally as <a> but without CSS pseudos :hover, :focus, :active
-@ $content - DOM content to show on click 
-@ wrap - shortcuts has a DOM wrapper, this displays on hover.
-**/
-idg.NavBtnPopup = function(id,$btn,$content){
-		
-	// private
-	var id = id,
-		eventObj = $btn,
-		useMouseEvents = false,
-		isGrouped = false, 		// e.g. patient popups 
-		groupController = null,
-		isFixed = false,
-		css = { 
-			active:'active', 	// hover
-			open:'open' 		// clicked 
-		};	
-		
-	/**
-	public methods
-	**/
-	this.hide = hide;	
-	this.useWrapper = useWrapperEvents;
-	this.fixed = fixed;
-	this.inGroup = inGroup;
-	
-		
-	init(); // all are initiated but useWrapperEvents modifies the eventObj then re-initiates
-		
-	/**
-	provide a way for shortcuts to re-assign
-	the Events to the DOM wrapper
-	**/
-	function init(){
-		// Events
-		eventObj.click(function( e ){
-			e.stopPropagation();
-			// use $btn class as boolean
-			changeContent( $btn.hasClass( css.open ) );
-		})
-		.mouseenter(function(){
-			$btn.addClass( css.active ); 
-			if( useMouseEvents ) show();
-		})
-		.mouseleave(function(){
-			$btn.removeClass( css.active ); 
-			if( useMouseEvents ) hide();
-		});
-	}
-
-	function changeContent( isOpen ){
-		if(isFixed) return; // if popup is fixed
-			
-		if( isOpen ){
-			hide();
-		} else {
-			if(isGrouped) groupController.closeAll(); 
-			show();
-		}
-	}
-	
-	function show(){
-		$btn.addClass( css.open );
-		$content.show();
-		if( ! useMouseEvents &&  ! isFixed  ) addContentEvents();
-	}
-	
-	function hide(){
-		$btn.removeClass( css.open );
-		$content.hide();
-	}	
-	
-	/**
-	Enhance $content behaviour for non-touch users
-	Allow mouseLeave to close $content popup
-	**/
-	function addContentEvents(){
-  		$content.mouseenter(function(){
-	  		$(this).off( 'mouseenter' ); // clean up
-			$(this).mouseleave(function(){
-				$(this).off( 'mouseleave' ); // clean up
-				hide();
-			});
-		});
-	}
-
-	/**
-	DOM structure for the Shortcuts dropdown list is different
-	Need to shift the events to the wrapper DOM rather than the $btn	
-	**/
-	function useWrapperEvents( DOMwrapper ){
-		eventObj.off( 'click mouseenter mouseleave' );
-		eventObj = DOMwrapper;
-		css.open = css.active; // wrap only has 1 class
-		useMouseEvents = true;
-		init(); // re initiate with new eventObj
-	}
-	
-	/**
-	Activity Panel needs to be fixable when the browsers is wide enough
-	(but not in oescape mode)	
-	**/
-	function fixed( b ){
-		isFixed = b;
-		if( b ){
-			$content.off( 'mouseenter mouseleave' );  		
-			show();
-		} else {
-			hide(); 
-		}
-	}
-	
-	/**
-	Group popups to stop overlapping	
-	**/
-	function inGroup( controller ){
-		isGrouped = true;
-		groupController = controller;
-	}	
-}
-
-
-
-/**
-Collapse Group
-Uses the DOM and CSS hooks
-**/
-idg.collapseGroups = function(){
-	// find and set up all collapse-groups
-	$('.collapse-group').each(function(){
-		var group = new CollapseGroup( 	$(this).find( '.collapse-group-icon .oe-i' ), 
-										$(this).find( '.collapse-group-header' ), 
-										$(this).find( '.collapse-group-content' ),
-										$(this).data('collapse') );
-	});
-	
-	function CollapseGroup( icon, header, content, initialState ){
-		var $icon = icon, 
-			$header = header, 
-			$content = content,
-			expanded = initialState == 'expanded' ? true : false;
-			
-		$icon.click(function(){
-			change();
-		});	
-	
-		$header.click(function(){
-			change();
-		});	
-		
-		function change(){
-			if(expanded){
-				$content.hide();
-			} else {
-				$content.removeClass('hidden').show();
-			}
-			
-			$icon.toggleClass('minus plus');
-			expanded = !expanded;
-		}	
-	}	
-}
-/**
-Comments
-**/
-idg.comments = function(){
-	/**
-	Comments icon is clicked on to reveal 
-	commets input field. Either:
-	1) Textarea switches places with icon button
-	2) Textarea is shown in different DOM placement  
-	**/
-	$('.js-add-comments').click(function( e ){
-		e.stopPropagation();
-		$(this).hide();
-		
-		var textAreaID = $(this).data('input');
-		if(textAreaID == 'next'){
-			$(this).next().removeClass('hidden').focus();
-		} else {
-			$(textAreaID).removeClass('hidden').focus();
-		}
-	});
-}
-/**
-Load content as Overlay
-- Eyedraw App
-- Add New Event	
-@param {btn} - ID or Class of btn 
-@param {phpToLoad} - PHP file name 
-@param {closeBtnID} - ID of close button in overlay content
-@param {callBack} - Optional Callback
-**/
-idg.overlayPopup = function( btn, phpToLoad, closeBtnID, callBack ){
-	
-	// check DOM exists
-	if( $(btn).length ){
-		
-		$(btn).click(function( e ){
-			e.stopPropagation();
-			loadOverlay();
-		});
-	}
-	  	
-	/**
-	Create full screen cover using 'oe-popup-wrap'
-	CSS handles the positioning of the loaded DOM
-	**/  	
-	function loadOverlay(){
-		var $overlay = $('<div>');
-  		$overlay.addClass('oe-popup-wrap');
-  		$overlay.load('/php/v3.0/_load/' + phpToLoad,function(){
-	  		closeOverlayBtn( $(closeBtnID, this ), $(this) );
-	  		if(callBack) callBack( $overlay );
-  		});
-  		
-  		$('body').prepend($overlay);
-	}
-	
-	/**
-	Set up a close button	
-	**/
-	function closeOverlayBtn( $closeBtn, $overlay ){
-		$closeBtn.click(function(){
-		  	$overlay.remove();
-	  	});
-	}
-	
-}
-/**
-Toggle Radio Checked
-**/
-idg.toggleRadio = function(){
-	/**
-	With the L / R option as radio
-	we need to be able to toggle there
-	checked state
-	**/
-	$('.js-toggle-radio-checked').each(function(){
-		var checked = true;
-		$(this).click( function(){
-			$(this).prop('checked', checked);
-			checked = !checked;
-		});
-	});
-}
-/*
-Basic tooltip functionality. Quick for IDG demo
-*/
-idg.tooltips = function(){
-	$('.js-has-tooltip').hover(
-		function(){
-			var text = $(this).data('tooltip-content');
-			var offset = $(this).offset();
-			var html = '<div class="oe-tooltip" style="position:fixed; left:'+(offset.left + 20)+'px; top:'+(offset.top + - 10)+'px;">'+ text +'</div>';
-			$(this).data( "tooltip", html );
-			$('body').append(html);
-		},
-		function(){
-			$('body').find( ".oe-tooltip" ).remove();
-		}
-	);	
 }
