@@ -1,0 +1,8 @@
+// <textarea>
+// default set up for all textareas
+textarea {
+	padding:5px;
+	resize: none; // hide corner resize
+	overflow: auto; // for IE
+	word-wrap: break-word; // allow long words to break and wrap
+}

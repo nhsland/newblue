@@ -23,7 +23,7 @@ $oe-blue-light2: 		$oe-pro-blue-light2;
 $oe-blue-light3: 		$oe-pro-blue-light3;
 
 $oe-grey:				rgb(40,52,66);
-$oe-line:				rgba( #ccc,0.1 );
+$oe-line:				rgb(38,48,61); // don't use alphas, tables with td colspan 2 overlap
 
 // interaction colors
 $oe-a-blue:				rgb(0,255,255);

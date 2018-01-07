@@ -1,22 +1,25 @@
 // OE Element - Tables
+// Tables are used to layout most element data
+// to help better line up data down the element stack
 
 .main-event {
 	.element {
 		
+		// <table>
 		table {
 						
-			// for tables that have icon as actions at the end (trash)
-			// <th> should be blank but in case something is added
-			&.row-end-icon-action {
-				td:last-child, th:last-child {
+			// tables generally all require that the last cell 
+			// is aligned right
+			td:last-child, 
+			th:last-child {
 					text-align: right;
-				}
 			}
+			
 			
 			// in View mode for simple label > value lists
 			&.label-value {
 				td:first-child {
-					opacity:0.6; // this works across themes
+					opacity:0.6; // this works for both themes
 				}
 			}
 			
@@ -29,8 +32,13 @@
 			}
 			
 			th, td, {
+			
+				// the 4px indent for data provides 
+				// a valuable breathing space for the
+				// left side eye element data
+				padding:1px 0 1px 4px;  
 				@include font-size(12);
-				padding:1px 0 1px 4px;
+				
 				
 				&.nowrap {
 					width:1%;
@@ -55,17 +63,6 @@
 			td {
 				vertical-align: middle;
 				height:28px; 	
-				
-				&.nowrap {
-					width:1%;
-					white-space: nowrap;
-					padding-right:10px;
-				}
-				
-				&.center {
-					text-align: center;
-					padding:0 10px;
-				}
 				
 				textarea {
 					vertical-align: middle; // ensure correct vertical alignment in <td>

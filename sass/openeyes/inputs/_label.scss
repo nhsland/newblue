@@ -1,0 +1,36 @@
+// Labels
+// used as a wrapper around inputs 
+// and next to inputs
+
+.label,
+label {
+
+	// assuming thats labels will only
+	// be used next to an input:
+	margin-right:10px;
+	
+	&.inline {
+		display: inline-block;
+	}
+	
+	// wrap and visually group label with input
+	&.highlight {
+		padding:3px 6px; 
+		margin-right: 0; 
+		background:$oe-user-inputs;
+		border-radius:3px;
+		cursor:pointer;
+		
+		input {
+			margin-right:5px; // pad between input - text
+		}
+		
+		&:hover, &:focus, &:active {
+			background:$oe-blue-light;
+		}
+	}
+
+	.required {
+		color: #f00;
+	}
+}

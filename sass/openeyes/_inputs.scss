@@ -1,0 +1,23 @@
+// OE Data Inputs
+// default setup for html inputs: 
+input, textarea, select {
+	border:0;	
+	outline:none;
+	
+	@include font-size(12);
+	color: $oe-user-input-text;
+	background-color: $oe-user-inputs;
+	
+	// if used in a OE UI themed area use this class
+	// used in Allergies & Risk in the patient popup
+	&.pro-theme {
+		color: $oe-pro-user-input-text;
+		background-color: $oe-pro-user-inputs;
+	}	
+}
+
+@import "inputs/label";
+@import "inputs/input";
+@import "inputs/textarea";
+@import "inputs/select";
+

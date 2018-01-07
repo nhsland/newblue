@@ -1,0 +1,23 @@
+// <select>
+// default set up for all selects
+select {
+	// selects can not be padded but height 
+	// can be set. This feels a bit hacky but
+	// it achieves the visual goal of getting
+	// <input> and <selects> looking the same 
+	height:24px;
+	
+	&.inline {
+		width: auto;
+	}
+	
+	&.fixed-width {
+		width: 110px; // old css v2.0 (not used?)
+	}
+	
+	@media print {
+		// Fixed Chrome print bug when selects have transparent background.
+		// See: https://code.google.com/p/chromium/issues/detail?id=282918
+		background: #fff !important;
+	}
+}
