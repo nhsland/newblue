@@ -6,16 +6,23 @@
 	position:relative;
 	background:$oe-grey;
 	padding:0 10px 0 0;
-
-	.title {
+	
+	.nav-title {
 		position: absolute;
 		top:0;
 		right:60px;
+		height:$oe-event-header-height;
+		
+		display:flex;
+		align-items: center;
+	}
+
+	.title {
 		color:$oe-text-light;
 		text-transform: uppercase;
 		@include font-size(24);
 		font-weight:200;
-		line-height:$oe-event-header-height;
+		margin:0 25px 0 0; 
 	}
 	
 	// create 'tab' buttons

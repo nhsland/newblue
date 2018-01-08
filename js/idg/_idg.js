@@ -79,6 +79,9 @@ idg.init = function(){
 	// Toggle Radio Buttons R / L
 	idg.toggleRadio();
 	
+	// OEscape exit button
+	oes.oescapeExit();
+	
 										
 };
 

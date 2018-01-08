@@ -79,6 +79,9 @@ idg.init = function(){
 	// Toggle Radio Buttons R / L
 	idg.toggleRadio();
 	
+	// OEscape exit button
+	oes.oescapeExit();
+	
 										
 };
 
@@ -1008,10 +1011,19 @@ OEscape
 var oes = {
 	
 	init:function(){
-		// exit oescape and go back to previous page
+		// exit oescape and go back to last viewed (non-oes) page
 		$('#js-exit-oescape').click( function(){
-			window.location = document.referrer; // exit and return to previous page
+			window.location = localStorage.getItem("lastPage");
 		});
+	},
+	
+	oescapeExit:function(){
+	
+		var href = window.location.href;
+		
+		if(href.includes("oescape") == false ){
+			localStorage.setItem( "lastPage",href ); 
+		}
 	}
 }
 /**
@@ -1182,9 +1194,9 @@ idg.patientPopups = {
 		var quicklook 		= new idg.NavBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
 		var demographics 	= new idg.NavBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
 		var risks 			= new idg.NavBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
-		var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
+		// var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
 		
-		var all = [ quicklook, demographics, risks, tasks ];
+		var all = [ quicklook, demographics, risks ];
 		
 		for( pBtns in all ) {
 			all[pBtns].inGroup( this ); // register group with PopupBtn 
@@ -1578,6 +1590,15 @@ idg.examElementSearchPopup = function(){
 	}		
 }
 /*
+Sidebar Elements
+- setup as selected
+*/
+idg.sidebarElements = function(){
+
+	
+}
+
+/*
 Sidebar Events Quicklook & Quickview
 - Quicklook: Event Title and Message
 - Quickview: Popup with event Screenshot
@@ -1772,6 +1793,8 @@ idg.collapseGroups = function(){
 			$header = header, 
 			$content = content,
 			expanded = initialState == 'expanded' ? true : false;
+		
+		if(expanded == false) $content.removeClass('hidden').hide();	
 			
 		$icon.click(function(){
 			change();
@@ -1785,7 +1808,7 @@ idg.collapseGroups = function(){
 			if(expanded){
 				$content.hide();
 			} else {
-				$content.removeClass('hidden').show();
+				$content.show();
 			}
 			
 			$icon.toggleClass('minus plus');

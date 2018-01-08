@@ -12,9 +12,9 @@ idg.patientPopups = {
 		var quicklook 		= new idg.NavBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
 		var demographics 	= new idg.NavBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
 		var risks 			= new idg.NavBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
-		var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
+		// var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
 		
-		var all = [ quicklook, demographics, risks, tasks ];
+		var all = [ quicklook, demographics, risks ];
 		
 		for( pBtns in all ) {
 			all[pBtns].inGroup( this ); // register group with PopupBtn 

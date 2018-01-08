@@ -13,6 +13,7 @@ $oe-sidebar-event-height:19px;
 }
 
 // VIEW states
+@import "sidebar/oescape";
 @import "sidebar/view";
 @import "sidebar/events";
 @import "sidebar/quicklook";

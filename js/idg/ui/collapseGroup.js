@@ -16,6 +16,8 @@ idg.collapseGroups = function(){
 			$header = header, 
 			$content = content,
 			expanded = initialState == 'expanded' ? true : false;
+		
+		if(expanded == false) $content.removeClass('hidden').hide();	
 			
 		$icon.click(function(){
 			change();
@@ -29,7 +31,7 @@ idg.collapseGroups = function(){
 			if(expanded){
 				$content.hide();
 			} else {
-				$content.removeClass('hidden').show();
+				$content.show();
 			}
 			
 			$icon.toggleClass('minus plus');

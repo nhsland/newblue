@@ -96,7 +96,7 @@
 	// position by eye
 	// position and size icons
 	// position by eye
-	.patient-tasks {
+	.patient-lightening-viewer {
 		right:0;	
 		.icon {
 			width:15px;  
@@ -104,17 +104,8 @@
 		}
 	}
 	
-	
-	.patient-lightening-viewer {
-		right:25px;	
-		.icon {
-			width:15px;  
-			height:15px;
-		}
-	}
-	
 	.patient-quicklook {
-		right:50px;	
+		right:30px;	
 		.icon {
 			width:15px;  
 			height:15px;
@@ -122,7 +113,7 @@
 	}
 	
 	.patient-demographics {
-		right:75px;
+		right:58px;
 		padding-bottom:3px; // use pad to increase hitarea.
 		.icon {
 			width:18px;  
@@ -131,7 +122,7 @@
 	}
 	
 	.patient-allergies-risks {
-		right:115px;
+		right:105px;
 	
 		display:flex;
 		align-items:center;

@@ -5,13 +5,13 @@
     width: 6px;
 }
 ::-webkit-scrollbar-track {  
-	background: tint( $html-bg,2 );
+	background: tint( $html-bg,10 );
 }
 ::-webkit-scrollbar-track-piece { 
-	background: tint( $html-bg,2 );
+	background: tint( $html-bg,10 );
 }
 ::-webkit-scrollbar-thumb { 
-	background-color: $oe-text-light;
+	background-color: $oe-pro-text-light;
 }
 
 // colours for scrollbars (chrome) in EyeDraw App
@@ -22,6 +22,9 @@
 	}
 	::-webkit-scrollbar-track-piece { 
 		background: tint( $oe-ed-bg,30 );
+	}
+	::-webkit-scrollbar-thumb { 
+		background-color: shade( $oe-ed-bg,30 );;
 	}
 	
 }

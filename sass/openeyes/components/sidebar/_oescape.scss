@@ -1,0 +1,75 @@
+// OE Sidebar 
+// Oescape 2 letter blocks (i.e. GL for Glaucoma)
+// I think there are 14 approx
+// used in the OES header
+
+// <ul>
+.oescapes {
+	margin:0 0 0 6px;
+	
+	// <li>
+	.tag {
+		display: inline-block;
+		
+		a {
+			display:block;
+			height:28px;
+			width:28px; 
+			margin:0 2px 2px 0;
+			
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			
+			@include font-size(14);
+			font-weight: 300;
+			color:$oe-pro-text-light;
+			background:$oe-pro-blue-dark; 
+		
+			// set up states
+			&.active {					
+				&:hover, &:focus, &:active {
+					color:#fff;
+					background:$oe-btn-blue;
+				}
+			}
+			
+			&.selected {
+				color:$oe-pro-text-highlight;
+			}
+			
+			
+			&.inactive {
+				opacity:0.5;
+				cursor: default;
+			}
+			
+		}
+	}
+}
+	
+	
+	// <li>
+	// there was supspecialties
+	// but now it's oescape blocks
+	//
+	//.subspecialty {
+	//	display:block;
+	//	margin:0 0 2px 0; 	
+	//	a {
+	//		padding-left: 10px;
+	//		height:$oe-sidebar-sub-height;
+	//		line-height:$oe-sidebar-sub-height;		
+	//		.tag {
+	//			position: absolute;
+	//			top:1px;
+	//			right:1px;
+	//		}
+	//	}
+	//}
+	
+	
+
+
+
+
