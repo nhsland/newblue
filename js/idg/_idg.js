@@ -16,8 +16,8 @@ idg.init = function(){
 	var shortcuts 	= new idg.NavBtnPopup( 'shortcuts', $('#js-nav-shortcuts-btn'), $('#js-nav-shortcuts-subnav') ).useWrapper( $('#js-nav-shortcuts') );
 	var activity 	= new idg.NavBtnPopup( 'activity', $('#js-nav-activity-btn'), $('#js-activity-panel') );
 	
-	// Fix Activity Panel if device width is wide enough (but don't fix in OEscape)
-	if( ! $('#oescape-layout').length ){
+	// Fix Activity Panel if design allows it to be fixable!
+	if( $('#js-nav-activity-btn').data('fixable') == true ){
 		checkBrowserSize();
 		
 		$( window ).resize(function() {
