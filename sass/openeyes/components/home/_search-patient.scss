@@ -1,0 +1,45 @@
+// Search for Patient (home)
+// 
+
+.oe-search-patient {
+	display:flex;
+	justify-content: center;	
+	height:$oe-event-header-height * 2;
+	background:$oe-blue-dark3;
+	margin:0 0 20px 0;
+	
+	
+	.search-patient {
+		width:600px;
+		padding:15px 0 0 0;
+		background:transparent url( svg-path('backgrounds/patient-watermark') ) top -4px right 10px no-repeat;
+		background-size:120px 120px;
+		
+		// increase the defaults for input and button
+		input {
+			border-radius: 0;
+			height: 36px;
+			width:365px;
+			@include font-size(18);
+			font-weight:400;
+			border-bottom:1px solid $oe-text-light;
+		}
+		
+		button {
+			@include font-size(16);
+			height: 36px;
+			padding:0 15px;
+			margin:0 0 0 5px;
+		}
+	}
+	
+	.find-by {
+		margin:6px 0 0 0;
+		@include font-size(11);
+		font-weight: 400;
+		color:$oe-pro-text-light;
+		
+	}
+}
+
+

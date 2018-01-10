@@ -1,0 +1,62 @@
+// Home - actions
+// 
+
+.home-messages {
+	
+	// overwrite defaults
+	a {
+		color:inherit;
+		&:hover, &:focus, &:active, &.selected {
+			color:$oe-text-highlight;
+		}
+	}
+	
+	.actions {
+		padding:0 20px;
+		border-right:1px solid $oe-blue-light2;
+		width:250px;
+		
+		// user name
+		.user {
+			@include font-size(20);
+			font-weight:300;
+			color:$oe-text;
+			margin:0 0 20px 0;
+		}
+		
+		// <button>
+		.send-message {
+			margin:0 0 20px 0;
+		}
+		
+		// <ul> filters (unread etc)
+		.filters {	
+			li {
+				@include font-size(14);
+				color:$oe-text-light;
+				padding:0 0 12px 0;
+				
+				// overwrite defaults
+				a {
+					.count {
+						@include font-size(12);
+						padding:0 0 0 5px;
+					}
+				}
+			}
+		}
+		
+		// search
+		.search-messages {
+			
+			h3 {
+				@include font-size(14);
+				font-weight: 300;
+				color:$oe-blue-light2;
+				padding:10px 0 5px 0;
+			}
+		}
+		
+	}
+}
+

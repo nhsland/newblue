@@ -50,9 +50,11 @@
 	
 	&.hint {
 		&.green {
+			color: rgba(255,255,255,0.8);
 			background: $oe-btn-green-hint;
 		}
 		&.red {
+			color: rgba(255,255,255,0.8);
 			background: $oe-btn-red-hint;
 		}
 	}

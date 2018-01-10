@@ -23,7 +23,7 @@
 			
 			@include font-size(14);
 			font-weight: 300;
-			color:$oe-pro-text-light;
+			color:$oe-pro-text;
 			background:$oe-pro-blue-dark; 
 		
 			// set up states
@@ -38,9 +38,8 @@
 				color:$oe-pro-text-highlight;
 			}
 			
-			
 			&.inactive {
-				opacity:0.5;
+				opacity:0.4;
 				cursor: default;
 			}
 			

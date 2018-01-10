@@ -18,6 +18,7 @@
 	-ms-grid-rows: $oe-header-height $oe-event-header-height 1fr;		
 	
 	// CSS3:
+	// Grid is setup for primary usage (SEM pages)
 	display: grid;
 	grid-template-columns: $oe-event-sidebar-width auto;
 	grid-template-rows: $oe-header-height $oe-event-header-height auto;	
@@ -28,7 +29,7 @@
 		
 	width:100vw;
 	height:100vh;
-	max-height:100vh; // for Edge < 16 ?
+	max-height:100vh; // I think required for Edge < 16. Needs testing!
 			
 	// grid items MUST be direct descendants
 	// Logo, Patient, User:
@@ -68,18 +69,20 @@
 		overflow-y:auto;
 	}
 	
+	// --------------------------------------- Restrict Widths
+	
 	// 2 fix widths to better handle complex data layouts
-	.event-header, .lightening-viewer,
+	.event-header, 
+	.lightening-viewer,
 	.main-event {
 		width:$oe-event-main-default-width;
 		@include media($oe-extended-browser-size){
 			width:$oe-event-main-extended-width;
 		}
 	}
-	
-	// full width header and content must allow for the 
+	// full width header and content allows for the 
 	// activity panel which is fixed at large resolutions. 
-	// JS controls the fixing and it's fixed at 1800px;
+	// JS controls the fixing: fixed at 1800px;
 	.oe-full-header, .oe-full-content {
 		@include media($oe-browser-size-activity-panel-fixed){
 			width: $oe-browser-size-activity-panel-fixed - $oe-activity-panel-width;
@@ -120,8 +123,21 @@
 		overflow-y:auto;
 	}
 	
+	// --------------------------------------- Home 
+	.oe-home {
+		// for Edge < 16
+		-ms-grid-column: 1; 
+		-ms-grid-row: 1;
+		-ms-grid-column-span: 2;
+		-ms-grid-row-span: 2;
+		// CSS3
+		grid-area: 2 / 1 / 4 / 3 ; 
+		overflow-y:auto;
+	}
+	
+	
 	// --------------------------------------- OEscape
-	// --------------------------------------- OE Full width
+	// --------------------------------------- OE Full width (allows for activity panel to be fixed)
 	// Oescape & OE Full Width
 	// full width header
 	.oescape-header, .oe-full-header {
@@ -141,6 +157,6 @@
 		// CSS3
 		grid-area: 3 / 1 / 4 / 3 ; 
 		overflow-y:auto;
-	}
+	}	
 	
 }

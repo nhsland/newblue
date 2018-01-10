@@ -1,0 +1,9 @@
+// OE Homepage
+
+.oe-home {
+	background:$oe-blue-dark2;	
+}
+
+@import "home/search-patient"; 
+@import "home/messages";
+@import "home/actions";

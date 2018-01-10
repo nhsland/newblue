@@ -26,15 +26,17 @@
 @import "components/patient-popups";    	// Patient: Quicklook & Demographics (summary)
 /* Full width layout */
 @import "components/full-width";			// Full width layout for clinic list, etc
+/* Home */
+@import "components/home";					// Homepage
 /* SEM Event Episodes */
 @import "components/sem-header";    		// event header
 @import "components/add-new-event";    		// add new event popup
-@import "components/sem-sidebar-header";  // event sidebar header (Add Event)
+@import "components/sem-sidebar-header";  	// event sidebar header (Add Event)
 @import "components/sem-sidebar";    		// event sidebar
-@import "components/sem-quickview-panel"; // event fast quickview preview panel
-@import "components/sem-main";    		// event main area
-@import "components/sem-elements";    	// event elements
-@import "components/eyedraw";    				// eyedraw app (popup)
+@import "components/sem-quickview-panel"; 	// event fast quickview preview panel
+@import "components/sem-main";    			// event main area
+@import "components/sem-elements";    		// event elements
+@import "components/eyedraw";    			// eyedraw app (popup)
 @import "components/misc/element-search-popup"; // element search filter popup - used in Examination Edit to find Elements
 /* Lightening viewer */
 @import "components/lightening-viewer";		// lightening viewer

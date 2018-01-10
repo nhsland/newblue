@@ -82,6 +82,9 @@ idg.init = function(){
 	// OEscape exit button
 	oes.oescapeExit();
 	
+	// Homepage Message Expand Contract	
+	idg.homeMessageExpand();
+	
 										
 };
 

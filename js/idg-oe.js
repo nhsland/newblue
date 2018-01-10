@@ -82,6 +82,9 @@ idg.init = function(){
 	// OEscape exit button
 	oes.oescapeExit();
 	
+	// Homepage Message Expand Contract	
+	idg.homeMessageExpand();
+	
 										
 };
 
@@ -1006,6 +1009,40 @@ clinic.updateTasks = function( ){
 	$('#filter-tasks .current').text( clinic.data['tasks'].length );
 }
 /**
+Homepage Message expand / contract 	
+**/
+idg.homeMessageExpand = function(){
+	
+	if( $('.home-messages').length == 0 ) return;
+	
+	$('.js-expand-message').each(function(){
+		
+		var message = $(this).parent().parent().find('.message');
+		var expander = new Expander( $(this),
+									 message );
+	});
+	
+	function Expander( $icon, $message){
+		var expanded = false; 
+		
+		$icon.click( change );
+		
+		function change(){
+			
+			$icon.toggleClass('expand collapse');
+			
+			if(expanded){
+				$message.removeClass('expand');
+			} else {
+				$message.addClass('expand');
+			}
+			
+			expanded = !expanded;
+		}
+	}
+}
+
+/**
 OEscape 
 **/
 var oes = {
@@ -1017,10 +1054,14 @@ var oes = {
 		});
 	},
 	
-	oescapeExit:function(){
 	
+	/*
+	keep track of the last non-oescape page
+	so that you can exit oescape mode and 
+	return to last page	
+	*/
+	oescapeExit:function(){
 		var href = window.location.href;
-		
 		if(href.includes("oescape") == false ){
 			localStorage.setItem( "lastPage",href ); 
 		}

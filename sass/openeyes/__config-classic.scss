@@ -15,8 +15,9 @@ $oe-text-highlight:		rgb(0,68,187);
 // classic is based on old Eyedraw colour scheme
 $oe-blue:				rgb(245,245,250); 
 $oe-blue-dark: 			rgb(183,195,205);
-$oe-blue-dark2: 		rgb(218,230,241); 
-$oe-blue-dark3:			rgb(238,240,250);
+$oe-blue-dark1: 		$oe-blue-dark; 	// because I keep using 'dark1' instead of 'dark'
+$oe-blue-dark2: 		rgb(218,230,241);  
+$oe-blue-dark3:			rgb(148,159,168); // - exception dark3 is darker in classic
 $oe-blue-light: 		shade( $oe-blue-dark, 5% );
 $oe-blue-light2:		shade( $oe-blue-dark, 15% );
 $oe-blue-light3: 		shade( $oe-blue-dark, 25% );
