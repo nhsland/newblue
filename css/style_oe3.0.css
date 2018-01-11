@@ -2398,7 +2398,6 @@ html {
   width: 365px;
   font-size: 1.125rem;
   font-weight: 400;
-  border-bottom: 1px solid #26303d;
 }
 
 .oe-search-patient .search-patient button {
@@ -2480,10 +2479,12 @@ html {
   width: 100%;
   height: 1rem;
   overflow: hidden;
+  color: inherit;
 }
 
 .home-messages .messages .message.expand {
   height: auto;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .home-messages a {

@@ -74,9 +74,11 @@
 			width:100%;
 			height:1rem;
 			overflow: hidden;
+			color: inherit;
 			
 			&.expand {
-				height:auto;
+				height: auto;
+				color: $oe-text;
 			}
 			
 		}
