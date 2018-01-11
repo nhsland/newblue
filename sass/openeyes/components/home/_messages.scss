@@ -20,11 +20,6 @@
 			&:last-child { 
 				border-bottom: none;
 			}
-			
-			&:hover {
-				background:$oe-blue-dark1;
-			}
-			
 			// unread messages text color
 			&.unread {
 				td {
@@ -33,6 +28,12 @@
 						color:$oe-text-light;
 					}
 				}
+			}
+		}
+		
+		tbody tr {
+			&:hover {
+				background:$oe-blue-dark1;
 			}
 		}
 		
