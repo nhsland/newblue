@@ -27,8 +27,7 @@ $oe-grey:				rgb(40,52,66);
 $oe-line:				rgb(38,48,61); // don't use alphas, tables with td colspan 2 overlap
 
 // <a> links
-$oe-a-blue:				$oe-text-light;
-$oe-a-blue-hover:		rgb(0,255,255);
+$oe-a-blue-hover:		$oe-pro-text-highlight;
 
 // buttons
 $oe-btn-blue:			rgb(7,69,152);

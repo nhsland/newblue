@@ -3,14 +3,6 @@
 
 .home-messages {
 	
-	// overwrite defaults
-	a {
-		color:inherit;
-		&:hover, &:focus, &:active, &.selected {
-			color:$oe-text-highlight;
-		}
-	}
-	
 	.actions {
 		padding:0 20px;
 		border-right:1px solid $oe-blue-light2;

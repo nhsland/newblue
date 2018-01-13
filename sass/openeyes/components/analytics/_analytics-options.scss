@@ -1,0 +1,72 @@
+// OE Analytics
+// Pro theme only
+// 
+// LHS Options
+
+.analytics-options {
+	margin:20px 0 0 45px; 
+	color:$oe-pro-text-light;
+	@include font-size(12);
+	width:300px;
+	
+	h3 {
+		margin:20px 0 10px 0;
+		@include font-size(14);
+		font-weight: 300;
+		color:$oe-pro-blue-light2;
+	}
+	
+	.specialty {
+		@include font-size(20);
+		font-weight:300;
+		color:$oe-pro-text;
+		margin:20px 0 20px 0;
+	}
+	
+	// 2 level of <ul> lists
+	.charts {
+		ul {
+			margin:8px 0 10px 5px;
+			li {
+				@include font-size(12);
+				color:$oe-pro-text-light;
+				padding:0 0 8px 0;
+				
+				&:last-child {
+					padding-bottom:0;
+				}
+			}
+		}
+		
+		> ul {
+			margin:15px 0 0 0;
+		}	
+	}
+	
+	.chart-options {
+		ul {
+			li {
+				@include font-size(12);
+				color:$oe-pro-text;
+				padding:4px 0;
+				border-bottom:1px solid $oe-line;
+			}
+		}
+	}
+	
+	.date-range {
+		margin:10px 0;
+		.datepicker-range {
+			text-align: center;
+		}
+	}
+	
+	.update-chart-btn {
+		margin:10px 0 0 0;
+	}
+	
+	
+}
+
+
+

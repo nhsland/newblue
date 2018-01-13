@@ -136,11 +136,13 @@
 	}
 	
 	
-	// --------------------------------------- OEscape
 	// --------------------------------------- OE Full width (allows for activity panel to be fixed)
-	// Oescape & OE Full Width
+	// --------------------------------------- + OEscape, Analytics
+	// OE Full Width, OEscape, Analytics
 	// full width header
-	.oescape-header, .oe-full-header {
+	.oe-full-header,
+	.oescape-header,
+	.analytics-header  {
 		// for Edge < 16
 		-ms-grid-column: 1; 
 		-ms-grid-row: 2;
@@ -149,7 +151,9 @@
 		grid-area: 2 / 1 / 3 / 3 ; 
 	}
 	// & full width content area
-	.oescape, .oe-full-content {
+	.oe-full-content,
+	.oescape,
+	.analytics  {
 		// for Edge < 16
 		-ms-grid-column: 1; 
 		-ms-grid-row: 2;

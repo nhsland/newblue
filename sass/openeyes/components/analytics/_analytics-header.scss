@@ -1,0 +1,18 @@
+// OE Oescape
+// 
+// Oescape Header
+
+.analytics-header {
+	background:$oe-grey;
+	padding:0 10px 0 45px; // pad to align with logo
+	
+	.title {
+		color:$oe-text-light;
+		text-transform: uppercase;
+		@include font-size(24);
+		font-weight:200;
+	}	
+}
+
+
+

@@ -1114,11 +1114,11 @@ html {
 }
 
 a {
-  color: rgba(255, 255, 255, 0.5);
+  color: inherit;
   text-decoration: none;
 }
 
-a:hover {
+a:hover, a:focus, a:active, a.selected {
   color: cyan;
 }
 
@@ -1171,6 +1171,11 @@ strong {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
+}
+
+.flex-layout .flex-item-bottom {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .collapse-group {
@@ -1438,14 +1443,18 @@ html {
   overflow-y: auto;
 }
 
-.oe-grid .oescape-header, .oe-grid .oe-full-header {
+.oe-grid .oe-full-header,
+.oe-grid .oescape-header,
+.oe-grid .analytics-header {
   -ms-grid-column: 1;
   -ms-grid-row: 2;
   -ms-grid-column-span: 2;
   grid-area: 2 / 1 / 3 / 3;
 }
 
-.oe-grid .oescape, .oe-grid .oe-full-content {
+.oe-grid .oe-full-content,
+.oe-grid .oescape,
+.oe-grid .analytics {
   -ms-grid-column: 1;
   -ms-grid-row: 2;
   -ms-grid-column-span: 2;
@@ -1918,7 +1927,7 @@ html {
 .oe-activity-panel .msg-timeline li {
   position: relative;
   margin: 0 0 8px 0;
-  padding: 0 0 8px 0;
+  padding: 20px 0 8px 0;
   border-bottom: 1px solid #26303d;
 }
 
@@ -1946,12 +1955,13 @@ html {
   border-left: 11px solid #26303d;
 }
 
-.oe-activity-panel .msg-timeline .subject {
-  display: inline-block;
+.oe-activity-panel .msg-timeline .sender {
+  position: absolute;
+  top: 0;
+  right: 10px;
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
-  margin: 0 150px 0 80px;
 }
 
 .oe-activity-panel .msg-timeline p {
@@ -1960,15 +1970,6 @@ html {
   font-weight: 300;
   line-height: 1.4;
   margin: 0 40px 0 80px;
-}
-
-.oe-activity-panel .msg-timeline .from {
-  position: absolute;
-  top: 0;
-  right: 8px;
-  font-size: 0.6875rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
 }
 
 .patient-popup-allergies-risks,
@@ -2485,14 +2486,6 @@ html {
 .home-messages .messages .message.expand {
   height: auto;
   color: rgba(255, 255, 255, 0.8);
-}
-
-.home-messages a {
-  color: inherit;
-}
-
-.home-messages a:hover, .home-messages a:focus, .home-messages a:active, .home-messages a.selected {
-  color: cyan;
 }
 
 .home-messages .actions {
@@ -4908,6 +4901,102 @@ table.oe-clinic-list td.center {
   font-weight: 200;
   color: rgba(255, 255, 255, 0.5);
   text-align: right;
+}
+
+/* Analytics */
+.analytics-header {
+  background: #283442;
+  padding: 0 10px 0 45px;
+}
+
+.analytics-header .title {
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+
+.analytics-options {
+  margin: 20px 0 0 45px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+  width: 300px;
+}
+
+.analytics-options h3 {
+  margin: 20px 0 10px 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #626d7b;
+}
+
+.analytics-options .specialty {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 20px 0 20px 0;
+}
+
+.analytics-options .charts ul {
+  margin: 8px 0 10px 5px;
+}
+
+.analytics-options .charts ul li {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0 0 8px 0;
+}
+
+.analytics-options .charts ul li:last-child {
+  padding-bottom: 0;
+}
+
+.analytics-options .charts > ul {
+  margin: 15px 0 0 0;
+}
+
+.analytics-options .chart-options ul li {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 4px 0;
+  border-bottom: 1px solid #26303d;
+}
+
+.analytics-options .date-range {
+  margin: 10px 0;
+}
+
+.analytics-options .date-range .datepicker-range {
+  text-align: center;
+}
+
+.analytics-options .update-chart-btn {
+  margin: 10px 0 0 0;
+}
+
+.analytics-charts {
+  margin: 20px 0 0 0;
+  width: calc(100% - 400px);
+}
+
+.analytics-charts .highcharts-background {
+  fill: #101925;
+}
+
+.analytics-charts .highcharts-root .highcharts-color-50 {
+  fill: cyan;
+}
+
+.analytics-charts .highcharts-root .highcharts-color-51 {
+  fill: #369bd7;
+}
+
+.analytics-charts .highcharts-root .highcharts-color-52 {
+  fill: #2273b9;
+}
+
+.analytics-charts .highcharts-root .highcharts-color-53 {
+  fill: #185587;
 }
 
 /* ------------------------ */

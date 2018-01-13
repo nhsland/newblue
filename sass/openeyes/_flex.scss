@@ -23,4 +23,9 @@
 	&.flex-stretch {
 		align-items:stretch;		// fill vertical space
 	}
+	
+	// align of item in flex container
+	.flex-item-bottom {
+		align-self: flex-end;
+	}
 }

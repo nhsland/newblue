@@ -1,0 +1,45 @@
+// OE Oescape
+// 
+// Highcharts
+
+.analytics-charts {
+	margin:20px 0 0 0; 
+	width: calc(100% - 400px);
+	
+	// Highchart CSS is setup for OEscape by defatul
+	// see: oescape/highcharts
+	// Here we overwrite a few things to bring the 
+	// look in line with Analyitcs
+	
+	.highcharts-background {
+		fill: $html-pro-bg;
+	}
+	
+	// colorIndexs for series data in Analytics
+	.highcharts-root {
+		// colorIndexes for Analytics Data
+		.highcharts-color-50 {
+			fill: rgb(0,255,255); 
+		}
+		.highcharts-color-51 {
+			fill: rgb(54,155,215); 
+		}
+		
+		.highcharts-color-52 {
+			fill: rgb(34,115,185); 
+		}
+		
+		.highcharts-color-53 {
+			fill: rgb(24,85,135); 
+		}
+		
+		
+	}
+	
+	
+	
+	
+}
+
+
+
