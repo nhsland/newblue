@@ -1,11 +1,11 @@
 // General UI Icons
 // SVG icons
-// standard size is 19px x 19px
-// small: 13px, medium: 16px.
+// default size is 19px x 19px
+// also: small:13px and medium:16px.
 // 
 
 // DOM 
-// <i class="oe-i [small | medium] plus"></i>
+// <i class="oe-i [name] [small|medium] "></i>
 
 .oe-i {
 	display:inline-block;
@@ -21,6 +21,7 @@
 	background-repeat: no-repeat;
 	background-position: center center;
 	
+	// reduce the ICON size ONLY:
 	// small icon
 	&.small-icon {
 		background-size: $size-small;
@@ -44,9 +45,8 @@
 		background-size: $size-medium;
 	}
 	
-	
-	// icon is used 'inline' with text (e.g. info)
-	&.inline {	
+	// used 'inline' to 'pad' out the icon
+	&.pad {	
 		margin:0 4px;		
 	}
 	

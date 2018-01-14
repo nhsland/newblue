@@ -4,10 +4,6 @@
  * Highchart options (data and positioning only) - all UI stylng is handled in CSS
 */
 
-
-// Histogram for MR
-var appointmentsData = [0,0,0,0,0,0,0,2,5,7,15,30,67,78,45,34,23,10,35,34,67,3,14,20,24,15,16,17,12,14,15,10,9,5,7,4,5,6,3,1,0,0,0,0,0];
-
 var optionsAnalytics = {
 	chart: {
 		className: 'oes-chart-analytics',
@@ -26,7 +22,7 @@ var optionsAnalytics = {
 	
 	xAxis: {
 		title: {
-			text: 'Days',
+			text: 'Time',
 		},
 
 		labels: {  
@@ -54,7 +50,7 @@ var optionsAnalytics = {
         name: 'Data',
         type: 'column',
         colorIndex:51,
-        data: appointmentsData,
+        data: data,
         id: 's1',
     }]
 };

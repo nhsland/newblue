@@ -47,8 +47,8 @@ clinic.setupDemoUI = function(){
 	Flag some Risks / Allergies	
 	**/
 	var tr = $( '#patient-'+1008002 );
-	tr.find('.js-clinic-quicklook').append('<i class="oe-i triangle active inline small">');
+	tr.find('.js-clinic-quicklook').append('<i class="oe-i triangle active small-icon">');
 	var tr = $( '#patient-'+ 1897143 );
-	tr.find('.js-clinic-quicklook').append('<i class="oe-i triangle active inline small">');
+	tr.find('.js-clinic-quicklook').append('<i class="oe-i triangle active small-icon">');
 	
 }

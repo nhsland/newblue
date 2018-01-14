@@ -1,4 +1,4 @@
-// OE Element - Flex layouts
+// OE Element - CSS Flex layouts
 
 .flex-layout {
 	display:flex;
@@ -7,25 +7,25 @@
 	
 	// horizontal alignments
 	&.flex-right {
-		justify-content:flex-end; 	// group items to the right
+		justify-content:flex-end; 		// group items to the right
 	}
 	&.flex-left {
-		justify-content:flex-start; // group items to the left
+		justify-content:flex-start; 	// group items to the left
 	}
 	&.flex-center {
-		justify-content:center; // group items to the left
+		justify-content:center; 		// group items in the center
 	}
 	
 	// verical alignments
 	&.flex-top {
-		align-items:flex-start;		// vertical top
+		align-items:flex-start;			// vertical top
 	}
 	&.flex-stretch {
-		align-items:stretch;		// fill vertical space
+		align-items:stretch;			// fill vertical space
 	}
 	
-	// align of item in flex container
+	// direct child items of Flex container
 	.flex-item-bottom {
-		align-self: flex-end;
+		align-self: flex-end;			// item - bottom 
 	}
 }

@@ -10,10 +10,12 @@ $oe-sidebar-event-height:19px;
 	padding:2px 1px 50px 0;
 	background: $html-pro-bg;
 	
+	.oescape-icons {
+		margin:0 0 0 6px;
+	}
 }
 
 // VIEW states
-@import "sidebar/oescapes";
 @import "sidebar/view";
 @import "sidebar/events";
 @import "sidebar/quicklook";

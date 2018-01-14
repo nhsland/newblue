@@ -271,7 +271,7 @@ textarea {
   background-size: 16px;
 }
 
-.oe-i.inline {
+.oe-i.pad {
   margin: 0 4px;
 }
 
@@ -1246,6 +1246,11 @@ button.hint.red, .button.hint.red, input[type="submit"].hint.red {
   background: #560808;
 }
 
+button.hint.blue, .button.hint.blue, input[type="submit"].hint.blue {
+  color: rgba(255, 255, 255, 0.8);
+  background: #04295b;
+}
+
 button.green:hover, button.green:focus, button.green:active, .button.green:hover, .button.green:focus, .button.green:active, input[type="submit"].green:hover, input[type="submit"].green:focus, input[type="submit"].green:active {
   color: #fff;
   background: #0e5e23;
@@ -1286,6 +1291,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 .warning-flag-bg {
   color: rgba(255, 255, 255, 0.8);
   background-color: #751e00;
+  padding: 5px 8px;
 }
 
 .oe-tooltip {
@@ -1303,9 +1309,9 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   top: 0;
   left: 0;
   z-index: 70;
+  background: rgba(16, 25, 37, 0.6);
   height: 100vh;
   width: 100vw;
-  background: rgba(16, 25, 37, 0.6);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2383,12 +2389,11 @@ html {
           justify-content: center;
   height: 76px;
   background: #172332;
-  margin: 0 0 20px 0;
 }
 
 .oe-search-patient .search-patient {
   width: 600px;
-  padding: 15px 0 0 0;
+  padding: 14px 0 0 0;
   background: transparent url("../svg/in-css/backgrounds/patient-watermark.svg") top -4px right 10px no-repeat;
   background-size: 120px 120px;
 }
@@ -2488,35 +2493,35 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.home-messages .actions {
+.home-messages .message-actions {
   padding: 0 20px;
   border-right: 1px solid #626d7b;
   width: 250px;
 }
 
-.home-messages .actions .user {
+.home-messages .message-actions .user {
   font-size: 1.25rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
   margin: 0 0 20px 0;
 }
 
-.home-messages .actions .send-message {
+.home-messages .message-actions .send-message {
   margin: 0 0 20px 0;
 }
 
-.home-messages .actions .filters li {
+.home-messages .message-actions .filter-messages li {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.5);
   padding: 0 0 12px 0;
 }
 
-.home-messages .actions .filters li a .count {
+.home-messages .message-actions .filter-messages li a .count {
   font-size: 0.75rem;
   padding: 0 0 0 5px;
 }
 
-.home-messages .actions .search-messages h3 {
+.home-messages .message-actions .search-messages h3 {
   font-size: 0.875rem;
   font-weight: 300;
   color: #626d7b;
@@ -2804,46 +2809,8 @@ html {
   background: #101925;
 }
 
-.oescapes {
+.sidebar .oescape-icons {
   margin: 0 0 0 6px;
-}
-
-.oescapes .tag {
-  display: inline-block;
-}
-
-.oescapes .tag a {
-  display: block;
-  height: 28px;
-  width: 28px;
-  margin: 0 2px 2px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-size: 0.875rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
-  background: #182535;
-}
-
-.oescapes .tag a.active:hover, .oescapes .tag a.active:focus, .oescapes .tag a.active:active {
-  color: #fff;
-  background: #074598;
-}
-
-.oescapes .tag a.selected {
-  color: cyan;
-}
-
-.oescapes .tag a.inactive {
-  opacity: 0.4;
-  cursor: default;
 }
 
 .sidebar .event {
@@ -3963,6 +3930,44 @@ html {
 }
 
 /* OEscape */
+.oescape-icons .tag {
+  display: inline-block;
+}
+
+.oescape-icons .tag a {
+  display: block;
+  height: 28px;
+  width: 28px;
+  margin: 0 2px 2px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  background: #182535;
+}
+
+.oescape-icons .tag a.active:hover, .oescape-icons .tag a.active:focus, .oescape-icons .tag a.active:active {
+  color: #fff;
+  background: #074598;
+}
+
+.oescape-icons .tag a.selected {
+  color: cyan;
+}
+
+.oescape-icons .tag a.inactive {
+  opacity: 0.4;
+  cursor: default;
+}
+
 .oescape-header {
   position: relative;
   background: #283442;
@@ -4955,7 +4960,7 @@ table.oe-clinic-list td.center {
   margin: 15px 0 0 0;
 }
 
-.analytics-options .chart-options ul li {
+.analytics-options .chart-filters ul li {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
   padding: 4px 0;
@@ -4972,6 +4977,14 @@ table.oe-clinic-list td.center {
 
 .analytics-options .update-chart-btn {
   margin: 10px 0 0 0;
+}
+
+.analytics-options .extra-actions {
+  margin: 20px 0 0 0;
+}
+
+.analytics-options .extra-actions button {
+  margin: 0 0 8px 0;
 }
 
 .analytics-charts {

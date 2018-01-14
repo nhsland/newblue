@@ -2,14 +2,14 @@
 //
 
 html {
-	// Experimented with this and decided to level it set to default value	
-	// However, may return to this in the future... so leaving it here
-	-webkit-font-smoothing: subpixel-antialiased; // this is the default in Chrome, including it incase it helps IE.
+	// Experimented with this and decided to leave it set to default values	
+	// but may return to it in the future... so leaving it here
+	-webkit-font-smoothing: subpixel-antialiased; // this is the default setting in Chrome, including it incase it helps IE.
 	//-webkit-font-smoothing: antialiased; // this is crisper but looks shit
 	// text-rendering: optimizeLegibility; // default 'auto'
 }
 
-// default
+// default <a>
 a {
 	color:inherit;
 	text-decoration: none;
@@ -18,7 +18,7 @@ a {
 	}
 }
 
-// deliberately setup to be too big. 
+// deliberately all setup to be too big. 
 // all typography should be controlled specifically
 h1,h2,h3,h4,h5,h6,p {
 	@include font-size(16); // default 16px / 1rem

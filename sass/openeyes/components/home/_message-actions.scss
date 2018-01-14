@@ -1,9 +1,10 @@
-// Home - actions
-// 
+// OE Home
+// Message actions
 
 .home-messages {
 	
-	.actions {
+	.message-actions {
+		
 		padding:0 20px;
 		border-right:1px solid $oe-blue-light2;
 		width:250px;
@@ -22,7 +23,7 @@
 		}
 		
 		// <ul> filters (unread etc)
-		.filters {	
+		.filter-messages {	
 			li {
 				@include font-size(14);
 				color:$oe-text-light;
@@ -48,7 +49,6 @@
 				padding:10px 0 5px 0;
 			}
 		}
-		
 	}
 }
 

@@ -1,6 +1,7 @@
 // OE alert boxes
 // 
 // Standardised from v2.0 UI
+// Hard to know how many of these will be required in OEv3
 
 .alert-box {
 	padding:10px;
@@ -37,8 +38,9 @@
 	}
 }
 
-// warning text
+// warning text bg
 .warning-flag-bg {
 	color:$oe-pro-text;
 	background-color:$oe-warning-orange;
+	padding:5px 8px;
 }
