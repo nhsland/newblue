@@ -3,10 +3,10 @@
 // Highcharts
 
 .analytics-charts {
-	margin:20px 0 0 0; 
+	margin:15px 20px 0 0; 
 	width: calc(100% - 400px);
 	
-	// Highchart CSS is setup for OEscape by defatul
+	// Highchart CSS is setup for OEscape by default
 	// see: oescape/highcharts
 	// Here we overwrite a few things to bring the 
 	// look in line with Analyitcs
@@ -33,12 +33,20 @@
 			fill: rgb(24,85,135); 
 		}
 		
-		
+		.highcharts-tracker {
+			fill: rgb(255,0,0);
+		}
 	}
 	
+	// add line to y axis
+	.highcharts-yaxis {
+		stroke: $oe-hs-axes;
+		.highcharts-tick {	// axis line increments
+			stroke: $oe-hs-axes;
+		}
+	}
 	
-	
-	
+
 }
 
 

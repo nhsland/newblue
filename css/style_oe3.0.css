@@ -971,6 +971,26 @@ ul {
   list-style-position: inside;
 }
 
+ul.inline-list li {
+  display: inline-block;
+  margin: 0 15px 0 0;
+}
+
+ul.dslash-list li {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 0 0 0 30px;
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19"><style> polygon{ fill:#999; opacity:0.8; }</style><polygon points="16.52 3.56 13.28 3.56 8.48 15.44 11.72 15.44 16.52 3.56"/><polygon points="10.52 3.56 7.28 3.56 2.48 15.44 5.72 15.44 10.52 3.56"/></svg>');
+}
+
+ul.dslash-list li:first-child {
+  padding: 0 0 0 0;
+  background-image: none;
+}
+
 ol {
   list-style-position: inside;
 }
@@ -1119,6 +1139,10 @@ a {
 }
 
 a:hover, a:focus, a:active, a.selected {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+a.selected {
   color: cyan;
 }
 
@@ -3368,6 +3392,11 @@ html {
   min-width: 400px;
 }
 
+.oe-add-select-search.align-left {
+  right: auto;
+  left: 0;
+}
+
 .oe-add-select-search.auto-width {
   width: auto;
 }
@@ -3401,7 +3430,9 @@ html {
 }
 
 .oe-add-select-search table.select-options th {
+  text-align: left;
   font-size: 0.6875rem;
+  font-weight: 300;
   padding: 0 0 5px 0;
 }
 
@@ -3430,7 +3461,6 @@ html {
   padding: 2px 8px 2px 8px;
   margin: 0 0 2px 0;
   color: rgba(255, 255, 255, 0.8);
-  border-radius: 3px;
   background: #32404d;
 }
 
@@ -4939,7 +4969,18 @@ table.oe-clinic-list td.center {
   font-size: 1.25rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
-  margin: 20px 0 20px 0;
+  margin: 20px 0 10px 0;
+}
+
+.analytics-options .service {
+  position: relative;
+  margin: 10px 0 20px 0;
+}
+
+.analytics-options .service .service-selected {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
 }
 
 .analytics-options .charts ul {
@@ -4960,7 +5001,11 @@ table.oe-clinic-list td.center {
   margin: 15px 0 0 0;
 }
 
-.analytics-options .chart-filters ul li {
+.analytics-options .chart-filters {
+  position: relative;
+}
+
+.analytics-options .chart-filters .filters-selected li {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
   padding: 4px 0;
@@ -4988,7 +5033,7 @@ table.oe-clinic-list td.center {
 }
 
 .analytics-charts {
-  margin: 20px 0 0 0;
+  margin: 15px 20px 0 0;
   width: calc(100% - 400px);
 }
 
@@ -5010,6 +5055,70 @@ table.oe-clinic-list td.center {
 
 .analytics-charts .highcharts-root .highcharts-color-53 {
   fill: #185587;
+}
+
+.analytics-charts .highcharts-root .highcharts-tracker {
+  fill: red;
+}
+
+.analytics-charts .highcharts-yaxis {
+  stroke: #969696;
+}
+
+.analytics-charts .highcharts-yaxis .highcharts-tick {
+  stroke: #969696;
+}
+
+.analytics-patient-list {
+  margin: 15px 20px 0 0;
+  width: calc(100% - 400px);
+  font-size: 0.875rem;
+}
+
+.analytics-patient-list h3 {
+  margin: 20px 0 20px 0;
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #626d7b;
+}
+
+.analytics-patient-list table {
+  width: 100%;
+}
+
+.analytics-patient-list table td:last-child,
+.analytics-patient-list table th:last-child {
+  text-align: right;
+}
+
+.analytics-patient-list table tbody tr {
+  border-bottom: 1px solid #26303d;
+}
+
+.analytics-patient-list table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.analytics-patient-list table tbody tr:hover {
+  background-color: #172332;
+}
+
+.analytics-patient-list table tbody tr:hover td {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.analytics-patient-list table th {
+  text-align: left;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.6875rem;
+}
+
+.analytics-patient-list table td {
+  vertical-align: middle;
+  padding: 8px 2px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.875rem;
 }
 
 /* ------------------------ */

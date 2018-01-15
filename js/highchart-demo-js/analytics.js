@@ -25,33 +25,45 @@ var optionsAnalytics = {
 			text: 'Time',
 		},
 
+		min:1,
+		
 		labels: {  
 			y:25				// move labels further below ticks
 		},
 	},
 	
 	yAxis: {
-		title:'Count',  
+		title:'Count', 
+		min:0,
+		max:100 
 	},
 	
 	legend: {
 		enabled: false
 	},
+
+
 	
 	plotOptions: {
-            column: {
-	            animation: {
-					duration: 0, // disable the inital draw animation 
-            	}
+        column: {
+            animation: {
+				duration: 0, // disable the inital draw animation 
+        	}
+        },
+        series: {
+            cursor: 'pointer',
+            events: {
+                click: function (event) {
+                    showFakePatientDataList(this.chart.title.textStr, event.point.x, event.point.y);
+                }
             }
+        }
 	},
 	
 	series: [{
         name: 'Data',
         type: 'column',
         colorIndex:51,
-        data: data,
-        id: 's1',
     }]
 };
 	

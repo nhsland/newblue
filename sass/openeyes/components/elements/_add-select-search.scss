@@ -11,6 +11,11 @@
 	padding:10px 45px 10px 10px; 		// allow for icon-btns
 	min-height:150px;
 	
+	&.align-left {
+		right:auto;
+		left:0;
+	}
+	
 	// popup widths
 	// history has 5 inputs lists, pro
 	width:400px; 
@@ -53,7 +58,9 @@
 	table.select-options {	
 		
 		th {
+			text-align: left;
 			@include font-size(11);
+			font-weight:300;
 			padding:0 0 5px 0;
 		}
 		
@@ -83,7 +90,7 @@
 			padding:2px 8px 2px 8px;
 			margin:0 0 2px 0;
 			color:$oe-text;
-			border-radius:3px;
+			// border-radius:3px;
 			background: shade( $oe-user-selected, 10 );
 			
 			// data has a span wrapper to control the width

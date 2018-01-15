@@ -3,7 +3,38 @@
 ul {
 	list-style: none;
 	list-style-position: inside;
+	
+	&.inline-list {
+		li {
+			display:inline-block;
+			margin:0 15px 0 0;
+		}
+	}
+	
+	&.dslash-list {
+		li {
+			display:inline-block;
+			margin:0 10px 0 0;
+			padding:0 0 0 30px;
+			
+			// double-slash icon
+			// must work across both themes
+			background-position:left center;
+			background-repeat: no-repeat;
+			background-size:15px;
+			background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 19"><style> polygon{ fill:#999; opacity:0.8; }</style><polygon points="16.52 3.56 13.28 3.56 8.48 15.44 11.72 15.44 16.52 3.56"/><polygon points="10.52 3.56 7.28 3.56 2.48 15.44 5.72 15.44 10.52 3.56"/></svg>');
+			
+			&:first-child {
+				padding:0 0 0 0;
+				background-image: none;
+			}
+			
+	
+		}
+	}
 }
+
+// ol shouldn't be used! only use ul
 ol {
 	list-style-position: inside;
 }

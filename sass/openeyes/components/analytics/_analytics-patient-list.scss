@@ -1,0 +1,67 @@
+// OE Analytics - PRO theme
+// 
+// 
+
+.analytics-patient-list {
+	margin:15px 20px 0 0; 
+	width: calc(100% - 400px);
+	@include font-size(14);
+	
+	h3 {
+		margin:20px 0 20px 0;
+		@include font-size(20);
+		font-weight: 300;
+		color:$oe-pro-blue-light2;
+	}
+	
+	// <table>
+	table {
+		width:100%;	
+					
+		// tables generally all require that the last cell 
+		// is aligned right
+		td:last-child, 
+		th:last-child {
+				text-align: right;
+		}
+		
+		// add line to help with reading data
+		tbody {
+			tr {
+				border-bottom:1px solid $oe-pro-line;
+				&:last-child { 
+					border-bottom: none;
+				}
+				
+				&:hover {
+					background-color: $oe-pro-blue-dark3;
+					td {
+						color:$oe-pro-text;
+					}
+					
+				}
+			}
+		}
+		
+		
+		// <th>
+		th {
+			text-align: left;  // overide default 'middle'
+			font-weight: 300;
+			color:$oe-pro-text-light;
+			@include font-size(11);
+		}
+		
+		// <td>
+		td {
+			vertical-align: middle;
+			padding:8px 2px;
+			color:$oe-pro-text-light;
+			@include font-size(14);
+		}
+	}	
+
+}
+
+
+

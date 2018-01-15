@@ -105,6 +105,11 @@ idg.elementAddSelectSearch = function(){
 			var $active = null; // if only single entry 
 			var selectedData = [];
 			
+			if(clickAdd){
+				addBtn.hide();
+			}
+			
+			
 			if(multi){
 				$('li', $ul).click(function(e){
 		  			e.stopPropagation();
@@ -249,6 +254,10 @@ idg.elementAddSelectSearch = function(){
 			
 			if($popup.prop('id') == 'add-to-pupils-right'){
 				$('#js-pupil-right-text').text( lists[0].getData('') );
+			}
+			
+			if($popup.prop('id') == 'add-to-analytics-service'){
+				$('#js-service-selected').text( lists[0].getData('') );
 			}
 			
 		 

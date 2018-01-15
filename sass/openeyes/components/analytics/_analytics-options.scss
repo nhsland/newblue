@@ -20,8 +20,22 @@
 		@include font-size(20);
 		font-weight:300;
 		color:$oe-pro-text;
-		margin:20px 0 20px 0;
+		margin:20px 0 10px 0;
 	}
+	
+	.service {
+		position:relative;
+		margin:10px 0 20px 0;
+		
+		.service-selected {
+			@include font-size(16);
+			color:$oe-pro-text;
+			font-weight:300;
+		}
+	}
+	
+	
+	
 	
 	// 2 level of <ul> lists
 	.charts {
@@ -44,7 +58,9 @@
 	}
 	
 	.chart-filters {
-		ul {
+		position:relative;
+		// <ul>
+		.filters-selected {
 			li {
 				@include font-size(12);
 				color:$oe-pro-text;
@@ -53,6 +69,8 @@
 			}
 		}
 	}
+	
+	
 	
 	.date-range {
 		margin:10px 0;
@@ -71,7 +89,6 @@
 			margin:0 0 8px 0;
 		}
 	}
-	
 	
 }
 
