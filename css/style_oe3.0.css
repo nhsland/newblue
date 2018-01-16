@@ -2447,7 +2447,7 @@ html {
 
 .home-messages .messages {
   width: calc(100% - 300px);
-  margin: 0 30px 20px 0;
+  margin: 10px 30px 20px 0;
 }
 
 .home-messages .messages td:last-child,
@@ -2519,6 +2519,7 @@ html {
 }
 
 .home-messages .message-actions {
+  margin: 20px 0;
   padding: 0 20px;
   border-right: 1px solid #626d7b;
   width: 250px;
@@ -5072,6 +5073,7 @@ table.oe-clinic-list td.center {
 
 .analytics-patient-list {
   margin: 15px 20px 0 0;
+  padding: 0 0 0 40px;
   width: calc(100% - 400px);
   font-size: 0.875rem;
 }
