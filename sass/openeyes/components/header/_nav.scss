@@ -8,7 +8,7 @@
 	right:0;
 	height:$oe-header-height;
 	
-	// nav is ul list
+	// nav is <ul> list
 	.oe-big-icons {		
 		// li's 
 		.oe-nav-btn {
@@ -16,15 +16,19 @@
 			position: relative; // for submenu positioning
 			margin-left:1px;
 			
-			// simple <a> btns & js btns
-			> a , > .nav-js-btn	{
+			// menu NAV with SVG icons
+			// 2 different structures
+			// <a> - .icon-btn
+			// .nav-js-btn is for JS controlled popup menus
+			.icon-btn, 
+			.nav-js-btn	{
 				display: flex;
 				align-items: center;
 				height:$oe-header-height;
 			}
 			
-			// simple <a> requires psuedos:
-			> a {
+			// <a>
+			.icon-btn {
 				&:hover, &:focus, &:active {
 					background:$oe-btn-blue;
 					.icon {
@@ -34,7 +38,7 @@
 			}
 			
 			// js controlled btn, needs to look like <a> 
-			> .nav-js-btn {
+			.nav-js-btn {
 				padding:0 10px;
 				cursor: pointer;
 				&.active {
@@ -51,7 +55,6 @@
 					}
 				}	
 			}
-		
 			
 			// svg icon
 			.icon {

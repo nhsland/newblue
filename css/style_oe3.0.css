@@ -1738,7 +1738,8 @@ html {
   margin-left: 1px;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn > a, .oe-nav .oe-big-icons .oe-nav-btn > .nav-js-btn {
+.oe-nav .oe-big-icons .oe-nav-btn .icon-btn,
+.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1748,28 +1749,28 @@ html {
   height: 60px;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn > a:hover, .oe-nav .oe-big-icons .oe-nav-btn > a:focus, .oe-nav .oe-big-icons .oe-nav-btn > a:active {
+.oe-nav .oe-big-icons .oe-nav-btn .icon-btn:hover, .oe-nav .oe-big-icons .oe-nav-btn .icon-btn:focus, .oe-nav .oe-big-icons .oe-nav-btn .icon-btn:active {
   background: #074598;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn > a:hover .icon, .oe-nav .oe-big-icons .oe-nav-btn > a:focus .icon, .oe-nav .oe-big-icons .oe-nav-btn > a:active .icon {
+.oe-nav .oe-big-icons .oe-nav-btn .icon-btn:hover .icon, .oe-nav .oe-big-icons .oe-nav-btn .icon-btn:focus .icon, .oe-nav .oe-big-icons .oe-nav-btn .icon-btn:active .icon {
   opacity: 1;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn > .nav-js-btn {
+.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn {
   padding: 0 10px;
   cursor: pointer;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn > .nav-js-btn.active {
+.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn.active {
   background: #074598;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn > .nav-js-btn.active .icon {
+.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn.active .icon {
   opacity: 1;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn > .nav-js-btn.open .icon {
+.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn.open .icon {
   fill: #0ff;
 }
 
@@ -4983,22 +4984,22 @@ table.oe-clinic-list td.center {
   font-weight: 300;
 }
 
-.analytics-options .charts ul {
-  margin: 8px 0 10px 5px;
+.analytics-options .charts {
+  margin: 15px 0 0 0;
 }
 
-.analytics-options .charts ul li {
+.analytics-options .charts li {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.5);
   padding: 0 0 8px 0;
 }
 
-.analytics-options .charts ul li:last-child {
+.analytics-options .charts li:last-child {
   padding-bottom: 0;
 }
 
-.analytics-options .charts > ul {
-  margin: 15px 0 0 0;
+.analytics-options .charts li ul {
+  margin: 8px 0 0 4px;
 }
 
 .analytics-options .chart-filters {

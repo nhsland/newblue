@@ -34,26 +34,23 @@
 		}
 	}
 	
-	
-	
-	
-	// 2 level of <ul> lists
-	.charts {
-		ul {
-			margin:8px 0 10px 5px;
-			li {
-				@include font-size(12);
-				color:$oe-pro-text-light;
-				padding:0 0 8px 0;
-				
-				&:last-child {
-					padding-bottom:0;
-				}
-			}
-		}
+	// <ul> nested lists
+	.charts {			
+		margin:15px 0 0 0;
 		
-		> ul {
-			margin:15px 0 0 0;
+		li {
+			@include font-size(12);
+			color:$oe-pro-text-light;
+			padding:0 0 8px 0;
+			
+			&:last-child {
+				padding-bottom:0;
+			}
+			
+			// nested 
+			ul {
+				margin:8px 0 0 4px;
+			}
 		}	
 	}
 	
