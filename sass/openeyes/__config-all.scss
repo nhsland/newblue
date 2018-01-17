@@ -40,17 +40,16 @@ $oe-z-tooltip:			60;
 
 $html-pro-bg: 			rgb(16,25,37);
 
-$oe-pro-text: 			rgba( #fff,0.8 );
-$oe-pro-text-light: 	rgba( #fff,0.5 );
-$oe-pro-text-highlight: rgb(0,255,255);;
+$oe-pro-text: 			rgba(255,255,255,0.8 );
+$oe-pro-text-light: 	rgba(255,255,255,0.5 );
+$oe-pro-text-highlight: rgb(0,255,255);
+$oe-pro-text-active: 	rgb(90,180,180);
 
 $oe-pro-blue:			rgb(30,46,66);
 $oe-pro-blue-dark: 		shade( $oe-pro-blue, 20% );
 $oe-pro-blue-dark2: 	shade( $oe-pro-blue, 35% );
 $oe-pro-blue-dark3: 	shade( $oe-pro-blue, 25% );
-$oe-pro-blue-light: 	tint( $oe-pro-blue, 10% );
-$oe-pro-blue-light2: 	tint( $oe-pro-blue, 30% );
-$oe-pro-blue-light3: 	tint( $oe-pro-blue, 60% );
+$oe-pro-blue-light: 	tint( $oe-pro-blue, 30% );
 
 $oe-pro-grey:			rgb(40,52,66);
 
@@ -61,7 +60,7 @@ $oe-pro-line: 			rgb(38,48,61);
 $oe-pro-user-inputs: 	$oe-pro-blue;
 $oe-pro-user-input-text: $oe-pro-text;
 
-$oe-pro-user-selected:	rgb(55,71,85);
+$oe-pro-popup-bg:		rgb(55,71,85);
 
 // eyedraw
 $oe-ed-bg:				rgb(218,230,241); 

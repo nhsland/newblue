@@ -54,7 +54,7 @@
 	h3 {
 		@include font-size(13);
 		color:$oe-text-light;
-		font-weight:300;
+		font-weight:$oe-font-light;
 		margin:20px 0 5px 0;
 		
 		&.title {

@@ -15,7 +15,7 @@
 	height: calc(100vh - 60px); // this can't be SASS variable has to be written (must match $oe-header-height) 
 	overflow:hidden;
 	
-	background: $oe-pro-user-selected; // colour to match sidebar quicklook	
+	background: $oe-pro-popup-bg; // colour to match sidebar quicklook	
 	
 	// IDG demo PNGs are 520px wide
 	$png-width:520px;
@@ -42,7 +42,7 @@
 				margin:auto; /* flex */
 				@include font-size(14);
 				color:$oe-pro-text;
-				font-weight:300;
+				font-weight:$oe-font-light;
 			}
 			
 			// touch devices will access this through a 'click'

@@ -1,18 +1,18 @@
 // <input>
 // default set up for all inputs
-input {
+input, textarea {
 	padding:5px;
 	border-radius: 3px;
 	height: auto;
 	
 	&::-webkit-input-placeholder { 
-		color:shade( $oe-user-input-text,20 ); // Chrome
+		color:$oe-input-placeholder; // Chrome
 	}
 	&:-ms-input-placeholder { // IE 10+ 
-	  	color:shade( $oe-user-input-text,20 );
+	  	color:$oe-input-placeholder;
 	}
 	&::placeholder {
-		color:shade( $oe-user-input-text,20 ); // Future?
+		color:$oe-input-placeholder; // Future?
 	}
 }
 

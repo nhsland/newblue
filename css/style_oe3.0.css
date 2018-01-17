@@ -1027,6 +1027,7 @@ label.inline {
 label.highlight {
   padding: 3px 6px;
   margin-right: 0;
+  color: rgba(255, 255, 255, 0.8);
   background: #1e2e42;
   border-radius: 3px;
   cursor: pointer;
@@ -1041,7 +1042,7 @@ label.highlight input {
 label.highlight:hover,
 label.highlight:focus,
 label.highlight:active {
-  background: #354355;
+  background: #182535;
 }
 
 .label .required,
@@ -1049,25 +1050,25 @@ label .required {
   color: #f00;
 }
 
-input {
+input, textarea {
   padding: 5px;
   border-radius: 3px;
   height: auto;
 }
 
-input::-webkit-input-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
   color: rgba(185, 185, 185, 0.84);
 }
 
-input:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: rgba(185, 185, 185, 0.84);
 }
 
-input::-ms-input-placeholder {
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
   color: rgba(185, 185, 185, 0.84);
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
   color: rgba(185, 185, 185, 0.84);
 }
 
@@ -1138,8 +1139,8 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:focus, a:active, a.selected {
-  color: rgba(255, 255, 255, 0.8);
+a:hover, a:focus, a:active {
+  color: #5ab4b4;
 }
 
 a.selected {
@@ -1273,6 +1274,11 @@ button.hint.red, .button.hint.red, input[type="submit"].hint.red {
 button.hint.blue, .button.hint.blue, input[type="submit"].hint.blue {
   color: rgba(255, 255, 255, 0.8);
   background: #04295b;
+}
+
+button.blue:hover, button.blue:focus, button.blue:active, .button.blue:hover, .button.blue:focus, .button.blue:active, input[type="submit"].blue:hover, input[type="submit"].blue:focus, input[type="submit"].blue:active {
+  color: #fff;
+  background: #074598;
 }
 
 button.green:hover, button.green:focus, button.green:active, .button.green:hover, .button.green:focus, .button.green:active, input[type="submit"].green:hover, input[type="submit"].green:focus, input[type="submit"].green:active {
@@ -1600,7 +1606,10 @@ html {
   border-left: none;
 }
 
-.oe-patient .patient-quicklook, .oe-patient .patient-demographics, .oe-patient .patient-lightening-viewer, .oe-patient .patient-tasks,
+.oe-patient .patient-quicklook,
+.oe-patient .patient-demographics,
+.oe-patient .patient-lightening-viewer,
+.oe-patient .patient-tasks,
 .oe-patient .patient-allergies-risks {
   position: absolute;
   bottom: 0;
@@ -1608,14 +1617,21 @@ html {
   cursor: pointer;
 }
 
-.oe-patient .patient-quicklook .icon, .oe-patient .patient-demographics .icon, .oe-patient .patient-lightening-viewer .icon, .oe-patient .patient-tasks .icon,
+.oe-patient .patient-quicklook .icon,
+.oe-patient .patient-demographics .icon,
+.oe-patient .patient-lightening-viewer .icon,
+.oe-patient .patient-tasks .icon,
 .oe-patient .patient-allergies-risks .icon {
   display: inline-block;
   fill: #fff;
   opacity: 0.8;
 }
 
-.oe-patient .patient-quicklook.open .icon, .oe-patient .patient-quicklook.active .icon, .oe-patient .patient-lightening-viewer.open .icon, .oe-patient .patient-lightening-viewer.active .icon, .oe-patient .patient-tasks.open .icon, .oe-patient .patient-tasks.active .icon,
+.oe-patient .patient-quicklook.open .icon, .oe-patient .patient-quicklook.active .icon,
+.oe-patient .patient-lightening-viewer.open .icon,
+.oe-patient .patient-lightening-viewer.active .icon,
+.oe-patient .patient-tasks.open .icon,
+.oe-patient .patient-tasks.active .icon,
 .oe-patient .patient-demographics.open .icon,
 .oe-patient .patient-demographics.active .icon {
   fill: cyan;
@@ -2466,6 +2482,7 @@ html {
 
 .home-messages .messages tr.unread td {
   color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
 }
 
 .home-messages .messages tr.unread td:last-child {
@@ -2473,7 +2490,7 @@ html {
 }
 
 .home-messages .messages tbody tr:hover {
-  background: #182535;
+  background: #101923;
 }
 
 .home-messages .messages th, .home-messages .messages td {
@@ -2493,7 +2510,7 @@ html {
 }
 
 .home-messages .messages td .urgent-message {
-  fill: #751e00;
+  fill: #ca7932;
 }
 
 .home-messages .messages td.nowrap {
@@ -3158,10 +3175,12 @@ html {
 
 .main-event.edit .element {
   min-height: 50px;
+  font-weight: 400;
 }
 
 .main-event.view .element {
   min-height: 40px;
+  font-weight: 400;
 }
 
 .main-event .element {
@@ -3290,7 +3309,6 @@ html {
   .main-event .element-header .element-title {
     max-width: 115px;
     font-size: 0.875rem;
-    font-weight: 300;
     line-height: 1.2;
   }
 }
@@ -3341,6 +3359,7 @@ html {
 
 .main-event .element table.label-value td:first-child {
   opacity: 0.6;
+  font-weight: 400;
 }
 
 .main-event .element table tr {
@@ -3390,8 +3409,8 @@ html {
   background: #374755;
   padding: 10px 45px 10px 10px;
   min-height: 150px;
-  width: 400px;
-  min-width: 400px;
+  width: 350px;
+  min-width: 350px;
 }
 
 .oe-add-select-search.align-left {
@@ -3433,6 +3452,7 @@ html {
 
 .oe-add-select-search table.select-options th {
   text-align: left;
+  color: rgba(255, 255, 255, 0.5);
   font-size: 0.6875rem;
   font-weight: 300;
   padding: 0 0 5px 0;
@@ -3516,6 +3536,7 @@ html {
       -ms-flex-align: center;
           align-items: center;
   padding: 5px;
+  color: rgba(255, 255, 255, 0.8);
   background: #29384b;
 }
 
@@ -3887,13 +3908,17 @@ html {
 }
 
 /* Lightening viewer */
-.lightening-viewer .oe-letter-timeline {
+.lightening-viewer {
   background: #182535;
+}
+
+.lightening-viewer .oe-letter-timeline {
+  background: #141e2b;
   padding: 2px 4px 4px 10px;
 }
 
 .lightening-viewer .oe-letter-timeline table td {
-  padding: 6px 0 3px 4px;
+  padding: 6px 6px 3px 4px;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.9375rem;
   font-weight: 300;
@@ -3921,7 +3946,7 @@ html {
   content: " ";
   height: 2px;
   width: 19px;
-  border-bottom: 3px solid #fff;
+  border-bottom: 3px solid cyan;
 }
 
 .lightening-viewer .oe-letter-meta {
@@ -3932,7 +3957,7 @@ html {
   font-size: 0.75rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.8);
-  background: #374755;
+  background: #283442;
 }
 
 .lightening-viewer .oe-letter-meta .date {
@@ -3952,7 +3977,7 @@ html {
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-left-color: #374755;
+  border-left-color: #283442;
   border-width: 6px;
   margin-top: -6px;
 }
@@ -4538,12 +4563,12 @@ table.oe-clinic-list {
 }
 
 table.oe-clinic-list thead tr {
-  background: #283442;
+  background: #182535;
   height: 30px;
 }
 
 table.oe-clinic-list tbody tr {
-  background: #182535;
+  background: #141e2b;
   border-bottom: 1px solid #26303d;
 }
 
@@ -4552,19 +4577,15 @@ table.oe-clinic-list tbody tr:last-child {
 }
 
 table.oe-clinic-list tbody tr:hover {
-  background-color: #141e2b;
+  background-color: #101923;
 }
 
 table.oe-clinic-list tbody tr.future {
-  background-color: #24303f;
+  background-color: #182535;
 }
 
 table.oe-clinic-list tbody tr.future:hover {
-  background-color: #202936;
-}
-
-table.oe-clinic-list th, table.oe-clinic-list td {
-  font-size: 0.875rem;
+  background-color: #101923;
 }
 
 table.oe-clinic-list th:first-child, table.oe-clinic-list td:first-child {
@@ -4572,12 +4593,14 @@ table.oe-clinic-list th:first-child, table.oe-clinic-list td:first-child {
 }
 
 table.oe-clinic-list th {
+  font-size: 0.75rem;
   text-align: left;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.5);
 }
 
 table.oe-clinic-list td {
+  font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.8);
   vertical-align: middle;
   padding: 5px 0;
@@ -4674,7 +4697,8 @@ table.oe-clinic-list td.center {
 }
 
 .pathway-step.blue {
-  background: #283442;
+  color: rgba(255, 255, 255, 0.8);
+  background: #182535;
   cursor: pointer;
 }
 
@@ -4851,12 +4875,12 @@ table.oe-clinic-list td.center {
 .oe-clinic-filter {
   display: inline-block;
   position: relative;
-  background: #3e4855;
+  color: rgba(255, 255, 255, 0.5);
+  background: #1e2e42;
   height: 38px;
   padding: 0 10px;
   margin: 0 3px 0 0;
   cursor: pointer;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .oe-clinic-filter .name {
@@ -4941,6 +4965,19 @@ table.oe-clinic-list td.center {
 }
 
 /* Analytics */
+.analytics a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.analytics a:hover, .analytics a:focus, .analytics a:active {
+  color: #5ab4b4;
+}
+
+.analytics a.selected {
+  color: cyan;
+}
+
 .analytics-header {
   background: #283442;
   padding: 0 10px 0 45px;
@@ -5003,6 +5040,10 @@ table.oe-clinic-list td.center {
   margin: 8px 0 0 4px;
 }
 
+.analytics-options .custom-options {
+  position: relative;
+}
+
 .analytics-options .chart-filters {
   position: relative;
 }
@@ -5015,7 +5056,7 @@ table.oe-clinic-list td.center {
 }
 
 .analytics-options .date-range {
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .analytics-options .date-range .datepicker-range {

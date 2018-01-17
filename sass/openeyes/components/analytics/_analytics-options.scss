@@ -9,11 +9,12 @@
 	@include font-size(12);
 	width:300px;
 	
+
 	h3 {
 		margin:20px 0 10px 0;
 		@include font-size(14);
 		font-weight: 300;
-		color:$oe-pro-blue-light2;
+		color:$oe-pro-blue-light;
 	}
 	
 	.specialty {
@@ -54,6 +55,10 @@
 		}	
 	}
 	
+	.custom-options {
+		position:relative;
+	}
+	
 	.chart-filters {
 		position:relative;
 		// <ul>
@@ -62,7 +67,7 @@
 				@include font-size(12);
 				color:$oe-pro-text;
 				padding:4px 0;
-				border-bottom:1px solid $oe-line;
+				border-bottom:1px solid $oe-pro-line;
 			}
 		}
 	}
@@ -70,7 +75,7 @@
 	
 	
 	.date-range {
-		margin:10px 0;
+		margin:20px 0;
 		.datepicker-range {
 			text-align: center;
 		}

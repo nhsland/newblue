@@ -5,13 +5,14 @@
 .oe-clinic-filter {
 	display:inline-block;
 	position:relative;
-	background: tint( $oe-grey,10);
+	color:$oe-text-light;
+	background: $oe-btn-default;
 	height:$oe-event-header-height;
 	padding:0 10px;
 	margin:0 3px 0 0;
 	cursor:pointer;
 	
-	color:$oe-text-light;
+	
 	
 	.name {
 		@include font-size(12);

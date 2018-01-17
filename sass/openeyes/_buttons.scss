@@ -19,7 +19,7 @@
 	@include font-size(12);
 	font-weight:400;
 	color: $oe-text;
-	background: $oe-user-inputs;
+	background: $oe-btn-default;
 	cursor: pointer;
 	
 	// sizes - standard:
@@ -65,6 +65,13 @@
 	}
 	
 	// default is blue
+	&.blue {
+		&:hover, &:focus, &:active {
+			color: #fff;
+			background: $oe-btn-blue;
+		}	
+	}
+	
 	&.green {
 		&:hover, &:focus, &:active {
 			color: #fff;

@@ -70,7 +70,8 @@
 		
 	// complete pathway! 
 	&.blue { 
-		background:$oe-grey; 
+		color:$oe-text;
+		background:$oe-blue-dark; 
 		cursor: pointer;
 		&.late {
 			border-color:rgb(230,150,0); // not currently used

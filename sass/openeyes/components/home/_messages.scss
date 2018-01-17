@@ -24,6 +24,7 @@
 			&.unread {
 				td {
 					color:$oe-text;
+					@include font-size(14);
 					&:last-child {
 						color:$oe-text-light;
 					}
@@ -33,7 +34,7 @@
 		
 		tbody tr {
 			&:hover {
-				background:$oe-blue-dark1;
+				background:$oe-bg-highlight;
 			}
 		}
 		
@@ -55,7 +56,7 @@
 		td {
 			vertical-align: middle;	
 			.urgent-message {
-				fill:$oe-warning-orange;
+				fill:rgb(202,121,50);
 			}
 			
 			&.nowrap {

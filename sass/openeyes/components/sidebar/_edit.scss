@@ -28,12 +28,12 @@
 			
 			&:hover, &:focus {
 				color: $oe-pro-text-highlight;
-				background-color:$oe-pro-user-selected;
+				background-color:$oe-pro-popup-bg;
 			}
 			
 			&.selected {
 				color: $oe-pro-text; // electric blue was too much for select state
-				background-color:$oe-pro-user-selected;
+				background-color:$oe-pro-popup-bg;
 			}
 			
 			&.error {

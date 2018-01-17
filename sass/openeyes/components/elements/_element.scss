@@ -7,10 +7,12 @@
 	
 	&.edit .element {
 		min-height:50px; // require to ensure element actions can be seen in pro mode
+		font-weight: $oe-font-medium;
 	}
 	
 	&.view .element {
 		min-height:40px; // make sure element header that wraps onto 2 lines can be seen
+		font-weight: $oe-font-medium;
 	}
 	
 	.element {

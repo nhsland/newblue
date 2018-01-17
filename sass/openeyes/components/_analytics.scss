@@ -1,5 +1,21 @@
 // OE Analytics
 // 
+// Analytics is only PRO themed.
+
+.analytics {
+	// <a> make PRO theme
+	a {
+		color:inherit;
+		text-decoration: none;
+		&:hover, &:focus, &:active {
+			color:$oe-pro-text-active;
+		}
+		
+		&.selected {
+			color:$oe-pro-text-highlight;
+		}
+	}
+}
 
 @import "analytics/analytics-header";
 @import "analytics/analytics-options";

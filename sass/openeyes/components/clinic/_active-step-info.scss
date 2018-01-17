@@ -20,14 +20,14 @@
 	h3 {
 		@include font-size(13);
 		color:$oe-text-light;
-		font-weight:300;
+		font-weight:$oe-font-light;
 		padding:10px 0;
 	}
 	
 	.eye {
 		@include font-size(16);
 		color:$oe-text;
-		font-weight:300;
+		font-weight:$oe-font-light;
 		padding:0 0 10px 0;
 	}
 	
@@ -66,7 +66,7 @@
 	.who-completed {
 		@include font-size(14);
 		color:$oe-text;
-		font-weight:300;
+		font-weight:$oe-font-light;
 	}
 	
 	// trash can

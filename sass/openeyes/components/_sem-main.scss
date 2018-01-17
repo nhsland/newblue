@@ -14,7 +14,7 @@
 	// Event title <h2>
 	.event-title {
 		@include font-size(18);
-		font-weight:300;
+		font-weight:$oe-font-light;
 		color:$oe-text-highlight;
 		padding:0 0 10px 10px;
 	}
@@ -27,7 +27,7 @@
 		right:20px;
 		
 		@include font-size(18);
-		font-weight:300;
+		font-weight:$oe-font-light;
 		color:$oe-text;
 		
 	}

@@ -13,15 +13,13 @@ html {
 a {
 	color:inherit;
 	text-decoration: none;
-	&:hover, &:focus, &:active, &.selected {
-		color:$oe-text;
+	&:hover, &:focus, &:active {
+		color:$oe-text-active;
 	}
 	
 	&.selected {
 		color:$oe-text-highlight;
 	}
-	
-	
 }
 
 // deliberately all setup to be too big. 

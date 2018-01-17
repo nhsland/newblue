@@ -51,7 +51,10 @@
 	// - Demographics : Patient summary data
 	// - Allergies & Risks
 	// - Letter Lightening viewer
-	.patient-quicklook, .patient-demographics, .patient-lightening-viewer, .patient-tasks,
+	.patient-quicklook, 
+	.patient-demographics, 
+	.patient-lightening-viewer, 
+	.patient-tasks,
 	.patient-allergies-risks {
 		position:absolute;
 		bottom:0;
@@ -68,7 +71,9 @@
 	}
 	
 	// icon behaviour
-	.patient-quicklook, .patient-lightening-viewer, .patient-tasks,
+	.patient-quicklook, 
+	.patient-lightening-viewer, 
+	.patient-tasks,
 	.patient-demographics {
 		// js controlled interaction... 
 		&.open, &.active {

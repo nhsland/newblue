@@ -17,13 +17,12 @@
 		.element-title {
 			@include font-size(14);
 			color:$oe-text-light;
-			font-weight:300;
+			font-weight:$oe-font-light;
 			padding:0 0 0 10px;
 			
 			@include media($oe-extended-browser-size){
 				max-width:$oe-event-extension - 45px;	// force long names to wrap
 				@include font-size(14); 				// small font-size for Pro users
-				font-weight:300;
 				line-height:1.2;
 			}
 		}

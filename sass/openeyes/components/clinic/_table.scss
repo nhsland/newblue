@@ -8,7 +8,7 @@ table.oe-clinic-list {
 	
 	thead {
 		tr {
-			background:$oe-grey;
+			background:$oe-blue-dark;
 			height:30px;
 		}
 	}
@@ -16,28 +16,27 @@ table.oe-clinic-list {
 	tbody {
 		// add line to help with reading data
 		tr {
-			background:$oe-blue-dark;
+			background:$oe-blue-dark2;
 			border-bottom:1px solid $oe-line;
 			&:last-child { 
 				border-bottom: none;
 			}
 			
 			&:hover {
-				background-color: $oe-blue-dark2;
+				background-color: $oe-bg-highlight;
 			}
 			
 			&.future {
-				background-color: tint( $oe-blue-dark, 5);
-				
+				background-color: $oe-blue-dark;	
 				&:hover {
-					background-color: tint( $oe-blue-dark2, 5 );
-				}
+					background-color: $oe-bg-highlight;
+				}			
 			}
 		}	
 	}
 				
 	th, td, {
-		@include font-size(14);
+		
 		&:first-child {
 			padding-left:20px; // align with title
 		}
@@ -45,13 +44,15 @@ table.oe-clinic-list {
 	
 	// <th>
 	th {
+		@include font-size(12);
 		text-align: left;  // overide default 'middle'
-		font-weight: 300;
+		font-weight: $oe-font-light;
 		color:$oe-text-light;
 	}
 	
 	// <td>
 	td {
+		@include font-size(14);
 		color:$oe-text;
 		vertical-align: middle;	
 		padding:5px 0;

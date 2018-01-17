@@ -11,37 +11,42 @@ $html-bg:				$html-pro-bg;
 
 $oe-text: 				$oe-pro-text;
 $oe-text-light: 		$oe-pro-text-light;
-$oe-text-highlight:		$oe-pro-text-highlight;
+$oe-text-highlight:		$oe-pro-text-highlight; // also for selected
+$oe-text-active:		$oe-pro-text-active; 
+
+$oe-bg-highlight: 		shade($oe-pro-blue-dark3,30); // used as hover highlight 
 
 $oe-blue:				$oe-pro-blue;
 $oe-blue-dark: 			$oe-pro-blue-dark;
-$oe-blue-dark1: 		$oe-blue-dark; 	// because I keep using 'dark1' instead of 'dark'
 $oe-blue-dark2: 		$oe-pro-blue-dark2;
 $oe-blue-dark3:			$oe-pro-blue-dark3;
 $oe-blue-light: 		$oe-pro-blue-light;
-$oe-blue-light2: 		$oe-pro-blue-light2;
-$oe-blue-light3: 		$oe-pro-blue-light3;
+
+// because I keep using 'dark1' instead of 'dark':
+$oe-blue-dark1: $oe-blue-dark; 	
 
 $oe-grey:				rgb(40,52,66);
 $oe-line:				rgb(38,48,61); // don't use alphas, tables with td colspan 2 overlap
 
-// <a> links
-$oe-a-blue-hover:		$oe-pro-text-highlight;
+$oe-font-light: 300; 	// 400 in Classic
+$oe-font-medium: 400;   // 500 in Classic
 
 // buttons
+$oe-btn-default:		$oe-blue;
 $oe-btn-blue:			rgb(7,69,152);
 $oe-btn-green:			rgb(14,94,35);
 $oe-btn-red:			rgb(143,14,14);
 // hints
 $oe-btn-blue-hint: 		shade( $oe-btn-blue,40 );
 $oe-btn-green-hint: 	shade( $oe-btn-green,40 );
-$oe-btn-red-hint: 		shade( $oe-btn-red,40 );
+$oe-btn-red-hint: 		shade( $oe-btn-red,40 );;
 
-$oe-user-selected:		$oe-pro-user-selected;
+$oe-popup-bg:			$oe-pro-popup-bg; // tool-tip, add-select-search, element-search-popup
 
 // input colours:
 $oe-user-inputs: 		$oe-blue;
 $oe-user-input-text: 	$oe-text;
+$oe-input-placeholder: 	shade( $oe-user-input-text,20 );
 
 // flags
 $oe-warning-orange:		rgb(117,30,0);

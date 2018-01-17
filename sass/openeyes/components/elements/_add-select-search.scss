@@ -7,7 +7,7 @@
 	bottom:0; 
 	right:0; 
 	z-index:$oe-z-tooltip; 				// make sure it floats over elements
-	background:$oe-user-selected;
+	background:$oe-popup-bg;
 	padding:10px 45px 10px 10px; 		// allow for icon-btns
 	min-height:150px;
 	
@@ -18,8 +18,8 @@
 	
 	// popup widths
 	// history has 5 inputs lists, pro
-	width:400px; 
-	min-width: 400px;					// default width
+	width:350px; 
+	min-width: 350px;					// default width (to fit in Analytics column)
 	&.auto-width {
 		width:auto;
 		
@@ -59,8 +59,9 @@
 		
 		th {
 			text-align: left;
+			color:$oe-text-light;
 			@include font-size(11);
-			font-weight:300;
+			font-weight:$oe-font-light;
 			padding:0 0 5px 0;
 		}
 		
@@ -91,7 +92,7 @@
 			margin:0 0 2px 0;
 			color:$oe-text;
 			// border-radius:3px;
-			background: shade( $oe-user-selected, 10 );
+			background: shade( $oe-popup-bg, 10 );
 			
 			// data has a span wrapper to control the width
 			// not possible through the li css
@@ -110,7 +111,7 @@
 			
 			&:hover, &:focus, &:active, &.selected {
 				color:#fff;
-				background: shade( $oe-user-selected, 30 );
+				background: shade( $oe-popup-bg, 30 );
 			}
 			
 			&.selected {

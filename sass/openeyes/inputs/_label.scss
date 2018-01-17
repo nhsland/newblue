@@ -17,6 +17,7 @@ label {
 	&.highlight {
 		padding:3px 6px; 
 		margin-right: 0; 
+		color:$oe-user-input-text;
 		background:$oe-user-inputs;
 		border-radius:3px;
 		cursor:pointer;
@@ -26,7 +27,7 @@ label {
 		}
 		
 		&:hover, &:focus, &:active {
-			background:$oe-blue-light;
+			background:$oe-blue-dark;
 		}
 	}
 
