@@ -5093,15 +5093,19 @@ table.oe-clinic-list td.center {
 }
 
 .analytics-charts .highcharts-root .highcharts-color-52 {
-  fill: #2273b9;
+  fill: #369bd7;
+  stroke: #369bd7;
 }
 
 .analytics-charts .highcharts-root .highcharts-color-53 {
-  fill: #185587;
+  fill: #e67300;
+  stroke: #e67300;
 }
 
-.analytics-charts .highcharts-root .highcharts-tracker {
-  fill: red;
+.analytics-charts .highcharts-root .highcharts-boxplot-stem,
+.analytics-charts .highcharts-root .highcharts-boxplot-whisker {
+  stroke: #6e6e78;
+  stroke-width: 1;
 }
 
 .analytics-charts .highcharts-yaxis {

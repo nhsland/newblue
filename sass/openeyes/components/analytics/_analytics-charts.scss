@@ -24,18 +24,24 @@
 		.highcharts-color-51 {
 			fill: rgb(54,155,215); 
 		}
-		
 		.highcharts-color-52 {
-			fill: rgb(34,115,185); 
+			fill: rgb(54,155,215); 
+			stroke: rgb(54,155,215);	
 		}
-		
 		.highcharts-color-53 {
-			fill: rgb(24,85,135); 
+			fill: rgb(230, 115, 0);
+			stroke: rgb(230, 115, 0); 		
 		}
 		
-		.highcharts-tracker {
-			fill: rgb(255,0,0);
+		
+		// error bars	
+		.highcharts-boxplot-stem,
+		.highcharts-boxplot-whisker {
+			stroke: rgb(110,110,120);  
+			stroke-width:1;
 		}
+		
+		
 	}
 	
 	// add line to y axis
