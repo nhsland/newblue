@@ -15,6 +15,12 @@
 * If a CSS class is being added for JS only purposes (and not being used by CSS to style)
   prefix it with 'js-'. 
   
+## CSS 'oe-' prefix
+
+* Always use a prefix for main area classes. e.g.'oe-' or 'oes-' This will help avoid naming conflicts and allows
+for coupling if required.
+ 
+  
 ## Icons
 
 * Event icons must be 76px x 76px, and must be named correctly. 

@@ -29,7 +29,7 @@
 		
 	width:100vw;
 	height:100vh;
-	max-height:100vh; // I think required for Edge < 16. Needs testing!
+	// max-height:100vh; // maybe required for Edge < 16. Needs testing!
 			
 	// grid items MUST be direct descendants
 	// Logo, Patient, User:
@@ -83,7 +83,8 @@
 	// full width header and content allows for the 
 	// activity panel which is fixed at large resolutions. 
 	// JS controls the fixing: fixed at 1800px;
-	.oe-full-header, .oe-full-content {
+	.oe-full-header, 
+	.oe-full-content {
 		@include media($oe-browser-size-activity-panel-fixed){
 			width: $oe-browser-size-activity-panel-fixed - $oe-activity-panel-width;
 		}
@@ -153,7 +154,7 @@
 	// & full width content area
 	.oe-full-content,
 	.oescape,
-	.analytics  {
+	.oe-analytics  {
 		// for Edge < 16
 		-ms-grid-column: 1; 
 		-ms-grid-row: 2;

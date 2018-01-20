@@ -64,7 +64,7 @@ var optionsAnalytics = {
 	series: [{
         name: 'Data',
         type: 'column',
-        colorIndex:51,
+        colorIndex:50,
     }]
 };
 	
@@ -91,7 +91,7 @@ var optionsDiagnoses = {
 			
 		},
 		
-		categories: ['Macular degeneration',' Diabetic Macular Oedema (bin)','BRVO','CRVO','Hemivein','Other','No Diagnoses'], 
+		categories: ['Macular degeneration','DMO','BRVO','CRVO','Hemivein','Other','No Diagnoses'], 
 		
 		labels: {  
 			y:25				// move labels further below ticks
@@ -130,7 +130,7 @@ var optionsDiagnoses = {
         name: 'Data',
         type: 'bar',
         data:[1256,1100,346,459,34,654,890],
-        colorIndex:51,
+        colorIndex:50,
     }]
 } 
 
@@ -217,7 +217,7 @@ var optionsVA = {
     series: [ {
 	    name: 'Aflibercept',
         type: 'line',
-        colorIndex:52,
+        colorIndex:51,
         data: aflibercept,
     },{
         name: 'Error Aflibercept',
@@ -227,7 +227,7 @@ var optionsVA = {
     }, {
 	    name: 'Ranibizumab',
         type: 'line',
-        colorIndex:53,
+        colorIndex:61,
         data: ranibizumab,
     },{
         name: 'Error Ranibizumab',

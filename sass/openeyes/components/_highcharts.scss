@@ -2,10 +2,13 @@
 // *
 // * (C) OpenEyes, 2017
 // 
-// * Highstock CSS styling to replace JS options 
-// * using 'oes-hs-' prefix for HighStock Chart classes
-//
+// Highstock CSS styling to replace JS options 
+// using 'oes-hs-' prefix for HighStock Chart classes
+// 
+// Highstock is used in OEscape & Analyitcs 
+// 
 // Based on https://code.highcharts.com/css/highcharts.css
+// 
 
 // -- NOTE: SVG !! 
 $oe-hs-eye-left:	rgb(254,103,103); 			// red
@@ -15,7 +18,8 @@ $oe-hs-eye-right-dull:	shade( $oe-hs-eye-right,40 );
 $oe-hs-axes: 		rgb(150,150,150);
 $oe-hs-bg: 			$oe-pro-blue-dark2;
 $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
-
+$oe-hs-anal-blue:	rgb(54,155,215); 			// Analytics blue
+$oe-hs-anal-orange:	rgb(230,115,0);				// Analytics orange
 
 .highcharts-container {
   position: relative;
@@ -59,10 +63,12 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 // - 13 - dashed
 // 
 // LEFT Eye (red) - the same but 20's
+//
+// Analytics - uses 50's
 
 .highcharts-root {
 	
-	// specific color classes (no good if Legend or Navigator are shown)
+	// specific color classes (BUT no good if Legend or Navigator are shown!)
 	.oes-hs-eye-right-bright {
 		fill: $oe-hs-eye-right;
 	}
@@ -76,7 +82,8 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 		fill: $oe-hs-eye-left-dull;
 	}
 
-	// Right Eye (Green)
+	// colorIndex 
+	// ------------ Right Eye (Green)
 	.highcharts-color-10,
 	.highcharts-color-11, 
 	.highcharts-color-12, 
@@ -91,7 +98,7 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 		stroke-width:0;
 	}
 	
-	// Left Eye (Red)
+	// ------------ Left Eye (Red)
 	.highcharts-color-20,
 	.highcharts-color-21, 
 	.highcharts-color-22, 
@@ -105,6 +112,7 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 		stroke-width:0;
 	}
 	
+	// ------------ dash styling for L & R
 	.highcharts-color-12, 
 	.highcharts-color-22, {
 		stroke-dasharray: 2,2;  // space | pattern e.g dash,gap etc!
@@ -152,6 +160,32 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 	}
 	
 	
+	// -------  Analytics Blues and Oranges
+	// Blues
+	.highcharts-color-50 {
+		fill: $oe-hs-anal-blue; // fill only
+	}
+	.highcharts-color-51 {
+		stroke: $oe-hs-anal-blue;
+		fill: $oe-hs-anal-blue; 
+	}
+	// Orange
+	.highcharts-color-60 {
+		fill: $oe-hs-anal-orange;		
+	}
+
+	.highcharts-color-61 {
+		fill: $oe-hs-anal-orange;
+		stroke: $oe-hs-anal-orange; 		
+	}
+	
+	// error bars	
+	.highcharts-boxplot-stem,
+	.highcharts-boxplot-whisker {
+		stroke: rgb(110,110,120);  
+		stroke-width:1;
+	}
+	
 	// turn off the fill for specific series
 	.highcharts-series {
 		&.highcharts-line-series {
@@ -164,9 +198,7 @@ $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 			fill:none;
 		}
 	}
-	
-	
-	
+
 	// set up Markers - flags over drug banners
 	.highcharts-markers {
 		cursor: pointer;

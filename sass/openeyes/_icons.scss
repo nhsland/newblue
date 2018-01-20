@@ -140,29 +140,24 @@
 		// Right Eye
 		&.R {
 			background-image: url( svg-path('lat-R') );
-			
-			&.pos-shift {
-				position:relative;
-				left:0px;
-			}	
 		}
-		// Both Eyes (Bi-lateral)
+		// Left Eye
+		&.L {
+			background-image: url( svg-path('lat-L') );
+		}
+		
+		// N/A - grey dot 
+		&.NA {
+			background-image: url( svg-path('lat-NA') );
+		}
+		
+		// Both Eyes (Bi-lateral) --- Both is currently unused in OE3
 		&.B {
 			background-image: url( svg-path('lat-B') );	
 			&.pos-shift {
 				position:relative;
 				left:7px;
 			}
-		}
-		// Left Eye
-		&.L {
-			background-image: url( svg-path('lat-L') );
-			
-			&.pos-shift {
-				position:relative;
-				left:14px;
-			}
-
 		}
 	}
 }

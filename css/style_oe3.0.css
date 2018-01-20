@@ -468,9 +468,12 @@ textarea {
   background-image: url("../svg/in-css/lat-R.svg");
 }
 
-.oe-i.laterality.R.pos-shift {
-  position: relative;
-  left: 0px;
+.oe-i.laterality.L {
+  background-image: url("../svg/in-css/lat-L.svg");
+}
+
+.oe-i.laterality.NA {
+  background-image: url("../svg/in-css/lat-NA.svg");
 }
 
 .oe-i.laterality.B {
@@ -480,15 +483,6 @@ textarea {
 .oe-i.laterality.B.pos-shift {
   position: relative;
   left: 7px;
-}
-
-.oe-i.laterality.L {
-  background-image: url("../svg/in-css/lat-L.svg");
-}
-
-.oe-i.laterality.L.pos-shift {
-  position: relative;
-  left: 14px;
 }
 
 .oe-i-e {
@@ -946,24 +940,34 @@ textarea {
   background-position: -38px -228px;
 }
 
-.i-TrOperationNotes {
+.i-TrOperation {
   background-size: 133px 133px;
   background-position: -38px -114px;
 }
 
-.i-TrOperationNotes.large {
+.i-TrOperation.large {
   background-size: 266px 266px;
   background-position: -76px -228px;
 }
 
-.i-TrOperationProcedure {
+.i-TrOperationNotes {
   background-size: 133px 133px;
   background-position: -57px -114px;
 }
 
-.i-TrOperationProcedure.large {
+.i-TrOperationNotes.large {
   background-size: 266px 266px;
   background-position: -114px -228px;
+}
+
+.i-TrOperationProcedure {
+  background-size: 133px 133px;
+  background-position: -76px -114px;
+}
+
+.i-TrOperationProcedure.large {
+  background-size: 266px 266px;
+  background-position: -152px -228px;
 }
 
 ul {
@@ -1400,7 +1404,6 @@ html {
   grid-template-areas: "header header" "addevent eventheader" "sidebar main";
   width: 100vw;
   height: 100vh;
-  max-height: 100vh;
 }
 
 .oe-grid .oe-header {
@@ -1442,7 +1445,8 @@ html {
 }
 
 @media only screen and (min-width: 1800px) {
-  .oe-grid .oe-full-header, .oe-grid .oe-full-content {
+  .oe-grid .oe-full-header,
+  .oe-grid .oe-full-content {
     width: 1350px;
   }
 }
@@ -1490,7 +1494,7 @@ html {
 
 .oe-grid .oe-full-content,
 .oe-grid .oescape,
-.oe-grid .analytics {
+.oe-grid .oe-analytics {
   -ms-grid-column: 1;
   -ms-grid-row: 2;
   -ms-grid-column-span: 2;
@@ -2927,25 +2931,26 @@ html {
   background-position: right 10px center;
   background-repeat: no-repeat;
   background-size: 13px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> path,circle{ fill:#fff; opacity:0.2; }</style><path d="M15,4.83c8.28,0,15,4.55,15,10.17A15,15,0,0,0,0,15C0,9.39,6.72,4.83,15,4.83Z"/><path d="M15,25.17C6.72,25.17,0,20.61,0,15a15,15,0,1,0,30,0C30,20.61,23.28,25.17,15,25.17Z"/><circle cx="15" cy="15" r="6"/></svg>');
-}
-
-.sidebar .event .event-type:hover, .sidebar .event .event-type:focus {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> path,circle{ fill:#fff; opacity:0.8; }</style><path d="M15,4.83c8.28,0,15,4.55,15,10.17A15,15,0,0,0,0,15C0,9.39,6.72,4.83,15,4.83Z"/><path d="M15,25.17C6.72,25.17,0,20.61,0,15a15,15,0,1,0,30,0C30,20.61,23.28,25.17,15,25.17Z"/><circle cx="15" cy="15" r="6"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> path,circle{ fill:#fff; opacity:0.3; }</style><path d="M15,4.83c8.28,0,15,4.55,15,10.17A15,15,0,0,0,0,15C0,9.39,6.72,4.83,15,4.83Z"/><path d="M15,25.17C6.72,25.17,0,20.61,0,15a15,15,0,1,0,30,0C30,20.61,23.28,25.17,15,25.17Z"/><circle cx="15" cy="15" r="6"/></svg>');
 }
 
 .sidebar .event .event-type.alert {
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> polygon{ fill:#fff; opacity:0.5; }</style><polygon points="15 5.86 19.52 1.1 20.37 7.61 26.83 6.41 23.69 12.18 29.62 15 23.69 17.82 26.83 23.59 20.37 22.39 19.52 28.9 15 24.14 10.48 28.9 9.63 22.39 3.17 23.59 6.31 17.82 0.38 15 6.31 12.18 3.17 6.41 9.63 7.61 10.48 1.1 15 5.86"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> polygon{ fill:#fff; opacity:0.65; }</style><polygon points="15 5.86 19.52 1.1 20.37 7.61 26.83 6.41 23.69 12.18 29.62 15 23.69 17.82 26.83 23.59 20.37 22.39 19.52 28.9 15 24.14 10.48 28.9 9.63 22.39 3.17 23.59 6.31 17.82 0.38 15 6.31 12.18 3.17 6.41 9.63 7.61 10.48 1.1 15 5.86"/></svg>');
 }
 
 .sidebar .event .event-type.ready {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> path{ fill:#fff; opacity:0.6; }</style><path d="M28.3,1.88l.7,1a54.4,54.4,0,0,0-9.49,9.89,68,68,0,0,0-8,12.48l-1.47,1a25.12,25.12,0,0,0-2.49,1.89,31.23,31.23,0,0,0-1.14-3.07l-.56-1.3a20,20,0,0,0-2.22-4.13,5,5,0,0,0-2.3-1.77q2.15-2.27,3.95-2.27,1.53,0,3.41,4.16l.62,1.4a57.89,57.89,0,0,1,8.65-11A48.45,48.45,0,0,1,28.3,1.88Z"/></svg>');
 }
 
+.sidebar .event .event-extra {
+  display: inline-block;
+  width: 32px;
+}
+
 .sidebar .event .event-date {
   display: inline-block;
   vertical-align: top;
-  padding: 0 0 0 20px;
+  padding: 0 0 0 0;
 }
 
 .sidebar .event .event-date .day, .sidebar .event .event-date .mth, .sidebar .event .event-date .yr {
@@ -2955,22 +2960,17 @@ html {
 }
 
 .sidebar .event .event-date .day {
-  width: 20px;
+  width: 22px;
   text-align: right;
-  padding-right: 4px;
+  padding-right: 5px;
 }
 
 .sidebar .event .event-date .mth {
-  width: 32px;
+  width: 30px;
 }
 
 .sidebar .event .event-date .yr {
   width: 23px;
-}
-
-.sidebar .event .ev-date {
-  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> path{ fill:#fff; opacity:0.5; }</style><path d="M17,3A12,12,0,0,0,5,14.8l-2.7-2.7L.54,13.87,6,19.33l5.46-5.46L9.69,12.1,7,14.78A10,10,0,1,1,17,25v2A12,12,0,0,0,17,3Z"/></svg>') left center no-repeat;
-  background-size: 13px;
 }
 
 .sidebar .tooltip.quicklook {
@@ -2979,10 +2979,10 @@ html {
   top: 19px;
   z-index: 1;
   width: 100%;
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
   background: #374755;
-  padding: 5px 0;
+  padding: 8px 0;
 }
 
 .sidebar .tooltip.quicklook.makestatic {
@@ -2994,12 +2994,14 @@ html {
 }
 
 .sidebar .tooltip.quicklook .event-info {
-  font-size: 0.5625rem;
+  font-size: 0.625rem;
+  line-height: 1.3;
   padding: 0 5px 2px 8px;
 }
 
 .sidebar .tooltip.quicklook .event-issue {
   font-size: 0.625rem;
+  line-height: 1.3;
   color: #fff;
   margin: 2px 0 0 0;
   padding: 5px 5px 5px 25px;
@@ -3908,16 +3910,16 @@ html {
 }
 
 /* Lightening viewer */
-.lightening-viewer {
+.oe-lightening-viewer {
   background: #182535;
 }
 
-.lightening-viewer .oe-letter-timeline {
+.oe-lightening-viewer .oe-letter-timeline {
   background: #141e2b;
   padding: 2px 4px 4px 10px;
 }
 
-.lightening-viewer .oe-letter-timeline table td {
+.oe-lightening-viewer .oe-letter-timeline table td {
   padding: 6px 6px 3px 4px;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.9375rem;
@@ -3926,7 +3928,7 @@ html {
   min-width: 50px;
 }
 
-.lightening-viewer .oe-letter-timeline .letter-event {
+.oe-lightening-viewer .oe-letter-timeline .letter-event {
   position: relative;
   display: inline-block;
   padding: 1px;
@@ -3934,12 +3936,12 @@ html {
   height: 21px;
 }
 
-.lightening-viewer .oe-letter-timeline .letter-event:hover, .lightening-viewer .oe-letter-timeline .letter-event.js-hover {
+.oe-lightening-viewer .oe-letter-timeline .letter-event:hover, .oe-lightening-viewer .oe-letter-timeline .letter-event.js-hover {
   background-color: #fff;
   cursor: pointer;
 }
 
-.lightening-viewer .oe-letter-timeline .letter-event.selected:after {
+.oe-lightening-viewer .oe-letter-timeline .letter-event.selected:after {
   position: absolute;
   left: 1px;
   top: 100%;
@@ -3949,7 +3951,7 @@ html {
   border-bottom: 3px solid cyan;
 }
 
-.lightening-viewer .oe-letter-meta {
+.oe-lightening-viewer .oe-letter-meta {
   position: relative;
   width: 180px;
   margin: 5px 0 0 10px;
@@ -3960,15 +3962,15 @@ html {
   background: #283442;
 }
 
-.lightening-viewer .oe-letter-meta .date {
+.oe-lightening-viewer .oe-letter-meta .date {
   font-weight: 500;
 }
 
-.lightening-viewer .oe-letter-meta .sender {
+.oe-lightening-viewer .oe-letter-meta .sender {
   font-style: italic;
 }
 
-.lightening-viewer .oe-letter-meta:after {
+.oe-lightening-viewer .oe-letter-meta:after {
   left: 100%;
   top: 50%;
   border: solid transparent;
@@ -3982,7 +3984,7 @@ html {
   margin-top: -6px;
 }
 
-.lightening-viewer .oe-letter-quick-view {
+.oe-lightening-viewer .oe-letter-quick-view {
   margin-top: 5px;
 }
 
@@ -4321,6 +4323,30 @@ html {
 .highcharts-root .highcharts-plot-line-label {
   font-size: 0.6875rem;
   fill: #3db0fb;
+}
+
+.highcharts-root .highcharts-color-50 {
+  fill: #369bd7;
+}
+
+.highcharts-root .highcharts-color-51 {
+  stroke: #369bd7;
+  fill: #369bd7;
+}
+
+.highcharts-root .highcharts-color-60 {
+  fill: #e67300;
+}
+
+.highcharts-root .highcharts-color-61 {
+  fill: #e67300;
+  stroke: #e67300;
+}
+
+.highcharts-root .highcharts-boxplot-stem,
+.highcharts-root .highcharts-boxplot-whisker {
+  stroke: #6e6e78;
+  stroke-width: 1;
 }
 
 .highcharts-root .highcharts-series.highcharts-line-series {
@@ -4965,16 +4991,16 @@ table.oe-clinic-list td.center {
 }
 
 /* Analytics */
-.analytics a {
+.oe-analytics a {
   color: inherit;
   text-decoration: none;
 }
 
-.analytics a:hover, .analytics a:focus, .analytics a:active {
+.oe-analytics a:hover, .oe-analytics a:focus, .oe-analytics a:active {
   color: #5ab4b4;
 }
 
-.analytics a.selected {
+.oe-analytics a.selected {
   color: cyan;
 }
 
@@ -5082,30 +5108,6 @@ table.oe-clinic-list td.center {
 
 .analytics-charts .highcharts-background {
   fill: #101925;
-}
-
-.analytics-charts .highcharts-root .highcharts-color-50 {
-  fill: cyan;
-}
-
-.analytics-charts .highcharts-root .highcharts-color-51 {
-  fill: #369bd7;
-}
-
-.analytics-charts .highcharts-root .highcharts-color-52 {
-  fill: #369bd7;
-  stroke: #369bd7;
-}
-
-.analytics-charts .highcharts-root .highcharts-color-53 {
-  fill: #e67300;
-  stroke: #e67300;
-}
-
-.analytics-charts .highcharts-root .highcharts-boxplot-stem,
-.analytics-charts .highcharts-root .highcharts-boxplot-whisker {
-  stroke: #6e6e78;
-  stroke-width: 1;
 }
 
 .analytics-charts .highcharts-yaxis {
