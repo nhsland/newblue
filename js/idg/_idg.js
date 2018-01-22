@@ -33,6 +33,11 @@ idg.init = function(){
 		}  
 	}
 	
+	// set up 'hidden' for JS 
+	// hidden in the CSS is helpful in the DOM
+	// but it also stops the flickering! 
+	$('.hidden').removeClass('hidden').hide();
+
 	// Patient Banner
 	idg.patientPopups.init();
 	
@@ -67,6 +72,9 @@ idg.init = function(){
 	// Exam Edit Right Left Search popup demo
 	idg.examElementSearchPopup();
 	
+	// Expand Collapse View lists
+	idg.expandElementList();
+	
 	// SEM View sidebar: Quicklook and QuickView
 	idg.sidebarQuickInfo();
 	
@@ -84,6 +92,8 @@ idg.init = function(){
 	
 	// Homepage Message Expand Contract	
 	idg.homeMessageExpand();
+	
+	//
 	
 										
 };

@@ -982,7 +982,7 @@ ul.inline-list li {
 
 ul.dslash-list li {
   display: inline-block;
-  margin: 0 10px 0 0;
+  margin: 0 10px 12px 0;
   padding: 0 0 0 30px;
   background-position: left center;
   background-repeat: no-repeat;
@@ -1017,18 +1017,18 @@ input.pro-theme, textarea.pro-theme, select.pro-theme {
   background-color: #1e2e42;
 }
 
-.label,
-label {
+label,
+.label {
   margin-right: 10px;
 }
 
-.label.inline,
-label.inline {
+label.inline,
+.label.inline {
   display: inline-block;
 }
 
-.label.highlight,
-label.highlight {
+label.highlight,
+.label.highlight {
   padding: 3px 6px;
   margin-right: 0;
   color: rgba(255, 255, 255, 0.8);
@@ -1037,20 +1037,20 @@ label.highlight {
   cursor: pointer;
 }
 
-.label.highlight input,
-label.highlight input {
+label.highlight input,
+.label.highlight input {
   margin-right: 5px;
 }
 
-.label.highlight:hover, .label.highlight:focus, .label.highlight:active,
-label.highlight:hover,
-label.highlight:focus,
-label.highlight:active {
-  background: #182535;
+label.highlight:hover, label.highlight:focus, label.highlight:active,
+.label.highlight:hover,
+.label.highlight:focus,
+.label.highlight:active {
+  background: #1b293b;
 }
 
-.label .required,
-label .required {
+label .required,
+.label .required {
   color: #f00;
 }
 
@@ -1080,7 +1080,7 @@ input.search {
   padding-left: 30px;
   background-position: left 5px center;
   background-repeat: no-repeat;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><style>path{fill:#fff;opacity:0.5}</style><path d="M11,1.75a6.24,6.24,0,0,0-4.91,10.1L1.82,16.12l-.18.18.18.18.71.71.18.18.18-.18,4.26-4.26A6.25,6.25,0,1,0,11,1.75Zm0,11A4.77,4.77,0,1,1,15.77,8,4.78,4.78,0,0,1,11,12.77Z"/></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19"><style>path{fill:#888;opacity:0.9}</style><path d="M11,1.75a6.24,6.24,0,0,0-4.91,10.1L1.82,16.12l-.18.18.18.18.71.71.18.18.18-.18,4.26-4.26A6.25,6.25,0,1,0,11,1.75Zm0,11A4.77,4.77,0,1,1,15.77,8,4.78,4.78,0,0,1,11,12.77Z"/></svg>');
 }
 
 input.search.right {
@@ -2038,6 +2038,15 @@ html {
   padding: 10px 10px 15px 10px;
 }
 
+@media only screen and (min-width: 1440px) {
+  .patient-popup-allergies-risks,
+  .patient-popup-quicklook,
+  .patient-popup-tasks,
+  .patient-popup-demographics {
+    width: 1240px;
+  }
+}
+
 .patient-popup-allergies-risks .oe-popup-overflow,
 .patient-popup-quicklook .oe-popup-overflow,
 .patient-popup-tasks .oe-popup-overflow,
@@ -2852,7 +2861,7 @@ html {
 }
 
 .sidebar {
-  padding: 2px 1px 50px 0;
+  padding: 2px 1px 80px 0;
   background: #101925;
 }
 
@@ -3219,7 +3228,7 @@ html {
 
 @media only screen and (min-width: 1440px) {
   .main-event .element {
-    padding: 5px 30px 5px 135px;
+    padding: 10px 30px 10px 135px;
   }
 }
 
@@ -3251,6 +3260,11 @@ html {
 
 .main-event .element .field-sub-row {
   padding-bottom: 3px;
+}
+
+.main-event .element .element-fields.full-width {
+  padding-right: 20px;
+  padding-left: 10px;
 }
 
 .main-event .element .element-fields .data-label {
@@ -3301,7 +3315,7 @@ html {
 }
 
 .main-event .element-header .element-title {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
   padding: 0 0 0 10px;
@@ -3341,17 +3355,6 @@ html {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-}
-
-.main-event .element .flex-layout.flex-pad-element {
-  padding-right: 20px;
-  padding-left: 10px;
-}
-
-.main-event .element .flex-layout .flex-valign-bottom {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  position: relative;
 }
 
 .main-event .element table td:last-child,
@@ -3552,8 +3555,9 @@ html {
   padding-left: 5px;
 }
 
-.main-event .element .element-data .full-width {
-  padding: 0 10px 0 10px;
+.main-event .element .element-data.full-width {
+  padding-right: 20px;
+  padding-left: 10px;
 }
 
 .main-event .element .element-data .large-text {
@@ -3567,6 +3571,18 @@ html {
 
 .main-event .element .element-data table {
   width: 100%;
+}
+
+.main-event .element .element-data table td:last-child,
+.main-event .element .element-data table th:last-child {
+  text-align: left;
+}
+
+.main-event .element .element-data .divider {
+  width: 100%;
+  height: 1px;
+  margin: 10px 0;
+  border-top: 1px dotted #26303d;
 }
 
 .main-event .element .element-data .data-value.not-recorded {
@@ -4595,7 +4611,7 @@ table.oe-clinic-list thead tr {
 
 table.oe-clinic-list tbody tr {
   background: #141e2b;
-  border-bottom: 1px solid #26303d;
+  border-bottom: 1px solid rgba(100, 100, 100, 0.3);
 }
 
 table.oe-clinic-list tbody tr:last-child {

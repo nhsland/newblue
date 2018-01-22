@@ -5,13 +5,12 @@
 @import "elements/element"; // base setup
 @import "elements/edit";
 @import "elements/header-actions";
-@import "elements/flex";
 @import "elements/tables";
 @import "elements/add-select-search";
 @import "elements/multi-select";
 
-@import "elements/view"; // view mode
-
+// view mode
+@import "elements/view"; 
 
 // eyedraw
 @import "elements/eyedraw";

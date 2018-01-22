@@ -50,7 +50,7 @@
 		
 		// pop the element header to the left, if there is space:
 		@include media($oe-extended-browser-size){
-			padding:5px 30px 5px $oe-event-extension - 25px; // provide left space for header and right space for actions
+			padding:10px 30px 10px $oe-event-extension - 25px; // provide left space for header and right space for actions
 		}
 		
 		

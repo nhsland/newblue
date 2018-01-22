@@ -17,7 +17,7 @@ table.oe-clinic-list {
 		// add line to help with reading data
 		tr {
 			background:$oe-blue-dark2;
-			border-bottom:1px solid $oe-line;
+			border-bottom:1px solid rgba(100,100,100,0.3);
 			&:last-child { 
 				border-bottom: none;
 			}
@@ -26,6 +26,8 @@ table.oe-clinic-list {
 				background-color: $oe-bg-highlight;
 			}
 			
+			
+			// future appointments for that day i.e. haven't arrived yet
 			&.future {
 				background-color: $oe-blue-dark;	
 				&:hover {

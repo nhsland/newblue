@@ -47,9 +47,6 @@ idg.elementAddSelectSearch = function(){
 	  	iterate over them to build the inputs
 	  	*/	
   		var lists = [];
-  		
-  		$popup.removeClass('hidden').hide();
-  		search.removeClass('hidden').hide();
 
   		/*
 	  	pubilc methods

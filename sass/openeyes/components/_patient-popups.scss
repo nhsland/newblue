@@ -21,6 +21,11 @@
 	border:1px solid $oe-pro-text-highlight;
 	padding:10px 10px 15px 10px;
 	
+	@include media($oe-extended-browser-size){
+		width:$oe-event-main-extended-width; // popups to match width of Event area	
+	}
+	
+	
 	// overflow wrappers alerts and summary-data
 	.oe-popup-overflow {	
 		max-height: 415px; 

@@ -3,6 +3,13 @@
 .main-event {
 	.element {
 		.element-fields {
+			// for all Elements that aren't split into
+			// R L Eye sides we need to adjust the padding
+			&.full-width {
+			 	padding-right:20px; // 20px matches the left-eye padding indent to align "+" buttons
+				padding-left:10px;
+			}
+			
 			.data-label {
 				color:$oe-text-light;
 			}

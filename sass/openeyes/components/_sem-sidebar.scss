@@ -7,7 +7,7 @@ $oe-sidebar-sub-height:21px;
 $oe-sidebar-event-height:19px;
 
 .sidebar {
-	padding:2px 1px 50px 0;
+	padding:2px 1px 80px 0; // pad bottom to allow for quicklook popup 
 	background: $html-pro-bg;
 	
 	.oescape-icons {

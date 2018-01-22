@@ -15,9 +15,9 @@
 		}
 	
 		.element-title {
-			@include font-size(14);
+			@include font-size(15);
 			color:$oe-text-light;
-			font-weight:$oe-font-light;
+			font-weight:300;
 			padding:0 0 0 10px;
 			
 			@include media($oe-extended-browser-size){

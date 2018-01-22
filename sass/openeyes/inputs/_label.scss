@@ -2,8 +2,8 @@
 // used as a wrapper around inputs 
 // and next to inputs
 
-.label,
-label {
+label,
+.label {
 
 	// assuming thats labels will only
 	// be used next to an input:
@@ -27,7 +27,7 @@ label {
 		}
 		
 		&:hover, &:focus, &:active {
-			background:$oe-blue-dark;
+			background:shade($oe-user-inputs,10);
 		}
 	}
 

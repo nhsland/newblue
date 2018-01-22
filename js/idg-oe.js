@@ -33,6 +33,11 @@ idg.init = function(){
 		}  
 	}
 	
+	// set up 'hidden' for JS 
+	// hidden in the CSS is helpful in the DOM
+	// but it also stops the flickering! 
+	$('.hidden').removeClass('hidden').hide();
+
 	// Patient Banner
 	idg.patientPopups.init();
 	
@@ -67,6 +72,9 @@ idg.init = function(){
 	// Exam Edit Right Left Search popup demo
 	idg.examElementSearchPopup();
 	
+	// Expand Collapse View lists
+	idg.expandElementList();
+	
 	// SEM View sidebar: Quicklook and QuickView
 	idg.sidebarQuickInfo();
 	
@@ -84,6 +92,8 @@ idg.init = function(){
 	
 	// Homepage Message Expand Contract	
 	idg.homeMessageExpand();
+	
+	//
 	
 										
 };
@@ -1042,251 +1052,6 @@ idg.homeMessageExpand = function(){
 	}
 }
 
-/**
-OEscape 
-**/
-var oes = {
-	
-	init:function(){
-		// exit oescape and go back to last viewed (non-oes) page
-		$('#js-exit-oescape').click( function(){
-			window.location = localStorage.getItem("lastPage");
-		});
-	},
-	
-	
-	/*
-	keep track of the last non-oescape page
-	so that you can exit oescape mode and 
-	return to last page	
-	*/
-	oescapeExit:function(){
-		var href = window.location.href;
-		if(href.includes("oescape") == false ){
-			localStorage.setItem( "lastPage",href ); 
-		}
-	}
-}
-/**
-Image Stack animations in OEscape	
-pass in ID string for container and sting ID prefix for images
-returns method to directly update the stack and sets up the Events
-
-@method initStack
-@param 'container' (String) 	- id for container DOM 
-@param 'img_id' (String) 		- id prefix for <img>, assumes numbering 1 to n
-@param 'callBack' (function)  	- callback optional
-@return {object} with method to setImg()	
-**/
-oes.initStack = function(container,img_id_prefix,callBack){
-	var container = $(container);
-	var imgID = 1; 					// default image set in PHP, the rest are 'hidden'
-	var imgTotal = container.children().length;
-	
-	// Mouse & Touch image stack animation
-	$( container ).bind( "mousemove touchmove", function( e ) {
-		e.stopPropagation();
-		
-		var offset = $(this).offset();		// these will update everytime browser is resized
-		var xPos = e.pageX - offset.left;
-		var w = $(this).width();			
-		var num = Math.ceil( xPos / ( w / imgTotal ) );
-		
-		if(num === 0 || num > imgTotal) return; // out of range
-		
-		updateImageStack(num); 
-			
-		if(typeof callBack === "function") callBack(num);			
-	});
-	
-	// update images
-	function updateImageStack(n){
-		$( img_id_prefix + imgID ).hide();
-		$( img_id_prefix + n ).removeClass('hidden').show();
-		imgID = n;
-	}
-	
-	// provide access to update Image directly, e.g. from highCharts
-	return {
-		setImg:function(imgID){
-			updateImageStack(imgID);
-			imgID = imgID;
-		}
-	};
-}
-/**
-Tab buttons control what is shown on the right handside
-
-@param tabBtnInfo (Array) - Array of Objects: {btn:'btn_id',area:'area_id'}
-@param 'callBack' (function)  	- callback optional
-**/
-oes.setupAreaTabButtons = function( tabBtnInfo, callBack ){
-	
-	for( var i=0; i<tabBtnInfo.length; i++ ){
-		
-		var btn = tabBtnInfo[i].btn = $(tabBtnInfo[i].btn);  // turn into jQuery
-		var area = tabBtnInfo[i].content = $(tabBtnInfo[i].content);	
-		var tab = new TabContent( btn,area,i );
-
-	}
-	
-	// assuming first button is default
-	tabBtnInfo[0].btn.addClass('selected');
-	
-	function TabContent( btn, content, i){
-		var btn = btn;
-		var content = content;
-		var i = i;
-		
-		btn.click( function( e ){
-			e.stopPropagation();
-			resetStacks();
-			$(this).addClass('selected');
-			content.removeClass('hidden').show();
-			
-			if(typeof callBack === "function") callBack(i);
-		});		
-	}
-
-	function resetStacks(){
-		for(var i=0; i<tabBtnInfo.length; i++){
-			tabBtnInfo[i].btn.removeClass('selected');
-			tabBtnInfo[i].content.hide();
-		}
-	}
-	
-}
-/**
-OEscape offers 4 resize states for the left hand chart area	
-@param 'callBack' (function)  	- callback optional
-**/
-oes.setupResizeButtons = function( callBack ){
-	
-	var left = $('.oes-left-side'),
-		right = $('.oes-right-side'),
-		size;
-	
-	// setup resize buttons
-	// buttons have data-area attribute: small, medium, large and full
-	$('.js-oes-area-resize').click(function( e ){
-		e.stopPropagation();
-		
-		var str = $(this).data('area');
-		switch(str){
-			case 'small': 	size = 500;
-			break;
-			case 'medium': 	size = 700;
-			break;
-			case 'large': 	size = 900;
-			break;
-			case 'full': 	size = null;  // null, when passed to highcharts makes chart fill container
-			break;
-		}
-		
-		// fullsize requires some tweaking
-		if(size == null){
-			left.css({"min-width":"500px", "width":"100%"});
-			right.hide();
-		} else {
-			left.css({"min-width": size + "px", "width":""});
-			right.show();	
-		}
-		
-		if(typeof callBack === "function" ) callBack(size);	
-	});
-}
-/*
-Lightening Letter Viewer
-Icon in the Patient banner area links to the 
-Letter Viewer page for the patint
-*/
-idg.lighteningViewer = function(){
-	
-	// if on the letter viewing page  
-	// set icon to active 
-	if(window.location.pathname == '/v3.0/lightening-letter-viewer'){
-		$('#js-lightening-viewer-btn').addClass('active');
-		return;	
-	};
-	
-	// Events
-	$('#js-lightening-viewer-btn').click(function( e ){
-		e.stopPropagation();
-		window.location = '/v3.0/lightening-letter-viewer';
-	})
-	.mouseenter(function(){
-		$(this).addClass( 'active' ); 
-	})
-	.mouseleave(function(){
-		$(this).removeClass( 'active' ); 
-	});	
-}
-/**
-All Patient Popups 
-Manage them to avoid any overlapping	
-**/
-idg.patientPopups = {
-	
-	init:function(){
-		
-		if( $('#oe-patient-details').length == 0 ) return;
-		
-		// patient popups
-		var quicklook 		= new idg.NavBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
-		var demographics 	= new idg.NavBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
-		var risks 			= new idg.NavBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
-		// var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
-		
-		var all = [ quicklook, demographics, risks ];
-		
-		for( pBtns in all ) {
-			all[pBtns].inGroup( this ); // register group with PopupBtn 
-		}
-		
-		this.popupBtns = all;
-		
-		/**
-		Problems and Plans
-		These are currently in quicklook popup
-		**/
-		if( $('#problems-plans-sortable').length ){
-			idg.problemsPlans();
-		}
-	},
-
-	closeAll:function(){
-		for( pBtns in this.popupBtns ){
-			this.popupBtns[pBtns].hide();  // close all patient popups
-		}
-	}
-
-}
-
-/*
-Problems &  Plans sortable list 
-In patient quicklook 
-- requires Sortable.js
-*/
-idg.problemsPlans = function(){
-	// make Problems & Plans Sortable:
-	var el = document.getElementById( 'problems-plans-sortable' );
-	var sortable = Sortable.create( el );
-		
-	// Add New Plan / Problem	
-	$('#js-add-pp-btn').click(function(){
-		var input = $('#create-problem-plan');
-		var val = input.val();
-		if( val === '') return;				
-		var html = '<li><span class="drag-handle">&#9776;</span>'+ val +'<div class="remove">&times;</div></li>';
-		$('#problems-plans-sortable').append( html );
-		input.val(''); // refresh input
-	}); 
-
-	// remove a Problem Plan
-	$('#problems-plans-sortable .remove').click(function(){ 
-  		$(this).parent().remove(); 
-  	});
-}
 /*
 SEM Element - Add or Search
 Popup to add selected list to element
@@ -1336,9 +1101,6 @@ idg.elementAddSelectSearch = function(){
 	  	iterate over them to build the inputs
 	  	*/	
   		var lists = [];
-  		
-  		$popup.removeClass('hidden').hide();
-  		search.removeClass('hidden').hide();
 
   		/*
 	  	pubilc methods
@@ -1638,6 +1400,46 @@ idg.examElementSearchPopup = function(){
 			$('#elements-search-results').hide();
 		});
 	}		
+}
+/*
+Element Expand (collapse) data list
+*/
+idg.expandElementList = function(){
+	
+	console.log('hi');
+	
+	// check for view elementss
+	if( $('.element-data').length == 0 ) return;
+	
+	$('.js-listview-expand-btn').each(function(){	
+		// id= js-listview-[data-list]-full | quick
+		console.log(this);
+		
+		var listid = $(this).data('list');
+		var listview = new ListView( $(this),
+									 $('#js-listview-'+listid+'-pro'),
+									 $('#js-listview-'+listid+'-full') );
+	});
+	
+	function ListView( $iconBtn, $quick, $full ){
+		var quick = true;
+		
+		
+		$iconBtn.click(function(){
+			$(this).toggleClass('expand collapse');
+			quick = !quick;
+			
+			if(quick){
+				$quick.show();
+				$full.hide();
+			} else {
+				$quick.hide();
+				$full.show();
+			}
+		});
+	}
+
+
 }
 /*
 Sidebar Elements
@@ -1966,4 +1768,249 @@ idg.tooltips = function(){
 			$('body').find( ".oe-tooltip" ).remove();
 		}
 	);	
+}
+/**
+OEscape 
+**/
+var oes = {
+	
+	init:function(){
+		// exit oescape and go back to last viewed (non-oes) page
+		$('#js-exit-oescape').click( function(){
+			window.location = localStorage.getItem("lastPage");
+		});
+	},
+	
+	
+	/*
+	keep track of the last non-oescape page
+	so that you can exit oescape mode and 
+	return to last page	
+	*/
+	oescapeExit:function(){
+		var href = window.location.href;
+		if(href.includes("oescape") == false ){
+			localStorage.setItem( "lastPage",href ); 
+		}
+	}
+}
+/**
+Image Stack animations in OEscape	
+pass in ID string for container and sting ID prefix for images
+returns method to directly update the stack and sets up the Events
+
+@method initStack
+@param 'container' (String) 	- id for container DOM 
+@param 'img_id' (String) 		- id prefix for <img>, assumes numbering 1 to n
+@param 'callBack' (function)  	- callback optional
+@return {object} with method to setImg()	
+**/
+oes.initStack = function(container,img_id_prefix,callBack){
+	var container = $(container);
+	var imgID = 1; 					// default image set in PHP, the rest are 'hidden'
+	var imgTotal = container.children().length;
+	
+	// Mouse & Touch image stack animation
+	$( container ).bind( "mousemove touchmove", function( e ) {
+		e.stopPropagation();
+		
+		var offset = $(this).offset();		// these will update everytime browser is resized
+		var xPos = e.pageX - offset.left;
+		var w = $(this).width();			
+		var num = Math.ceil( xPos / ( w / imgTotal ) );
+		
+		if(num === 0 || num > imgTotal) return; // out of range
+		
+		updateImageStack(num); 
+			
+		if(typeof callBack === "function") callBack(num);			
+	});
+	
+	// update images
+	function updateImageStack(n){
+		$( img_id_prefix + imgID ).hide();
+		$( img_id_prefix + n ).removeClass('hidden').show();
+		imgID = n;
+	}
+	
+	// provide access to update Image directly, e.g. from highCharts
+	return {
+		setImg:function(imgID){
+			updateImageStack(imgID);
+			imgID = imgID;
+		}
+	};
+}
+/**
+Tab buttons control what is shown on the right handside
+
+@param tabBtnInfo (Array) - Array of Objects: {btn:'btn_id',area:'area_id'}
+@param 'callBack' (function)  	- callback optional
+**/
+oes.setupAreaTabButtons = function( tabBtnInfo, callBack ){
+	
+	for( var i=0; i<tabBtnInfo.length; i++ ){
+		
+		var btn = tabBtnInfo[i].btn = $(tabBtnInfo[i].btn);  // turn into jQuery
+		var area = tabBtnInfo[i].content = $(tabBtnInfo[i].content);	
+		var tab = new TabContent( btn,area,i );
+
+	}
+	
+	// assuming first button is default
+	tabBtnInfo[0].btn.addClass('selected');
+	
+	function TabContent( btn, content, i){
+		var btn = btn;
+		var content = content;
+		var i = i;
+		
+		btn.click( function( e ){
+			e.stopPropagation();
+			resetStacks();
+			$(this).addClass('selected');
+			content.removeClass('hidden').show();
+			
+			if(typeof callBack === "function") callBack(i);
+		});		
+	}
+
+	function resetStacks(){
+		for(var i=0; i<tabBtnInfo.length; i++){
+			tabBtnInfo[i].btn.removeClass('selected');
+			tabBtnInfo[i].content.hide();
+		}
+	}
+	
+}
+/**
+OEscape offers 4 resize states for the left hand chart area	
+@param 'callBack' (function)  	- callback optional
+**/
+oes.setupResizeButtons = function( callBack ){
+	
+	var left = $('.oes-left-side'),
+		right = $('.oes-right-side'),
+		size;
+	
+	// setup resize buttons
+	// buttons have data-area attribute: small, medium, large and full
+	$('.js-oes-area-resize').click(function( e ){
+		e.stopPropagation();
+		
+		var str = $(this).data('area');
+		switch(str){
+			case 'small': 	size = 500;
+			break;
+			case 'medium': 	size = 700;
+			break;
+			case 'large': 	size = 900;
+			break;
+			case 'full': 	size = null;  // null, when passed to highcharts makes chart fill container
+			break;
+		}
+		
+		// fullsize requires some tweaking
+		if(size == null){
+			left.css({"min-width":"500px", "width":"100%"});
+			right.hide();
+		} else {
+			left.css({"min-width": size + "px", "width":""});
+			right.show();	
+		}
+		
+		if(typeof callBack === "function" ) callBack(size);	
+	});
+}
+/*
+Lightening Letter Viewer
+Icon in the Patient banner area links to the 
+Letter Viewer page for the patint
+*/
+idg.lighteningViewer = function(){
+	
+	// if on the letter viewing page  
+	// set icon to active 
+	if(window.location.pathname == '/v3.0/lightening-letter-viewer'){
+		$('#js-lightening-viewer-btn').addClass('active');
+		return;	
+	};
+	
+	// Events
+	$('#js-lightening-viewer-btn').click(function( e ){
+		e.stopPropagation();
+		window.location = '/v3.0/lightening-letter-viewer';
+	})
+	.mouseenter(function(){
+		$(this).addClass( 'active' ); 
+	})
+	.mouseleave(function(){
+		$(this).removeClass( 'active' ); 
+	});	
+}
+/**
+All Patient Popups 
+Manage them to avoid any overlapping	
+**/
+idg.patientPopups = {
+	
+	init:function(){
+		
+		if( $('#oe-patient-details').length == 0 ) return;
+		
+		// patient popups
+		var quicklook 		= new idg.NavBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
+		var demographics 	= new idg.NavBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
+		var risks 			= new idg.NavBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
+		// var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
+		
+		var all = [ quicklook, demographics, risks ];
+		
+		for( pBtns in all ) {
+			all[pBtns].inGroup( this ); // register group with PopupBtn 
+		}
+		
+		this.popupBtns = all;
+		
+		/**
+		Problems and Plans
+		These are currently in quicklook popup
+		**/
+		if( $('#problems-plans-sortable').length ){
+			idg.problemsPlans();
+		}
+	},
+
+	closeAll:function(){
+		for( pBtns in this.popupBtns ){
+			this.popupBtns[pBtns].hide();  // close all patient popups
+		}
+	}
+
+}
+
+/*
+Problems &  Plans sortable list 
+In patient quicklook 
+- requires Sortable.js
+*/
+idg.problemsPlans = function(){
+	// make Problems & Plans Sortable:
+	var el = document.getElementById( 'problems-plans-sortable' );
+	var sortable = Sortable.create( el );
+		
+	// Add New Plan / Problem	
+	$('#js-add-pp-btn').click(function(){
+		var input = $('#create-problem-plan');
+		var val = input.val();
+		if( val === '') return;				
+		var html = '<li><span class="drag-handle">&#9776;</span>'+ val +'<div class="remove">&times;</div></li>';
+		$('#problems-plans-sortable').append( html );
+		input.val(''); // refresh input
+	}); 
+
+	// remove a Problem Plan
+	$('#problems-plans-sortable .remove').click(function(){ 
+  		$(this).parent().remove(); 
+  	});
 }

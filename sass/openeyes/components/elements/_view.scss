@@ -9,10 +9,11 @@
 		
 		// element-data is ONLY used in VIEW mode (edit uses 'element-fields')
 		.element-data {
-			
-			// full width data-value elements require padding
-			.full-width {
-				padding:0 10px 0 10px; 
+			// for all Elements that aren't split into
+			// R L Eye sides we need to adjust the padding
+			&.full-width {
+			 	padding-right:20px; // 20px matches the edit space (thinking of inline editing!)
+				padding-left:10px;
 			}
 			
 			// large text if needed, matches Element header size
@@ -24,10 +25,21 @@
 				opacity:0.8; // this will work across both PRO & Classic theme
 			}
 			
-			// table is style differnt in VIEW 
-			// this is done to help with user orientation
+			// table style is slightly differnt in VIEW 
 			table {
 				width:100%;
+				
+				td:last-child, 
+				th:last-child {
+					text-align: left;
+				}
+			}
+			
+			.divider {
+				width:100%;
+				height:1px; 
+				margin:10px 0;
+				border-top:1px dotted $oe-line;
 			}
 			
 			.data-value {
@@ -49,6 +61,5 @@
 				border-top:1px solid $oe-line;
 			}
 		}
-	
 	}
 }
