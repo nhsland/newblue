@@ -1,10 +1,11 @@
-// OE Element - EDIT
+// OE Element 
+// 
+// Multi-select from v2
+// NOT USED in v3 but keep in case required
 
 .main-event {
 	.element {
-		
 		// --- multi-list
-			
 		.multi-select-dropdown-container {
 			padding:0 0 5px 0;
 			.multi-select-list {
@@ -15,7 +16,6 @@
 				margin:0 0 0 5px;
 			}
 		}
-		
 		.multi-select-selections {
 			li {
 				display:inline-flex;
@@ -24,14 +24,11 @@
 				color:$oe-user-input-text; 
 				background: tint( $oe-user-inputs,5 );
 			}
-		}
-				
+		}		
 		.multi-select-remove {
 			display:inline-flex;
 			align-items: center;
 			padding-left:5px; 
 		}	
-
-		
 	}
 }

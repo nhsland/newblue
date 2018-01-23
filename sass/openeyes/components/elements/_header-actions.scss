@@ -18,16 +18,21 @@
 		}
 	}
 	
-	// for "full" elements adjust the header and title at extended width
+	// for 'full' elements adjust the header and title at extended width
 	.element.full {
+		
+		@include media($oe-extended-browser-size){
+			padding:10px 30px 10px $oe-event-extension - 25px; 	// provide left space for header and right space for actions
+		}
+		
 		.element-header {
 			@include media($oe-extended-browser-size){
-				width:$oe-event-extension; // make sure header isn't covering elements
+				width:$oe-event-extension; 						// make sure header isn't covering elements
 			}
 			.element-title {
 				@include media($oe-extended-browser-size){
-					max-width:$oe-event-extension - 45px;	// force long names to wrap
-					@include font-size(14); 				// small font-size for Pro users
+					max-width:$oe-event-extension - 45px;		// force long names to wrap
+					@include font-size(14); 					// reduce font size slightly
 					line-height:1.2;
 				}
 			}

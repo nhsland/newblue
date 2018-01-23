@@ -15,6 +15,12 @@
 				text-align: right;
 			}
 			
+			&.last-left {
+				td:last-child, 
+				th:last-child {
+					text-align: left;
+				}
+			}
 			
 			// in View mode for simple label > value lists
 			&.label-value {
@@ -32,8 +38,14 @@
 				}
 			}
 			
-			th, td, {
 			
+			&.large {
+				td {
+					@include font-size(14);
+				}
+			}
+			
+			th, td, {
 				// the 4px indent for data provides 
 				// a valuable breathing space for the
 				// left side eye element data

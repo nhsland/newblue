@@ -29,8 +29,15 @@
 			// large text if needed, matches Element header size
 			.large-text {
 				@include font-size(14);
-				font-weight:$oe-font-light;
+				font-weight:$oe-font-light;	
+				
+				b {
+					font-weight:$oe-font-medium;
+				}	
 			}
+			
+			
+			
 			.fade {
 				opacity:0.8; // this will work across both PRO & Classic theme
 			}
@@ -38,7 +45,6 @@
 			// table style is slightly differnt in VIEW 
 			table {
 				width:100%;
-				
 			}
 			
 			.divider {

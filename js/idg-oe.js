@@ -1667,7 +1667,7 @@ idg.expandElementList = function(){
 	});
 	
 	function ListView( $iconBtn, $quick, $full ){
-		var quick = false;
+		var quick = true;
 		
 		
 		$iconBtn.click(function(){

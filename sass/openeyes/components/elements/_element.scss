@@ -1,49 +1,45 @@
 // OE Element
-// 
-// Base set up for Elements in View & Edit mode
-// 
+// Elements can be
+// Full width
+// Full width (split)
+// Tile (1 of 3 in a horizontal layout) - ONLY used in VIEW
 
 .main-event {
-	
-	.tile-column {
-		width: 33.33333%;
-		margin-right:3px;
-		&:last-child {
-			margin-right:0;
-		}
-	}
-	
-	&.edit .element {
-		min-height:50px; // require to ensure element actions can be seen in pro mode
-		font-weight: $oe-font-medium;
-	}
-	
-	&.view .element {
-		min-height:40px; // make sure element header that wraps onto 2 lines can be seen
-		font-weight: $oe-font-medium;
-	}
-	
+
+	// element has 2 main states:
+	// - 'full' (that can split to R L)
+	// - 'tile' (used as 1 of 3 in tiled row)
 	
 	.element {
 		position:relative;
-		background:$oe-blue-dark2;
-		padding:35px 5px 10px 10px; // provide top space for header/actions
+		min-height:40px; // ensure element actions and header can always be seen	
+		background: $oe-blue-dark2;
+		padding:32px 5px 10px 10px; // provide top space for header/actions
 		margin:0 0 3px 0;
 		color:$oe-text;
+		font-weight: $oe-font-medium;
 		
-		// with the introduction of tile elements 
-		// we now have 2 types in VIEW mode:
-		&.full {
-			// pop the element header to the left, if there is space:
-			@include media($oe-extended-browser-size){
-				padding:10px 30px 10px $oe-event-extension - 25px; // provide left space for header and right space for actions
+		// group of 3
+		&.tile {
+			width: 33.33333%;
+			margin:0 3px 3px 0;
+			&:last-child {
+				margin-right:0;
 			}
 		}
-
+		
+		// prioritise element data
+		&.priority {
+			background: $oe-bg-highlight;
+		}
+		
+		// line to divide R & L
 		&.eye-divider {
-			background: $oe-blue-dark2 url( svg-path-theme('element-divider') ) 50.4% 0 repeat-y;
+			background-image: url( svg-path-theme('element-divider') );
+			background-position: 50.4% 0;
+			background-repeat: repeat-y;
 			background-size:19px;
-			
+
 			@include media($oe-extended-browser-size){
 				background-position-x: 54.5%; // needs offseting because headers have dropped left
 			}
@@ -53,7 +49,7 @@
 		// highlight element focus
 		// stop the re-sizing effect of adding a border:
 		
-		border:1px solid $oe-blue-dark2;
+		border:1px solid rgba(#fff,0);
 		transition: border-color 0.2s ease-in; // animate
 		
 		&:hover, &:focus {
@@ -66,26 +62,26 @@
 			}
 		}
 		
+		// R & L data split
 		.element-eyes {
-			// uses grid 'row'
-			// Right / Left Eye - 2 column layout:
+			display:flex;
+			align-items:flex-start;			
+			justify-content:space-between;
+
 			.right-eye {
 				width:50%; 
-				float:left;
-				padding-left: 10px; // indent data
-				padding-right: 25px;
+				padding-left: 10px; 	// indent data
+				padding-right: 25px;	// allow for action icons
 			}
 			.left-eye {
-				width:50%; 
-				float:right;
-				padding-left: 10px; // indent data
-				padding-right: 25px;
+				width:49.5%; 
+				padding-left: 10px; 	// indent data
+				padding-right: 25px; 	// allow for action icons
 			}
 		}
 		
 		
-		// Field rows
-		// simple provide padding between 'rows' of data
+		// Field rows: simply provides padding between 'rows' of data
 		// used in existing DOM so keeping for v3
 		.field-row  {
 			padding-bottom: 8px;
@@ -99,13 +95,10 @@
 			padding-top: 8px;
 		}	
 		
-		// sub row is used with a <td> or field-row
+		// sub row is used within a <td> or field-row
 		.field-sub-row {
 			padding-bottom: 3px;
-		}	
-		
-			
+		}		
 	}
-	
 }
 

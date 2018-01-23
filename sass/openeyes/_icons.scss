@@ -70,58 +70,50 @@
 		}
 	}
 	
+	@mixin oe3-icons($svg) {
+		background-image: url( svg-path-theme( $svg ) );
+		&.pro-theme {
+			background-image: url( svg-path( $svg ) );
+		}
+	}
+	
 	// icons
 	// SVGs containing styling: fill:#fff;
-	&.plus 				{ background-image: url( svg-path-theme('plus') ); }
-	&.plus-circle 		{ background-image: url( svg-path-theme('plus-circle') ); }
-	&.minus 			{ background-image: url( svg-path-theme('minus') ); }
-	&.arrow-down 		{ background-image: url( svg-path-theme('arrow-down') ); }
-	&.arrow-up 			{ background-image: url( svg-path-theme('arrow-up') ); }
-	&.arrow-down-bold 	{ background-image: url( svg-path-theme('arrow-down-bold') ); }
-	&.arrow-up-bold 	{ background-image: url( svg-path-theme('arrow-up-bold') ); }
-	&.arrow-right-bold 	{ background-image: url( svg-path-theme('arrow-right-bold') ); }
-	&.arrow-left-bold 	{ background-image: url( svg-path-theme('arrow-left-bold') ); }
-	&.direction-right 	{ background-image: url( svg-path-theme('direction-right') ); }
-	&.direction-left 	{ background-image: url( svg-path-theme('direction-left') ); }
-	&.child-arrow 		{ background-image: url( svg-path-theme('child-arrow') ); }
-	&.menu 				{ background-image: url( svg-path-theme('menu') ); }
-	&.trash 			{ background-image: url( svg-path-theme('trash') ); }
-	&.print 			{ background-image: url( svg-path-theme('print') ); }
-	&.search 			{ background-image: url( svg-path-theme('search') ); }
-	&.remove 			{ background-image: url( svg-path-theme('remove') ); }
-	&.remove-circle 	{ background-image: url( svg-path-theme('remove-circle') ); }
-	&.duplicate 		{ background-image: url( svg-path-theme('duplicate') ); }
-	&.info 				{ background-image: url( svg-path-theme('info') ); }
-	&.eye 				{ background-image: url( svg-path-theme('eye') ); }
-	&.comments 			{ background-image: url( svg-path-theme('comments') ); }
-	&.start 			{ background-image: url( svg-path-theme('start') ); }
-	&.stop 				{ background-image: url( svg-path-theme('stop') ); }
-	&.d-slash 			{ background-image: url( svg-path-theme('double-slash') ); }
-	&.expand 			{ background-image: url( svg-path-theme('expand') ); }
-	&.collapse 			{ background-image: url( svg-path-theme('collapse') ); }
-	&.history 			{ background-image: url( svg-path-theme('history') ); }
-	&.tick 				{ background-image: url( svg-path-theme('tick') ); }
-	&.triangle 			{ background-image: url( svg-path-theme('warning') ); }  // can't call it 'warning'
-	
-	
-	// PRO theme icons (white)
-	// Here for use in Classic theme or OE static PRO theme areas
-	&.pro-theme {
-		&.trash 			{ background-image: url( svg-path('trash') ); }
-		&.comments 			{ background-image: url( svg-path('comments') ); }
-		&.remove 			{ background-image: url( svg-path('remove') ); }
-		&.remove-circle 	{ background-image: url( svg-path('remove-circle') ); }
-		&.plus 				{ background-image: url( svg-path('plus') ); }
-		&.minus 			{ background-image: url( svg-path('minus') ); }
-		&.eye 				{ background-image: url( svg-path('eye') ); }
-	}
-	 
-	
+	&.plus 				{ @include oe3-icons('plus'); }
+	&.plus-circle 		{ @include oe3-icons('plus-circle'); }
+	&.minus 			{ @include oe3-icons('minus'); }
+	&.arrow-down 		{ @include oe3-icons('arrow-down'); }
+	&.arrow-up 			{ @include oe3-icons('arrow-up');}
+	&.arrow-down-bold 	{ @include oe3-icons('arrow-down-bold'); }
+	&.arrow-up-bold 	{ @include oe3-icons('arrow-up-bold'); }
+	&.arrow-right-bold 	{ @include oe3-icons('arrow-right-bold'); }
+	&.arrow-left-bold 	{ @include oe3-icons('arrow-left-bold'); }
+	&.direction-right 	{ @include oe3-icons('direction-right'); }
+	&.direction-left 	{ @include oe3-icons('direction-left'); }
+	&.child-arrow 		{ @include oe3-icons('child-arrow'); }
+	&.menu 				{ @include oe3-icons('menu'); }
+	&.trash 			{ @include oe3-icons('trash'); }
+	&.print 			{ @include oe3-icons('print'); }
+	&.search 			{ @include oe3-icons('search'); }
+	&.remove 			{ @include oe3-icons('remove'); }
+	&.remove-circle 	{ @include oe3-icons('remove-circle'); }
+	&.duplicate 		{ @include oe3-icons('duplicate'); }
+	&.info 				{ @include oe3-icons('info'); }
+	&.eye 				{ @include oe3-icons('eye'); }
+	&.comments 			{ @include oe3-icons('comments'); }
+	&.start 			{ @include oe3-icons('start'); }
+	&.stop 				{ @include oe3-icons('stop'); }
+	&.d-slash 			{ @include oe3-icons('double-slash'); }
+	&.expand 			{ @include oe3-icons('expand'); }
+	&.collapse 			{ @include oe3-icons('collapse'); }
+	&.history 			{ @include oe3-icons('history'); }
+	&.tick 				{ @include oe3-icons('tick'); }
+	&.triangle 			{ @include oe3-icons('warning'); }  // can't call it 'warning'
+		
 	
 	// Eyedraw icons 
 	// these will not require theming as they are only used 
 	// in the Eyedraw app
-	
 	&.ed-reset			{ background-image: url( "../svg/in-css/eyedraw/ed-reset.svg" ); }
 	&.ed-zoom			{ background-image: url( "../svg/in-css/eyedraw/ed-zoom.svg" ); }
 	&.ed-lock			{ background-image: url( "../svg/in-css/eyedraw/ed-lock.svg" ); }
