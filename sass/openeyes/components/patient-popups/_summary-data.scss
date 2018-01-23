@@ -16,6 +16,7 @@
 		.row {
 			position: relative;
 			margin:0 0 3px 0;
+			padding:25px 0 0 0; // allow for label
 			background:$oe-pro-blue;
 			
 			.label { 
@@ -23,7 +24,7 @@
 				position:absolute;
 				top:5px;
 				right:3px; 
-				@include font-size(15);
+				@include font-size(16);
 				font-weight:200;
 			 	color: rgba( #fff,0.3 ); 
 			}
@@ -38,7 +39,7 @@
 		
 		// table layout for more complex data:
 		table {
-			margin:20px 0 0 0;
+			margin:0 0 10px 0; 
 			width:100%;
 			
 			tr {

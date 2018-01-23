@@ -2035,7 +2035,7 @@ html {
   width: 1080px;
   background: #141e2b;
   border: 1px solid cyan;
-  padding: 10px 10px 15px 10px;
+  padding: 10px 10px 10px 10px;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -2054,6 +2054,13 @@ html {
   max-height: 415px;
   overflow: auto;
   padding: 0 3px 0 0;
+}
+
+.patient-popup-allergies-risks .oe-popup-overflow.pad,
+.patient-popup-quicklook .oe-popup-overflow.pad,
+.patient-popup-tasks .oe-popup-overflow.pad,
+.patient-popup-demographics .oe-popup-overflow.pad {
+  margin: 0 5px;
 }
 
 .patient-popup-allergies-risks .subtitle,
@@ -2083,6 +2090,7 @@ html {
 .patient-popup-tasks .summary-data .row {
   position: relative;
   margin: 0 0 3px 0;
+  padding: 25px 0 0 0;
   background: #1e2e42;
 }
 
@@ -2093,7 +2101,7 @@ html {
   position: absolute;
   top: 5px;
   right: 3px;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.3);
 }
@@ -2109,7 +2117,7 @@ html {
 .patient-popup-quicklook .summary-data table,
 .patient-clinic-quicklook .summary-data table,
 .patient-popup-tasks .summary-data table {
-  margin: 20px 0 0 0;
+  margin: 0 0 10px 0;
   width: 100%;
 }
 
@@ -2166,14 +2174,12 @@ html {
   font-weight: 400;
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries,
-.patient-clinic-quicklook .popup-management-summaries .management-summaries {
+.popup-management-summaries .management-summaries {
   padding: 0;
   margin: 0;
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries li,
-.patient-clinic-quicklook .popup-management-summaries .management-summaries li {
+.popup-management-summaries .management-summaries li {
   display: block;
   width: 100%;
   padding: 3px 5px 2px 5px;
@@ -2182,8 +2188,7 @@ html {
   border-top: 1px dotted rgba(204, 204, 255, 0.2);
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries li p,
-.patient-clinic-quicklook .popup-management-summaries .management-summaries li p {
+.popup-management-summaries .management-summaries li p {
   margin: 0 0 0 180px;
   padding: 5px 0px 3px 0px;
   font-size: 0.6875rem;
@@ -2191,8 +2196,7 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-quicklook .popup-management-summaries .management-summaries li h6,
-.patient-clinic-quicklook .popup-management-summaries .management-summaries li h6 {
+.popup-management-summaries .management-summaries li h6 {
   margin: 0;
   padding: 5px 0 0 0;
   font-size: 0.8125rem;
@@ -2201,17 +2205,17 @@ html {
   float: left;
 }
 
-.patient-popup-quicklook .problems-plans {
+.problems-plans {
   padding: 0;
   margin: 0;
 }
 
-.patient-popup-quicklook .problems-plans .problems-plans-sortable {
+.problems-plans .problems-plans-sortable {
   padding: 0;
   margin: 0;
 }
 
-.patient-popup-quicklook .problems-plans .problems-plans-sortable li {
+.problems-plans .problems-plans-sortable li {
   display: block;
   position: relative;
   width: 100%;
@@ -2222,12 +2226,12 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-quicklook .problems-plans .problems-plans-sortable li .drag-handle {
+.problems-plans .problems-plans-sortable li .drag-handle {
   padding: 0 3px;
   margin: 0 5px 0 0;
 }
 
-.patient-popup-quicklook .problems-plans .problems-plans-sortable li .remove {
+.problems-plans .problems-plans-sortable li .remove {
   position: absolute;
   right: 4px;
   top: 4px;
@@ -2235,23 +2239,23 @@ html {
   font-weight: 200;
 }
 
-.patient-popup-quicklook .problems-plans .problems-plans-sortable li .drag-handle, .patient-popup-quicklook .problems-plans .problems-plans-sortable li .remove {
+.problems-plans .problems-plans-sortable li .drag-handle, .problems-plans .problems-plans-sortable li .remove {
   color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
 
-.patient-popup-quicklook .problems-plans .problems-plans-sortable li .drag-handle:hover, .patient-popup-quicklook .problems-plans .problems-plans-sortable li .drag-handle:focus, .patient-popup-quicklook .problems-plans .problems-plans-sortable li .drag-handle:active, .patient-popup-quicklook .problems-plans .problems-plans-sortable li .remove:hover, .patient-popup-quicklook .problems-plans .problems-plans-sortable li .remove:focus, .patient-popup-quicklook .problems-plans .problems-plans-sortable li .remove:active {
+.problems-plans .problems-plans-sortable li .drag-handle:hover, .problems-plans .problems-plans-sortable li .drag-handle:focus, .problems-plans .problems-plans-sortable li .drag-handle:active, .problems-plans .problems-plans-sortable li .remove:hover, .problems-plans .problems-plans-sortable li .remove:focus, .problems-plans .problems-plans-sortable li .remove:active {
   color: #fff;
 }
 
-.patient-popup-quicklook .problems-plans .create-new-problem-plan {
+.problems-plans .create-new-problem-plan {
   position: relative;
   padding: 5px 0;
   margin: 5px 0 0 0;
   height: 38px;
 }
 
-.patient-popup-quicklook .problems-plans .create-new-problem-plan .add-problem-plan-btn {
+.problems-plans .create-new-problem-plan .add-problem-plan-btn {
   display: block;
   position: absolute;
   top: 8px;
@@ -2259,7 +2263,7 @@ html {
   margin: 0;
 }
 
-.patient-popup-quicklook .problems-plans .create-new-problem-plan input {
+.problems-plans .create-new-problem-plan input {
   font-size: 0.8125rem;
   font-weight: 300;
   background: #2f3b49;
@@ -3184,6 +3188,15 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.main-event .tile-column {
+  width: 33.33333%;
+  margin-right: 3px;
+}
+
+.main-event .tile-column:last-child {
+  margin-right: 0;
+}
+
 .main-event.edit .element {
   min-height: 50px;
   font-weight: 400;
@@ -3205,6 +3218,12 @@ html {
   transition: border-color 0.2s ease-in;
 }
 
+@media only screen and (min-width: 1440px) {
+  .main-event .element.full {
+    padding: 10px 30px 10px 135px;
+  }
+}
+
 .main-event .element.eye-divider {
   background: #141e2b url("../svg/in-css/element-divider.svg") 50.4% 0 repeat-y;
   background-size: 19px;
@@ -3224,12 +3243,6 @@ html {
   -webkit-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
   color: cyan;
-}
-
-@media only screen and (min-width: 1440px) {
-  .main-event .element {
-    padding: 10px 30px 10px 135px;
-  }
 }
 
 .main-event .element .element-eyes .right-eye {
@@ -3308,12 +3321,6 @@ html {
   width: 100%;
 }
 
-@media only screen and (min-width: 1440px) {
-  .main-event .element-header {
-    width: 160px;
-  }
-}
-
 .main-event .element-header .element-title {
   font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.5);
@@ -3322,7 +3329,13 @@ html {
 }
 
 @media only screen and (min-width: 1440px) {
-  .main-event .element-header .element-title {
+  .main-event .element.full .element-header {
+    width: 160px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .main-event .element.full .element-header .element-title {
     max-width: 115px;
     font-size: 0.875rem;
     line-height: 1.2;
@@ -3555,6 +3568,11 @@ html {
   padding-left: 5px;
 }
 
+.main-event .element.tile .element-data.full-width {
+  padding-right: 10px;
+  padding-left: 0;
+}
+
 .main-event .element .element-data.full-width {
   padding-right: 20px;
   padding-left: 10px;
@@ -3571,11 +3589,6 @@ html {
 
 .main-event .element .element-data table {
   width: 100%;
-}
-
-.main-event .element .element-data table td:last-child,
-.main-event .element .element-data table th:last-child {
-  text-align: left;
 }
 
 .main-event .element .element-data .divider {

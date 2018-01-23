@@ -1,80 +1,77 @@
-// OE Popup - Quicklook
-// 
-// 
+// OE Problems and Plan
+// Sortable list of P & Ps
 
-.patient-popup-quicklook {
-	.problems-plans {
-		
-		padding:0; 
+.problems-plans {	
+	padding:0; 
+	margin:0;
+	
+	// <ul>
+	// list all the problems plans
+	.problems-plans-sortable {
+		padding:0;
 		margin:0;
-		
-		// <ul>
-		// list all the problems plans
-		.problems-plans-sortable {
-			padding:0;
-			margin:0;
-			li {
-				display:block;
-				position: relative;
-				width:100%;
-				padding:8px 5px; 
-				margin:0 0 1px 0;
-				background: $oe-pro-blue-dark;
-				@include font-size(12);
-				color:$oe-pro-text;
+		li {
+			display:block;
+			position: relative;
+			width:100%;
+			padding:8px 5px; 
+			margin:0 0 1px 0;
+			background: $oe-pro-blue-dark;
+			@include font-size(12);
+			color:$oe-pro-text;
 
-				.drag-handle {
-					padding:0 3px;
-					margin:0 5px 0 0;
-				}
-				
-				.remove {
-					position: absolute;
-					right:4px;
-					top:4px;
-					@include font-size(17);
-					font-weight:200;
-				}
-				
-				.drag-handle, .remove {
-					color: rgba( #fff,0.3);
-					cursor:pointer;
-					&:hover, &:focus, &:active {
-						color:#fff;
-					}
+			.drag-handle {
+				padding:0 3px;
+				margin:0 5px 0 0;
+			}
+			
+			.remove {
+				position: absolute;
+				right:4px;
+				top:4px;
+				@include font-size(17);
+				font-weight:200;
+			}
+			
+			.drag-handle, .remove {
+				color: rgba( #fff,0.3);
+				cursor:pointer;
+				&:hover, &:focus, &:active {
+					color:#fff;
 				}
 			}
+		}
+	}
+
+	// create a new one
+	.create-new-problem-plan {
+		position:relative;
+		padding:5px 0;
+		margin:5px 0 0 0;
+		height:38px;
+		
+		.add-problem-plan-btn {
+			display:block; 
+			position:absolute;
+			top:8px;
+			right:5px;
+			margin:0;
+		}
+		
+		// js controlled input area
+		input { 
+			@include font-size(13);
+			font-weight: 300;
+			background: tint( $oe-pro-blue-dark,10 );
+			outline:none;
+			border:0;
+			width:100%; 
+			padding:5px;
+			border-radius:3px;
+			color:$oe-pro-text;
+			
 		}
 	
-		// create a new one
-		.create-new-problem-plan {
-			position:relative;
-			padding:5px 0;
-			margin:5px 0 0 0;
-			height:38px;
-			
-			.add-problem-plan-btn {
-				display:block; 
-				position:absolute;
-				top:8px;
-				right:5px;
-				margin:0;
-			}
-			
-			// js controlled input area
-			input { 
-				@include font-size(13);
-				font-weight: 300;
-				background: tint( $oe-pro-blue-dark,10 );
-				outline:none;
-				border:0;
-				width:100%; 
-				padding:5px;
-				border-radius:3px;
-				color:$oe-pro-text;
-				
-			}
-		
-		}
-	} 	
-}
+	}
+} 	
+

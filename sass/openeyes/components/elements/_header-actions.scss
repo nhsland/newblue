@@ -9,21 +9,27 @@
 		top:5px;
 		left:0;
 		width:100%; // full width to position actions
-		
-		@include media($oe-extended-browser-size){
-			width:$oe-event-extension; // make sure header isn't covering elements
-		}
 	
 		.element-title {
 			@include font-size(15);
 			color:$oe-text-light;
 			font-weight:300;
 			padding:0 0 0 10px;
-			
+		}
+	}
+	
+	// for "full" elements adjust the header and title at extended width
+	.element.full {
+		.element-header {
 			@include media($oe-extended-browser-size){
-				max-width:$oe-event-extension - 45px;	// force long names to wrap
-				@include font-size(14); 				// small font-size for Pro users
-				line-height:1.2;
+				width:$oe-event-extension; // make sure header isn't covering elements
+			}
+			.element-title {
+				@include media($oe-extended-browser-size){
+					max-width:$oe-event-extension - 45px;	// force long names to wrap
+					@include font-size(14); 				// small font-size for Pro users
+					line-height:1.2;
+				}
 			}
 		}
 	}

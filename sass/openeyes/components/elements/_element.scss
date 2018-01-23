@@ -5,6 +5,14 @@
 
 .main-event {
 	
+	.tile-column {
+		width: 33.33333%;
+		margin-right:3px;
+		&:last-child {
+			margin-right:0;
+		}
+	}
+	
 	&.edit .element {
 		min-height:50px; // require to ensure element actions can be seen in pro mode
 		font-weight: $oe-font-medium;
@@ -15,12 +23,22 @@
 		font-weight: $oe-font-medium;
 	}
 	
+	
 	.element {
 		position:relative;
 		background:$oe-blue-dark2;
 		padding:35px 5px 10px 10px; // provide top space for header/actions
 		margin:0 0 3px 0;
 		color:$oe-text;
+		
+		// with the introduction of tile elements 
+		// we now have 2 types in VIEW mode:
+		&.full {
+			// pop the element header to the left, if there is space:
+			@include media($oe-extended-browser-size){
+				padding:10px 30px 10px $oe-event-extension - 25px; // provide left space for header and right space for actions
+			}
+		}
 
 		&.eye-divider {
 			background: $oe-blue-dark2 url( svg-path-theme('element-divider') ) 50.4% 0 repeat-y;
@@ -47,12 +65,6 @@
 				}
 			}
 		}
-		
-		// pop the element header to the left, if there is space:
-		@include media($oe-extended-browser-size){
-			padding:10px 30px 10px $oe-event-extension - 25px; // provide left space for header and right space for actions
-		}
-		
 		
 		.element-eyes {
 			// uses grid 'row'

@@ -16,10 +16,11 @@
 	top:$oe-header-height;
 	left:$oe-event-sidebar-width;
 	width:$oe-event-main-default-width;
+	// height: 435px;  // height is controlled by the overflow (i.e. its flexible)
 	
 	background:$oe-pro-bg;
 	border:1px solid $oe-pro-text-highlight;
-	padding:10px 10px 15px 10px;
+	padding:10px 10px 10px 10px;
 	
 	@include media($oe-extended-browser-size){
 		width:$oe-event-main-extended-width; // popups to match width of Event area	
@@ -28,9 +29,13 @@
 	
 	// overflow wrappers alerts and summary-data
 	.oe-popup-overflow {	
-		max-height: 415px; 
+		max-height: 415px; // this restricts the popup's vertical hieight (for lowest res. monitors)
 		overflow: auto;
 		padding:0 3px 0 0;
+		
+		&.pad {
+			margin:0 5px;
+		}
 	}
 	
 	// area subtitles

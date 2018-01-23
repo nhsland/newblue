@@ -19,11 +19,11 @@ idg.expandElementList = function(){
 	});
 	
 	function ListView( $iconBtn, $quick, $full ){
-		var quick = true;
+		var quick = false;
 		
 		
 		$iconBtn.click(function(){
-			$(this).toggleClass('expand collapse');
+			$(this).toggleClass('collapse expand');
 			quick = !quick;
 			
 			if(quick){

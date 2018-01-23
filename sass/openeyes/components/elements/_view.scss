@@ -5,7 +5,17 @@
 // to increase speed of legabilty of data.
 
 .main-event {
+	
 	.element {
+		
+		&.tile {
+			.element-data {
+				&.full-width {
+			 		padding-right:10px; 
+			 		padding-left:0;
+				}
+			}
+		}
 		
 		// element-data is ONLY used in VIEW mode (edit uses 'element-fields')
 		.element-data {
@@ -29,10 +39,6 @@
 			table {
 				width:100%;
 				
-				td:last-child, 
-				th:last-child {
-					text-align: left;
-				}
 			}
 			
 			.divider {
