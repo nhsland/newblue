@@ -14,9 +14,11 @@ idg.comments = function(){
 		
 		var textAreaID = $(this).data('input');
 		if(textAreaID == 'next'){
-			$(this).next().removeClass('hidden').focus();
+			var input = $(this).next().show().focus();
 		} else {
-			$(textAreaID).removeClass('hidden').focus();
+			var input = $(textAreaID).show(0,function(){
+				$(this).find('textarea').focus();
+			});
 		}
 	});
 }

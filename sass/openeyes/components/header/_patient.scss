@@ -29,7 +29,13 @@
 		position:absolute;
 		bottom:0; 
 		left:0;
-
+		padding:0 20px 0 0;
+	}
+	
+	.patient-demo-icon {
+		position:absolute;
+		bottom:4px; 
+		right:0;
 	}
 	
 	.hospital-number, .nhs-number, .patient-gender, .patient-age, .warning {
@@ -53,7 +59,7 @@
 	// - Letter Lightening viewer
 	.patient-quicklook, 
 	.patient-demographics, 
-	.patient-lightening-viewer, 
+	.patient-lightning-viewer, 
 	.patient-tasks,
 	.patient-allergies-risks {
 		position:absolute;
@@ -72,7 +78,7 @@
 	
 	// icon behaviour
 	.patient-quicklook, 
-	.patient-lightening-viewer, 
+	.patient-lightning-viewer, 
 	.patient-tasks,
 	.patient-demographics {
 		// js controlled interaction... 
@@ -101,7 +107,7 @@
 	// position by eye
 	// position and size icons
 	// position by eye
-	.patient-lightening-viewer {
+	.patient-lightning-viewer {
 		right:0;	
 		.icon {
 			width:15px;  

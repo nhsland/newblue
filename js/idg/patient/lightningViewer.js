@@ -3,19 +3,19 @@ Lightening Letter Viewer
 Icon in the Patient banner area links to the 
 Letter Viewer page for the patint
 */
-idg.lighteningViewer = function(){
+idg.lightningViewer = function(){
 	
 	// if on the letter viewing page  
 	// set icon to active 
-	if(window.location.pathname == '/v3.0/lightening-letter-viewer'){
-		$('#js-lightening-viewer-btn').addClass('active');
+	if(window.location.pathname == '/v3.0/lightning-letter-viewer'){
+		$('#js-lightning-viewer-btn').addClass('active');
 		return;	
 	};
 	
 	// Events
-	$('#js-lightening-viewer-btn').click(function( e ){
+	$('#js-lightning-viewer-btn').click(function( e ){
 		e.stopPropagation();
-		window.location = '/v3.0/lightening-letter-viewer';
+		window.location = '/v3.0/lightning-letter-viewer';
 	})
 	.mouseenter(function(){
 		$(this).addClass( 'active' ); 

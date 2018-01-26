@@ -44,8 +44,8 @@ idg.init = function(){
 	// Collapse Groups: e.g. Management Summaries in Popup and Edit Element groups in sidebar
 	idg.collapseGroups();
 	
-	// lightening viewer
-	idg.lighteningViewer();
+	// lightning viewer
+	idg.lightningViewer();
 	
 	// Tooltips on info icons
 	idg.tooltips();
@@ -1210,19 +1210,19 @@ Lightening Letter Viewer
 Icon in the Patient banner area links to the 
 Letter Viewer page for the patint
 */
-idg.lighteningViewer = function(){
+idg.lightningViewer = function(){
 	
 	// if on the letter viewing page  
 	// set icon to active 
-	if(window.location.pathname == '/v3.0/lightening-letter-viewer'){
-		$('#js-lightening-viewer-btn').addClass('active');
+	if(window.location.pathname == '/v3.0/lightning-letter-viewer'){
+		$('#js-lightning-viewer-btn').addClass('active');
 		return;	
 	};
 	
 	// Events
-	$('#js-lightening-viewer-btn').click(function( e ){
+	$('#js-lightning-viewer-btn').click(function( e ){
 		e.stopPropagation();
-		window.location = '/v3.0/lightening-letter-viewer';
+		window.location = '/v3.0/lightning-letter-viewer';
 	})
 	.mouseenter(function(){
 		$(this).addClass( 'active' ); 
@@ -1244,10 +1244,11 @@ idg.patientPopups = {
 		// patient popups
 		var quicklook 		= new idg.NavBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
 		var demographics 	= new idg.NavBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
+		var demographics2 	= new idg.NavBtnPopup( 'demographics2', $('#js-demographics2-btn'), $('#patient-popup-demographics2') );
 		var risks 			= new idg.NavBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
 		// var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
 		
-		var all = [ quicklook, demographics, risks ];
+		var all = [ quicklook, demographics, demographics2, risks ];
 		
 		for( pBtns in all ) {
 			all[pBtns].inGroup( this ); // register group with PopupBtn 
@@ -1651,15 +1652,11 @@ Element Expand (collapse) data list
 */
 idg.expandElementList = function(){
 	
-	console.log('hi');
-	
 	// check for view elementss
 	if( $('.element-data').length == 0 ) return;
 	
 	$('.js-listview-expand-btn').each(function(){	
 		// id= js-listview-[data-list]-full | quick
-		console.log(this);
-		
 		var listid = $(this).data('list');
 		var listview = new ListView( $(this),
 									 $('#js-listview-'+listid+'-pro'),
@@ -1929,9 +1926,11 @@ idg.comments = function(){
 		
 		var textAreaID = $(this).data('input');
 		if(textAreaID == 'next'){
-			$(this).next().removeClass('hidden').focus();
+			var input = $(this).next().show().focus();
 		} else {
-			$(textAreaID).removeClass('hidden').focus();
+			var input = $(textAreaID).show(0,function(){
+				$(this).find('textarea').focus();
+			});
 		}
 	});
 }

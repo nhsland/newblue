@@ -44,8 +44,8 @@ idg.init = function(){
 	// Collapse Groups: e.g. Management Summaries in Popup and Edit Element groups in sidebar
 	idg.collapseGroups();
 	
-	// lightening viewer
-	idg.lighteningViewer();
+	// lightning viewer
+	idg.lightningViewer();
 	
 	// Tooltips on info icons
 	idg.tooltips();

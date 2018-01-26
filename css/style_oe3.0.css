@@ -128,7 +128,7 @@ textarea {
 }
 
 .hidden {
-  display: none !important;
+  display: none;
 }
 
 /* basic grid layout */
@@ -1358,17 +1358,17 @@ button:hover .oe-i, button:focus .oe-i, button:active .oe-i, .button:hover .oe-i
 }
 
 button.hint.green, .button.hint.green, input[type="submit"].hint.green {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   background: #083815;
 }
 
 button.hint.red, .button.hint.red, input[type="submit"].hint.red {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   background: #560808;
 }
 
 button.hint.blue, .button.hint.blue, input[type="submit"].hint.blue {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   background: #04295b;
 }
 
@@ -1523,14 +1523,14 @@ html {
 }
 
 .oe-grid .event-header,
-.oe-grid .lightening-viewer,
+.oe-grid .lightning-viewer,
 .oe-grid .main-event {
   width: 1080px;
 }
 
 @media only screen and (min-width: 1440px) {
   .oe-grid .event-header,
-  .oe-grid .lightening-viewer,
+  .oe-grid .lightning-viewer,
   .oe-grid .main-event {
     width: 1240px;
   }
@@ -1558,7 +1558,7 @@ html {
   overflow-y: auto;
 }
 
-.oe-grid .lightening-viewer {
+.oe-grid .lightning-viewer {
   -ms-grid-column: 2;
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
@@ -1685,6 +1685,13 @@ html {
   position: absolute;
   bottom: 0;
   left: 0;
+  padding: 0 20px 0 0;
+}
+
+.oe-patient .patient-demo-icon {
+  position: absolute;
+  bottom: 4px;
+  right: 0;
 }
 
 .oe-patient .hospital-number, .oe-patient .nhs-number, .oe-patient .patient-gender, .oe-patient .patient-age, .oe-patient .warning {
@@ -1704,7 +1711,7 @@ html {
 
 .oe-patient .patient-quicklook,
 .oe-patient .patient-demographics,
-.oe-patient .patient-lightening-viewer,
+.oe-patient .patient-lightning-viewer,
 .oe-patient .patient-tasks,
 .oe-patient .patient-allergies-risks {
   position: absolute;
@@ -1715,7 +1722,7 @@ html {
 
 .oe-patient .patient-quicklook .icon,
 .oe-patient .patient-demographics .icon,
-.oe-patient .patient-lightening-viewer .icon,
+.oe-patient .patient-lightning-viewer .icon,
 .oe-patient .patient-tasks .icon,
 .oe-patient .patient-allergies-risks .icon {
   display: inline-block;
@@ -1724,8 +1731,8 @@ html {
 }
 
 .oe-patient .patient-quicklook.open .icon, .oe-patient .patient-quicklook.active .icon,
-.oe-patient .patient-lightening-viewer.open .icon,
-.oe-patient .patient-lightening-viewer.active .icon,
+.oe-patient .patient-lightning-viewer.open .icon,
+.oe-patient .patient-lightning-viewer.active .icon,
 .oe-patient .patient-tasks.open .icon,
 .oe-patient .patient-tasks.active .icon,
 .oe-patient .patient-demographics.open .icon,
@@ -1742,11 +1749,11 @@ html {
   fill: #141e2b;
 }
 
-.oe-patient .patient-lightening-viewer {
+.oe-patient .patient-lightning-viewer {
   right: 0;
 }
 
-.oe-patient .patient-lightening-viewer .icon {
+.oe-patient .patient-lightning-viewer .icon {
   width: 15px;
   height: 15px;
 }
@@ -2191,11 +2198,11 @@ html {
 .patient-popup-tasks .summary-data .row .label {
   z-index: 1;
   position: absolute;
-  top: 5px;
+  top: 7px;
   right: 3px;
-  font-size: 1rem;
-  font-weight: 200;
-  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .patient-popup-quicklook .summary-data .row .data,
@@ -3321,12 +3328,18 @@ html {
 
 .main-event .element:hover, .main-event .element:focus {
   border-color: #074598;
+  /*
+			.element-header {
+				.element-title, .subelement-title {
+					transition: opacity 0.5s ease-out;
+					opacity:1;
+				}
+			}
+*/
 }
 
-.main-event .element:hover .element-header .element-title, .main-event .element:hover .element-header .subelement-title, .main-event .element:focus .element-header .element-title, .main-event .element:focus .element-header .subelement-title {
-  -webkit-transition: color 0.5s ease-out;
-  transition: color 0.5s ease-out;
-  color: cyan;
+.main-event .element .fade {
+  opacity: 0.8;
 }
 
 .main-event .element .element-eyes {
@@ -3417,7 +3430,7 @@ html {
 
 .main-event .element-header .element-title {
   font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: cyan;
   font-weight: 300;
   padding: 0 0 0 10px;
 }
@@ -3694,10 +3707,6 @@ html {
 
 .main-event .element .element-data .large-text b {
   font-weight: 400;
-}
-
-.main-event .element .element-data .fade {
-  opacity: 0.8;
 }
 
 .main-event .element .element-data table {
@@ -4052,16 +4061,16 @@ html {
 }
 
 /* Lightening viewer */
-.oe-lightening-viewer {
+.oe-lightning-viewer {
   background: #182535;
 }
 
-.oe-lightening-viewer .oe-letter-timeline {
+.oe-lightning-viewer .oe-letter-timeline {
   background: #141e2b;
   padding: 2px 4px 4px 10px;
 }
 
-.oe-lightening-viewer .oe-letter-timeline table td {
+.oe-lightning-viewer .oe-letter-timeline table td {
   padding: 6px 6px 3px 4px;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.9375rem;
@@ -4070,7 +4079,7 @@ html {
   min-width: 50px;
 }
 
-.oe-lightening-viewer .oe-letter-timeline .letter-event {
+.oe-lightning-viewer .oe-letter-timeline .letter-event {
   position: relative;
   display: inline-block;
   padding: 1px;
@@ -4078,12 +4087,12 @@ html {
   height: 21px;
 }
 
-.oe-lightening-viewer .oe-letter-timeline .letter-event:hover, .oe-lightening-viewer .oe-letter-timeline .letter-event.js-hover {
+.oe-lightning-viewer .oe-letter-timeline .letter-event:hover, .oe-lightning-viewer .oe-letter-timeline .letter-event.js-hover {
   background-color: #fff;
   cursor: pointer;
 }
 
-.oe-lightening-viewer .oe-letter-timeline .letter-event.selected:after {
+.oe-lightning-viewer .oe-letter-timeline .letter-event.selected:after {
   position: absolute;
   left: 1px;
   top: 100%;
@@ -4093,7 +4102,7 @@ html {
   border-bottom: 3px solid cyan;
 }
 
-.oe-lightening-viewer .oe-letter-meta {
+.oe-lightning-viewer .oe-letter-meta {
   position: relative;
   width: 180px;
   margin: 5px 0 0 10px;
@@ -4104,15 +4113,15 @@ html {
   background: #283442;
 }
 
-.oe-lightening-viewer .oe-letter-meta .date {
+.oe-lightning-viewer .oe-letter-meta .date {
   font-weight: 500;
 }
 
-.oe-lightening-viewer .oe-letter-meta .sender {
+.oe-lightning-viewer .oe-letter-meta .sender {
   font-style: italic;
 }
 
-.oe-lightening-viewer .oe-letter-meta:after {
+.oe-lightning-viewer .oe-letter-meta:after {
   left: 100%;
   top: 50%;
   border: solid transparent;
@@ -4126,7 +4135,7 @@ html {
   margin-top: -6px;
 }
 
-.oe-lightening-viewer .oe-letter-quick-view {
+.oe-lightning-viewer .oe-letter-quick-view {
   margin-top: 5px;
 }
 

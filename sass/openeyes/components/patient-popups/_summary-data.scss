@@ -22,11 +22,11 @@
 			.label { 
 				z-index:1; // below data
 				position:absolute;
-				top:5px;
+				top:7px;
 				right:3px; 
-				@include font-size(16);
-				font-weight:200;
-			 	color: rgba( #fff,0.3 ); 
+				@include font-size(14);
+				font-weight:300;
+			 	color: rgba( #fff,0.5 ); 
 			}
 			
 			// basic data list, uses <br>

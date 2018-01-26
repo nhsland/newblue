@@ -73,7 +73,7 @@
 	
 	// 2 fix widths to better handle complex data layouts
 	.event-header, 
-	.lightening-viewer,
+	.lightning-viewer,
 	.main-event {
 		width:$oe-event-main-default-width;
 		@include media($oe-extended-browser-size){
@@ -114,7 +114,7 @@
 	
 	// --------------------------------------- Lightening Viewer
 	// replaces event-header & main-event area
-	.lightening-viewer {
+	.lightning-viewer {
 		// for Edge < 16
 		-ms-grid-column: 2;
 		-ms-grid-row: 2;

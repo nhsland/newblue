@@ -54,12 +54,19 @@
 		
 		&:hover, &:focus {
 			border-color:$oe-btn-blue;
+
+/*
 			.element-header {
 				.element-title, .subelement-title {
-					transition: color 0.5s ease-out;
-					color:$oe-text-highlight;
+					transition: opacity 0.5s ease-out;
+					opacity:1;
 				}
 			}
+*/
+		}
+		
+		.fade {
+			opacity:0.8; // this will work across both PRO & Classic theme
 		}
 		
 		// R & L data split
