@@ -59,7 +59,7 @@
 	// - Letter Lightening viewer
 	.patient-quicklook, 
 	.patient-demographics, 
-	.patient-lightning-viewer, 
+	.patient-management, 
 	.patient-tasks,
 	.patient-allergies-risks {
 		position:absolute;
@@ -78,7 +78,7 @@
 	
 	// icon behaviour
 	.patient-quicklook, 
-	.patient-lightning-viewer, 
+	.patient-management, 
 	.patient-tasks,
 	.patient-demographics {
 		// js controlled interaction... 
@@ -102,12 +102,8 @@
 		}
 	}
 	
-	
-	// position and size icons
-	// position by eye
-	// position and size icons
-	// position by eye
-	.patient-lightning-viewer {
+	// Eye
+	.patient-quicklook {
 		right:0;	
 		.icon {
 			width:15px;  
@@ -115,16 +111,9 @@
 		}
 	}
 	
-	.patient-quicklook {
-		right:30px;	
-		.icon {
-			width:15px;  
-			height:15px;
-		}
-	}
-	
-	.patient-demographics {
-		right:58px;
+	// dude
+	.patient-management {
+		right:29px;
 		padding-bottom:3px; // use pad to increase hitarea.
 		.icon {
 			width:18px;  
@@ -132,6 +121,16 @@
 		}
 	}
 	
+	// info 
+	.patient-demographics {
+		right:62px;
+		padding-bottom:4px; // use pad to increase hitarea.
+		.icon {
+			width:16px;  
+			height:16px;
+		}
+	}
+
 	.patient-allergies-risks {
 		right:105px;
 	

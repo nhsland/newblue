@@ -1,41 +1,36 @@
-// OE Popup - Quicklook
-// 
-// 
+// Patient Popup - demographics
+// table list of demograhic data
 
-.patient-popup-demographics {
-	
-	// Demographics  
-	.demographics {	
-		padding:0 5px; 
+.oe-patient-popup {
 		
-		// <table>	
-		.patient-summary {
-			width:100%;
+	// <table>	
+	table.patient-demographics {
+		width:100%;
+		
+		tr {
+			border-bottom:1px dotted $oe-pro-line;
+			&:first-child {
+				border-top:1px dotted $oe-pro-line;
+			} 
 			
-			tr {
-				border-bottom:1px dotted $oe-pro-line;
-				&:first-child {
-					border-top:1px dotted $oe-pro-line;
-				} 
+			td {
+				margin:0;
+				padding:8px 0;
+				@include font-size(12);
+				color:$oe-pro-text;
+				line-height:1.5;
 				
-				td {
-					margin:0;
-					padding:8px 0;
-					@include font-size(12);
-					color:$oe-pro-text;
-					line-height:1.5;
-					
-					&:first-child {
-						width:30%;
-						font-style: italic; 
-						color:$oe-pro-text-light;
-					}
-					
-					b { 
-						font-weight:400; 
-					}
+				&:first-child {
+					width:30%;
+					font-style: italic; 
+					color:$oe-pro-text-light;
+				}
+				
+				b { 
+					font-weight:400; 
 				}
 			}
 		}
 	}
+	
 }

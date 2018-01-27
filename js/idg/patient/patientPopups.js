@@ -11,7 +11,7 @@ idg.patientPopups = {
 		// patient popups
 		var quicklook 		= new idg.NavBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
 		var demographics 	= new idg.NavBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
-		var demographics2 	= new idg.NavBtnPopup( 'demographics2', $('#js-demographics2-btn'), $('#patient-popup-demographics2') );
+		var demographics2 	= new idg.NavBtnPopup( 'management', $('#js-management-btn'), $('#patient-popup-management') );
 		var risks 			= new idg.NavBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
 		// var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
 		

@@ -1,38 +1,35 @@
 // OE Management Summaries
 // Also used in Clinic List
 
-.popup-management-summaries {
-	// <ul>		
-	.management-summaries {
-		padding:0;
-		margin:0;
+// <ul>		
+.management-summaries {
 		
-		li {
-			display:block;
-			width:100%;
-			padding:3px 5px 2px 5px; 
-			margin:0 0 3px 0;
-			height:auto;
-			border-top:1px dotted rgba( #ccf,0.2 );
-			
-			p {
-				margin:0 0 0 180px;
-				padding:5px 0px 3px 0px;
-				@include font-size(11);
-				line-height:1.4;
-				color:$oe-pro-text;
-			}
+	li {
+		display:block;
+		width:100%;
+		padding:3px 5px 2px 5px; 
+		margin:0 0 3px 0;
+		height:auto;
+		border-top:1px dotted rgba( #ccf,0.2 );
+		
+		p {
+			margin:0 0 0 180px;
+			padding:5px 0px 3px 0px;
+			@include font-size(11);
+			line-height:1.4;
+			color:$oe-pro-text;
+		}
 
-			h6 {
-				margin:0; 
-				padding:5px 0 0 0;
-				@include font-size(13);
-				font-weight: 300;
-				color:$oe-pro-text;
-				float:left;
-			}
+		h6 {
+			margin:0; 
+			padding:5px 0 0 0;
+			@include font-size(13);
+			font-weight: 300;
+			color:$oe-pro-text;
+			float:left;
 		}
 	}
-} 
+}
+
 		
 

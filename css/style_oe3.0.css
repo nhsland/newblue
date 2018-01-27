@@ -154,14 +154,8 @@ textarea {
   margin-bottom: 10px;
 }
 
-.col-left {
-  width: 48%;
-  float: left;
-}
-
-.col-right {
-  width: 50%;
-  float: right;
+.cols-left, .cols-right {
+  width: 49%;
 }
 
 .cols-fifth {
@@ -1711,7 +1705,7 @@ html {
 
 .oe-patient .patient-quicklook,
 .oe-patient .patient-demographics,
-.oe-patient .patient-lightning-viewer,
+.oe-patient .patient-management,
 .oe-patient .patient-tasks,
 .oe-patient .patient-allergies-risks {
   position: absolute;
@@ -1722,7 +1716,7 @@ html {
 
 .oe-patient .patient-quicklook .icon,
 .oe-patient .patient-demographics .icon,
-.oe-patient .patient-lightning-viewer .icon,
+.oe-patient .patient-management .icon,
 .oe-patient .patient-tasks .icon,
 .oe-patient .patient-allergies-risks .icon {
   display: inline-block;
@@ -1731,8 +1725,8 @@ html {
 }
 
 .oe-patient .patient-quicklook.open .icon, .oe-patient .patient-quicklook.active .icon,
-.oe-patient .patient-lightning-viewer.open .icon,
-.oe-patient .patient-lightning-viewer.active .icon,
+.oe-patient .patient-management.open .icon,
+.oe-patient .patient-management.active .icon,
 .oe-patient .patient-tasks.open .icon,
 .oe-patient .patient-tasks.active .icon,
 .oe-patient .patient-demographics.open .icon,
@@ -1749,17 +1743,8 @@ html {
   fill: #141e2b;
 }
 
-.oe-patient .patient-lightning-viewer {
-  right: 0;
-}
-
-.oe-patient .patient-lightning-viewer .icon {
-  width: 15px;
-  height: 15px;
-}
-
 .oe-patient .patient-quicklook {
-  right: 30px;
+  right: 0;
 }
 
 .oe-patient .patient-quicklook .icon {
@@ -1767,14 +1752,24 @@ html {
   height: 15px;
 }
 
-.oe-patient .patient-demographics {
-  right: 58px;
+.oe-patient .patient-management {
+  right: 29px;
   padding-bottom: 3px;
 }
 
-.oe-patient .patient-demographics .icon {
+.oe-patient .patient-management .icon {
   width: 18px;
   height: 18px;
+}
+
+.oe-patient .patient-demographics {
+  right: 62px;
+  padding-bottom: 4px;
+}
+
+.oe-patient .patient-demographics .icon {
+  width: 16px;
+  height: 16px;
 }
 
 .oe-patient .patient-allergies-risks {
@@ -2122,10 +2117,7 @@ html {
   margin: 0 40px 0 80px;
 }
 
-.patient-popup-allergies-risks,
-.patient-popup-quicklook,
-.patient-popup-tasks,
-.patient-popup-demographics {
+.oe-patient-popup {
   display: none;
   z-index: 90;
   position: fixed;
@@ -2134,115 +2126,84 @@ html {
   width: 1080px;
   background: #141e2b;
   border: 1px solid cyan;
-  padding: 10px 10px 10px 10px;
+  padding: 15px 15px 20px 15px;
 }
 
 @media only screen and (min-width: 1440px) {
-  .patient-popup-allergies-risks,
-  .patient-popup-quicklook,
-  .patient-popup-tasks,
-  .patient-popup-demographics {
+  .oe-patient-popup {
     width: 1240px;
   }
 }
 
-.patient-popup-allergies-risks .oe-popup-overflow,
-.patient-popup-quicklook .oe-popup-overflow,
-.patient-popup-tasks .oe-popup-overflow,
-.patient-popup-demographics .oe-popup-overflow {
+.oe-patient-popup .popup-overflow {
   max-height: 415px;
   overflow: auto;
   padding: 0 3px 0 0;
 }
 
-.patient-popup-allergies-risks .oe-popup-overflow.pad,
-.patient-popup-quicklook .oe-popup-overflow.pad,
-.patient-popup-tasks .oe-popup-overflow.pad,
-.patient-popup-demographics .oe-popup-overflow.pad {
-  margin: 0 5px;
-}
-
-.patient-popup-allergies-risks .subtitle,
-.patient-popup-quicklook .subtitle,
-.patient-popup-tasks .subtitle,
-.patient-popup-demographics .subtitle {
+.oe-patient-popup .subtitle {
   position: relative;
   display: block;
-  margin: 5px 0 10px 0;
-  padding: 10px 0 0 0;
+  margin: 0 0 10px 0;
+  padding: 0 0 0 0;
   font-size: 1.125rem;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.patient-popup-quicklook .summary-data,
-.patient-clinic-quicklook .summary-data,
-.patient-popup-tasks .summary-data {
-  margin: 10px 0 0 0;
+.oe-patient-popup .quicklook-data-groups {
+  width: 33.333%;
+  margin: 0 8px 0 0;
   font-size: 0.6875rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-quicklook .summary-data .row,
-.patient-clinic-quicklook .summary-data .row,
-.patient-popup-tasks .summary-data .row {
+.oe-patient-popup .quicklook-data-groups:last-child {
+  margin: 0 0 0 0;
+}
+
+.oe-patient-popup .quicklook-data-groups .group {
   position: relative;
   margin: 0 0 3px 0;
   padding: 25px 0 0 0;
   background: #1e2e42;
 }
 
-.patient-popup-quicklook .summary-data .row .label,
-.patient-clinic-quicklook .summary-data .row .label,
-.patient-popup-tasks .summary-data .row .label {
+.oe-patient-popup .quicklook-data-groups .group .label {
   z-index: 1;
   position: absolute;
-  top: 7px;
-  right: 3px;
-  font-size: 0.875rem;
+  top: 8px;
+  right: 0;
+  font-size: 0.8125rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(204, 204, 204, 0.6);
 }
 
-.patient-popup-quicklook .summary-data .row .data,
-.patient-clinic-quicklook .summary-data .row .data,
-.patient-popup-tasks .summary-data .row .data {
+.oe-patient-popup .quicklook-data-groups .group .data {
   z-index: 2;
   padding: 5px 10px;
   line-height: 1.6;
 }
 
-.patient-popup-quicklook .summary-data table,
-.patient-clinic-quicklook .summary-data table,
-.patient-popup-tasks .summary-data table {
+.oe-patient-popup .quicklook-data-groups table {
   margin: 0 0 10px 0;
   width: 100%;
 }
 
-.patient-popup-quicklook .summary-data table tr:hover,
-.patient-clinic-quicklook .summary-data table tr:hover,
-.patient-popup-tasks .summary-data table tr:hover {
+.oe-patient-popup .quicklook-data-groups table tr:hover {
   background: #182535;
 }
 
-.patient-popup-quicklook .summary-data table th,
-.patient-clinic-quicklook .summary-data table th,
-.patient-popup-tasks .summary-data table th {
+.oe-patient-popup .quicklook-data-groups table th {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.patient-popup-quicklook .summary-data table td,
-.patient-clinic-quicklook .summary-data table td,
-.patient-popup-tasks .summary-data table td {
+.oe-patient-popup .quicklook-data-groups table td {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-quicklook .summary-data table th, .patient-popup-quicklook .summary-data table td,
-.patient-clinic-quicklook .summary-data table th,
-.patient-clinic-quicklook .summary-data table td,
-.patient-popup-tasks .summary-data table th,
-.patient-popup-tasks .summary-data table td {
+.oe-patient-popup .quicklook-data-groups table th, .oe-patient-popup .quicklook-data-groups table td {
   vertical-align: middle;
   font-size: 0.6875rem;
   font-weight: 400;
@@ -2251,34 +2212,19 @@ html {
   text-align: left;
 }
 
-.patient-popup-quicklook .summary-data table th.right, .patient-popup-quicklook .summary-data table td.right,
-.patient-clinic-quicklook .summary-data table th.right,
-.patient-clinic-quicklook .summary-data table td.right,
-.patient-popup-tasks .summary-data table th.right,
-.patient-popup-tasks .summary-data table td.right {
+.oe-patient-popup .quicklook-data-groups table th.right, .oe-patient-popup .quicklook-data-groups table td.right {
   text-align: right;
 }
 
-.patient-popup-quicklook .summary-data table th:first-child, .patient-popup-quicklook .summary-data table td:first-child,
-.patient-clinic-quicklook .summary-data table th:first-child,
-.patient-clinic-quicklook .summary-data table td:first-child,
-.patient-popup-tasks .summary-data table th:first-child,
-.patient-popup-tasks .summary-data table td:first-child {
+.oe-patient-popup .quicklook-data-groups table th:first-child, .oe-patient-popup .quicklook-data-groups table td:first-child {
   padding-left: 0;
 }
 
-.patient-popup-quicklook .summary-data table strong,
-.patient-clinic-quicklook .summary-data table strong,
-.patient-popup-tasks .summary-data table strong {
+.oe-patient-popup .quicklook-data-groups table strong {
   font-weight: 400;
 }
 
-.popup-management-summaries .management-summaries {
-  padding: 0;
-  margin: 0;
-}
-
-.popup-management-summaries .management-summaries li {
+.management-summaries li {
   display: block;
   width: 100%;
   padding: 3px 5px 2px 5px;
@@ -2287,7 +2233,7 @@ html {
   border-top: 1px dotted rgba(204, 204, 255, 0.2);
 }
 
-.popup-management-summaries .management-summaries li p {
+.management-summaries li p {
   margin: 0 0 0 180px;
   padding: 5px 0px 3px 0px;
   font-size: 0.6875rem;
@@ -2295,7 +2241,7 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.popup-management-summaries .management-summaries li h6 {
+.management-summaries li h6 {
   margin: 0;
   padding: 5px 0 0 0;
   font-size: 0.8125rem;
@@ -2365,7 +2311,7 @@ html {
 .problems-plans .create-new-problem-plan input {
   font-size: 0.8125rem;
   font-weight: 300;
-  background: #2f3b49;
+  background: #182535;
   outline: none;
   border: 0;
   width: 100%;
@@ -2374,23 +2320,19 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-demographics .demographics {
-  padding: 0 5px;
-}
-
-.patient-popup-demographics .demographics .patient-summary {
+.oe-patient-popup table.patient-demographics {
   width: 100%;
 }
 
-.patient-popup-demographics .demographics .patient-summary tr {
+.oe-patient-popup table.patient-demographics tr {
   border-bottom: 1px dotted #26303d;
 }
 
-.patient-popup-demographics .demographics .patient-summary tr:first-child {
+.oe-patient-popup table.patient-demographics tr:first-child {
   border-top: 1px dotted #26303d;
 }
 
-.patient-popup-demographics .demographics .patient-summary tr td {
+.oe-patient-popup table.patient-demographics tr td {
   margin: 0;
   padding: 8px 0;
   font-size: 0.75rem;
@@ -2398,29 +2340,30 @@ html {
   line-height: 1.5;
 }
 
-.patient-popup-demographics .demographics .patient-summary tr td:first-child {
+.oe-patient-popup table.patient-demographics tr td:first-child {
   width: 30%;
   font-style: italic;
   color: rgba(255, 255, 255, 0.5);
 }
 
-.patient-popup-demographics .demographics .patient-summary tr td b {
+.oe-patient-popup table.patient-demographics tr td b {
   font-weight: 400;
 }
 
-.patient-popup-allergies-risks table {
+.oe-patient-popup table.risks {
+  width: 100%;
   margin: 15px 0 0 0;
 }
 
-.patient-popup-allergies-risks table tr {
+.oe-patient-popup table.risks tr {
   border-bottom: 1px dotted #26303d;
 }
 
-.patient-popup-allergies-risks table tr:last-child {
+.oe-patient-popup table.risks tr:last-child {
   border-bottom: none;
 }
 
-.patient-popup-allergies-risks table td {
+.oe-patient-popup table.risks td {
   font-size: 0.75rem;
   padding: 1px 0 1px 4px;
   vertical-align: middle;
@@ -2428,46 +2371,12 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.patient-popup-allergies-risks table td:last-child {
+.oe-patient-popup table.risks td:last-child {
   text-align: right;
 }
 
-.patient-popup-allergies-risks table td.left {
-  text-align: left;
-}
-
-.patient-popup-allergies-risks table td textarea {
+.oe-patient-popup table.risks td textarea {
   vertical-align: middle;
-}
-
-.patient-popup-allergies-risks table td.nowrap {
-  width: 1%;
-  white-space: nowrap;
-  padding-right: 10px;
-}
-
-.patient-popup-allergies-risks table td.center {
-  text-align: center;
-}
-
-.patient-popup-allergies-risks table th {
-  font-size: 0.75rem;
-  text-align: left;
-  padding: 1px 0 1px 4px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.patient-popup-allergies-risks table th.nowrap {
-  width: 1%;
-  white-space: nowrap;
-  padding-right: 10px;
-}
-
-.patient-popup-allergies-risks table th.center {
-  text-align: center;
-  padding-left: 10px;
-  padding-right: 10px;
 }
 
 /* Full width layout */

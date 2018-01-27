@@ -2,18 +2,21 @@
 // 
 // note: patient-clinic-quicklook is used in Clinic List
 
-.patient-popup-quicklook, 
-.patient-clinic-quicklook, 
-.patient-popup-tasks {
+.oe-patient-popup {
 	
-	.summary-data {
+	.quicklook-data-groups {
 		
-		margin:10px 0 0 0;
+		width:33.333%;
+		margin:0 8px 0 0;
+		&:last-child {
+			margin:0 0 0 0;
+		}
+				
 		@include font-size(11);
 		font-weight:400;
 		color:$oe-pro-text; 
 		
-		.row {
+		.group {
 			position: relative;
 			margin:0 0 3px 0;
 			padding:25px 0 0 0; // allow for label
@@ -22,11 +25,11 @@
 			.label { 
 				z-index:1; // below data
 				position:absolute;
-				top:7px;
-				right:3px; 
-				@include font-size(14);
+				top:8px;
+				right:0; 
+				@include font-size(13);
 				font-weight:300;
-			 	color: rgba( #fff,0.5 ); 
+			 	color: rgba( #ccc,0.6 ); 
 			}
 			
 			// basic data list, uses <br>

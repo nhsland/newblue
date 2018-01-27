@@ -1,75 +1,35 @@
 // OE Popup - Allergies & Risks
-// 
-// 
+//  
 
-.patient-popup-allergies-risks {
-	
-	// styles are based on Events Elements
-	
+.oe-patient-popup {
 	// <table>
-	table {
-			margin:15px 0 0 0;
-				
-			tr {
-				border-bottom: 1px dotted $oe-pro-line;
-				&:last-child { 
-					border-bottom: none;
-				}
-			}
+	
+	table.risks {
+		width:100%;
+		margin:15px 0 0 0;
 			
-			td {
-				@include font-size(12);
-				padding:1px 0 1px 4px;
-				vertical-align: middle;
-				height:28px; 
-				color:$oe-pro-text;
-				
-				&:last-child {
-					text-align: right;
-				}	
-				
-				&.left {
-					text-align: left;
-				}
-				
-				textarea {
-					vertical-align: middle; // ensure correct vertical alignment in <td>
-				}
-				
-				&.nowrap {
-					width:1%;
-					white-space: nowrap;
-					padding-right:10px;
-				}
-				
-				&.center {
-					text-align: center;
-				}
-			}
-			
-			th {
-				@include font-size(12);
-				text-align: left;
-				padding:1px 0 1px 4px;
-				font-weight: 300;
-				color:$oe-pro-text-light;
-				
-				&.nowrap {
-					width:1%;
-					white-space: nowrap;
-					padding-right:10px;
-				}
-				
-				&.center {
-					text-align: center;
-					padding-left:10px;
-					padding-right:10px;
-				}
-				
+		tr {
+			border-bottom: 1px dotted $oe-pro-line;
+			&:last-child { 
+				border-bottom: none;
 			}
 		}
-
+		
+		td {
+			@include font-size(12);
+			padding:1px 0 1px 4px;
+			vertical-align: middle;
+			height:28px; 
+			color:$oe-pro-text;
+			
+			&:last-child {
+				text-align: right;
+			}	
+				
+			textarea {
+				vertical-align: middle; // ensure correct vertical alignment in <td>
+			}
 	
-	
-	
+		}
+	}
 }

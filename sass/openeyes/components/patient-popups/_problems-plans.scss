@@ -62,7 +62,7 @@
 		input { 
 			@include font-size(13);
 			font-weight: 300;
-			background: tint( $oe-pro-blue-dark,10 );
+			background: $oe-pro-blue-dark;
 			outline:none;
 			border:0;
 			width:100%; 

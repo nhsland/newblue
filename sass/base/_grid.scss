@@ -1,12 +1,13 @@
 // Simplified Grid layout
 // 
 // This provides the basic 12 column grid 
-// with extra bespoke column options
-// we make use of flex and the cols-n are useful to help 
-// consistent layouts
+// with some extra bespoke column options
+// for v3 we make use of flex and the cols-n are 
+// useful to help for consistent data layouts
 
 /* basic grid layout */
-
+// row is kept here to handle any old v2 DOM elements that 
+// might be laid out this way.
 .row {
 	width: 100%;
 	margin:0 auto; 
@@ -29,15 +30,11 @@
 	}
 }
 
-// simple left right 50% split
-// note: edit mode use "eye-left" & "eye-right"
-.col-left {
-	width:48%; 
-	float:left; 
-}
-.col-right {
-	width:50%; 
-	float:right;
+// Left Right Split (provides a central gap)
+// use cols-6 for no gap
+// this is used with flex-layout
+.cols-left, .cols-right {
+	width:49%;
 }
 
 // not covered by 12 col grid

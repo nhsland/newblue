@@ -1,15 +1,10 @@
 // OE Patient Popups.
-// 
-
-// --- patient allergies & risks, quicklook and demographics
+// PRO theme
+// --- patient allergies & risks, quicklook, management and demographics
 //
-// note: Clinic Quicklook is cut down verions of Quicklook for Clinic lists
+// (note: Clinic Quicklook is cut down verion of Quicklook for Clinic lists)
 
-.patient-popup-allergies-risks, 
-.patient-popup-quicklook, 
-.patient-popup-tasks, 
-.patient-popup-demographics {
-	
+.oe-patient-popup {
 	display:none; // js controlled.
 	z-index:$oe-z-quicklook;
 	position: fixed;
@@ -20,37 +15,33 @@
 	
 	background:$oe-pro-bg;
 	border:1px solid $oe-pro-text-highlight;
-	padding:10px 10px 10px 10px;
+	padding:15px 15px 20px 15px;
 	
+	// stretch popup to match width of extended Event area
 	@include media($oe-extended-browser-size){
-		width:$oe-event-main-extended-width; // popups to match width of Event area	
+		width:$oe-event-main-extended-width; 
 	}
 	
-	
 	// overflow wrappers alerts and summary-data
-	.oe-popup-overflow {	
+	.popup-overflow {	
 		max-height: 415px; // this restricts the popup's vertical hieight (for lowest res. monitors)
 		overflow: auto;
-		padding:0 3px 0 0;
-		
-		&.pad {
-			margin:0 5px;
-		}
+		padding:0 3px 0 0; // breathing space next to scrollbar
 	}
 	
 	// area subtitles
 	.subtitle { 
 		position:relative;
 		display:block;
-		margin:5px 0 10px 0;
-		padding:10px 0 0 0;
+		margin:0 0 10px 0;
+		padding:0 0 0 0;
 		@include font-size(18);
 		font-weight:200; 
 		color:$oe-pro-text-light; 
 	}
 }
 
-@import "patient-popups/summary-data"; 
+@import "patient-popups/quicklook-data-groups"; 
 @import "patient-popups/management";
 @import "patient-popups/problems-plans"; 
 @import "patient-popups/demographics"; 
