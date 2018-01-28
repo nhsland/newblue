@@ -1337,9 +1337,18 @@ button.pro-theme, .button.pro-theme, input[type="submit"].pro-theme {
   background: #1e2e42;
 }
 
+button.header-tab, .button.header-tab, input[type="submit"].header-tab {
+  background: #283442;
+}
+
+button.header-tab.selected, .button.header-tab.selected, input[type="submit"].header-tab.selected {
+  background: #1e2e42;
+}
+
 button.selected, .button.selected, input[type="submit"].selected {
   color: cyan;
-  background: #04295b;
+  font-weight: 400;
+  background: #101923;
 }
 
 button:hover, button:focus, button:active, .button:hover, .button:focus, .button:active, input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active {
@@ -2151,7 +2160,11 @@ html {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.oe-patient-popup .quicklook-data-groups {
+.patient-clinic-quicklook .quicklook-data-groups {
+  width: 50%;
+}
+
+.quicklook-data-groups {
   width: 33.333%;
   margin: 0 8px 0 0;
   font-size: 0.6875rem;
@@ -2159,18 +2172,18 @@ html {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.oe-patient-popup .quicklook-data-groups:last-child {
+.quicklook-data-groups:last-child {
   margin: 0 0 0 0;
 }
 
-.oe-patient-popup .quicklook-data-groups .group {
+.quicklook-data-groups .group {
   position: relative;
   margin: 0 0 3px 0;
   padding: 25px 0 0 0;
   background: #1e2e42;
 }
 
-.oe-patient-popup .quicklook-data-groups .group .label {
+.quicklook-data-groups .group .label {
   z-index: 1;
   position: absolute;
   top: 8px;
@@ -2180,30 +2193,30 @@ html {
   color: rgba(204, 204, 204, 0.6);
 }
 
-.oe-patient-popup .quicklook-data-groups .group .data {
+.quicklook-data-groups .group .data {
   z-index: 2;
   padding: 5px 10px;
   line-height: 1.6;
 }
 
-.oe-patient-popup .quicklook-data-groups table {
+.quicklook-data-groups table {
   margin: 0 0 10px 0;
   width: 100%;
 }
 
-.oe-patient-popup .quicklook-data-groups table tr:hover {
+.quicklook-data-groups table tr:hover {
   background: #182535;
 }
 
-.oe-patient-popup .quicklook-data-groups table th {
+.quicklook-data-groups table th {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.oe-patient-popup .quicklook-data-groups table td {
+.quicklook-data-groups table td {
   color: rgba(255, 255, 255, 0.8);
 }
 
-.oe-patient-popup .quicklook-data-groups table th, .oe-patient-popup .quicklook-data-groups table td {
+.quicklook-data-groups table th, .quicklook-data-groups table td {
   vertical-align: middle;
   font-size: 0.6875rem;
   font-weight: 400;
@@ -2212,15 +2225,15 @@ html {
   text-align: left;
 }
 
-.oe-patient-popup .quicklook-data-groups table th.right, .oe-patient-popup .quicklook-data-groups table td.right {
+.quicklook-data-groups table th.right, .quicklook-data-groups table td.right {
   text-align: right;
 }
 
-.oe-patient-popup .quicklook-data-groups table th:first-child, .oe-patient-popup .quicklook-data-groups table td:first-child {
+.quicklook-data-groups table th:first-child, .quicklook-data-groups table td:first-child {
   padding-left: 0;
 }
 
-.oe-patient-popup .quicklook-data-groups table strong {
+.quicklook-data-groups table strong {
   font-weight: 400;
 }
 
@@ -2637,7 +2650,6 @@ html {
   font-size: 0.625rem;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.5);
-  background: #1e2e42;
 }
 
 .event-header .buttons-right {
@@ -4051,6 +4063,7 @@ html {
 }
 
 .oe-lightning-viewer .oe-letter-meta .date {
+  font-size: 0.875rem;
   font-weight: 500;
 }
 

@@ -33,9 +33,19 @@
 		background: $oe-pro-user-inputs;
 	}
 	
+	// Event Header variation
+	// make buttons work like tabs in the Event Header
+	&.header-tab {
+		background: $oe-grey; 		// match the Header background
+		&.selected {
+			background: $oe-blue; 	// match the Event background 
+		}	
+	}
+
 	&.selected {
 		color: $oe-text-highlight; 
-		background: $oe-btn-blue-hint;
+		font-weight: $oe-font-medium;
+		background: $oe-bg-highlight;
 	}
 	
 	&:hover, &:focus, &:active {

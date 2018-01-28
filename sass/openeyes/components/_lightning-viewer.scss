@@ -56,7 +56,10 @@
 		color:$oe-text;
 		background:$oe-grey;
 		
-		.date { font-weight:500; }
+		.date { 
+			@include font-size(14);
+			font-weight:500; 
+		}
 		.sender { font-style:italic;}
 		.help {
 			margin:10px 0 0 0;
