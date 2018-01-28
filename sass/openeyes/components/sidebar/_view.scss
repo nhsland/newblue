@@ -8,29 +8,25 @@
 	.event {
 		position: relative;
 		display:block;
-		margin: 0 0 1px 0;	
+		margin: 0 0 1px 0;
 		
 		a {
+			display:block;
+			position:relative;
+			
 			height:$oe-sidebar-event-height;
 			line-height:$oe-sidebar-event-height;
+	
+			@include font-size(12);
+			font-weight:400;
+			color: $oe-pro-text-light; 
+			background:$oe-pro-blue;
 			
 			.tag {
 				position: absolute;
 				top:0;
 				right:0;
 			}
-		}		
-	}
-	
-	.event {
-		a {
-			display:block;
-			position:relative;
-	
-			@include font-size(12);
-			font-weight:400;
-			color: $oe-pro-text-light; 
-			background:$oe-pro-blue;
 			
 			&:hover, &:focus, &:active {
 				color:#fff;

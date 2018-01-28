@@ -1517,14 +1517,14 @@ html {
 }
 
 .oe-grid .event-header,
-.oe-grid .lightning-viewer,
+.oe-grid .oe-lightning-viewer,
 .oe-grid .main-event {
   width: 1080px;
 }
 
 @media only screen and (min-width: 1440px) {
   .oe-grid .event-header,
-  .oe-grid .lightning-viewer,
+  .oe-grid .oe-lightning-viewer,
   .oe-grid .main-event {
     width: 1240px;
   }
@@ -1552,7 +1552,7 @@ html {
   overflow-y: auto;
 }
 
-.oe-grid .lightning-viewer {
+.oe-grid .oe-lightning-viewer {
   -ms-grid-column: 2;
   -ms-grid-row: 2;
   -ms-grid-row-span: 2;
@@ -1725,12 +1725,12 @@ html {
 }
 
 .oe-patient .patient-quicklook.open .icon, .oe-patient .patient-quicklook.active .icon,
+.oe-patient .patient-demographics.open .icon,
+.oe-patient .patient-demographics.active .icon,
 .oe-patient .patient-management.open .icon,
 .oe-patient .patient-management.active .icon,
 .oe-patient .patient-tasks.open .icon,
-.oe-patient .patient-tasks.active .icon,
-.oe-patient .patient-demographics.open .icon,
-.oe-patient .patient-demographics.active .icon {
+.oe-patient .patient-tasks.active .icon {
   fill: cyan;
 }
 
@@ -2888,23 +2888,20 @@ html {
 }
 
 .sidebar .event a {
+  display: block;
+  position: relative;
   height: 19px;
   line-height: 19px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  background: #1e2e42;
 }
 
 .sidebar .event a .tag {
   position: absolute;
   top: 0;
   right: 0;
-}
-
-.sidebar .event a {
-  display: block;
-  position: relative;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
-  background: #1e2e42;
 }
 
 .sidebar .event a:hover, .sidebar .event a:focus, .sidebar .event a:active {
@@ -3076,6 +3073,37 @@ html {
 
 .sidebar .groupings .collapse-group-header .count {
   font-size: 0.625rem;
+}
+
+.sidebar .lightning-viewer-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 19px;
+  background: #182535;
+  margin: 3px 0 5px 0;
+}
+
+.sidebar .lightning-viewer-btn .icon {
+  display: block;
+  fill: rgba(255, 255, 255, 0.6);
+  width: 15px;
+  height: 15px;
+}
+
+.sidebar .lightning-viewer-btn:hover, .sidebar .lightning-viewer-btn:focus, .sidebar .lightning-viewer-btn:active {
+  color: #fff;
+  background: #172332;
+}
+
+.sidebar .lightning-viewer-btn:hover .icon, .sidebar .lightning-viewer-btn:focus .icon, .sidebar .lightning-viewer-btn:active .icon {
+  fill: cyan;
 }
 
 .sidebar .oe-element-list {
@@ -4027,6 +4055,13 @@ html {
 }
 
 .oe-lightning-viewer .oe-letter-meta .sender {
+  font-style: italic;
+}
+
+.oe-lightning-viewer .oe-letter-meta .help {
+  margin: 10px 0 0 0;
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.5);
   font-style: italic;
 }
 

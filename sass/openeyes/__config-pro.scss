@@ -14,7 +14,7 @@ $oe-text-light: 		$oe-pro-text-light;
 $oe-text-highlight:		$oe-pro-text-highlight; // also for selected
 $oe-text-active:		$oe-pro-text-active; 
 
-$oe-bg-highlight: 		shade($oe-pro-blue-dark3,30); // used as hover highlight 
+$oe-bg-highlight: 		$oe-pro-bg-highlight; // used as hover highlight 
 
 $oe-blue:				$oe-pro-blue;
 $oe-blue-dark: 			$oe-pro-blue-dark;

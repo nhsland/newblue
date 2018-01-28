@@ -73,14 +73,13 @@
 			fill:#fff;
 			opacity: 0.8;				
 		}	
-		
 	}
 	
 	// icon behaviour
 	.patient-quicklook, 
+	.patient-demographics,
 	.patient-management, 
-	.patient-tasks,
-	.patient-demographics {
+	.patient-tasks {
 		// js controlled interaction... 
 		&.open, &.active {
 			.icon {

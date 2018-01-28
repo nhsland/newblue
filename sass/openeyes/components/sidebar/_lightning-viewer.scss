@@ -1,0 +1,33 @@
+// OE Sidebar - Lightning Viewer
+
+.sidebar { 
+	
+	.lightning-viewer-btn {
+		display:flex;
+		align-items: center;
+		justify-content: center;
+		height:$oe-sidebar-event-height;
+		background:$oe-pro-blue-dark;
+		margin:3px 0 5px 0;
+		
+		.icon {
+			display:block;
+			fill:rgba(255,255,255,0.6);
+			width:15px;  
+			height:15px;
+		}
+		
+		&:hover, &:focus, &:active {
+			color:#fff;
+			background:$oe-pro-blue-dark3;
+			
+			.icon {
+				fill:$oe-pro-text-highlight;
+			}
+		}
+	}
+	
+	
+}
+
+

@@ -43,13 +43,15 @@ $html-pro-bg: 			rgb(16,25,37);
 $oe-pro-text: 			rgba(255,255,255,0.8 );
 $oe-pro-text-light: 	rgba(255,255,255,0.5 );
 $oe-pro-text-highlight: rgb(0,255,255);
-$oe-pro-text-active: 	rgb(90,180,180);
+$oe-pro-text-active: 	rgb(90,180,180); 
 
 $oe-pro-blue:			rgb(30,46,66);
 $oe-pro-blue-dark: 		shade( $oe-pro-blue, 20% );
 $oe-pro-blue-dark2: 	shade( $oe-pro-blue, 35% );
 $oe-pro-blue-dark3: 	shade( $oe-pro-blue, 25% );
 $oe-pro-blue-light: 	tint( $oe-pro-blue, 30% );
+
+$oe-pro-bg-highlight: 	shade($oe-pro-blue-dark3,30); // used as hover highlight
 
 $oe-pro-grey:			rgb(40,52,66);
 

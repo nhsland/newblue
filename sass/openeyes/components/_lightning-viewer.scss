@@ -58,6 +58,13 @@
 		
 		.date { font-weight:500; }
 		.sender { font-style:italic;}
+		.help {
+			margin:10px 0 0 0;
+			@include font-size(10);
+			color:$oe-text-light;
+			font-style: italic;
+		}
+		
 	}
 	
 	// add arrow to oe-letter-meta box:

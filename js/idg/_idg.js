@@ -45,8 +45,8 @@ idg.init = function(){
 	idg.collapseGroups();
 	
 	// lightning viewer
-	idg.lightningViewer();
-	
+	// idg.lightningViewer();  // now a regular link
+ 	
 	// Tooltips on info icons
 	idg.tooltips();
 	
