@@ -3092,37 +3092,6 @@ html {
   font-size: 0.625rem;
 }
 
-.sidebar .lightning-viewer-btn {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 19px;
-  background: #182535;
-  margin: 3px 0 5px 0;
-}
-
-.sidebar .lightning-viewer-btn .icon {
-  display: block;
-  fill: rgba(255, 255, 255, 0.6);
-  width: 15px;
-  height: 15px;
-}
-
-.sidebar .lightning-viewer-btn:hover, .sidebar .lightning-viewer-btn:focus, .sidebar .lightning-viewer-btn:active {
-  color: #fff;
-  background: #172332;
-}
-
-.sidebar .lightning-viewer-btn:hover .icon, .sidebar .lightning-viewer-btn:focus .icon, .sidebar .lightning-viewer-btn:active .icon {
-  fill: cyan;
-}
-
 .sidebar .oe-element-list {
   margin: 0 1px 0 0;
 }
@@ -4102,15 +4071,16 @@ html {
 }
 
 /* OEscape */
-.oescape-icons .tag {
+.oescape-icon-btns .icon-btn {
   display: inline-block;
+  vertical-align: top;
+  margin: 0 2px 2px 0;
 }
 
-.oescape-icons .tag a {
+.oescape-icon-btns .icon-btn a {
   display: block;
   height: 28px;
   width: 28px;
-  margin: 0 2px 2px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4126,16 +4096,31 @@ html {
   background: #182535;
 }
 
-.oescape-icons .tag a.active:hover, .oescape-icons .tag a.active:focus, .oescape-icons .tag a.active:active {
+.oescape-icon-btns .icon-btn a.lightning-viewer-icon svg {
+  display: block;
+  fill: rgba(255, 255, 255, 0.6);
+  width: 15px;
+  height: 15px;
+}
+
+.oescape-icon-btns .icon-btn a.active:hover, .oescape-icon-btns .icon-btn a.active:focus, .oescape-icon-btns .icon-btn a.active:active {
   color: #fff;
   background: #074598;
 }
 
-.oescape-icons .tag a.selected {
+.oescape-icon-btns .icon-btn a.active:hover svg, .oescape-icon-btns .icon-btn a.active:focus svg, .oescape-icon-btns .icon-btn a.active:active svg {
+  fill: white;
+}
+
+.oescape-icon-btns .icon-btn a.selected {
   color: cyan;
 }
 
-.oescape-icons .tag a.inactive {
+.oescape-icon-btns .icon-btn a.selected svg {
+  fill: cyan;
+}
+
+.oescape-icon-btns .icon-btn a.inactive {
   opacity: 0.4;
   cursor: default;
 }
