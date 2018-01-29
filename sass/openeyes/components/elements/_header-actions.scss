@@ -12,8 +12,8 @@
 	
 		.element-title {
 			@include font-size(15);
-			color:$oe-text-highlight;
-			font-weight:300;
+			color:$oe-element-headers;
+			font-weight:$oe-font-light;
 			padding:0 0 0 10px;
 		}
 	}

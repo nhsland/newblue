@@ -56,6 +56,11 @@ $oe-input-placeholder: 	rgb(151,151,151);
 // flags
 $oe-warning-orange:		rgb(117,30,0);
 
+// specific customisation of elements
+// impossible to always find a clever colour
+// solution for both themes so... 
+$oe-element-headers:   rgb(20,20,150); // element default header colour
+
 
 // ... different SVGs for 'pro' & 'classic' theme
 @function svg-path-theme($svg){

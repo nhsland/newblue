@@ -54,15 +54,14 @@
 		
 		&:hover, &:focus {
 			border-color:$oe-btn-blue;
-
-/*
+			
 			.element-header {
 				.element-title, .subelement-title {
-					transition: opacity 0.5s ease-out;
-					opacity:1;
+					transition: color 0.5s ease-out;
+					color:$oe-text-highlight;
 				}
 			}
-*/
+
 		}
 		
 		.fade {

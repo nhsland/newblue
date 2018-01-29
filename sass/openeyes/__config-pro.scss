@@ -42,7 +42,7 @@ $oe-btn-blue-hint: 		shade( $oe-btn-blue,40 );
 $oe-btn-green-hint: 	shade( $oe-btn-green,40 );
 $oe-btn-red-hint: 		shade( $oe-btn-red,40 );;
 
-$oe-popup-bg:			$oe-pro-popup-bg; // tool-tip, add-select-search, element-search-popup
+$oe-popup-bg:			$oe-pro-popup-bg; // tool-tip, add-select-search, element-search-popup	 
 
 // input colours:
 $oe-user-inputs: 		$oe-blue;
@@ -51,6 +51,11 @@ $oe-input-placeholder: 	shade( $oe-user-input-text,20 );
 
 // flags
 $oe-warning-orange:		rgb(117,30,0);
+
+// specific customisation of elements
+// impossible to always find a clever colour
+// solution for both themes so... 
+$oe-element-headers:   rgb(105,147,158); // rgb(139,195,203); // element default header colour
 
 
 // ... different SVGs for 'pro' & 'classic' theme

@@ -3251,14 +3251,12 @@ html {
 
 .main-event .element:hover, .main-event .element:focus {
   border-color: #074598;
-  /*
-			.element-header {
-				.element-title, .subelement-title {
-					transition: opacity 0.5s ease-out;
-					opacity:1;
-				}
-			}
-*/
+}
+
+.main-event .element:hover .element-header .element-title, .main-event .element:hover .element-header .subelement-title, .main-event .element:focus .element-header .element-title, .main-event .element:focus .element-header .subelement-title {
+  -webkit-transition: color 0.5s ease-out;
+  transition: color 0.5s ease-out;
+  color: cyan;
 }
 
 .main-event .element .fade {
@@ -3353,7 +3351,7 @@ html {
 
 .main-event .element-header .element-title {
   font-size: 0.9375rem;
-  color: cyan;
+  color: #69939e;
   font-weight: 300;
   padding: 0 0 0 10px;
 }
