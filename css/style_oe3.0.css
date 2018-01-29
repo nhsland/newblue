@@ -1608,14 +1608,15 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  max-width: 200px;
+  width: 280px;
   background: #1e2e42;
 }
 
 .openeyes-brand .oe-logo {
   position: absolute;
-  top: 20px;
-  left: 45px;
+  top: 0;
+  left: 25px;
+  padding: 20px;
 }
 
 .openeyes-brand .oe-logo .oe-openeyes {
@@ -1645,18 +1646,22 @@ html {
 }
 
 .openeyes-brand .oe-product-info p.gap {
-  margin: 12px 0 0 0;
+  margin: 10px 0 0 0;
 }
 
 .openeyes-brand .oe-product-info p a {
   color: #0ff;
 }
 
+.openeyes-brand .oe-product-info p .large-text {
+  font-size: 0.875rem;
+}
+
 .openeyes-brand .oe-product-info h3 {
   font-size: 1.4375rem;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.8);
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
 }
 
 .oe-header {
