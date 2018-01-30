@@ -1474,6 +1474,36 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   background-color: #99a1a9;
 }
 
+@-webkit-keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.spinner:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: -30px;
+  margin-left: -30px;
+  border-radius: 50%;
+  border: 4px solid white;
+  border-top-color: rgba(255, 255, 255, 0);
+  -webkit-animation: spinner .8s linear infinite;
+          animation: spinner .8s linear infinite;
+}
+
 /* Structure */
 html {
   background: #101925;
@@ -3092,12 +3122,12 @@ html {
   background-position: left 5px top 4px;
   background-repeat: no-repeat;
   background-size: 13px;
-  background-color: #8f0e0e;
+  background-color: #560808;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> polygon{ fill:#fff; opacity:0.8; }</style><polygon points="15 5.86 19.52 1.1 20.37 7.61 26.83 6.41 23.69 12.18 29.62 15 23.69 17.82 26.83 23.59 20.37 22.39 19.52 28.9 15 24.14 10.48 28.9 9.63 22.39 3.17 23.59 6.31 17.82 0.38 15 6.31 12.18 3.17 6.41 9.63 7.61 10.48 1.1 15 5.86"/></svg>');
 }
 
 .sidebar .tooltip.quicklook .event-issue.ready {
-  background-color: #0e7c19;
+  background-color: #084a0f;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> path{ fill:#fff; opacity:0.8; }</style><path d="M28.3,1.88l.7,1a54.4,54.4,0,0,0-9.49,9.89,68,68,0,0,0-8,12.48l-1.47,1a25.12,25.12,0,0,0-2.49,1.89,31.23,31.23,0,0,0-1.14-3.07l-.56-1.3a20,20,0,0,0-2.22-4.13,5,5,0,0,0-2.3-1.77q2.15-2.27,3.95-2.27,1.53,0,3.41,4.16l.62,1.4a57.89,57.89,0,0,1,8.65-11A48.45,48.45,0,0,1,28.3,1.88Z"/></svg>');
 }
 
