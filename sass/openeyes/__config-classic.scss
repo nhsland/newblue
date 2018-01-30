@@ -37,6 +37,7 @@ $oe-font-medium: 500;   // push 400 weights to 500
 
 // buttons
 $oe-btn-default:		rgb(235,235,240);
+$oe-btn-selected:		rgb(220,220,230);
 $oe-btn-event-header: 	tint($oe-grey,10); // event header buttons need to work like tabs
 $oe-btn-blue:			rgb(55,127,224);
 $oe-btn-green:			rgb(24,164,61);

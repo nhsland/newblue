@@ -1333,7 +1333,7 @@ button, .button, input[type="submit"] {
 }
 
 button.pro-theme, .button.pro-theme, input[type="submit"].pro-theme {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.5);
   background: #1e2e42;
 }
 
@@ -1348,7 +1348,7 @@ button.header-tab.selected, .button.header-tab.selected, input[type="submit"].he
 button.selected, .button.selected, input[type="submit"].selected {
   color: cyan;
   font-weight: 400;
-  background: #101923;
+  background: #172332;
 }
 
 button:hover, button:focus, button:active, .button:hover, .button:focus, .button:active, input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active {

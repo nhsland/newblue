@@ -29,7 +29,7 @@
 	// PRO theme 
 	// For individual styling of butons when in Classic theme	
 	&.pro-theme {
-		color: $oe-pro-text;
+		color: $oe-pro-text-light;
 		background: $oe-pro-user-inputs;
 	}
 	
@@ -45,7 +45,7 @@
 	&.selected {
 		color: $oe-text-highlight; 
 		font-weight: $oe-font-medium;
-		background: $oe-bg-highlight;
+		background: $oe-btn-selected;
 	}
 	
 	&:hover, &:focus, &:active {
