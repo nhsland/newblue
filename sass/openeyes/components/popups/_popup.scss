@@ -1,0 +1,42 @@
+// OE Popup - Allergies & Risks
+//  
+
+.oe-popup {
+	margin:auto; /* flex (wrapper) */ 
+	position:relative;
+	background: $oe-pro-popup-bg;
+	width: 500px; 
+	padding: 20px;
+	color:$oe-pro-text;
+
+	.title {
+		@include font-size(18);
+		font-weight:300;
+		color:$oe-pro-text;
+		padding:0 0 10px 0;
+	}
+	
+	// wraps the remove icon
+	.close-icon-btn {
+		position:absolute;
+		top:20px;
+		right:20px;
+	}
+	
+	// use table for form layouts
+	// <table>
+	table {
+		margin:20px auto 0 auto;
+		width:90%;
+		td {
+			vertical-align: middle;
+			padding:8px 0;  
+			@include font-size(13);
+			
+			&.align-right {
+				text-align: right;
+			}
+		}
+	} 
+	
+}

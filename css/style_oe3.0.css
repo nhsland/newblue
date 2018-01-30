@@ -1362,7 +1362,7 @@ button:hover .oe-i, button:focus .oe-i, button:active .oe-i, .button:hover .oe-i
 
 button.hint.green, .button.hint.green, input[type="submit"].hint.green {
   color: rgba(255, 255, 255, 0.9);
-  background: #083815;
+  background: #084a0f;
 }
 
 button.hint.red, .button.hint.red, input[type="submit"].hint.red {
@@ -1382,7 +1382,7 @@ button.blue:hover, button.blue:focus, button.blue:active, .button.blue:hover, .b
 
 button.green:hover, button.green:focus, button.green:active, .button.green:hover, .button.green:focus, .button.green:active, input[type="submit"].green:hover, input[type="submit"].green:focus, input[type="submit"].green:active {
   color: #fff;
-  background: #0e5e23;
+  background: #0e7c19;
 }
 
 button.red:hover, button.red:focus, button.red:active, .button.red:hover, .button.red:focus, .button.red:active, input[type="submit"].red:hover, input[type="submit"].red:focus, input[type="submit"].red:active {
@@ -1409,7 +1409,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .alert-box.success, .alert-box.info {
-  background: #0e5e23;
+  background: #0e7c19;
 }
 
 .alert-box.patient, .alert-box.issue, .alert-box.warning, .alert-box.error, .alert-box.injection-warning {
@@ -2408,6 +2408,44 @@ html {
   vertical-align: middle;
 }
 
+.oe-popup {
+  margin: auto;
+  /* flex (wrapper) */
+  position: relative;
+  background: #374755;
+  width: 500px;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.oe-popup .title {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0 0 10px 0;
+}
+
+.oe-popup .close-icon-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.oe-popup table {
+  margin: 20px auto 0 auto;
+  width: 90%;
+}
+
+.oe-popup table td {
+  vertical-align: middle;
+  padding: 8px 0;
+  font-size: 0.8125rem;
+}
+
+.oe-popup table td.align-right {
+  text-align: right;
+}
+
 /* Full width layout */
 .oe-full-header {
   position: relative;
@@ -2776,7 +2814,7 @@ html {
 .oe-create-event-popup .change-subspecialty {
   position: relative;
   background: #2f3c48;
-  border: 1px solid #0e5e23;
+  border: 1px solid #0e7c19;
   padding: 8px;
   margin: 10px 0 0 0;
 }
@@ -2843,12 +2881,12 @@ html {
 
 .oe-create-event-popup .new-added-subspecialty-service {
   margin: 10px 0 0 0;
-  color: #0e5e23;
+  color: #0e7c19;
   background: #283442;
 }
 
 .oe-create-event-popup .new-added-subspecialty-service .tag {
-  background-color: #083815;
+  background-color: #084a0f;
 }
 
 .oe-create-event-popup .new-added-subspecialty-service .change-new-specialty {
@@ -2859,7 +2897,7 @@ html {
 
 .oe-create-event-popup .new-added-subspecialty-service.selected {
   color: #fff;
-  background: #0e5e23;
+  background: #0e7c19;
 }
 
 .oe-create-event-popup .new-added-subspecialty-service:hover, .oe-create-event-popup .new-added-subspecialty-service:focus {
@@ -3059,7 +3097,7 @@ html {
 }
 
 .sidebar .tooltip.quicklook .event-issue.ready {
-  background-color: #0e5e23;
+  background-color: #0e7c19;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> path{ fill:#fff; opacity:0.8; }</style><path d="M28.3,1.88l.7,1a54.4,54.4,0,0,0-9.49,9.89,68,68,0,0,0-8,12.48l-1.47,1a25.12,25.12,0,0,0-2.49,1.89,31.23,31.23,0,0,0-1.14-3.07l-.56-1.3a20,20,0,0,0-2.22-4.13,5,5,0,0,0-2.3-1.77q2.15-2.27,3.95-2.27,1.53,0,3.41,4.16l.62,1.4a57.89,57.89,0,0,1,8.65-11A48.45,48.45,0,0,1,28.3,1.88Z"/></svg>');
 }
 

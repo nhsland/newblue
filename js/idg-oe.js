@@ -50,10 +50,16 @@ idg.init = function(){
 	// Tooltips on info icons
 	idg.tooltips();
 	
-	// full overlay popup content (Eyedraw App, Add New Event)
+	// full overlay popup content 
+	// Eyedraw App
 	idg.overlayPopup( 	'.js-demo-open-eyedraw-app',  	// 2x + icons in Examination Edit
 						'eyedraw-edit-app.php', 		// Demo content
 						'#js-demo-eyedraw-app-close' );	// Eyedraw App uses the 'canel' button to close
+	
+	// change context (firm)					
+	idg.overlayPopup( 	'#js-change-context-btn',  		// "change" text in header
+						'change-context.php', 			// Demo content
+						'.close-icon-btn' );			// wraps remove icon
 						
 	// Add New Event in SEM view mode
 	idg.overlayPopup(	'#js-add-new-event',			// SEM header button
