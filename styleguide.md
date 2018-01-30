@@ -3,6 +3,10 @@
 * OpenEyes (OE) UI v3.n. 
 * SCSS (complied using Gulp)
 
+## Browser support
+
+* Targeting: Chrome > 60 and Edge > 15
+
 
 ## Commenting
 
