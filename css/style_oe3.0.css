@@ -611,12 +611,12 @@ textarea {
 
 .i-CiCommunityData {
   background-size: 133px 133px;
-  background-position: -57px -76px;
+  background-position: -76px -76px;
 }
 
 .i-CiCommunityData.large {
   background-size: 266px 266px;
-  background-position: -114px -152px;
+  background-position: -152px -152px;
 }
 
 .i-CiDilation {
@@ -749,84 +749,94 @@ textarea {
   background-position: -76px -114px;
 }
 
-.i-CoPatentConsent {
+.i-CoMedia {
   background-size: 133px 133px;
   background-position: -57px -57px;
 }
 
-.i-CoPatentConsent.large {
+.i-CoMedia.large {
   background-size: 266px 266px;
   background-position: -114px -114px;
 }
 
-.i-CoReferral {
+.i-CoPatentConsent {
   background-size: 133px 133px;
   background-position: -76px 0px;
 }
 
-.i-CoReferral.large {
+.i-CoPatentConsent.large {
   background-size: 266px 266px;
   background-position: -152px 0px;
 }
 
-.i-CoTelephoneCall {
+.i-CoReferral {
   background-size: 133px 133px;
   background-position: -76px -19px;
 }
 
-.i-CoTelephoneCall.large {
+.i-CoReferral.large {
   background-size: 266px 266px;
   background-position: -152px -38px;
 }
 
-.i-DrPrescription {
+.i-CoTelephoneCall {
   background-size: 133px 133px;
   background-position: -76px -38px;
 }
 
-.i-DrPrescription.large {
+.i-CoTelephoneCall.large {
   background-size: 266px 266px;
   background-position: -152px -76px;
 }
 
-.i-ImOCT {
+.i-DrPrescription {
   background-size: 133px 133px;
   background-position: -76px -57px;
 }
 
-.i-ImOCT.large {
+.i-DrPrescription.large {
   background-size: 266px 266px;
   background-position: -152px -114px;
 }
 
-.i-ImPhoto {
+.i-ImOCT {
   background-size: 133px 133px;
   background-position: 0px -76px;
 }
 
-.i-ImPhoto.large {
+.i-ImOCT.large {
   background-size: 266px 266px;
   background-position: 0px -152px;
 }
 
-.i-ImToricIOL {
+.i-ImPhoto {
   background-size: 133px 133px;
   background-position: -19px -76px;
 }
 
-.i-ImToricIOL.large {
+.i-ImPhoto.large {
   background-size: 266px 266px;
   background-position: -38px -152px;
 }
 
-.i-ImUltraSound {
+.i-ImToricIOL {
   background-size: 133px 133px;
   background-position: -38px -76px;
 }
 
-.i-ImUltraSound.large {
+.i-ImToricIOL.large {
   background-size: 266px 266px;
   background-position: -76px -152px;
+}
+
+.i-ImUltraSound {
+  background-size: 133px 133px;
+  background-position: -57px -76px;
+}
+
+.i-ImUltraSound.large {
+  background-size: 266px 266px;
+  background-position: -114px -152px;
 }
 
 .i-InBiometry {
@@ -841,232 +851,232 @@ textarea {
 
 .i-InBlood {
   background-size: 133px 133px;
-  background-position: -76px -76px;
+  background-position: -95px 0px;
 }
 
 .i-InBlood.large {
   background-size: 266px 266px;
-  background-position: -152px -152px;
+  background-position: -190px 0px;
 }
 
 .i-InCornealTopography {
   background-size: 133px 133px;
-  background-position: -95px 0px;
+  background-position: -95px -19px;
 }
 
 .i-InCornealTopography.large {
   background-size: 266px 266px;
-  background-position: -190px 0px;
+  background-position: -190px -38px;
 }
 
 .i-InDNAExtraction {
   background-size: 133px 133px;
-  background-position: -95px -19px;
+  background-position: -95px -38px;
 }
 
 .i-InDNAExtraction.large {
   background-size: 266px 266px;
-  background-position: -190px -38px;
+  background-position: -190px -76px;
 }
 
 .i-InDNAResults {
   background-size: 133px 133px;
-  background-position: -95px -38px;
+  background-position: -95px -57px;
 }
 
 .i-InDNAResults.large {
   background-size: 266px 266px;
-  background-position: -190px -76px;
+  background-position: -190px -114px;
 }
 
 .i-InDNASample {
   background-size: 133px 133px;
-  background-position: -95px -57px;
+  background-position: -95px -76px;
 }
 
 .i-InDNASample.large {
   background-size: 266px 266px;
-  background-position: -190px -114px;
+  background-position: -190px -152px;
 }
 
 .i-InERG {
   background-size: 133px 133px;
-  background-position: -95px -76px;
+  background-position: 0px -95px;
 }
 
 .i-InERG.large {
   background-size: 266px 266px;
-  background-position: -190px -152px;
+  background-position: 0px -190px;
 }
 
 .i-InLabRequest {
   background-size: 133px 133px;
-  background-position: 0px -95px;
+  background-position: -19px -95px;
 }
 
 .i-InLabRequest.large {
   background-size: 266px 266px;
-  background-position: 0px -190px;
+  background-position: -38px -190px;
 }
 
 .i-InMRI-CT {
   background-size: 133px 133px;
-  background-position: -19px -95px;
+  background-position: -38px -95px;
 }
 
 .i-InMRI-CT.large {
   background-size: 266px 266px;
-  background-position: -38px -190px;
+  background-position: -76px -190px;
 }
 
 .i-InStereoPair {
   background-size: 133px 133px;
-  background-position: -38px -95px;
+  background-position: -57px -95px;
 }
 
 .i-InStereoPair.large {
   background-size: 266px 266px;
-  background-position: -76px -190px;
+  background-position: -114px -190px;
 }
 
 .i-InVisualField {
   background-size: 133px 133px;
-  background-position: -57px -95px;
+  background-position: -76px -95px;
 }
 
 .i-InVisualField.large {
   background-size: 266px 266px;
-  background-position: -114px -190px;
+  background-position: -152px -190px;
 }
 
 .i-MiPatientEducation {
   background-size: 133px 133px;
-  background-position: -76px -95px;
+  background-position: -95px -95px;
 }
 
 .i-MiPatientEducation.large {
   background-size: 266px 266px;
-  background-position: -152px -190px;
+  background-position: -190px -190px;
 }
 
 .i-MiSafetyChecklist {
   background-size: 133px 133px;
-  background-position: -95px -95px;
+  background-position: -114px 0px;
 }
 
 .i-MiSafetyChecklist.large {
   background-size: 266px 266px;
-  background-position: -190px -190px;
+  background-position: -228px 0px;
 }
 
 .i-NuEducation {
   background-size: 133px 133px;
-  background-position: -114px 0px;
+  background-position: -114px -19px;
 }
 
 .i-NuEducation.large {
   background-size: 266px 266px;
-  background-position: -228px 0px;
+  background-position: -228px -38px;
 }
 
 .i-NuPreOpCheck {
   background-size: 133px 133px;
-  background-position: -114px -19px;
+  background-position: -114px -38px;
 }
 
 .i-NuPreOpCheck.large {
   background-size: 266px 266px;
-  background-position: -228px -38px;
+  background-position: -228px -76px;
 }
 
 .i-OuAnaestheticSatisfaction {
   background-size: 133px 133px;
-  background-position: -114px -38px;
+  background-position: -114px -57px;
 }
 
 .i-OuAnaestheticSatisfaction.large {
   background-size: 266px 266px;
-  background-position: -228px -76px;
+  background-position: -228px -114px;
 }
 
 .i-OuInfectedEye {
   background-size: 133px 133px;
-  background-position: -114px -57px;
+  background-position: -114px -76px;
 }
 
 .i-OuInfectedEye.large {
   background-size: 266px 266px;
-  background-position: -228px -114px;
+  background-position: -228px -152px;
 }
 
 .i-OuPatientSatisfaction {
   background-size: 133px 133px;
-  background-position: -114px -76px;
+  background-position: -114px -95px;
 }
 
 .i-OuPatientSatisfaction.large {
   background-size: 266px 266px;
-  background-position: -228px -152px;
+  background-position: -228px -190px;
 }
 
 .i-TrIntravitrealInjection {
   background-size: 133px 133px;
-  background-position: -114px -95px;
+  background-position: 0px -114px;
 }
 
 .i-TrIntravitrealInjection.large {
   background-size: 266px 266px;
-  background-position: -228px -190px;
+  background-position: 0px -228px;
 }
 
 .i-TrLaser {
   background-size: 133px 133px;
-  background-position: 0px -114px;
+  background-position: -19px -114px;
 }
 
 .i-TrLaser.large {
   background-size: 266px 266px;
-  background-position: 0px -228px;
+  background-position: -38px -228px;
 }
 
 .i-TrNeedling {
   background-size: 133px 133px;
-  background-position: -19px -114px;
+  background-position: -38px -114px;
 }
 
 .i-TrNeedling.large {
   background-size: 266px 266px;
-  background-position: -38px -228px;
+  background-position: -76px -228px;
 }
 
 .i-TrOperation {
   background-size: 133px 133px;
-  background-position: -38px -114px;
+  background-position: -57px -114px;
 }
 
 .i-TrOperation.large {
   background-size: 266px 266px;
-  background-position: -76px -228px;
+  background-position: -114px -228px;
 }
 
 .i-TrOperationNotes {
   background-size: 133px 133px;
-  background-position: -57px -114px;
+  background-position: -76px -114px;
 }
 
 .i-TrOperationNotes.large {
   background-size: 266px 266px;
-  background-position: -114px -228px;
+  background-position: -152px -228px;
 }
 
 .i-TrOperationProcedure {
   background-size: 133px 133px;
-  background-position: -76px -114px;
+  background-position: -95px -114px;
 }
 
 .i-TrOperationProcedure.large {
   background-size: 266px 266px;
-  background-position: -152px -228px;
+  background-position: -190px -228px;
 }
 
 ul {
@@ -1081,7 +1091,7 @@ ul.inline-list li {
 
 ul.dslash-list li {
   display: inline-block;
-  margin: 0 10px 12px 0;
+  margin: 0 10px 6px 0;
   padding: 0 0 0 30px;
   background-position: left center;
   background-repeat: no-repeat;
