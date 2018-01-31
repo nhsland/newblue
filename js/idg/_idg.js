@@ -84,6 +84,9 @@ idg.init = function(){
 	// SEM View sidebar: Quicklook and QuickView
 	idg.sidebarQuickInfo();
 	
+	// tile data overflow
+	idg.tileDataOverflow();
+	
 	// Comments
 	idg.comments();
 	

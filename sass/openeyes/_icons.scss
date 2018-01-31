@@ -54,21 +54,25 @@
 	cursor:pointer;
 	opacity: 0.5;
 	
-	&:hover, &:focus, &:active, &.active, &.selected { 
+	&:hover, &:focus, &:active, &.active { 
 		opacity:1; 
+	}
+	
+	&.selected {
+		opacity:1;
+		cursor:default; 
 	}
 	
 	// Generally icons will be used for interaction
 	// sometimes however they are only used for graphical purposes
 	// use 'no-click' to turn off interaction behaviour
-	
 	&.start, &.stop, &.d-slash, // graphic icons only
 	&.no-click, {
 		cursor:default;
 		&:hover, &:focus, &:active { 
 			opacity:0.5; 
 		}
-	}
+	}	
 	
 	@mixin oe3-icons($svg) {
 		background-image: url( svg-path-theme( $svg ) );
@@ -109,6 +113,7 @@
 	&.history 			{ @include oe3-icons('history'); }
 	&.tick 				{ @include oe3-icons('tick'); }
 	&.triangle 			{ @include oe3-icons('warning'); }  // can't call it 'warning'
+	&.time 				{ @include oe3-icons('time'); }
 		
 	
 	// Eyedraw icons 
