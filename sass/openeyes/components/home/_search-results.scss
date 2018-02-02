@@ -1,0 +1,58 @@
+// OE Home: Search Results
+// Patient Search Results - right hand side
+
+.patient-search-results {
+	
+	// <table>
+	.search-results {
+		width: calc(100% - 300px);
+		margin:10px 30px 20px 0;	
+		
+		tbody tr {
+			border-bottom:1px solid $oe-line;
+			
+			&:last-child { 
+				border-bottom: none;
+			}
+			
+			&:hover, &:active, &:focus {
+				cursor: pointer;
+				background:$oe-btn-blue; // row is a big button
+				td {
+					color:rgb(255,255,255);
+				}
+			}
+		}
+	
+		
+		// default
+		th, td, {
+			padding:10px 6px;  
+			line-height:1.4;
+		}
+		
+		// <th>
+		th {
+			text-align: left;  // overide default 'middle'
+			@include font-size(12);
+			color:$oe-text-light;
+			font-weight: $oe-font-light;
+		}
+		
+		// <td>
+		td {
+			color:$oe-text;
+			@include font-size(14);
+		}
+		
+		// pagination (if needed) 
+		tfoot.pagination-container tr td {
+			text-align: right;
+			color:$oe-text-light;
+			border-top:2px solid $oe-line;
+		}
+		
+	
+	}
+}
+

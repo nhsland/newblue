@@ -1,0 +1,39 @@
+// OE Home: Search Results
+// Patient Search Results - left hand side
+
+.patient-search-results {
+	
+	.search-details {
+		
+		margin:20px 0;
+		padding:0 20px;
+		border-right:1px solid $oe-blue-light;
+		width:250px;
+		color:$oe-text-light;
+		@include font-size(12);
+		
+		.title {
+			@include font-size(24);
+			font-weight: 300;
+			color:$oe-blue-light;
+			padding:0 0 10px 0;
+		}
+		
+		.found {
+			color:$oe-text;
+			padding:10px 0;
+		}
+		
+		p {
+			padding:5px 0;
+		}
+		
+		.clear-search {
+			margin:40px 0 0 0;
+		}
+		
+		
+		
+	}
+}
+

@@ -2534,7 +2534,8 @@ html {
 
 .oe-login .login h1 {
   margin: 0 0 40px 0;
-  font-size: 3rem;
+  font-size: 3.625rem;
+  text-align: center;
   font-weight: 200;
   color: rgba(255, 255, 255, 0.5);
 }
@@ -2714,6 +2715,80 @@ html {
   font-weight: 300;
   color: #626d7b;
   padding: 10px 0 5px 0;
+}
+
+.patient-search-results .search-details {
+  margin: 20px 0;
+  padding: 0 20px;
+  border-right: 1px solid #626d7b;
+  width: 250px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+}
+
+.patient-search-results .search-details .title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #626d7b;
+  padding: 0 0 10px 0;
+}
+
+.patient-search-results .search-details .found {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 10px 0;
+}
+
+.patient-search-results .search-details p {
+  padding: 5px 0;
+}
+
+.patient-search-results .search-details .clear-search {
+  margin: 40px 0 0 0;
+}
+
+.patient-search-results .search-results {
+  width: calc(100% - 300px);
+  margin: 10px 30px 20px 0;
+}
+
+.patient-search-results .search-results tbody tr {
+  border-bottom: 1px solid #26303d;
+}
+
+.patient-search-results .search-results tbody tr:last-child {
+  border-bottom: none;
+}
+
+.patient-search-results .search-results tbody tr:hover, .patient-search-results .search-results tbody tr:active, .patient-search-results .search-results tbody tr:focus {
+  cursor: pointer;
+  background: #074598;
+}
+
+.patient-search-results .search-results tbody tr:hover td, .patient-search-results .search-results tbody tr:active td, .patient-search-results .search-results tbody tr:focus td {
+  color: white;
+}
+
+.patient-search-results .search-results th, .patient-search-results .search-results td {
+  padding: 10px 6px;
+  line-height: 1.4;
+}
+
+.patient-search-results .search-results th {
+  text-align: left;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+}
+
+.patient-search-results .search-results td {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+.patient-search-results .search-results tfoot.pagination-container tr td {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.5);
+  border-top: 2px solid #26303d;
 }
 
 /* SEM Event Episodes */
