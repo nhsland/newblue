@@ -28,10 +28,15 @@ ul {
 				padding:0 0 0 0;
 				background-image: none;
 			}
-			
-	
 		}
 	}
+	
+	&.large-text {
+		li {
+			@include font-size(14);
+		}
+	}
+	
 }
 
 // ol shouldn't be used! only use ul

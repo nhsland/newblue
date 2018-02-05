@@ -1104,6 +1104,10 @@ ul.dslash-list li:first-child {
   background-image: none;
 }
 
+ul.large-text li {
+  font-size: 0.875rem;
+}
+
 ol {
   list-style-position: inside;
 }
@@ -2727,8 +2731,8 @@ html {
 }
 
 .patient-search-results .search-details .title {
-  font-size: 1.5rem;
-  font-weight: 300;
+  font-size: 1.625rem;
+  font-weight: 200;
   color: #626d7b;
   padding: 0 0 10px 0;
 }
@@ -2736,6 +2740,8 @@ html {
 .patient-search-results .search-details .found {
   color: rgba(255, 255, 255, 0.8);
   padding: 10px 0;
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
 .patient-search-results .search-details p {
@@ -3435,10 +3441,6 @@ html {
   background: rgba(30, 46, 66, 0.8);
 }
 
-.main-event .element.priority {
-  background: #101923;
-}
-
 .main-event .element.eye-divider {
   background-image: url("../svg/in-css/element-divider.svg");
   background-position: 50.4% 0;
@@ -3481,7 +3483,7 @@ html {
 .main-event .element .element-eyes .right-eye {
   width: 50%;
   padding-left: 10px;
-  padding-right: 25px;
+  padding-right: 30px;
 }
 
 .main-event .element .element-eyes .left-eye {
@@ -3617,9 +3619,21 @@ html {
   text-align: left;
 }
 
-.main-event .element table.label-value td:first-child {
-  opacity: 0.6;
+.main-event .element table.label-value .data-label {
+  opacity: 0.7;
+  font-size: 0.6875rem;
   font-weight: 400;
+  vertical-align: middle;
+}
+
+.main-event .element table.label-value .data-value {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  vertical-align: middle;
+}
+
+.main-event .element table.label-value.no-lines tr {
+  border-bottom: none;
 }
 
 .main-event .element table tr {
@@ -3819,6 +3833,14 @@ html {
   padding-left: 0;
 }
 
+.main-event .element.priority {
+  background-color: #101923;
+}
+
+.main-event .element.priority .element-data .large-text {
+  font-weight: 400;
+}
+
 .main-event .element .element-data.full-width {
   padding-right: 20px;
   padding-left: 10px;
@@ -3827,10 +3849,6 @@ html {
 .main-event .element .element-data .large-text {
   font-size: 0.875rem;
   font-weight: 300;
-}
-
-.main-event .element .element-data .large-text b {
-  font-weight: 400;
 }
 
 .main-event .element .element-data table {
@@ -3865,26 +3883,103 @@ html {
   border-radius: 5px;
 }
 
+.main-event .element .eyedraw .eyedraw-canvas {
+  white-space: nowrap;
+}
+
 .main-event .element .eyedraw .eyedraw-data {
   font-size: 0.625rem;
   font-weight: 500;
+  color: #323232;
   padding: 10px 5px 20px 0;
-  width: 140px;
+}
+
+.main-event .element .eyedraw .eyedraw-data.stack .data-value {
+  padding: 0 0 10px 0;
 }
 
 .main-event .element .eyedraw .eyedraw-data .data-label {
-  color: #666;
+  color: #78788c;
 }
 
-.main-event .element .eyedraw .eyedraw-data .data-value {
-  padding-bottom: 10px;
-  color: #333;
+.main-event .element.edit .eyedraw {
+  padding-bottom: 20px;
 }
 
-.main-event .element .eyedraw .eyedraw-launch-edit-mode {
+.main-event .element.edit .eyedraw .eyedraw-launch-edit-mode {
   position: absolute;
   bottom: 5px;
   right: 0;
+}
+
+.main-event .element .eyedraw .ed-surgeon-orientation {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center bottom 20px;
+  background-repeat: no-repeat;
+  background-size: 75px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>patient-op</title><style>path{fill:rgb(130,130,130);}</style><path d="M83.67,99.28a2,2,0,0,1-2-2V58.67H63.75a2,2,0,0,1,0-4H85.67v42.6A2,2,0,0,1,83.67,99.28Z"/><path d="M16.33,99.28a2,2,0,0,1-2-2V54.67H35.25a2,2,0,0,1,0,4H18.33v38.6A2,2,0,0,1,16.33,99.28Z"/><path d="M72,66.06a19.78,19.78,0,0,0-7.72-4.26,17.45,17.45,0,1,0-29,.37A19,19,0,0,0,28.91,66c-5.52,5.35-8.33,20.29-8.66,32.73l5,.13c.36-13.3,3.36-25.61,7.14-29.27a16.2,16.2,0,0,1,6.69-3.48,17.35,17.35,0,0,0,21.38-.21c3.57.86,6.44,2.14,8,3.67,2.65,2.63,5.72,14.31,6.28,29.32l5-.18C79.23,85.83,76.65,70.72,72,66.06ZM37.17,52.27A12.46,12.46,0,1,1,49.63,64.73,12.47,12.47,0,0,1,37.17,52.27Z"/><path d="M46.35,54.53H42.1a1.5,1.5,0,0,1,0-3h4.25a1.5,1.5,0,0,1,0,3Z"/><path d="M57.22,54.53H53a1.5,1.5,0,0,1,0-3h4.25a1.5,1.5,0,0,1,0,3Z"/></svg>');
+}
+
+.main-event .element .eyedraw .ed-surgeon-orientation .title {
+  font-size: 0.75rem;
+  color: #828282;
+}
+
+.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 60px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><title>surgeon</title><style>path{fill:rgb(70,70,70);}</style><polygon points="40 69.39 49.46 59.94 47.59 58.07 40 65.66 32.41 58.07 30.54 59.94 40 69.39"/><path d="M57.9,34.22c0-.37.06-.74.06-1.12A18,18,0,0,0,22,33.1c0,.38,0,.75.06,1.12A30.72,30.72,0,0,0,6.3,61.35a3.5,3.5,0,0,0,7,0A23.78,23.78,0,0,1,24,41.3,17.92,17.92,0,0,0,56,41.3,23.78,23.78,0,0,1,66.7,61.35a3.5,3.5,0,0,0,7,0A30.72,30.72,0,0,0,57.9,34.22ZM40,45.06a12,12,0,1,1,12-12A12,12,0,0,1,40,45.06Z"/></svg>');
+}
+
+.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-right {
+  top: 40px;
+  left: 8px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-right-top {
+  top: 10px;
+  left: 25px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-top {
+  top: 5px;
+  left: 60px;
+}
+
+.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-left-top {
+  top: 10px;
+  left: 95px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-left {
+  top: 40px;
+  left: 112px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .oe-eyedraw-app {

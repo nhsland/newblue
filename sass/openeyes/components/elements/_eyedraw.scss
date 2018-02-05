@@ -1,4 +1,4 @@
-// OE Element - Eyedraw - VIEW 
+// OE Element - Eyedraw - VIEW & EDIT
 // ---------------------------
 // Eyedraw VIEW mode Element
 // View mode and Edit mode are the same
@@ -7,6 +7,7 @@
 
 .main-event {
 	.element {
+	
 		// ---- element - VIEW & EDIT
 		.eyedraw {
 			position:relative;
@@ -14,27 +15,44 @@
 			padding:0 5px; 
 			border-radius:5px;
 			
+			.eyedraw-canvas {
+				// make sure 2nd canvas doesn't drop down
+				// flex will then handle the width of eyedraw-data 
+				white-space: nowrap; 
+			}
+			
 			.eyedraw-data {
 				@include font-size(10);
 				font-weight:500;
+				color:rgb(50,50,50); // Always on the Eyedraw blue bg
 				padding:10px 5px 20px 0; // pad bottom for + icon button
-				width:140px;
+				
+				// when the data-label and data-values are
+				&.stack {
+					.data-value {
+						padding:0 0 10px 0;
+					}
+				}
+				
 				.data-label {
-					color:#666; // Always on the Eyedraw blue bg
-				}
-				.data-value {
-					padding-bottom:10px;
-					color:#333; // Always on the Eyedraw blue bg
+					color:rgb(120,120,140);; // Always on the Eyedraw blue bg
 				}
 			}
-			
-			// --- only EDIT 
-			// position '+' button
-			.eyedraw-launch-edit-mode {
-				position: absolute;
-				bottom:5px;
-				right:0;
-			}
+		
 		}
+	
+		&.edit {
+			// --- only EDIT 
+			.eyedraw {
+				padding-bottom:20px; 	
+				// position '+' button
+				.eyedraw-launch-edit-mode {
+					position: absolute;
+					bottom:5px;
+					right:0;
+				}
+			}	
+		}
+		
 	}
 }

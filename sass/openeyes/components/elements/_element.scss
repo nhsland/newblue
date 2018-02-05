@@ -50,13 +50,6 @@
 				height:30px;
 				background:rgba($oe-blue,0.8);
 			}
-			
-			
-		}
-		
-		// prioritise element data
-		&.priority {
-			background: $oe-bg-highlight;
 		}
 		
 		// line to divide R & L
@@ -103,7 +96,7 @@
 			.right-eye {
 				width:50%; 
 				padding-left: 10px; 	// indent data
-				padding-right: 25px;	// allow for action icons
+				padding-right: 30px;	// allow for action icons ( +5px to make same width as left-eye )
 			}
 			.left-eye {
 				width:49.5%; 

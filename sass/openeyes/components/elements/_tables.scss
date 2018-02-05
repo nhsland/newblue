@@ -24,10 +24,24 @@
 			
 			// in View mode for simple label > value lists
 			&.label-value {
-				td:first-child {
-					opacity:0.6; // this works for both themes
+				.data-label {
+					opacity:0.7; // this works for both themes
+					@include font-size(11);
 					font-weight:$oe-font-medium;
+					vertical-align: middle;
 				}
+				.data-value {
+					@include font-size(13);
+					font-weight:$oe-font-medium;
+					vertical-align: middle;
+				}
+				
+				&.no-lines {
+					tr {
+						border-bottom:none;
+					}
+				}
+				
 			}
 			
 			// add line to help with reading data

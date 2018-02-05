@@ -18,6 +18,18 @@
 			}
 		}
 		
+		// prioritise element data
+		&.priority {
+			background-color: $oe-bg-highlight;
+			
+			// if an element is priorities increase large text font-weight
+			.element-data {
+				.large-text {
+					font-weight:$oe-font-medium;
+				}	
+			}
+		}
+		
 		// element-data is ONLY used in VIEW mode (edit uses 'element-fields')
 		.element-data {
 			// for all Elements that aren't split into
@@ -31,10 +43,6 @@
 			.large-text {
 				@include font-size(14);
 				font-weight:$oe-font-light;	
-				
-				b {
-					font-weight:$oe-font-medium;
-				}	
 			}
 			
 			// table style is slightly differnt in VIEW 
@@ -67,6 +75,6 @@
 				padding-top:4px;
 				border-top:1px solid $oe-line;
 			}
-		}
+		}		
 	}
 }
