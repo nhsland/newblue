@@ -26,9 +26,14 @@
 		top:10px;
 		right:20px;
 		
-		@include font-size(18);
-		font-weight:$oe-font-light;
-		color:$oe-text;
+		
+		
+		.extra-info {
+			@include font-size(18);
+			font-weight:$oe-font-light;
+			color:$oe-text;
+			margin:0 0 0 20px;
+		}
 		
 	}
 	

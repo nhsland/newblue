@@ -52,6 +52,8 @@
 	}
 	
 	
+	
+	
 	// icons 
 	// - Quicklook : Medical data
 	// - Demographics : Patient summary data
@@ -60,10 +62,9 @@
 	.patient-quicklook, 
 	.patient-demographics, 
 	.patient-management, 
-	.patient-tasks,
-	.patient-allergies-risks {
+	.patient-allergies-risks,
+	.patient-local-edit {
 		position:absolute;
-		bottom:0;
 		padding:5px 10px 4px 10px; // increase icon hitarea
 		cursor:pointer;
 		
@@ -78,8 +79,7 @@
 	// icon behaviour
 	.patient-quicklook, 
 	.patient-demographics,
-	.patient-management, 
-	.patient-tasks {
+	.patient-management {
 		// js controlled interaction... 
 		&.open, &.active {
 			.icon {
@@ -100,9 +100,11 @@
 			}
 		}
 	}
+
 	
 	// Eye
 	.patient-quicklook {
+		bottom:0;
 		right:0;	
 		.icon {
 			width:15px;  
@@ -112,6 +114,7 @@
 	
 	// dude
 	.patient-management {
+		bottom:0;
 		right:29px;
 		padding-bottom:3px; // use pad to increase hitarea.
 		.icon {
@@ -122,6 +125,7 @@
 	
 	// info 
 	.patient-demographics {
+		bottom:0;
 		right:62px;
 		padding-bottom:4px; // use pad to increase hitarea.
 		.icon {
@@ -131,6 +135,7 @@
 	}
 
 	.patient-allergies-risks {
+		bottom:0;
 		right:105px;
 	
 		display:flex;
@@ -145,6 +150,21 @@
 		.icon {
 			width:15px;  
 			height:15px;
+		}
+	}
+	
+	// Edit Patient when (local)
+	// i.e, they are not a PAS integrated patient.
+	.patient-local-edit {
+		top:5px;
+		right:0;
+		.icon {
+			width:15px;  
+			height:15px;
+			&:hover, &:focus, &:active {
+				opacity: 1;
+			}
+			
 		}
 	}
 

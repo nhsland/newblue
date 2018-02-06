@@ -1788,10 +1788,9 @@ html {
 .oe-patient .patient-quicklook,
 .oe-patient .patient-demographics,
 .oe-patient .patient-management,
-.oe-patient .patient-tasks,
-.oe-patient .patient-allergies-risks {
+.oe-patient .patient-allergies-risks,
+.oe-patient .patient-local-edit {
   position: absolute;
-  bottom: 0;
   padding: 5px 10px 4px 10px;
   cursor: pointer;
 }
@@ -1799,8 +1798,8 @@ html {
 .oe-patient .patient-quicklook .icon,
 .oe-patient .patient-demographics .icon,
 .oe-patient .patient-management .icon,
-.oe-patient .patient-tasks .icon,
-.oe-patient .patient-allergies-risks .icon {
+.oe-patient .patient-allergies-risks .icon,
+.oe-patient .patient-local-edit .icon {
   display: inline-block;
   fill: #fff;
   opacity: 0.8;
@@ -1810,9 +1809,7 @@ html {
 .oe-patient .patient-demographics.open .icon,
 .oe-patient .patient-demographics.active .icon,
 .oe-patient .patient-management.open .icon,
-.oe-patient .patient-management.active .icon,
-.oe-patient .patient-tasks.open .icon,
-.oe-patient .patient-tasks.active .icon {
+.oe-patient .patient-management.active .icon {
   fill: cyan;
 }
 
@@ -1826,6 +1823,7 @@ html {
 }
 
 .oe-patient .patient-quicklook {
+  bottom: 0;
   right: 0;
 }
 
@@ -1835,6 +1833,7 @@ html {
 }
 
 .oe-patient .patient-management {
+  bottom: 0;
   right: 29px;
   padding-bottom: 3px;
 }
@@ -1845,6 +1844,7 @@ html {
 }
 
 .oe-patient .patient-demographics {
+  bottom: 0;
   right: 62px;
   padding-bottom: 4px;
 }
@@ -1855,6 +1855,7 @@ html {
 }
 
 .oe-patient .patient-allergies-risks {
+  bottom: 0;
   right: 105px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1873,6 +1874,20 @@ html {
 .oe-patient .patient-allergies-risks .icon {
   width: 15px;
   height: 15px;
+}
+
+.oe-patient .patient-local-edit {
+  top: 5px;
+  right: 0;
+}
+
+.oe-patient .patient-local-edit .icon {
+  width: 15px;
+  height: 15px;
+}
+
+.oe-patient .patient-local-edit .icon:hover, .oe-patient .patient-local-edit .icon:focus, .oe-patient .patient-local-edit .icon:active {
+  opacity: 1;
 }
 
 .oe-user {
@@ -3388,9 +3403,13 @@ html {
   position: absolute;
   top: 10px;
   right: 20px;
+}
+
+.main-event .event-title-extra-info .extra-info {
   font-size: 1.125rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 0 20px;
 }
 
 .main-event .element {
