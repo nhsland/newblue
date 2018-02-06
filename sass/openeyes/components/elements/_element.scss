@@ -83,8 +83,16 @@
 
 		}
 		
+		// used to de-emphasis data
 		.fade {
 			opacity:0.8; // this will work across both PRO & Classic theme
+		}
+		
+		// 'none', only used for 'none'
+		.none {
+			opacity:0.6;
+			font-style: italic;
+			font-weight: $oe-font-light;
 		}
 		
 		// R & L data split
