@@ -3843,7 +3843,8 @@ html {
   background-color: #101923;
 }
 
-.main-event .element.priority .element-data .large-text {
+.main-event .element.priority .element-data .large-text,
+.main-event .element.priority .element-data .priority-text {
   font-weight: 400;
 }
 
@@ -3854,7 +3855,12 @@ html {
 
 .main-event .element .element-data .large-text {
   font-size: 0.875rem;
-  font-weight: 300;
+  font-weight: inherit;
+}
+
+.main-event .element .element-data .priority-text {
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .main-event .element .element-data table {
@@ -3898,6 +3904,14 @@ html {
   font-weight: 500;
   color: #323232;
   padding: 10px 5px 20px 0;
+}
+
+.main-event .element .eyedraw .eyedraw-data .data-value {
+  font-weight: 500;
+}
+
+.main-event .element .eyedraw .eyedraw-data .data-value .priority-text {
+  font-weight: 600;
 }
 
 .main-event .element .eyedraw .eyedraw-data.stack .data-value {

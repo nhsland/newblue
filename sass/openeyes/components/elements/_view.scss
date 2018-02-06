@@ -24,7 +24,8 @@
 			
 			// if an element is priorities increase large text font-weight
 			.element-data {
-				.large-text {
+				.large-text, 
+				.priority-text {
 					font-weight:$oe-font-medium;
 				}	
 			}
@@ -42,8 +43,15 @@
 			// large text if needed, matches Element header size
 			.large-text {
 				@include font-size(14);
-				font-weight:$oe-font-light;	
+				font-weight:inherit;	
 			}
+			
+			// priority text (next level up from large)
+			.priority-text {
+				@include font-size(16);
+				font-weight:$oe-font-medium;	
+			}
+			
 			
 			// table style is slightly differnt in VIEW 
 			table {
@@ -62,7 +70,7 @@
 					margin:0 0 0 0;
 					text-align: center;
 					@include font-size(13);
-					font-weight:300;
+					font-weight:$oe-font-light;
 					opacity:0.5;
 					
 				}

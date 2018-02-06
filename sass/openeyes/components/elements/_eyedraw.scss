@@ -27,6 +27,15 @@
 				color:rgb(50,50,50); // Always on the Eyedraw blue bg
 				padding:10px 5px 20px 0; // pad bottom for + icon button
 				
+				// make the weighting in eyedraw elements
+				// is consistent for both themes
+				.data-value {
+					font-weight:500; 
+					.priority-text {
+						font-weight:600;
+					}
+				}
+				
 				// when the data-label and data-values are
 				&.stack {
 					.data-value {
