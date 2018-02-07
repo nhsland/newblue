@@ -1142,7 +1142,7 @@ label.inline,
 
 label.highlight,
 .label.highlight {
-  padding: 3px 6px;
+  padding: 3px 6px 3px 3px;
   margin-right: 0;
   color: rgba(255, 255, 255, 0.8);
   background: #1e2e42;
@@ -3704,10 +3704,15 @@ html {
   vertical-align: middle;
 }
 
-.oe-add-select-search {
-  position: absolute;
+.element-eyes .oe-add-select-search {
   bottom: 0;
   right: 0;
+}
+
+.oe-add-select-search {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
   z-index: 60;
   background: #374755;
   padding: 10px 45px 10px 10px;
@@ -3761,6 +3766,10 @@ html {
   padding: 0 0 5px 0;
 }
 
+.oe-add-select-search table.select-options th:last-child {
+  text-align: left;
+}
+
 .oe-add-select-search table.select-options td {
   vertical-align: top;
   padding: 0 15px 0 0;
@@ -3768,6 +3777,7 @@ html {
 
 .oe-add-select-search table.select-options td:last-child {
   padding: 0 0 0 0;
+  text-align: left;
 }
 
 .oe-add-select-search .add-options {
