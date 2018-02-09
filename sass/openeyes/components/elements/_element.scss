@@ -83,12 +83,7 @@
 
 		}
 		
-		// used to de-emphasis data
-		.fade {
-			opacity:0.8; // this will work across both PRO & Classic theme
-		}
-		
-		// 'none', only used for 'none'
+		// 'none', only used for 'none' i.e. 'no data available'
 		.none {
 			opacity:0.6;
 			font-style: italic;

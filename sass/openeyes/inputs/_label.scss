@@ -7,7 +7,7 @@ label,
 
 	// assuming thats labels will only
 	// be used next to an input:
-	margin-right:10px;
+	margin:0 10px 0 0;
 	
 	&.inline {
 		display: inline-block;
@@ -16,7 +16,7 @@ label,
 	// wrap and visually group label with input
 	&.highlight {
 		padding:3px 6px 3px 3px; 
-		margin-right: 0; 
+		margin:1px 0 1px 0;
 		color:$oe-user-input-text;
 		background:$oe-user-inputs;
 		border-radius:3px;

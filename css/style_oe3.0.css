@@ -534,6 +534,14 @@ textarea {
   background-image: url("../svg/in-css/time.svg");
 }
 
+.oe-i.audit-trail {
+  background-image: url("../svg/in-css/audit-trail.svg");
+}
+
+.oe-i.audit-trail.pro-theme {
+  background-image: url("../svg/in-css/audit-trail.svg");
+}
+
 .oe-i.ed-reset {
   background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
 }
@@ -1132,7 +1140,7 @@ input.pro-theme, textarea.pro-theme, select.pro-theme {
 
 label,
 .label {
-  margin-right: 10px;
+  margin: 0 10px 0 0;
 }
 
 label.inline,
@@ -1143,7 +1151,7 @@ label.inline,
 label.highlight,
 .label.highlight {
   padding: 3px 6px 3px 3px;
-  margin-right: 0;
+  margin: 1px 0 1px 0;
   color: rgba(255, 255, 255, 0.8);
   background: #1e2e42;
   border-radius: 3px;
@@ -1169,6 +1177,7 @@ label .required,
 
 input, textarea {
   padding: 5px;
+  margin: 1px 0;
   border-radius: 3px;
   height: auto;
 }
@@ -1224,6 +1233,7 @@ input[type="file"] {
 
 textarea {
   padding: 5px;
+  margin: 1px 0;
   resize: none;
   overflow: auto;
   word-wrap: break-word;
@@ -1231,6 +1241,7 @@ textarea {
 
 select {
   height: 24px;
+  margin: 1px 0;
 }
 
 select.inline {
@@ -1271,6 +1282,10 @@ h1, h2, h3, h4, h5, h6, p {
 
 strong {
   font-weight: 500;
+}
+
+.fade {
+  opacity: 0.7;
 }
 
 .flex-layout {
@@ -3076,7 +3091,8 @@ html {
 }
 
 .sidebar-header .title {
-  font-size: 0.6875rem;
+  font-size: 0.8125rem;
+  font-weight: 300;
   color: rgba(255, 255, 255, 0.5);
   margin: auto;
 }
@@ -3291,7 +3307,7 @@ html {
 }
 
 .sidebar .oe-element-list {
-  margin: 0 1px 0 0;
+  margin: 10px 1px 0 0;
 }
 
 .sidebar .oe-element-list a {
@@ -3481,10 +3497,6 @@ html {
   -webkit-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
   color: cyan;
-}
-
-.main-event .element .fade {
-  opacity: 0.8;
 }
 
 .main-event .element .none {

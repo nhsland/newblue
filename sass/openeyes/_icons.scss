@@ -114,6 +114,7 @@
 	&.tick 				{ @include oe3-icons('tick'); }
 	&.triangle 			{ @include oe3-icons('warning'); }  // can't call it 'warning'
 	&.time 				{ @include oe3-icons('time'); }
+	&.audit-trail 		{ @include oe3-icons('audit-trail'); }
 		
 	
 	// Eyedraw icons 

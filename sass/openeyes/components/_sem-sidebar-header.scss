@@ -15,8 +15,10 @@
 	}
 	
 	.title {
-		@include font-size(11);
+		@include font-size(13);
+		font-weight:300;
 		color:$oe-pro-text-light;			// UI theme
+		
 		margin:auto;
 	}
 	
