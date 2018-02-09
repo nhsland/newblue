@@ -102,7 +102,8 @@ idg.init = function(){
 	// Homepage Message Expand Contract	
 	idg.homeMessageExpand();
 	
-	//
+	// audit trail popup
+	idg.auditTrail();
 	
 										
 };
@@ -1306,6 +1307,21 @@ idg.problemsPlans = function(){
 	$('#problems-plans-sortable .remove').click(function(){ 
   		$(this).parent().remove(); 
   	});
+}
+/*
+Tile Element - watch for data overflow
+*/
+idg.auditTrail = function(){
+	
+	if( $('#js-event-audit-trail-btn').length == 0 ) return;
+		
+	// loop through the view tiles and check the data height
+	$('#js-event-audit-trail-btn').click(function(){
+		$('#js-event-audit-trail').toggle();
+	});
+	
+	
+	
 }
 /*
 SEM Element - Add or Search

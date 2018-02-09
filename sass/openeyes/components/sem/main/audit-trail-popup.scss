@@ -1,0 +1,56 @@
+// OE Patient Popups.
+// PRO theme
+// --- patient allergies & risks, quicklook, management and demographics
+//
+// (note: Clinic Quicklook is cut down verion of Quicklook for Clinic lists)
+
+.oe-popup-event-audit-trail {
+	z-index:$oe-z-quicklook;
+	position: absolute;
+	top:47px;
+	left:0;
+	width:400px; // arbitary (by eye)
+	background: $oe-blue;
+	padding:0 10px 10px 11px;
+	
+	border-right: 2px solid $oe-text-light;
+	border-bottom: 2px solid $oe-text-light;
+
+	h3 {
+		
+	}
+
+	table {
+		width: 100%;		
+		tbody tr {
+			border-bottom:1px solid $oe-grey;
+			&:last-child { 
+				border-bottom: none;
+			}	
+		}	
+		
+		// <td>
+		td {
+			padding:2px 0;
+			color:$oe-text;
+			@include font-size(12);
+			
+			&.title {
+				padding:4px 0;
+				@include font-size(12);
+				font-weight: $oe-font-light;
+				color:$oe-text-highlight;;
+			}
+			
+			&:last-child {
+				text-align: right;
+			}
+			
+		}
+	}
+	
+} 
+
+
+
+

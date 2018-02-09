@@ -102,7 +102,8 @@ idg.init = function(){
 	// Homepage Message Expand Contract	
 	idg.homeMessageExpand();
 	
-	//
+	// audit trail popup
+	idg.auditTrail();
 	
 										
 };

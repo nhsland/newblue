@@ -2828,54 +2828,6 @@ html {
 }
 
 /* SEM Event Episodes */
-.event-header {
-  position: relative;
-  background: #283442 url("../svg/in-css/face.svg") 50.2% 0 no-repeat;
-}
-
-@media only screen and (min-width: 1440px) {
-  .event-header {
-    background-position-x: 54.8%;
-  }
-}
-
-.event-header button, .event-header .button, .event-header input[type="submit"] {
-  vertical-align: top;
-  height: 38px;
-  padding: 0 16px;
-}
-
-.event-header button.icon, .event-header .button.icon, .event-header input[type="submit"].icon {
-  padding: 0 0;
-}
-
-.event-header button.icon .oe-i, .event-header .button.icon .oe-i, .event-header input[type="submit"].icon .oe-i {
-  padding: 0 20px;
-}
-
-.event-header .event-action-options {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 38px;
-  padding: 0 16px 0 8px;
-  font-size: 0.625rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.event-header .buttons-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
 .oe-create-event-popup {
   margin: auto;
   /* flex (wrapper) */
@@ -3073,6 +3025,124 @@ html {
 .oe-create-event-popup .new-added-subspecialty-service:hover .tag, .oe-create-event-popup .new-added-subspecialty-service:focus .tag {
   background: #06377a;
   color: cyan;
+}
+
+.main-event {
+  position: relative;
+  background: #1e2e42;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 10px 0 40px 0;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.main-event .event-title {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: cyan;
+  padding: 0 0 10px 10px;
+}
+
+.main-event .event-title-extra-info {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.main-event .event-title-extra-info .extra-info {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 0 20px;
+}
+
+.oe-popup-event-audit-trail {
+  z-index: 90;
+  position: absolute;
+  top: 47px;
+  left: 0;
+  width: 400px;
+  background: #1e2e42;
+  padding: 0 10px 10px 11px;
+  border-right: 2px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.oe-popup-event-audit-trail table {
+  width: 100%;
+}
+
+.oe-popup-event-audit-trail table tbody tr {
+  border-bottom: 1px solid #283442;
+}
+
+.oe-popup-event-audit-trail table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.oe-popup-event-audit-trail table td {
+  padding: 2px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+}
+
+.oe-popup-event-audit-trail table td.title {
+  padding: 4px 0;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: cyan;
+}
+
+.oe-popup-event-audit-trail table td:last-child {
+  text-align: right;
+}
+
+.event-header {
+  position: relative;
+  background: #283442 url("../svg/in-css/face.svg") 50.2% 0 no-repeat;
+}
+
+@media only screen and (min-width: 1440px) {
+  .event-header {
+    background-position-x: 54.8%;
+  }
+}
+
+.event-header button, .event-header .button, .event-header input[type="submit"] {
+  vertical-align: top;
+  height: 38px;
+  padding: 0 16px;
+}
+
+.event-header button.icon, .event-header .button.icon, .event-header input[type="submit"].icon {
+  padding: 0 0;
+}
+
+.event-header button.icon .oe-i, .event-header .button.icon .oe-i, .event-header input[type="submit"].icon .oe-i {
+  padding: 0 20px;
+}
+
+.event-header .event-action-options {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 38px;
+  padding: 0 16px 0 8px;
+  font-size: 0.625rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.event-header .buttons-right {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .sidebar-header {
@@ -3397,35 +3467,6 @@ html {
 .oe-event-quickview .event-quickview .quickview-screenshots img {
   width: 520px;
   height: auto;
-}
-
-.main-event {
-  position: relative;
-  background: #1e2e42;
-  color: rgba(255, 255, 255, 0.8);
-  padding: 10px 0 40px 0;
-  font-size: 0.75rem;
-  line-height: 1.5;
-}
-
-.main-event .event-title {
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: cyan;
-  padding: 0 0 10px 10px;
-}
-
-.main-event .event-title-extra-info {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-}
-
-.main-event .event-title-extra-info .extra-info {
-  font-size: 1.125rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
-  margin: 0 0 0 20px;
 }
 
 .main-event .element {

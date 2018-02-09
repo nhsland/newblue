@@ -1,0 +1,15 @@
+// OE SEM (Single Event Model)
+
+@import "sem/sem-main"; 			// <main> wrapper for SEM
+@import "sem/sem-event-header"; 	// Event Title, Event Extra info, Audit trail etc
+
+// SEM sidebar
+@import "sem/sem-sidebar-header"; 	
+@import "sem/sem-sidebar"; 			
+@import "sem/sem-quickview-panel"; 			
+
+// All aspects of Elements
+@import "sem/sem-elements"; 
+		
+
+

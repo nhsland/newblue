@@ -32,13 +32,8 @@
 @import "components/login";					// Login
 @import "components/home";					// Homepage
 /* SEM Event Episodes */
-@import "components/sem-header";    		// event header
 @import "components/add-new-event";    		// add new event popup
-@import "components/sem-sidebar-header";  	// event sidebar header (Add Event)
-@import "components/sem-sidebar";    		// event sidebar
-@import "components/sem-quickview-panel"; 	// event fast quickview preview panel
-@import "components/sem-main";    			// event main area
-@import "components/sem-elements";    		// event elements
+@import "components/sem";    				// all SEM sass
 @import "components/eyedraw";    			// eyedraw app (popup)
 @import "components/misc/element-search-popup"; // element search filter popup - used in Examination Edit to find Elements
 /* Lightening viewer */
