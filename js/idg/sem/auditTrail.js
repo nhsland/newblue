@@ -13,6 +13,4 @@ idg.auditTrail = function(){
 		$(this).toggleClass('active');
 	});
 	
-	
-	
 }

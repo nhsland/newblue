@@ -131,29 +131,6 @@ textarea {
   display: none;
 }
 
-/* basic grid layout */
-.row {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.row:before, .row:after {
-  content: " ";
-  display: table;
-}
-
-.row:after {
-  clear: both;
-}
-
-.row.pad-top {
-  margin-top: 10px;
-}
-
-.row.pad-bottom {
-  margin-bottom: 10px;
-}
-
 .cols-left, .cols-right {
   width: 49%;
 }
@@ -164,17 +141,6 @@ textarea {
 
 .cols-center {
   margin: 0 auto;
-}
-
-.columns, .column {
-  padding-left: 10px;
-  padding-right: 10px;
-  float: left;
-}
-
-.columns.no-padding, .column.no-padding {
-  padding-left: 0;
-  padding-right: 0;
 }
 
 .cols-1 {
@@ -1150,24 +1116,29 @@ label.inline,
 
 label.highlight,
 .label.highlight {
-  padding: 3px 6px 3px 3px;
-  margin: 1px 0 1px 0;
+  padding: 3px 6px 3px 6px;
+  margin: 1px 3px 1px 0;
   color: rgba(255, 255, 255, 0.8);
-  background: #1e2e42;
+  background: rgba(30, 46, 66, 0.1);
   border-radius: 3px;
   cursor: pointer;
 }
 
 label.highlight input,
 .label.highlight input {
-  margin-right: 5px;
+  margin-right: 2px;
 }
 
 label.highlight:hover, label.highlight:focus, label.highlight:active,
 .label.highlight:hover,
 .label.highlight:focus,
 .label.highlight:active {
-  background: #1b293b;
+  background: #1e2e42;
+}
+
+label.highlight:last-child,
+.label.highlight:last-child {
+  margin-right: 0;
 }
 
 label .required,
@@ -3582,10 +3553,6 @@ html {
   padding-top: 8px;
 }
 
-.main-event .element .field-sub-row {
-  padding-bottom: 3px;
-}
-
 .main-event .element .element-fields.full-width {
   padding-right: 20px;
   padding-left: 10px;
@@ -3593,6 +3560,26 @@ html {
 
 .main-event .element .element-fields .data-label {
   color: rgba(255, 255, 255, 0.5);
+}
+
+.main-event .element .element-fields .grid-gutter > div[class^="cols-"],
+.main-event .element .element-fields .grid-gutter > td {
+  padding-right: 30px;
+}
+
+.main-event .element .element-fields .grid-gutter > div[class^="cols-"]:last-child,
+.main-event .element .element-fields .grid-gutter > td:last-child {
+  padding-right: 0;
+}
+
+.main-event .element .element-fields .grid-gutter-small > div[class^="cols-"],
+.main-event .element .element-fields .grid-gutter-small > td {
+  padding-right: 10px;
+}
+
+.main-event .element .element-fields .grid-gutter-small > div[class^="cols-"]:last-child,
+.main-event .element .element-fields .grid-gutter-small > td:last-child {
+  padding-right: 0;
 }
 
 .main-event .element .note {
@@ -3856,10 +3843,6 @@ html {
   display: inline-block;
   min-width: 120px;
   max-width: 130px;
-}
-
-.oe-add-select-search .add-options li .auto-width {
-  white-space: nowrap;
 }
 
 .oe-add-select-search .add-options li:hover, .oe-add-select-search .add-options li:focus, .oe-add-select-search .add-options li:active, .oe-add-select-search .add-options li.selected {

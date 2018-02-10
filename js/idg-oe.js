@@ -1323,8 +1323,6 @@ idg.auditTrail = function(){
 		$(this).toggleClass('active');
 	});
 	
-	
-	
 }
 /*
 SEM Element - Add or Search

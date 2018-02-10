@@ -5,30 +5,6 @@
 // for v3 we make use of flex and the cols-n are 
 // useful to help for consistent data layouts
 
-/* basic grid layout */
-// row is kept here to handle any old v2 DOM elements that 
-// might be laid out this way.
-.row {
-	width: 100%;
-	margin:0 auto; 
-	
-	&:before, &:after {
-		content: " ";
-		display: table;
-	}
-	
-	&:after {
-	 	clear: both;
-	}
-	
-	&.pad-top {
-		margin-top:10px;
-	}
-	
-	&.pad-bottom {
-		margin-bottom:10px; 
-	}
-}
 
 // Left Right Split (provides a central gap)
 // use cols-6 for no gap
@@ -45,19 +21,6 @@
 // center a single column contents
 .cols-center {
 	margin:0 auto; 
-}
-
-// create column
-.columns, .column {
-	  padding-left: 10px;
-	  padding-right: 10px;
-	  float: left;
-	  
-	  // strict
-	  &.no-padding {
-		  padding-left:	0;
-		  padding-right: 0;
-	  }
 }
 
 .cols-1 {

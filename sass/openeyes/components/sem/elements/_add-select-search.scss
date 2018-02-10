@@ -119,8 +119,10 @@
 			}
 			
 			// this is for numerics (i.e. 1,2,3 and 0.35)
+			// this is <span>
 			.auto-width {
-				white-space:nowrap;
+				// white-space:nowrap; // this cause really look text to break the popup box
+				// max-width: 250px;
 			}
 			
 			
