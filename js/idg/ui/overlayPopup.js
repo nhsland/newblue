@@ -17,6 +17,10 @@ idg.overlayPopup = function( btn, phpToLoad, closeBtnID, callBack ){
 			loadOverlay();
 		});
 	}
+	
+	// for testing and designing UI
+	this.test = loadOverlay;
+	return this;
 	  	
 	/**
 	Create full screen cover using 'oe-popup-wrap'

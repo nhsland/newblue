@@ -1259,6 +1259,18 @@ strong {
   opacity: 0.7;
 }
 
+.highlighter {
+  background: rgba(255, 230, 172, 0.7);
+  color: black;
+  padding: 2px 6px;
+  font-weight: 500;
+  border-radius: 2px;
+}
+
+.highlighter.large-text {
+  font-size: 115%;
+}
+
 .flex-layout {
   display: -webkit-box;
   display: -ms-flexbox;

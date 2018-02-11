@@ -34,10 +34,24 @@ strong {
 	font-weight:500;
 }
 
-
 // used to de-emphasis
 // will work across both PRO & Classic themes
 .fade {
 	opacity:0.7; 
+}
+
+// highlighter (like the pen)
+// applied to text with <span>
+.highlighter {
+	background:$oe-highlighter;
+	color:rgb(0,0,0);
+	padding:2px 6px;
+	font-weight:500;
+	border-radius:2px;
+	
+	&.large-text {
+		font-size:115%;
+	}
+	
 }
 		

@@ -55,6 +55,12 @@ idg.init = function(){
 	idg.overlayPopup( 	'.js-demo-open-eyedraw-app',  	// 2x + icons in Examination Edit
 						'eyedraw-edit-app.php', 		// Demo content
 						'#js-demo-eyedraw-app-close' );	// Eyedraw App uses the 'canel' button to close
+						
+	// Eyedraw App for Cataract in OpNote
+	idg.overlayPopup( 	'.js-demo-open-cataract',  	// 2x + icons in Examination Edit
+						'ed-opnote-cataract.php', 		// Demo content
+						'#js-demo-eyedraw-app-close' ).test();	// Eyedraw App uses the 'canel' button to close				
+						
 	
 	// change context (firm)					
 	idg.overlayPopup( 	'#js-change-context-btn',  		// "change" text in header
