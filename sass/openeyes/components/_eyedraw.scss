@@ -13,11 +13,11 @@ $ed-top-panel-height:32px;
 	width: $oe-eyedraw-app-width;
 	min-height:200px;
 	// border-radius:$ed-padding; 
-	padding:$ed-padding; 
+	padding:$ed-padding $ed-padding 40px $ed-padding; // allow for app buttons (save etc)
 	background:$oe-ed-bg;
 	@include font-size(12);
 
-	// main wrapper for Eyedraw areas
+	// main wrapper for Eyedraw App
 	.ed-editor {
 		display:flex;
 		justify-content:flex-start;
@@ -32,6 +32,8 @@ $ed-top-panel-height:32px;
 @import "eyedraw/ed-app-context";
 @import "eyedraw/ed-app-toolbox";
 @import "eyedraw/ed-app-data";
+@import "eyedraw/ed-app-element-options"; // extra element data
+@import "eyedraw/ed-surgeon-orientation"; // new CSS replacement for old canvas version
 
  
 

@@ -59,7 +59,7 @@ idg.init = function(){
 	// Eyedraw App for Cataract in OpNote
 	idg.overlayPopup( 	'.js-demo-open-cataract',  	// 2x + icons in Examination Edit
 						'ed-opnote-cataract.php', 		// Demo content
-						'#js-demo-eyedraw-app-close' ).test();	// Eyedraw App uses the 'canel' button to close				
+						'#js-demo-eyedraw-app-close' );	// Eyedraw App uses the 'canel' button to close				
 						
 	
 	// change context (firm)					
@@ -1222,99 +1222,6 @@ oes.setupResizeButtons = function( callBack ){
 	});
 }
 /*
-Lightening Letter Viewer
-Icon in the Patient banner area links to the 
-Letter Viewer page for the patint
-*/
-idg.lightningViewer = function(){
-	
-	// if on the letter viewing page  
-	// set icon to active 
-	if(window.location.pathname == '/v3.0/lightning-letter-viewer'){
-		$('#js-lightning-viewer-btn').addClass('active');
-		return;	
-	};
-	
-	// Events
-	$('#js-lightning-viewer-btn').click(function( e ){
-		e.stopPropagation();
-		window.location = '/v3.0/lightning-letter-viewer';
-	})
-	.mouseenter(function(){
-		$(this).addClass( 'active' ); 
-	})
-	.mouseleave(function(){
-		$(this).removeClass( 'active' ); 
-	});	
-}
-/**
-All Patient Popups 
-Manage them to avoid any overlapping	
-**/
-idg.patientPopups = {
-	
-	init:function(){
-		
-		if( $('#oe-patient-details').length == 0 ) return;
-		
-		// patient popups
-		var quicklook 		= new idg.NavBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
-		var demographics 	= new idg.NavBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
-		var demographics2 	= new idg.NavBtnPopup( 'management', $('#js-management-btn'), $('#patient-popup-management') );
-		var risks 			= new idg.NavBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
-		// var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
-		
-		var all = [ quicklook, demographics, demographics2, risks ];
-		
-		for( pBtns in all ) {
-			all[pBtns].inGroup( this ); // register group with PopupBtn 
-		}
-		
-		this.popupBtns = all;
-		
-		/**
-		Problems and Plans
-		These are currently in quicklook popup
-		**/
-		if( $('#problems-plans-sortable').length ){
-			idg.problemsPlans();
-		}
-	},
-
-	closeAll:function(){
-		for( pBtns in this.popupBtns ){
-			this.popupBtns[pBtns].hide();  // close all patient popups
-		}
-	}
-
-}
-
-/*
-Problems &  Plans sortable list 
-In patient quicklook 
-- requires Sortable.js
-*/
-idg.problemsPlans = function(){
-	// make Problems & Plans Sortable:
-	var el = document.getElementById( 'problems-plans-sortable' );
-	var sortable = Sortable.create( el );
-		
-	// Add New Plan / Problem	
-	$('#js-add-pp-btn').click(function(){
-		var input = $('#create-problem-plan');
-		var val = input.val();
-		if( val === '') return;				
-		var html = '<li><span class="drag-handle">&#9776;</span>'+ val +'<div class="remove">&times;</div></li>';
-		$('#problems-plans-sortable').append( html );
-		input.val(''); // refresh input
-	}); 
-
-	// remove a Problem Plan
-	$('#problems-plans-sortable .remove').click(function(){ 
-  		$(this).parent().remove(); 
-  	});
-}
-/*
 Tile Element - watch for data overflow
 */
 idg.auditTrail = function(){
@@ -1589,8 +1496,7 @@ idg.elementAddSelectSearch = function(){
 			if($popup.prop('id') == 'add-to-analytics-service'){
 				$('#js-service-selected').text( lists[0].getData('') );
 			}
-			
-		 
+		
 		 
 		  	/*
 			Text inputs
@@ -1613,6 +1519,400 @@ idg.elementAddSelectSearch = function(){
 		  		$(id).val( inputs.join(', ') );
 		  		autosize.update( $(id) );
 	  		}
+	  		
+	  		
+	  		/*
+		  	OpNote.
+		  	Procedures	
+		  		
+		  	*/
+	  		if($popup.prop('id') == 'add-to-procedures'){
+	  			// <tr> template
+			  	var rowTemplate = $("#js-procedures-template");
+			  	
+			  	// get Procedures...	
+			  	var procedures = lists[0].getData(',');
+			  	var proceduresArray = procedures.split(',')	
+			  		
+		  		for(var i = 0; i<proceduresArray.length; i++){
+			  		
+			  		var newRow = rowTemplate.clone();
+			  		newRow.removeAttr('style id');
+			  		newRow.find('.js-procedure-name').text(proceduresArray[i]);
+			  		
+			  		$("#js-show-procedures").append( newRow );
+			  		
+			  		console.log(proceduresArray[i] == "Phacoemulsification and IOL");
+			  		// hack to demo functionality of elements
+			  		if(proceduresArray[i] == "Phacoemulsification and IOL"){
+				  		$('.edit-cataract-right').show();
+				  		$('.edit-pcr-risk-right').show();
+				  		
+				  		newRow.find('.js-add-comments').hide();
+			  		}
+			  		
+			  	}
+	  		}
+	  		
+	  		
+	  		// clean up!
+	  		closeCancel();
+  		}
+  		
+  		function addSearch(){
+	  		select.hide();
+	  		search.show();
+	  		searchInput.focus();
+	  		
+	  		// fake ajax search
+	  		var fakeAjax = $('.js-search-results').hide();
+	  		searchInput.keypress(function() {
+		  		if(searchInput.val() === 'au'){
+			  		fakeAjax.show(); // show fake autocomplete results
+		  		}
+			})
+  		}
+  		
+  		function addSelect(){
+	  		select.show();
+	  		search.hide();
+	  		searchInput.val('');
+  		}
+  		
+  		function iconSelected(){
+	  		selectBtn.children('.oe-i').toggleClass('selected');
+	  		searchBtn.children('.oe-i').toggleClass('selected');
+  		}
+	
+	}
+}
+/*
+SEM Element - Add or Search
+Popup to add selected list to element
+(optional - autocomplete field)
+No functionality, demoing basic UI & UX
+*/
+idg.elementAddSelectSearch = function(){
+	
+	var all = [];
+	
+	$('.js-add-select-search').each(function(){
+		var addBtn = new AddSelectSearch( 	$(this),
+											$(this).parent().children('.oe-add-select-search') );
+		all.push(addBtn);																
+	});
+	
+	function closeAll(){
+		for(var i=0; i < all.length; i++){
+			all[i].closePopup();
+		}
+	}
+
+	function AddSelectSearch( $btn, $popup ){
+		
+  		var search 		= $popup.find('.search-options'),
+  			select 		= $popup.find('.select-options'),
+  			closeBtn 	= $popup.find('.close-icon-btn'),
+  			selectBtn 	= $popup.find('.select-icon-btn'),
+  			searchBtn 	= $popup.find('.search-icon-btn'),
+  			addBtn 		= $popup.find('.add-icon-btn'),
+  			searchInput = $popup.find('.js-search-autocomplete');
+  			
+  		var resetPopupData = true;
+  		var $overlay;					// ----------------------------  Overlay
+  		
+  		// but for these popups remember the data added:
+  		switch( $popup.prop('id') ){
+	  		case "add-to-history":
+	  		case "add-to-risks":
+	  		case "add-to-follow-up":
+	  		resetPopupData = false;
+	  		break;
+  		}
+  			
+  		/*
+	  	All lists
+	  	store the list objects and then 
+	  	iterate over them to build the inputs
+	  	*/	
+  		var lists = [];
+
+  		/*
+	  	pubilc methods
+  		used to close all popups
+  		*/
+  		this.closePopup = closeCancel;
+
+  		/*
+	  	Events	
+	  	*/
+  		closeBtn.click(function(e){
+	  		e.stopPropagation();
+	  		closeCancel();
+	  		$overlay.remove();			// ----------------------------  Overlay
+  		});
+  		
+  		selectBtn.click(function(e){
+  			e.stopPropagation();
+  			addSelect();
+  			if( searchBtn.length ) iconSelected();
+		});
+			
+			
+		// setup based on the DOM
+		if(addBtn.length){
+	  		addBtn.click(function(e){
+	  			e.stopPropagation();
+	  			$overlay.remove();  	// ----------------------------  Overlay
+	  			closeAdd();
+	  			
+  			});
+  		}
+  		
+  		if(searchBtn.length){
+	  		searchBtn.click(function(e){
+	  			e.stopPropagation();
+	  			addSearch();
+	  			iconSelected();
+  			});
+  		}
+  	
+  		
+  		// list have 2 states multi or single 
+  		$('.add-options',$popup).each( function(){
+	  		var multi = $(this).data('multi');
+	  		
+	  		lists.push( new OptionsList( $(this), 
+	  									 $(this).data('multi'),
+	  									 $(this).data('clickadd') ) );
+  		});
+  		
+  		
+		function OptionsList( $ul, multi, clickAdd ){
+			var multi = multi;
+			var clickAdd = clickAdd; 
+			var $active = null; // if only single entry 
+			var selectedData = [];
+			
+			if(clickAdd){
+				addBtn.hide();
+			}
+			
+			
+			if(multi){
+				$('li', $ul).click(function(e){
+		  			e.stopPropagation();
+		  			$(this).toggleClass('selected'); 
+		  			if($(this).hasClass('selected')){
+			  			addData($(this).data('str'));
+		  			} else {
+			  			removeData($(this).data('str'));
+		  			}
+	  			});
+			} else {
+				$('li', $ul).click(function(e){
+		  			e.stopPropagation();
+		  			updateListOptions( $(this) );
+		  			if(clickAdd) closeAdd();
+	  			});
+			}
+	
+			function updateListOptions( $new ){
+				if($active != null) {
+					$active.removeClass('selected');
+					removeData( $active.data('str') );
+				}
+				$new.addClass('selected');
+				addData( $new.data('str') );
+				$active = $new;
+			}
+			
+			function addData(data){
+				selectedData.push(data);
+			}
+			
+			function removeData(data){
+				var index = selectedData.indexOf(data);   
+				if (index !== -1) {
+				    selectedData.splice(index, 1);
+				}
+			}
+			
+			/*
+			Public methods	
+			*/
+			this.getData = function ( join ){
+				return selectedData.join(join);
+			}
+			
+			this.clearData = function(){
+				selectedData = [];
+			}
+		}  		
+
+  		
+  		// top element popup will disappear behind header, so adjust it's position:
+  		if($btn.offset().top < 250 && $btn.offset().top){
+	  		console.log($btn.offset().top);
+	  		var vOffset = $btn.offset().top - 310;
+	  		$popup.css({bottom:vOffset});
+	  	}
+  		
+
+		$btn.click( function( e ){
+			e.stopPropagation();
+			openAdd();
+		});
+		
+		
+		function openAdd(){
+			closeAll();
+			addSelect();
+			$popup.show();
+			selectBtn.children('.oe-i').addClass('selected');
+			searchBtn.children('.oe-i').removeClass('selected');
+					  		
+			// chnage popup into a overlay						// ----------------------------  Overlay
+			$overlay = $('<div>');
+			$overlay.addClass('oe-popup-wrap');
+			$popup.appendTo($overlay);
+  			$('body').prepend($overlay);		  		
+					  		
+		}
+
+		// Close and reset
+  		function closeCancel(){
+	  		search.hide();
+	  		searchInput.val('');
+	  	
+	  		$popup.hide();
+	
+	  		if(resetPopupData){
+		  		$popup.find('.add-options li').removeClass('selected');
+		  		for(var i = 0; i<lists.length; i++){
+			  		lists[i].clearData();
+			  	}
+			}
+	  		
+  		}
+  		
+  		function closeAdd(){
+	  			
+	  		/*
+		  	IDG specific elements limited functionality demos
+		  	*/
+	
+		  	/*
+			Refraction	
+			*/
+			if($popup.prop('id') == 'add-to-refraction'){
+				
+				var sphere = "", 
+					cylinder = "", 
+					axis = "";
+					type = ""
+					
+				for(var i = 0; i<lists.length; i++){
+			  		var data = lists[i].getData('');
+			  		
+			  		switch(i){
+				  		case 0:
+				  		case 1:
+				  		case 2:
+				  		sphere += data;
+				  		break;
+				  		
+				  		case 3:
+				  		case 4:
+				  		case 5:
+				  		cylinder += data;
+				  		break;
+				  		
+				  		case 6: 
+				  		axis = data;
+				  		break;
+				  		
+				  		case 7:
+				  		type = data;
+				  		break;
+			  		}
+		  		}
+				
+				$('#js-refraction-input-sphere').val( sphere );
+				$('#js-refraction-input-cylinder').val( cylinder );
+				$('#js-refraction-input-axis').val( axis );
+				$('#js-refraction-input-type').val( type );
+			}
+			
+			if($popup.prop('id') == 'add-to-pupils-left'){
+				$('#js-pupil-left-text').text( lists[0].getData('') );
+			}
+			
+			if($popup.prop('id') == 'add-to-pupils-right'){
+				$('#js-pupil-right-text').text( lists[0].getData('') );
+			}
+			
+			if($popup.prop('id') == 'add-to-analytics-service'){
+				$('#js-service-selected').text( lists[0].getData('') );
+			}
+		
+		 
+		  	/*
+			Text inputs
+			*/
+		  	if($popup.prop('id') == 'add-to-history')		showInputString('history');
+		  	if($popup.prop('id') == 'add-to-risks')			showInputString('risks');
+		  	if($popup.prop('id') == 'add-to-follow-up')		showInputString('follow-up');
+	  		
+	
+	  		function showInputString(id){
+		  		var id = '#js-'+id+'-input-demo';
+		  		var inputs = [];
+		  		for(var i = 0; i<lists.length; i++){
+			  		var data = lists[i].getData(', ');
+			  		if(data != ""){
+				  		inputs.push(data);
+			  		}
+		  		}
+		  		
+		  		$(id).val( inputs.join(', ') );
+		  		autosize.update( $(id) );
+	  		}
+	  		
+	  		
+	  		/*
+		  	OpNote.
+		  	Procedures	
+		  		
+		  	*/
+	  		if($popup.prop('id') == 'add-to-procedures'){
+	  			// <tr> template
+			  	var rowTemplate = $("#js-procedures-template");
+			  	
+			  	// get Procedures...	
+			  	var procedures = lists[0].getData(',');
+			  	var proceduresArray = procedures.split(',')	
+			  		
+		  		for(var i = 0; i<proceduresArray.length; i++){
+			  		
+			  		var newRow = rowTemplate.clone();
+			  		newRow.removeAttr('style id');
+			  		newRow.find('.js-procedure-name').text(proceduresArray[i]);
+			  		
+			  		$("#js-show-procedures").append( newRow );
+			  		
+			  		console.log(proceduresArray[i] == "Phacoemulsification and IOL");
+			  		// hack to demo functionality of elements
+			  		if(proceduresArray[i] == "Phacoemulsification and IOL"){
+				  		$('.edit-cataract-right').show();
+				  		$('.edit-pcr-risk-right').show();
+				  		
+				  		newRow.find('.js-add-comments').hide();
+			  		}
+			  		
+			  	}
+	  		}
+	  		
 	  		
 	  		// clean up!
 	  		closeCancel();
@@ -2085,4 +2385,97 @@ idg.tooltips = function(){
 			$('body').find( ".oe-tooltip" ).remove();
 		}
 	);	
+}
+/*
+Lightening Letter Viewer
+Icon in the Patient banner area links to the 
+Letter Viewer page for the patint
+*/
+idg.lightningViewer = function(){
+	
+	// if on the letter viewing page  
+	// set icon to active 
+	if(window.location.pathname == '/v3.0/lightning-letter-viewer'){
+		$('#js-lightning-viewer-btn').addClass('active');
+		return;	
+	};
+	
+	// Events
+	$('#js-lightning-viewer-btn').click(function( e ){
+		e.stopPropagation();
+		window.location = '/v3.0/lightning-letter-viewer';
+	})
+	.mouseenter(function(){
+		$(this).addClass( 'active' ); 
+	})
+	.mouseleave(function(){
+		$(this).removeClass( 'active' ); 
+	});	
+}
+/**
+All Patient Popups 
+Manage them to avoid any overlapping	
+**/
+idg.patientPopups = {
+	
+	init:function(){
+		
+		if( $('#oe-patient-details').length == 0 ) return;
+		
+		// patient popups
+		var quicklook 		= new idg.NavBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
+		var demographics 	= new idg.NavBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
+		var demographics2 	= new idg.NavBtnPopup( 'management', $('#js-management-btn'), $('#patient-popup-management') );
+		var risks 			= new idg.NavBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
+		// var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
+		
+		var all = [ quicklook, demographics, demographics2, risks ];
+		
+		for( pBtns in all ) {
+			all[pBtns].inGroup( this ); // register group with PopupBtn 
+		}
+		
+		this.popupBtns = all;
+		
+		/**
+		Problems and Plans
+		These are currently in quicklook popup
+		**/
+		if( $('#problems-plans-sortable').length ){
+			idg.problemsPlans();
+		}
+	},
+
+	closeAll:function(){
+		for( pBtns in this.popupBtns ){
+			this.popupBtns[pBtns].hide();  // close all patient popups
+		}
+	}
+
+}
+
+/*
+Problems &  Plans sortable list 
+In patient quicklook 
+- requires Sortable.js
+*/
+idg.problemsPlans = function(){
+	// make Problems & Plans Sortable:
+	var el = document.getElementById( 'problems-plans-sortable' );
+	var sortable = Sortable.create( el );
+		
+	// Add New Plan / Problem	
+	$('#js-add-pp-btn').click(function(){
+		var input = $('#create-problem-plan');
+		var val = input.val();
+		if( val === '') return;				
+		var html = '<li><span class="drag-handle">&#9776;</span>'+ val +'<div class="remove">&times;</div></li>';
+		$('#problems-plans-sortable').append( html );
+		input.val(''); // refresh input
+	}); 
+
+	// remove a Problem Plan
+	$('#problems-plans-sortable .remove').click(function(){ 
+  		$(this).parent().remove(); 
+  	});
 }

@@ -31,7 +31,6 @@ idg.elementAddSelectSearch = function(){
   			searchInput = $popup.find('.js-search-autocomplete');
   			
   		var resetPopupData = true;
-  		var $overlay;					// ----------------------------  Overlay
   		
   		// but for these popups remember the data added:
   		switch( $popup.prop('id') ){
@@ -61,7 +60,6 @@ idg.elementAddSelectSearch = function(){
   		closeBtn.click(function(e){
 	  		e.stopPropagation();
 	  		closeCancel();
-	  		$overlay.remove();			// ----------------------------  Overlay
   		});
   		
   		selectBtn.click(function(e){
@@ -75,9 +73,7 @@ idg.elementAddSelectSearch = function(){
 		if(addBtn.length){
 	  		addBtn.click(function(e){
 	  			e.stopPropagation();
-	  			$overlay.remove();  	// ----------------------------  Overlay
 	  			closeAdd();
-	  			
   			});
   		}
   		
@@ -176,7 +172,6 @@ idg.elementAddSelectSearch = function(){
 			openAdd();
 		});
 		
-		
 		function openAdd(){
 			closeAll();
 			addSelect();
@@ -184,19 +179,14 @@ idg.elementAddSelectSearch = function(){
 			selectBtn.children('.oe-i').addClass('selected');
 			searchBtn.children('.oe-i').removeClass('selected');
 					  		
-			// chnage popup into a overlay						// ----------------------------  Overlay
-			$overlay = $('<div>');
-			$overlay.addClass('oe-popup-wrap');
-			$popup.appendTo($overlay);
-  			$('body').prepend($overlay);		  		
-					  		
 		}
-
+		
+		
+		
 		// Close and reset
   		function closeCancel(){
 	  		search.hide();
 	  		searchInput.val('');
-	  	
 	  		$popup.hide();
 	
 	  		if(resetPopupData){

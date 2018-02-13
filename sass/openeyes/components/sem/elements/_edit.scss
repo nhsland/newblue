@@ -13,32 +13,6 @@
 			.data-label {
 				color:$oe-text-light;
 			}
-			
-			// 'grid-gutter' - Element Grid Layout
-			// The problem with the grid 'cols-' is that there is no
-			// gap between the cols. Within element layout in edit 
-			// i need a consistant gutter but only direct child elements:
-			
-			.grid-gutter {
-				> div[class^="cols-"], 
-				> td {
-					padding-right:30px;
-					&:last-child {
-						padding-right:0;
-					}
-				}
-			}
-			
-			.grid-gutter-small {
-				> div[class^="cols-"], 
-				> td {
-					padding-right:10px; // smaller gap (see injection edit)
-					&:last-child {
-						padding-right:0;
-					}
-				}
-			}
-			
 		}
 		
 		// Within Elements there may be text that isn't

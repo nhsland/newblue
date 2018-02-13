@@ -10,6 +10,10 @@
 		padding:0 3px 0 3px;
 		width:400px;
 		
+		&.single-column {
+			width:200px;
+		}
+		
 		.ed-filter-tools {
 			display:flex;
 			justify-content:space-between;
@@ -26,6 +30,11 @@
 				.doodle-selection {
 					column-count:2;
 					column-gap:1px;
+					
+					&.single-column {
+						column-count:unset;
+					}
+					
 					
 					li {
 						@include font-size(10);

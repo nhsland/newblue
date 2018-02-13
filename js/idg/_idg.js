@@ -59,7 +59,7 @@ idg.init = function(){
 	// Eyedraw App for Cataract in OpNote
 	idg.overlayPopup( 	'.js-demo-open-cataract',  	// 2x + icons in Examination Edit
 						'ed-opnote-cataract.php', 		// Demo content
-						'#js-demo-eyedraw-app-close' ).test();	// Eyedraw App uses the 'canel' button to close				
+						'#js-demo-eyedraw-app-close' );	// Eyedraw App uses the 'canel' button to close				
 						
 	
 	// change context (firm)					

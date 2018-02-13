@@ -4,14 +4,17 @@
 
 .oe-eyedraw-app {	
 	
-	// title: 'Right Eye' or 'Left Eye'
+	// title: 'Right Eye', 'Left Eye', etc
+	// positioned above the popup box
 	.ed-eye-side {
 		position:absolute;
-		bottom:10px;
-		right:$ed-padding;
-		@include font-size(42);
-		font-weight:200;
-		color: shade($oe-ed-panels,20);
+		top:-20px;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+		@include font-size(24);
+		font-weight:300;
+		color:rgb(255,255,255);
 	}
 
 	

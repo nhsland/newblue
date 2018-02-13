@@ -71,3 +71,26 @@ width: 91.66667%;
 width: 100%;
 }
 
+// 'col-gap' - mostly used in Element data layout
+// Provide a consistent column gap (gutter) for layouts using
+// either flex or tables to layout data:
+.col-gap {
+	> div[class^="cols-"], 
+	> td {
+		padding-right:30px !important; // need to overide <td> css in elements, keeping this here for clarity
+		&:last-child {
+			padding-right:0 !important;
+		}
+	}
+}
+// same but smaller... (e.g. see injection edit layout)
+.col-gap-small {
+	> div[class^="cols-"], 
+	> td {
+		padding-right:10px !important; 
+		&:last-child {
+			padding-right:0 !important;
+		}
+	}
+}
+

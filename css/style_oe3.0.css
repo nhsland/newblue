@@ -191,6 +191,26 @@ textarea {
   width: 100%;
 }
 
+.col-gap > div[class^="cols-"],
+.col-gap > td {
+  padding-right: 30px !important;
+}
+
+.col-gap > div[class^="cols-"]:last-child,
+.col-gap > td:last-child {
+  padding-right: 0 !important;
+}
+
+.col-gap-small > div[class^="cols-"],
+.col-gap-small > td {
+  padding-right: 10px !important;
+}
+
+.col-gap-small > div[class^="cols-"]:last-child,
+.col-gap-small > td:last-child {
+  padding-right: 0 !important;
+}
+
 /* OpenEyes UI v3.0 */
 /* ------ PRO theme ------- */
 /* OpenEyes CSS */
@@ -1387,17 +1407,17 @@ button:hover .oe-i, button:focus .oe-i, button:active .oe-i, .button:hover .oe-i
 
 button.hint.green, .button.hint.green, input[type="submit"].hint.green {
   color: rgba(255, 255, 255, 0.9);
-  background: #084a0f;
+  background: #0a6512;
 }
 
 button.hint.red, .button.hint.red, input[type="submit"].hint.red {
   color: rgba(255, 255, 255, 0.9);
-  background: #560808;
+  background: #6b0a0a;
 }
 
 button.hint.blue, .button.hint.blue, input[type="submit"].hint.blue {
   color: rgba(255, 255, 255, 0.9);
-  background: #04295b;
+  background: #05306a;
 }
 
 button.blue:hover, button.blue:focus, button.blue:active, .button.blue:hover, .button.blue:focus, .button.blue:active, input[type="submit"].blue:hover, input[type="submit"].blue:focus, input[type="submit"].blue:active {
@@ -1407,12 +1427,12 @@ button.blue:hover, button.blue:focus, button.blue:active, .button.blue:hover, .b
 
 button.green:hover, button.green:focus, button.green:active, .button.green:hover, .button.green:focus, .button.green:active, input[type="submit"].green:hover, input[type="submit"].green:focus, input[type="submit"].green:active {
   color: #fff;
-  background: #0e7c19;
+  background: #0e9019;
 }
 
 button.red:hover, button.red:focus, button.red:active, .button.red:hover, .button.red:focus, .button.red:active, input[type="submit"].red:hover, input[type="submit"].red:focus, input[type="submit"].red:active {
   color: #fff;
-  background: #8f0e0e;
+  background: #990e0e;
 }
 
 .alert-box {
@@ -1434,7 +1454,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .alert-box.success, .alert-box.info {
-  background: #0e7c19;
+  background: #0e9019;
 }
 
 .alert-box.patient, .alert-box.issue, .alert-box.warning, .alert-box.error, .alert-box.injection-warning {
@@ -2913,7 +2933,7 @@ html {
 .oe-create-event-popup .change-subspecialty {
   position: relative;
   background: #2f3c48;
-  border: 1px solid #0e7c19;
+  border: 1px solid #0e9019;
   padding: 8px;
   margin: 10px 0 0 0;
 }
@@ -2980,12 +3000,12 @@ html {
 
 .oe-create-event-popup .new-added-subspecialty-service {
   margin: 10px 0 0 0;
-  color: #0e7c19;
+  color: #0e9019;
   background: #283442;
 }
 
 .oe-create-event-popup .new-added-subspecialty-service .tag {
-  background-color: #084a0f;
+  background-color: #0a6512;
 }
 
 .oe-create-event-popup .new-added-subspecialty-service .change-new-specialty {
@@ -2996,7 +3016,7 @@ html {
 
 .oe-create-event-popup .new-added-subspecialty-service.selected {
   color: #fff;
-  background: #0e7c19;
+  background: #0e9019;
 }
 
 .oe-create-event-popup .new-added-subspecialty-service:hover, .oe-create-event-popup .new-added-subspecialty-service:focus {
@@ -3310,12 +3330,12 @@ html {
   background-position: left 5px top 4px;
   background-repeat: no-repeat;
   background-size: 13px;
-  background-color: #560808;
+  background-color: #6b0a0a;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> polygon{ fill:#fff; opacity:0.8; }</style><polygon points="15 5.86 19.52 1.1 20.37 7.61 26.83 6.41 23.69 12.18 29.62 15 23.69 17.82 26.83 23.59 20.37 22.39 19.52 28.9 15 24.14 10.48 28.9 9.63 22.39 3.17 23.59 6.31 17.82 0.38 15 6.31 12.18 3.17 6.41 9.63 7.61 10.48 1.1 15 5.86"/></svg>');
 }
 
 .sidebar .tooltip.quicklook .event-issue.ready {
-  background-color: #084a0f;
+  background-color: #0a6512;
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30"><style> path{ fill:#fff; opacity:0.8; }</style><path d="M28.3,1.88l.7,1a54.4,54.4,0,0,0-9.49,9.89,68,68,0,0,0-8,12.48l-1.47,1a25.12,25.12,0,0,0-2.49,1.89,31.23,31.23,0,0,0-1.14-3.07l-.56-1.3a20,20,0,0,0-2.22-4.13,5,5,0,0,0-2.3-1.77q2.15-2.27,3.95-2.27,1.53,0,3.41,4.16l.62,1.4a57.89,57.89,0,0,1,8.65-11A48.45,48.45,0,0,1,28.3,1.88Z"/></svg>');
 }
 
@@ -3393,7 +3413,7 @@ html {
 
 .sidebar .oe-element-list a.error {
   color: #fff;
-  background-color: #560808;
+  background-color: #6b0a0a;
 }
 
 .oe-event-quickview {
@@ -3574,26 +3594,6 @@ html {
   color: rgba(255, 255, 255, 0.5);
 }
 
-.main-event .element .element-fields .grid-gutter > div[class^="cols-"],
-.main-event .element .element-fields .grid-gutter > td {
-  padding-right: 30px;
-}
-
-.main-event .element .element-fields .grid-gutter > div[class^="cols-"]:last-child,
-.main-event .element .element-fields .grid-gutter > td:last-child {
-  padding-right: 0;
-}
-
-.main-event .element .element-fields .grid-gutter-small > div[class^="cols-"],
-.main-event .element .element-fields .grid-gutter-small > td {
-  padding-right: 10px;
-}
-
-.main-event .element .element-fields .grid-gutter-small > div[class^="cols-"]:last-child,
-.main-event .element .element-fields .grid-gutter-small > td:last-child {
-  padding-right: 0;
-}
-
 .main-event .element .note {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
@@ -3762,9 +3762,10 @@ html {
 }
 
 .oe-add-select-search {
-  position: absolute;
-  bottom: 10px;
-  right: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin: auto;
+  position: relative;
   z-index: 60;
   background: #374755;
   padding: 10px 45px 10px 10px;
@@ -3833,7 +3834,7 @@ html {
 }
 
 .oe-add-select-search .add-options {
-  max-height: 200px;
+  max-height: 330px;
   overflow-y: auto;
   margin: 0 5px 0 0;
 }
@@ -3845,7 +3846,7 @@ html {
 .oe-add-select-search .add-options li {
   display: block;
   cursor: pointer;
-  padding: 2px 8px 2px 8px;
+  padding: 4px 8px 4px 8px;
   margin: 0 0 2px 0;
   color: rgba(255, 255, 255, 0.8);
   background: #32404d;
@@ -4009,82 +4010,12 @@ html {
   right: 0;
 }
 
-.main-event .element .eyedraw .ed-surgeon-orientation {
-  position: relative;
-  width: 180px;
-  height: 120px;
-  margin: 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-position: center bottom 20px;
-  background-repeat: no-repeat;
-  background-size: 75px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>patient-op</title><style>path{fill:rgb(130,130,130);}</style><path d="M83.67,99.28a2,2,0,0,1-2-2V58.67H63.75a2,2,0,0,1,0-4H85.67v42.6A2,2,0,0,1,83.67,99.28Z"/><path d="M16.33,99.28a2,2,0,0,1-2-2V54.67H35.25a2,2,0,0,1,0,4H18.33v38.6A2,2,0,0,1,16.33,99.28Z"/><path d="M72,66.06a19.78,19.78,0,0,0-7.72-4.26,17.45,17.45,0,1,0-29,.37A19,19,0,0,0,28.91,66c-5.52,5.35-8.33,20.29-8.66,32.73l5,.13c.36-13.3,3.36-25.61,7.14-29.27a16.2,16.2,0,0,1,6.69-3.48,17.35,17.35,0,0,0,21.38-.21c3.57.86,6.44,2.14,8,3.67,2.65,2.63,5.72,14.31,6.28,29.32l5-.18C79.23,85.83,76.65,70.72,72,66.06ZM37.17,52.27A12.46,12.46,0,1,1,49.63,64.73,12.47,12.47,0,0,1,37.17,52.27Z"/><path d="M46.35,54.53H42.1a1.5,1.5,0,0,1,0-3h4.25a1.5,1.5,0,0,1,0,3Z"/><path d="M57.22,54.53H53a1.5,1.5,0,0,1,0-3h4.25a1.5,1.5,0,0,1,0,3Z"/></svg>');
-}
-
-.main-event .element .eyedraw .ed-surgeon-orientation .title {
-  font-size: 0.75rem;
-  color: #828282;
-}
-
-.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 60px;
-  background-position: top left;
-  background-repeat: no-repeat;
-  background-size: 60px;
-  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><title>surgeon</title><style>path{fill:rgb(70,70,70);}</style><polygon points="40 69.39 49.46 59.94 47.59 58.07 40 65.66 32.41 58.07 30.54 59.94 40 69.39"/><path d="M57.9,34.22c0-.37.06-.74.06-1.12A18,18,0,0,0,22,33.1c0,.38,0,.75.06,1.12A30.72,30.72,0,0,0,6.3,61.35a3.5,3.5,0,0,0,7,0A23.78,23.78,0,0,1,24,41.3,17.92,17.92,0,0,0,56,41.3,23.78,23.78,0,0,1,66.7,61.35a3.5,3.5,0,0,0,7,0A30.72,30.72,0,0,0,57.9,34.22ZM40,45.06a12,12,0,1,1,12-12A12,12,0,0,1,40,45.06Z"/></svg>');
-}
-
-.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-right {
-  top: 40px;
-  left: 8px;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-}
-
-.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-right-top {
-  top: 10px;
-  left: 25px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-top {
-  top: 5px;
-  left: 60px;
-}
-
-.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-left-top {
-  top: 10px;
-  left: 95px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.main-event .element .eyedraw .ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-left {
-  top: 40px;
-  left: 112px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
 .oe-eyedraw-app {
   position: relative;
   margin: auto;
   width: 1260px;
   min-height: 200px;
-  padding: 7px;
+  padding: 7px 7px 40px 7px;
   background: #dae6f1;
   font-size: 0.75rem;
 }
@@ -4103,11 +4034,14 @@ html {
 
 .oe-eyedraw-app .ed-eye-side {
   position: absolute;
-  bottom: 10px;
-  right: 7px;
-  font-size: 2.625rem;
-  font-weight: 200;
-  color: #9da6ae;
+  top: -20px;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: white;
 }
 
 .oe-eyedraw-app button, .oe-eyedraw-app .button, .oe-eyedraw-app input[type="submit"] {
@@ -4132,8 +4066,8 @@ html {
 }
 
 .oe-eyedraw-app input, .oe-eyedraw-app textarea, .oe-eyedraw-app select {
-  color: rgba(255, 255, 255, 0.8);
-  background: #9da6ae;
+  color: white;
+  background: #939ba3;
 }
 
 .oe-eyedraw-app a {
@@ -4147,7 +4081,7 @@ html {
 
 .oe-eyedraw-app .ed-close-save {
   position: absolute;
-  top: 355px;
+  bottom: 7px;
   right: 7px;
   z-index: 1;
 }
@@ -4194,10 +4128,11 @@ html {
       -ms-flex-align: center;
           align-items: center;
   height: 32px;
+  padding: 0 0 0 7px;
 }
 
 .oe-eyedraw-app .ed-doodle-context .ed-doodle-controls {
-  padding: 7px;
+  padding: 0 7px 7px 7px;
 }
 
 .oe-eyedraw-app .ed-doodle-context .ed-doodle-controls .doodle-option {
@@ -4210,13 +4145,18 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 0 5px 0;
+  margin: 0 0 3px 0;
+  min-height: 25px;
 }
 
 .oe-eyedraw-app .ed-tools {
   background: #c4cfd9;
   padding: 0 3px 0 3px;
   width: 400px;
+}
+
+.oe-eyedraw-app .ed-tools.single-column {
+  width: 200px;
 }
 
 .oe-eyedraw-app .ed-tools .ed-filter-tools {
@@ -4243,6 +4183,11 @@ html {
           column-count: 2;
   -webkit-column-gap: 1px;
           column-gap: 1px;
+}
+
+.oe-eyedraw-app .ed-tools .ed-icon-toolbox .doodle-box .doodle-selection.single-column {
+  -webkit-column-count: unset;
+          column-count: unset;
 }
 
 .oe-eyedraw-app .ed-tools .ed-icon-toolbox .doodle-box .doodle-selection li {
@@ -4300,6 +4245,108 @@ html {
 .oe-eyedraw-app .ed-data-row .ed-comments textarea {
   background: #edf3f8;
   color: #333;
+}
+
+.oe-eyedraw-app .ed-element-options {
+  padding: 7px 7px 7px 14px;
+  border-left: 7px solid #dae6f1;
+}
+
+.oe-eyedraw-app .ed-element-options table {
+  width: 100%;
+}
+
+.oe-eyedraw-app .ed-element-options table tr {
+  border-bottom: 1px solid #c4cfd9;
+}
+
+.oe-eyedraw-app .ed-element-options table tr:last-child {
+  border-bottom: none;
+}
+
+.oe-eyedraw-app .ed-element-options table td {
+  min-height: 28px;
+  padding: 1px 0;
+  font-size: 0.75rem;
+  vertical-align: middle;
+}
+
+.oe-eyedraw-app .ed-element-options table td textarea {
+  vertical-align: middle;
+}
+
+.oe-eyedraw-app .ed-element-options table td.right {
+  text-align: right;
+}
+
+.ed-surgeon-orientation {
+  position: relative;
+  width: 180px;
+  height: 120px;
+  margin: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position: center bottom 20px;
+  background-repeat: no-repeat;
+  background-size: 75px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><title>patient-op</title><style>path{fill:rgb(150,150,150);}</style><path d="M83.67,99.28a2,2,0,0,1-2-2V58.67H63.75a2,2,0,0,1,0-4H85.67v42.6A2,2,0,0,1,83.67,99.28Z"/><path d="M16.33,99.28a2,2,0,0,1-2-2V54.67H35.25a2,2,0,0,1,0,4H18.33v38.6A2,2,0,0,1,16.33,99.28Z"/><path d="M72,66.06a19.78,19.78,0,0,0-7.72-4.26,17.45,17.45,0,1,0-29,.37A19,19,0,0,0,28.91,66c-5.52,5.35-8.33,20.29-8.66,32.73l5,.13c.36-13.3,3.36-25.61,7.14-29.27a16.2,16.2,0,0,1,6.69-3.48,17.35,17.35,0,0,0,21.38-.21c3.57.86,6.44,2.14,8,3.67,2.65,2.63,5.72,14.31,6.28,29.32l5-.18C79.23,85.83,76.65,70.72,72,66.06ZM37.17,52.27A12.46,12.46,0,1,1,49.63,64.73,12.47,12.47,0,0,1,37.17,52.27Z"/><path d="M46.35,54.53H42.1a1.5,1.5,0,0,1,0-3h4.25a1.5,1.5,0,0,1,0,3Z"/><path d="M57.22,54.53H53a1.5,1.5,0,0,1,0-3h4.25a1.5,1.5,0,0,1,0,3Z"/></svg>');
+}
+
+.ed-surgeon-orientation .title {
+  font-size: 0.75rem;
+  color: #828282;
+}
+
+.ed-surgeon-orientation .ed-surgeon-angle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 60px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80"><title>surgeon</title><style>*{fill:rgb(90,90,90);}</style><polygon points="40 69.39 49.46 59.94 47.59 58.07 40 65.66 32.41 58.07 30.54 59.94 40 69.39"/><path d="M57.9,34.22c0-.37.06-.74.06-1.12A18,18,0,0,0,22,33.1c0,.38,0,.75.06,1.12A30.72,30.72,0,0,0,6.3,61.35a3.5,3.5,0,0,0,7,0A23.78,23.78,0,0,1,24,41.3,17.92,17.92,0,0,0,56,41.3,23.78,23.78,0,0,1,66.7,61.35a3.5,3.5,0,0,0,7,0A30.72,30.72,0,0,0,57.9,34.22ZM40,45.06a12,12,0,1,1,12-12A12,12,0,0,1,40,45.06Z"/></svg>');
+}
+
+.ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-right {
+  top: 35px;
+  left: 8px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-right-top {
+  top: 5px;
+  left: 25px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-top {
+  top: -5px;
+  left: 60px;
+}
+
+.ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-left-top {
+  top: 5px;
+  left: 95px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-left {
+  top: 35px;
+  left: 112px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .elements-search-results {

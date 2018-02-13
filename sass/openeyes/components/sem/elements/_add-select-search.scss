@@ -13,13 +13,20 @@
 }
 
 .oe-add-select-search {
-	position:absolute; 
-	bottom:10px; 
-	right:20px; 
+
+	@include font-size(12);				// popup version!
+	font-weight:500;					//
+	margin:auto;						//
+	position:relative;					// 
+	
+	//position:absolute; 				// old anchored DOM
+	//bottom:10px; 
+	//right:20px; 
 	z-index:$oe-z-tooltip; 				// make sure it floats over elements
 	background:$oe-popup-bg;
 	padding:10px 45px 10px 10px; 		// allow for icon-btns
 	min-height:150px;
+	
 	
 	&.align-left {
 		right:auto;
@@ -92,7 +99,7 @@
 
 	// All options lists <ul>:
 	.add-options{
-		max-height:200px;		// limit the displayed results.
+		max-height:330px;		// limit the displayed results.  --------  200px 
 		overflow-y: auto;
 		margin:0 5px 0 0;
 		
@@ -103,7 +110,7 @@
 		li {
 			display:block;
 			cursor: pointer;
-			padding:2px 8px 2px 8px;
+			padding:4px 8px 4px 8px;
 			margin:0 0 2px 0;
 			color:$oe-text;
 			// border-radius:3px;

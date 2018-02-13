@@ -1,0 +1,45 @@
+// OE Eyedraw APP
+// -----------------------------------
+// Eyedraw popup APP
+
+.oe-eyedraw-app {	
+
+	// Context sensitive panel - left
+	.ed-element-options {
+		// background: $oe-ed-panels;
+		// because of flex layout this will butt right up
+		// to the eyedraw container. this provides a visual gutter:
+		padding:$ed-padding $ed-padding $ed-padding $ed-padding * 2;
+		border-left:$ed-padding solid $oe-ed-bg;
+		
+
+		table {
+			width:100%;			
+			// add line to help with reading data
+			tr {
+				border-bottom:1px solid $oe-ed-panels;
+				&:last-child { 
+					border-bottom: none;
+				}
+			}
+
+			td {
+				min-height:28px;
+				padding:1px 0;  
+				@include font-size(12);
+				vertical-align: middle;
+				
+				textarea {
+					vertical-align: middle; // ensure correct vertical alignment in <td>
+				}
+				
+				&.right {
+					text-align: right;
+				}
+			}
+		}
+		
+	}
+
+	
+}
