@@ -3762,14 +3762,15 @@ html {
 }
 
 .oe-add-select-search {
-  font-size: 0.75rem;
-  font-weight: 500;
-  margin: auto;
-  position: relative;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
   z-index: 60;
   background: #374755;
   padding: 10px 45px 10px 10px;
   min-height: 150px;
+  font-size: 0.75rem;
+  font-weight: 500;
   width: 350px;
   min-width: 350px;
 }
@@ -3834,7 +3835,7 @@ html {
 }
 
 .oe-add-select-search .add-options {
-  max-height: 330px;
+  max-height: 200px;
   overflow-y: auto;
   margin: 0 5px 0 0;
 }
@@ -3873,7 +3874,7 @@ html {
 }
 
 .oe-add-select-search .search-options {
-  width: 340px;
+  width: 320px;
   height: 180px;
 }
 
