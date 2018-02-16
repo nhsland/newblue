@@ -15,9 +15,19 @@ idg.tileDataOverflow = function(){
 			var flag = $('<div/>',{ class:"tile-more-data-flag"});
 			var icon = $('<i/>',{ class:"oe-i arrow-down-bold medium selected" });
 			flag.append(icon);
-			$(this).prepend(flag);	
+			$(this).prepend(flag);
+			
+			var tileOverflow = $('.tile-data-overflow', this)
+			
+			flag.click(function(){
+				var offset = h - 179
+				
+				tileOverflow.animate({
+					scrollTop: tileOverflow.height()
+				}, 1000);
+			});	
 
-			$('.tile-data-overflow', this).on('scroll',function(){
+			tileOverflow.on('scroll',function(){
 				flag.fadeOut();
 			});
 			
