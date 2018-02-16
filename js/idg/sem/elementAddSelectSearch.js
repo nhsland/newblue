@@ -318,7 +318,7 @@ idg.elementAddSelectSearch = function(){
 			  		console.log(proceduresArray[i] == "Phacoemulsification and IOL");
 			  		// hack to demo functionality of elements
 			  		if(proceduresArray[i] == "Phacoemulsification and IOL"){
-				  		$('.edit-cataract-right').show();
+				  		$('.edit-phaco--iol-right').show();
 				  		$('.edit-pcr-risk-right').show();
 				  		
 				  		newRow.find('.js-add-comments').hide();

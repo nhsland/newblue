@@ -3472,6 +3472,18 @@ html {
   height: auto;
 }
 
+.main-event .element-tile-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
 .main-event .element {
   position: relative;
   min-height: 40px;
