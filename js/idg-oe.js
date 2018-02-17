@@ -1497,7 +1497,6 @@ idg.elementAddSelectSearch = function(){
   		
   		// top element popup will disappear behind header, so adjust it's position:
   		if($btn.offset().top < 250 && $btn.offset().top){
-	  		console.log($btn.offset().top);
 	  		var vOffset = $btn.offset().top - 310;
 	  		$popup.css({bottom:vOffset});
 	  	}
@@ -2131,12 +2130,25 @@ idg.tooltips = function(){
 		function(){
 			var text = $(this).data('tooltip-content');
 			var offset = $(this).offset();
-			var html = '<div class="oe-tooltip" style="position:fixed; left:'+(offset.left + 20)+'px; top:'+(offset.top + - 10)+'px;">'+ text +'</div>';
-			$(this).data( "tooltip", html );
-			$('body').append(html);
+			var leftPos = offset.left - 94 // tooltip is 200px (and center on the icon)
+			// add, calculate height then show (remove 'hidden')
+			var tip = $( "<div></div>", {
+								"class": "oe-tooltip",
+								"style":"position:fixed; left:"+leftPos+"px; top:0;"
+								});
+			// add the tip:
+			tip.text(text);
+			$('body').append(tip);
+			// calc height:
+			var h = $(".oe-tooltip").height();
+			// update position and show
+			var top = offset.top - h - 20;
+			
+			$(".oe-tooltip").css({"top":top+"px"});
+			
 		},
 		function(){
-			$('body').find( ".oe-tooltip" ).remove();
+			$(".oe-tooltip").remove();
 		}
 	);	
 }

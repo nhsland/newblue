@@ -1470,12 +1470,29 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 
 .oe-tooltip {
   z-index: 60;
-  width: 150px;
-  padding: 5px 10px;
-  background: #374755;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.625rem;
+  width: 200px;
+  padding: 8px 8px 4px 8px;
+  border-bottom: 1px solid cyan;
+  background: #101923;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.6875rem;
+  font-weight: 400;
   line-height: 1.5;
+}
+
+.oe-tooltip:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: transparent;
+  border-top-color: cyan;
+  border-width: 5px;
+  margin-left: -5px;
 }
 
 .oe-popup-wrap {

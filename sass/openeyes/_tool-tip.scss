@@ -3,10 +3,29 @@
 
 .oe-tooltip {
 	z-index:$oe-z-tooltip;
-	width:150px;
-	padding:5px 10px;
-	background:$oe-popup-bg;
-	color:$oe-text-light;
-	@include font-size(10);
+	width:200px;
+	padding:8px 8px 4px 8px;
+	border-bottom:1px solid $oe-text-highlight;
+	background:$oe-bg-highlight;
+	color:$oe-text;
+	@include font-size(11);
+	font-weight: $oe-font-medium;
 	line-height:1.5;
+	
+	// arrown down
+	&:after {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: rgba(0,0,0,0);
+		border-top-color: $oe-text-highlight;
+		border-width: 5px;
+		margin-left: -5px;
+	}
+	
 }

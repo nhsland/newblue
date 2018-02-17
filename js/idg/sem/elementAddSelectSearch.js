@@ -165,7 +165,6 @@ idg.elementAddSelectSearch = function(){
   		
   		// top element popup will disappear behind header, so adjust it's position:
   		if($btn.offset().top < 250 && $btn.offset().top){
-	  		console.log($btn.offset().top);
 	  		var vOffset = $btn.offset().top - 310;
 	  		$popup.css({bottom:vOffset});
 	  	}
