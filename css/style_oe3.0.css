@@ -1721,7 +1721,17 @@ html {
 .openeyes-brand .oe-product-info {
   display: none;
   margin: 60px 0 0 20px;
-  padding: 0 10px 50px 0;
+  padding: 0 10px 10px 0;
+}
+
+.openeyes-brand .oe-product-info .group {
+  margin: 5px 0;
+  padding: 5px 0 10px 0;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+}
+
+.openeyes-brand .oe-product-info .group:last-child {
+  border-bottom: none;
 }
 
 .openeyes-brand .oe-product-info p {
@@ -1729,17 +1739,18 @@ html {
   color: rgba(255, 255, 255, 0.8);
   font-weight: 300;
   line-height: 1.4;
+  margin: 0 0 5px 0;
 }
 
-.openeyes-brand .oe-product-info p.gap {
-  margin: 10px 0 0 0;
+.openeyes-brand .oe-product-info p:last-child {
+  margin: 0 0 0 0;
 }
 
 .openeyes-brand .oe-product-info p a {
   color: #0ff;
 }
 
-.openeyes-brand .oe-product-info p .large-text {
+.openeyes-brand .oe-product-info .large-text {
   font-size: 0.875rem;
 }
 
@@ -1748,6 +1759,13 @@ html {
   font-weight: 200;
   color: rgba(255, 255, 255, 0.8);
   margin: 0 0 10px 0;
+}
+
+.openeyes-brand .oe-product-info h4 {
+  font-size: 0.625rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 5px 0;
 }
 
 .oe-header {

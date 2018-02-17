@@ -20,8 +20,6 @@ idg.tileDataOverflow = function(){
 			var tileOverflow = $('.tile-data-overflow', this)
 			
 			flag.click(function(){
-				var offset = h - 179
-				
 				tileOverflow.animate({
 					scrollTop: tileOverflow.height()
 				}, 1000);
