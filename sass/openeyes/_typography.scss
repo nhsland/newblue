@@ -29,10 +29,20 @@ h1,h2,h3,h4,h5,h6,p {
 	font-weight:400;
 }
 
+// <p> are pretty rare, used in Correspondence
+p {
+	margin-bottom:10px;
+	&:last-child {
+		margin-bottom:0;
+	}
+}
+
 // strong normally looks a bit too heavy
 strong {
 	font-weight:500;
 }
+
+
 
 // used to de-emphasis
 // will work across both PRO & Classic themes
@@ -52,6 +62,16 @@ strong {
 	&.large-text {
 		font-size:115%;
 	}
-	
+}
+
+// only used for letter (correspondence) text
+// may add to this latter but for now it just increases
+// the line height...
+.letter-text {
+	//font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	line-height:1.6;
+	font-size:110%;
+	font-weight:500;
+	padding:5px 10px;
 }
 		
