@@ -3803,7 +3803,7 @@ html {
   border-bottom: none;
 }
 
-.main-event .element table.large td {
+.main-event .element table.large td, .main-event .element table.large-text td {
   font-size: 0.875rem;
 }
 
@@ -4091,6 +4091,26 @@ html {
   position: absolute;
   bottom: 5px;
   right: 0;
+}
+
+.main-event .element .correspondence-letter {
+  background: white;
+  color: black;
+  padding: 10px 20px 40px 20px;
+}
+
+.main-event .element .correspondence-letter .letter-logo {
+  text-align: right;
+  padding: 0 0 10px 0;
+}
+
+.main-event .element .correspondence-letter .from-address {
+  float: right;
+}
+
+.main-event .element .correspondence-letter .letter-date {
+  font-weight: 700;
+  margin: 15px 0 0 0;
 }
 
 .oe-eyedraw-app {

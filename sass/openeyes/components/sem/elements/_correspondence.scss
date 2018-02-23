@@ -1,0 +1,27 @@
+// OE Element - Correspondence Letter
+// Currently only used in the Correspondence Event
+
+.main-event {
+	.element {
+		.correspondence-letter {
+			background:rgb(255,255,255);
+			color:rgb(0,0,0);
+			padding:10px 20px 40px 20px;
+
+			.letter-logo {
+				text-align: right;
+				padding:0 0 10px 0;
+			}
+			
+			.from-address {
+				float: right;
+			}
+			
+			.letter-date {
+				font-weight: 700;
+				margin:15px 0 0 0;
+			}
+		}
+		
+	}
+}
