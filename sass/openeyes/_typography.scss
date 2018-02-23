@@ -62,6 +62,10 @@ strong {
 	&.large-text {
 		font-size:115%;
 	}
+	
+	&.warning {
+		background:$oe-alert-red;
+	}
 }
 
 // only used for letter (correspondence) text

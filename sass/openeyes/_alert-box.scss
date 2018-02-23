@@ -4,11 +4,11 @@
 // Hard to know how many of these will be required in OEv3
 
 .alert-box {
-	padding:10px;
-	margin:5px;
+	padding:4px 10px;
+	margin:1px 2px;
 	
-	@include font-size(12);
-	color:$oe-pro-text;
+	color:$oe-text;
+	@include font-size(13);
 	line-height:1.4;
 	
 	border-radius:3px;
@@ -19,28 +19,37 @@
 	
 	background: $oe-blue-dark;
 	
-	&.alert { 
-		background: $oe-blue-dark; 
-	}
-	
 	&.success, 
 	&.info {
-		background: $oe-btn-green;
+		color: rgb(240,240,240);
+		background: $oe-alert-green;
 	}
 	
-	&.patient,
-	&.issue,
+	&.alert,
+	&.issue {
+		background:$oe-alert-orange;
+	}
+	
 	&.warning,
 	&.error, 
 	&.injection-warning  {
-		color: #fff;
-		background: $oe-warning-orange;
+		color: rgb(240,240,240);
+		background: $oe-alert-red;
 	}
-}
-
-// warning text bg
-.warning-flag-bg {
-	color:$oe-pro-text;
-	background-color:$oe-warning-orange;
-	padding:5px 8px;
+	
+	&.patient {
+		color: rgb(240,240,240);
+		background:$oe-risks-warning;
+	}
+	
+	ul {
+		list-style: disc;
+		list-style-position: inside;
+		li {
+			margin-bottom: 4px; 
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
 }

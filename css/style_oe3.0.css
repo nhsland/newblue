@@ -1319,6 +1319,10 @@ strong {
   font-size: 115%;
 }
 
+.highlighter.warning {
+  background: #7d0000;
+}
+
 .letter-text {
   line-height: 1.6;
   font-size: 110%;
@@ -1471,10 +1475,10 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .alert-box {
-  padding: 10px;
-  margin: 5px;
-  font-size: 0.75rem;
+  padding: 4px 10px;
+  margin: 1px 2px;
   color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8125rem;
   line-height: 1.4;
   border-radius: 3px;
   background: #182535;
@@ -1484,23 +1488,36 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   font-weight: 500;
 }
 
-.alert-box.alert {
-  background: #182535;
-}
-
 .alert-box.success, .alert-box.info {
-  background: #0e9019;
+  color: #f0f0f0;
+  background: #006900;
 }
 
-.alert-box.patient, .alert-box.issue, .alert-box.warning, .alert-box.error, .alert-box.injection-warning {
-  color: #fff;
+.alert-box.alert, .alert-box.issue {
+  background: #8c5a00;
+}
+
+.alert-box.warning, .alert-box.error, .alert-box.injection-warning {
+  color: #f0f0f0;
+  background: #7d0000;
+}
+
+.alert-box.patient {
+  color: #f0f0f0;
   background: #751e00;
 }
 
-.warning-flag-bg {
-  color: rgba(255, 255, 255, 0.8);
-  background-color: #751e00;
-  padding: 5px 8px;
+.alert-box ul {
+  list-style: disc;
+  list-style-position: inside;
+}
+
+.alert-box ul li {
+  margin-bottom: 4px;
+}
+
+.alert-box ul li:last-child {
+  margin-bottom: 0;
 }
 
 .oe-tooltip {
