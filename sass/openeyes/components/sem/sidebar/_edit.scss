@@ -37,8 +37,8 @@
 			}
 			
 			&.error {
-				color:#fff;
-				background-color: $oe-btn-red-hint; // flag error with element
+				color:rgb(255,255,255);
+				background-color: $oe-alert-red; // flag error with element
 			}
 			
 			// add right arrow to the backround:

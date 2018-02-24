@@ -14,6 +14,11 @@ input, textarea, select {
 		color: $oe-pro-user-input-text;
 		background-color: $oe-pro-user-inputs;
 	}	
+	
+	&.error {
+		color:rgb(255,255,255);
+		background-color: $oe-alert-red;
+	}
 }
 
 select {

@@ -5,7 +5,7 @@
 
 .alert-box {
 	padding:4px 10px;
-	margin:1px 2px;
+	margin:3px 2px;
 	
 	color:$oe-text;
 	@include font-size(13);
@@ -19,6 +19,9 @@
 	
 	background: $oe-blue-dark;
 	
+	
+	// these are all the current 'types' that are in 
+	// OE2... in OE3 some may be redundant. 
 	&.success, 
 	&.info {
 		color: rgb(240,240,240);
@@ -37,11 +40,13 @@
 		background: $oe-alert-red;
 	}
 	
+	// used for Risks and Allergies
 	&.patient {
 		color: rgb(240,240,240);
 		background:$oe-risks-warning;
 	}
 	
+	// if there are list of issues or warnings:
 	ul {
 		list-style: disc;
 		list-style-position: inside;

@@ -1144,6 +1144,11 @@ input.pro-theme, textarea.pro-theme, select.pro-theme {
   background-color: #1e2e42;
 }
 
+input.error, textarea.error, select.error {
+  color: white;
+  background-color: #7d0000;
+}
+
 label,
 .label {
   margin: 0 10px 0 0;
@@ -1476,7 +1481,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 
 .alert-box {
   padding: 4px 10px;
-  margin: 1px 2px;
+  margin: 3px 2px;
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.8125rem;
   line-height: 1.4;
@@ -1494,7 +1499,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .alert-box.alert, .alert-box.issue {
-  background: #8c5a00;
+  background: #ac8125;
 }
 
 .alert-box.warning, .alert-box.error, .alert-box.injection-warning {
@@ -3499,8 +3504,8 @@ html {
 }
 
 .sidebar .oe-element-list a.error {
-  color: #fff;
-  background-color: #6b0a0a;
+  color: white;
+  background-color: #7d0000;
 }
 
 .oe-event-quickview {
