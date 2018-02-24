@@ -1,0 +1,30 @@
+// SEM No Events for patient
+// 
+
+.oe-sem-no-events {
+	position:absolute; // need absolute to break out from the grid.
+	top:100px;
+	left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0%);
+	width: 500px; 
+	padding: 20px;
+	text-align: center;
+	
+	h3 {
+		@include font-size(26);
+		font-weight:200;
+		color:$oe-pro-text-light;
+		padding:0 0 10px 0;
+	}
+
+	// uses same dom for "Add Event"
+	.sidebar-header {
+		margin-top:20px;
+		width:100%;
+		
+		button {
+			@include font-size(18);
+		}
+	}
+}

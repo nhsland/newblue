@@ -4135,6 +4135,34 @@ html {
   margin: 15px 0 0 0;
 }
 
+.oe-sem-no-events {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+  width: 500px;
+  padding: 20px;
+  text-align: center;
+}
+
+.oe-sem-no-events h3 {
+  font-size: 1.625rem;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0 0 10px 0;
+}
+
+.oe-sem-no-events .sidebar-header {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.oe-sem-no-events .sidebar-header button {
+  font-size: 1.125rem;
+}
+
 .oe-eyedraw-app {
   position: relative;
   margin: auto;
