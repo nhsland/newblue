@@ -41,7 +41,18 @@
 						border-bottom:none;
 					}
 				}
-				
+			}
+			
+			&.clickable-rows {
+				tr {
+					&:hover, &:active, &:focus {
+						cursor: pointer;
+						background:$oe-btn-blue; // row is a big button
+						td {
+							color:rgb(255,255,255);
+						}
+					}
+				}
 			}
 			
 			// add line to help with reading data

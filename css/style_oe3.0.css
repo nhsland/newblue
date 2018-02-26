@@ -763,12 +763,12 @@ textarea {
   background-position: -152px 0px;
 }
 
-.i-CoPatentConsent {
+.i-CoPatientConsent {
   background-size: 152px 133px;
   background-position: -76px -19px;
 }
 
-.i-CoPatentConsent.large {
+.i-CoPatientConsent.large {
   background-size: 304px 266px;
   background-position: -152px -38px;
 }
@@ -1326,6 +1326,14 @@ strong {
 
 .highlighter.warning {
   background: #7d0000;
+}
+
+.right-color-text {
+  color: #00a000;
+}
+
+.left-color-text {
+  color: #a00000;
 }
 
 .letter-text {
@@ -3826,6 +3834,15 @@ html {
   border-bottom: none;
 }
 
+.main-event .element table.clickable-rows tr:hover, .main-event .element table.clickable-rows tr:active, .main-event .element table.clickable-rows tr:focus {
+  cursor: pointer;
+  background: #074598;
+}
+
+.main-event .element table.clickable-rows tr:hover td, .main-event .element table.clickable-rows tr:active td, .main-event .element table.clickable-rows tr:focus td {
+  color: white;
+}
+
 .main-event .element table tr {
   border-bottom: 1px solid #26303d;
 }
@@ -3987,7 +4004,7 @@ html {
 }
 
 .oe-add-select-search .search-options {
-  width: 320px;
+  width: 290px;
   height: 180px;
 }
 

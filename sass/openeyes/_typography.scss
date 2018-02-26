@@ -42,8 +42,6 @@ strong {
 	font-weight:500;
 }
 
-
-
 // used to de-emphasis
 // will work across both PRO & Classic themes
 .fade {
@@ -68,8 +66,18 @@ strong {
 	}
 }
 
+// text colour for R / L sides
+.right-color-text {
+	color:rgb(0,160,0);
+}
+
+.left-color-text {
+	color:rgb(160,0,0);
+}
+
+
 // only used for letter (correspondence) text
-// may add to this latter but for now it just increases
+// may add to this letter but for now it just increases
 // the line height...
 .letter-text {
 	//font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
