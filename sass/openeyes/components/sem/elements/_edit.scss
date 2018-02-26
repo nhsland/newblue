@@ -13,6 +13,12 @@
 			.data-label {
 				color:$oe-text-light;
 			}
+			
+			// large text if needed, matches Element header size
+			.large-text {
+				@include font-size(14);
+				font-weight:inherit;	
+			}
 		}
 		
 		// Within Elements there may be text that isn't
