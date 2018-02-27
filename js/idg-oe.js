@@ -1696,33 +1696,35 @@ All content in popup is static and the inputs only
 show the popup behaviour
 */
 idg.examElementSearchPopup = function(){
-	var el = document.getElementById('elements-search-results');
+	var el = document.getElementById('js-search-in-event-popup');
 	if(el === null) return; 
 	
-	// inputs
-	$('#js-element-search-right').focus(function(){
-		showPopup();
-	}).focusout(function(){
-		$(this).val('');
-	});
 	
-	$('#js-element-search-left').focus(function(){
+	$('#js-search-in-event').click(function(){
 		showPopup();
-	}).focusout(function(){
-		$(this).val('');
-	});
+		$(this).addClass('selected');
+	})
 
 	
 	// popup
 	function showPopup(){
-		$('#elements-search-results').show();
+		$('#js-search-in-event-popup').show();
 	
-		$('.lvl1').click(function(){
-			$('#elements-search-results').hide();
-		})
 		$('.close-icon-btn').click(function(){
-			$('#elements-search-results').hide();
+			$('#js-search-in-event-popup').hide();
+			$('#js-search-in-event').removeClass('selected');
+			$('#js-search-event-input-right').val('');
+			$('#js-search-event-results').hide();
 		});
+		
+		$('#js-search-event-input-right').keyup(function(){
+			if($(this).val() == 'alph' || $(this).val() == 'alpha'){
+				$('#js-search-event-results').show();
+			} else {
+				$('#js-search-event-results').hide();
+			}
+		});
+		
 	}		
 }
 /*
