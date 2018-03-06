@@ -16,22 +16,9 @@ idg.init = function(){
 	var shortcuts 	= new idg.NavBtnPopup( 'shortcuts', $('#js-nav-shortcuts-btn'), $('#js-nav-shortcuts-subnav') ).useWrapper( $('#js-nav-shortcuts') );
 	var activity 	= new idg.NavBtnPopup( 'activity', $('#js-nav-activity-btn'), $('#js-activity-panel') );
 	
-	// Fix Activity Panel if design allows it to be fixable!
-	if( $('#js-nav-activity-btn').data('fixable') == true ){
-		checkBrowserSize();
-		
-		$( window ).resize(function() {
-			checkBrowserSize();
-		});
-		
-		function checkBrowserSize(){	
-	  		if( $( window ).width() > 1800){ // min width for fixing Activity Panel (allows some resizing)
-				activity.fixed( true );
-			} else {
-				activity.fixed( false );
-			}
-		}  
-	}
+	// Activity List popup
+	idg.activityList(activity);
+	
 	
 	// set up 'hidden' for JS 
 	// hidden in the CSS is helpful in the DOM

@@ -1,6 +1,6 @@
-// OE Activity Panel (RHS)
+ // OE Activity Panel (RHS)
 // On minimum 1280px displays hidden, on 1920px+ displayed right hand side (RHS)
-// 
+// Open and Closed (date searchable) patients
 
 .oe-activity-panel {
 	display:none; // js controlled.
@@ -10,11 +10,12 @@
 	top:$oe-header-height;
 	right:0;
 	height: calc(100vh - 60px); 	// this can't be SASS variable has to be written (must match $oe-header-height)
-	overflow-y:auto;				// otherwise this over-flow doesn't work... Not sure why
+	overflow-y:auto;				// otherwise this over-flow doesn't work.
 	
 	width:$oe-activity-panel-width;
 	background:tint( $oe-pro-bg,10 );
 	padding:10px 0 20px 0;	
+	border-left:2px solid $oe-bg-highlight;
 	
 	.overview {
 		padding:0 10px 5px 15px; 
@@ -31,10 +32,43 @@
 				opacity:0.5;
 			}
 		}
+		
+		// in closed date searches for 'today and search' 
+		.closed-search {
+			position:relative;
+			@include font-size(12);
+			
+			.closed-date {
+				display:inline-block;
+				padding:0 15px 0 0;
+				color: shade( $oe-pro-text,10 );
+				cursor: pointer;
+	
+				&:last-child {
+					padding:0 0 0 0;
+				}
+				
+				&:hover, &:focus, &:active {
+					color:$oe-pro-text-highlight;
+				}
+			}
+			
+			
+			// wrapper for pickmeup js
+			// js adds the dom to this element
+			// CSS then can control it's position
+			#js-pickmeup-datepicker {
+				position:absolute;
+				top:15px;
+				right:0;
+			}
+			
+		}
 	}
 }
 
 
-@import "activity-panel/patient-list";
-@import "activity-panel/msg-timeline";
+@import "activity-panel/activity-list";
+
+// @import "activity-panel/msg-timeline"; // chat / message system 
 

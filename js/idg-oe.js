@@ -16,22 +16,9 @@ idg.init = function(){
 	var shortcuts 	= new idg.NavBtnPopup( 'shortcuts', $('#js-nav-shortcuts-btn'), $('#js-nav-shortcuts-subnav') ).useWrapper( $('#js-nav-shortcuts') );
 	var activity 	= new idg.NavBtnPopup( 'activity', $('#js-nav-activity-btn'), $('#js-activity-panel') );
 	
-	// Fix Activity Panel if design allows it to be fixable!
-	if( $('#js-nav-activity-btn').data('fixable') == true ){
-		checkBrowserSize();
-		
-		$( window ).resize(function() {
-			checkBrowserSize();
-		});
-		
-		function checkBrowserSize(){	
-	  		if( $( window ).width() > 1800){ // min width for fixing Activity Panel (allows some resizing)
-				activity.fixed( true );
-			} else {
-				activity.fixed( false );
-			}
-		}  
-	}
+	// Activity List popup
+	idg.activityList(activity);
+	
 	
 	// set up 'hidden' for JS 
 	// hidden in the CSS is helpful in the DOM
@@ -1718,7 +1705,9 @@ idg.examElementSearchPopup = function(){
 		});
 		
 		$('#js-search-event-input-right').keyup(function(){
-			if($(this).val() == 'alph' || $(this).val() == 'alpha'){
+			var val = $(this).val().toLowerCase();
+			
+			if(val == 'alph' || $(this).val() == 'alpha'){
 				$('#js-search-event-results').show();
 			} else {
 				$('#js-search-event-results').hide();
@@ -1993,6 +1982,59 @@ idg.NavBtnPopup = function(id,$btn,$content){
 
 
 
+/*
+Tile Element - watch for data overflow
+*/
+idg.activityList = function(activity){
+	
+	if( $('#js-nav-activity-btn').length == 0 ) return;
+		
+	// Fix Activity Panel if design allows it to be fixable!
+	if( $('#js-nav-activity-btn').data('fixable') == true ){
+		checkBrowserSize();
+		
+		$( window ).resize(function() {
+			checkBrowserSize();
+		});
+		
+		function checkBrowserSize(){	
+	  		if( $( window ).width() > 1800){ // min width for fixing Activity Panel (allows some resizing)
+				activity.fixed( true );
+			} else {
+				activity.fixed( false );
+			}
+		}  
+	}
+	
+	// js-pickmeup-closed-date
+	
+	// activity datepicker using pickmeup.
+	// CSS controls it's positioning
+	
+	var $pmuWrap = $('#js-pickmeup-datepicker').hide(); 
+	var pmu = pickmeup('#js-pickmeup-datepicker',{
+					format	: 'a d b Y',
+					flat:true,         // position: relative
+					position:'left',
+				});
+
+	// vanilla: 
+	var activityDatePicker = document.getElementById("js-pickmeup-datepicker");
+	
+	activityDatePicker.addEventListener('pickmeup-change', function (e) {
+		$('#js-pickmeup-closed-date').text(e.detail.formatted_date);
+		$pmuWrap.hide();
+	})	
+	
+	$('#js-activity-closed-select').click(function(){
+		$pmuWrap.show();
+	});
+	
+	$('#js-activity-closed-today').click(function(){
+		pmu.set_date(new Date);
+		$('#js-pickmeup-closed-date').text("Today");
+	});
+}
 /**
 Collapse Group
 Uses the DOM and CSS hooks

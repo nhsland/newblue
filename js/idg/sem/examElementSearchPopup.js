@@ -26,7 +26,9 @@ idg.examElementSearchPopup = function(){
 		});
 		
 		$('#js-search-event-input-right').keyup(function(){
-			if($(this).val() == 'alph' || $(this).val() == 'alpha'){
+			var val = $(this).val().toLowerCase();
+			
+			if(val == 'alph' || $(this).val() == 'alpha'){
 				$('#js-search-event-results').show();
 			} else {
 				$('#js-search-event-results').hide();

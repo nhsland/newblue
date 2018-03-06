@@ -1392,6 +1392,7 @@ strong {
 
 .collapse-group {
   position: relative;
+  width: 100%;
 }
 
 .collapse-group .collapse-group-icon {
@@ -1404,6 +1405,25 @@ strong {
 
 .collapse-group .collapse-group-header {
   cursor: pointer;
+}
+
+.collapse-group.highlight {
+  background-color: rgba(30, 46, 66, 0.3);
+  padding: 0 0 3px 0;
+  margin: 0 0 2px 0;
+}
+
+.collapse-group.highlight:hover .collapse-group-header, .collapse-group.highlight:focus .collapse-group-header {
+  color: cyan;
+}
+
+.collapse-group.highlight .collapse-group-header {
+  font-weight: 300;
+  padding: 3px 0 0 8px;
+}
+
+.collapse-group.highlight .collapse-group-icon {
+  right: 5px;
 }
 
 button, .button, input[type="submit"] {
@@ -2180,7 +2200,7 @@ html {
 
 .oe-activity-panel {
   display: none;
-  z-index: 95;
+  z-index: 15;
   position: fixed;
   top: 60px;
   right: 0;
@@ -2189,6 +2209,7 @@ html {
   width: 450px;
   background: #2c3540;
   padding: 10px 0 20px 0;
+  border-left: 2px solid #101923;
 }
 
 .oe-activity-panel .overview {
@@ -2209,127 +2230,88 @@ html {
   opacity: 0.5;
 }
 
-.oe-activity-panel .activity-patient-list {
+.oe-activity-panel .overview .closed-search {
+  position: relative;
+  font-size: 0.75rem;
+}
+
+.oe-activity-panel .overview .closed-search .closed-date {
+  display: inline-block;
+  padding: 0 15px 0 0;
+  color: rgba(219, 219, 219, 0.82);
+  cursor: pointer;
+}
+
+.oe-activity-panel .overview .closed-search .closed-date:last-child {
+  padding: 0 0 0 0;
+}
+
+.oe-activity-panel .overview .closed-search .closed-date:hover, .oe-activity-panel .overview .closed-search .closed-date:focus, .oe-activity-panel .overview .closed-search .closed-date:active {
+  color: cyan;
+}
+
+.oe-activity-panel .overview .closed-search #js-pickmeup-datepicker {
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+
+.oe-activity-panel .activity-list {
+  width: 100%;
   margin: 5px 0 20px 0;
 }
 
-.oe-activity-panel .activity-patient-list li {
-  position: relative;
-  height: 23px;
-  line-height: 23px;
-  padding: 0 5px 0 15px;
-  font-size: 0.8125rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+.oe-activity-panel .activity-list tbody tr {
   background: #202936;
 }
 
-.oe-activity-panel .activity-patient-list li:hover, .oe-activity-panel .activity-patient-list li:focus, .oe-activity-panel .activity-patient-list li:active {
-  color: rgba(255, 255, 255, 0.8);
-  background: #141e2b;
+.oe-activity-panel .activity-list tbody tr:hover, .oe-activity-panel .activity-list tbody tr:active, .oe-activity-panel .activity-list tbody tr:focus {
+  cursor: pointer;
+  background: #074598;
 }
 
-.oe-activity-panel .activity-patient-list li .num {
+.oe-activity-panel .activity-list tbody tr:hover td, .oe-activity-panel .activity-list tbody tr:active td, .oe-activity-panel .activity-list tbody tr:focus td {
+  color: white;
+}
+
+.oe-activity-panel .activity-list td:last-child,
+.oe-activity-panel .activity-list th:last-child {
+  text-align: right;
+}
+
+.oe-activity-panel .activity-list th, .oe-activity-panel .activity-list td {
+  padding: 4px 6px;
+  line-height: 1.4;
+}
+
+.oe-activity-panel .activity-list th {
+  text-align: left;
+  font-size: 0.6875rem;
+}
+
+.oe-activity-panel .activity-list td {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.oe-activity-panel .activity-list .duration {
   display: inline-block;
-  width: 65px;
   font-size: 0.6875rem;
+  padding: 0 18px 0 0;
+  margin: 0 5px 0 0;
 }
 
-.oe-activity-panel .activity-patient-list li .name {
-  font-size: 0.6875rem;
-}
-
-.oe-activity-panel .activity-patient-list li .duration {
-  display: block;
-  position: absolute;
-  right: 55px;
-  bottom: 0;
-  font-size: 0.6875rem;
-  padding: 0 17px 0 0;
-}
-
-.oe-activity-panel .activity-patient-list li .duration.green {
+.oe-activity-panel .activity-list .duration.green {
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"><style>circle{fill:#090;}</style><circle cx="5.5" cy="5.5" r="5.5"/></svg>') right center no-repeat;
 }
 
-.oe-activity-panel .activity-patient-list li .duration.orange {
+.oe-activity-panel .activity-list .duration.orange {
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"><style>circle{fill:#dda01d;}</style><circle cx="5.5" cy="5.5" r="5.5"/></svg>') right center no-repeat;
 }
 
-.oe-activity-panel .activity-patient-list li .duration.red {
+.oe-activity-panel .activity-list .duration.red {
   background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"><style>circle{fill:#f00;}</style><circle cx="5.5" cy="5.5" r="5.5"/></svg>') right center no-repeat;
-}
-
-.oe-activity-panel .activity-patient-list li .remove {
-  position: absolute;
-  top: -2px;
-  right: 4px;
-  font-size: 1.125rem;
-  font-weight: 200;
-  cursor: pointer;
-  opacity: 0.5;
-}
-
-.oe-activity-panel .activity-patient-list li .remove:hover {
-  opacity: 1;
-}
-
-.oe-activity-panel .activity-patient-list li .event-type {
-  position: absolute;
-  top: 2px;
-  right: 23px;
-}
-
-.oe-activity-panel .msg-timeline {
-  margin: 10px 0;
-}
-
-.oe-activity-panel .msg-timeline li {
-  position: relative;
-  margin: 0 0 8px 0;
-  padding: 20px 0 8px 0;
-  border-bottom: 1px solid #26303d;
-}
-
-.oe-activity-panel .msg-timeline .timeline {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #26303d;
-  height: 22px;
-  line-height: 22px;
-  padding: 0 5px 0 5px;
-  font-size: 0.6875rem;
-  color: #0cc;
-}
-
-.oe-activity-panel .msg-timeline .timeline:after {
-  position: absolute;
-  left: 100%;
-  top: 0;
-  content: " ";
-  height: 0;
-  width: 0;
-  border-top: 11px solid transparent;
-  border-bottom: 11px solid transparent;
-  border-left: 11px solid #26303d;
-}
-
-.oe-activity-panel .msg-timeline .sender {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 300;
-}
-
-.oe-activity-panel .msg-timeline p {
-  font-size: 0.75rem;
-  color: rgba(185, 185, 185, 0.84);
-  font-weight: 300;
-  line-height: 1.4;
-  margin: 0 40px 0 80px;
 }
 
 .oe-patient-popup {
@@ -3522,7 +3504,7 @@ html {
 
 .oe-event-quickview {
   display: none;
-  z-index: 95;
+  z-index: 15;
   position: fixed;
   top: 60px;
   left: 200px;

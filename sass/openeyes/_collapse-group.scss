@@ -4,6 +4,7 @@
 
 .collapse-group {
 	position:relative;
+	width:100%;
 	
 	// container for plus/minus icon
 	.collapse-group-icon {
@@ -17,6 +18,34 @@
 	.collapse-group-header {		// header is clickable, style relatively
 		cursor: pointer;
 	} 		
-	.collapse-group-content {}		// content area to expand/collapse
+	
+	// .collapse-group-content {}	// content area to expand/collapse
+	
+	// used in CVI, disorders element
+	// actually, I would prefer to re-structure but
+	// as this might not be possible...
+	
+	&.highlight {
+		background-color: rgba($oe-user-inputs,0.3);
+		padding:0 0 3px 0;
+		margin:0 0 2px 0;
+		
+		&:hover, &:focus {
+			.collapse-group-header {
+				color:$oe-text-highlight;
+			}
+		}
+		
+		.collapse-group-header {
+			font-weight: $oe-font-light;
+			padding:3px 0 0 8px;	
+		}
+		.collapse-group-icon {
+			right:5px;
+		}
+		
+	}
+	
+	
 	
 }
