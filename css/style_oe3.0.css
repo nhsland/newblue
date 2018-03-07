@@ -1527,7 +1527,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .alert-box.alert, .alert-box.issue {
-  background: #ac8125;
+  background: #b45a00;
 }
 
 .alert-box.warning, .alert-box.error, .alert-box.injection-warning {
