@@ -3511,7 +3511,7 @@ html {
   height: calc(100vh - 60px);
   overflow: hidden;
   background: #374755;
-  width: 555px;
+  width: 572px;
   background-position: right -3px top -8px;
   background-repeat: no-repeat;
   background-size: 45px;
@@ -3554,7 +3554,7 @@ html {
 }
 
 .oe-event-quickview .event-quickview .quickview-screenshots img {
-  width: 520px;
+  width: 537px;
   height: auto;
 }
 
