@@ -64,6 +64,11 @@ strong {
 	&.warning {
 		background:$oe-alert-red;
 	}
+	
+	&.orange {
+		background:$oe-alert-orange;
+		color:$oe-text;
+	}
 }
 
 // text colour for R / L sides

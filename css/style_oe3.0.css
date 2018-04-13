@@ -1098,6 +1098,11 @@ ul {
   list-style-position: inside;
 }
 
+ul li {
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
 ul.inline-list li {
   display: inline-block;
   margin: 0 15px 0 0;
@@ -1124,11 +1129,6 @@ ul.large-text li {
 
 ol {
   list-style-position: inside;
-}
-
-li {
-  padding: 0;
-  margin: 0;
 }
 
 input, textarea, select {
@@ -1326,6 +1326,11 @@ strong {
 
 .highlighter.warning {
   background: #7d0000;
+}
+
+.highlighter.orange {
+  background: #b45a00;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .right-color-text {
@@ -3669,6 +3674,30 @@ html {
   width: 49.5%;
   padding-left: 10px;
   padding-right: 25px;
+}
+
+.main-event .element .element-eyes .right-eye.deactivate,
+.main-event .element .element-eyes .left-eye.deactivate {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.main-event .element .element-eyes .right-eye.deactivate::after,
+.main-event .element .element-eyes .left-eye.deactivate::after {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: top left;
+  background-repeat: repeat;
+  background-size: 20px;
+  background-image: url("../svg/in-css/patterns/pattern1.svg");
 }
 
 .main-event .element .field-row {
