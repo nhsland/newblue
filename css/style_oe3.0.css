@@ -3192,6 +3192,10 @@ html {
   background: #283442 url("../svg/in-css/face.svg") 50.2% 0 no-repeat;
 }
 
+.event-header.no-face {
+  background: #283442;
+}
+
 @media only screen and (min-width: 1440px) {
   .event-header {
     background-position-x: 54.8%;
