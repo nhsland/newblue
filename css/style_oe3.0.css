@@ -528,6 +528,14 @@ textarea {
   background-image: url("../svg/in-css/audit-trail.svg");
 }
 
+.oe-i.download {
+  background-image: url("../svg/in-css/download.svg");
+}
+
+.oe-i.download.pro-theme {
+  background-image: url("../svg/in-css/download.svg");
+}
+
 .oe-i.ed-reset {
   background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
 }
@@ -3702,6 +3710,7 @@ html {
   background-repeat: repeat;
   background-size: 20px;
   background-image: url("../svg/in-css/patterns/pattern1.svg");
+  overflow: auto;
 }
 
 .main-event .element .field-row {
