@@ -16,6 +16,11 @@
 	.oe-element-list {
 		margin:10px 1px 0 0; 
 		
+		// <li>
+		.element {
+			margin:0 0 0 0;
+		}
+		
 		// Elements <a>
 		a {
 			position:relative;

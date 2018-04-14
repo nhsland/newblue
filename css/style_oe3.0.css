@@ -259,6 +259,10 @@ textarea {
   opacity: 1;
 }
 
+.oe-i.no-hover {
+  opacity: 1;
+}
+
 .oe-i.selected {
   opacity: 1;
   cursor: default;
@@ -1108,7 +1112,7 @@ ul {
 
 ul li {
   padding: 0;
-  margin: 0 0 10px 0;
+  margin: 0 0 5px 0;
 }
 
 ul.inline-list li {
@@ -3486,6 +3490,10 @@ html {
   margin: 10px 1px 0 0;
 }
 
+.sidebar .oe-element-list .element {
+  margin: 0 0 0 0;
+}
+
 .sidebar .oe-element-list a {
   position: relative;
   display: block;
@@ -4249,6 +4257,20 @@ html {
   border-radius: 5px;
 }
 
+.main-event .element .eyedraw.ed-v2 {
+  padding-top: 20px;
+  background: none;
+}
+
+.main-event .element .eyedraw.ed-v2 .eyedraw-v2-launch-edit {
+  margin: 10px 0 0 0;
+}
+
+.main-event .element .eyedraw.ed-v2 .eyedraw-data {
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .main-event .element .eyedraw .eyedraw-canvas {
   white-space: nowrap;
 }
@@ -4405,7 +4427,7 @@ html {
 
 .oe-eyedraw-app .ed-close-save {
   position: absolute;
-  bottom: 7px;
+  top: -25px;
   right: 7px;
   z-index: 1;
 }
@@ -4671,6 +4693,94 @@ html {
   left: 112px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+
+.oe-eyedraw-app {
+  height: 500px;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container {
+  position: relative;
+  padding: 40px 0 0 0;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-drawing-controls {
+  position: absolute;
+  top: 5px;
+  left: 240px;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar {
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  width: 220px;
+  height: 300px;
+  overflow-y: auto;
+  background: #edf3f8;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar .ed-button {
+  display: block;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar .ed-button:hover, .oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar .ed-button:active, .oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar .ed-button:focus {
+  background: white;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-popup {
+  width: 230px;
+  padding: 10px;
+  margin: 0 0 0 10px;
+  background: #cfdbe5;
+  height: auto;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-info {
+  font-size: 0.625rem;
+  color: #6d7379;
+  margin: 0 0 20px 0;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-popup-toolbar,
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-drawing-toolbar {
+  margin: 0 0 10px 0;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-popup-toolbar .label,
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-drawing-toolbar .label {
+  display: none;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-popup-toolbar li,
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-drawing-toolbar li {
+  display: inline-block;
+  margin: 0 15px 0 0;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-controls div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 5px 0 5px 0;
+  padding: 5px 0 0 0;
+  border-top: 1px dotted #b9c4cd;
 }
 
 /* Lightening viewer */
