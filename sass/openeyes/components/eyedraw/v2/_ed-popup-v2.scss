@@ -8,13 +8,13 @@
 
 .oe-eyedraw-app {	
 
-	height:500px;
+	// height:500px;
 	
 	.eyedraw-v2 {	
 		.ed-editor-container {
 			
 			position:relative; 
-			padding:40px 0 0 0; // allow for the .ed-drawing-controls
+			padding:40px 0 0 10px; // allow for the .ed-drawing-controls
 			
 			
 			// this for the rewind and zoom icons and select a doodle drop down.
@@ -31,12 +31,17 @@
 			
 			.ed-toolbar {
 				position:absolute; 
-				top:40px; 
+				top:0; 
 				right:10px;
-				width:220px; 
-				height:300px; // match canvas
-				overflow-y: auto;
+				width:240px; 
+				height:100%;
 				background:tint( $oe-ed-bg, 50);
+				
+				.ed-toolbar-panel {
+					height:100%; // match canvas
+					overflow-y: auto;
+				}
+				
 				
 				.ed-button {
 					display:block;
@@ -50,11 +55,10 @@
 			.ed-doodle-popup {
 				width:230px; 
 				padding:10px;
-				margin:0 0 0 10px;
+				margin:0 0 0 0;
 				background:shade( $oe-ed-bg, 5);
-				height:auto;
+				min-height:440px;
 			}
-			
 			
 			.ed-doodle-info {
 				@include font-size(10);

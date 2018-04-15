@@ -13,7 +13,7 @@ $ed-top-panel-height:32px;
 	width: $oe-eyedraw-app-width;
 	min-height:200px;
 	// border-radius:$ed-padding; 
-	padding:$ed-padding $ed-padding 40px $ed-padding; // allow for app buttons (save etc)
+	padding:$ed-padding; // allow for app buttons (save etc)
 	background:$oe-ed-bg;
 	@include font-size(12);
 

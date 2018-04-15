@@ -4373,7 +4373,7 @@ html {
   margin: auto;
   width: 1260px;
   min-height: 200px;
-  padding: 7px 7px 40px 7px;
+  padding: 7px;
   background: #dae6f1;
   font-size: 0.75rem;
 }
@@ -4707,13 +4707,9 @@ html {
           transform: rotate(90deg);
 }
 
-.oe-eyedraw-app {
-  height: 500px;
-}
-
 .oe-eyedraw-app .eyedraw-v2 .ed-editor-container {
   position: relative;
-  padding: 40px 0 0 0;
+  padding: 40px 0 0 10px;
 }
 
 .oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-drawing-controls {
@@ -4734,12 +4730,16 @@ html {
 
 .oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar {
   position: absolute;
-  top: 40px;
+  top: 0;
   right: 10px;
-  width: 220px;
-  height: 300px;
-  overflow-y: auto;
+  width: 240px;
+  height: 100%;
   background: #edf3f8;
+}
+
+.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar .ed-toolbar-panel {
+  height: 100%;
+  overflow-y: auto;
 }
 
 .oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar .ed-button {
@@ -4753,9 +4753,9 @@ html {
 .oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-popup {
   width: 230px;
   padding: 10px;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 0;
   background: #cfdbe5;
-  height: auto;
+  min-height: 440px;
 }
 
 .oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-info {
