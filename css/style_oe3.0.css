@@ -1112,7 +1112,7 @@ ul {
 
 ul li {
   padding: 0;
-  margin: 0 0 5px 0;
+  margin: 0;
 }
 
 ul.inline-list li {
@@ -2048,17 +2048,29 @@ html {
 .oe-user {
   position: absolute;
   top: 0;
-  left: 750px;
+  right: 230px;
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
+@media only screen and (min-width: 1440px) {
+  .oe-user {
+    right: 280px;
+  }
+}
+
 .oe-user .oe-user-profile-context {
   margin: auto 0 auto 5px;
+  width: 290px;
   color: rgba(255, 255, 255, 0.8);
-  width: 320px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .oe-user .oe-user-profile-context {
+    width: auto;
+  }
 }
 
 .oe-user .oe-user-profile-context li {

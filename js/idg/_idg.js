@@ -46,7 +46,7 @@ idg.init = function(){
 	// Eyedraw App
 	idg.overlayPopup( 	'.js-demo-open-eyedraw-app-v2',  	// 2x + icons in V2 demo
 						'eyedraw-edit-app-v2.php', 			// Demo content
-						'#js-demo-eyedraw-app-close' ).test();	// Eyedraw App X icon					
+						'#js-demo-eyedraw-app-close' );	// Eyedraw App X icon					
 						
 	// Eyedraw App for Cataract in OpNote
 	idg.overlayPopup( 	'.js-demo-open-cataract',  	// 2x + icons in Examination Edit

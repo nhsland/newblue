@@ -5,15 +5,27 @@
 .oe-user {
 	position:absolute;
 	top:0; 
-	left:750px; // pos by eye
+	right:230px; // pos by eye
 	height:$oe-header-height;
 	display:flex;
 	
+	@include media($oe-extended-browser-size){
+		right:280px; 
+	}
+	
+	// on large displays shift the user group over the right (but allow for icons worst case 240px)
+	
 	.oe-user-profile-context {
-		margin:auto 0 auto 5px;
-		color:$oe-pro-text;
-		width:320px;
+		margin:auto 0 auto 5px; // flex centering
+		// at minimum screen res this must be restriced to stop over-lap with icons 
+		width:290px; 
 		
+		@include media($oe-extended-browser-size){
+			width:auto; 
+		}
+	
+		color:$oe-pro-text;
+			
 		li {  
 			position: relative;
 			@include font-size(10); 
