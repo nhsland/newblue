@@ -6143,6 +6143,7 @@ table.oe-clinic-list td.center {
 .oe-theatre-diaries .diaries-search table.search-options td {
   padding: 5px 0;
   font-size: 0.8125rem;
+  font-weight: 400;
 }
 
 .oe-theatre-diaries .diaries-search table.search-options td:last-child {
