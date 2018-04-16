@@ -10,6 +10,14 @@
 		display:block;
 		margin: 0 0 1px 0;
 		
+		// v2 subspecialty list.
+		// in v3 this has been replaced with the Icon Grid.
+		&.subspecialty {
+			a {
+				padding:0 0 0 4px; 
+			} 
+		}
+		
 		a {
 			display:block;
 			position:relative;

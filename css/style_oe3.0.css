@@ -3306,6 +3306,10 @@ html {
   margin: 0 0 1px 0;
 }
 
+.sidebar .event.subspecialty a {
+  padding: 0 0 0 4px;
+}
+
 .sidebar .event a {
   display: block;
   position: relative;
