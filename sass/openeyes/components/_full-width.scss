@@ -1,5 +1,6 @@
 // OE Full width layout
-// use for Clinic area, etc
+// A generic layout system (based on the Home page)
+// use for Clinic area, Threatre Diaries, etc
 
 .oe-full-header {
 	position:relative;
@@ -16,11 +17,34 @@
 		&.wordcaps {
 			text-transform: capitalize;
 		}
+	}
+	
+	// create 'tab' buttons (like Event Header)
+	@include buttons {
+		vertical-align: top; // overwrite default 'bottom' to fix alignment issues
+		height:$oe-event-header-height;
+		padding:0 16px;
 		
-		
+		// icon buttons in header
+		&.icon {
+			padding:0 0; // remove default padding
+			.oe-i {
+				padding:0 20px; // pad out icon instead (to make clickable)
+			}
+		}
 	}
 }
 
 .oe-full-content {
+	
+	.oe-full-side-panel {
+		width: 300px;
+		margin:10px 30px 20px 20px;
+	}
+	
+	.oe-full-main {
+		width: calc(100% - 350px);
+	}
+	
 	
 }

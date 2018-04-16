@@ -2666,6 +2666,29 @@ html {
   text-transform: capitalize;
 }
 
+.oe-full-header button, .oe-full-header .button, .oe-full-header input[type="submit"] {
+  vertical-align: top;
+  height: 38px;
+  padding: 0 16px;
+}
+
+.oe-full-header button.icon, .oe-full-header .button.icon, .oe-full-header input[type="submit"].icon {
+  padding: 0 0;
+}
+
+.oe-full-header button.icon .oe-i, .oe-full-header .button.icon .oe-i, .oe-full-header input[type="submit"].icon .oe-i {
+  padding: 0 20px;
+}
+
+.oe-full-content .oe-full-side-panel {
+  width: 300px;
+  margin: 10px 30px 20px 20px;
+}
+
+.oe-full-content .oe-full-main {
+  width: calc(100% - 350px);
+}
+
 /* Home */
 .oe-login {
   display: -webkit-box;
@@ -6083,6 +6106,63 @@ table.oe-clinic-list td.center {
   padding: 8px 2px;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.875rem;
+}
+
+/* Theatre Diaries */
+.oe-theatre-diaries {
+  background: #141e2b;
+}
+
+.oe-theatre-diaries .diaries-search {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.oe-theatre-diaries .diaries-search .intro {
+  font-size: 0.75rem;
+}
+
+.oe-theatre-diaries .diaries-search h3 {
+  margin: 20px 0 15px 0;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.oe-theatre-diaries .diaries-search table.search-options {
+  width: 100%;
+}
+
+.oe-theatre-diaries .diaries-search table.search-options tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.oe-theatre-diaries .diaries-search table.search-options tr:last-child {
+  border-bottom: none;
+}
+
+.oe-theatre-diaries .diaries-search table.search-options td {
+  padding: 5px 0;
+  font-size: 0.8125rem;
+}
+
+.oe-theatre-diaries .diaries-search table.search-options td:last-child {
+  text-align: right;
+}
+
+.oe-theatre-diaries .diaries-search table.search-options td select {
+  width: 100%;
+}
+
+.oe-theatre-diaries .diaries-search table.search-options td input[type="checkbox"] {
+  margin: 8px;
+}
+
+.oe-theatre-diaries .diaries-search .search-date-filters {
+  font-size: 0.75rem;
+}
+
+.oe-theatre-diaries .diaries-search .search-date-filters .group {
+  margin: 10px 0;
 }
 
 /* ------------------------ */
