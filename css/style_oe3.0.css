@@ -540,6 +540,22 @@ textarea {
   background-image: url("../svg/in-css/download.svg");
 }
 
+.oe-i.asterisk {
+  background-image: url("../svg/in-css/asterisk.svg");
+}
+
+.oe-i.asterisk.pro-theme {
+  background-image: url("../svg/in-css/asterisk.svg");
+}
+
+.oe-i.pencil {
+  background-image: url("../svg/in-css/pencil.svg");
+}
+
+.oe-i.pencil.pro-theme {
+  background-image: url("../svg/in-css/pencil.svg");
+}
+
 .oe-i.ed-reset {
   background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
 }
