@@ -219,6 +219,10 @@ textarea {
   display: inline-block;
 }
 
+.highlighted-error {
+  border: 1px solid #7d0000;
+}
+
 .oe-i {
   display: inline-block;
   vertical-align: middle;
@@ -1954,6 +1958,7 @@ html {
 .oe-patient .hospital-number {
   padding-left: 0;
   border-left: none;
+  font-size: 0.8125rem;
 }
 
 .oe-patient .patient-quicklook,
@@ -3844,6 +3849,11 @@ html {
   color: #69939e;
   font-weight: 300;
   padding: 0 0 0 10px;
+}
+
+.main-event .element-header .element-title.error {
+  border-left: 5px solid #7d0000;
+  padding: 0 0 0 5px;
 }
 
 @media only screen and (min-width: 1440px) {

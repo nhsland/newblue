@@ -15,6 +15,11 @@
 			color:$oe-element-headers;
 			font-weight:$oe-font-light;
 			padding:0 0 0 10px;
+			
+			&.error {
+				border-left: 5px solid $oe-alert-red;
+				padding:0 0 0 5px;
+			}
 		}
 	}
 	

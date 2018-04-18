@@ -49,6 +49,7 @@
 	.hospital-number {
 		padding-left:0;
 		border-left:none;
+		@include font-size(13);
 	}
 	
 	
