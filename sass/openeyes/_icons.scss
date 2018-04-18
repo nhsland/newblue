@@ -122,7 +122,8 @@
 	&.download 			{ @include oe3-icons('download'); }
 	&.asterisk			{ @include oe3-icons('asterisk'); }
 	&.pencil			{ @include oe3-icons('pencil'); }
-		
+	&.exclamation		{ @include oe3-icons('exclamation'); }
+
 	
 	// Eyedraw icons 
 	// these will not require theming as they are only used 

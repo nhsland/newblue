@@ -560,6 +560,14 @@ textarea {
   background-image: url("../svg/in-css/pencil.svg");
 }
 
+.oe-i.exclamation {
+  background-image: url("../svg/in-css/exclamation.svg");
+}
+
+.oe-i.exclamation.pro-theme {
+  background-image: url("../svg/in-css/exclamation.svg");
+}
+
 .oe-i.ed-reset {
   background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
 }
