@@ -12,8 +12,7 @@ $oe-text: 				rgb(10,10,10);
 $oe-text-light:			rgb(80,80,100);
 $oe-text-highlight:		rgb(0,0,200);
 $oe-text-active:		rgb(0,0,255);
-	
-$oe-bg-highlight: 		rgb(230,230,230); // used as hover highlight 
+
 
 // classic, light background / dark text
 // called 'blue' as they overwrite the default PRO theme vars
@@ -62,6 +61,11 @@ $oe-alert-green: 		rgb(0,155,0);
 $oe-alert-red:			rgb(205,0,0);
 $oe-alert-orange: 		rgb(255,232,175);
 
+$oe-bg-highlight: 		rgb(230,230,230); // used as hover highlight 
+// colors 
+$oe-bg-hint-green:		rgb(180,200,180);
+$oe-bg-hint-red:		rgb(230,180,180);
+	
 
 
 // specific customisation of elements

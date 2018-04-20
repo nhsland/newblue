@@ -1,0 +1,61 @@
+// OE Theatre Diaries
+
+.oe-theatre-diaries {
+
+	.diaries-search {
+		color:$oe-text;
+		.intro {
+			@include font-size(12);
+		}
+		
+
+		h3 {
+			margin:20px 0 15px 0;
+			@include font-size(16);
+			font-weight: $oe-font-light;
+			color: $oe-text-light;
+		}
+		
+		// <table>
+		table.search-options {
+			width:100%;
+	
+			// add line to help with reading data
+			tr {
+				border-bottom:1px solid rgba($oe-text-light, 0.15 );
+				&:last-child { 
+					border-bottom: none;
+				}
+			}
+			
+			
+			td {
+				padding:5px 0;  
+				@include font-size(13);
+				font-weight: $oe-font-medium;
+				
+				&:last-child {
+					text-align: right;
+				}
+				
+				select {
+					width:100%;
+				}
+				
+				input[type="checkbox"] {
+					margin:8px;
+				}
+			}
+		} 
+		
+		.search-date-filters {
+			@include font-size(12);
+			
+			.group {
+				margin:10px 0;
+			}
+		}
+		
+	}
+}
+

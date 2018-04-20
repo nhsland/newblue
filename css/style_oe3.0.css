@@ -368,6 +368,22 @@ textarea {
   background-image: url("../svg/in-css/direction-left.svg");
 }
 
+.oe-i.direction-up {
+  background-image: url("../svg/in-css/direction-up.svg");
+}
+
+.oe-i.direction-up.pro-theme {
+  background-image: url("../svg/in-css/direction-up.svg");
+}
+
+.oe-i.direction-down {
+  background-image: url("../svg/in-css/direction-down.svg");
+}
+
+.oe-i.direction-down.pro-theme {
+  background-image: url("../svg/in-css/direction-down.svg");
+}
+
 .oe-i.child-arrow {
   background-image: url("../svg/in-css/child-arrow.svg");
 }
@@ -494,6 +510,14 @@ textarea {
 
 .oe-i.collapse.pro-theme {
   background-image: url("../svg/in-css/collapse.svg");
+}
+
+.oe-i.downup {
+  background-image: url("../svg/in-css/downup.svg");
+}
+
+.oe-i.downup.pro-theme {
+  background-image: url("../svg/in-css/downup.svg");
 }
 
 .oe-i.history {
@@ -1494,6 +1518,11 @@ button, .button, input[type="submit"] {
   height: 24px;
 }
 
+button.large, .button.large, input[type="submit"].large {
+  padding: 0 12px;
+  height: 32px;
+}
+
 button.pro-theme, .button.pro-theme, input[type="submit"].pro-theme {
   color: rgba(255, 255, 255, 0.5);
   background: #1e2e42;
@@ -1511,6 +1540,15 @@ button.selected, .button.selected, input[type="submit"].selected {
   color: cyan;
   font-weight: 400;
   background: #172332;
+}
+
+button.selected.inactive, .button.selected.inactive, input[type="submit"].selected.inactive {
+  background: none;
+}
+
+button.selected.inactive:hover, button.selected.inactive:focus, button.selected.inactive:active, .button.selected.inactive:hover, .button.selected.inactive:focus, .button.selected.inactive:active, input[type="submit"].selected.inactive:hover, input[type="submit"].selected.inactive:focus, input[type="submit"].selected.inactive:active {
+  color: cyan;
+  background: none;
 }
 
 button:hover, button:focus, button:active, .button:hover, .button:focus, .button:active, input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active {
@@ -6198,6 +6236,125 @@ table.oe-clinic-list td.center {
 
 .oe-theatre-diaries .diaries-search .search-date-filters .group {
   margin: 10px 0;
+}
+
+.oe-theatre-diaries .theatres-list h2 {
+  font-size: 1.0625rem;
+  font-weight: 300;
+  margin: 20px 0 15px 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group {
+  position: relative;
+  background: #101923;
+  padding: 10px 5px 10px 10px;
+  margin: 0 0 20px 0;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-booking-heading {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: cyan;
+  padding: 0 120px 10px 0;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-booking-heading strong {
+  display: inline-block;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-booking-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.75rem;
+  margin: 0 0 10px 0;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tr {
+  border-bottom: 1px solid #26303d;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tr:last-child {
+  border-bottom: none;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings th {
+  text-align: left;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  padding: 10px 5px 10px 0;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tbody td {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  padding: 10px 3px 10px 0;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tbody td.confirm {
+  text-align: center;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tbody td input[type=text] {
+  width: 90%;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td {
+  font-size: 0.9375rem;
+  font-weight: 300;
+  padding: 8px;
+  background: #0e1720;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td .session_timeleft {
+  float: left;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td .specialists {
+  float: right;
+  font-size: 0.75rem;
+  padding: 0 20px 0 0;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td .specialists div {
+  margin: 0 0 2px 0;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td.available {
+  background: #123c1f;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td.session-unavailable {
+  background: #561313;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions .session-comments {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  vertical-align: bottom;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions .session-comments .oe-i {
+  vertical-align: bottom;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions .session-options {
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
+.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions .session-options label {
+  display: block;
+  margin: 0 0 4px 0;
 }
 
 /* ------------------------ */

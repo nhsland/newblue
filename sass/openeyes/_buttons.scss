@@ -26,6 +26,11 @@
 	padding:0 8px;	// increase hit area
 	height:24px; 	// matches inputs heights
 	
+	&.large {
+		padding: 0 12px; // tab is 16px  
+		height: 32px;    // tab is 38px
+	}
+	
 	// PRO theme 
 	// For individual styling of butons when in Classic theme	
 	&.pro-theme {
@@ -46,6 +51,14 @@
 		color: $oe-text-highlight; 
 		font-weight: $oe-font-medium;
 		background: $oe-btn-selected;
+		
+		&.inactive {
+			background: none;
+			&:hover, &:focus, &:active {
+				color: $oe-text-highlight;
+				background: none;
+			}
+		}
 	}
 	
 	&:hover, &:focus, &:active {

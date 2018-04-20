@@ -1,0 +1,26 @@
+// OE Theatre Diaries
+
+.oe-theatre-diaries {
+	
+	.theatres-list {
+			
+		// Theatre diary schedule group
+		.schedule-group {
+			
+			.theatre-sessions {
+				
+				.session-comments {
+					@include font-size(13);
+					font-weight: $oe-font-medium;
+					vertical-align: bottom;
+					
+					.oe-i {
+						vertical-align: bottom;
+					}
+				}
+			}
+		}
+	}
+}
+
+

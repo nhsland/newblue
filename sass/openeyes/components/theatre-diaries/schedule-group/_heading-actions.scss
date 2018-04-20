@@ -1,0 +1,37 @@
+// OE Theatre Diaries
+
+.oe-theatre-diaries {
+	
+	.theatres-list {
+		
+		// Theatre diary schedule group
+		.schedule-group {
+			
+			// this is one long string
+			// e.g. "18 Nov  2013 - Monday,13:30 - 17:00 for Medical Retinal ... "
+			.theatre-booking-heading {
+				@include font-size(15);
+				font-weight:$oe-font-light;
+				color:$oe-text-highlight;
+				padding:0 120px 10px 0; // allow for View Edit buttons
+				
+				// strong tags
+				strong {
+					display:inline-block; // typo trick
+					@include font-size(15);
+					font-weight:500;
+					line-height: 1.4;
+				}
+			}
+			
+			// View & Edit buttons
+			.theatre-booking-actions {
+				position:absolute;
+				top:0;
+				right:0;
+			}
+			
+		}	
+	}
+}
+

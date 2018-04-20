@@ -58,10 +58,12 @@
 		opacity:1; 
 	}
 	
+	// still clickable but i need it more obvious
 	&.no-hover {
 		opacity:1;
 	}
 	
+	// selected state
 	&.selected {
 		opacity:1;
 		cursor:default; 
@@ -98,6 +100,8 @@
 	&.arrow-left-bold 	{ @include oe3-icons('arrow-left-bold'); }
 	&.direction-right 	{ @include oe3-icons('direction-right'); }
 	&.direction-left 	{ @include oe3-icons('direction-left'); }
+	&.direction-up 		{ @include oe3-icons('direction-up'); }
+	&.direction-down 	{ @include oe3-icons('direction-down'); }
 	&.child-arrow 		{ @include oe3-icons('child-arrow'); }
 	&.menu 				{ @include oe3-icons('menu'); }
 	&.trash 			{ @include oe3-icons('trash'); }
@@ -114,6 +118,7 @@
 	&.d-slash 			{ @include oe3-icons('double-slash'); }
 	&.expand 			{ @include oe3-icons('expand'); }
 	&.collapse 			{ @include oe3-icons('collapse'); }
+	&.downup 			{ @include oe3-icons('downup'); }
 	&.history 			{ @include oe3-icons('history'); }
 	&.tick 				{ @include oe3-icons('tick'); }
 	&.triangle 			{ @include oe3-icons('warning'); }  // can't call it 'warning'

@@ -12,9 +12,7 @@ $html-bg:				$html-pro-bg;
 $oe-text: 				$oe-pro-text;
 $oe-text-light: 		$oe-pro-text-light;
 $oe-text-highlight:		$oe-pro-text-highlight; // also for selected
-$oe-text-active:		$oe-pro-text-active; 
-
-$oe-bg-highlight: 		$oe-pro-bg-highlight; // used as hover highlight 
+$oe-text-active:		$oe-pro-text-active;  
 
 $oe-blue:				$oe-pro-blue;
 $oe-blue-dark: 			$oe-pro-blue-dark;
@@ -58,6 +56,13 @@ $oe-risks-warning:		rgb(117,30,0);
 $oe-alert-green: 		rgb(0,105,0);
 $oe-alert-red:			rgb(125,0,0);
 $oe-alert-orange: 		rgb(180,90,0);
+
+$oe-bg-highlight: 		$oe-pro-bg-highlight; // used as hover highlight
+// colors 
+$oe-bg-hint-green:		rgb(18,60,31);
+$oe-bg-hint-red:		rgb(86,19,19);
+
+
 
 // specific customisation of elements
 // impossible to always find a clever colour
