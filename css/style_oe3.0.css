@@ -592,6 +592,22 @@ textarea {
   background-image: url("../svg/in-css/exclamation.svg");
 }
 
+.oe-i.male {
+  background-image: url("../svg/in-css/male.svg");
+}
+
+.oe-i.male.pro-theme {
+  background-image: url("../svg/in-css/male.svg");
+}
+
+.oe-i.female {
+  background-image: url("../svg/in-css/female.svg");
+}
+
+.oe-i.female.pro-theme {
+  background-image: url("../svg/in-css/female.svg");
+}
+
 .oe-i.ed-reset {
   background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
 }
@@ -6297,7 +6313,7 @@ table.oe-clinic-list td.center {
 .oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tbody td {
   font-size: 0.8125rem;
   font-weight: 400;
-  padding: 10px 3px 10px 0;
+  padding: 10px 5px 10px 0;
 }
 
 .oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tbody td.confirm {
