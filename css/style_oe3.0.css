@@ -2321,7 +2321,7 @@ html {
   width: 450px;
   background: #2c3540;
   padding: 10px 0 20px 0;
-  border-left: 2px solid #101923;
+  border-left: 2px solid rgba(16, 25, 35, 0.5);
 }
 
 .oe-activity-panel .overview {
@@ -6357,6 +6357,7 @@ table.oe-clinic-list td.center {
   font-size: 0.8125rem;
   font-weight: 400;
   vertical-align: bottom;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions .session-comments .oe-i {

@@ -15,7 +15,7 @@
 	width:$oe-activity-panel-width;
 	background:tint( $oe-pro-bg,10 );
 	padding:10px 0 20px 0;	
-	border-left:2px solid $oe-bg-highlight;
+	border-left:2px solid rgba($oe-bg-highlight,0.5);
 	
 	.overview {
 		padding:0 10px 5px 15px; 
