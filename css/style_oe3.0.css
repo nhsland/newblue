@@ -2730,7 +2730,7 @@ html {
   text-align: right;
 }
 
-/* Full width layout */
+/* Generic Layouts */
 .oe-full-header {
   position: relative;
   background: #283442;
@@ -2766,6 +2766,19 @@ html {
 .oe-full-content .oe-full-side-panel {
   width: 300px;
   margin: 10px 30px 20px 20px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.oe-full-content .oe-full-side-panel p {
+  font-size: 0.75rem;
+  margin: 5px 0 10px 0;
+}
+
+.oe-full-content .oe-full-side-panel h3 {
+  margin: 15px 0 10px 0;
+  font-size: 0.9375rem;
+  font-weight: 300;
+  color: #626d7b;
 }
 
 .oe-full-content .oe-full-main {
@@ -2965,7 +2978,7 @@ html {
 }
 
 .home-messages .message-actions .search-messages h3 {
-  font-size: 0.875rem;
+  font-size: 0.9375rem;
   font-weight: 300;
   color: #626d7b;
   padding: 10px 0 5px 0;
@@ -6199,21 +6212,6 @@ table.oe-clinic-list td.center {
 /* Theatre Diaries */
 .oe-theatre-diaries {
   background: #141e2b;
-}
-
-.oe-theatre-diaries .diaries-search {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.oe-theatre-diaries .diaries-search .intro {
-  font-size: 0.75rem;
-}
-
-.oe-theatre-diaries .diaries-search h3 {
-  margin: 20px 0 15px 0;
-  font-size: 1rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
 }
 
 .oe-theatre-diaries .diaries-search table.search-options {

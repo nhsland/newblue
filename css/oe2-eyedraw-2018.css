@@ -128,6 +128,8 @@
   z-index: 19;
   left: 0px;
   display:none;
+  margin:0 0 0 0;
+  
 }
 /* line 29, ../sass/components/toolbar/_label.scss */
 .ed-button .left {
@@ -350,7 +352,7 @@ span.squiggle {
 }
 /* line 78, ../sass/components/_doodle-popup.scss */
 .ed-doodle-controls label {
-  color: #477792;
+  color: #777;
   float: left;
   font-size: 12px;
   margin: 0 6px 0 0;

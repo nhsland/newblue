@@ -1,0 +1,38 @@
+// note: sizing controlled by oe-grid.scss
+
+// oe-full-content
+// full width under header.
+// can be sub-divided into: left side panel / right main area
+.oe-full-content {
+	
+	.oe-full-side-panel {
+		width: 300px;
+		margin:10px 30px 20px 20px;
+		
+		// standard typographic elements
+		// hard to know, how far to standardise this... 
+		
+		color:$oe-text;
+		
+		p {
+			@include font-size(12);
+			margin:5px 0 10px 0;
+		}
+	
+		h3 {
+			margin:15px 0 10px 0;
+			@include font-size(15);
+			font-weight: 300;
+			color:$oe-blue-light;;
+		}
+
+		
+		
+	}
+	
+	.oe-full-main {
+		width: calc(100% - 350px);
+	}
+	
+	
+}

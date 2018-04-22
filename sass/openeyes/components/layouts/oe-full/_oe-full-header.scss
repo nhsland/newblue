@@ -1,7 +1,7 @@
-// OE Full width layout
-// A generic layout system (based on the Home page)
-// use for Clinic area, Threatre Diaries, etc
+// note: sizing controlled by oe-grid.scss
 
+// oe-full-header 
+// top strip?: Page name and buttons (like Print)
 .oe-full-header {
 	position:relative;
 	background:$oe-grey;
@@ -33,18 +33,4 @@
 			}
 		}
 	}
-}
-
-.oe-full-content {
-	
-	.oe-full-side-panel {
-		width: 300px;
-		margin:10px 30px 20px 20px;
-	}
-	
-	.oe-full-main {
-		width: calc(100% - 350px);
-	}
-	
-	
 }

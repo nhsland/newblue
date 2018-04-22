@@ -1,0 +1,15 @@
+// OE Full Width
+// A generic layout system (based on the Home page)
+// use for Clinic area, Threatre Diaries, etc
+// it also has standard typographic styling of headers
+
+// note: sizing controlled by oe-grid.scss (allows for Activity Panel)
+
+// oe-full-header 
+// top strip?: Page name and buttons (like Print)
+@import "oe-full/oe-full-header";
+
+// oe-full-content
+// full width under header.
+// can be sub-divided into: left side panel / right main area
+@import "oe-full/oe-full-content";

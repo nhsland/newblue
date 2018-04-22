@@ -26,8 +26,8 @@
 @import "components/activity-panel";    	// site wide RHS panel. Patients & Messages
 @import "components/patient-popups";    	// Patient: Quicklook & Demographics (summary)
 @import "components/popups";    			// Popups: GUI for popups
-/* Full width layout */
-@import "components/full-width";			// Full width layout for clinic list, etc
+/* Generic Layouts */
+@import "components/layouts/oe-full";		// Layouts. Full-width with ooption to sub-divide (Clinic, Theatre Diaries, Worklist )
 /* Home */
 @import "components/login";					// Login
 @import "components/home";					// Homepage
@@ -48,3 +48,5 @@
 @import "components/analytics";				// Analytics
 /* Theatre Diaries */
 @import "components/theatre-diaries";		// Theatre Diaries
+
+
