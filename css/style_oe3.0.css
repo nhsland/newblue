@@ -2781,6 +2781,10 @@ html {
   color: #626d7b;
 }
 
+.oe-full-content .oe-full-side-panel .v-pad {
+  margin: 10px 0;
+}
+
 .oe-full-content .oe-full-main {
   width: calc(100% - 350px);
 }
@@ -6068,6 +6072,10 @@ table.oe-clinic-list td.center {
   color: #626d7b;
 }
 
+.analytics-options .v-pad {
+  margin: 10px 0;
+}
+
 .analytics-options .specialty {
   font-size: 1.25rem;
   font-weight: 300;
@@ -6248,12 +6256,8 @@ table.oe-clinic-list td.center {
   font-size: 0.75rem;
 }
 
-.oe-theatre-diaries .diaries-search .search-date-filters .group {
-  margin: 10px 0;
-}
-
 .oe-theatre-diaries .theatres-list h2 {
-  font-size: 1.0625rem;
+  font-size: 1.1875rem;
   font-weight: 300;
   margin: 20px 0 15px 0;
   color: rgba(255, 255, 255, 0.5);
