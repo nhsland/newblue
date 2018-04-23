@@ -4,11 +4,29 @@
 // table standard layout
 
 .oe-worklists {
+	background:$oe-blue-dark2; // theme changable
 	
 	.worklist-summary {
+		margin:20px 0 0 0;
+		padding:0 20px 0 0;
+		
 		h2 {
-			
+			@include font-size(19);
+			font-weight:$oe-font-light; 
+			color:$oe-text-highlight;
 		}
+		// 1-8 of 8
+		.summary {
+			@include font-size(14);
+			font-weight:$oe-font-medium;
+			color:$oe-text-light;
+		}	
+	}
+	
+	// extend standard default table
+	table.standard {
+		margin:10px 0 40px 0;
+		
 	}
 	
 }

@@ -1238,6 +1238,7 @@ table.standard tbody tr:last-child {
 
 table.standard tbody td {
   padding: 5px 10px 5px 0;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -6422,162 +6423,29 @@ table.oe-clinic-list td.center {
 }
 
 /* Worklists */
-.oe-theatre-diaries {
+.oe-worklists {
   background: #141e2b;
 }
 
-.oe-theatre-diaries .diaries-search table.search-options {
-  width: 100%;
-}
-
-.oe-theatre-diaries .diaries-search table.search-options tr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.oe-theatre-diaries .diaries-search table.search-options tr:last-child {
-  border-bottom: none;
-}
-
-.oe-theatre-diaries .diaries-search table.search-options td {
-  padding: 5px 0;
-  font-size: 0.8125rem;
-  font-weight: 400;
-}
-
-.oe-theatre-diaries .diaries-search table.search-options td:last-child {
-  text-align: right;
-}
-
-.oe-theatre-diaries .diaries-search table.search-options td select {
-  width: 100%;
-}
-
-.oe-theatre-diaries .diaries-search table.search-options td input[type="checkbox"] {
-  margin: 8px;
-}
-
-.oe-theatre-diaries .diaries-search .search-date-filters {
-  font-size: 0.75rem;
-}
-
-.oe-theatre-diaries .theatres-list h2 {
-  font-size: 1.1875rem;
-  font-weight: 300;
-  margin: 20px 0 15px 0;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group {
-  position: relative;
-  background: #101923;
-  padding: 10px 5px 10px 10px;
-  margin: 0 0 20px 0;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-booking-heading {
-  font-size: 0.9375rem;
-  font-weight: 300;
-  color: cyan;
-  padding: 0 120px 10px 0;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-booking-heading strong {
-  display: inline-block;
-  font-size: 0.9375rem;
-  font-weight: 500;
-  line-height: 1.4;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-booking-actions {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings {
-  width: 100%;
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.75rem;
-  margin: 0 0 10px 0;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tr {
-  border-bottom: 1px solid #26303d;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tr:last-child {
-  border-bottom: none;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings th {
-  text-align: left;
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: 300;
-  padding: 10px 5px 10px 0;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tbody td {
-  font-size: 0.8125rem;
-  font-weight: 400;
-  padding: 10px 5px 10px 0;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tbody td.confirm {
-  text-align: center;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tbody td input[type=text] {
-  width: 90%;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td {
-  font-size: 0.9375rem;
-  font-weight: 300;
-  padding: 8px;
-  background: #0e1720;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td .session_timeleft {
-  float: left;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td .specialists {
-  float: right;
-  font-size: 0.75rem;
+.oe-worklists .worklist-summary {
+  margin: 20px 0 0 0;
   padding: 0 20px 0 0;
 }
 
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td .specialists div {
-  margin: 0 0 2px 0;
+.oe-worklists .worklist-summary h2 {
+  font-size: 1.1875rem;
+  font-weight: 300;
+  color: cyan;
 }
 
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td.available {
-  background: #123c1f;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions table.theatre-bookings tfoot td.session-unavailable {
-  background: #561313;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions .session-comments {
-  font-size: 0.8125rem;
+.oe-worklists .worklist-summary .summary {
+  font-size: 0.875rem;
   font-weight: 400;
-  vertical-align: bottom;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions .session-comments .oe-i {
-  vertical-align: bottom;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions .session-options {
-  font-size: 0.8125rem;
-  font-weight: 400;
-}
-
-.oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions .session-options label {
-  display: block;
-  margin: 0 0 4px 0;
+.oe-worklists table.standard {
+  margin: 10px 0 40px 0;
 }
 
 /* ------------------------ */
