@@ -31,6 +31,21 @@
 			margin:10px 0;
 		}
 
+		// lists
+		ul {
+			margin:20px 0;
+			li {
+				@include font-size(13);
+				color:$oe-text-light;
+				padding:0 0 8px 0;
+				
+				.count {
+					@include font-size(12);
+					padding:0 0 0 5px;
+				}
+			}
+		}
+		
 		
 		
 	}

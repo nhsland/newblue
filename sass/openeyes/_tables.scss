@@ -1,0 +1,40 @@
+// OE tables
+// Tables are used a lot. 
+// Here I have a basic 'standard' OE style.
+// this can be added as a class and extend or removed as needed
+
+// Standard styling
+table.standard {
+	width:100%;
+	@include font-size(14);
+	
+	margin:20px 0 10px 0;
+	&:first-child {
+		margin:0 0 10px 0;
+	}
+	
+	thead {
+		th {
+			text-align: left;  // overide default 'middle'
+			color:$oe-text-light;
+			font-weight: $oe-font-light;
+			padding:0 10px 10px 0;
+		}
+	}
+	
+	tbody {
+		
+		tr {
+			border-bottom:1px solid $oe-line;
+			&:last-child { 
+				border-bottom: none;
+			}
+		}
+		
+		td {
+			padding:5px 10px 5px 0; 
+			color:$oe-text; 
+		}
+	}
+}
+

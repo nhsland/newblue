@@ -9,6 +9,7 @@
 @import "icons"; 							// oe icons 
 @import "icons-events"; 					// oe icons (Events only) 
 @import "lists"; 							// ul and ol defaults.
+@import "tables"; 							// standard table class.
 @import "inputs"; 							// labels, inputs, selects and textares
 @import "typography"; 						// defaults and general typographics.
 @import "flex"; 							// flex layout
@@ -48,5 +49,7 @@
 @import "components/analytics";				// Analytics
 /* Theatre Diaries */
 @import "components/theatre-diaries";		// Theatre Diaries
+/* Worklists */
+@import "components/theatre-diaries";		// Worklist
 
 

@@ -29,7 +29,8 @@ h1,h2,h3,h4,h5,h6,p {
 	font-weight:400;
 }
 
-// <p> are pretty rare, used in Correspondence
+// <p> are pretty rare, but styled in
+// (used in Correspondence)
 p {
 	margin-bottom:10px;
 	&:last-child {
@@ -43,7 +44,7 @@ strong {
 }
 
 // used to de-emphasis
-// will work across both PRO & Classic themes
+// this will work across both PRO & Classic themes
 .fade {
 	opacity:0.7; 
 }
