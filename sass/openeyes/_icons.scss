@@ -81,9 +81,9 @@
 	}	
 	
 	@mixin oe3-icons($svg) {
-		background-image: url( svg-path-theme( $svg ) );
+		background-image: url( svg-icon-path-theme( $svg ) );
 		&.pro-theme {
-			background-image: url( svg-path( $svg ) );
+			background-image: url( svg-icon-path( $svg ) );
 		}
 	}
 	
@@ -135,12 +135,12 @@
 	// Eyedraw icons 
 	// these will not require theming as they are only used 
 	// in the Eyedraw app
-	&.ed-reset			{ background-image: url( "../svg/in-css/eyedraw/ed-reset.svg" ); }
-	&.ed-zoom			{ background-image: url( "../svg/in-css/eyedraw/ed-zoom.svg" ); }
-	&.ed-lock			{ background-image: url( "../svg/in-css/eyedraw/ed-lock.svg" ); }
-	&.ed-trash			{ background-image: url( "../svg/in-css/eyedraw/ed-trash.svg" ); }
-	&.ed-move-back  	{ background-image: url( "../svg/in-css/eyedraw/ed-backward.svg" ); }
-	&.ed-move-forward 	{ background-image: url( "../svg/in-css/eyedraw/ed-forward.svg" ); }
+	&.ed-reset			{ background-image: url( svg-path('eyedraw/ed-reset') ); }
+	&.ed-zoom			{ background-image: url( svg-path('eyedraw/ed-zoom') ); }
+	&.ed-lock			{ background-image: url( svg-path('eyedraw/ed-lock') ); }
+	&.ed-trash			{ background-image: url( svg-path('eyedraw/ed-trash') ); }
+	&.ed-move-back  	{ background-image: url( svg-path('eyedraw/ed-backward') ); }
+	&.ed-move-forward 	{ background-image: url( svg-path('eyedraw/ed-forward') ); }
 	
 	
 	// R = Green; L = Red; B = Green/Red 
@@ -152,26 +152,26 @@
 		
 		// Right Eye
 		&.R {
-			background-image: url( svg-path('lat-R') );
+			background-image: url( svg-icon-path('_laterality/lat-R') );
 		}
 		// Left Eye
 		&.L {
-			background-image: url( svg-path('lat-L') );
+			background-image: url( svg-icon-path('_laterality/lat-L') );
 		}
 		
 		// N/A - grey dot 
 		&.NA {
-			background-image: url( svg-path('lat-NA') );
+			background-image: url( svg-icon-path('_laterality/lat-NA') );
 		}
 		
 		// Both Eyes (Bi-lateral) --- Both is currently unused in OE3
-		&.B {
-			background-image: url( svg-path('lat-B') );	
-			&.pos-shift {
-				position:relative;
-				left:7px;
-			}
-		}
+		//&.B {
+		//	background-image: url( svg-path('lat-B') );	
+		//	&.pos-shift {
+		//		position:relative;
+		//		left:7px;
+		//	}
+		//}
 	}
 }
 

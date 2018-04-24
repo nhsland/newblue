@@ -18,6 +18,10 @@ OE UI v3.0 CSS has been developed to completely replace all existing previous CS
 * Gulp is used to create the PNG sprite sheets and scss positioning for icons.
 * SVGs are used in a few diffent ways, see source.
 
+## Theme naming
+
+* Originally conceived as Pro / Classic these are now Dark / Light. 
+
 
 ## Styleguide
 

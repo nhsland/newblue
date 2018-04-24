@@ -51,11 +51,12 @@ $oe-input-placeholder: 	shade( $oe-user-input-text,20 );
 
 // flags
 $oe-highlighter: 		rgba(255,230,172,0.7);
-$oe-risks-warning:		rgb(117,30,0);
+$oe-risks-warning:		rgb(107,20,0);
 
 $oe-alert-green: 		rgb(0,105,0);
-$oe-alert-red:			rgb(125,0,0);
+$oe-alert-red:			rgb(155,0,0);
 $oe-alert-orange: 		rgb(180,90,0);
+$oe-alert-grey: 		rgb(120,120,130);  
 
 $oe-bg-highlight: 		$oe-pro-bg-highlight; // used as hover highlight
 // colors 
@@ -71,8 +72,13 @@ $oe-element-headers:   rgb(105,147,158); // rgb(139,195,203); // element default
 
 
 // ... different SVGs for 'pro' & 'classic' theme
+@function svg-icon-path-theme($svg){
+	@return "../svg/in-css/icons/" + $svg + ".svg";
+}
+
+// ... add theme suffix
 @function svg-path-theme($svg){
-	@return "../svg/in-css/" + $svg + ".svg";
+	@return "../svg/in-css/" + $svg + ".pro.svg";
 }
 
 

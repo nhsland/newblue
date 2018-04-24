@@ -72,27 +72,12 @@ table.oe-clinic-list {
 			opacity:0.5;
 		}
 		
-		// time only td
-		&.time-flag {
-			background-position:left top;
-			background-repeat: repeat-y;
-			background-size:7px;
-
-			&.late {
-				background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 5"><style> rect{ fill:#f90; }</style><rect x="0" y="0" width="7" height="5"/></svg>');
-			}
-			
-			&.dna {
-				background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 7 5"><style> rect{ fill:rgb(160,40,10); }</style><rect x="0" y="0" width="7" height="5"/></svg>');
-			}
-		}
-		
-		// applied to duration td when completed
+		// applied to duration td when completed - tick!
 		&.complete {
 			background-position:right 10px center;
 			background-repeat: no-repeat;
 			background-size:19px;
-			background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"><style> path{ fill:#090; }</style><path d="M28.3,1.88l.7,1a54.4,54.4,0,0,0-9.49,9.89,68,68,0,0,0-8,12.48l-1.47,1a25.12,25.12,0,0,0-2.49,1.89,31.23,31.23,0,0,0-1.14-3.07l-.56-1.3a20,20,0,0,0-2.22-4.13,5,5,0,0,0-2.3-1.77q2.15-2.27,3.95-2.27,1.53,0,3.41,4.16l.62,1.4a57.89,57.89,0,0,1,8.65-11A48.45,48.45,0,0,1,28.3,1.88Z"/></svg>');
+			background-image:url('../svg/in-css/ui/tick-green.svg');
 		}
 		
 		

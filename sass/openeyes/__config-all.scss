@@ -69,9 +69,8 @@ $oe-ed-bg:				rgb(218,230,241);
 $oe-ed-panels: 			shade( $oe-ed-bg,10 ); 
 
 
-// SVG paths - general UI SVGs
+// SVG paths - general UI
 @function svg-path($svg){
 	@return "../svg/in-css/" + $svg + ".svg";
 }
-
 

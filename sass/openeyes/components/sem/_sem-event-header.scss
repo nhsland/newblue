@@ -5,7 +5,7 @@
 // Event header for all buttons above Event
 .event-header {
 	position:relative;
-	background:$oe-grey url( svg-path-theme('face') ) 50.2% 0 no-repeat;
+	background:$oe-grey url( svg-path-theme('ui/face') ) 50.2% 0 no-repeat;
 	
 	&.no-face {
 		background:$oe-grey; 	
