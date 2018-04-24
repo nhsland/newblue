@@ -17,6 +17,10 @@
 		&.wordcaps {
 			text-transform: capitalize;
 		}
+		
+		b, strong {
+			font-weight:400;
+		}
 	}
 	
 	// create 'tab' buttons (like Event Header)

@@ -2780,6 +2780,10 @@ html {
   text-transform: capitalize;
 }
 
+.oe-full-header .title b, .oe-full-header .title strong {
+  font-weight: 400;
+}
+
 .oe-full-header button, .oe-full-header .button, .oe-full-header input[type="submit"] {
   vertical-align: top;
   height: 38px;
@@ -6446,6 +6450,26 @@ table.oe-clinic-list td.center {
 
 .oe-worklists table.standard {
   margin: 10px 0 40px 0;
+}
+
+/* User Profile */
+.oe-user-profile {
+  background: #141e2b;
+}
+
+.oe-user-profile h2 {
+  font-size: 1.1875rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 20px 0 10px 0;
+}
+
+.oe-user-profile table.standard input, .oe-user-profile table.standard select {
+  width: 75%;
+}
+
+.oe-user-profile .profile-actions {
+  margin: 40px 0 0 0;
 }
 
 /* ------------------------ */

@@ -1,0 +1,29 @@
+// OE User Profile
+// extends the basic:
+// layout oe-full
+// table standard layout
+
+.oe-user-profile {
+	background:$oe-blue-dark2; // theme changable
+	
+	h2 {
+		@include font-size(19);
+		font-weight:$oe-font-light; 
+		color:$oe-text;
+		margin:20px 0 10px 0;
+	}
+	
+	table.standard {
+		input, select {
+			width:75%;
+		}
+	}
+	
+	// buttons to save / update
+	.profile-actions {
+		margin:40px 0 0 0;
+	}
+	
+}
+
+
