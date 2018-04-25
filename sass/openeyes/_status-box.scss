@@ -1,0 +1,60 @@
+// OE STATUS boxes
+// 
+// Based on Alerts. 
+// This is a generic solution for both
+// Risks and Gradings (traffic lights)
+
+.status-box {
+	padding:4px 10px;
+	margin:3px 2px;
+	
+	// default
+	color:$oe-text;
+	
+	@include font-size(13);
+	line-height:1.4;
+	
+	border:4px solid $oe-text-highlight;
+	border-radius:3px;
+	
+	strong {
+		font-weight:500;
+	}
+	
+	
+	&.green {
+		border-color: $oe-status-green;
+		.status-text {
+			color: shade( $oe-status-green,10 );
+		}
+	}
+	
+	&.red {
+		border-color: $oe-status-red;
+		.status-text {
+			color: shade( $oe-status-red,10 );
+		}
+	}
+	
+	&.amber {
+		border-color: $oe-status-amber;
+		.status-text {
+			color: shade( $oe-status-amber,10 );
+		}
+	}
+	
+	
+	
+	// if there are list of issues or warnings:
+	ul {
+		list-style: disc;
+		list-style-position: inside;
+		margin:5px 0;
+		li {
+			margin-bottom: 3px; 
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
