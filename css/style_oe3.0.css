@@ -1625,8 +1625,8 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .alert-box.info {
-  color: rgba(255, 255, 255, 0.8);
-  background: #787882;
+  color: #e6e6e6;
+  background: #505050;
 }
 
 .alert-box.success {
