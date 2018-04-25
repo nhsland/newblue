@@ -152,16 +152,16 @@
 		
 		// Right Eye
 		&.R {
-			background-image: url( svg-icon-path('_laterality/lat-R') );
+			background-image: url( svg-path('icons/_laterality/lat-R') );
 		}
 		// Left Eye
 		&.L {
-			background-image: url( svg-icon-path('_laterality/lat-L') );
+			background-image: url( svg-path('icons/_laterality/lat-L') );
 		}
 		
 		// N/A - grey dot 
 		&.NA {
-			background-image: url( svg-icon-path('_laterality/lat-NA') );
+			background-image: url( svg-path('icons/_laterality/lat-NA') );
 		}
 		
 		// Both Eyes (Bi-lateral) --- Both is currently unused in OE3

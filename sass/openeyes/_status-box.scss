@@ -5,9 +5,6 @@
 // Risks and Gradings (traffic lights)
 
 .status-box {
-	padding:4px 10px;
-	margin:3px 2px;
-	
 	// default
 	color:$oe-text;
 	
@@ -21,8 +18,16 @@
 		font-weight:500;
 	}
 	
+	margin:3px 2px;
+	padding:4px 10px 4px 30px; // allow for Triangle SVG
+	
+	background-position: 4px 3px;
+	background-repeat: no-repeat;
+	background-size: 17px;
+	background-image: url('../svg/in-css/ui/triangle-blue.svg');
 	
 	&.green {
+		background-image: url('../svg/in-css/ui/triangle-green.svg');
 		border-color: $oe-status-green;
 		.status-text {
 			color: shade( $oe-status-green,10 );
@@ -30,6 +35,7 @@
 	}
 	
 	&.red {
+		background-image: url('../svg/in-css/ui/triangle-red.svg');
 		border-color: $oe-status-red;
 		.status-text {
 			color: shade( $oe-status-red,10 );
@@ -37,6 +43,7 @@
 	}
 	
 	&.amber {
+		background-image: url('../svg/in-css/ui/triangle-amber.svg');
 		border-color: $oe-status-amber;
 		.status-text {
 			color: shade( $oe-status-amber,10 );
