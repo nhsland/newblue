@@ -2517,6 +2517,7 @@ html {
   }
 }
 
+.oe-patient-popup .oe-popup-overflow,
 .oe-patient-popup .popup-overflow {
   max-height: 415px;
   overflow: auto;
@@ -3909,6 +3910,11 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.main-event .element .element-eyes .eye-icon-header {
+  text-align: center;
+  margin: 0 0 8px 0;
 }
 
 .main-event .element .element-eyes .right-eye {

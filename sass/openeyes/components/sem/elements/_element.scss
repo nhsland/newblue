@@ -102,6 +102,12 @@
 			display:flex;
 			align-items:flex-start;			
 			justify-content:space-between;
+			
+			// wrapper for Eye Lat icons
+			.eye-icon-header {
+				text-align: center;
+				margin:0 0 8px 0;
+			}
 
 			.right-eye {
 				width:50%; 

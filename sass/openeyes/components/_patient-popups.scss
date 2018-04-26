@@ -23,6 +23,7 @@
 	}
 	
 	// overflow wrappers alerts and summary-data
+	.oe-popup-overflow, 
 	.popup-overflow {	
 		max-height: 415px; // this restricts the popup's vertical hieight (for lowest res. monitors)
 		overflow: auto;
