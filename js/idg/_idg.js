@@ -76,6 +76,9 @@ idg.init = function(){
 	// Exam Edit Right Left Search popup demo
 	idg.examElementSearchPopup();
 	
+	// Duplicate Element demo
+	// idg.duplicateElement();
+	
 	// Expand Collapse View lists
 	idg.expandElementList();
 	

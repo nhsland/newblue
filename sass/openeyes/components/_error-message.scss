@@ -1,0 +1,47 @@
+// OE Login
+// (uses oe-home grid layout)
+
+.oe-error-message {
+	display:flex;
+	height:100%;
+
+	.message {
+		margin:auto; // flex centering
+		
+		position: relative;
+		top:-50px; // offset visual vertical balance 
+		
+		width:500px;
+		
+		color:$oe-text;
+		
+		h1 {
+			margin:0 0 40px 0;
+			@include font-size(58);
+			text-align: center;
+			font-weight:200;
+			color:$oe-text-light;
+		}
+		
+		h2,h3 {
+			margin:15px 0 10px 0;
+			@include font-size(22);
+			font-weight:$oe-font-light;
+			color:$oe-text-light;
+		}
+		
+		ul {
+			margin:5px 0 20px 0;
+			list-style: circle inside;
+			li {
+				margin:10px 0;
+			}
+		}
+		
+		p {
+			@include font-size(14);
+			margin:10px 0;	
+		}
+		
+	}
+}

@@ -1166,7 +1166,6 @@ textarea {
 
 ul {
   list-style: none;
-  list-style-position: inside;
 }
 
 ul li {
@@ -2927,6 +2926,50 @@ html {
   font-size: 0.75rem;
 }
 
+.oe-error-message {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.oe-error-message .message {
+  margin: auto;
+  position: relative;
+  top: -50px;
+  width: 500px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.oe-error-message .message h1 {
+  margin: 0 0 40px 0;
+  font-size: 3.625rem;
+  text-align: center;
+  font-weight: 200;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.oe-error-message .message h2, .oe-error-message .message h3 {
+  margin: 15px 0 10px 0;
+  font-size: 1.375rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.oe-error-message .message ul {
+  margin: 5px 0 20px 0;
+  list-style: circle inside;
+}
+
+.oe-error-message .message ul li {
+  margin: 10px 0;
+}
+
+.oe-error-message .message p {
+  font-size: 0.875rem;
+  margin: 10px 0;
+}
+
 .oe-home {
   background: #141e2b;
 }
@@ -3882,6 +3925,12 @@ html {
   .main-event .element.eye-divider {
     background-position-x: 54.5%;
   }
+}
+
+.main-event .element .element-both-eyes {
+  background: #141e2b;
+  margin: 10px 0;
+  padding: 10px;
 }
 
 .main-event .element:hover, .main-event .element:focus {

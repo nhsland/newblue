@@ -71,6 +71,15 @@
 			}
 		}
 		
+		// Element that requires data to cover both Eyes, 
+		// then splits... requires a slightly different DOM
+		// because of the Flex layout in element-eyes
+		.element-both-eyes {
+			background: $oe-blue-dark2;
+			margin:10px 0;
+			padding:10px;
+		}
+		
 		// provide desktop user with element header highlight
 		// highlight element focus
 		// stop the re-sizing effect of adding a border:
