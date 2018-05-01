@@ -21,6 +21,16 @@
 				font-weight: 700;
 				margin:15px 0 0 0;
 			}
+			
+		}
+		
+		// make text area look like a letter (even in Pro mode)
+		.correspondence-letter-text {
+			//font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+			line-height:1.6;
+			@include font-size(17);
+			font-weight:400;
+			padding:15px 10px;
 		}
 		
 	}

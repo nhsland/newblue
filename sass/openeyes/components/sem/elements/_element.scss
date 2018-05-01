@@ -159,19 +159,17 @@
 		}
 		
 		
-		// Field rows: simply provides padding between 'rows' of data
+		// Rows: simply provides padding between 'rows' of data
 		// used in existing DOM so keeping for v3
+		// data-row and field-row are inter-changable in v3
+		.data-row, 
 		.field-row  {
-			padding-bottom: 8px;
-			&:last-child {
-				padding-bottom: 0;
+			padding-top: 8px;
+			&:first-child {
+				padding-top: 0;
 			}
 		}
-		
-		// If last data row needs top spacing (i.e. comments textarea)
-		.field-row-pad-top {
-			padding-top: 8px;
-		}			
+				
 	}
 }
 

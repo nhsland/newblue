@@ -1424,7 +1424,7 @@ strong {
   color: #a00000;
 }
 
-.letter-text {
+.increase-text {
   line-height: 1.6;
   font-size: 110%;
   font-weight: 500;
@@ -1660,6 +1660,10 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 
 .alert-box ul li:last-child {
   margin-bottom: 0;
+}
+
+.oe-popup .status-box {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .status-box {
@@ -4003,16 +4007,14 @@ html {
   overflow: auto;
 }
 
+.main-event .element .data-row,
 .main-event .element .field-row {
-  padding-bottom: 8px;
-}
-
-.main-event .element .field-row:last-child {
-  padding-bottom: 0;
-}
-
-.main-event .element .field-row-pad-top {
   padding-top: 8px;
+}
+
+.main-event .element .data-row:first-child,
+.main-event .element .field-row:first-child {
+  padding-top: 0;
 }
 
 .main-event .element .element-fields.full-width {
@@ -4124,6 +4126,14 @@ html {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
+}
+
+.main-event .element table.pad-top {
+  margin-top: 20px;
+}
+
+.main-event .element table.pad-bottom {
+  margin-bottom: 20px;
 }
 
 .main-event .element table td:last-child,
@@ -4613,6 +4623,13 @@ html {
 .main-event .element .correspondence-letter .letter-date {
   font-weight: 700;
   margin: 15px 0 0 0;
+}
+
+.main-event .element .correspondence-letter-text {
+  line-height: 1.6;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  padding: 15px 10px;
 }
 
 .oe-sem-no-events {
