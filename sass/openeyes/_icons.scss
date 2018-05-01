@@ -83,7 +83,7 @@
 	@mixin oe3-icons($svg) {
 		background-image: url( svg-icon-path-theme( $svg ) );
 		&.pro-theme {
-			background-image: url( svg-icon-path( $svg ) );
+			background-image: url( svg-path( "icons/" + $svg ) );
 		}
 	}
 	

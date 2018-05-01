@@ -69,7 +69,15 @@
 				&:last-child { 
 					border-bottom: none;
 				}
+				
+				&.valign-top {
+					td {
+						vertical-align: top;
+					}
+				}
 			}
+			
+			
 			
 			// decided to add a more descriptive class "large-text"
 			&.large, &.large-text {

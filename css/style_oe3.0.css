@@ -289,7 +289,7 @@ textarea {
 }
 
 .oe-i.plus.pro-theme {
-  background-image: url(svg-icon-path("plus"));
+  background-image: url("../svg/in-css/icons/plus.svg");
 }
 
 .oe-i.plus-circle {
@@ -297,7 +297,7 @@ textarea {
 }
 
 .oe-i.plus-circle.pro-theme {
-  background-image: url(svg-icon-path("plus-circle"));
+  background-image: url("../svg/in-css/icons/plus-circle.svg");
 }
 
 .oe-i.minus {
@@ -305,7 +305,7 @@ textarea {
 }
 
 .oe-i.minus.pro-theme {
-  background-image: url(svg-icon-path("minus"));
+  background-image: url("../svg/in-css/icons/minus.svg");
 }
 
 .oe-i.arrow-down {
@@ -313,7 +313,7 @@ textarea {
 }
 
 .oe-i.arrow-down.pro-theme {
-  background-image: url(svg-icon-path("arrow-down"));
+  background-image: url("../svg/in-css/icons/arrow-down.svg");
 }
 
 .oe-i.arrow-up {
@@ -321,7 +321,7 @@ textarea {
 }
 
 .oe-i.arrow-up.pro-theme {
-  background-image: url(svg-icon-path("arrow-up"));
+  background-image: url("../svg/in-css/icons/arrow-up.svg");
 }
 
 .oe-i.arrow-down-bold {
@@ -329,7 +329,7 @@ textarea {
 }
 
 .oe-i.arrow-down-bold.pro-theme {
-  background-image: url(svg-icon-path("arrow-down-bold"));
+  background-image: url("../svg/in-css/icons/arrow-down-bold.svg");
 }
 
 .oe-i.arrow-up-bold {
@@ -337,7 +337,7 @@ textarea {
 }
 
 .oe-i.arrow-up-bold.pro-theme {
-  background-image: url(svg-icon-path("arrow-up-bold"));
+  background-image: url("../svg/in-css/icons/arrow-up-bold.svg");
 }
 
 .oe-i.arrow-right-bold {
@@ -345,7 +345,7 @@ textarea {
 }
 
 .oe-i.arrow-right-bold.pro-theme {
-  background-image: url(svg-icon-path("arrow-right-bold"));
+  background-image: url("../svg/in-css/icons/arrow-right-bold.svg");
 }
 
 .oe-i.arrow-left-bold {
@@ -353,7 +353,7 @@ textarea {
 }
 
 .oe-i.arrow-left-bold.pro-theme {
-  background-image: url(svg-icon-path("arrow-left-bold"));
+  background-image: url("../svg/in-css/icons/arrow-left-bold.svg");
 }
 
 .oe-i.direction-right {
@@ -361,7 +361,7 @@ textarea {
 }
 
 .oe-i.direction-right.pro-theme {
-  background-image: url(svg-icon-path("direction-right"));
+  background-image: url("../svg/in-css/icons/direction-right.svg");
 }
 
 .oe-i.direction-left {
@@ -369,7 +369,7 @@ textarea {
 }
 
 .oe-i.direction-left.pro-theme {
-  background-image: url(svg-icon-path("direction-left"));
+  background-image: url("../svg/in-css/icons/direction-left.svg");
 }
 
 .oe-i.direction-up {
@@ -377,7 +377,7 @@ textarea {
 }
 
 .oe-i.direction-up.pro-theme {
-  background-image: url(svg-icon-path("direction-up"));
+  background-image: url("../svg/in-css/icons/direction-up.svg");
 }
 
 .oe-i.direction-down {
@@ -385,7 +385,7 @@ textarea {
 }
 
 .oe-i.direction-down.pro-theme {
-  background-image: url(svg-icon-path("direction-down"));
+  background-image: url("../svg/in-css/icons/direction-down.svg");
 }
 
 .oe-i.child-arrow {
@@ -393,7 +393,7 @@ textarea {
 }
 
 .oe-i.child-arrow.pro-theme {
-  background-image: url(svg-icon-path("child-arrow"));
+  background-image: url("../svg/in-css/icons/child-arrow.svg");
 }
 
 .oe-i.menu {
@@ -401,7 +401,7 @@ textarea {
 }
 
 .oe-i.menu.pro-theme {
-  background-image: url(svg-icon-path("menu"));
+  background-image: url("../svg/in-css/icons/menu.svg");
 }
 
 .oe-i.trash {
@@ -409,7 +409,7 @@ textarea {
 }
 
 .oe-i.trash.pro-theme {
-  background-image: url(svg-icon-path("trash"));
+  background-image: url("../svg/in-css/icons/trash.svg");
 }
 
 .oe-i.print {
@@ -417,7 +417,7 @@ textarea {
 }
 
 .oe-i.print.pro-theme {
-  background-image: url(svg-icon-path("print"));
+  background-image: url("../svg/in-css/icons/print.svg");
 }
 
 .oe-i.search {
@@ -425,7 +425,7 @@ textarea {
 }
 
 .oe-i.search.pro-theme {
-  background-image: url(svg-icon-path("search"));
+  background-image: url("../svg/in-css/icons/search.svg");
 }
 
 .oe-i.remove {
@@ -433,7 +433,7 @@ textarea {
 }
 
 .oe-i.remove.pro-theme {
-  background-image: url(svg-icon-path("remove"));
+  background-image: url("../svg/in-css/icons/remove.svg");
 }
 
 .oe-i.remove-circle {
@@ -441,7 +441,7 @@ textarea {
 }
 
 .oe-i.remove-circle.pro-theme {
-  background-image: url(svg-icon-path("remove-circle"));
+  background-image: url("../svg/in-css/icons/remove-circle.svg");
 }
 
 .oe-i.duplicate {
@@ -449,7 +449,7 @@ textarea {
 }
 
 .oe-i.duplicate.pro-theme {
-  background-image: url(svg-icon-path("duplicate"));
+  background-image: url("../svg/in-css/icons/duplicate.svg");
 }
 
 .oe-i.info {
@@ -457,7 +457,7 @@ textarea {
 }
 
 .oe-i.info.pro-theme {
-  background-image: url(svg-icon-path("info"));
+  background-image: url("../svg/in-css/icons/info.svg");
 }
 
 .oe-i.eye {
@@ -465,7 +465,7 @@ textarea {
 }
 
 .oe-i.eye.pro-theme {
-  background-image: url(svg-icon-path("eye"));
+  background-image: url("../svg/in-css/icons/eye.svg");
 }
 
 .oe-i.comments {
@@ -473,7 +473,7 @@ textarea {
 }
 
 .oe-i.comments.pro-theme {
-  background-image: url(svg-icon-path("comments"));
+  background-image: url("../svg/in-css/icons/comments.svg");
 }
 
 .oe-i.start {
@@ -481,7 +481,7 @@ textarea {
 }
 
 .oe-i.start.pro-theme {
-  background-image: url(svg-icon-path("start"));
+  background-image: url("../svg/in-css/icons/start.svg");
 }
 
 .oe-i.stop {
@@ -489,7 +489,7 @@ textarea {
 }
 
 .oe-i.stop.pro-theme {
-  background-image: url(svg-icon-path("stop"));
+  background-image: url("../svg/in-css/icons/stop.svg");
 }
 
 .oe-i.d-slash {
@@ -497,7 +497,7 @@ textarea {
 }
 
 .oe-i.d-slash.pro-theme {
-  background-image: url(svg-icon-path("double-slash"));
+  background-image: url("../svg/in-css/icons/double-slash.svg");
 }
 
 .oe-i.expand {
@@ -505,7 +505,7 @@ textarea {
 }
 
 .oe-i.expand.pro-theme {
-  background-image: url(svg-icon-path("expand"));
+  background-image: url("../svg/in-css/icons/expand.svg");
 }
 
 .oe-i.collapse {
@@ -513,7 +513,7 @@ textarea {
 }
 
 .oe-i.collapse.pro-theme {
-  background-image: url(svg-icon-path("collapse"));
+  background-image: url("../svg/in-css/icons/collapse.svg");
 }
 
 .oe-i.downup {
@@ -521,7 +521,7 @@ textarea {
 }
 
 .oe-i.downup.pro-theme {
-  background-image: url(svg-icon-path("downup"));
+  background-image: url("../svg/in-css/icons/downup.svg");
 }
 
 .oe-i.history {
@@ -529,7 +529,7 @@ textarea {
 }
 
 .oe-i.history.pro-theme {
-  background-image: url(svg-icon-path("history"));
+  background-image: url("../svg/in-css/icons/history.svg");
 }
 
 .oe-i.tick {
@@ -537,7 +537,7 @@ textarea {
 }
 
 .oe-i.tick.pro-theme {
-  background-image: url(svg-icon-path("tick"));
+  background-image: url("../svg/in-css/icons/tick.svg");
 }
 
 .oe-i.triangle {
@@ -545,7 +545,7 @@ textarea {
 }
 
 .oe-i.triangle.pro-theme {
-  background-image: url(svg-icon-path("warning"));
+  background-image: url("../svg/in-css/icons/warning.svg");
 }
 
 .oe-i.time {
@@ -553,7 +553,7 @@ textarea {
 }
 
 .oe-i.time.pro-theme {
-  background-image: url(svg-icon-path("time"));
+  background-image: url("../svg/in-css/icons/time.svg");
 }
 
 .oe-i.audit-trail {
@@ -561,7 +561,7 @@ textarea {
 }
 
 .oe-i.audit-trail.pro-theme {
-  background-image: url(svg-icon-path("audit-trail"));
+  background-image: url("../svg/in-css/icons/audit-trail.svg");
 }
 
 .oe-i.download {
@@ -569,7 +569,7 @@ textarea {
 }
 
 .oe-i.download.pro-theme {
-  background-image: url(svg-icon-path("download"));
+  background-image: url("../svg/in-css/icons/download.svg");
 }
 
 .oe-i.asterisk {
@@ -577,7 +577,7 @@ textarea {
 }
 
 .oe-i.asterisk.pro-theme {
-  background-image: url(svg-icon-path("asterisk"));
+  background-image: url("../svg/in-css/icons/asterisk.svg");
 }
 
 .oe-i.pencil {
@@ -585,7 +585,7 @@ textarea {
 }
 
 .oe-i.pencil.pro-theme {
-  background-image: url(svg-icon-path("pencil"));
+  background-image: url("../svg/in-css/icons/pencil.svg");
 }
 
 .oe-i.exclamation {
@@ -593,7 +593,7 @@ textarea {
 }
 
 .oe-i.exclamation.pro-theme {
-  background-image: url(svg-icon-path("exclamation"));
+  background-image: url("../svg/in-css/icons/exclamation.svg");
 }
 
 .oe-i.male {
@@ -601,7 +601,7 @@ textarea {
 }
 
 .oe-i.male.pro-theme {
-  background-image: url(svg-icon-path("male"));
+  background-image: url("../svg/in-css/icons/male.svg");
 }
 
 .oe-i.female {
@@ -609,7 +609,7 @@ textarea {
 }
 
 .oe-i.female.pro-theme {
-  background-image: url(svg-icon-path("female"));
+  background-image: url("../svg/in-css/icons/female.svg");
 }
 
 .oe-i.ed-reset {
@@ -4178,6 +4178,10 @@ html {
 
 .main-event .element table tr:last-child {
   border-bottom: none;
+}
+
+.main-event .element table tr.valign-top td {
+  vertical-align: top;
 }
 
 .main-event .element table.large td, .main-event .element table.large-text td {
