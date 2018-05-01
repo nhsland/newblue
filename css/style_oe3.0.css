@@ -219,6 +219,10 @@ textarea {
   display: inline-block;
 }
 
+.row {
+  margin: 15px 0;
+}
+
 .highlighted-error {
   border: 1px solid #9b0000;
 }
@@ -1387,7 +1391,7 @@ p:last-child {
   margin-bottom: 0;
 }
 
-strong {
+strong, b {
   font-weight: 500;
 }
 
@@ -1678,10 +1682,6 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   background-repeat: no-repeat;
   background-size: 17px;
   background-image: url("../svg/in-css/ui/triangle-blue.svg");
-}
-
-.status-box strong {
-  font-weight: 500;
 }
 
 .status-box.green {
@@ -6551,6 +6551,7 @@ table.oe-clinic-list td.center {
 /* User Profile */
 .oe-user-profile {
   background: #141e2b;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .oe-user-profile h2 {

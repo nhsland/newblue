@@ -5,6 +5,7 @@
 
 .oe-user-profile {
 	background:$oe-blue-dark2; // theme changable
+	color:$oe-text;
 	
 	h2 {
 		@include font-size(19);
