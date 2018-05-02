@@ -198,13 +198,17 @@ idg.elementAddSelectSearch = function(){
 	  					
 			/*
 			Close popup on...
-			Scroll event fires on adding.
+			as scroll event fires on assignment.
 			check against scroll position
 			*/				
 			var scrollPos = $(".main-event").scrollTop();
 			$(".main-event").on("scroll", function(){ 
-				if( scrollPos !=  $(this).scrollTop() )
+				if( scrollPos !=  $(this).scrollTop() ){
+					// Remove scroll event:	
+					$(".main-event").off("scroll");
 					closeCancel();
+				}
+					
 			});
 		}
 		
@@ -235,10 +239,7 @@ idg.elementAddSelectSearch = function(){
 	  		search.hide();
 	  		searchInput.val('');
 	  		
-	  		/*
-		  	Remove Events	
-		  	*/
-		  	$(".main-event").off("scroll");
+	  		
 	  		
 	  		$popup.hide();
 	
