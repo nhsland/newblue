@@ -239,8 +239,6 @@ idg.elementAddSelectSearch = function(){
 	  		search.hide();
 	  		searchInput.val('');
 	  		
-	  		
-	  		
 	  		$popup.hide();
 	
 	  		if(resetPopupData){
