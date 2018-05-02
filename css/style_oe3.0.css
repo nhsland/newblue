@@ -4225,9 +4225,9 @@ html {
 }
 
 .oe-add-select-search {
-  position: absolute;
-  bottom: 10px;
-  right: 20px;
+  position: fixed;
+  bottom: 389;
+  right: 0;
   z-index: 60;
   background: #374755;
   padding: 10px 45px 10px 10px;

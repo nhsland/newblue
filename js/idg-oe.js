@@ -1376,6 +1376,7 @@ idg.elementAddSelectSearch = function(){
   			addBtn 		= $popup.find('.add-icon-btn'),
   			searchInput = $popup.find('.js-search-autocomplete');
   			
+  			
   		var resetPopupData = true;
   		// var $overlay;					// ----------------------------  Overlay
   		
@@ -1421,7 +1422,7 @@ idg.elementAddSelectSearch = function(){
 		if(addBtn.length){
 	  		addBtn.click(function(e){
 	  			e.stopPropagation();
-	  			// $overlay.remove();  	// ----------------------------  Overlay
+	  			// $overlay.remove();  		// ----------------------------  Overlay
 	  			closeAdd();
 	  			
   			});
@@ -1509,12 +1510,14 @@ idg.elementAddSelectSearch = function(){
 		}  		
 
   		
+/*
   		// top element popup will disappear behind header, so adjust it's position:
   		if($btn.offset().top < 250 && $btn.offset().top){
 	  		var vOffset = $btn.offset().top - 310;
 	  		$popup.css({bottom:vOffset});
 	  	}
   		
+*/
 
 		$btn.click( function( e ){
 			e.stopPropagation();
@@ -1522,12 +1525,47 @@ idg.elementAddSelectSearch = function(){
 		});
 		
 		
+		
+		
+		function positionFixedPopup(offset){
+			/* 
+			Popup is FIXED positioned
+			work out offset position 
+			setup events to close it on resize or scroll.
+			*/
+			var btnW = 38; // cover, button - abritary, set by eye
+			var btnH = 25; 
+			var right = ($( window ).width() - offset.left) - btnW;
+			var bottom = ($( window ).height() - offset.top) - btnH; 
+			
+			// set CSS Fixed position
+			$popup.css(	{	"bottom":bottom,
+							"right":right });
+	  					
+			/*
+			Close popup on...
+			Scroll event fires on adding.
+			check against scroll position
+			*/				
+			var scrollPos = $(".main-event").scrollTop();
+			$(".main-event").on("scroll", function(){ 
+				if( scrollPos !=  $(this).scrollTop() )
+					closeCancel();
+			});
+		}
+		
+		
 		function openAdd(){
+			
 			closeAll();
 			addSelect();
+			
+			positionFixedPopup( $btn.offset() );
 			$popup.show();
+			
 			selectBtn.children('.oe-i').addClass('selected');
 			searchBtn.children('.oe-i').removeClass('selected');
+		
 					  		
 			// chnage popup into a overlay						// ----------------------------  Overlay
 /*
@@ -1535,15 +1573,19 @@ idg.elementAddSelectSearch = function(){
 			$overlay.addClass('oe-popup-wrap');
 			$popup.appendTo($overlay);
   			$('body').prepend($overlay);
-*/		  		
-					  		
+*/		  				  		
 		}
 
 		// Close and reset
   		function closeCancel(){
 	  		search.hide();
 	  		searchInput.val('');
-	  	
+	  		
+	  		/*
+		  	Remove Events	
+		  	*/
+		  	$(".main-event").off("scroll");
+	  		
 	  		$popup.hide();
 	
 	  		if(resetPopupData){
