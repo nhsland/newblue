@@ -14,10 +14,10 @@ idg.init = function(){
 	**/ 
 	var openeyes 	= new idg.NavBtnPopup( 'logo', $('#js-openeyes-btn'), $('#js-openeyes-info') );
 	var shortcuts 	= new idg.NavBtnPopup( 'shortcuts', $('#js-nav-shortcuts-btn'), $('#js-nav-shortcuts-subnav') ).useWrapper( $('#js-nav-shortcuts') );
-	var activity 	= new idg.NavBtnPopup( 'activity', $('#js-nav-activity-btn'), $('#js-activity-panel') );
+	var hotlist 	= new idg.NavBtnPopup( 'hotlist', $('#js-nav-hotlist-btn'), $('#js-hotlist-panel') );
 	
 	// Activity List popup
-	idg.activityList(activity);
+	idg.hotList(hotlist);
 	
 	
 	// set up 'hidden' for JS 
@@ -62,7 +62,7 @@ idg.init = function(){
 	// duplicate history element					
 	idg.overlayPopup( 	'#copy-edit-history-btn',  			// "Duplicate" Event icon  (Exam Edit: History )
 						'previous-history-elements.php', 	// Demo content
-						'.close-icon-btn' ).test();				// wraps remove icon					
+						'.close-icon-btn' );				// wraps remove icon					
 						
 						
 	// Add New Event in SEM view mode

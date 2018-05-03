@@ -14,10 +14,10 @@ idg.init = function(){
 	**/ 
 	var openeyes 	= new idg.NavBtnPopup( 'logo', $('#js-openeyes-btn'), $('#js-openeyes-info') );
 	var shortcuts 	= new idg.NavBtnPopup( 'shortcuts', $('#js-nav-shortcuts-btn'), $('#js-nav-shortcuts-subnav') ).useWrapper( $('#js-nav-shortcuts') );
-	var activity 	= new idg.NavBtnPopup( 'activity', $('#js-nav-activity-btn'), $('#js-activity-panel') );
+	var hotlist 	= new idg.NavBtnPopup( 'hotlist', $('#js-nav-hotlist-btn'), $('#js-hotlist-panel') );
 	
 	// Activity List popup
-	idg.activityList(activity);
+	idg.hotList(hotlist);
 	
 	
 	// set up 'hidden' for JS 
@@ -62,7 +62,7 @@ idg.init = function(){
 	// duplicate history element					
 	idg.overlayPopup( 	'#copy-edit-history-btn',  			// "Duplicate" Event icon  (Exam Edit: History )
 						'previous-history-elements.php', 	// Demo content
-						'.close-icon-btn' ).test();				// wraps remove icon					
+						'.close-icon-btn' );				// wraps remove icon					
 						
 						
 	// Add New Event in SEM view mode
@@ -1933,6 +1933,7 @@ idg.NavBtnPopup = function(id,$btn,$content){
 	public methods
 	**/
 	this.hide = hide;	
+	this.show = show;
 	this.useWrapper = useWrapperEvents;
 	this.fixed = fixed;
 	this.inGroup = inGroup;
@@ -2034,59 +2035,6 @@ idg.NavBtnPopup = function(id,$btn,$content){
 
 
 
-/*
-Tile Element - watch for data overflow
-*/
-idg.activityList = function(activity){
-	
-	if( $('#js-nav-activity-btn').length == 0 ) return;
-		
-	// Fix Activity Panel if design allows it to be fixable!
-	if( $('#js-nav-activity-btn').data('fixable') == true ){
-		checkBrowserSize();
-		
-		$( window ).resize(function() {
-			checkBrowserSize();
-		});
-		
-		function checkBrowserSize(){	
-	  		if( $( window ).width() > 1800){ // min width for fixing Activity Panel (allows some resizing)
-				activity.fixed( true );
-			} else {
-				activity.fixed( false );
-			}
-		}  
-	}
-	
-	// js-pickmeup-closed-date
-	
-	// activity datepicker using pickmeup.
-	// CSS controls it's positioning
-	
-	var $pmuWrap = $('#js-pickmeup-datepicker').hide(); 
-	var pmu = pickmeup('#js-pickmeup-datepicker',{
-					format	: 'a d b Y',
-					flat:true,         // position: relative
-					position:'left',
-				});
-
-	// vanilla: 
-	var activityDatePicker = document.getElementById("js-pickmeup-datepicker");
-	
-	activityDatePicker.addEventListener('pickmeup-change', function (e) {
-		$('#js-pickmeup-closed-date').text(e.detail.formatted_date);
-		$pmuWrap.hide();
-	})	
-	
-	$('#js-activity-closed-select').click(function(){
-		$pmuWrap.show();
-	});
-	
-	$('#js-activity-closed-today').click(function(){
-		pmu.set_date(new Date);
-		$('#js-pickmeup-closed-date').text("Today");
-	});
-}
 /**
 Collapse Group
 Uses the DOM and CSS hooks
@@ -2150,6 +2098,95 @@ idg.comments = function(){
 				$(this).find('textarea').focus();
 			});
 		}
+	});
+}
+/*
+Tile Element - watch for data overflow
+*/
+idg.hotList = function(hotlistPopup){
+	
+	if( $('#js-nav-hotlist-btn').length == 0 ) return;
+		
+	// Fix Activity Panel if design allows it to be fixable!
+	if( $('#js-nav-hotlist-btn').data('fixable') == true ){
+		checkBrowserSize();
+		
+		$( window ).resize(function() {
+			checkBrowserSize();
+		});
+		
+		function checkBrowserSize(){	
+	  		if( $( window ).width() > 1800){ // min width for fixing Activity Panel (allows some resizing)
+				// hotlistPopup.fixed( true );
+			} else {
+				// hotlistPopup.fixed( false );
+			}
+		}  
+	}
+	
+	/*
+	Hotlist comments.
+	The comment icon shows comment status. 
+	Clicking on it show / hides the <tr> under it. 	
+	*/
+	$('.oe-hotlist-panel .js-patient-comments').click(function( e ){
+		
+		
+		var commentBox = $(this).parent().parent().next();
+		var textArea = commentBox.find('textarea');
+		
+		commentBox.toggle();
+	
+		// update the icon based on the textarea
+		if(textArea.val() == ""){
+
+			if($(this).hasClass("comments-added")){
+				
+				$(this).removeClass("comments-added");
+				$(this).addClass("comments");
+			}
+
+		} else {
+
+			if($(this).hasClass("comments")){
+				
+				$(this).removeClass("comments");
+				$(this).addClass("comments-added");
+			
+			}
+		};
+		
+		
+		
+	});
+	
+	
+	
+	// activity datepicker using pickmeup.
+	// CSS controls it's positioning
+	
+	var $pmuWrap = $('#js-pickmeup-datepicker').hide(); 
+	var pmu = pickmeup('#js-pickmeup-datepicker',{
+					format	: 'a d b Y',
+					flat:true,         // position: relative
+					position:'left',
+				});
+
+	// vanilla: 
+	var activityDatePicker = document.getElementById("js-pickmeup-datepicker");
+	
+	activityDatePicker.addEventListener('pickmeup-change', function (e) {
+		$('#js-pickmeup-closed-date').text(e.detail.formatted_date);
+		$pmuWrap.hide();
+	})	
+	
+	$('#js-hotlist-closed-select').click(function(){
+		$pmuWrap.show();
+	});
+	
+	$('#js-hotlist-closed-today').click(function(){
+		pmu.set_date(new Date);
+		$('#js-pickmeup-closed-date').text("Today");
 	});
 }
 /**

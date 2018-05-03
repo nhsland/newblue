@@ -1,8 +1,8 @@
- // OE Activity Panel (RHS)
+ // OE Hotlist Panel (RHS)
 // On minimum 1280px displays hidden, on 1920px+ displayed right hand side (RHS)
 // Open and Closed (date searchable) patients
 
-.oe-activity-panel {
+.oe-hotlist-panel {
 	display:none; // js controlled.
 	z-index:$oe-z-activity; // overlays content
 			
@@ -12,7 +12,7 @@
 	height: calc(100vh - 60px); 	// this can't be SASS variable has to be written (must match $oe-header-height)
 	overflow-y:auto;				// otherwise this over-flow doesn't work.
 	
-	width:$oe-activity-panel-width;
+	width:$oe-hotlist-panel-width;
 	background:tint( $oe-pro-bg,10 );
 	padding:10px 0 20px 0;	
 	border-left:2px solid rgba($oe-bg-highlight,0.5);
@@ -68,7 +68,7 @@
 }
 
 
-@import "activity-panel/activity-list";
+@import "hotlist-panel/activity-list";
 
 // @import "activity-panel/msg-timeline"; // chat / message system 
 

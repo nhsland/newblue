@@ -86,7 +86,7 @@
 	.oe-full-header, 
 	.oe-full-content {
 		@include media($oe-browser-size-activity-panel-fixed){
-			width: $oe-browser-size-activity-panel-fixed - $oe-activity-panel-width;
+			width: $oe-browser-size-activity-panel-fixed - $oe-hotlist-panel-width;
 		}
 	}
 	

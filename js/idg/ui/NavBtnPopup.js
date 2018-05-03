@@ -25,6 +25,7 @@ idg.NavBtnPopup = function(id,$btn,$content){
 	public methods
 	**/
 	this.hide = hide;	
+	this.show = show;
 	this.useWrapper = useWrapperEvents;
 	this.fixed = fixed;
 	this.inGroup = inGroup;
