@@ -2774,7 +2774,8 @@ html {
   /* flex (wrapper) */
   position: relative;
   background: #374755;
-  width: 500px;
+  min-width: 600px;
+  max-width: 1080px;
   padding: 20px;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -2792,6 +2793,12 @@ html {
   right: 20px;
 }
 
+.oe-popup .oe-popup-content {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
 .oe-popup table {
   margin: 20px auto 0 auto;
   width: 90%;
@@ -2805,6 +2812,41 @@ html {
 
 .oe-popup table td.align-right {
   text-align: right;
+}
+
+.oe-popup-content.previous-elements table {
+  width: 100%;
+}
+
+.oe-popup-content.previous-elements table tr {
+  border-bottom: 1px solid #26303d;
+}
+
+.oe-popup-content.previous-elements table tr:last-child {
+  border-bottom: none;
+}
+
+.oe-popup-content.previous-elements table td {
+  vertical-align: top;
+  padding: 10px 10px 10px 0;
+  font-size: 0.75rem;
+}
+
+.oe-popup-content.previous-elements table td:first-child {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+.oe-popup-content.previous-elements table td .metadata {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.oe-popup-content.previous-elements table td .metadata .info {
+  margin: 0 0 5px 0;
+}
+
+.oe-popup-content.previous-elements table td .metadata .user {
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Generic Layouts */

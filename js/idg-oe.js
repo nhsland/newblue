@@ -59,6 +59,12 @@ idg.init = function(){
 						'change-context.php', 			// Demo content
 						'.close-icon-btn' );			// wraps remove icon
 						
+	// duplicate history element					
+	idg.overlayPopup( 	'#copy-edit-history-btn',  			// "Duplicate" Event icon  (Exam Edit: History )
+						'previous-history-elements.php', 	// Demo content
+						'.close-icon-btn' ).test();				// wraps remove icon					
+						
+						
 	// Add New Event in SEM view mode
 	idg.overlayPopup(	'#js-add-new-event',			// SEM header button
 						'add-new-event.php',			// PHP
@@ -75,9 +81,6 @@ idg.init = function(){
 	
 	// Exam Edit Right Left Search popup demo
 	idg.examElementSearchPopup();
-	
-	// Duplicate Element demo
-	// idg.duplicateElement();
 	
 	// Expand Collapse View lists
 	idg.expandElementList();
@@ -1322,25 +1325,6 @@ idg.auditTrail = function(){
 	$('#js-event-audit-trail-btn').click(function(){
 		$('#js-event-audit-trail').toggle();
 		$(this).toggleClass('active');
-	});
-	
-}
-/*
-SEM Element - Duplicate Element
-Used in Edit mode to copy content from 
-old/previous elements
-*/
-idg.duplicateElements = function(){
-	
-	/*
-	Hook in to all these classes
-	Just popping up a generic demo	
-	*/
-	
-	$('.js-duplicate-element').click(function( e ){
-		e.preventDefault();
-		
-		
 	});
 	
 }

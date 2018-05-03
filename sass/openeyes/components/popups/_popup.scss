@@ -5,7 +5,8 @@
 	margin:auto; /* flex (wrapper) */ 
 	position:relative;
 	background: $oe-pro-popup-bg;
-	width: 500px; 
+	min-width: 600px;
+	max-width: $oe-event-main-default-width; 
 	padding: 20px;
 	color:$oe-pro-text;
 
@@ -21,6 +22,14 @@
 		position:absolute;
 		top:20px;
 		right:20px;
+	}
+	
+	// wrapper for content.
+	// handles overflow.
+	.oe-popup-content {
+		max-height: 500px; 
+		overflow-y: auto;	// scroll overflow
+		overflow-x: hidden; // otherwise breaks out of popup.
 	}
 	
 	// use table for form layouts

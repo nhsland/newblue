@@ -1,0 +1,48 @@
+// OE Popup - Previous Elements
+//  
+
+.oe-popup-content {
+	
+	&.previous-elements {
+		// modify popup table default
+		table {
+			width:100%;	
+			
+			tr {
+			border-bottom:1px solid $oe-line;
+				&:last-child { 
+					border-bottom: none;
+				}
+			}
+				
+			td {
+				vertical-align: top;
+				padding:10px 10px 10px 0;  
+				@include font-size(12);
+				
+				
+				// notes
+				&:first-child {
+					@include font-size(13);
+					line-height: 1.4;
+				}
+				
+				.metadata {
+					color:$oe-pro-text-light;
+					
+					.info {
+						margin:0 0 5px 0;
+					}
+					
+					.user {
+						color:$oe-pro-text;
+					}
+				}
+				
+			}
+		}
+		
+	}
+
+	
+}
