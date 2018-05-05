@@ -62,7 +62,7 @@
 	}
 	
 	&:hover, &:focus, &:active {
-		color: #fff;
+		color: rgb(255,255,255);
 		background: $oe-btn-blue;
 		
 		// if there is icon this make sure it shows the button hover effect

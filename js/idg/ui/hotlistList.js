@@ -40,7 +40,7 @@ idg.hotList = function(hotlistPopup){
 
 			if($(this).hasClass("comments-added")){
 				
-				$(this).removeClass("comments-added");
+				$(this).removeClass("comments-added active");
 				$(this).addClass("comments");
 			}
 
@@ -49,7 +49,7 @@ idg.hotList = function(hotlistPopup){
 			if($(this).hasClass("comments")){
 				
 				$(this).removeClass("comments");
-				$(this).addClass("comments-added");
+				$(this).addClass("comments-added active");
 			
 			}
 		};

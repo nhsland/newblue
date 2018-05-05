@@ -1511,25 +1511,28 @@ idg.elementAddSelectSearch = function(){
 		
 		
 		
-		function positionFixedPopup(offset){
+		function positionFixedPopup( $btn ){
 			/* 
 			Popup is FIXED positioned
 			work out offset position 
 			setup events to close it on resize or scroll.
 			*/
-			var btnW = 38; // cover, button - abritary, set by eye
-			var btnH = 25; 
-			var right = ($( window ).width() - offset.left) - btnW;
-			var bottom = ($( window ).height() - offset.top) - btnH; 
 			
+			var elem = $btn[ 0 ];
+			
+			// js vanilla:
+			var btnPos = elem.getBoundingClientRect();		
+			var w = document.documentElement.clientWidth;
+			var h = document.documentElement.clientHeight;
+	
 			// set CSS Fixed position
-			$popup.css(	{	"bottom":bottom,
-							"right":right });
+			$popup.css(	{	"bottom": (h - btnPos.bottom),
+							"right": (w - btnPos.right) });
 	  					
 			/*
-			Close popup on...
-			as scroll event fires on assignment.
-			check against scroll position
+			Close popup on scroll.
+			note: scroll event fires on assignment.
+			so check against scroll position
 			*/				
 			var scrollPos = $(".main-event").scrollTop();
 			$(".main-event").on("scroll", function(){ 
@@ -1548,7 +1551,7 @@ idg.elementAddSelectSearch = function(){
 			closeAll();
 			addSelect();
 			
-			positionFixedPopup( $btn.offset() );
+			positionFixedPopup( $btn );
 			$popup.show();
 			
 			selectBtn.children('.oe-i').addClass('selected');
@@ -2142,7 +2145,7 @@ idg.hotList = function(hotlistPopup){
 
 			if($(this).hasClass("comments-added")){
 				
-				$(this).removeClass("comments-added");
+				$(this).removeClass("comments-added active");
 				$(this).addClass("comments");
 			}
 
@@ -2151,7 +2154,7 @@ idg.hotList = function(hotlistPopup){
 			if($(this).hasClass("comments")){
 				
 				$(this).removeClass("comments");
-				$(this).addClass("comments-added");
+				$(this).addClass("comments-added active");
 			
 			}
 		};

@@ -54,16 +54,16 @@
 	cursor:pointer;
 	opacity: 0.5;
 	
-	&:hover, &:focus, &:active, &.active { 
+	// same affect but different classes 
+	// as unable to decide on best naming strategy
+	
+	&:hover, &:focus, &:active, 
+	&.active,
+	&.no-hover { 
 		opacity:1; 
 	}
 	
-	// still clickable but i need it more obvious
-	&.no-hover {
-		opacity:1;
-	}
-	
-	// selected state
+	// selected state changes the cursor
 	&.selected {
 		opacity:1;
 		cursor:default; 
@@ -72,7 +72,9 @@
 	// Generally icons will be used for interaction
 	// sometimes however they are only used for graphical purposes
 	// use 'no-click' to turn off interaction behaviour
-	&.start, &.stop, &.d-slash, // graphic icons only
+	&.start, 
+	&.stop, 
+	&.d-slash, // graphic icons only
 	&.no-click, {
 		cursor:default;
 		&:hover, &:focus, &:active { 

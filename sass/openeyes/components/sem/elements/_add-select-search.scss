@@ -14,7 +14,7 @@
 
 .oe-add-select-search {	
 	position:fixed; 					// Fixed take it out of the Grid. 
-	bottom:389; 						// JS will position this
+	bottom:300px; 						// JS will position this
 	right:0; 
 	z-index:$oe-z-tooltip; 				// make sure it floats over elements
 	background:$oe-popup-bg;
