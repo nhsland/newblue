@@ -29,6 +29,12 @@
 					font-weight:$oe-font-medium;
 				}	
 			}
+			
+			// if it has both sides in a split:
+			.element-both-eyes {
+				background-color: $oe-bg-highlight;
+			}
+			
 		}
 		
 		// element-data is ONLY used in VIEW mode (edit uses 'element-fields')

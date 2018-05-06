@@ -3983,9 +3983,11 @@ html {
 }
 
 .main-event .element .element-both-eyes {
-  background: #141e2b;
+  background-color: #141e2b;
   margin: 10px 0;
   padding: 10px;
+  border-radius: 13px;
+  border-bottom: 2px solid #26303d;
 }
 
 .main-event .element:hover, .main-event .element:focus {
@@ -4295,17 +4297,50 @@ html {
 .main-event .element table.calendar td.inthepast {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
 }
 
-.main-event .element table.calendar td.inthepast:hover, .main-event .element table.calendar td.inthepast:focus {
-  color: inherit;
-  background: none;
-}
-
-.main-event .element table.calendar td.selected-date, .main-event .element table.calendar td:hover, .main-event .element table.calendar td:focus {
+.main-event .element table.calendar td.available:hover, .main-event .element table.calendar td.available:focus, .main-event .element table.calendar td.limited:hover, .main-event .element table.calendar td.limited:focus, .main-event .element table.calendar td.full:hover, .main-event .element table.calendar td.full:focus, .main-event .element table.calendar td.patient-unavailable:hover, .main-event .element table.calendar td.patient-unavailable:focus {
   cursor: pointer;
   color: white;
   background: #074598;
+}
+
+.main-event .element table.calendar td.selected-date {
+  color: white;
+  background: #074598;
+}
+
+.main-event .element table.calendar td.available {
+  color: white;
+  background: #0a6512;
+}
+
+.main-event .element table.calendar td.limited {
+  color: white;
+  background: #07470d;
+}
+
+.main-event .element table.calendar td.full {
+  color: white;
+  background: #042807;
+}
+
+.main-event .element table.calendar td.closed {
+  color: #828282;
+  background: #323232;
+}
+
+.main-event .element table.calendar td.patient-unavailable {
+  color: white;
+  background: #6b1400;
+}
+
+.main-event .element table.calendar.key td {
+  width: 100%;
+  height: 14px;
+  font-size: 0.6875rem;
+  border-width: 1px;
 }
 
 .element-eyes .oe-add-select-search {
@@ -4598,6 +4633,10 @@ html {
 .main-event .element.priority .element-data .large-text,
 .main-event .element.priority .element-data .priority-text {
   font-weight: 400;
+}
+
+.main-event .element.priority .element-both-eyes {
+  background-color: #101923;
 }
 
 .main-event .element .element-data.full-width {

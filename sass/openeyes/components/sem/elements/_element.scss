@@ -75,9 +75,11 @@
 		// then splits... requires a slightly different DOM
 		// because of the Flex layout in element-eyes
 		.element-both-eyes {
-			background: $oe-blue-dark2;
+			background-color: $oe-blue-dark2;
 			margin:10px 0;
 			padding:10px;
+			border-radius:13px; // create a bracket effect
+			border-bottom: 2px solid $oe-line;
 		}
 		
 		// provide desktop user with element header highlight
