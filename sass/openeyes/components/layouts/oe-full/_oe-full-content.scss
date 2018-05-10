@@ -20,20 +20,15 @@
 		}
 	
 		h3 {
-			margin:15px 0 10px 0;
+			margin:20px 0 10px 0;
 			@include font-size(15);
 			font-weight: 300;
 			color:$oe-blue-light;;
 		}
-		
-		// vertical padding for any data group
-		.v-pad {
-			margin:10px 0;
-		}
-
+	
 		// lists
 		ul {
-			margin:20px 0;
+			margin:10px 0;
 			li {
 				@include font-size(13);
 				color:$oe-text-light;

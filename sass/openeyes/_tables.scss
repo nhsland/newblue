@@ -17,6 +17,7 @@ table.standard {
 		th {
 			text-align: left;  // overide default 'middle'
 			color:$oe-text-light;
+			@include font-size(12);
 			font-weight: $oe-font-light;
 			padding:0 10px 10px 0;
 		}

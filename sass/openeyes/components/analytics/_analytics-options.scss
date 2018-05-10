@@ -17,11 +17,6 @@
 		color:$oe-pro-blue-light;
 	}
 	
-	// vertical padding for any data group
-	.v-pad {
-		margin:10px 0;
-	}
-	
 	.specialty {
 		@include font-size(20);
 		font-weight:300;
