@@ -1,5 +1,5 @@
-// OE Popup - Generic (sits in full screen wrapper)
-//  
+// OE Popups
+// notes: see openeyes/components/popups
 
 .oe-popup {
 	margin:auto; /* flex (wrapper) */ 
@@ -23,29 +23,5 @@
 		top:20px;
 		right:20px;
 	}
-	
-	// wrapper for content.
-	// handles overflow.
-	.oe-popup-content {
-		max-height: 500px; 
-		overflow-y: auto;	// scroll overflow
-		overflow-x: hidden; // otherwise breaks out of popup.
-	}
-	
-	// use table for form layouts
-	// <table>
-	table {
-		margin:20px auto 0 auto;
-		width:90%;
-		td {
-			vertical-align: middle;
-			padding:8px 0;  
-			@include font-size(13);
-			
-			&.align-right {
-				text-align: right;
-			}
-		}
-	} 
 	
 }

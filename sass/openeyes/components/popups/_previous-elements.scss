@@ -1,10 +1,13 @@
-// OE Popup - Previous Elements
-//  
+// OE Popups
+// notes: see openeyes/components/popups
 
+// SEM Edit mode: copy data from "Previous Element"
+// 'download' icon next to close.
 .oe-popup-content {
 	
+	// modify popup table default
 	&.previous-elements {
-		// modify popup table default
+		
 		table {
 			width:100%;	
 			

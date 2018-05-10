@@ -1,15 +1,20 @@
 // OE Popup wrapper
 // 
 // generic background cover and container for popup boxes
+// <div> wrapper class applied with JS. 
+
+
 .oe-popup-wrap {
 	position:fixed;
 	top:0;
 	left:0;
+	
 	z-index:$oe-z-popup;
 
 	background: rgba( $html-bg, 0.6 );
 	
 	height:100vh;
 	width:100vw;
+	
 	display:flex; // Flex - for centering content
 }

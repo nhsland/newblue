@@ -1,8 +1,31 @@
-// OE UI Popups.
+// OE Popups (Generic)
 //
+// All popups are wrapped with '.oe-popup-wrap' (see openeyes/popup-wrap)
+// There are also ALL Pro-themed!
+// 
+// DOM notes: 
+// 	.oe-popup-wrap
+// 		.oe-popup 
+// 			.title 
+//			.close-icon-btn 
+//			.oe-popup-content  (wraps all popup content)
 
-@import "popups/popup";  				// generic UI set up
-@import "popups/previous-elements";  	// previous element
+// Generic UI Popup setup
+// includes: title and close-btn
+@import "popups/popup";  
+
+// Content wrap. Handle scrolling for contnet (min res displays)
+@import "popups/popup-content"; 
+
+// Generic Button List (based on Add New Event)			
+@import "popups/btn-list"; 
+
+// Default Tables		
+@import "popups/table";  
+
+// Specific Popups: 
+// Previous Elements (popup for coping data from previous elements)
+@import "popups/previous-elements";  
 
 
 
