@@ -1,0 +1,72 @@
+// * OpenEyes
+// *
+
+.ed-widget {
+	 &:after {
+	    content: "";
+	    display: table;
+	    clear: both;
+	  }
+}
+
+.ed-body {
+	display: table;
+	padding-bottom: 4px;
+	width: 100%;
+	.ed-widget.display & {
+		width: auto;
+		display: inline-block;
+		padding-bottom: 5px;
+	}
+}
+
+.ed-editor-container {
+	display: table-cell;
+	position: relative;
+	vertical-align: top;
+	width: auto;
+}
+
+.ed-fields-container {
+	display: table-cell;
+	padding-left: 0.75rem;
+	padding-right: 2px;
+	padding-top: 10px;
+	position: relative;
+	vertical-align: top;
+	width: 100%;
+}
+
+.ed-editor  {
+	position: relative;
+	margin-top: 4px;
+}
+
+canvas {
+	// Canvas element in edit mode
+	&.ed-canvas-edit {
+		background: #e4edf5;
+		border: 1px solid #53a0c7;
+		cursor: pointer;
+		position: relative;
+		z-index: $oe-z-ed-v2;
+		margin: 0 0 0 2px;
+		&.secondary {
+			z-index: auto;
+		}
+	}
+	// Canvas element in display mode
+	&.ed-canvas-display {
+		border: none;
+		cursor: auto;
+		margin: 0px;
+		position: relative;
+		z-index: $oe-z-ed-v2;
+	}
+	// Stop canvas being highlighted on mouse click
+	&.ed-canvas-edit, &.ed-canvas-display {
+		&:focus {
+			outline: none;
+		}
+	}
+}

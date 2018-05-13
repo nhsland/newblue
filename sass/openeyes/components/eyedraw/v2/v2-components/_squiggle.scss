@@ -1,0 +1,29 @@
+// * OpenEyes
+// *
+
+// ***TODO *** Tidy up names of the remaining css
+// For doodles requiring freehand drawing
+span.squiggle {
+	display: inline-block;
+	margin-bottom: -4px;
+}
+
+// Displays selected colour
+.preview {
+	display: inline-table;
+	margin-bottom: 4px;
+}
+
+// Thickness of squiggle line
+.thickness {
+	position: relative;
+	top: -15px;
+	display: inline-block;
+}
+
+// Squiggle fill
+.fill {
+	position: relative;
+	top: -5px;
+	display: inline-block;
+}

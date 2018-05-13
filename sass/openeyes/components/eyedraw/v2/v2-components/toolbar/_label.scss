@@ -1,0 +1,46 @@
+// * OpenEyes
+// *
+
+.ed-button {
+	.label {
+		box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.3);
+		transition: all 0s ease;
+		background: #fff;
+		border: 1px solid #ccc;
+		padding: 4px 6px;
+		position: absolute;
+		top: 32px;
+		white-space: nowrap;
+		z-index: $oe-z-ed-v2 + 3;
+		left: 0;
+		display:block;
+	}
+	.left {
+		left: inherit;
+		right:90px
+	}
+	&:hover {
+		.label {
+			transition-delay: 0.25s;
+			left: -1px;
+		}
+		.left {
+			left: inherit;
+			right: -1px;
+		}
+	}
+	&:active, .ed-drawer-open > & {
+		.label {
+			transition-delay:0s;
+			display:none;
+		}
+	}
+	&.disabled {
+		&:hover {
+			.label {
+				transition-delay:0s;
+				display:none;
+			}
+		}
+	}
+}

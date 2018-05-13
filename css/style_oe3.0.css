@@ -2403,7 +2403,7 @@ html {
 
 .oe-hotlist-panel {
   display: none;
-  z-index: 15;
+  z-index: 95;
   position: fixed;
   top: 60px;
   right: 0;
@@ -3888,7 +3888,7 @@ html {
 
 .oe-event-quickview {
   display: none;
-  z-index: 15;
+  z-index: 95;
   position: fixed;
   top: 60px;
   left: 200px;
@@ -5160,92 +5160,352 @@ html {
           transform: rotate(90deg);
 }
 
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container {
-  position: relative;
-  padding: 40px 0 0 10px;
+.ed-toolbar {
+  border-radius: 3px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  padding: 3px 0 0 3px;
 }
 
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-drawing-controls {
-  position: absolute;
-  top: 5px;
-  left: 240px;
-  width: 300px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar {
-  position: absolute;
-  top: 0;
-  right: 10px;
-  width: 240px;
-  height: 100%;
-  background: #edf3f8;
-}
-
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar .ed-toolbar-panel {
-  height: 100%;
-  overflow-y: auto;
-}
-
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar .ed-button {
+.ed-widget .ed-toolbar-panel {
   display: block;
 }
 
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar .ed-button:hover, .oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar .ed-button:active, .oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-toolbar .ed-button:focus {
-  background: white;
+.ed-toolbar-panel:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-popup {
-  width: 230px;
-  padding: 10px;
-  margin: 0 0 0 0;
-  background: #cfdbe5;
-  min-height: 440px;
+.ed-toolbar-panel, .ed-toolbar-panel ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-info {
-  font-size: 0.625rem;
-  color: #6d7379;
-  margin: 0 0 20px 0;
+.ed-toolbar-panel li {
+  float: left;
+  margin: 0 3px 3px 0;
+  position: relative;
 }
 
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-popup-toolbar,
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-drawing-toolbar {
-  margin: 0 0 10px 0;
+.ed-toolbar-panel li.active ul {
+  display: block;
 }
 
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-popup-toolbar .label,
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-drawing-toolbar .label {
+.ed-toolbar-panel.ed-drawing-toolbar {
+  margin-top: -6px;
+  margin-left: -5px;
+  float: left;
+}
+
+.ed-toolbar-panel.ed-drawing-toolbar li {
+  margin: 0;
+}
+
+.ed-toolbar-panel.ed-drawing-toolbar .ed-button {
+  background: none;
+  border: 0;
+}
+
+.ed-toolbar-panel .ed-toolbar-panel-drawer {
+  -webkit-box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.3);
+  background: #fff;
+  border: 1px solid #ccc;
+  display: none;
+  left: 3px;
+  margin: 0;
+  padding: 3px 0 0 3px;
+  position: absolute;
+  top: 36px;
+  width: 148px;
+  z-index: 22;
+}
+
+.ed-toolbar-panel .ed-drawer-open .ed-toolbar-panel-drawer {
+  display: block;
+}
+
+.ed-button {
+  border-radius: 3px;
+  background: #ddd;
+  border: 1px solid #ccc;
+  display: block;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  width: 32px;
+}
+
+.ed-button:hover, .ed-button.hover {
+  background: #118afb;
+}
+
+.ed-button [class*="icon-ed-"] {
+  margin-left: -1px;
+  margin-top: -1px;
+}
+
+.ed-button.disabled {
+  cursor: default;
+  background: #ddd;
+  opacity: 0.5;
+}
+
+.ed-doodle-popup-toolbar .ed-button {
+  border-color: #6db4dc;
+}
+
+.ed-doodle-popup-toolbar .ed-button:hover, .ed-doodle-popup-toolbar .ed-button.hover {
+  background: #118afb;
+  border-color: #0d6ac0;
+}
+
+.ed-button .label {
+  -webkit-box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0s ease;
+  transition: all 0s ease;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 4px 6px;
+  position: absolute;
+  top: 32px;
+  white-space: nowrap;
+  z-index: 23;
+  left: 0;
+  display: block;
+}
+
+.ed-button .left {
+  left: inherit;
+  right: 90px;
+}
+
+.ed-button:hover .label {
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+  left: -1px;
+}
+
+.ed-button:hover .left {
+  left: inherit;
+  right: -1px;
+}
+
+.ed-button:active .label, .ed-drawer-open > .ed-button .label {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
   display: none;
 }
 
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-popup-toolbar li,
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-drawing-toolbar li {
-  display: inline-block;
-  margin: 0 15px 0 0;
+.ed-button.disabled:hover .label {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  display: none;
 }
 
-.oe-eyedraw-app .eyedraw-v2 .ed-editor-container .ed-doodle-controls div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 5px 0 5px 0;
-  padding: 5px 0 0 0;
-  border-top: 1px dotted #b9c4cd;
+.ed-widget:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.ed-body {
+  display: table;
+  padding-bottom: 4px;
+  width: 100%;
+}
+
+.ed-widget.display .ed-body {
+  width: auto;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.ed-editor-container {
+  display: table-cell;
+  position: relative;
+  vertical-align: top;
+  width: auto;
+}
+
+.ed-fields-container {
+  display: table-cell;
+  padding-left: 0.75rem;
+  padding-right: 2px;
+  padding-top: 10px;
+  position: relative;
+  vertical-align: top;
+  width: 100%;
+}
+
+.ed-editor {
+  position: relative;
+  margin-top: 4px;
+}
+
+canvas.ed-canvas-edit {
+  background: #e4edf5;
+  border: 1px solid #53a0c7;
+  cursor: pointer;
+  position: relative;
+  z-index: 20;
+  margin: 0 0 0 2px;
+}
+
+canvas.ed-canvas-edit.secondary {
+  z-index: auto;
+}
+
+canvas.ed-canvas-display {
+  border: none;
+  cursor: auto;
+  margin: 0px;
+  position: relative;
+  z-index: 20;
+}
+
+canvas.ed-canvas-edit:focus, canvas.ed-canvas-display:focus {
+  outline: none;
+}
+
+span.squiggle {
+  display: inline-block;
+  margin-bottom: -4px;
+}
+
+.preview {
+  display: inline-table;
+  margin-bottom: 4px;
+}
+
+.thickness {
+  position: relative;
+  top: -15px;
+  display: inline-block;
+}
+
+.fill {
+  position: relative;
+  top: -5px;
+  display: inline-block;
+}
+
+.ed-drawing-controls {
+  background-color: #c3def5;
+  border: 1px solid #53a0c7;
+  border-width: 1px 1px 0 1px;
+  padding: 8px;
+  height: 36px;
+  margin: 0 0 0 2px;
+  position: relative;
+  z-index: 21;
+}
+
+.ed-drawing-controls .ed-selected-doodle {
+  margin-left: 32px;
+}
+
+.ed-drawing-controls.ed-feature-zoom .ed-selected-doodle {
+  margin-left: 66px;
+}
+
+.ed-doodle-popup {
+  -webkit-transition: right 0.5s ease;
+  transition: right 0.5s ease;
+  -webkit-box-shadow: 2px 5px 14px -4px rgba(0, 0, 0, 0.7);
+          box-shadow: 2px 5px 14px -4px rgba(0, 0, 0, 0.7);
+  background: #c3def5;
+  border: 1px solid #53a0c7;
+  border-width: 1px 1px 1px 0;
+  padding: 5px;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+  opacity: 1;
+  width: 188px;
+}
+
+.ed-doodle-popup.closed {
+  right: 0;
+  opacity: 0;
+}
+
+.ed-doodle-popup.closed .ed-button .label {
+  display: none;
+}
+
+.ed-doodle-popup.left {
+  border-width: 1px 0px 1px 1px;
+}
+
+.ed-doodle-popup-toolbar li {
+  margin-bottom: 0;
+  margin-right: 4px;
+  width: 32px;
+  height: 32px;
+}
+
+.sub-element .ed-doodle-popup-toolbar li {
+  margin-right: 1px;
+}
+
+.ed-doodle-popup-toolbar li:last-child {
+  margin-right: 0;
+}
+
+.ed-doodle-description {
+  color: #444;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 14px;
+  padding: 12px 0 6px 0;
+}
+
+.ed-doodle-controls {
+  max-height: 294px;
+  overflow: auto;
+}
+
+.ed-doodle-controls > div {
+  line-height: 12px;
+  padding-bottom: 8px;
+}
+
+.ed-doodle-controls > div:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.ed-doodle-controls > div:first-child {
+  margin-top: 14px;
+}
+
+.ed-doodle-controls label {
+  color: #477792;
+  float: left;
+  font-size: 12px;
+  margin: 0 6px 0 0;
+}
+
+.ed-doodle-controls label:after {
+  content: ":";
+}
+
+.ed-doodle-controls label .validation-msg {
+  color: red;
+  padding-left: 5px;
+}
+
+.ed-doodle-controls select {
+  width: auto;
+}
+
+.combo div {
+  float: left;
 }
 
 /* Lightening viewer */
