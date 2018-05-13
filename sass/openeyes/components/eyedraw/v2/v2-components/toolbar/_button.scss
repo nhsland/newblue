@@ -3,9 +3,7 @@
 
 // Toolbar button.
 .ed-button {
-	border-radius: 3px;
 	background: #ddd;
-	border: 1px solid #ccc;
 	display: block;
 	height: 32px;
 	margin: 0;
@@ -14,22 +12,15 @@
 	&:hover, &.hover {
 		background: #118afb;
 	}
-	// Button icon
-	[class*="icon-ed-"] {
-		// Account for the borders
-		margin-left: -1px;
-		margin-top: -1px;
-	}
+
 	&.disabled {
 		cursor: default;
 		background: #ddd;
 		opacity: 0.5;
 	}
 	.ed-doodle-popup-toolbar & {
-		border-color: #6db4dc;
 		&:hover, &.hover {
 			background: #118afb;
-			border-color: #0d6ac0;
 		}
 	}
 }

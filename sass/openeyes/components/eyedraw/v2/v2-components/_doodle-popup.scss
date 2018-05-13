@@ -4,13 +4,13 @@
 .ed-doodle-popup {
 	transition:right 0.5s ease;
 	box-shadow: 2px 5px 14px -4px rgba(0, 0, 0, 0.7);
-	background: #c3def5;
-	border: 1px solid #53a0c7;
-	border-width: 1px 1px 1px 0;
+	background: $oe-ed-panels;
 	padding: 5px;
 	position: absolute;
-	top: 0;
-	z-index: $oe-z-ed-v2;
+	min-width:30px;
+	min-height:30px; 
+	top:0;
+	z-index: $oe-z-ed-v2 + 4;
 	opacity: 1;
 	// default width, override in the module
 	width: 188px;
@@ -22,9 +22,6 @@
 				display: none;
 			}
 		}
-	}
-	&.left {
-		border-width: 1px 0px 1px 1px;
 	}
 }
 

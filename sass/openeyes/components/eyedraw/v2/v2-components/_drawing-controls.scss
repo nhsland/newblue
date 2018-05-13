@@ -2,14 +2,9 @@
 // *
 
 .ed-drawing-controls {
-	background: {
-		color: #c3def5;
-	};
-	border: 1px solid #53a0c7;
-	border-width: 1px 1px 0 1px;
+	background-color: $oe-ed-panels;
 	padding: 8px;
 	height: 36px;
-	margin: 0 0 0 2px;
 	position: relative;
 	z-index: $oe-z-ed-v2 + 1;
 	.ed-selected-doodle {

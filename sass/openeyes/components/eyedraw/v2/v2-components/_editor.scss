@@ -29,9 +29,7 @@
 
 .ed-fields-container {
 	display: table-cell;
-	padding-left: 0.75rem;
-	padding-right: 2px;
-	padding-top: 10px;
+	padding: 109px 0 0 5px;
 	position: relative;
 	vertical-align: top;
 	width: 100%;
@@ -45,21 +43,17 @@
 canvas {
 	// Canvas element in edit mode
 	&.ed-canvas-edit {
-		background: #e4edf5;
-		border: 1px solid #53a0c7;
+		background: $oe-ed-bg;
 		cursor: pointer;
 		position: relative;
 		z-index: $oe-z-ed-v2;
-		margin: 0 0 0 2px;
 		&.secondary {
 			z-index: auto;
 		}
 	}
 	// Canvas element in display mode
 	&.ed-canvas-display {
-		border: none;
 		cursor: auto;
-		margin: 0px;
 		position: relative;
 		z-index: $oe-z-ed-v2;
 	}

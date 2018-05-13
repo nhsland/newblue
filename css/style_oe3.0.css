@@ -5161,10 +5161,8 @@ html {
 }
 
 .ed-toolbar {
-  border-radius: 3px;
-  background: #fafafa;
-  border: 1px solid #ddd;
   padding: 3px 0 0 3px;
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .ed-widget .ed-toolbar-panel {
@@ -5205,14 +5203,12 @@ html {
 
 .ed-toolbar-panel.ed-drawing-toolbar .ed-button {
   background: none;
-  border: 0;
 }
 
 .ed-toolbar-panel .ed-toolbar-panel-drawer {
   -webkit-box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.3);
           box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.3);
   background: #fff;
-  border: 1px solid #ccc;
   display: none;
   left: 3px;
   margin: 0;
@@ -5228,9 +5224,7 @@ html {
 }
 
 .ed-button {
-  border-radius: 3px;
   background: #ddd;
-  border: 1px solid #ccc;
   display: block;
   height: 32px;
   margin: 0;
@@ -5242,24 +5236,14 @@ html {
   background: #118afb;
 }
 
-.ed-button [class*="icon-ed-"] {
-  margin-left: -1px;
-  margin-top: -1px;
-}
-
 .ed-button.disabled {
   cursor: default;
   background: #ddd;
   opacity: 0.5;
 }
 
-.ed-doodle-popup-toolbar .ed-button {
-  border-color: #6db4dc;
-}
-
 .ed-doodle-popup-toolbar .ed-button:hover, .ed-doodle-popup-toolbar .ed-button.hover {
   background: #118afb;
-  border-color: #0d6ac0;
 }
 
 .ed-button .label {
@@ -5268,14 +5252,13 @@ html {
   -webkit-transition: all 0s ease;
   transition: all 0s ease;
   background: #fff;
-  border: 1px solid #ccc;
   padding: 4px 6px;
   position: absolute;
   top: 32px;
   white-space: nowrap;
   z-index: 23;
   left: 0;
-  display: block;
+  display: none;
 }
 
 .ed-button .left {
@@ -5284,14 +5267,11 @@ html {
 }
 
 .ed-button:hover .label {
-  -webkit-transition-delay: 0.25s;
-          transition-delay: 0.25s;
-  left: -1px;
+  display: block;
 }
 
 .ed-button:hover .left {
   left: inherit;
-  right: -1px;
 }
 
 .ed-button:active .label, .ed-drawer-open > .ed-button .label {
@@ -5333,9 +5313,7 @@ html {
 
 .ed-fields-container {
   display: table-cell;
-  padding-left: 0.75rem;
-  padding-right: 2px;
-  padding-top: 10px;
+  padding: 109px 0 0 5px;
   position: relative;
   vertical-align: top;
   width: 100%;
@@ -5347,12 +5325,10 @@ html {
 }
 
 canvas.ed-canvas-edit {
-  background: #e4edf5;
-  border: 1px solid #53a0c7;
+  background: #dae6f1;
   cursor: pointer;
   position: relative;
   z-index: 20;
-  margin: 0 0 0 2px;
 }
 
 canvas.ed-canvas-edit.secondary {
@@ -5360,9 +5336,7 @@ canvas.ed-canvas-edit.secondary {
 }
 
 canvas.ed-canvas-display {
-  border: none;
   cursor: auto;
-  margin: 0px;
   position: relative;
   z-index: 20;
 }
@@ -5394,12 +5368,9 @@ span.squiggle {
 }
 
 .ed-drawing-controls {
-  background-color: #c3def5;
-  border: 1px solid #53a0c7;
-  border-width: 1px 1px 0 1px;
+  background-color: #c4cfd9;
   padding: 8px;
   height: 36px;
-  margin: 0 0 0 2px;
   position: relative;
   z-index: 21;
 }
@@ -5417,13 +5388,13 @@ span.squiggle {
   transition: right 0.5s ease;
   -webkit-box-shadow: 2px 5px 14px -4px rgba(0, 0, 0, 0.7);
           box-shadow: 2px 5px 14px -4px rgba(0, 0, 0, 0.7);
-  background: #c3def5;
-  border: 1px solid #53a0c7;
-  border-width: 1px 1px 1px 0;
+  background: #c4cfd9;
   padding: 5px;
   position: absolute;
+  min-width: 30px;
+  min-height: 30px;
   top: 0;
-  z-index: 20;
+  z-index: 24;
   opacity: 1;
   width: 188px;
 }
@@ -5435,10 +5406,6 @@ span.squiggle {
 
 .ed-doodle-popup.closed .ed-button .label {
   display: none;
-}
-
-.ed-doodle-popup.left {
-  border-width: 1px 0px 1px 1px;
 }
 
 .ed-doodle-popup-toolbar li {
