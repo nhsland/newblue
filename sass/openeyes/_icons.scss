@@ -146,6 +146,15 @@
 	&.ed-move-forward 	{ background-image: url( svg-path('eyedraw/ed-forward') ); }
 	
 	
+	// circles (traffic lights) green, amber, red
+	// used in more and more places, therefore
+	// making these also available as icons
+	&.circle-green		{ background-image: url( svg-path('ui/circle-green') ); }
+	&.circle-amber		{ background-image: url( svg-path('ui/circle-orange') ); }
+	&.circle-red		{ background-image: url( svg-path('ui/circle-red') ); }
+	
+	
+	
 	// R = Green; L = Red; B = Green/Red 
 	// Eye icons are the same across both themes		
 	&.laterality {

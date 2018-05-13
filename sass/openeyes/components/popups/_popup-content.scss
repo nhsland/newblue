@@ -1,0 +1,12 @@
+// OE Popups
+// notes: see openeyes/components/popups
+
+.oe-popup {
+	// wrapper for content.
+	// handles overflow.
+	.oe-popup-content {
+		max-height: 500px;  // must allow for the minimum spec res. displays
+		overflow-y: auto;	// scroll overflow
+		overflow-x: hidden; // otherwise breaks out of popup.
+	}	
+}

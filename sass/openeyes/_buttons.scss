@@ -11,6 +11,9 @@
 	// to stop it jumping up (baseline is default)
 	vertical-align:top; 
 	
+	// Don't let button text wrap
+	white-space: nowrap;
+	
 	// resets
 	border:0;
 	outline:0; // remove glow effect

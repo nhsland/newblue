@@ -77,8 +77,15 @@
 			overflow: hidden;
 			color: inherit;
 			
+			// truncate text
+			// white-space: nowrap;
+			// text-overflow: ellipsis;
+					
+			
 			&.expand {
 				height: auto;
+				//text-overflow: none;
+				//white-space: normal;
 				color: $oe-text;
 			}
 			
