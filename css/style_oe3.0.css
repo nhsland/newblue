@@ -223,6 +223,18 @@ textarea {
   margin: 15px 0;
 }
 
+.oe-date {
+  text-align: right;
+}
+
+.oe-date .mth {
+  padding: 0 0 0 6px;
+}
+
+.oe-date .yr {
+  padding: 0 0 0 6px;
+}
+
 .highlighted-error {
   border: 1px solid #9b0000;
 }
@@ -2625,11 +2637,12 @@ html {
   text-align: left;
 }
 
-.quicklook-data-groups table th.right, .quicklook-data-groups table td.right {
+.quicklook-data-groups table th:last-child, .quicklook-data-groups table td:last-child {
   text-align: right;
 }
 
 .quicklook-data-groups table th:first-child, .quicklook-data-groups table td:first-child {
+  text-align: left;
   padding-left: 0;
 }
 

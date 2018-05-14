@@ -10,6 +10,22 @@
 	margin:15px 0;
 }
 
+// OE Date Layout
+// to align the column layout of dd MMM YYYY
+// Dates are wrapped with spans
+.oe-date {
+	text-align: right;
+	.day {
+		
+	}
+	.mth {
+		padding:0 0 0 6px;
+	}
+	.yr {
+		padding:0 0 0 6px;
+	}
+}
+
 
 // ERRORs 
 // error on save
