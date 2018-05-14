@@ -37,6 +37,7 @@
 			}
 			
 			.eyedraw-data {
+				width:136px;
 				@include font-size(10);
 				font-weight:500;
 				color:rgb(50,50,50); // Always on the Eyedraw blue bg

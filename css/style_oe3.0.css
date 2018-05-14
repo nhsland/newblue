@@ -4734,6 +4734,7 @@ html {
 }
 
 .main-event .element .eyedraw .eyedraw-data {
+  width: 136px;
   font-size: 0.625rem;
   font-weight: 500;
   color: #323232;
