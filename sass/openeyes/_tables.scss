@@ -13,9 +13,12 @@ table.standard {
 		margin:0 0 10px 0;
 	}
 	
+	th, td {
+		text-align: left;  // standardise align, in Elements this maybe overwritten.
+	}
+	
 	thead {
 		th {
-			text-align: left;  // overide default 'middle'
 			color:$oe-text-light;
 			@include font-size(12);
 			font-weight: $oe-font-light;
@@ -38,5 +41,7 @@ table.standard {
 			color:$oe-text; 
 		}
 	}
+	
+
 }
 

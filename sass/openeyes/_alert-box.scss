@@ -21,10 +21,10 @@
 	}
 	
 	
-	// these are all the current 'types' that are in 
-	// OE2... in OE3 some may be redundant. 
+	// types of alerts
+	
 	&.info {
-		color: rgb(230,230,230);
+		color: rgb(250,250,250);
 		background: $oe-alert-grey;
 	}
 	
