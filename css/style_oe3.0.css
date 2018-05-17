@@ -225,6 +225,7 @@ textarea {
 
 .oe-date {
   text-align: right;
+  white-space: nowrap;
 }
 
 .oe-date .mth {
@@ -1266,6 +1267,11 @@ table.standard tbody td {
   padding: 5px 10px 5px 0;
   font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
+}
+
+table td.date {
+  text-align: right;
+  padding-right: 4px;
 }
 
 input, textarea, select {
@@ -7025,6 +7031,7 @@ table.oe-clinic-list td.center {
   position: absolute;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
+  z-index: 10;
   font-size: 0.75rem;
 }
 

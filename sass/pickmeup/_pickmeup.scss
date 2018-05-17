@@ -29,6 +29,7 @@ $today-color                      : $color-hover !default;
 	display         : inline-block;
 	position        : absolute;
 	touch-action    : manipulation;
+	z-index			: 10; // quick fix to ensure it works in hotlist
 	
 	@include font-size(12);
 
