@@ -1269,7 +1269,7 @@ table.standard tbody td {
   color: rgba(255, 255, 255, 0.8);
 }
 
-table td.date {
+table td.date, table th.date {
   text-align: right;
   padding-right: 4px;
 }

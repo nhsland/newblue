@@ -46,7 +46,7 @@ table.standard {
 // oe-date is a DOM structure to better layout dates 
 // the <td> needs this class to ensure correct layout
 table {
-	td {
+	td, th {
 		&.date {
 			text-align: right;
 			padding-right:4px;
