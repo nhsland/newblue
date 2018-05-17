@@ -4730,32 +4730,32 @@ html {
   border-top: 1px solid #26303d;
 }
 
-.main-event .element .eyedraw {
+.element .eyedraw {
   position: relative;
   background: #dae6f1;
   padding: 0 5px;
   border-radius: 5px;
 }
 
-.main-event .element .eyedraw.ed-v2 {
+.element .eyedraw.ed-v2 {
   padding-top: 20px;
   background: none;
 }
 
-.main-event .element .eyedraw.ed-v2 .eyedraw-v2-launch-edit {
+.element .eyedraw.ed-v2 .eyedraw-v2-launch-edit {
   margin: 10px 0 0 0;
 }
 
-.main-event .element .eyedraw.ed-v2 .eyedraw-data {
+.element .eyedraw.ed-v2 .eyedraw-data {
   font-size: 0.6875rem;
   color: rgba(255, 255, 255, 0.8);
 }
 
-.main-event .element .eyedraw .eyedraw-canvas {
+.element .eyedraw .eyedraw-canvas {
   white-space: nowrap;
 }
 
-.main-event .element .eyedraw .eyedraw-data {
+.element .eyedraw .eyedraw-data {
   width: 136px;
   font-size: 0.625rem;
   font-weight: 500;
@@ -4763,27 +4763,27 @@ html {
   padding: 10px 5px 20px 0;
 }
 
-.main-event .element .eyedraw .eyedraw-data .data-value {
+.element .eyedraw .eyedraw-data .data-value {
   font-weight: 500;
 }
 
-.main-event .element .eyedraw .eyedraw-data .data-value .priority-text {
+.element .eyedraw .eyedraw-data .data-value .priority-text {
   font-weight: 600;
 }
 
-.main-event .element .eyedraw .eyedraw-data.stack .data-value {
+.element .eyedraw .eyedraw-data.stack .data-value {
   padding: 0 0 10px 0;
 }
 
-.main-event .element .eyedraw .eyedraw-data .data-label {
+.element .eyedraw .eyedraw-data .data-label {
   color: #78788c;
 }
 
-.main-event .element.edit .eyedraw {
+.element.edit .eyedraw {
   padding-bottom: 20px;
 }
 
-.main-event .element.edit .eyedraw .eyedraw-launch-edit-mode {
+.element.edit .eyedraw .eyedraw-launch-edit-mode {
   position: absolute;
   bottom: 5px;
   right: 0;

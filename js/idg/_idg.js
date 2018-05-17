@@ -64,6 +64,13 @@ idg.init = function(){
 						'previous-history-elements.php', 	// Demo content
 						'.close-icon-btn' );				// wraps remove icon
 						
+						
+	// duplicate history element					
+	idg.overlayPopup( 	'#copy-edit-anterior-segment-btn',  // "Duplicate" Event icon  (Exam Edit: ED Anterior Segment example )
+						'previous-ed-anterior.php', 		// Demo content
+						'.close-icon-btn' );				// wraps remove icon					
+						
+						
 	// virtual clinic change:					
 	idg.overlayPopup( 	'#js-virtual-clinic-btn',  			// "Duplicate" Event icon  (Exam Edit: History )
 						'virtual-clinic.php', 			// Demo content
