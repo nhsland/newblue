@@ -76,10 +76,15 @@ create readable and compressed css
 **/
 gulp.task('sass',function(){
 	
+	// datestamp CSS file
+	var datestamp = '/* ' + new Date( Date.now() ) + ' */';
+	
 	var min = gulp.src( config.sass )
 				.pipe( sass( {outputStyle:'compressed'} ) )
 				.pipe( rename( config.cssFile + '.min.css') )
-				.pipe( autoprefixer()); // browserList set in package.json
+				.pipe( autoprefixer()) // browserList set in package.json
+				.pipe( header( datestamp) );
+				
 					
 	var css = gulp.src( config.sass )
 				.pipe( sass( {errLogToConsole:true, outputStyle:'expanded'} ).on( 'error', sass.logError ) )
@@ -97,10 +102,14 @@ only creates compressed css
 **/
 gulp.task('sass-classic',function(){
 	
+	// datestamp CSS file
+	var datestamp = '/* ' + new Date( Date.now() ) + ' */';
+	
 	return gulp.src( config.classic )
 		.pipe( sass( {outputStyle:'compressed'} ) )
 		.pipe( rename( config.cssFile + '_classic.min.css') )
-		.pipe( autoprefixer() ) 				
+		.pipe( autoprefixer() ) 
+		.pipe( header( datestamp) )				
 		.pipe( gulp.dest( config.css ) );
 });
 
