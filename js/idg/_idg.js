@@ -68,13 +68,19 @@ idg.init = function(){
 	// duplicate history element					
 	idg.overlayPopup( 	'#copy-edit-anterior-segment-btn',  // "Duplicate" Event icon  (Exam Edit: ED Anterior Segment example )
 						'previous-ed-anterior.php', 		// Demo content
-						'.close-icon-btn' ).test();				// wraps remove icon					
+						'.close-icon-btn' );				// wraps remove icon					
 						
 						
 	// virtual clinic change:					
-	idg.overlayPopup( 	'#js-virtual-clinic-btn',  			// "Duplicate" Event icon  (Exam Edit: History )
+	idg.overlayPopup( 	'#js-virtual-clinic-btn',  			// "Duplicate" Event icon  (Exam Edit: Virtual Clinic change )
 						'virtual-clinic.php', 			// Demo content
 						'.close-icon-btn' );				// wraps remove icon					
+						
+						
+	// Delete Event generic example:					
+	idg.overlayPopup( 	'#js-delete-event-btn',  			// 
+						'delete-event.php', 				// Demo content
+						'.cancel-icon-btn' );		// no close btn! must cancel				
 						
 						
 	// Add New Event in SEM view mode
