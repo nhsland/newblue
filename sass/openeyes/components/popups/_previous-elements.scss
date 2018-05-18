@@ -45,6 +45,24 @@
 			}
 		}
 		
+		// eyedraw elements added to popup can't use the CSS 
+		// from elements (because it brings to much baggage)
+		// therefore added the flex classes here.
+		.element-eyes {
+			display:flex;
+			align-items:flex-start;			
+			justify-content:space-between;
+			
+			.right-eye {
+				width:490px;
+				margin:0 10px 0 0;
+			}
+			.left-eye {
+				width:490px;
+			}
+		}
+		
+		
 	}
 
 	

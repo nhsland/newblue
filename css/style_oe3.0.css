@@ -2820,7 +2820,7 @@ html {
   position: relative;
   background: #374755;
   min-width: 600px;
-  max-width: 1080px;
+  max-width: 1160px;
   padding: 20px;
   color: rgba(255, 255, 255, 0.8);
 }
@@ -2910,6 +2910,27 @@ html {
 
 .oe-popup-content.previous-elements table td .metadata .user {
   color: rgba(255, 255, 255, 0.8);
+}
+
+.oe-popup-content.previous-elements .element-eyes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.oe-popup-content.previous-elements .element-eyes .right-eye {
+  width: 490px;
+  margin: 0 10px 0 0;
+}
+
+.oe-popup-content.previous-elements .element-eyes .left-eye {
+  width: 490px;
 }
 
 /* Generic Layouts */
