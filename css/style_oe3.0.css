@@ -252,14 +252,6 @@ textarea {
   opacity: 0.5;
 }
 
-.oe-i.small-icon {
-  background-size: 13px;
-}
-
-.oe-i.medium-icon {
-  background-size: 16px;
-}
-
 .oe-i.small {
   width: 13px;
   height: 13px;
@@ -272,11 +264,19 @@ textarea {
   background-size: 16px;
 }
 
+.oe-i.small-icon {
+  background-size: 13px;
+}
+
+.oe-i.medium-icon {
+  background-size: 16px;
+}
+
 .oe-i.pad {
   margin: 0 4px;
 }
 
-.oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i.active, .oe-i.no-hover {
+.oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i.active, .oe-i.no-hover, .oe-i.circle-green, .oe-i.circle-amber, .oe-i.circle-red, .oe-i.warning {
   opacity: 1;
 }
 
@@ -558,11 +558,11 @@ textarea {
 }
 
 .oe-i.triangle {
-  background-image: url("../svg/in-css/icons/warning.svg");
+  background-image: url("../svg/in-css/icons/triangle.svg");
 }
 
 .oe-i.triangle.pro-theme {
-  background-image: url("../svg/in-css/icons/warning.svg");
+  background-image: url("../svg/in-css/icons/triangle.svg");
 }
 
 .oe-i.time {
@@ -663,6 +663,10 @@ textarea {
 
 .oe-i.circle-red {
   background-image: url("../svg/in-css/ui/circle-red.svg");
+}
+
+.oe-i.warning {
+  background-image: url("../svg/in-css/ui/warning.svg");
 }
 
 .oe-i.laterality {
@@ -2812,6 +2816,27 @@ html {
 
 .oe-patient-popup table.risks td textarea {
   vertical-align: middle;
+}
+
+.oe-patient-popup .situational-awareness {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0 0 10px 0;
+}
+
+.oe-patient-popup .situational-awareness .group {
+  border-right: 1px solid #26303d;
+  padding: 0 10px 0 0;
+  margin: 0 10px 0 0;
+}
+
+.oe-patient-popup .situational-awareness .group .data {
+  margin: 0 8px 0 0;
+}
+
+.oe-patient-popup .situational-awareness .group .oe-date {
+  font-size: 0.6875rem;
+  opacity: 0.5;
 }
 
 .oe-popup {

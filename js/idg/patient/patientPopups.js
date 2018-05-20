@@ -14,6 +14,7 @@ idg.patientPopups = {
 		var demographics2 	= new idg.NavBtnPopup( 'management', $('#js-management-btn'), $('#patient-popup-management') );
 		var risks 			= new idg.NavBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
 		// var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
+	
 		
 		var all = [ quicklook, demographics, demographics2, risks ];
 		

@@ -1,28 +1,50 @@
 // General UI Icons
 // SVG icons
+// 
 // default size is 19px x 19px
-// also: small:13px and medium:16px.
+//  
+//	small: 	13px 
+// 	medium:	16px
+//	large: 	19px
 // 
 
 // DOM 
-// <i class="oe-i [name] [small|medium] "></i>
+// <i class="oe-i [name] [size] [...]"></i> 
 
 .oe-i {
 	display:inline-block;
-	vertical-align: middle;
+	vertical-align: middle;  
 	
-	$size:19px;
-	$size-medium:16px;
-	$size-small:13px;
+	$size-large:	19px;
+	$size-medium:	16px;
+	$size-small:	13px;
 	
-	width:$size; 
-	height:$size;
-	background-size: $size;
+	width:$size-large; 
+	height:$size-large;
+	background-size: $size-large;
 	background-repeat: no-repeat;
 	background-position: center center;
+
 	
-	// reduce the ICON size ONLY:
-	// small icon
+	&.small {
+		width:$size-small; 
+		height:$size-small;
+		background-size: $size-small;
+	}
+
+	&.medium {
+		width:$size-medium; 
+		height:$size-medium;
+		background-size: $size-medium;
+	}
+	
+	&.large {
+		// default, class is here in case it is needed...
+	}
+	
+
+	// reduce the ICON size ONLY
+	// not really used but anyway... 
 	&.small-icon {
 		background-size: $size-small;
 	}
@@ -31,19 +53,6 @@
 		background-size: $size-medium;
 	}
 	
-	// small icon AND physically smaller
-	&.small {
-		width:$size-small; 
-		height:$size-small;
-		background-size: $size-small;
-	}
-	
-	// medium icon AND physically smaller
-	&.medium {
-		width:$size-medium; 
-		height:$size-medium;
-		background-size: $size-medium;
-	}
 	
 	// used 'inline' to 'pad' out the icon
 	&.pad {	
@@ -59,7 +68,12 @@
 	
 	&:hover, &:focus, &:active, 
 	&.active,
-	&.no-hover { 
+	&.no-hover,
+	&.circle-green,	// no hover for coloured graphics	
+	&.circle-amber,			
+	&.circle-red,
+	&.warning
+	{ 
 		opacity:1; 
 	}
 	
@@ -74,18 +88,21 @@
 	// use 'no-click' to turn off interaction behaviour
 	&.start, 
 	&.stop, 
-	&.d-slash, // graphic icons only
-	&.no-click, {
+	&.d-slash, // graphic icons only	
+	&.no-click {
 		cursor:default;
 		&:hover, &:focus, &:active { 
 			opacity:0.5; 
 		}
 	}	
 	
+	// pro-theme required for all icons if the icons are used 
+	// on areas that can't be theme changed (they will display the
+	// same in both Pro and Classic)
 	@mixin oe3-icons($svg) {
 		background-image: url( svg-icon-path-theme( $svg ) );
 		&.pro-theme {
-			background-image: url( svg-path( "icons/" + $svg ) );
+			background-image: url( svg-path( "icons/" + $svg ) ); 
 		}
 	}
 	
@@ -124,7 +141,7 @@
 	&.downup 			{ @include oe3-icons('downup'); }
 	&.history 			{ @include oe3-icons('history'); }
 	&.tick 				{ @include oe3-icons('tick'); }
-	&.triangle 			{ @include oe3-icons('warning'); }  // can't call it 'warning'
+	&.triangle			{ @include oe3-icons('triangle'); }
 	&.time 				{ @include oe3-icons('time'); }
 	&.audit-trail 		{ @include oe3-icons('audit-trail'); }
 	&.download 			{ @include oe3-icons('download'); }
@@ -153,6 +170,9 @@
 	&.circle-amber		{ background-image: url( svg-path('ui/circle-orange') ); }
 	&.circle-red		{ background-image: url( svg-path('ui/circle-red') ); }
 	
+	// RED warning triangle
+	&.warning 			{ background-image: url( svg-path('ui/warning') ); } 
+	
 	
 	
 	// R = Green; L = Red; B = Green/Red 
@@ -175,15 +195,6 @@
 		&.NA {
 			background-image: url( svg-path('icons/_laterality/lat-NA') );
 		}
-		
-		// Both Eyes (Bi-lateral) --- Both is currently unused in OE3
-		//&.B {
-		//	background-image: url( svg-path('lat-B') );	
-		//	&.pos-shift {
-		//		position:relative;
-		//		left:7px;
-		//	}
-		//}
 	}
 }
 
