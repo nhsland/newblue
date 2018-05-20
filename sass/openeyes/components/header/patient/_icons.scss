@@ -1,0 +1,128 @@
+// OE Header area.
+// 
+// 
+
+.oe-patient {
+	
+	// icons buttons for...
+	.patient-quicklook, 
+	.patient-demographics, 
+	.patient-management, 
+	.patient-allergies-risks,
+	.patient-local-edit {
+		position:absolute;
+		padding:5px 10px 4px 10px; // increase icon hitarea
+		cursor:pointer;
+		
+		// svg icon btn
+		.icon {
+			display:inline-block;
+			fill:#fff;
+			opacity: 0.8;				
+		}	
+	}
+	
+	// icon behaviour
+	.patient-quicklook, 
+	.patient-demographics,
+	.patient-management {
+		// js controlled interaction... 
+		&.open, &.active {
+			.icon {
+				fill: $oe-pro-text-highlight;
+			}
+		}
+	}
+	
+	// Eye
+	.patient-quicklook {
+		bottom:0;
+		right:0;	
+		.icon {
+			width:15px;  
+			height:15px;
+		}
+	}
+	
+	// dude
+	.patient-management {
+		bottom:0;
+		right:29px;
+		padding-bottom:3px; // use pad to increase hitarea.
+		.icon {
+			width:18px;  
+			height:18px;
+		}
+	}
+	
+	// info 
+	.patient-demographics {
+		bottom:0;
+		right:62px;
+		padding-bottom:4px; // use pad to increase hitarea.
+		.icon {
+			width:16px;  
+			height:16px;
+		}
+	}
+
+	// Allergies and Risks has 3 states: 
+	// 1 allergy OR risk = 'risk-warning' (red)
+	// NO allergies and NO risks (confirmed) = 'no-risk' (green)
+	// No risk data collected = 'unknown' (text)
+	
+	.patient-allergies-risks {
+		bottom:0;
+		right:105px;
+	
+		display:flex;
+		align-items:center;
+		padding:6px 24px 5px 4px; // padding matches the data padding to align text
+		
+		// ;
+		
+		background:transparent url( svg-path('icons/triangle') ) center right 4px no-repeat;
+		background-size:15px;	
+		
+		&.unknown {
+			background-color:$oe-pro-grey;
+		}
+		
+		&.risk-warning {
+			background-color:$oe-risks-warning;
+		}
+		
+		&.no-risk {
+			background-color:$oe-btn-green-hint;
+			background-image: url( svg-path('icons/tick') );
+		}
+		
+		
+		
+		
+		// js controlled interaction... 
+		&.open, &.active {
+			background-color: $oe-pro-text-highlight;
+			background-image: url( svg-path('icons/_classic/triangle') );
+			color:$oe-pro-bg;
+		}
+	}
+	
+	// Edit Patient when (local)
+	// i.e, they are not a PAS integrated patient.
+	.patient-local-edit {
+		top:5px;
+		right:0;
+		.icon {
+			width:15px;  
+			height:15px;
+			&:hover, &:focus, &:active {
+				opacity: 1;
+			}
+			
+		}
+	}
+
+
+}
+
