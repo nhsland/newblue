@@ -3234,14 +3234,24 @@ html {
 }
 
 .home-messages .messages .message {
-  width: 100%;
-  height: 1rem;
+  width: 25vw;
+  height: 1.2rem;
   overflow: hidden;
   color: inherit;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@media only screen and (min-width: 1440px) {
+  .home-messages .messages .message {
+    width: 30vw;
+  }
 }
 
 .home-messages .messages .message.expand {
   height: auto;
+  text-overflow: none;
+  white-space: normal;
   color: rgba(255, 255, 255, 0.8);
 }
 

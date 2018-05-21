@@ -71,21 +71,26 @@
 		}
 		
 		// messages 
-		.message {
-			width:100%;
-			height:1rem;
+		.message {;
+			width:25vw;
+			
+			@include media($oe-extended-browser-size){
+				width:30vw;
+			}
+			
+			height:1.2rem;
 			overflow: hidden;
 			color: inherit;
 			
 			// truncate text
-			// white-space: nowrap;
-			// text-overflow: ellipsis;
+			white-space: nowrap;
+			text-overflow: ellipsis;
 					
 			
 			&.expand {
 				height: auto;
-				//text-overflow: none;
-				//white-space: normal;
+				text-overflow: none;
+				white-space: normal;
 				color: $oe-text;
 			}
 			
