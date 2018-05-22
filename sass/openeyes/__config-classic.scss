@@ -77,8 +77,8 @@ $oe-bg-hint-red:		rgb(230,180,180);
 // specific customisation of elements
 // impossible to always find a clever colour
 // solution for both themes so... 
-$oe-element-headers:   rgb(20,20,150); // element default header colour
-
+$oe-element-headers:   	rgb(20,20,150); 	// element default header colour
+$oe-home-search-bg:   	rgb(105,110,132);	// Home page Search area background
 
 // ... different SVGs for 'pro' & 'classic' theme
 @function svg-icon-path-theme($svg){
