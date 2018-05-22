@@ -4349,6 +4349,10 @@ html {
   vertical-align: top;
 }
 
+.main-event .element table tr.divider {
+  border-bottom-width: 4px;
+}
+
 .main-event .element table.large td, .main-event .element table.large-text td {
   font-size: 0.875rem;
 }
