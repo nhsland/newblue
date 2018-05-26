@@ -19,6 +19,12 @@
 				@include font-size(14);
 				font-weight:inherit;	
 			}
+			
+			// extends the flex-item-bottom class
+			// provides a margin space for the + and commment buttons
+			.add-data-actions {
+				margin:8px 0 0 0;
+			}
 		}
 		
 		// Within Elements there may be text that isn't

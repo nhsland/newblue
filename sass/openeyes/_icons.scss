@@ -88,6 +88,7 @@
 	// use 'no-click' to turn off interaction behaviour
 	&.start, 
 	&.stop, 
+	&.change, 
 	&.d-slash, // graphic icons only	
 	&.no-click {
 		cursor:default;
@@ -135,6 +136,7 @@
 	&.comments-added 	{ @include oe3-icons('comments-added'); }
 	&.start 			{ @include oe3-icons('start'); }
 	&.stop 				{ @include oe3-icons('stop'); }
+	&.change 			{ @include oe3-icons('change'); }
 	&.d-slash 			{ @include oe3-icons('double-slash'); }
 	&.expand 			{ @include oe3-icons('expand'); }
 	&.collapse 			{ @include oe3-icons('collapse'); }

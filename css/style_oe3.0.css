@@ -285,11 +285,11 @@ textarea {
   cursor: default;
 }
 
-.oe-i.start, .oe-i.stop, .oe-i.d-slash, .oe-i.no-click {
+.oe-i.start, .oe-i.stop, .oe-i.change, .oe-i.d-slash, .oe-i.no-click {
   cursor: default;
 }
 
-.oe-i.start:hover, .oe-i.start:focus, .oe-i.start:active, .oe-i.stop:hover, .oe-i.stop:focus, .oe-i.stop:active, .oe-i.d-slash:hover, .oe-i.d-slash:focus, .oe-i.d-slash:active, .oe-i.no-click:hover, .oe-i.no-click:focus, .oe-i.no-click:active {
+.oe-i.start:hover, .oe-i.start:focus, .oe-i.start:active, .oe-i.stop:hover, .oe-i.stop:focus, .oe-i.stop:active, .oe-i.change:hover, .oe-i.change:focus, .oe-i.change:active, .oe-i.d-slash:hover, .oe-i.d-slash:focus, .oe-i.d-slash:active, .oe-i.no-click:hover, .oe-i.no-click:focus, .oe-i.no-click:active {
   opacity: 0.5;
 }
 
@@ -507,6 +507,14 @@ textarea {
 
 .oe-i.stop.pro-theme {
   background-image: url("../svg/in-css/icons/stop.svg");
+}
+
+.oe-i.change {
+  background-image: url("../svg/in-css/icons/change.svg");
+}
+
+.oe-i.change.pro-theme {
+  background-image: url("../svg/in-css/icons/change.svg");
 }
 
 .oe-i.d-slash {
@@ -4194,6 +4202,10 @@ html {
 .main-event .element .element-fields .large-text {
   font-size: 0.875rem;
   font-weight: inherit;
+}
+
+.main-event .element .element-fields .add-data-actions {
+  margin: 8px 0 0 0;
 }
 
 .main-event .element .note {
