@@ -397,6 +397,14 @@ textarea {
   background-image: url("../svg/in-css/icons/direction-down.svg");
 }
 
+.oe-i.direction-right-circle {
+  background-image: url("../svg/in-css/icons/direction-right-circle.svg");
+}
+
+.oe-i.direction-right-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-right-circle.svg");
+}
+
 .oe-i.child-arrow {
   background-image: url("../svg/in-css/icons/child-arrow.svg");
 }
@@ -4362,7 +4370,7 @@ html {
 }
 
 .main-event .element table tr.divider {
-  border-bottom-width: 4px;
+  border-bottom-width: 6px;
 }
 
 .main-event .element table.large td, .main-event .element table.large-text td {
