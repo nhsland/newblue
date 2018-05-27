@@ -16,9 +16,15 @@
 .oe-date {
 	text-align: right;
 	white-space: nowrap;
-	.day {
-		
-	}
+	
+	// this is tricky. the problem here occurred in Meds
+	// an icon is used to show start / stop dates.
+	// if I align all the <td> the icons don't line up.
+	// flex also didn't work. instead decide to go with a 
+	// fixed width approach... 
+	display:inline-block;
+	width:88px;
+	.day {}
 	.mth {
 		padding:0 0 0 6px;
 	}

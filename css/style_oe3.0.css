@@ -226,6 +226,8 @@ textarea {
 .oe-date {
   text-align: right;
   white-space: nowrap;
+  display: inline-block;
+  width: 88px;
 }
 
 .oe-date .mth {
@@ -274,6 +276,14 @@ textarea {
 
 .oe-i.pad {
   margin: 0 4px;
+}
+
+.oe-i.pad-right {
+  margin: 0 8px 0 0;
+}
+
+.oe-i.pad-left {
+  margin: 0 8px 0 0;
 }
 
 .oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i.active, .oe-i.no-hover, .oe-i.circle-green, .oe-i.circle-amber, .oe-i.circle-red, .oe-i.warning {

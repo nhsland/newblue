@@ -59,6 +59,16 @@
 		margin:0 4px;		
 	}
 	
+	// icons before text
+	&.pad-right {
+		margin:0 8px 0 0;
+	}
+	
+	// icons after text
+	&.pad-left {
+		margin:0 8px 0 0;
+	}
+	
 	// show interaction
 	cursor:pointer;
 	opacity: 0.5;
