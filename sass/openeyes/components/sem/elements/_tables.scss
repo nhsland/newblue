@@ -107,6 +107,14 @@
 					text-align: center;
 					padding:0 10px;
 				}
+				
+				&.align-left {
+					text-align: left;
+				}
+				
+				&.align-right {
+					text-align: right;
+				}
 			}
 			
 			// <th>

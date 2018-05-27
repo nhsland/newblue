@@ -655,6 +655,14 @@ textarea {
   background-image: url("../svg/in-css/icons/female.svg");
 }
 
+.oe-i.drug-rx {
+  background-image: url("../svg/in-css/icons/drug-rx.svg");
+}
+
+.oe-i.drug-rx.pro-theme {
+  background-image: url("../svg/in-css/icons/drug-rx.svg");
+}
+
 .oe-i.ed-reset {
   background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
 }
@@ -4401,6 +4409,14 @@ html {
 .main-event .element table th.center, .main-event .element table td.center {
   text-align: center;
   padding: 0 10px;
+}
+
+.main-event .element table th.align-left, .main-event .element table td.align-left {
+  text-align: left;
+}
+
+.main-event .element table th.align-right, .main-event .element table td.align-right {
+  text-align: right;
 }
 
 .main-event .element table th {
