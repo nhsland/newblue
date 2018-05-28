@@ -4408,7 +4408,6 @@ html {
 .main-event .element table th.nowrap, .main-event .element table td.nowrap {
   width: 1%;
   white-space: nowrap;
-  padding-right: 10px;
 }
 
 .main-event .element table th.center, .main-event .element table td.center {
