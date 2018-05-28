@@ -283,7 +283,7 @@ textarea {
 }
 
 .oe-i.pad-left {
-  margin: 0 8px 0 0;
+  margin: 0 0 0 8px;
 }
 
 .oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i.active, .oe-i.no-hover, .oe-i.circle-green, .oe-i.circle-amber, .oe-i.circle-red, .oe-i.warning {
