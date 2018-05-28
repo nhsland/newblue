@@ -1330,6 +1330,11 @@ input.error, textarea.error, select.error {
   background-color: #9b0000;
 }
 
+input.date {
+  text-align: center;
+  width: 90px;
+}
+
 label,
 .label {
   margin: 0 10px 0 0;

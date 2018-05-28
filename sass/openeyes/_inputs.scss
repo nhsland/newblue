@@ -21,6 +21,16 @@ input, textarea, select {
 	}
 }
 
+// dates used be handled consistently.
+// therefore...
+input {
+	// inputs
+	&.date {
+		text-align:center;
+		width:90px;	
+	}	
+}
+
 select {
 	// remove all the default appearances for inputs
 	//-moz-appearance: none; 
