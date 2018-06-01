@@ -29,9 +29,10 @@
 
 .ed-fields-container {
 	display: table-cell;
-	padding: 0px 0 0 5px;
+	padding: 0 0 0 15px; 
 	position: relative;
 	vertical-align: top;
+	top:-2px;
 	width: 100%;
 }
 
@@ -44,6 +45,7 @@ canvas {
 	// Canvas element in edit mode
 	&.ed-canvas-edit {
 		background: $oe-ed-bg;
+		border:1px solid shade($oe-ed-bg,20);
 		cursor: pointer;
 		position: relative;
 		z-index: $oe-z-ed-v2;

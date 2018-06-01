@@ -163,7 +163,7 @@ textarea {
   width: 41.66667%;
 }
 
-.cols-6, cols-half {
+.cols-6, .cols-half {
   width: 50%;
 }
 
@@ -5390,6 +5390,7 @@ html {
           box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.3);
   -webkit-transition: all 0s ease;
   transition: all 0s ease;
+  color: #333;
   background: #fff;
   padding: 4px 6px;
   position: absolute;
@@ -5452,9 +5453,10 @@ html {
 
 .ed-fields-container {
   display: table-cell;
-  padding: 0px 0 0 5px;
+  padding: 0 0 0 15px;
   position: relative;
   vertical-align: top;
+  top: -2px;
   width: 100%;
 }
 
@@ -5465,6 +5467,7 @@ html {
 
 canvas.ed-canvas-edit {
   background: #dae6f1;
+  border: 1px solid #aeb8c1;
   cursor: pointer;
   position: relative;
   z-index: 20;
@@ -5540,7 +5543,7 @@ span.squiggle {
 
 .ed-doodle-popup.closed {
   right: 0;
-  opacity: 0;
+  display: none;
 }
 
 .ed-doodle-popup.closed .ed-button .label {
