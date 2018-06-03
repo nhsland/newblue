@@ -24,6 +24,7 @@
 	// fixed width approach... 
 	display:inline-block;
 	width:88px;
+	
 	.day {}
 	.mth {
 		padding:0 0 0 6px;
@@ -31,6 +32,14 @@
 	.yr {
 		padding:0 0 0 6px;
 	}
+}
+
+// OE EYE icon
+// these should ALWAYs be on the same line 
+// have therefore wrapped like with OE date approach
+.oe-eye-lat-icons {
+	display:inline-block;
+	white-space: nowrap;
 }
 
 

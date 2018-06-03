@@ -562,1325 +562,1334 @@
   background-position: -64px -112px;
 }
 
-.icon-ed-help {
+.icon-ed-delete {
   background-position: -160px -224px;
 }
 
-.icon-ed-help.small {
+.icon-ed-delete.small {
   background-size: 240px 224px;
   background-position: -80px -112px;
 }
 
-.icon-ed-lock {
+.icon-ed-help {
   background-position: -192px -224px;
 }
 
-.icon-ed-lock.small {
+.icon-ed-help.small {
   background-size: 240px 224px;
   background-position: -96px -112px;
 }
 
-.icon-ed-move-to-back {
+.icon-ed-lock {
   background-position: -224px -224px;
 }
 
-.icon-ed-move-to-back.small {
+.icon-ed-lock.small {
   background-size: 240px 224px;
   background-position: -112px -112px;
 }
 
-.icon-ed-move-to-front {
+.icon-ed-move-to-back {
   background-position: -256px 0px;
 }
 
-.icon-ed-move-to-front.small {
+.icon-ed-move-to-back.small {
   background-size: 240px 224px;
   background-position: -128px 0px;
 }
 
-.icon-ed-reset {
+.icon-ed-move-to-front {
   background-position: -256px -32px;
 }
 
-.icon-ed-reset.small {
+.icon-ed-move-to-front.small {
   background-size: 240px 224px;
   background-position: -128px -16px;
 }
 
-.icon-ed-zoom-in {
+.icon-ed-reset {
   background-position: -256px -64px;
 }
 
-.icon-ed-zoom-in.small {
+.icon-ed-reset.small {
   background-size: 240px 224px;
   background-position: -128px -32px;
 }
 
-.icon-ed-zoom-out {
+.icon-ed-zoom-in {
   background-position: -256px -96px;
 }
 
-.icon-ed-zoom-out.small {
+.icon-ed-zoom-in.small {
   background-size: 240px 224px;
   background-position: -128px -48px;
 }
 
-.icon-ed-APattern {
+.icon-ed-zoom-out {
   background-position: -256px -128px;
 }
 
-.icon-ed-APattern.small {
+.icon-ed-zoom-out.small {
   background-size: 240px 224px;
   background-position: -128px -64px;
 }
 
-.icon-ed-Abrasion {
+.icon-ed-APattern {
   background-position: -256px -160px;
 }
 
-.icon-ed-Abrasion.small {
+.icon-ed-APattern.small {
   background-size: 240px 224px;
   background-position: -128px -80px;
 }
 
-.icon-ed-AdenoviralKeratitis {
+.icon-ed-Abrasion {
   background-position: -256px -192px;
 }
 
-.icon-ed-AdenoviralKeratitis.small {
+.icon-ed-Abrasion.small {
   background-size: 240px 224px;
   background-position: -128px -96px;
 }
 
-.icon-ed-Ahmed {
+.icon-ed-AdenoviralKeratitis {
   background-position: -256px -224px;
 }
 
-.icon-ed-Ahmed.small {
+.icon-ed-AdenoviralKeratitis.small {
   background-size: 240px 224px;
   background-position: -128px -112px;
 }
 
-.icon-ed-AngleRecession {
+.icon-ed-Ahmed {
   background-position: 0px -256px;
 }
 
-.icon-ed-AngleRecession.small {
+.icon-ed-Ahmed.small {
   background-size: 240px 224px;
   background-position: 0px -128px;
 }
 
-.icon-ed-AntPVR {
+.icon-ed-AngleRecession {
   background-position: -32px -256px;
 }
 
-.icon-ed-AntPVR.small {
+.icon-ed-AngleRecession.small {
   background-size: 240px 224px;
   background-position: -16px -128px;
 }
 
-.icon-ed-AntSeg {
+.icon-ed-AntPVR {
   background-position: -64px -256px;
 }
 
-.icon-ed-AntSeg.small {
+.icon-ed-AntPVR.small {
   background-size: 240px 224px;
   background-position: -32px -128px;
 }
 
-.icon-ed-ArcuateScotoma {
+.icon-ed-AntSeg {
   background-position: -96px -256px;
 }
 
-.icon-ed-ArcuateScotoma.small {
+.icon-ed-AntSeg.small {
   background-size: 240px 224px;
   background-position: -48px -128px;
 }
 
-.icon-ed-Arrow {
+.icon-ed-ArcuateScotoma {
   background-position: -128px -256px;
 }
 
-.icon-ed-Arrow.small {
+.icon-ed-ArcuateScotoma.small {
   background-size: 240px 224px;
   background-position: -64px -128px;
 }
 
-.icon-ed-Baerveldt {
+.icon-ed-Arrow {
   background-position: -160px -256px;
 }
 
-.icon-ed-Baerveldt.small {
+.icon-ed-Arrow.small {
   background-size: 240px 224px;
   background-position: -80px -128px;
 }
 
-.icon-ed-BiopsySite {
+.icon-ed-Baerveldt {
   background-position: -192px -256px;
 }
 
-.icon-ed-BiopsySite.small {
+.icon-ed-Baerveldt.small {
   background-size: 240px 224px;
   background-position: -96px -128px;
 }
 
-.icon-ed-Bruising {
+.icon-ed-BiopsySite {
   background-position: -224px -256px;
 }
 
-.icon-ed-Bruising.small {
+.icon-ed-BiopsySite.small {
   background-size: 240px 224px;
   background-position: -112px -128px;
 }
 
-.icon-ed-Bruit {
+.icon-ed-Bruising {
   background-position: -256px -256px;
 }
 
-.icon-ed-Bruit.small {
+.icon-ed-Bruising.small {
   background-size: 240px 224px;
   background-position: -128px -128px;
 }
 
-.icon-ed-Buckle {
+.icon-ed-Bruit {
   background-position: -288px 0px;
 }
 
-.icon-ed-Buckle.small {
+.icon-ed-Bruit.small {
   background-size: 240px 224px;
   background-position: -144px 0px;
 }
 
-.icon-ed-BuckleSuture {
+.icon-ed-Buckle {
   background-position: -288px -32px;
 }
 
-.icon-ed-BuckleSuture.small {
+.icon-ed-Buckle.small {
   background-size: 240px 224px;
   background-position: -144px -16px;
 }
 
-.icon-ed-BuckleWithMargin {
+.icon-ed-BuckleSuture {
   background-position: -288px -64px;
 }
 
-.icon-ed-BuckleWithMargin.small {
+.icon-ed-BuckleSuture.small {
   background-size: 240px 224px;
   background-position: -144px -32px;
 }
 
-.icon-ed-BusaccaNodule {
+.icon-ed-BuckleWithMargin {
   background-position: -288px -96px;
 }
 
-.icon-ed-BusaccaNodule.small {
+.icon-ed-BuckleWithMargin.small {
   background-size: 240px 224px;
   background-position: -144px -48px;
 }
 
-.icon-ed-Bypass {
+.icon-ed-BusaccaNodule {
   background-position: -288px -128px;
 }
 
-.icon-ed-Bypass.small {
+.icon-ed-BusaccaNodule.small {
   background-size: 240px 224px;
   background-position: -144px -64px;
 }
 
-.icon-ed-CapsularTensionRing {
+.icon-ed-Bypass {
   background-position: -288px -160px;
 }
 
-.icon-ed-CapsularTensionRing.small {
+.icon-ed-Bypass.small {
   background-size: 240px 224px;
   background-position: -144px -80px;
 }
 
-.icon-ed-Chalazion {
+.icon-ed-CapsularTensionRing {
   background-position: -288px -192px;
 }
 
-.icon-ed-Chalazion.small {
+.icon-ed-CapsularTensionRing.small {
   background-size: 240px 224px;
   background-position: -144px -96px;
 }
 
-.icon-ed-ChandelierDouble {
+.icon-ed-Chalazion {
   background-position: -288px -224px;
 }
 
-.icon-ed-ChandelierDouble.small {
+.icon-ed-Chalazion.small {
   background-size: 240px 224px;
   background-position: -144px -112px;
 }
 
-.icon-ed-ChandelierSingle {
+.icon-ed-ChandelierDouble {
   background-position: -288px -256px;
 }
 
-.icon-ed-ChandelierSingle.small {
+.icon-ed-ChandelierDouble.small {
   background-size: 240px 224px;
   background-position: -144px -128px;
 }
 
-.icon-ed-CiliaryInjection {
+.icon-ed-ChandelierSingle {
   background-position: 0px -288px;
 }
 
-.icon-ed-CiliaryInjection.small {
+.icon-ed-ChandelierSingle.small {
   background-size: 240px 224px;
   background-position: 0px -144px;
 }
 
-.icon-ed-CircumferentialBuckle {
+.icon-ed-CiliaryInjection {
   background-position: -32px -288px;
 }
 
-.icon-ed-CircumferentialBuckle.small {
+.icon-ed-CiliaryInjection.small {
   background-size: 240px 224px;
   background-position: -16px -144px;
 }
 
-.icon-ed-ConjunctivalFlap {
+.icon-ed-CircumferentialBuckle {
   background-position: -64px -288px;
 }
 
-.icon-ed-ConjunctivalFlap.small {
+.icon-ed-CircumferentialBuckle.small {
   background-size: 240px 224px;
   background-position: -32px -144px;
 }
 
-.icon-ed-ConjunctivalSuture {
+.icon-ed-ConjunctivalFlap {
   background-position: -96px -288px;
 }
 
-.icon-ed-ConjunctivalSuture.small {
+.icon-ed-ConjunctivalFlap.small {
   background-size: 240px 224px;
   background-position: -48px -144px;
 }
 
-.icon-ed-Conjunctivitis {
+.icon-ed-ConjunctivalSuture {
   background-position: -128px -288px;
 }
 
-.icon-ed-Conjunctivitis.small {
+.icon-ed-ConjunctivalSuture.small {
   background-size: 240px 224px;
   background-position: -64px -144px;
 }
 
-.icon-ed-CornealAbrasion {
+.icon-ed-Conjunctivitis {
   background-position: -160px -288px;
 }
 
-.icon-ed-CornealAbrasion.small {
+.icon-ed-Conjunctivitis.small {
   background-size: 240px 224px;
   background-position: -80px -144px;
 }
 
-.icon-ed-CornealEpithelialDefect {
+.icon-ed-CornealAbrasion {
   background-position: -192px -288px;
 }
 
-.icon-ed-CornealEpithelialDefect.small {
+.icon-ed-CornealAbrasion.small {
   background-size: 240px 224px;
   background-position: -96px -144px;
 }
 
-.icon-ed-CornealErosion {
+.icon-ed-CornealEpithelialDefect {
   background-position: -224px -288px;
 }
 
-.icon-ed-CornealErosion.small {
+.icon-ed-CornealEpithelialDefect.small {
   background-size: 240px 224px;
   background-position: -112px -144px;
 }
 
-.icon-ed-CornealFB {
+.icon-ed-CornealErosion {
   background-position: -256px -288px;
 }
 
-.icon-ed-CornealFB.small {
+.icon-ed-CornealErosion.small {
   background-size: 240px 224px;
   background-position: -128px -144px;
 }
 
-.icon-ed-CornealGraft {
+.icon-ed-CornealFB {
   background-position: -288px -288px;
 }
 
-.icon-ed-CornealGraft.small {
+.icon-ed-CornealFB.small {
   background-size: 240px 224px;
   background-position: -144px -144px;
 }
 
-.icon-ed-CornealLaceration {
+.icon-ed-CornealGraft {
   background-position: -320px 0px;
 }
 
-.icon-ed-CornealLaceration.small {
+.icon-ed-CornealGraft.small {
   background-size: 240px 224px;
   background-position: -160px 0px;
 }
 
-.icon-ed-CornealOedema {
+.icon-ed-CornealLaceration {
   background-position: -320px -32px;
 }
 
-.icon-ed-CornealOedema.small {
+.icon-ed-CornealLaceration.small {
   background-size: 240px 224px;
   background-position: -160px -16px;
 }
 
-.icon-ed-CornealOpacity {
+.icon-ed-CornealOedema {
   background-position: -320px -64px;
 }
 
-.icon-ed-CornealOpacity.small {
+.icon-ed-CornealOedema.small {
   background-size: 240px 224px;
   background-position: -160px -32px;
 }
 
-.icon-ed-CornealPigmentation {
+.icon-ed-CornealOpacity {
   background-position: -320px -96px;
 }
 
-.icon-ed-CornealPigmentation.small {
+.icon-ed-CornealOpacity.small {
   background-size: 240px 224px;
   background-position: -160px -48px;
 }
 
-.icon-ed-CornealStriae {
+.icon-ed-CornealPigmentation {
   background-position: 0px 0px;
+}
+
+.icon-ed-CornealPigmentation.small {
+  background-size: 240px 224px;
+  background-position: 0px 0px;
+}
+
+.icon-ed-CornealStriae {
+  background-position: -320px -160px;
 }
 
 .icon-ed-CornealStriae.small {
   background-size: 240px 224px;
-  background-position: 0px 0px;
+  background-position: -160px -80px;
 }
 
 .icon-ed-CornealSuture {
-  background-position: -320px -160px;
+  background-position: -320px -192px;
 }
 
 .icon-ed-CornealSuture.small {
   background-size: 240px 224px;
-  background-position: -160px -80px;
+  background-position: -160px -96px;
 }
 
 .icon-ed-Crepitations {
-  background-position: -320px -192px;
+  background-position: -320px -224px;
 }
 
 .icon-ed-Crepitations.small {
   background-size: 240px 224px;
-  background-position: -160px -96px;
+  background-position: -160px -112px;
 }
 
 .icon-ed-Cryo {
-  background-position: -320px -224px;
+  background-position: -320px -256px;
 }
 
 .icon-ed-Cryo.small {
   background-size: 240px 224px;
-  background-position: -160px -112px;
+  background-position: -160px -128px;
 }
 
 .icon-ed-CutterPI {
-  background-position: -320px -256px;
+  background-position: -320px -288px;
 }
 
 .icon-ed-CutterPI.small {
   background-size: 240px 224px;
-  background-position: -160px -128px;
+  background-position: -160px -144px;
 }
 
 .icon-ed-Dendrite {
-  background-position: -320px -288px;
+  background-position: 0px -320px;
 }
 
 .icon-ed-Dendrite.small {
   background-size: 240px 224px;
-  background-position: -160px -144px;
+  background-position: 0px -160px;
 }
 
 .icon-ed-DendriticUlcer {
-  background-position: 0px -320px;
+  background-position: -32px -320px;
 }
 
 .icon-ed-DendriticUlcer.small {
   background-size: 240px 224px;
-  background-position: 0px -160px;
+  background-position: -16px -160px;
 }
 
 .icon-ed-Dialysis {
-  background-position: -32px -320px;
+  background-position: -64px -320px;
 }
 
 .icon-ed-Dialysis.small {
   background-size: 240px 224px;
-  background-position: -16px -160px;
+  background-position: -32px -160px;
 }
 
 .icon-ed-DiscHaem {
-  background-position: -64px -320px;
+  background-position: -96px -320px;
 }
 
 .icon-ed-DiscHaem.small {
   background-size: 240px 224px;
-  background-position: -32px -160px;
+  background-position: -48px -160px;
 }
 
 .icon-ed-DrainageRetinotomy {
-  background-position: -96px -320px;
+  background-position: -128px -320px;
 }
 
 .icon-ed-DrainageRetinotomy.small {
   background-size: 240px 224px;
-  background-position: -48px -160px;
+  background-position: -64px -160px;
 }
 
 .icon-ed-DrainageSite {
-  background-position: -128px -320px;
+  background-position: -160px -320px;
 }
 
 .icon-ed-DrainageSite.small {
   background-size: 240px 224px;
-  background-position: -64px -160px;
+  background-position: -80px -160px;
 }
 
 .icon-ed-DrugStent {
-  background-position: -160px -320px;
+  background-position: -192px -320px;
 }
 
 .icon-ed-DrugStent.small {
   background-size: 240px 224px;
-  background-position: -80px -160px;
+  background-position: -96px -160px;
 }
 
 .icon-ed-Effusion {
-  background-position: -192px -320px;
+  background-position: -224px -320px;
 }
 
 .icon-ed-Effusion.small {
   background-size: 240px 224px;
-  background-position: -96px -160px;
+  background-position: -112px -160px;
 }
 
 .icon-ed-EncirclingBand {
-  background-position: -224px -320px;
+  background-position: -256px -320px;
 }
 
 .icon-ed-EncirclingBand.small {
   background-size: 240px 224px;
-  background-position: -112px -160px;
+  background-position: -128px -160px;
 }
 
 .icon-ed-EntrySiteBreak {
-  background-position: -256px -320px;
+  background-position: -288px -320px;
 }
 
 .icon-ed-EntrySiteBreak.small {
   background-size: 240px 224px;
-  background-position: -128px -160px;
+  background-position: -144px -160px;
 }
 
 .icon-ed-EyeWithLids {
-  background-position: -288px -320px;
+  background-position: -320px -320px;
 }
 
 .icon-ed-EyeWithLids.small {
   background-size: 240px 224px;
-  background-position: -144px -160px;
+  background-position: -160px -160px;
 }
 
 .icon-ed-GRT {
-  background-position: -320px -320px;
+  background-position: -352px 0px;
 }
 
 .icon-ed-GRT.small {
   background-size: 240px 224px;
-  background-position: -160px -160px;
+  background-position: -176px 0px;
 }
 
 .icon-ed-Grommet {
-  background-position: -352px 0px;
+  background-position: -352px -32px;
 }
 
 .icon-ed-Grommet.small {
   background-size: 240px 224px;
-  background-position: -176px 0px;
+  background-position: -176px -16px;
 }
 
 .icon-ed-Haematoma {
-  background-position: -352px -32px;
+  background-position: -352px -64px;
 }
 
 .icon-ed-Haematoma.small {
   background-size: 240px 224px;
-  background-position: -176px -16px;
+  background-position: -176px -32px;
 }
 
 .icon-ed-Hyphaema {
-  background-position: -352px -64px;
+  background-position: -352px -96px;
 }
 
 .icon-ed-Hyphaema.small {
   background-size: 240px 224px;
-  background-position: -176px -32px;
+  background-position: -176px -48px;
 }
 
 .icon-ed-Hypopyon {
-  background-position: -352px -96px;
+  background-position: -352px -128px;
 }
 
 .icon-ed-Hypopyon.small {
   background-size: 240px 224px;
-  background-position: -176px -48px;
+  background-position: -176px -64px;
 }
 
 .icon-ed-ILMPeel {
-  background-position: -352px -128px;
+  background-position: -352px -160px;
 }
 
 .icon-ed-ILMPeel.small {
   background-size: 240px 224px;
-  background-position: -176px -64px;
+  background-position: -176px -80px;
 }
 
 .icon-ed-IatrogenicBreak {
-  background-position: -352px -160px;
+  background-position: -352px -192px;
 }
 
 .icon-ed-IatrogenicBreak.small {
   background-size: 240px 224px;
-  background-position: -176px -80px;
+  background-position: -176px -96px;
 }
 
 .icon-ed-InjectionSite {
-  background-position: -352px -192px;
+  background-position: -352px -224px;
 }
 
 .icon-ed-InjectionSite.small {
   background-size: 240px 224px;
-  background-position: -176px -96px;
+  background-position: -176px -112px;
 }
 
 .icon-ed-InnerLeafBreak {
-  background-position: -352px -224px;
+  background-position: -352px -256px;
 }
 
 .icon-ed-InnerLeafBreak.small {
   background-size: 240px 224px;
-  background-position: -176px -112px;
+  background-position: -176px -128px;
 }
 
 .icon-ed-InverseYPattern {
-  background-position: -352px -256px;
+  background-position: -352px -288px;
 }
 
 .icon-ed-InverseYPattern.small {
   background-size: 240px 224px;
-  background-position: -176px -128px;
+  background-position: -176px -144px;
 }
 
 .icon-ed-IrisHook {
-  background-position: -352px -288px;
+  background-position: -352px -320px;
 }
 
 .icon-ed-IrisHook.small {
   background-size: 240px 224px;
-  background-position: -176px -144px;
+  background-position: -176px -160px;
 }
 
 .icon-ed-IrisNaevus {
-  background-position: -352px -320px;
+  background-position: 0px -352px;
 }
 
 .icon-ed-IrisNaevus.small {
   background-size: 240px 224px;
-  background-position: -176px -160px;
+  background-position: 0px -176px;
 }
 
 .icon-ed-KeraticPrecipitates {
-  background-position: 0px -352px;
+  background-position: -32px -352px;
 }
 
 .icon-ed-KeraticPrecipitates.small {
   background-size: 240px 224px;
-  background-position: 0px -176px;
+  background-position: -16px -176px;
 }
 
 .icon-ed-KoeppeNodule {
-  background-position: -32px -352px;
+  background-position: -64px -352px;
 }
 
 .icon-ed-KoeppeNodule.small {
   background-size: 240px 224px;
-  background-position: -16px -176px;
+  background-position: -32px -176px;
 }
 
 .icon-ed-KrukenbergSpindle {
-  background-position: -64px -352px;
+  background-position: -96px -352px;
 }
 
 .icon-ed-KrukenbergSpindle.small {
   background-size: 240px 224px;
-  background-position: -32px -176px;
+  background-position: -48px -176px;
 }
 
 .icon-ed-Label {
-  background-position: -96px -352px;
+  background-position: -128px -352px;
 }
 
 .icon-ed-Label.small {
   background-size: 240px 224px;
-  background-position: -48px -176px;
+  background-position: -64px -176px;
 }
 
 .icon-ed-LaserCircle {
-  background-position: -128px -352px;
+  background-position: -160px -352px;
 }
 
 .icon-ed-LaserCircle.small {
   background-size: 240px 224px;
-  background-position: -64px -176px;
+  background-position: -80px -176px;
 }
 
 .icon-ed-LaserDemarcation {
-  background-position: -160px -352px;
+  background-position: -192px -352px;
 }
 
 .icon-ed-LaserDemarcation.small {
   background-size: 240px 224px;
-  background-position: -80px -176px;
+  background-position: -96px -176px;
 }
 
 .icon-ed-Lattice {
-  background-position: -192px -352px;
+  background-position: -224px -352px;
 }
 
 .icon-ed-Lattice.small {
   background-size: 240px 224px;
-  background-position: -96px -176px;
+  background-position: -112px -176px;
 }
 
 .icon-ed-Lens {
-  background-position: -224px -352px;
+  background-position: -256px -352px;
 }
 
 .icon-ed-Lens.small {
   background-size: 240px 224px;
-  background-position: -112px -176px;
+  background-position: -128px -176px;
 }
 
 .icon-ed-LimbalRelaxingIncision {
-  background-position: -256px -352px;
+  background-position: -288px -352px;
 }
 
 .icon-ed-LimbalRelaxingIncision.small {
   background-size: 240px 224px;
-  background-position: -128px -176px;
+  background-position: -144px -176px;
 }
 
 .icon-ed-Lump {
-  background-position: -288px -352px;
+  background-position: -320px -352px;
 }
 
 .icon-ed-Lump.small {
   background-size: 240px 224px;
-  background-position: -144px -176px;
+  background-position: -160px -176px;
 }
 
 .icon-ed-MarginalKeratitis {
-  background-position: -320px -352px;
+  background-position: -352px -352px;
 }
 
 .icon-ed-MarginalKeratitis.small {
   background-size: 240px 224px;
-  background-position: -160px -176px;
+  background-position: -176px -176px;
 }
 
 .icon-ed-MattressSuture {
-  background-position: -352px -352px;
+  background-position: -384px 0px;
 }
 
 .icon-ed-MattressSuture.small {
   background-size: 240px 224px;
-  background-position: -176px -176px;
+  background-position: -192px 0px;
 }
 
 .icon-ed-MetalStent {
-  background-position: -384px 0px;
+  background-position: -384px -32px;
 }
 
 .icon-ed-MetalStent.small {
   background-size: 240px 224px;
-  background-position: -192px 0px;
+  background-position: -192px -16px;
 }
 
 .icon-ed-MetallicForeignBody {
-  background-position: -384px -32px;
+  background-position: -384px -64px;
 }
 
 .icon-ed-MetallicForeignBody.small {
   background-size: 240px 224px;
-  background-position: -192px -16px;
+  background-position: -192px -32px;
 }
 
 .icon-ed-Molteno {
-  background-position: -384px -64px;
+  background-position: -384px -96px;
 }
 
 .icon-ed-Molteno.small {
   background-size: 240px 224px;
-  background-position: -192px -32px;
+  background-position: -192px -48px;
 }
 
 .icon-ed-NerveDefect {
-  background-position: -384px -96px;
+  background-position: -384px -128px;
 }
 
 .icon-ed-NerveDefect.small {
   background-size: 240px 224px;
-  background-position: -192px -48px;
+  background-position: -192px -64px;
 }
 
 .icon-ed-NoPattern {
-  background-position: -384px -128px;
+  background-position: -384px -160px;
 }
 
 .icon-ed-NoPattern.small {
   background-size: 240px 224px;
-  background-position: -192px -64px;
+  background-position: -192px -80px;
 }
 
 .icon-ed-OpticCup {
-  background-position: -384px -160px;
+  background-position: -384px -192px;
 }
 
 .icon-ed-OpticCup.small {
   background-size: 240px 224px;
-  background-position: -192px -80px;
+  background-position: -192px -96px;
 }
 
 .icon-ed-OpticDisc {
-  background-position: -384px -192px;
+  background-position: -384px -224px;
 }
 
 .icon-ed-OpticDisc.small {
   background-size: 240px 224px;
-  background-position: -192px -96px;
+  background-position: -192px -112px;
 }
 
 .icon-ed-OrthopticShading {
-  background-position: -384px -224px;
+  background-position: -384px -256px;
 }
 
 .icon-ed-OrthopticShading.small {
   background-size: 240px 224px;
-  background-position: -192px -112px;
+  background-position: -192px -128px;
 }
 
 .icon-ed-OuterLeafBreak {
-  background-position: -384px -256px;
+  background-position: -384px -288px;
 }
 
 .icon-ed-OuterLeafBreak.small {
   background-size: 240px 224px;
-  background-position: -192px -128px;
+  background-position: -192px -144px;
 }
 
 .icon-ed-PalpebralConjunctivitis {
-  background-position: -384px -288px;
+  background-position: -384px -320px;
 }
 
 .icon-ed-PalpebralConjunctivitis.small {
   background-size: 240px 224px;
-  background-position: -192px -144px;
+  background-position: -192px -160px;
 }
 
 .icon-ed-Patch {
-  background-position: -384px -320px;
+  background-position: -384px -352px;
 }
 
 .icon-ed-Patch.small {
   background-size: 240px 224px;
-  background-position: -192px -160px;
+  background-position: -192px -176px;
 }
 
 .icon-ed-Perforation {
-  background-position: -384px -352px;
+  background-position: 0px -384px;
 }
 
 .icon-ed-Perforation.small {
   background-size: 240px 224px;
-  background-position: -192px -176px;
+  background-position: 0px -192px;
 }
 
 .icon-ed-PeripheralRetinectomy {
-  background-position: 0px -384px;
+  background-position: -32px -384px;
 }
 
 .icon-ed-PeripheralRetinectomy.small {
   background-size: 240px 224px;
-  background-position: 0px -192px;
+  background-position: -16px -192px;
 }
 
 .icon-ed-PhakoIncision {
-  background-position: -32px -384px;
+  background-position: -64px -384px;
 }
 
 .icon-ed-PhakoIncision.small {
   background-size: 240px 224px;
-  background-position: -16px -192px;
+  background-position: -32px -192px;
 }
 
 .icon-ed-Pingueculum {
-  background-position: -64px -384px;
+  background-position: -96px -384px;
 }
 
 .icon-ed-Pingueculum.small {
   background-size: 240px 224px;
-  background-position: -32px -192px;
+  background-position: -48px -192px;
 }
 
 .icon-ed-PointInLine {
-  background-position: -96px -384px;
+  background-position: -128px -384px;
 }
 
 .icon-ed-PointInLine.small {
   background-size: 240px 224px;
-  background-position: -48px -192px;
+  background-position: -64px -192px;
 }
 
 .icon-ed-PosteriorCapsule {
-  background-position: -128px -384px;
+  background-position: -160px -384px;
 }
 
 .icon-ed-PosteriorCapsule.small {
   background-size: 240px 224px;
-  background-position: -64px -192px;
+  background-position: -80px -192px;
 }
 
 .icon-ed-PosteriorEmbryotoxon {
-  background-position: -160px -384px;
+  background-position: -192px -384px;
 }
 
 .icon-ed-PosteriorEmbryotoxon.small {
   background-size: 240px 224px;
-  background-position: -80px -192px;
+  background-position: -96px -192px;
 }
 
 .icon-ed-PosteriorRetinectomy {
-  background-position: -192px -384px;
+  background-position: -224px -384px;
 }
 
 .icon-ed-PosteriorRetinectomy.small {
   background-size: 240px 224px;
-  background-position: -96px -192px;
+  background-position: -112px -192px;
 }
 
 .icon-ed-Pterygium {
-  background-position: -224px -384px;
+  background-position: -256px -384px;
 }
 
 .icon-ed-Pterygium.small {
   background-size: 240px 224px;
-  background-position: -112px -192px;
+  background-position: -128px -192px;
 }
 
 .icon-ed-RPERip {
-  background-position: -256px -384px;
+  background-position: -288px -384px;
 }
 
 .icon-ed-RPERip.small {
   background-size: 240px 224px;
-  background-position: -128px -192px;
+  background-position: -144px -192px;
 }
 
 .icon-ed-RRD {
-  background-position: -288px -384px;
+  background-position: -320px -384px;
 }
 
 .icon-ed-RRD.small {
   background-size: 240px 224px;
-  background-position: -144px -192px;
+  background-position: -160px -192px;
 }
 
 .icon-ed-RadialSponge {
-  background-position: -320px -384px;
+  background-position: -352px -384px;
 }
 
 .icon-ed-RadialSponge.small {
   background-size: 240px 224px;
-  background-position: -160px -192px;
+  background-position: -176px -192px;
 }
 
 .icon-ed-RecordReading {
-  background-position: -352px -384px;
+  background-position: -384px -384px;
 }
 
 .icon-ed-RecordReading.small {
   background-size: 240px 224px;
-  background-position: -176px -192px;
+  background-position: -192px -192px;
 }
 
 .icon-ed-RetinalTouch {
-  background-position: -384px -384px;
+  background-position: -416px 0px;
 }
 
 .icon-ed-RetinalTouch.small {
   background-size: 240px 224px;
-  background-position: -192px -192px;
+  background-position: -208px 0px;
 }
 
 .icon-ed-Retinoschisis {
-  background-position: -416px 0px;
+  background-position: -416px -32px;
 }
 
 .icon-ed-Retinoschisis.small {
   background-size: 240px 224px;
-  background-position: -208px 0px;
+  background-position: -208px -16px;
 }
 
 .icon-ed-RightFundus {
-  background-position: -416px -32px;
+  background-position: -416px -64px;
 }
 
 .icon-ed-RightFundus.small {
   background-size: 240px 224px;
-  background-position: -208px -16px;
+  background-position: -208px -32px;
 }
 
 .icon-ed-RightPostPole {
-  background-position: -416px -64px;
+  background-position: -416px -96px;
 }
 
 .icon-ed-RightPostPole.small {
   background-size: 240px 224px;
-  background-position: -208px -32px;
+  background-position: -208px -48px;
 }
 
 .icon-ed-Rotate {
-  background-position: -416px -96px;
+  background-position: -416px -128px;
 }
 
 .icon-ed-Rotate.small {
   background-size: 240px 224px;
-  background-position: -208px -48px;
+  background-position: -208px -64px;
 }
 
 .icon-ed-RoundHole {
-  background-position: -416px -128px;
+  background-position: -416px -160px;
 }
 
 .icon-ed-RoundHole.small {
   background-size: 240px 224px;
-  background-position: -208px -64px;
+  background-position: -208px -80px;
 }
 
 .icon-ed-Rubeosis {
-  background-position: -416px -160px;
+  background-position: -416px -192px;
 }
 
 .icon-ed-Rubeosis.small {
   background-size: 240px 224px;
-  background-position: -208px -80px;
+  background-position: -208px -96px;
 }
 
 .icon-ed-SPEE {
-  background-position: -416px -192px;
+  background-position: -416px -224px;
 }
 
 .icon-ed-SPEE.small {
   background-size: 240px 224px;
-  background-position: -208px -96px;
+  background-position: -208px -112px;
 }
 
 .icon-ed-STFB {
-  background-position: -416px -224px;
+  background-position: -416px -256px;
 }
 
 .icon-ed-STFB.small {
   background-size: 240px 224px;
-  background-position: -208px -112px;
+  background-position: -208px -128px;
 }
 
 .icon-ed-Save {
-  background-position: -416px -256px;
+  background-position: -416px -288px;
 }
 
 .icon-ed-Save.small {
   background-size: 240px 224px;
-  background-position: -208px -128px;
+  background-position: -208px -144px;
 }
 
 .icon-ed-Scale {
-  background-position: -416px -288px;
+  background-position: -416px -320px;
 }
 
 .icon-ed-Scale.small {
   background-size: 240px 224px;
-  background-position: -208px -144px;
+  background-position: -208px -160px;
 }
 
 .icon-ed-Scar {
-  background-position: -416px -320px;
+  background-position: -416px -352px;
 }
 
 .icon-ed-Scar.small {
   background-size: 240px 224px;
-  background-position: -208px -160px;
+  background-position: -208px -176px;
 }
 
 .icon-ed-ScleralIncision {
-  background-position: -416px -352px;
+  background-position: -416px -384px;
 }
 
 .icon-ed-ScleralIncision.small {
   background-size: 240px 224px;
-  background-position: -208px -176px;
+  background-position: -208px -192px;
 }
 
 .icon-ed-Sclerostomy {
-  background-position: -416px -384px;
+  background-position: 0px -416px;
 }
 
 .icon-ed-Sclerostomy.small {
   background-size: 240px 224px;
-  background-position: -208px -192px;
+  background-position: 0px -208px;
 }
 
 .icon-ed-SectorPRP {
-  background-position: 0px -416px;
+  background-position: -32px -416px;
 }
 
 .icon-ed-SectorPRP.small {
   background-size: 240px 224px;
-  background-position: 0px -208px;
+  background-position: -16px -208px;
 }
 
 .icon-ed-Select {
-  background-position: -32px -416px;
+  background-position: -64px -416px;
 }
 
 .icon-ed-Select.small {
   background-size: 240px 224px;
-  background-position: -16px -208px;
+  background-position: -32px -208px;
 }
 
 .icon-ed-Shading {
-  background-position: -64px -416px;
+  background-position: -96px -416px;
 }
 
 .icon-ed-Shading.small {
   background-size: 240px 224px;
-  background-position: -32px -208px;
+  background-position: -48px -208px;
 }
 
 .icon-ed-SidePort {
-  background-position: -96px -416px;
+  background-position: -128px -416px;
 }
 
 .icon-ed-SidePort.small {
   background-size: 240px 224px;
-  background-position: -48px -208px;
+  background-position: -64px -208px;
 }
 
 .icon-ed-StarFold {
-  background-position: -128px -416px;
+  background-position: -160px -416px;
 }
 
 .icon-ed-StarFold.small {
   background-size: 240px 224px;
-  background-position: -64px -208px;
+  background-position: -80px -208px;
 }
 
 .icon-ed-Stenosis {
-  background-position: -160px -416px;
+  background-position: -192px -416px;
 }
 
 .icon-ed-Stenosis.small {
   background-size: 240px 224px;
-  background-position: -80px -208px;
+  background-position: -96px -208px;
 }
 
 .icon-ed-SubretinalFluid {
-  background-position: -192px -416px;
+  background-position: -224px -416px;
 }
 
 .icon-ed-SubretinalFluid.small {
   background-size: 240px 224px;
-  background-position: -96px -208px;
+  background-position: -112px -208px;
 }
 
 .icon-ed-SubretinalPFCL {
-  background-position: -224px -416px;
+  background-position: -256px -416px;
 }
 
 .icon-ed-SubretinalPFCL.small {
   background-size: 240px 224px;
-  background-position: -112px -208px;
+  background-position: -128px -208px;
 }
 
 .icon-ed-Supramid {
-  background-position: -256px -416px;
+  background-position: -288px -416px;
 }
 
 .icon-ed-Supramid.small {
   background-size: 240px 224px;
-  background-position: -128px -208px;
+  background-position: -144px -208px;
 }
 
 .icon-ed-ToricPCIOL {
-  background-position: -288px -416px;
+  background-position: -320px -416px;
 }
 
 .icon-ed-ToricPCIOL.small {
   background-size: 240px 224px;
-  background-position: -144px -208px;
+  background-position: -160px -208px;
 }
 
 .icon-ed-Trabectome {
-  background-position: -320px -416px;
+  background-position: -352px -416px;
 }
 
 .icon-ed-Trabectome.small {
   background-size: 240px 224px;
-  background-position: -160px -208px;
+  background-position: -176px -208px;
 }
 
 .icon-ed-TrabySuture {
-  background-position: -352px -416px;
+  background-position: -384px -416px;
 }
 
 .icon-ed-TrabySuture.small {
   background-size: 240px 224px;
-  background-position: -176px -208px;
+  background-position: -192px -208px;
 }
 
 .icon-ed-TransilluminationDefect {
-  background-position: -384px -416px;
+  background-position: -416px -416px;
 }
 
 .icon-ed-TransilluminationDefect.small {
   background-size: 240px 224px;
-  background-position: -192px -208px;
+  background-position: -208px -208px;
 }
 
 .icon-ed-TubeExtender {
-  background-position: -416px -416px;
+  background-position: -448px 0px;
 }
 
 .icon-ed-TubeExtender.small {
   background-size: 240px 224px;
-  background-position: -208px -208px;
+  background-position: -224px 0px;
 }
 
 .icon-ed-TubeLigation {
-  background-position: -448px 0px;
+  background-position: -448px -32px;
 }
 
 .icon-ed-TubeLigation.small {
   background-size: 240px 224px;
-  background-position: -224px 0px;
+  background-position: -224px -16px;
 }
 
 .icon-ed-UTear {
-  background-position: -448px -32px;
+  background-position: -448px -64px;
 }
 
 .icon-ed-UTear.small {
   background-size: 240px 224px;
-  background-position: -224px -16px;
+  background-position: -224px -32px;
 }
 
 .icon-ed-UpDriftFromLeft {
-  background-position: -448px -64px;
+  background-position: -448px -96px;
 }
 
 .icon-ed-UpDriftFromLeft.small {
   background-size: 240px 224px;
-  background-position: -224px -32px;
+  background-position: -224px -48px;
 }
 
 .icon-ed-UpDriftFromRight {
-  background-position: -448px -96px;
+  background-position: -448px -128px;
 }
 
 .icon-ed-UpDriftFromRight.small {
   background-size: 240px 224px;
-  background-position: -224px -48px;
+  background-position: -224px -64px;
 }
 
 .icon-ed-UpShootFromLeft {
-  background-position: -448px -128px;
+  background-position: -448px -160px;
 }
 
 .icon-ed-UpShootFromLeft.small {
   background-size: 240px 224px;
-  background-position: -224px -64px;
+  background-position: -224px -80px;
 }
 
 .icon-ed-UpShootFromRight {
-  background-position: -448px -160px;
+  background-position: -448px -192px;
 }
 
 .icon-ed-UpShootFromRight.small {
   background-size: 240px 224px;
-  background-position: -224px -80px;
+  background-position: -224px -96px;
 }
 
 .icon-ed-VPattern {
-  background-position: -448px -192px;
+  background-position: -448px -224px;
 }
 
 .icon-ed-VPattern.small {
   background-size: 240px 224px;
-  background-position: -224px -96px;
+  background-position: -224px -112px;
 }
 
 .icon-ed-Vicryl {
-  background-position: -448px -224px;
+  background-position: -448px -256px;
 }
 
 .icon-ed-Vicryl.small {
   background-size: 240px 224px;
-  background-position: -224px -112px;
+  background-position: -224px -128px;
 }
 
 .icon-ed-ViewObscured {
-  background-position: -448px -256px;
+  background-position: -448px -288px;
 }
 
 .icon-ed-ViewObscured.small {
   background-size: 240px 224px;
-  background-position: -224px -128px;
+  background-position: -224px -144px;
 }
 
 .icon-ed-Wheeze {
-  background-position: -448px -288px;
+  background-position: -448px -320px;
 }
 
 .icon-ed-Wheeze.small {
   background-size: 240px 224px;
-  background-position: -224px -144px;
+  background-position: -224px -160px;
 }
 
 .icon-ed-XPattern {
-  background-position: -448px -320px;
+  background-position: -448px -352px;
 }
 
 .icon-ed-XPattern.small {
   background-size: 240px 224px;
-  background-position: -224px -160px;
+  background-position: -224px -176px;
 }
 
 .icon-ed-YPattern {
-  background-position: -448px -352px;
+  background-position: -448px -384px;
 }
 
 .icon-ed-YPattern.small {
   background-size: 240px 224px;
-  background-position: -224px -176px;
+  background-position: -224px -192px;
 }

@@ -238,6 +238,11 @@ textarea {
   padding: 0 0 0 6px;
 }
 
+.oe-eye-lat-icons {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .highlighted-error {
   border: 1px solid #9b0000;
 }
@@ -4211,6 +4216,13 @@ html {
   overflow: auto;
 }
 
+.main-event .element hr.divider {
+  display: block;
+  border: 0;
+  margin: 20px 0 15px 0;
+  border-bottom: 3px solid #26303d;
+}
+
 .main-event .element .data-row,
 .main-event .element .field-row {
   padding-top: 8px;
@@ -4437,6 +4449,10 @@ html {
 
 .main-event .element table td textarea {
   vertical-align: middle;
+}
+
+.main-event .element table tfoot tr {
+  border-top: 3px solid #26303d;
 }
 
 .main-event .element table.calendar {

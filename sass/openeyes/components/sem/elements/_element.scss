@@ -157,8 +157,19 @@
 				  overflow:auto; // IE: stop under text selection fix
 				}
 			}
-		
 		}
+		
+		
+		// visual data divider
+		// based on the table row 'divider' this uses
+		// a <hr> to visually seperate content 
+		hr.divider {
+			display:block;
+			border : 0;
+			margin:20px 0 15px 0; 
+			border-bottom:3px solid $oe-line;
+		}
+		
 	
 		
 		// Rows: simply provides padding between 'rows' of data

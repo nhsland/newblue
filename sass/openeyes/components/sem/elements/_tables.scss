@@ -134,6 +134,17 @@
 					vertical-align: middle; // ensure correct vertical alignment in <td>
 				}
 			}
+			
+			// tfoot, rarely used.
+			// but if it is needs visual division from tbody
+			tfoot {
+				tr {
+					border-top:3px solid $oe-line;
+				}
+			}
+			
+			
+			
 		}
 	}
 }
