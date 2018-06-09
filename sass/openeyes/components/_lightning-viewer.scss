@@ -1,97 +1,28 @@
-// letter lightning viewer
+// OE Lightning Viewer
+// Generic rapid viewer of Doc Stacks
 
 .oe-lightning-viewer {
 	background:$oe-blue-dark;
 	
-	// Year and Letter icons selector top bar
-	.oe-letter-timeline {
-		background:$oe-blue-dark2;
-		padding:2px 4px 4px 10px;
-		
-		table {			
-			td {
-				padding:6px 6px 3px 4px;
-				color:$oe-text-light;
-				@include font-size(15);
-				font-weight:300;
-				border-left:1px solid $oe-line;
-				min-width:50px; // don't squash the years
-			}
-		}
-		
-		.letter-event {
-			position:relative;
-			display: inline-block;
-			padding:1px; // for border highlight effect
-			width:21px; 
-			height:21px;
-			
-			// when sliding over the letter js highlights the associated icon
-			&:hover, &.js-hover {
-				background-color:#fff; // this creates the border highlight
-				cursor:pointer;
-			}
-			
-			// underline selected letter icon
-			&.selected:after {
-				position: absolute;
-				left: 1px;
-				top: 100%;
-				content: " ";
-				height: 2px;
-				width: 19px;
-				border-bottom:3px solid $oe-text-highlight;
-			}
-		}
-	}
-	
-	// JS generated letter meta data
-	.oe-letter-meta {
+	// Timeline has options (dropdown) 
+	// and icons in <table> to create the timeline
+	.lightning-timeline {
 		position: relative;
-		width:180px; // make width enough to fit most names
-		margin:5px 0 0 10px;
-		padding:5px 3px 5px 8px;
-		@include font-size(12);
-		line-height:1.5;
-		color:$oe-text;
-		background:$oe-grey;
-		
-		.date { 
-			@include font-size(14);
-			font-weight:500; 
-		}
-		.sender { font-style:italic;}
-		.help {
-			margin:10px 0 0 0;
-			@include font-size(10);
-			color:$oe-text-light;
-			font-style: italic;
-		}
-		
+		background:$oe-blue-dark2;
+		padding:5px 4px 5px 10px;
 	}
 	
-	// add arrow to oe-letter-meta box:
-	.oe-letter-meta:after{
-			left: 100%;
-			top: 50%;
-			border: solid transparent;
-			content: " ";
-			height: 0;
-			width: 0;
-			position: absolute;
-			pointer-events: none;
-			border-left-color: $oe-grey;
-			border-width: 6px;
-			margin-top: -6px;
-	};
-	
-	// letter holder 
-	.oe-letter-quick-view { 
+	// PNG preview placeholder
+	.oe-lightning-quick-view { 
 		margin-top:5px; 
-		// text-align:center;
-		// img { width:100%; }
-
 	} 
 }
+
+
+@import 'lightning/timeline';
+@import 'lightning/timeline-lightning-btn';
+@import 'lightning/timeline-options';
+@import 'lightning/timeline-icons';
+@import 'lightning/image-meta';
 
 

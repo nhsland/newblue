@@ -1,0 +1,50 @@
+// Timeline options
+
+// starting with strict coupling...
+.oe-lightning-viewer {
+	.lightning-timeline {
+		
+		.timeline {
+			
+			// wrapper for .icon-events
+			// make sure at least 4 icons on a row
+			// this is hidden by JS to collapse timeline
+			.icon-group {
+				min-width:90px;
+			}
+			
+			
+			// icons on the timeline
+			.icon-event {
+				position:relative;
+				display: inline-block;
+				padding:1px; // for border highlight effect
+				margin:0 0 3px 0; // to allow for highlight effect when icons wrap.
+				width:21px; 
+				height:21px;
+				
+				// when sliding over the letter js highlights the associated icon
+				&:hover, &.js-hover {
+					background-color:#fff; // this creates the border highlight
+					cursor:pointer;
+				}
+				
+				// underline selected letter icon
+				&.selected:after {
+					position: absolute;
+					left: 1px;
+					top: 100%;
+					content: " ";
+					height: 2px;
+					width: 19px;
+					border-bottom:3px solid $oe-text-highlight; // themed!
+				}
+			}
+			
+			
+			
+			
+			
+		}	
+	}
+}

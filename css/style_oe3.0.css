@@ -1661,6 +1661,10 @@ button.selected.inactive:hover, button.selected.inactive:focus, button.selected.
   background: none;
 }
 
+button .oe-i, .button .oe-i, input[type="submit"] .oe-i {
+  pointer-events: none;
+}
+
 button:hover, button:focus, button:active, .button:hover, .button:focus, .button:active, input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active {
   color: white;
   background: #074598;
@@ -5681,34 +5685,153 @@ span.squiggle {
   background: #182535;
 }
 
-.oe-lightning-viewer .oe-letter-timeline {
+.oe-lightning-viewer .lightning-timeline {
+  position: relative;
   background: #141e2b;
-  padding: 2px 4px 4px 10px;
+  padding: 5px 4px 5px 10px;
 }
 
-.oe-lightning-viewer .oe-letter-timeline table td {
+.oe-lightning-viewer .oe-lightning-quick-view {
+  margin-top: 5px;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline {
+  padding: 0 0 0 50px;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline table td {
   padding: 6px 6px 3px 4px;
+  border-left: 1px solid #26303d;
+  vertical-align: top;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline table td.date-divider {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.9375rem;
   font-weight: 300;
-  border-left: 1px solid #26303d;
-  min-width: 50px;
+  min-width: 70px;
+  position: relative;
 }
 
-.oe-lightning-viewer .oe-letter-timeline .letter-event {
+.oe-lightning-viewer .lightning-timeline .timeline table td.date-divider .oe-i {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  opacity: 0.25;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline table td.date-divider .oe-i:hover, .oe-lightning-viewer .lightning-timeline .timeline table td.date-divider .oe-i:focus, .oe-lightning-viewer .lightning-timeline .timeline table td.date-divider .oe-i:active {
+  opacity: 1;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline table td .icon-group {
+  min-width: 90px;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline-options {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 100%;
+  width: 50px;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn {
+  width: 40px;
+  height: 100%;
+  background: #1e2e42;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn.active {
+  background: #074598;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn.active .lightning-icon, .oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn.active .oe-i {
+  opacity: 1;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn .lightning-icon {
+  width: 20px;
+  height: 20px;
+  fill: rgba(255, 255, 255, 0.8);
+  opacity: 0.5;
+  position: relative;
+  top: -5px;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn .oe-i {
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 11px;
+}
+
+.oe-lightning-viewer .lightning-timeline {
+  z-index: 1;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 300px;
+  background: #074598;
+  padding: 12px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #cdcdcd;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li {
+  display: block;
+  margin: 0 0 2px 0;
+  height: 19px;
+  line-height: 19px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  background: #063e89;
+  cursor: pointer;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:hover, .oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:focus, .oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li.selected {
+  background-color: #05306a;
+  color: #fff;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li i {
+  margin: 0 10px 0 0;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline .icon-group {
+  min-width: 90px;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline .icon-event {
   position: relative;
   display: inline-block;
   padding: 1px;
+  margin: 0 0 3px 0;
   width: 21px;
   height: 21px;
 }
 
-.oe-lightning-viewer .oe-letter-timeline .letter-event:hover, .oe-lightning-viewer .oe-letter-timeline .letter-event.js-hover {
+.oe-lightning-viewer .lightning-timeline .timeline .icon-event:hover, .oe-lightning-viewer .lightning-timeline .timeline .icon-event.js-hover {
   background-color: #fff;
   cursor: pointer;
 }
 
-.oe-lightning-viewer .oe-letter-timeline .letter-event.selected:after {
+.oe-lightning-viewer .lightning-timeline .timeline .icon-event.selected:after {
   position: absolute;
   left: 1px;
   top: 100%;
@@ -5718,7 +5841,7 @@ span.squiggle {
   border-bottom: 3px solid cyan;
 }
 
-.oe-lightning-viewer .oe-letter-meta {
+.oe-lightning-viewer .oe-lightning-meta {
   position: relative;
   width: 180px;
   margin: 5px 0 0 10px;
@@ -5729,23 +5852,23 @@ span.squiggle {
   background: #283442;
 }
 
-.oe-lightning-viewer .oe-letter-meta .date {
+.oe-lightning-viewer .oe-lightning-meta .date {
   font-size: 0.875rem;
   font-weight: 500;
 }
 
-.oe-lightning-viewer .oe-letter-meta .sender {
+.oe-lightning-viewer .oe-lightning-meta .sender {
   font-style: italic;
 }
 
-.oe-lightning-viewer .oe-letter-meta .help {
+.oe-lightning-viewer .oe-lightning-meta .help {
   margin: 10px 0 0 0;
   font-size: 0.625rem;
   color: rgba(255, 255, 255, 0.5);
   font-style: italic;
 }
 
-.oe-lightning-viewer .oe-letter-meta:after {
+.oe-lightning-viewer .oe-lightning-meta:after {
   left: 100%;
   top: 50%;
   border: solid transparent;
@@ -5757,10 +5880,6 @@ span.squiggle {
   border-left-color: #283442;
   border-width: 6px;
   margin-top: -6px;
-}
-
-.oe-lightning-viewer .oe-letter-quick-view {
-  margin-top: 5px;
 }
 
 /* OEscape */

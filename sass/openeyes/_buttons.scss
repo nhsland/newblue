@@ -64,6 +64,11 @@
 		}
 	}
 	
+	// handle icons in buttons
+	.oe-i {
+		pointer-events: none;
+	}
+	
 	&:hover, &:focus, &:active {
 		color: rgb(255,255,255);
 		background: $oe-btn-blue;
