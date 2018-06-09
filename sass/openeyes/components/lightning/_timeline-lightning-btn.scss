@@ -30,7 +30,7 @@
 				// to allow mouse enhancments to touch.
 				&.active {
 					background:$oe-btn-blue;
-					.lightning-icon, .oe-i {
+					.oe-i {
 						opacity: 1;
 					}
 				}
@@ -44,8 +44,7 @@
 				.lightning-icon {
 					width:20px;
 					height:20px;
-					fill:$oe-text;
-					opacity:0.5;
+					fill:$oe-pro-text-highlight;
 					position:relative;
 					top:-5px;
 				}

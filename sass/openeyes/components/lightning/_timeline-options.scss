@@ -31,15 +31,19 @@
 					@include font-size(12);
 					font-weight:400;
 					background: shade( $oe-btn-blue,10 );
-					
 					cursor: pointer;
 					
-					&:hover, &:focus, 
+					&:hover, &:active, &:focus, 
 					&.selected {
 						background-color: shade( $oe-btn-blue,30 );
 						color:#fff;
 					}
 					
+					&:last-child {
+						margin:0 0 0 0;
+					}
+					
+					// icon
 					i {
 						margin:0 10px 0 0;
 					}

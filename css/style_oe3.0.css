@@ -5706,17 +5706,17 @@ span.squiggle {
 }
 
 .oe-lightning-viewer .lightning-timeline .timeline table td.date-divider {
+  white-space: nowrap;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.9375rem;
   font-weight: 300;
   min-width: 70px;
-  position: relative;
 }
 
 .oe-lightning-viewer .lightning-timeline .timeline table td.date-divider .oe-i {
-  position: absolute;
-  top: 6px;
-  right: 6px;
+  position: relative;
+  top: -2px;
+  margin: 0 0 0 5px;
   opacity: 0.25;
 }
 
@@ -5757,15 +5757,14 @@ span.squiggle {
   background: #074598;
 }
 
-.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn.active .lightning-icon, .oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn.active .oe-i {
+.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn.active .oe-i {
   opacity: 1;
 }
 
 .oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn .lightning-icon {
   width: 20px;
   height: 20px;
-  fill: rgba(255, 255, 255, 0.8);
-  opacity: 0.5;
+  fill: cyan;
   position: relative;
   top: -5px;
 }
@@ -5804,9 +5803,13 @@ span.squiggle {
   cursor: pointer;
 }
 
-.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:hover, .oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:focus, .oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li.selected {
+.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:hover, .oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:active, .oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:focus, .oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li.selected {
   background-color: #05306a;
   color: #fff;
+}
+
+.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:last-child {
+  margin: 0 0 0 0;
 }
 
 .oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li i {

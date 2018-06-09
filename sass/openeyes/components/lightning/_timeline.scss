@@ -17,17 +17,16 @@
 					vertical-align: top;
 					
 					&.date-divider {
+						white-space: nowrap;
 						color:$oe-text-light;
 						@include font-size(15);
 						font-weight:300;
 						min-width:70px; // don't squash the date (and collapse icon)
 						
-						position:relative;
 						.oe-i {
-							position:absolute;
-							top:6px;
-							right:6px;
-							
+							position:relative;
+							top:-2px;
+							margin:0 0 0 5px;
 							// i think this is only going to be required in this instance.
 							// so I'm leaving it here rather than adding it to all icons
 							opacity:0.25;
