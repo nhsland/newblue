@@ -5703,11 +5703,12 @@ span.squiggle {
   padding: 6px 6px 3px 4px;
   border-left: 1px solid #26303d;
   vertical-align: top;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.6875rem;
 }
 
 .oe-lightning-viewer .lightning-timeline .timeline table td.date-divider {
   white-space: nowrap;
-  color: rgba(255, 255, 255, 0.5);
   font-size: 0.9375rem;
   font-weight: 300;
   min-width: 70px;

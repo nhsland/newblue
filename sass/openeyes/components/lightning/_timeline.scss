@@ -15,10 +15,11 @@
 					padding:6px 6px 3px 4px;
 					border-left:1px solid $oe-line;
 					vertical-align: top;
+					color:$oe-text-light;
+					@include font-size(11); // number when collapsed
 					
 					&.date-divider {
 						white-space: nowrap;
-						color:$oe-text-light;
 						@include font-size(15);
 						font-weight:300;
 						min-width:70px; // don't squash the date (and collapse icon)
