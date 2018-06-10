@@ -1274,13 +1274,11 @@ idg.patientPopups = {
 		if( $('#oe-patient-details').length == 0 ) return;
 		
 		// patient popups
-		var quicklook 		= new idg.NavBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
-		var demographics 	= new idg.NavBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
-		var demographics2 	= new idg.NavBtnPopup( 'management', $('#js-management-btn'), $('#patient-popup-management') );
-		var risks 			= new idg.NavBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
-		// var tasks 			= new idg.NavBtnPopup( 'tasks', $('#js-tasks-btn'), $('#patient-popup-tasks') );
+		var quicklook 		= new idg.PatientBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
+		var demographics 	= new idg.PatientBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
+		var demographics2 	= new idg.PatientBtnPopup( 'management', $('#js-management-btn'), $('#patient-popup-management') );
+		var risks 			= new idg.PatientBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
 	
-		
 		var all = [ quicklook, demographics, demographics2, risks ];
 		
 		for( pBtns in all ) {
@@ -1296,6 +1294,7 @@ idg.patientPopups = {
 		if( $('#problems-plans-sortable').length ){
 			idg.problemsPlans();
 		}
+		
 	},
 
 	closeAll:function(){
@@ -2048,6 +2047,113 @@ idg.NavBtnPopup = function(id,$btn,$content){
 	
 	/**
 	Group popups to stop overlapping	
+	**/
+	function inGroup( controller ){
+		isGrouped = true;
+		groupController = controller;
+	}	
+}
+
+
+
+/**
+Patient Popup Buttons 
+@ id - id
+@ $btn - structurally as <a> but without CSS pseudos :hover, :focus, :active
+@ $content - DOM content to show on click 
+
+UX: on $btn MouseEvents show the popups (only on the $btn).
+click (touch), locks the popup open. click (touch) to close it 
+
+**/
+idg.PatientBtnPopup = function(id,$btn,$content){
+		
+	// set up vars
+	var id = id,
+		contentPopup = false,
+		useClick = false,
+		useMouse = false,
+		isGrouped = false, 		
+		groupController = null,
+		css = { 
+			active:'active', 	// hover
+			open:'open' 		// clicked 
+		};	
+		
+	/**
+	public methods
+	**/
+	this.inGroup = inGroup;
+	this.hide = reset;
+	
+	/**
+	Events
+	**/
+	$btn.click( function( e ){
+			e.stopPropagation();
+			clickChange();
+			})							// touch (click)
+		.mouseenter( mouseShow )		// MouseEvent enhancements
+		.mouseleave( mouseHide );	
+	
+	/**
+	Handlers
+	click / touch 
+	**/
+	function clickChange(){
+		if(contentPopup){
+			if(useMouse){
+				// user wants to lock it, switch to click events
+				useClick = true;
+				useMouse = false;
+			} else {
+				hideContent();
+			}
+		} else {
+			showContent();
+		}		
+	}	  	
+		  
+	function mouseShow(){		
+		showContent();
+		useMouse = true;
+	}	
+	
+	function mouseHide(){
+		// has user clicked to lock open?
+		if(useClick == false){
+			hideContent();
+			useMouse = false;
+		}
+	}  
+	
+	/**
+	View	
+	**/	  
+  	function showContent(){
+	  	// only 1 Patient Popup open at a time:
+	  	if(isGrouped) groupController.closeAll();
+
+	  	$content.show();
+	  	contentPopup = true;
+	  	$btn.addClass( css.open );
+  	}
+  	
+  	function hideContent(){
+	  	$content.hide();
+	  	contentPopup = false;
+	  	$btn.removeClass( css.open );
+	}
+	
+	// called by the groupController
+	function reset(){
+		hideContent();
+		useClick = false;
+		useMouse = false;
+	}
+
+	/**
+	Group popups to stop overlap	
 	**/
 	function inGroup( controller ){
 		isGrouped = true;
