@@ -1847,7 +1847,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 70;
+  z-index: 100;
   background: rgba(16, 25, 37, 0.6);
   height: 100vh;
   width: 100vw;
@@ -2044,7 +2044,7 @@ html {
 }
 
 .oe-logo-flag-help {
-  z-index: 100;
+  z-index: 150;
   position: fixed;
   top: 22px;
   left: 200px;
@@ -2054,7 +2054,7 @@ html {
 }
 
 .openeyes-brand {
-  z-index: 101;
+  z-index: 151;
   position: fixed;
   top: 0;
   left: 0;
