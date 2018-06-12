@@ -43,6 +43,9 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 	click / touch 
 	**/
 	function clickChange(){
+		
+		console.log('useClick: ' + useClick +' useMouse:' + useMouse);
+		
 		if(contentPopup){
 			if(useMouse){
 				// user wants to lock it, switch to click events
@@ -56,9 +59,11 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 		}		
 	}	  	
 		  
-	function mouseShow(){		
-		showContent();
-		useMouse = true;
+	function mouseShow(){
+		if(useClick == false){		
+			showContent();
+			useMouse = true;
+		}
 	}	
 	
 	function mouseHide(){
