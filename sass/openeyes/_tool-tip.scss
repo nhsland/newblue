@@ -6,13 +6,16 @@
 	width:200px;
 	padding:8px 8px 4px 8px;
 	border-bottom:1px solid $oe-text-highlight;
-	background:$oe-bg-highlight;
+	background:$oe-tooltip-bg;
 	color:$oe-text;
 	@include font-size(11);
 	font-weight: $oe-font-medium;
 	line-height:1.5;
 	
-	// arrown down
+	// offset-x | offset-y | blur-radius | spread-radius | color
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+	
+	// arrow down
 	&:after {
 		top: 100%;
 		left: 50%;

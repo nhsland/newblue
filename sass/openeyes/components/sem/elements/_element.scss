@@ -93,8 +93,8 @@
 		// because of the Flex layout in element-eyes
 		.element-both-eyes {
 			background-color: $oe-blue-dark2;
-			margin:10px 0;
-			padding:10px;
+			margin:10px 20px 10px 0; 	// 20px matches the full-width class
+ 			padding:10px 0 10px 10px; 	// the right 0px padding means that collapse icons line up!
 			border-radius:13px; // create a bracket effect
 			border-bottom: 3px solid $oe-line;
 		}

@@ -35,7 +35,8 @@ ul {
 		}
 	}
 	
-	&.large-text {
+	&.large-text, 
+	&.large {
 		li {
 			@include font-size(14);
 		}
