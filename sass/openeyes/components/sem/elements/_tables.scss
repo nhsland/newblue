@@ -74,6 +74,7 @@
 			// add line to help with reading data
 			tr {
 				border-bottom:1px solid $oe-line;
+				
 				&:last-child { 
 					border-bottom: none;
 				}

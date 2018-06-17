@@ -13,10 +13,11 @@
 	.element-data.full-width {
 		.eyedraw {
 			.eyedraw-canvas {
-				width:380px; // 2 canvas elements = 335px
+				width:300px; // ONLY 1 canvas in this mode
+				margin:0 0 0 50px;
 			}
 			.eyedraw-data {
-				width:400px; // fixed.
+				width:450px; // fixed, but wider than default.
 			}
 		}
 	}

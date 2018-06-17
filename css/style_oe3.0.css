@@ -193,7 +193,13 @@ textarea {
 
 .col-gap > div[class^="cols-"],
 .col-gap > td {
-  padding-right: 30px !important;
+  padding-right: 25px !important;
+  padding-left: 5px;
+}
+
+.col-gap > div[class^="cols-"]:first-child,
+.col-gap > td:first-child {
+  padding-left: 0 !important;
 }
 
 .col-gap > div[class^="cols-"]:last-child,
@@ -4216,8 +4222,8 @@ html {
 
 .main-event .element .element-eyes .left-eye {
   width: 50%;
-  padding-left: 10px;
-  padding-right: 28px;
+  padding-left: 15px;
+  padding-right: 23px;
 }
 
 .main-event .element .element-eyes .right-eye.deactivate,
@@ -4903,12 +4909,20 @@ html {
   border-top: 1px solid #26303d;
 }
 
+.main-event .element .element-data h3 {
+  font-size: 0.9375rem;
+  color: #5ab4b4;
+  font-weight: 300;
+  margin: 0 0 0 4px;
+}
+
 .element .element-data.full-width .eyedraw .eyedraw-canvas {
-  width: 380px;
+  width: 300px;
+  margin: 0 0 0 50px;
 }
 
 .element .element-data.full-width .eyedraw .eyedraw-data {
-  width: 400px;
+  width: 450px;
 }
 
 .element .eyedraw {
