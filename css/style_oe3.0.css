@@ -1508,6 +1508,7 @@ strong, b {
 
 .highlighter.warning {
   background: #9b0000;
+  color: white;
 }
 
 .highlighter.orange {
@@ -4169,7 +4170,7 @@ html {
   margin: 10px 0;
   padding: 10px;
   border-radius: 13px;
-  border-bottom: 2px solid #26303d;
+  border-bottom: 3px solid #26303d;
 }
 
 .main-event .element:hover, .main-event .element:focus {
