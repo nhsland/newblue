@@ -4211,13 +4211,13 @@ html {
 .main-event .element .element-eyes .right-eye {
   width: 50%;
   padding-left: 10px;
-  padding-right: 30px;
+  padding-right: 29px;
 }
 
 .main-event .element .element-eyes .left-eye {
-  width: 49.5%;
+  width: 50%;
   padding-left: 10px;
-  padding-right: 25px;
+  padding-right: 28px;
 }
 
 .main-event .element .element-eyes .right-eye.deactivate,
@@ -4903,6 +4903,14 @@ html {
   border-top: 1px solid #26303d;
 }
 
+.element .element-data.full-width .eyedraw .eyedraw-canvas {
+  width: 380px;
+}
+
+.element .element-data.full-width .eyedraw .eyedraw-data {
+  width: 400px;
+}
+
 .element .eyedraw {
   position: relative;
   background: #dae6f1;
@@ -4910,26 +4918,12 @@ html {
   border-radius: 5px;
 }
 
-.element .eyedraw.ed-v2 {
-  padding-top: 20px;
-  background: none;
-}
-
-.element .eyedraw.ed-v2 .eyedraw-v2-launch-edit {
-  margin: 10px 0 0 0;
-}
-
-.element .eyedraw.ed-v2 .eyedraw-data {
-  font-size: 0.6875rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
 .element .eyedraw .eyedraw-canvas {
   white-space: nowrap;
 }
 
 .element .eyedraw .eyedraw-data {
-  width: 136px;
+  width: 150px;
   font-size: 0.625rem;
   font-weight: 500;
   color: #323232;
@@ -4950,6 +4944,20 @@ html {
 
 .element .eyedraw .eyedraw-data .data-label {
   color: #78788c;
+}
+
+.element .eyedraw.ed-v2 {
+  padding-top: 20px;
+  background: none;
+}
+
+.element .eyedraw.ed-v2 .eyedraw-v2-launch-edit {
+  margin: 10px 0 0 0;
+}
+
+.element .eyedraw.ed-v2 .eyedraw-data {
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .element.edit .eyedraw {

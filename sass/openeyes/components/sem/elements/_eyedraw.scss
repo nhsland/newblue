@@ -8,13 +8,66 @@
 // de-coupled from .main-event to allow it's use in the "Previous" popup.
 
 .element {
-
+	// eyedraw either in 'element-eyes' (for popup 'previous' too)
+	// or; in 'full-width'... opnote
+	.element-data.full-width {
+		.eyedraw {
+			.eyedraw-canvas {
+				width:380px; // 2 canvas elements = 335px
+			}
+			.eyedraw-data {
+				width:400px; // fixed.
+			}
+		}
+	}
+	
+	// default set up for R / L
 	// ---- element - VIEW & EDIT
 	.eyedraw {
 		position:relative;
 		background:$oe-ed-bg; // eyedraw blue
 		padding:0 5px; 
 		border-radius:5px;
+		
+		.eyedraw-canvas {
+			// make sure 2nd canvas doesn't drop down
+			// flex will then handle the width of eyedraw-data 
+			white-space: nowrap; 
+		}
+		
+		.eyedraw-data {
+			// eyedraw has a width of 490px. 
+			// 2 canvas elements = 335px
+			// when used on R / L sides the data needs to be restricted
+			// so that it anchors to the right (if there is only 1 canvas)
+			// it won't stretch and will always be in the same place
+			width:150px; // fixed.
+			
+			@include font-size(10);
+			font-weight:500;
+			color:rgb(50,50,50); 		// Always on the Eyedraw blue bg
+			padding:10px 5px 20px 0; 	// pad bottom for + icon button
+			
+			// make the weighting in eyedraw elements
+			// is consistent for both themes
+			.data-value {
+				font-weight:500; 
+				.priority-text {
+					font-weight:600;
+				}
+			}
+			
+			// when the data-label and data-values are stacked
+			&.stack {
+				.data-value {
+					padding:0 0 10px 0;
+				}
+			}
+			
+			.data-label {
+				color:rgb(120,120,140);; // Always on the Eyedraw blue bg
+			}
+		}
 		
 		// ed-v2 is to help with the transition from V2 to V3.
 		// isn't used in VIEW mode. Not sure if it's still needed... 
@@ -27,40 +80,6 @@
 			.eyedraw-data {
 				@include font-size(11);
 				color:$oe-text; // Not on the ED blue.
-			}
-		}
-		
-		.eyedraw-canvas {
-			// make sure 2nd canvas doesn't drop down
-			// flex will then handle the width of eyedraw-data 
-			white-space: nowrap; 
-		}
-		
-		.eyedraw-data {
-			width:136px;
-			@include font-size(10);
-			font-weight:500;
-			color:rgb(50,50,50); // Always on the Eyedraw blue bg
-			padding:10px 5px 20px 0; // pad bottom for + icon button
-			
-			// make the weighting in eyedraw elements
-			// is consistent for both themes
-			.data-value {
-				font-weight:500; 
-				.priority-text {
-					font-weight:600;
-				}
-			}
-			
-			// when the data-label and data-values are
-			&.stack {
-				.data-value {
-					padding:0 0 10px 0;
-				}
-			}
-			
-			.data-label {
-				color:rgb(120,120,140);; // Always on the Eyedraw blue bg
 			}
 		}
 	
