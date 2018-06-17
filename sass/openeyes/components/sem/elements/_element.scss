@@ -10,16 +10,33 @@
 	// - 'full' (that can split to R L)
 	// - 'tile' (used as 1 of 3 in tiled row)
 	
+	// new wrapper to add title and expand / collapse options to .element-tile-group
+	// built it this way so that it's not required to have this wrapper
+	.element-tiles {
+		position:relative;
+		padding:0 0 0 0;
+		
+			
+	}
+	
 	// <div> wrapper for the 3 tiled elements
 	.element-tile-group {
 		display:flex;
 		justify-content:flex-start; 	// group items to the left
 		align-items:stretch;			// fill vertical space
+		
+		.collapse-tile-group {
+			padding:5px 2px 0 0;
+			width:25px;
+			text-align: center;
+			align-self: flex-start;
+			
+		}
 	}
 	
 	.element {
 		position:relative;
-		min-height:40px; // ensure element actions and header can always be seen	
+		min-height:50px; // ensure element actions and header can always be seen	
 		background: $oe-blue-dark2;
 		padding:32px 5px 10px 10px; // provide top space for header/actions
 		margin:0 0 3px 0;
@@ -156,30 +173,6 @@
 				  background-image:url( "../svg/in-css/patterns/pattern1.svg" );
 				  overflow:auto; // IE: stop under text selection fix
 				}
-			}
-		}
-		
-		
-		// visual data divider
-		// based on the table row 'divider' this uses
-		// a <hr> to visually seperate content 
-		hr.divider {
-			display:block;
-			border : 0;
-			margin:20px 0 15px 0; 
-			border-bottom:3px solid $oe-line;
-		}
-		
-	
-		
-		// Rows: simply provides padding between 'rows' of data
-		// used in existing DOM so keeping for v3
-		// data-row and field-row are inter-changable in v3
-		.data-row, 
-		.field-row  {
-			padding-top: 8px;
-			&:first-child {
-				padding-top: 0;
 			}
 		}
 				

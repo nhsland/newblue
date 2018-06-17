@@ -17,12 +17,20 @@
 			}
 						
 			// tables generally all require that the last cell 
-			// is aligned right
+			// is aligned right because it's an icon
 			td:last-child, 
 			th:last-child {
 				text-align: right;
 			}
 			
+			// however, if there is only ONE td
+			// generally it should be aligned left...
+			td:first-child, 
+			th:first-child {
+				text-align: left;
+			}
+			
+			// make last left with class
 			&.last-left {
 				td:last-child, 
 				th:last-child {
@@ -87,6 +95,13 @@
 			&.large, &.large-text {
 				td {
 					@include font-size(14);
+				}
+			}
+			
+			&.priority, &.priority-text {
+				td	{
+					@include font-size(16);
+					font-weight:$oe-font-medium;	
 				}
 			}
 			

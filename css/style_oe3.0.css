@@ -302,6 +302,7 @@ textarea {
 
 .oe-i.start, .oe-i.stop, .oe-i.change, .oe-i.d-slash, .oe-i.no-click {
   cursor: default;
+  pointer-events: none;
 }
 
 .oe-i.start:hover, .oe-i.start:focus, .oe-i.start:active, .oe-i.stop:hover, .oe-i.stop:focus, .oe-i.stop:active, .oe-i.change:hover, .oe-i.change:focus, .oe-i.change:active, .oe-i.d-slash:hover, .oe-i.d-slash:focus, .oe-i.d-slash:active, .oe-i.no-click:hover, .oe-i.no-click:focus, .oe-i.no-click:active {
@@ -442,6 +443,14 @@ textarea {
 
 .oe-i.trash.pro-theme {
   background-image: url("../svg/in-css/icons/trash.svg");
+}
+
+.oe-i.trash-blue {
+  background-image: url("../svg/in-css/icons/trash-blue.svg");
+}
+
+.oe-i.trash-blue.pro-theme {
+  background-image: url("../svg/in-css/icons/trash-blue.svg");
 }
 
 .oe-i.print {
@@ -4069,6 +4078,11 @@ html {
   height: auto;
 }
 
+.main-event .element-tiles {
+  position: relative;
+  padding: 0 0 0 0;
+}
+
 .main-event .element-tile-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4081,9 +4095,17 @@ html {
           align-items: stretch;
 }
 
+.main-event .element-tile-group .collapse-tile-group {
+  padding: 5px 2px 0 0;
+  width: 25px;
+  text-align: center;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
 .main-event .element {
   position: relative;
-  min-height: 40px;
+  min-height: 50px;
   background: #141e2b;
   padding: 32px 5px 10px 10px;
   margin: 0 0 3px 0;
@@ -4220,23 +4242,6 @@ html {
   overflow: auto;
 }
 
-.main-event .element hr.divider {
-  display: block;
-  border: 0;
-  margin: 20px 0 15px 0;
-  border-bottom: 3px solid #26303d;
-}
-
-.main-event .element .data-row,
-.main-event .element .field-row {
-  padding-top: 8px;
-}
-
-.main-event .element .data-row:first-child,
-.main-event .element .field-row:first-child {
-  padding-top: 0;
-}
-
 .main-event .element .element-fields.full-width {
   padding-right: 20px;
   padding-left: 10px;
@@ -4365,6 +4370,11 @@ html {
   text-align: right;
 }
 
+.main-event .element table td:first-child,
+.main-event .element table th:first-child {
+  text-align: left;
+}
+
 .main-event .element table.last-left td:last-child,
 .main-event .element table.last-left th:last-child {
   text-align: left;
@@ -4414,6 +4424,11 @@ html {
 
 .main-event .element table.large td, .main-event .element table.large-text td {
   font-size: 0.875rem;
+}
+
+.main-event .element table.priority td, .main-event .element table.priority-text td {
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 .main-event .element table th, .main-event .element table td {
@@ -4687,6 +4702,25 @@ html {
   padding-left: 5px;
 }
 
+.main-event .element hr.divider {
+  display: block;
+  border: 0;
+  margin: 20px 0 15px 0;
+  border-bottom: 3px solid #26303d;
+}
+
+.main-event .element .data-group,
+.main-event .element .data-row,
+.main-event .element .field-row {
+  padding-top: 12px;
+}
+
+.main-event .element .data-group:first-child,
+.main-event .element .data-row:first-child,
+.main-event .element .field-row:first-child {
+  padding-top: 0;
+}
+
 .search-in-event {
   z-index: 80;
   position: fixed;
@@ -4855,9 +4889,9 @@ html {
 .main-event .element .element-data .data-value.not-recorded {
   margin: 0 0 0 0;
   text-align: center;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 300;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 .main-event .element .element-data .data-row-divider {

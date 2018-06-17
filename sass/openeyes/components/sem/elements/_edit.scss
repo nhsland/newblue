@@ -36,17 +36,21 @@
 			margin:0 5px;
 		}
 		
+		
 		// left / right side 
-		// in edit mode a 'side' has an active & inactive form
+		// in edit mode a 'side' has an 'active' & 'inactive' forms
+		// i.e. DOM has both states and js switches between them
 		.active-form {
 			position:relative;
+			// small cross icon to remove eye side
 			.remove-side {
 				position:absolute;
 				top:-2px;
 				right:-22px; // move outside into padding space
 			}
 		}
-	
+		
+		// when in-active give option to add-side again
 		.inactive-form {
 			display:flex;
 			align-content: center;

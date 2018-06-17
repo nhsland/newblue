@@ -17,14 +17,13 @@
 		border-radius:5px;
 		
 		// ed-v2 is to help with the transition from V2 to V3.
+		// isn't used in VIEW mode. Not sure if it's still needed... 
 		&.ed-v2 {
 			padding-top:20px; // so that you can see the little x icon
 			background:none;
-			
 			.eyedraw-v2-launch-edit {
 				margin:10px 0 0 0;
 			}
-			
 			.eyedraw-data {
 				@include font-size(11);
 				color:$oe-text; // Not on the ED blue.

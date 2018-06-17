@@ -1,0 +1,35 @@
+// OE Element 
+// 
+// Data Grouping
+
+.main-event {
+	.element {
+		
+		// visual data divider
+		// based on the table 'divider' this uses
+		// a <hr> to visually seperate content 
+		hr.divider {
+			display:block;
+			border : 0;
+			margin:20px 0 15px 0; 
+			border-bottom:3px solid $oe-line;
+		}
+		
+		// data-row and field-row are left over from v2.
+		// in v3 CSS they have no meaning and are replaced with
+		// data-group (for view or edit). 
+		// data-group provides a wrapper for data-groups within 
+		// an element to visually space them out. if something
+		// visually stronger is required use hr.divider
+		
+		.data-group,
+		.data-row, 
+		.field-row  {
+			padding-top: 12px;
+			&:first-child {
+				padding-top: 0;
+			}
+		}
+		
+	}
+}

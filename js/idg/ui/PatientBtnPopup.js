@@ -33,8 +33,8 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 	**/
 	$btn.click( function( e ){
 			e.stopPropagation();
-			clickChange();
-			})							// touch (click)
+			clickChange();				// touch (click)
+			})							
 		.mouseenter( mouseShow )		// MouseEvent enhancements
 		.mouseleave( mouseHide );	
 	
@@ -43,8 +43,6 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 	click / touch 
 	**/
 	function clickChange(){
-		
-		console.log('useClick: ' + useClick +' useMouse:' + useMouse);
 		
 		if(contentPopup){
 			if(useMouse){

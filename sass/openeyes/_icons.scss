@@ -71,7 +71,7 @@
 	
 	// show interaction
 	cursor:pointer;
-	opacity: 0.5;
+	opacity: $oe-icon-opacity;
 	
 	// same affect but different classes 
 	// as unable to decide on best naming strategy
@@ -102,8 +102,9 @@
 	&.d-slash, // graphic icons only	
 	&.no-click {
 		cursor:default;
+		pointer-events: none;
 		&:hover, &:focus, &:active { 
-			opacity:0.5; 
+			opacity:$oe-icon-opacity; 
 		}
 	}	
 	
@@ -136,6 +137,7 @@
 	&.child-arrow 		{ @include oe3-icons('child-arrow'); }
 	&.menu 				{ @include oe3-icons('menu'); }
 	&.trash 			{ @include oe3-icons('trash'); }
+	&.trash-blue 		{ @include oe3-icons('trash-blue'); }
 	&.print 			{ @include oe3-icons('print'); }
 	&.search 			{ @include oe3-icons('search'); }
 	&.remove 			{ @include oe3-icons('remove'); }

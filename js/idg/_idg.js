@@ -109,6 +109,9 @@ idg.init = function(){
 	// tile data overflow
 	idg.tileDataOverflow();
 	
+	// tile collapsable
+	idg.collapseTiles();
+	
 	// Comments
 	idg.comments();
 	
