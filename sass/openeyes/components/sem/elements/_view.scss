@@ -93,7 +93,7 @@
 			// only used rarely but an option to have a sub-header
 			// see CVI disorders
 			h3 {
-				@include font-size(15); // match title
+				@include font-size(14); // match title
 				color:$oe-pro-text-active;
 				font-weight:$oe-font-light;
 				margin:0 0 0 4px; // matches <td>

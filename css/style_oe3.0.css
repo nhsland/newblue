@@ -315,6 +315,16 @@ textarea {
   opacity: 0.5;
 }
 
+.oe-i.disabled {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.oe-i.disabled:hover, .oe-i.disabled:focus, .oe-i.disabled:active {
+  opacity: inherit;
+}
+
 .oe-i.plus {
   background-image: url("../svg/in-css/icons/plus.svg");
 }
@@ -4915,7 +4925,7 @@ html {
 }
 
 .main-event .element .element-data h3 {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   color: #5ab4b4;
   font-weight: 300;
   margin: 0 0 0 4px;

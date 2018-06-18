@@ -108,6 +108,17 @@
 		}
 	}	
 	
+	
+	&.disabled {
+		cursor:default;
+		pointer-events: none;
+		opacity:0.25;
+		&:hover, &:focus, &:active { 
+			opacity:inherit; 
+		}
+	}
+	
+	
 	// pro-theme required for all icons if the icons are used 
 	// on areas that can't be theme changed (they will display the
 	// same in both Pro and Classic)
