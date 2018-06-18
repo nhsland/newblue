@@ -225,10 +225,6 @@ textarea {
   display: inline-block;
 }
 
-.row {
-  margin: 15px 0;
-}
-
 .oe-date {
   text-align: right;
   white-space: nowrap;
