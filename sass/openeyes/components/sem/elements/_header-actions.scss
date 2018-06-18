@@ -23,9 +23,19 @@
 		}
 	}
 	
-	// for 'full' elements adjust the header and title at extended width
+	// on extended browser width make the following adjustments
+	// this covers 'full' and elements in 'tile-group'
+	.element {
+		.element-title {
+			@include media($oe-extended-browser-size){
+				@include font-size(14); 					// reduce font size slightly
+				line-height:1.2;
+			}
+		}
+	}
+
+	// for 'full' elements adjust the padding because the header moves:
 	.element.full {
-		
 		@include media($oe-extended-browser-size){
 			padding:10px 30px 10px $oe-event-extension - 25px; 	// provide left space for header and right space for actions
 		}
@@ -34,15 +44,16 @@
 			@include media($oe-extended-browser-size){
 				width:$oe-event-extension; 						// make sure header isn't covering elements
 			}
+			
 			.element-title {
 				@include media($oe-extended-browser-size){
-					max-width:$oe-event-extension - 45px;		// force long names to wrap
-					@include font-size(14); 					// reduce font size slightly
-					line-height:1.2;
+					max-width:$oe-event-extension - 45px;		// force long names to wrap	
 				}
 			}
 		}
 	}
+	
+	// for tile group also shrink title to match a
 	
 	.element-actions {
 		position: absolute;

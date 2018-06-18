@@ -4319,6 +4319,13 @@ html {
 }
 
 @media only screen and (min-width: 1440px) {
+  .main-event .element .element-title {
+    font-size: 0.875rem;
+    line-height: 1.2;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
   .main-event .element.full {
     padding: 10px 30px 10px 135px;
   }
@@ -4333,8 +4340,6 @@ html {
 @media only screen and (min-width: 1440px) {
   .main-event .element.full .element-header .element-title {
     max-width: 115px;
-    font-size: 0.875rem;
-    line-height: 1.2;
   }
 }
 
