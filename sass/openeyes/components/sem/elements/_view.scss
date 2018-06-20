@@ -94,7 +94,7 @@
 			// see CVI disorders
 			h3 {
 				@include font-size(14); // match title
-				color:$oe-pro-text-active;
+				color:$oe-element-headers;
 				font-weight:$oe-font-light;
 				margin:0 0 0 4px; // matches <td>
 			}

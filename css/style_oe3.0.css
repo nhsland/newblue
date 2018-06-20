@@ -4207,7 +4207,7 @@ html {
 .main-event .element .element-both-eyes {
   background-color: #141e2b;
   margin: 10px 20px 10px 0;
-  padding: 10px 0 10px 10px;
+  padding: 10px 0 15px 10px;
   border-radius: 13px;
   border-bottom: 3px solid #26303d;
 }
@@ -4328,6 +4328,14 @@ html {
   margin: 10px auto;
   -ms-flex-item-align: center;
       align-self: center;
+}
+
+.main-event .element .inactive-form .add-side a {
+  color: #69939e;
+}
+
+.main-event .element .inactive-form .add-side a:hover, .main-event .element .inactive-form .add-side a:focus, .main-event .element .inactive-form .add-side a:active {
+  color: cyan;
 }
 
 .main-event .element-header {
@@ -4669,7 +4677,7 @@ html {
 }
 
 .oe-add-select-search .add-options {
-  max-height: 200px;
+  max-height: 160px;
   overflow-y: auto;
   margin: 0 5px 0 0;
 }
@@ -4947,7 +4955,7 @@ html {
 
 .main-event .element .element-data h3 {
   font-size: 0.875rem;
-  color: #5ab4b4;
+  color: #69939e;
   font-weight: 300;
   margin: 0 0 0 4px;
 }

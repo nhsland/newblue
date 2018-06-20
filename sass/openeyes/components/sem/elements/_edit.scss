@@ -2,7 +2,11 @@
 
 .main-event {
 	.element {
+		
+		// element-fields is ONLY used in EDIT mode 
+		// (view uses 'element-data')
 		.element-fields {
+			
 			// for all Elements that aren't split into
 			// R L Eye sides we need to adjust the padding
 			&.full-width {
@@ -25,6 +29,7 @@
 			.add-data-actions {
 				margin:8px 0 0 0;
 			}
+			
 		}
 		
 		// Within Elements there may be text that isn't
@@ -57,6 +62,16 @@
 			.add-side {
 				 margin: 10px auto;
 				 align-self: center;
+				 
+				 // 'Add Left side'
+				 // link style a bit differently to avoid 
+				 // it looking like data
+				 a {
+					 color:$oe-element-headers;
+					 &:hover, &:focus, &:active {
+						 color:$oe-text-highlight;
+					 }
+				 }
 			}
 		}
 	}
