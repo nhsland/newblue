@@ -17,16 +17,23 @@ input, textarea {
 	}
 }
 
-// search and left right search
-// L / R search is only used in SEM Exam Edit
+
 input {
+	// add SEARCH icon to input	
 	&.search {
 		padding-left:30px;
 		background-position:left 5px center;
 		background-repeat: no-repeat;
 		// search icon
 		background-image:url('../svg/in-css/ui/search.svg');
-
+	}
+	// add FILTER icon to input
+	&.filter {
+		padding-left:30px;
+		background-position:left 5px center;
+		background-repeat: no-repeat;
+		// search icon
+		background-image:url('../svg/in-css/ui/filter.svg');
 	}
 }
 

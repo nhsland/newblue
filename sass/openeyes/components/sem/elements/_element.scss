@@ -137,15 +137,19 @@
 				margin:0 0 8px 0;
 			}
 
+			// these are really tricky to get right
+			// had to tweak the 'left' side to get the + icon
+			// to line up with the full width + icon
+			
 			.right-eye {
 				width:50%; 
 				padding-left: 10px; 	// indent data
-				padding-right: 29px;	// L / R not the same! - this makes ED 490px both sides
+				padding-right: 29px;	// L / R not the same! - ED 490px 
 			}
 			.left-eye {
 				width:50%; 
-				padding-left: 15px; 	// indent data 
-				padding-right: 23px; 	// L / R not the same! - this makes ED 490px both sides
+				padding-left: 17px; 	// indent data 
+				padding-right: 20px; 	// L / R not the same! - ED 491px (+1px)
 			}
 			
 			// need to be able to deactivate a side

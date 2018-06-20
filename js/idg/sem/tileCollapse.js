@@ -38,13 +38,14 @@ idg.collapseTiles = function(){
 				of content (so user knows state...)
 				*/
 				var collapseIcon = $('<i class="oe-i expand small pad-right js-data-collapsed-icon"></i>');	
-				var dataState = $('<span class="fade js-data-hidden-state">[ n ]</span>');
+				var dataState = $('<span class="js-data-hidden-state"> [0]</span>');
 					
-				$tiles.append( collapseIcon.click( change ) );
-				$tiles.append( dataState );
+				//$tiles.append( collapseIcon.click( change ) );
+				
+				$tiles.find('.element-title').append( dataState );
 				
 			} else {
-				$tiles.find('.js-data-collapsed-icon').remove();
+				// $tiles.find('.js-data-collapsed-icon').remove();
 				$tiles.find('.js-data-hidden-state').remove();
 				$tiles.find('.element-data').show();
 				// is there an overflow flag?

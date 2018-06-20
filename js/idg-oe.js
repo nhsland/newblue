@@ -1383,7 +1383,6 @@ idg.elementAddSelectSearch = function(){
   			
   			
   		var resetPopupData = true;
-  		// var $overlay;					// ----------------------------  Overlay
   		
   		// but for these popups remember the data added:
   		switch( $popup.prop('id') ){
@@ -1413,7 +1412,6 @@ idg.elementAddSelectSearch = function(){
   		closeBtn.click(function(e){
 	  		e.stopPropagation();
 	  		closeCancel();
-	  		// $overlay.remove();			// ----------------------------  Overlay
   		});
   		
   		selectBtn.click(function(e){
@@ -1427,7 +1425,6 @@ idg.elementAddSelectSearch = function(){
 		if(addBtn.length){
 	  		addBtn.click(function(e){
 	  			e.stopPropagation();
-	  			// $overlay.remove();  		// ----------------------------  Overlay
 	  			closeAdd();
 	  			
   			});
@@ -1576,16 +1573,7 @@ idg.elementAddSelectSearch = function(){
 			$popup.show();
 			
 			selectBtn.children('.oe-i').addClass('selected');
-			searchBtn.children('.oe-i').removeClass('selected');
-		
-					  		
-			// chnage popup into a overlay						// ----------------------------  Overlay
-/*
-			$overlay = $('<div>');
-			$overlay.addClass('oe-popup-wrap');
-			$popup.appendTo($overlay);
-  			$('body').prepend($overlay);
-*/		  				  		
+			searchBtn.children('.oe-i').removeClass('selected');	  				  		
 		}
 
 		// Close and reset
@@ -1926,13 +1914,14 @@ idg.collapseTiles = function(){
 				of content (so user knows state...)
 				*/
 				var collapseIcon = $('<i class="oe-i expand small pad-right js-data-collapsed-icon"></i>');	
-				var dataState = $('<span class="fade js-data-hidden-state">[ n ]</span>');
+				var dataState = $('<span class="js-data-hidden-state"> [0]</span>');
 					
-				$tiles.append( collapseIcon.click( change ) );
-				$tiles.append( dataState );
+				//$tiles.append( collapseIcon.click( change ) );
+				
+				$tiles.find('.element-title').append( dataState );
 				
 			} else {
-				$tiles.find('.js-data-collapsed-icon').remove();
+				// $tiles.find('.js-data-collapsed-icon').remove();
 				$tiles.find('.js-data-hidden-state').remove();
 				$tiles.find('.element-data').show();
 				// is there an overflow flag?
@@ -2280,14 +2269,26 @@ idg.comments = function(){
 	**/
 	$('.js-add-comments').click(function( e ){
 		e.stopPropagation();
-		$(this).hide();
 		
-		var textAreaID = $(this).data('input');
-		if(textAreaID == 'next'){
-			var input = $(this).next().show().focus();
+		var $btn = $(this);
+		var $div = $('#'+ $btn.data('input') ); 
+		
+		$btn.hide();
+	
+		if($btn.data('input') == 'next'){
+			var input = $(this).next().show().focus(); // phasing this approach out! 
 		} else {
-			var input = $(textAreaID).show(0,function(){
-				$(this).find('textarea').focus();
+			$div.show(0,function(){
+				
+				var textArea = $(this).find('textarea');
+				var removeIcon = $(this).find('.js-remove-add-comments');
+				
+				textArea.focus();
+				
+				removeIcon.click(function(){
+					$div.hide();
+					$btn.show();	
+				});
 			});
 		}
 	});

@@ -10,14 +10,26 @@ idg.comments = function(){
 	**/
 	$('.js-add-comments').click(function( e ){
 		e.stopPropagation();
-		$(this).hide();
 		
-		var textAreaID = $(this).data('input');
-		if(textAreaID == 'next'){
-			var input = $(this).next().show().focus();
+		var $btn = $(this);
+		var $div = $('#'+ $btn.data('input') ); 
+		
+		$btn.hide();
+	
+		if($btn.data('input') == 'next'){
+			var input = $(this).next().show().focus(); // phasing this approach out! 
 		} else {
-			var input = $(textAreaID).show(0,function(){
-				$(this).find('textarea').focus();
+			$div.show(0,function(){
+				
+				var textArea = $(this).find('textarea');
+				var removeIcon = $(this).find('.js-remove-add-comments');
+				
+				textArea.focus();
+				
+				removeIcon.click(function(){
+					$div.hide();
+					$btn.show();	
+				});
 			});
 		}
 	});

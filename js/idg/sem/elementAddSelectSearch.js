@@ -32,7 +32,6 @@ idg.elementAddSelectSearch = function(){
   			
   			
   		var resetPopupData = true;
-  		// var $overlay;					// ----------------------------  Overlay
   		
   		// but for these popups remember the data added:
   		switch( $popup.prop('id') ){
@@ -62,7 +61,6 @@ idg.elementAddSelectSearch = function(){
   		closeBtn.click(function(e){
 	  		e.stopPropagation();
 	  		closeCancel();
-	  		// $overlay.remove();			// ----------------------------  Overlay
   		});
   		
   		selectBtn.click(function(e){
@@ -76,7 +74,6 @@ idg.elementAddSelectSearch = function(){
 		if(addBtn.length){
 	  		addBtn.click(function(e){
 	  			e.stopPropagation();
-	  			// $overlay.remove();  		// ----------------------------  Overlay
 	  			closeAdd();
 	  			
   			});
@@ -225,16 +222,7 @@ idg.elementAddSelectSearch = function(){
 			$popup.show();
 			
 			selectBtn.children('.oe-i').addClass('selected');
-			searchBtn.children('.oe-i').removeClass('selected');
-		
-					  		
-			// chnage popup into a overlay						// ----------------------------  Overlay
-/*
-			$overlay = $('<div>');
-			$overlay.addClass('oe-popup-wrap');
-			$popup.appendTo($overlay);
-  			$('body').prepend($overlay);
-*/		  				  		
+			searchBtn.children('.oe-i').removeClass('selected');	  				  		
 		}
 
 		// Close and reset
