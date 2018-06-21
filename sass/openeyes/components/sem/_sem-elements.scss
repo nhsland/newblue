@@ -1,24 +1,30 @@
 // OE Elements
 
-// general UI for Edit state
-// although they are available in view mode too
-@import "elements/element"; // base setup
-@import "elements/edit";
-@import "elements/header-actions";
+// UI for Elements
+@import "elements/element"; 					// base setup
+@import "elements/element-right-left";
+@import "elements/element-tiles";
+@import "elements/element-both-eyes";
+
+@import "elements/header";
+@import "elements/actions";
 @import "elements/tables";
-@import "elements/table-calendar";   // Schedule Op Calendar table
-@import "elements/add-select-search";
-@import "elements/multi-select";
-@import "elements/data-group";
+@import "elements/add-select-search";			// add data popup to element
+@import "elements/data-group";					// replaces 'data-row', 'field-row' AND adds <hr> divider
+@import "elements/none";						// None & None
 
-@import "elements/search-in-event"; // only used in Examination (at the moment)
+// VIEW / EDIT states:
+@import "elements/element/view"; 
+@import "elements/element/edit";
 
-// view mode
-@import "elements/view"; 
+// Eyedraw (v3)
+@import "elements/eyedraw";						
 
-// eyedraw
-@import "elements/eyedraw";
+// Specific elements
+@import "elements/specific/correspondence";		// letter layout for correspondence
+@import "elements/specific/table-calendar";   	// Schedule Op Calendar table
+@import "elements/specific/search-in-event"; 	// only used in Examination (at the moment)
 
-// specific elements
-@import "elements/correspondence";
+// v2
+@import "elements/v2/multi-select"; 			// pulled from v2
 

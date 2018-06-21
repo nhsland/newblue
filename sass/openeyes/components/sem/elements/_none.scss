@@ -1,0 +1,20 @@
+// OE Element 
+// 
+// None & None
+
+.main-event {
+	.element {
+		
+		// 'none' and 'none'.
+		// there are two types of 'none'.
+		// 'None' as in no data provided & 'None' as in complications: None
+		// this provides some visual differentation. 
+		
+		.none {
+			opacity:0.6;
+			font-style: italic;
+			font-weight: $oe-font-light;
+		}
+		
+	}
+}

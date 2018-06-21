@@ -71,7 +71,7 @@
 		}
 		
 		// ed-v2 is to help with the transition from V2 to V3.
-		// isn't used in VIEW mode. Not sure if it's still needed... 
+		// may not be needed not sure what is using this?!?! 
 		&.ed-v2 {
 			padding-top:20px; // so that you can see the little x icon
 			background:none;
@@ -86,6 +86,9 @@
 	
 	}
 
+	// in V3 Eyedraw in EDIT mode is the same as
+	// in VIEW but with a launch icon as Eyedraw App
+	// opens in an overlay popup. 
 	&.edit {
 		// --- only EDIT 
 		.eyedraw {

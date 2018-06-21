@@ -1,4 +1,6 @@
 // OE Element - EDIT
+//
+// Specific element view classes 
 
 .main-event {
 	.element {
@@ -19,13 +21,16 @@
 			}
 			
 			// large text if needed, matches Element header size
+			// unlike VIEW there is no priority size text in Edit
 			.large-text {
 				@include font-size(14);
 				font-weight:inherit;	
 			}
 			
+			// provides a hook
 			// extends the flex-item-bottom class
-			// provides a margin space for the + and commment buttons
+			// creates a margin space for the + and commment buttons
+			// a squashed without it
 			.add-data-actions {
 				margin:8px 0 0 0;
 			}

@@ -1,40 +1,12 @@
 // OE Element
-// Elements can be
-// Full width
-// Full width (split)
-// Tile (1 of 3 in a horizontal layout) - ONLY used in VIEW
+// Elements can be:
+// - Full width
+// - Split (R / L)
+// - Tile (1 of 3 in a horizontal layout) - this is ONLY used in VIEW
 
-// note: VIEW and EDIT specific styling in _view.scss & _edit.scss
+// View & Edit have some specific styling.
 
 .main-event {
-
-	// element has 2 main states:
-	// - 'full' (that can split to R L)
-	// - 'tile' (used as 1 of 3 in tiled row)
-	
-	// new wrapper to add title and expand / collapse options to .element-tile-group
-	// built it this way so that it's not required to have this wrapper
-	.element-tiles {
-		position:relative;
-		padding:0 0 0 0;
-		
-			
-	}
-	
-	// <div> wrapper for the 3 tiled elements
-	.element-tile-group {
-		display:flex;
-		justify-content:flex-start; 	// group items to the left
-		align-items:stretch;			// fill vertical space
-		
-		.collapse-tile-group {
-			padding:5px 2px 0 0;
-			width:25px;
-			text-align: center;
-			align-self: flex-start;
-			
-		}
-	}
 	
 	.element {
 		position:relative;
@@ -44,39 +16,6 @@
 		margin:0 0 3px 0;
 		color:$oe-text;
 		font-weight: $oe-font-medium;
-		
-		// group of 3 'tile' elements in rank
-		&.tile {
-			width: 33.33333%;
-			margin:0 3px 3px 0;
-			&:last-child {
-				margin-right:0;
-			}
-			
-			// tile elements have a restriction on the amount
-			// of data they can show to stop huge med lists
-			// breaking the UI...			
-			.tile-data-overflow {
-				position:relative;
-				max-height:180px;
-				overflow-y: auto;
-				padding:0 5px 10px 0;
-			}
-			
-			// but make sure hidden data is flagged to users
-			.tile-more-data-flag {
-				position:absolute; 
-				z-index:1;
-				bottom:0;
-				left:0;
-				display:flex;
-				align-items: center;
-				justify-content: center;
-				width:100%;
-				height:30px;
-				background:rgba($oe-blue,0.8);
-			}
-		}
 		
 		// line to divide R & L
 		&.eye-divider {
@@ -89,99 +28,21 @@
 				background-position-x: 54.5%; // needs offseting because headers have dropped left
 			}
 		}
-		
-		// Element that requires data to cover both Eyes, 
-		// then splits... requires a slightly different DOM
-		// because of the Flex layout in element-eyes
-		.element-both-eyes {
-			background-color: $oe-blue-dark2;
-			margin:10px 20px 10px 0; 	// 20px matches the full-width class
- 			padding:10px 0 15px 10px; 	// the right 0px padding means that collapse icons line up!
-			border-radius:13px; // create a bracket effect
-			border-bottom: 3px solid $oe-line;
-		}
-		
-		// provide desktop user with element header highlight
-		// highlight element focus
-		// stop the re-sizing effect of adding a border:
-		
+			
+		// provide desktop user with element highlight effect
+		// border required in default state to stop the re-sizing effect
 		border:1px solid rgba(#fff,0);
 		transition: border-color 0.2s ease-in; // animate
 		
 		&:hover, &:focus {
 			border-color:$oe-btn-blue;
-			
 			.element-header {
 				.element-title, .subelement-title {
 					transition: color 0.5s ease-out;
 					color:$oe-text-highlight;
 				}
 			}
-
-		}
-		
-		// 'none', only used for 'none' i.e. 'no data available'
-		.none {
-			opacity:0.6;
-			font-style: italic;
-			font-weight: $oe-font-light;
-		}
-		
-		// R & L data split
-		.element-eyes {
-			display:flex;
-			align-items:flex-start;			
-			justify-content:space-between;
-			
-			// wrapper for Eye Lat icons
-			.eye-icon-header {
-				text-align: center;
-				margin:0 0 8px 0;
-			}
-
-			// these are really tricky to get right
-			// had to tweak the 'left' side to get the + icon
-			// to line up with the full width + icon
-			
-			.right-eye {
-				width:50%; 
-				padding-left: 10px; 	// indent data
-				padding-right: 29px;	// L / R not the same! - ED 490px 
-			}
-			.left-eye {
-				width:50%; 
-				padding-left: 17px; 	// indent data 
-				padding-right: 20px; 	// L / R not the same! - ED 491px (+1px)
-			}
-			
-			// need to be able to deactivate a side
-			// the system will do this if a user shouldn't
-			// be using this data
-			
-			.right-eye.deactivate, 
-			.left-eye.deactivate {
-				position:relative; 
-				user-select: none;
-				
-				// show a deactive overlay pattern
-				&::after {
-				  content: "";
-				  z-index:1;
-				  position: absolute;
-				  top:0;
-				  left:0;
-				  width:100%;
-				  height:100%;
-				  // add right arrow to the backround:
-				  background-position:top left;
-				  background-repeat: repeat;
-				  background-size:20px;
-				  background-image:url( "../svg/in-css/patterns/pattern1.svg" );
-				  overflow:auto; // IE: stop under text selection fix
-				}
-			}
-		}
-				
+		}				
 	}
 }
 

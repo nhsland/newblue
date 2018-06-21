@@ -2,16 +2,6 @@
 // Popup box showing the common options 
 // and an input to allow search with autocomplete
 
-// the dom structure is different in R / L element split
-// and the next relative elements is different effecting the 
-// positioning.
-.element-eyes {
-	.oe-add-select-search {
-		bottom:0; 
-		right:0; 
-	}
-}
-
 .oe-add-select-search {	
 	position:fixed; 					// Fixed take it out of the Grid. 
 	bottom:300px; 						// JS will position this
@@ -23,17 +13,13 @@
 	@include font-size(12);			
 	font-weight:500;
 	
-	&.align-left {
-		right:auto;
-		left:0;
-	}
-	
 	// popup widths
 	// history has 5 inputs lists, pro
-	width:350px; 
+	width:350px; 						// need to fixed a width for single column auto-width lists
 	min-width: 350px;					// default width (to fit in Analytics column)
+	
 	&.auto-width {
-		width:auto;
+		width:auto;						// php adds this class IF 1> options
 		
 	}
 	.close-icon-btn {
@@ -94,7 +80,7 @@
 
 	// All options lists <ul>:
 	.add-options{
-		max-height:160px;		// limit the displayed results.  --------  200px 
+		max-height:160px;		// limit the displayed results.  
 		overflow-y: auto;
 		margin:0 5px 0 0;
 		

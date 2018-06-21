@@ -2,10 +2,9 @@
 //
 // Specific element view classes 
 // Elements in VIEW mode require mostly typographic treatment 
-// to increase speed of legabilty of data.
+// to increase of legabilty of data.
 
 .main-event {
-	
 	.element {
 		
 		// adjust padding for 'tile' elements
@@ -33,14 +32,13 @@
 			// if it has both sides in a split:
 			.element-both-eyes {
 				background-color: $oe-bg-highlight;
-			}
-			
+			}	
 		}
 		
 		// element-data is ONLY used in VIEW mode (edit uses 'element-fields')
 		.element-data {
-			// for all Elements that aren't split into
-			// R L Eye sides we need to adjust the padding
+			
+			// adjust the padding to match eye sides elements.
 			&.full-width {
 			 	padding-right:20px; // 20px matches the edit space (thinking of inline editing!)
 				padding-left:10px;
@@ -58,19 +56,13 @@
 				font-weight:$oe-font-medium;	
 			}
 			
-			
 			// table style is slightly differnt in VIEW 
 			table {
 				width:100%;
 			}
 			
-			.divider {
-				width:100%;
-				height:1px; 
-				margin:10px 0;
-				border-top:1px dotted $oe-line;
-			}
-			
+			// keeping data-value as a useful hook
+			// but this could be easily de-coupled.
 			.data-value {
 				&.not-recorded {
 					margin:0 0 0 0;
@@ -82,16 +74,8 @@
 				}
 			}
 			
-			// used in medications to add a dividing line and gap between 
-			// current and stopped medication groups
-			.data-row-divider {
-				margin-top:8px;
-				padding-top:4px;
-				border-top:1px solid $oe-line;
-			}
-			
 			// only used rarely but an option to have a sub-header
-			// see CVI disorders
+			// e.g. see http://idg.knowego.com/v3.0-SEM/_view-elements
 			h3 {
 				@include font-size(14); // match title
 				color:$oe-element-headers;
