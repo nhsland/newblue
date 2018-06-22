@@ -52,7 +52,7 @@
 		position: absolute;
 		top: 36px;
 		width: 148px;
-		z-index: $oe-z-ed-v2 + 2;
+		z-index: $oe-z-ed-v2 + 8; // above everything!
 	}
 	.ed-drawer-open {
 		.ed-toolbar-panel-drawer {

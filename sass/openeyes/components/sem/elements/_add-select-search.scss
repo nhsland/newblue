@@ -8,7 +8,7 @@
 	right:0; 
 	z-index:$oe-z-tooltip; 				// make sure it floats over elements
 	background:$oe-popup-bg;
-	padding:10px 45px 10px 10px; 		// allow for icon-btns
+	padding:10px 50px 10px 10px; 		// allow for icon-btns
 	min-height:150px;
 	@include font-size(12);			
 	font-weight:500;

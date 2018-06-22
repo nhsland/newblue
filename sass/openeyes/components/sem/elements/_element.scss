@@ -37,7 +37,7 @@
 		&:hover, &:focus {
 			border-color:$oe-btn-blue;
 			.element-header {
-				.element-title, .subelement-title {
+				.element-title {
 					transition: color 0.5s ease-out;
 					color:$oe-text-highlight;
 				}

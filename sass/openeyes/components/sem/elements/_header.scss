@@ -10,6 +10,7 @@
 		left:0;
 		width:100%; // full width to position actions
 	
+		// <h3>
 		.element-title {
 			@include font-size(15);
 			color:$oe-element-headers;
@@ -36,7 +37,8 @@
 		}
 	}
 
-	// for 'full' elements adjust the padding because the header moves:
+	// for 'full' elements adjust the padding because the header moves.
+	// tiles don't do this.
 	.element.full {
 		@include media($oe-extended-browser-size){
 			padding:10px 30px 10px $oe-event-extension - 25px; 	// provide left space for header and right space for actions

@@ -3,9 +3,9 @@
 .main-event {
 
 	.element {
-		// Element that requires data to cover both Eyes, 
-		// then splits... requires a slightly different DOM
-		// because of the Flex layout in element-eyes
+		// Element that requires data to cover both Eyes, but then split 
+		// requires a slightly different DOM
+		// because of the Flex layout used in 'element-eyes'
 		.element-both-eyes {
 			background-color: $oe-blue-dark2;
 			margin:10px 20px 10px 0; 		// 20px matches the full-width class

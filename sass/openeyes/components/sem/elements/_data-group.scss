@@ -22,9 +22,7 @@
 		// an element to visually space them out. if something
 		// visually stronger is required use hr.divider
 		
-		.data-group,
-		.data-row, 
-		.field-row  {
+		.data-group {
 			padding-top: 12px;
 			&:first-child {
 				padding-top: 0;
