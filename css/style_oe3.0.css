@@ -225,6 +225,18 @@ textarea {
   display: inline-block;
 }
 
+.row {
+  margin: 15px 0;
+}
+
+.row:first-child {
+  margin-top: 0;
+}
+
+.row:last-child {
+  margin-bottom: 0;
+}
+
 .oe-date {
   text-align: right;
   white-space: nowrap;
@@ -4265,8 +4277,8 @@ html {
 
 .main-event .element .element-both-eyes {
   background-color: #141e2b;
-  margin: 10px 20px 10px 0;
-  padding: 10px 0 15px 10px;
+  margin: 0 20px 10px 0;
+  padding: 10px 0 10px 10px;
   border-radius: 13px;
   border-bottom: 3px solid #26303d;
 }
@@ -4418,14 +4430,22 @@ html {
 }
 
 .main-event .element table th, .main-event .element table td {
-  padding: 1px 0 1px 4px;
   font-size: 0.75rem;
+  padding: 1px 0 1px 4px;
+}
+
+.main-event .element table th:first-child, .main-event .element table td:first-child {
+  padding-left: 0;
 }
 
 .main-event .element table th.nowrap, .main-event .element table td.nowrap {
   width: 1%;
   white-space: nowrap;
   padding-right: 10px;
+}
+
+.main-event .element table th.nowrap:last-child, .main-event .element table td.nowrap:last-child {
+  padding-right: 0;
 }
 
 .main-event .element table th.center, .main-event .element table td.center {
@@ -4589,6 +4609,10 @@ html {
 
 .main-event .element .data-group:first-child {
   padding-top: 0;
+}
+
+.main-event .element .comment-group {
+  padding-top: 12px;
 }
 
 .main-event .element .none {

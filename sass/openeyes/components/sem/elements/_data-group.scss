@@ -22,11 +22,20 @@
 		// an element to visually space them out. if something
 		// visually stronger is required use hr.divider
 		
+		// note: CSS :first-child applies to the <DOM> not the use of 'class'
+		// i.e <div> ... <div class="data-group"> (second <div> does is NOT 'first-child')
 		.data-group {
 			padding-top: 12px;
 			&:first-child {
 				padding-top: 0;
 			}
+		}
+		
+		// Comments require the same spacing as data-group
+		// but because of the DOM structure, can not use this class
+		// (:first-child) so... 
+		.comment-group {
+			padding-top: 12px;
 		}
 		
 	}

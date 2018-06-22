@@ -15,22 +15,19 @@ idg.comments = function(){
 		var $div = $('#'+ $btn.data('input') ); 
 		
 		$btn.hide();
-	
-		if($btn.data('input') == 'next'){
-			var input = $(this).next().show().focus(); // phasing this approach out! 
-		} else {
-			$div.show(0,function(){
-				
-				var textArea = $(this).find('textarea');
-				var removeIcon = $(this).find('.js-remove-add-comments');
-				
-				textArea.focus();
-				
-				removeIcon.click(function(){
-					$div.hide();
-					$btn.show();	
-				});
+		
+		$div.show(0,function(){
+			
+			var textArea = $(this).find('textarea');
+			var removeIcon = $(this).find('.js-remove-add-comments');
+			
+			textArea.focus();
+			
+			removeIcon.click(function(){
+				$div.hide();
+				$btn.show();	
 			});
-		}
+		});
+		
 	});
 }

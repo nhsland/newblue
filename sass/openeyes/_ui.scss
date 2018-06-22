@@ -5,9 +5,13 @@
 }
 
 // need a generic div class to 
-// space out a group of data...
-// update: removed! don't think it's needed in v3?
-// .row { margin:15px 0; }
+// space out a 'rows' of data within 
+// a DOM container
+.row { 
+	margin:15px 0; 
+	&:first-child { margin-top:0; }
+	&:last-child { margin-bottom:0; }
+}
 
 
 // OE Date Layout
@@ -20,7 +24,7 @@
 	// this is tricky. the problem here occurred in Meds
 	// an icon is used to show start / stop dates.
 	// if I align all the <td> the icons don't line up.
-	// flex also didn't work. instead decide to go with a 
+	// flex also didn't work. decided to go with a 
 	// fixed width approach... 
 	display:inline-block;
 	width:88px;
