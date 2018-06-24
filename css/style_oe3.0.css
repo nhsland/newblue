@@ -4781,11 +4781,13 @@ html {
   color: cyan;
 }
 
+.element .element-fields.full-width .eyedraw .eyedraw-canvas,
 .element .element-data.full-width .eyedraw .eyedraw-canvas {
   width: 300px;
   margin: 0 0 0 50px;
 }
 
+.element .element-fields.full-width .eyedraw .eyedraw-data,
 .element .element-data.full-width .eyedraw .eyedraw-data {
   width: 450px;
 }

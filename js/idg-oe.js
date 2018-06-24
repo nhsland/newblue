@@ -1697,7 +1697,6 @@ idg.elementAddSelectSearch = function(){
 			  		
 			  		$("#js-show-procedures").append( newRow );
 			  		
-			  		console.log(proceduresArray[i] == "Phacoemulsification and IOL");
 			  		// hack to demo functionality of elements
 			  		if(proceduresArray[i] == "Phacoemulsification and IOL"){
 				  		$('.edit-phaco--iol-right').show();
@@ -2267,6 +2266,7 @@ idg.comments = function(){
 	1) Textarea switches places with icon button
 	2) Textarea is shown in different DOM placement  
 	**/
+	
 	$('.js-add-comments').click(function( e ){
 		e.stopPropagation();
 		
@@ -2274,6 +2274,8 @@ idg.comments = function(){
 		var $div = $('#'+ $btn.data('input') ); 
 		
 		$btn.hide();
+		
+		
 		
 		$div.show(0,function(){
 			

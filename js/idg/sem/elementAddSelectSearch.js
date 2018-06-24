@@ -346,7 +346,6 @@ idg.elementAddSelectSearch = function(){
 			  		
 			  		$("#js-show-procedures").append( newRow );
 			  		
-			  		console.log(proceduresArray[i] == "Phacoemulsification and IOL");
 			  		// hack to demo functionality of elements
 			  		if(proceduresArray[i] == "Phacoemulsification and IOL"){
 				  		$('.edit-phaco--iol-right').show();

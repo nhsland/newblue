@@ -10,14 +10,19 @@
 .element {
 	// eyedraw either in 'element-eyes' (for popup 'previous' too)
 	// or; in 'full-width'... opnote
-	.element-data.full-width {
-		.eyedraw {
-			.eyedraw-canvas {
-				width:300px; // ONLY 1 canvas in this mode
-				margin:0 0 0 50px;
-			}
-			.eyedraw-data {
-				width:450px; // fixed, but wider than default.
+	
+	// view and edit wrappers:
+	.element-fields, 
+	.element-data {
+		&.full-width {
+			.eyedraw {
+				.eyedraw-canvas {
+					width:300px; // ONLY 1 canvas in this mode
+					margin:0 0 0 50px;
+				}
+				.eyedraw-data {
+					width:450px; // fixed, but wider than default.
+				}
 			}
 		}
 	}
