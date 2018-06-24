@@ -27,6 +27,14 @@
 				font-weight:inherit;	
 			}
 			
+			// only used rarely but an option to have a sub-header
+			// e.g. see http://idg.knowego.com/v3.0-SEM/_view-elements
+			h3 {
+				@include font-size(14); // match title
+				color:$oe-element-headers;
+				font-weight:$oe-font-light;
+			}
+			
 			// provides a hook
 			// extends the flex-item-bottom class
 			// creates a margin space for the + and commment buttons

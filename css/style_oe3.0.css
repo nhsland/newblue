@@ -4722,7 +4722,6 @@ html {
   font-size: 0.875rem;
   color: #69939e;
   font-weight: 300;
-  margin: 0 0 0 4px;
 }
 
 .main-event .element .element-fields.full-width {
@@ -4737,6 +4736,12 @@ html {
 .main-event .element .element-fields .large-text {
   font-size: 0.875rem;
   font-weight: inherit;
+}
+
+.main-event .element .element-fields h3 {
+  font-size: 0.875rem;
+  color: #69939e;
+  font-weight: 300;
 }
 
 .main-event .element .element-fields .add-data-actions {
