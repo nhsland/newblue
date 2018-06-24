@@ -12,6 +12,10 @@
 @import "elements/add-select-search";			// add data popup to element
 @import "elements/data-group";					// replaces 'data-row', 'field-row' AND adds <hr> divider
 @import "elements/none";						// None & None
+@import "elements/multi-select";				// v3 version of this UI
+// v2 CSS
+@import "elements/v2/multi-select"; 			// pulled from v2 (still supported in the transition)			
+
 
 // VIEW / EDIT states:
 @import "elements/element/view"; 
@@ -25,6 +29,8 @@
 @import "elements/specific/table-calendar";   	// Schedule Op Calendar table
 @import "elements/specific/search-in-event"; 	// only used in Examination (at the moment)
 
-// v2
-@import "elements/v2/multi-select"; 			// pulled from v2
+
+
+
+
 

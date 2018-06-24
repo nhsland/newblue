@@ -1,0 +1,28 @@
+// OE Element 
+// 
+// Multi-select v3
+// a cleaner version of the the old v2 multi-select (/elements/v2)
+// this could be de-coupled but for now...
+
+.main-event {
+	.element {
+		
+		.oe-multi-select {
+			&.inline {
+				li {
+					display:inline-flex;
+				}
+			}
+			
+			li {
+				display:flex;
+				align-items: center;
+				justify-content: space-between;
+				padding:2px 4px 2px 6px; 
+				color:$oe-user-input-text; 
+				background: rgba($oe-user-inputs,0.5);
+			}
+		}	
+		
+	}
+}
