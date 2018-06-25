@@ -793,12 +793,12 @@ textarea {
 
 .i-CiCommunityData {
   background-size: 152px 133px;
-  background-position: -95px 0px;
+  background-position: -95px -19px;
 }
 
 .i-CiCommunityData.large {
   background-size: 304px 266px;
-  background-position: -190px 0px;
+  background-position: -190px -38px;
 }
 
 .i-CiDilation {
@@ -1033,22 +1033,22 @@ textarea {
 
 .i-InBiometry {
   background-size: 152px 133px;
-  background-position: 0px 0px;
+  background-position: -95px 0px;
 }
 
 .i-InBiometry.large {
   background-size: 304px 266px;
-  background-position: 0px 0px;
+  background-position: -190px 0px;
 }
 
 .i-InBlood {
   background-size: 152px 133px;
-  background-position: -95px -19px;
+  background-position: 0px 0px;
 }
 
 .i-InBlood.large {
   background-size: 304px 266px;
-  background-position: -190px -38px;
+  background-position: 0px 0px;
 }
 
 .i-InCornealTopography {
@@ -1231,64 +1231,74 @@ textarea {
   background-position: -76px -228px;
 }
 
-.i-TrIntravitrealInjection {
+.i-PatientDNA {
   background-size: 152px 133px;
   background-position: -57px -114px;
 }
 
-.i-TrIntravitrealInjection.large {
+.i-PatientDNA.large {
   background-size: 304px 266px;
   background-position: -114px -228px;
 }
 
-.i-TrLaser {
+.i-TrIntravitrealInjection {
   background-size: 152px 133px;
   background-position: -76px -114px;
 }
 
-.i-TrLaser.large {
+.i-TrIntravitrealInjection.large {
   background-size: 304px 266px;
   background-position: -152px -228px;
 }
 
-.i-TrNeedling {
+.i-TrLaser {
   background-size: 152px 133px;
   background-position: -95px -114px;
 }
 
-.i-TrNeedling.large {
+.i-TrLaser.large {
   background-size: 304px 266px;
   background-position: -190px -228px;
 }
 
-.i-TrOperation {
+.i-TrNeedling {
   background-size: 152px 133px;
   background-position: -114px -114px;
 }
 
-.i-TrOperation.large {
+.i-TrNeedling.large {
   background-size: 304px 266px;
   background-position: -228px -228px;
 }
 
-.i-TrOperationNotes {
+.i-TrOperation {
   background-size: 152px 133px;
   background-position: -133px 0px;
 }
 
-.i-TrOperationNotes.large {
+.i-TrOperation.large {
   background-size: 304px 266px;
   background-position: -266px 0px;
 }
 
-.i-TrOperationProcedure {
+.i-TrOperationNotes {
   background-size: 152px 133px;
   background-position: -133px -19px;
 }
 
-.i-TrOperationProcedure.large {
+.i-TrOperationNotes.large {
   background-size: 304px 266px;
   background-position: -266px -38px;
+}
+
+.i-TrOperationProcedure {
+  background-size: 152px 133px;
+  background-position: -133px -38px;
+}
+
+.i-TrOperationProcedure.large {
+  background-size: 304px 266px;
+  background-position: -266px -76px;
 }
 
 ul {
