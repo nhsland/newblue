@@ -19,6 +19,24 @@ input, textarea, select {
 		color:rgb(255,255,255);
 		background-color: $oe-alert-red;
 	}
+	
+	// widths can be controlled with the cols-n
+	// but sometimes a fixed width is needed...
+	
+	&.fixed-width-small {
+		text-align: center;
+		width:45px; 		// allows for 0000
+		margin:0 5px 0 0; 	// guessing it will have a label after it
+	}
+	
+	&.fixed-width-medium {
+		text-align: center;
+		width:90px; 		// allows for 00000000
+		margin:0 5px 0 0;	// guessing it will have a label after it
+	}
+	
+	
+	
 }
 
 // dates used be handled consistently.

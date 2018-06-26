@@ -1396,6 +1396,18 @@ input.error, textarea.error, select.error {
   background-color: #9b0000;
 }
 
+input.fixed-width-small, textarea.fixed-width-small, select.fixed-width-small {
+  text-align: center;
+  width: 45px;
+  margin: 0 5px 0 0;
+}
+
+input.fixed-width-medium, textarea.fixed-width-medium, select.fixed-width-medium {
+  text-align: center;
+  width: 90px;
+  margin: 0 5px 0 0;
+}
+
 input.date {
   text-align: center;
   width: 90px;
