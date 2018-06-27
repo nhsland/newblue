@@ -27,6 +27,7 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 	**/
 	this.inGroup = inGroup;
 	this.hide = reset;
+	this.show = showContent;
 	
 	/**
 	Events

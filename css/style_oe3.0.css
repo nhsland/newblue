@@ -2975,6 +2975,31 @@ html {
   opacity: 0.5;
 }
 
+.oe-patient-popup .patient-numbers {
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 5px 10px 6px 5px;
+  margin: 0 0 10px 0;
+  background: #182535;
+  border-bottom: 1px solid #172332;
+}
+
+.oe-patient-popup .patient-numbers .num {
+  display: inline-block;
+  padding: 0 20px 0 0;
+  margin: 0 20px 0 0;
+  border-right: 1px solid #26303d;
+}
+
+.oe-patient-popup .patient-numbers label.highlight {
+  color: rgba(255, 255, 255, 0.8);
+  background: #182535;
+}
+
+.oe-patient-popup .patient-numbers label.highlight:hover, .oe-patient-popup .patient-numbers label.highlight:focus, .oe-patient-popup .patient-numbers label.highlight:active {
+  background: #1e2e42;
+}
+
 .oe-popup {
   margin: auto;
   /* flex (wrapper) */

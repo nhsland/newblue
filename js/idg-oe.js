@@ -1282,6 +1282,7 @@ idg.patientPopups = {
 		var demographics2 	= new idg.PatientBtnPopup( 'management', $('#js-management-btn'), $('#patient-popup-management') );
 		var risks 			= new idg.PatientBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
 	
+	
 		var all = [ quicklook, demographics, demographics2, risks ];
 		
 		for( pBtns in all ) {
@@ -2134,6 +2135,7 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 	**/
 	this.inGroup = inGroup;
 	this.hide = reset;
+	this.show = showContent;
 	
 	/**
 	Events
