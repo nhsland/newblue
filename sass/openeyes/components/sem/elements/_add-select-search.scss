@@ -13,6 +13,9 @@
 	@include font-size(12);			
 	font-weight:500;
 	
+	// offset-x | offset-y | blur-radius | spread-radius | color
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+	
 	// popup widths
 	// history has 5 inputs lists, pro
 	width:350px; 						// need to fixed a width for single column auto-width lists
@@ -20,8 +23,8 @@
 	
 	&.auto-width {
 		width:auto;						// php adds this class IF 1> options
-		
 	}
+	
 	.close-icon-btn {
 		position: absolute;
 		top:10px;
@@ -78,15 +81,18 @@
 		}		
 	}
 
+	// if the list has a filter input:
+	.has-filter {
+		.add-options {
+			max-height:133px;	// limit the displayed results - input 
+		}
+	}
+
 	// All options lists <ul>:
 	.add-options{
 		max-height:160px;		// limit the displayed results.  
 		overflow-y: auto;
-		margin:0 5px 0 0;
-		
-		&:last-child {
-			margin:0 0 0 0;
-		}
+		margin:0 2px 0 0;
 		
 		li {
 			display:block;

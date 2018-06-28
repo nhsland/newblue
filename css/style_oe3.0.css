@@ -4537,6 +4537,8 @@ html {
   min-height: 150px;
   font-size: 0.75rem;
   font-weight: 500;
+  -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
   width: 350px;
   min-width: 350px;
 }
@@ -4595,14 +4597,14 @@ html {
   text-align: left;
 }
 
+.oe-add-select-search .has-filter .add-options {
+  max-height: 133px;
+}
+
 .oe-add-select-search .add-options {
   max-height: 160px;
   overflow-y: auto;
-  margin: 0 5px 0 0;
-}
-
-.oe-add-select-search .add-options:last-child {
-  margin: 0 0 0 0;
+  margin: 0 2px 0 0;
 }
 
 .oe-add-select-search .add-options li {
