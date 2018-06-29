@@ -39,6 +39,10 @@ table.standard {
 			padding:5px 10px 5px 0; 
 			font-weight: $oe-font-medium;
 			color:$oe-text; 
+			
+			&.valign-top {
+				vertical-align: top;
+			}
 		}
 	}
 }

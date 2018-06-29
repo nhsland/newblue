@@ -1373,6 +1373,10 @@ table.standard tbody td {
   color: rgba(255, 255, 255, 0.8);
 }
 
+table.standard tbody td.valign-top {
+  vertical-align: top;
+}
+
 table td.date, table th.date {
   text-align: right;
   padding-right: 4px;
@@ -3387,6 +3391,10 @@ html {
 .home-messages .messages td.patient {
   border-right: 2px solid #26303d;
   padding-right: 12px;
+}
+
+.home-messages .messages td.valign-top {
+  vertical-align: top;
 }
 
 .home-messages .messages .message {

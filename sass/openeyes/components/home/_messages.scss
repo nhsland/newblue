@@ -68,6 +68,10 @@
 				border-right:2px solid $oe-line;
 				padding-right:12px
 			}
+			
+			&.valign-top {
+				vertical-align: top;
+			}
 		}
 		
 		// messages 
