@@ -93,6 +93,7 @@
 		max-height:160px;		// limit the displayed results.  
 		overflow-y: auto;
 		margin:0 2px 0 0;
+		max-width: 500px; 		// Meds can be really long
 		
 		li {
 			display:block;
@@ -116,7 +117,7 @@
 			// this is <span>
 			.auto-width {
 				// white-space:nowrap; // this cause really look text to break the popup box
-				// max-width: 250px;
+				// max-width: 400px;
 			}
 			
 			

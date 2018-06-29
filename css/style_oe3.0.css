@@ -4613,6 +4613,7 @@ html {
   max-height: 160px;
   overflow-y: auto;
   margin: 0 2px 0 0;
+  max-width: 500px;
 }
 
 .oe-add-select-search .add-options li {
