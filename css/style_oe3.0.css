@@ -2283,7 +2283,7 @@ html {
 .oe-patient .patient-allergies-risks,
 .oe-patient .patient-local-edit {
   position: absolute;
-  padding: 5px 10px 4px 10px;
+  padding: 5px 12px 4px 8px;
   cursor: pointer;
 }
 
@@ -2295,6 +2295,10 @@ html {
   display: inline-block;
   fill: #fff;
   opacity: 0.8;
+}
+
+.oe-patient .patient-demographics {
+  padding-left: 15px;
 }
 
 .oe-patient .patient-quicklook.open .icon, .oe-patient .patient-quicklook.active .icon,
@@ -2317,7 +2321,7 @@ html {
 
 .oe-patient .patient-management {
   bottom: 0;
-  right: 29px;
+  right: 30px;
   padding-bottom: 3px;
 }
 
@@ -2328,7 +2332,7 @@ html {
 
 .oe-patient .patient-demographics {
   bottom: 0;
-  right: 62px;
+  right: 63px;
   padding-bottom: 4px;
 }
 

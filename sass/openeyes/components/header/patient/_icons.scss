@@ -11,7 +11,7 @@
 	.patient-allergies-risks,
 	.patient-local-edit {
 		position:absolute;
-		padding:5px 10px 4px 10px; // increase icon hitarea
+		padding:5px 12px 4px 8px; // increase icon hitarea
 		cursor:pointer;
 		
 		// svg icon btn
@@ -21,6 +21,14 @@
 			opacity: 0.8;				
 		}	
 	}
+	
+	// to avoid a break in mouse over events
+	// (which causes a popup flicker)
+	// pad this to touch allergies and risks:
+	.patient-demographics {
+		padding-left:15px; 
+	}
+	
 	
 	// icon behaviour
 	.patient-quicklook, 
@@ -47,7 +55,7 @@
 	// dude
 	.patient-management {
 		bottom:0;
-		right:29px;
+		right:30px;
 		padding-bottom:3px; // use pad to increase hitarea.
 		.icon {
 			width:18px;  
@@ -58,7 +66,7 @@
 	// info 
 	.patient-demographics {
 		bottom:0;
-		right:62px;
+		right:63px;
 		padding-bottom:4px; // use pad to increase hitarea.
 		.icon {
 			width:16px;  
