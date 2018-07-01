@@ -7507,6 +7507,48 @@ table.oe-clinic-list td.center {
   margin: 40px 0 0 0;
 }
 
+/* Admin */
+.oe-admin {
+  background: #283442;
+}
+
+.oe-admin .admin-panels {
+  padding: 0 10px 20px 0;
+  border-right: 1px solid #626d7b;
+}
+
+.oe-admin .admin-panels .collapse-group {
+  margin: 10px 0 10px 0;
+}
+
+.oe-admin .admin-panels .collapse-group h3.collapse-group-header {
+  padding: 0;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
+.oe-admin .admin-panels .admin-nav li {
+  display: block;
+  font-size: 0.6875rem;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #26303d;
+}
+
+.oe-admin .admin-panels .admin-nav li:last-child {
+  border-bottom: none;
+}
+
+.oe-admin .admin-panels .admin-nav li a {
+  display: block;
+  padding: 3px 0 3px 3px;
+}
+
+.oe-admin .admin-panels .admin-nav li a:hover, .oe-admin .admin-panels .admin-nav li a:active, .oe-admin .admin-panels .admin-nav li a:focus, .oe-admin .admin-panels .admin-nav li a.selected {
+  background: #101923;
+}
+
 /* ------------------------ */
 /* ------ 3rd party ------- */
 /* Pick me up */
