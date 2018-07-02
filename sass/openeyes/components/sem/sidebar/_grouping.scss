@@ -23,13 +23,12 @@
 	.groupings {
 		padding-bottom:30px;
 
-
 		// <h3>
 		.collapse-group-header {
 			@include font-size(13);
 			font-weight:300;
 			color: $oe-pro-text-light ;
-			padding:10px 25px 5px 5px;
+			padding:10px 25px 5px 5px;  // position tweaked to align with icon and pad to stop overwrite.
 			
 			&:hover, &:focus {
 				color: $oe-pro-text;
