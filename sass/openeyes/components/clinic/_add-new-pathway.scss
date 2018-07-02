@@ -22,7 +22,7 @@
 	top:$oe-header-height + $oe-event-header-height;
 	left: 100%;
 	z-index:$oe-z-tooltip;
-	height: calc(100vh - 98px); 	// this can't be SASS variable, has to be written (must match 'top')
+	height: calc(100vh - #{$oe-header-height + $oe-event-header-height});
 	border-left:1px solid $oe-text-highlight;
 	padding:0 30px 15px 15px;
 	width:310px;

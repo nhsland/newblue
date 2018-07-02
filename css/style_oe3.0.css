@@ -1367,6 +1367,15 @@ table.standard tbody tr:last-child {
   border-bottom: none;
 }
 
+table.standard tbody tr.clickable:hover, table.standard tbody tr.clickable:active, table.standard tbody tr.clickable:focus {
+  cursor: pointer;
+  background: #074598;
+}
+
+table.standard tbody tr.clickable:hover td, table.standard tbody tr.clickable:active td, table.standard tbody tr.clickable:focus td {
+  color: white;
+}
+
 table.standard tbody td {
   padding: 5px 10px 5px 0;
   font-weight: 400;
@@ -1375,6 +1384,23 @@ table.standard tbody td {
 
 table.standard tbody td.valign-top {
   vertical-align: top;
+}
+
+table.standard tfoot tr {
+  border-top: 3px solid #26303d;
+}
+
+table.standard tfoot tr td {
+  padding: 5px 10px 5px 0;
+}
+
+table.standard.clickable-rows tbody tr:hover, table.standard.clickable-rows tbody tr:active, table.standard.clickable-rows tbody tr:focus {
+  cursor: pointer;
+  background: #074598;
+}
+
+table.standard.clickable-rows tbody tr:hover td, table.standard.clickable-rows tbody tr:active td, table.standard.clickable-rows tbody tr:focus td {
+  color: white;
 }
 
 table td.date, table th.date {
@@ -3167,6 +3193,44 @@ html {
 .oe-full-content .oe-full-side-panel {
   width: 300px;
   margin: 10px 30px 20px 20px;
+}
+
+.oe-full-content .oe-full-main {
+  width: calc(100% - 350px);
+}
+
+.oe-full-content.subgrid {
+  display: -ms-grid;
+  -ms-grid-columns: 300px 1fr;
+  -ms-grid-rows: 1fr;
+  display: grid;
+  grid: 1fr / 300px 1fr;
+  grid-column-gap: 30px;
+}
+
+.oe-full-content.subgrid .oe-full-side-panel {
+  height: calc(100vh - 98px);
+  overflow-y: auto;
+  margin: 0 0 0 0 !important;
+  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.oe-full-content.subgrid .oe-full-main {
+  width: auto !important;
+  height: calc(100vh - 98px);
+  overflow-y: auto;
+  -ms-grid-column: 2;
+  -ms-grid-row: 1;
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.oe-full-content .oe-full-main {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.oe-full-content .oe-full-side-panel {
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -3195,11 +3259,6 @@ html {
 .oe-full-content .oe-full-side-panel ul li .count {
   font-size: 0.75rem;
   padding: 0 0 0 5px;
-}
-
-.oe-full-content .oe-full-main {
-  width: calc(100% - 350px);
-  color: rgba(255, 255, 255, 0.8);
 }
 
 /* Home */
@@ -7513,8 +7572,12 @@ table.oe-clinic-list td.center {
 }
 
 .oe-admin .admin-panels {
-  padding: 0 10px 20px 0;
+  padding: 5px 10px 20px 10px;
   border-right: 1px solid #626d7b;
+}
+
+.oe-admin .admin-panels .collapse-group-icon {
+  top: -1px;
 }
 
 .oe-admin .admin-panels .collapse-group {
@@ -7524,11 +7587,15 @@ table.oe-clinic-list td.center {
 .oe-admin .admin-panels .collapse-group h3.collapse-group-header {
   padding: 0;
   margin: 0;
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
 }
 
-.oe-admin .admin-panels .admin-nav li {
+.oe-admin ul.admin-nav {
+  margin: 5px 0 20px 0;
+}
+
+.oe-admin ul.admin-nav li {
   display: block;
   font-size: 0.6875rem;
   margin: 0;
@@ -7536,17 +7603,40 @@ table.oe-clinic-list td.center {
   border-bottom: 1px solid #26303d;
 }
 
-.oe-admin .admin-panels .admin-nav li:last-child {
+.oe-admin ul.admin-nav li:last-child {
   border-bottom: none;
 }
 
-.oe-admin .admin-panels .admin-nav li a {
+.oe-admin ul.admin-nav li a {
   display: block;
   padding: 3px 0 3px 3px;
 }
 
-.oe-admin .admin-panels .admin-nav li a:hover, .oe-admin .admin-panels .admin-nav li a:active, .oe-admin .admin-panels .admin-nav li a:focus, .oe-admin .admin-panels .admin-nav li a.selected {
-  background: #101923;
+.oe-admin ul.admin-nav li a:hover, .oe-admin ul.admin-nav li a:active, .oe-admin ul.admin-nav li a:focus, .oe-admin ul.admin-nav li a.selected {
+  color: white;
+  background: #074598;
+}
+
+.oe-admin .admin-main {
+  padding: 0 10px 20px 0;
+}
+
+.oe-admin .admin-main table.standard th, .oe-admin .admin-main table.standard td {
+  font-size: 0.75rem;
+}
+
+.oe-admin .admin-main table.standard tbody td {
+  padding: 8px 10px 8px 0;
+  vertical-align: top;
+}
+
+.oe-admin .admin-main table.standard tbody td:first-child {
+  padding-left: 3px;
+}
+
+.oe-admin .admin-main table.standard tfoot td {
+  padding: 20px 0 0 0;
+  margin: 20px 0 0 0;
 }
 
 /* ------------------------ */

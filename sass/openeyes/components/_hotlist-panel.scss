@@ -9,7 +9,7 @@
 	position:fixed;
 	top:$oe-header-height;
 	right:0;
-	height: calc(100vh - 60px); 	// this can't be SASS variable has to be written (must match $oe-header-height)
+	height: calc(100vh - #{$oe-header-height}); 	// this can't be SASS variable has to be written (must match $oe-header-height)
 	overflow-y:auto;				// otherwise this over-flow doesn't work.
 	
 	width:$oe-hotlist-panel-width;

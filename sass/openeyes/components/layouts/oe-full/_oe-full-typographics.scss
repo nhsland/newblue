@@ -1,0 +1,45 @@
+// generic layout...
+.oe-full-content {
+	
+	// make sure the text is the right theme color.
+	.oe-full-main {
+		color:$oe-text;
+	}
+	
+	.oe-full-side-panel {
+		// standard  styles for the side-panel
+		// should help with consist layouts...
+		// but hard to know how far to standardise this... 
+		
+		color:$oe-text;
+		
+		p {
+			@include font-size(12);
+			margin:5px 0 10px 0;
+		}
+	
+		h3 {
+			margin:20px 0 10px 0;
+			@include font-size(15);
+			font-weight: 300;
+			color:$oe-blue-light;;
+		}
+	
+		// lists
+		ul {
+			margin:10px 0;
+			li {
+				@include font-size(13);
+				color:$oe-text-light;
+				padding:0 0 10px 0;
+				
+				.count {
+					@include font-size(12);
+					padding:0 0 0 5px;
+				}
+			}
+		}
+		
+	}
+
+}

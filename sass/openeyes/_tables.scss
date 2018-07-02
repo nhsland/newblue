@@ -33,6 +33,17 @@ table.standard {
 			&:last-child { 
 				border-bottom: none;
 			}
+			
+			// make specific rows clickable
+			&.clickable {
+				&:hover, &:active, &:focus {
+					cursor: pointer;
+					background:$oe-btn-blue; // row is a big button
+					td {
+						color:rgb(255,255,255);
+					}
+				}
+			}
 		}
 		
 		td {
@@ -42,6 +53,30 @@ table.standard {
 			
 			&.valign-top {
 				vertical-align: top;
+			}
+		}
+	}
+	
+	tfoot {
+		tr {
+			border-top:3px solid $oe-line;
+			td {
+				padding:5px 10px 5px 0; 
+			}
+		}
+	}
+	
+	// make ALL rows 'clickable'
+	&.clickable-rows {
+		tbody {
+			tr {
+				&:hover, &:active, &:focus {
+					cursor: pointer;
+					background:$oe-btn-blue; // row is a big button
+					td {
+						color:rgb(255,255,255);
+					}
+				}
 			}
 		}
 	}
