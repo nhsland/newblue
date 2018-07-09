@@ -445,6 +445,14 @@ textarea {
   background-image: url("../svg/in-css/icons/direction-right-circle.svg");
 }
 
+.oe-i.move {
+  background-image: url("../svg/in-css/icons/move.svg");
+}
+
+.oe-i.move.pro-theme {
+  background-image: url("../svg/in-css/icons/move.svg");
+}
+
 .oe-i.child-arrow {
   background-image: url("../svg/in-css/icons/child-arrow.svg");
 }
@@ -1352,6 +1360,11 @@ table.standard th, table.standard td {
   text-align: left;
 }
 
+table.standard th.right, table.standard th.date, table.standard td.right, table.standard td.date {
+  text-align: right;
+  padding-right: 4px;
+}
+
 table.standard thead th {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.75rem;
@@ -1401,11 +1414,6 @@ table.standard.clickable-rows tbody tr:hover, table.standard.clickable-rows tbod
 
 table.standard.clickable-rows tbody tr:hover td, table.standard.clickable-rows tbody tr:active td, table.standard.clickable-rows tbody tr:focus td {
   color: white;
-}
-
-table td.date, table th.date {
-  text-align: right;
-  padding-right: 4px;
 }
 
 input, textarea, select {
@@ -1969,6 +1977,27 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   display: flex;
 }
 
+.oe-multi-select.inline li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.oe-multi-select li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2px 4px 2px 6px;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(30, 46, 66, 0.5);
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -2517,6 +2546,10 @@ html {
   opacity: 1;
 }
 
+.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn.active .icon.hotlist.vc {
+  fill: white;
+}
+
 .oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn.open .icon {
   fill: #0ff;
 }
@@ -2525,12 +2558,17 @@ html {
   display: inline-block;
   width: 40px;
   height: 20px;
-  fill: #fff;
+  fill: white;
   opacity: 0.5;
 }
 
 .oe-nav .oe-big-icons .oe-nav-btn .icon.open {
-  fill: #0ff;
+  fill: cyan;
+}
+
+.oe-nav .oe-big-icons .oe-nav-btn .icon.hotlist.vc {
+  fill: #ffb400;
+  opacity: 0.9;
 }
 
 .oe-nav .oe-nav-shortcuts {
@@ -2718,6 +2756,12 @@ html {
 
 .oe-hotlist-panel .activity-list .duration.red {
   background-image: url("../svg/in-css/ui/circle-red.svg");
+}
+
+.oe-hotlist-panel .vc-mode {
+  background: #ffb400;
+  padding: 15px;
+  margin: 0 0 10px 0;
 }
 
 .oe-patient-popup {
@@ -4740,27 +4784,6 @@ html {
   opacity: 0.6;
   font-style: italic;
   font-weight: 300;
-}
-
-.main-event .element .oe-multi-select.inline li {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.main-event .element .oe-multi-select li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 2px 4px 2px 6px;
-  color: rgba(255, 255, 255, 0.8);
-  background: rgba(30, 46, 66, 0.5);
 }
 
 .main-event .element .multi-select-dropdown-container {
@@ -7503,10 +7526,18 @@ table.oe-clinic-list td.center {
 /* Virtual Clinic */
 .oe-virtual-clinic {
   background: #141e2b;
+  padding: 0 20px;
 }
 
-.oe-virtual-clinic table.standard {
-  margin: 10px 0 40px 0;
+.oe-virtual-clinic .oe-vc-search {
+  padding: 0 0 8px 0;
+  margin: 10px 0 15px 0;
+  border-bottom: 3px solid #26303d;
+}
+
+.oe-virtual-clinic .oe-vc-search .list-filters {
+  margin: 5px 0 5px 0;
+  font-size: 0.75rem;
 }
 
 .oe-virtual-clinic table.audit-logs tbody {
@@ -7521,6 +7552,10 @@ table.oe-clinic-list td.center {
 
 .oe-virtual-clinic table.audit-logs tbody td:last-child {
   text-align: right;
+}
+
+.oe-virtual-clinic table.audit-logs tbody td.actions li {
+  margin: 0 0 4px 0;
 }
 
 .oe-virtual-clinic table.audit-logs tbody .scroll-content {
@@ -7543,6 +7578,75 @@ table.oe-clinic-list td.center {
 
 .oe-virtual-clinic table.audit-logs tbody .clinic-info table tr td:last-child, .oe-virtual-clinic table.audit-logs tbody .clinic-info table tr th:last-child {
   text-align: right;
+}
+
+.oe-vc-floating-input {
+  z-index: 120;
+  position: fixed;
+  top: 75px;
+  left: 965px;
+  width: 320px;
+  padding: 8px 0 1px 0;
+  font-size: 0.75rem;
+  color: black;
+  background: #ffb400;
+  -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.oe-vc-floating-input .row {
+  margin: 8px 0;
+}
+
+.oe-vc-floating-input .row.divider {
+  border-bottom: 1px solid #cc9000;
+  padding: 0 0 8px 0;
+}
+
+.oe-vc-floating-input .row.divider:last-child {
+  border-bottom: none;
+}
+
+.oe-vc-floating-input .row:first-child {
+  margin-top: 0;
+}
+
+.oe-vc-floating-input .row:last-child {
+  margin-bottom: 0;
+}
+
+.oe-vc-floating-input .title {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  padding: 0 30px 10px 8px;
+}
+
+.oe-vc-floating-input .move-icon {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  background: #4d3600;
+}
+
+.oe-vc-floating-input .oe-vc-content {
+  max-height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0 8px 8px 8px;
+}
+
+.oe-vc-floating-input .oe-vc-content .data-label {
+  margin: 0 0 4px 0;
+  font-weight: 500;
+}
+
+.oe-vc-floating-input .oe-vc-content h3 {
+  font-size: 0.9375rem;
+}
+
+.oe-vc-floating-input .vc-actions {
+  padding: 4px 8px;
+  background: #cc9000;
 }
 
 /* User Profile */

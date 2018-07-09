@@ -1,0 +1,73 @@
+// OE VC floating inputs
+// this can be used anywhere.
+
+.oe-vc-floating-input {
+	z-index: $oe-z-vc;
+	position:fixed;
+	// default start position
+	top:$oe-header-height + 15px;
+	left: $oe-event-main-default-width + $oe-event-sidebar-width - 300px - 15px;
+	
+	width:320px;
+	padding:8px 0 1px 0; // allow for scrolling
+	
+	@include font-size(12);
+	
+	color:rgb(0,0,0);
+	background:$oe-vc-orange;
+	
+	// offset-x | offset-y | blur-radius | spread-radius | color
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+	
+	.row {
+		margin:8px 0;
+		&.divider {
+			border-bottom:1px solid shade($oe-vc-orange,20);
+			padding:0 0 8px 0;
+			
+			&:last-child { border-bottom:none; } 
+		}		
+		
+		&:first-child { margin-top:0; }
+		&:last-child { margin-bottom:0; } 
+	}
+	
+	.title {
+		@include font-size(13);
+		font-weight:500;
+		padding:0 30px 10px 8px;
+	}
+	
+	.move-icon {
+		position:absolute;
+		top:1px;
+		right:1px;
+		background:shade($oe-vc-orange,70);
+	}
+	
+	// handles overflow.
+	.oe-vc-content {
+		max-height: 300px;  // must allow for the minimum spec res. displays
+		overflow-y: auto;	// scroll overflow
+		overflow-x: hidden; // otherwise breaks out of popup.
+		padding:0 8px 8px 8px;  // allow for scrollbar
+		
+		.data-label {
+			margin:0 0 4px 0;
+			font-weight:500;
+		}
+		
+		h3 {
+			@include font-size(15);
+		}
+	}
+	
+	.vc-actions {
+		padding:4px 8px;
+		background: shade($oe-vc-orange,20);
+	}
+	
+	
+}
+
+

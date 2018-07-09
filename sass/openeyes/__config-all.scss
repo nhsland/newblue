@@ -27,6 +27,7 @@ $oe-browser-size-activity-panel-fixed:	1800px; // this is based on the JS settin
 
 // z
 $oe-z-logo:				151; 
+$oe-z-vc:				120;
 $oe-z-popup:			100;
 $oe-z-shortcuts:		99;
 $oe-z-activity:			95;
@@ -58,6 +59,10 @@ $oe-pro-grey:			rgb(40,52,66);
 
 $oe-pro-bg:				$oe-pro-blue-dark2; // top header strip
 $oe-pro-line: 			rgb(38,48,61);
+
+// Virtual Clinic
+$oe-vc-orange: 			rgb(255,180,0);
+
 
 // input colours:
 $oe-pro-user-inputs: 	$oe-pro-blue;

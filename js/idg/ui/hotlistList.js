@@ -1,5 +1,5 @@
 /*
-Tile Element - watch for data overflow
+Hotlist
 */
 idg.hotList = function(hotlistPopup){
 	
@@ -7,6 +7,7 @@ idg.hotList = function(hotlistPopup){
 		
 	// Fix Activity Panel if design allows it to be fixable!
 	if( $('#js-nav-hotlist-btn').data('fixable') == true ){
+		
 		checkBrowserSize();
 		
 		$( window ).resize(function() {
@@ -15,9 +16,9 @@ idg.hotList = function(hotlistPopup){
 		
 		function checkBrowserSize(){	
 	  		if( $( window ).width() > 1800){ // min width for fixing Activity Panel (allows some resizing)
-				// hotlistPopup.fixed( true );
+				hotlistPopup.fixed( true );
 			} else {
-				// hotlistPopup.fixed( false );
+				hotlistPopup.fixed( false );
 			}
 		}  
 	}

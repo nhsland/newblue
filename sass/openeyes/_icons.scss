@@ -145,6 +145,7 @@
 	&.direction-up 		{ @include oe3-icons('direction-up'); }
 	&.direction-down 	{ @include oe3-icons('direction-down'); }
 	&.direction-right-circle 	{ @include oe3-icons('direction-right-circle'); }
+	&.move				{ @include oe3-icons('move'); }
 	&.child-arrow 		{ @include oe3-icons('child-arrow'); }
 	&.menu 				{ @include oe3-icons('menu'); }
 	&.trash 			{ @include oe3-icons('trash'); }

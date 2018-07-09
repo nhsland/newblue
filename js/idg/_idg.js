@@ -130,6 +130,9 @@ idg.init = function(){
 	// audit trail popup
 	idg.auditTrail();
 	
+	// VC Draggable
+	idg.vcDraggable();
+	
 										
 };
 

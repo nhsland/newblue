@@ -1,4 +1,4 @@
- // OE Hotlist Panel (RHS)
+// OE Hotlist Panel (RHS)
 // On minimum 1280px displays hidden, on 1920px+ displayed right hand side (RHS)
 // Open and Closed (date searchable) patients
 
@@ -69,6 +69,7 @@
 
 
 @import "hotlist-panel/activity-list";
+@import "hotlist-panel/vc-mode";
 
 // @import "activity-panel/msg-timeline"; // chat / message system 
 

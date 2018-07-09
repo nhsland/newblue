@@ -130,6 +130,9 @@ idg.init = function(){
 	// audit trail popup
 	idg.auditTrail();
 	
+	// VC Draggable
+	idg.vcDraggable();
+	
 										
 };
 
@@ -2295,7 +2298,7 @@ idg.comments = function(){
 	});
 }
 /*
-Tile Element - watch for data overflow
+Hotlist
 */
 idg.hotList = function(hotlistPopup){
 	
@@ -2303,6 +2306,7 @@ idg.hotList = function(hotlistPopup){
 		
 	// Fix Activity Panel if design allows it to be fixable!
 	if( $('#js-nav-hotlist-btn').data('fixable') == true ){
+		
 		checkBrowserSize();
 		
 		$( window ).resize(function() {
@@ -2311,9 +2315,9 @@ idg.hotList = function(hotlistPopup){
 		
 		function checkBrowserSize(){	
 	  		if( $( window ).width() > 1800){ // min width for fixing Activity Panel (allows some resizing)
-				// hotlistPopup.fixed( true );
+				hotlistPopup.fixed( true );
 			} else {
-				// hotlistPopup.fixed( false );
+				hotlistPopup.fixed( false );
 			}
 		}  
 	}
@@ -2478,4 +2482,54 @@ idg.tooltips = function(){
 			$(".oe-tooltip").remove();
 		}
 	);	
+}
+/**
+VC Draggable Floating inputs
+**/
+idg.vcDraggable = function(){
+	
+	var id = 'oe-vc-floating-input';
+
+	if( $('#'+id).length == 0 ) return;
+	
+	/* 	
+	Drag...
+	*/	
+	var relativeX, relativeY;
+		
+	document.addEventListener("dragstart", getMouseOffset, false);
+	document.addEventListener("dragend", reposFloat, false);
+		
+	
+	function getMouseOffset( e ){
+		e.dataTransfer.dropEffect = "move";
+		
+		// need to work out mouse offset in <div> before dragging
+		var offset = $('#'+id).offset();
+		relativeX = (e.clientX - offset.left);
+		relativeY = (e.clientY - offset.top);		
+	}
+	
+	function reposFloat( e ) {
+		// Update the panel position
+		var left = e.clientX - relativeX;
+		var top = e.clientY - relativeY;
+		
+		// stop it being dragged off screen
+		top = top < 1 ? 1 : top;
+		left = left < 1 ? 1 : left;
+		
+		$('#'+id).css({"top":top+"px","left":left+"px"});
+	}
+	
+	
+	/*
+	Touch version? ... 
+	Not sure if this works, not tested but just in case...	
+	*/
+	var el = document.getElementById(id);
+	el.addEventListener("touchstart", getMouseOffset, false);
+	el.addEventListener("touchend", reposFloat, false);
+		
+	
 }

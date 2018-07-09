@@ -1,0 +1,21 @@
+// OE Element 
+// 
+// Multi-select v3
+
+.oe-multi-select {
+	&.inline {
+		li {
+			display:inline-flex;
+		}
+	}
+	
+	li {
+		display:flex;
+		align-items: center;
+		justify-content: space-between;
+		padding:2px 4px 2px 6px; 
+		color:$oe-user-input-text; 
+		background: rgba($oe-user-inputs,0.5);
+	}
+}	
+

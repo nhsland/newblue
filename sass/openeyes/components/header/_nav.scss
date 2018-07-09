@@ -44,7 +44,12 @@
 				&.active {
 					background:$oe-btn-blue;
 					.icon {
-						opacity: 1;
+						opacity:1;
+						
+						// vc is orange
+						&.hotlist.vc {
+							fill:rgb(255,255,255);
+						}
 					}
 				}
 				
@@ -61,13 +66,24 @@
 				display:inline-block;
 				width:40px;  
 				height:20px;
-				fill:#fff;
+				fill:rgb(255,255,255);
 				opacity: 0.5;	
 				
 				&.open {
-					fill:#0ff;
+					fill:$oe-pro-text-highlight;
 				}			
+				
+				// hotlist in VC mode:
+				&.hotlist.vc {
+					fill: $oe-vc-orange;
+					opacity: 0.9;
+	
+				}
+				
 			}	
+			
+					
+		
 		}	
 	}
 }

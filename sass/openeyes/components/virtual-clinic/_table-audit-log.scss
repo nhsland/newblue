@@ -1,0 +1,75 @@
+// OE Virtual Clinic
+
+.oe-virtual-clinic {
+	
+	// extend 'standard' default table
+	table {
+	
+		// audit logs class name is from V2.
+		// it may be used elsewhere but for
+		// now it's coupled with VC. 
+		&.audit-logs {
+			
+			tbody {
+				@include font-size(13);
+				
+				td {
+					vertical-align: top;
+					&:last-child {
+						text-align: right;
+					}
+					
+					// to help with readability:
+					padding-top:10px;
+					padding-bottom:10px;
+					
+					// could be multi 'button' or <buttons> in the last column
+					
+					&.actions {
+						// <button> or <a> .button
+						// are in list
+						li {
+							margin:0 0 4px 0;
+						}
+					}
+					
+					
+					
+				}
+				
+				// replace "clamp" css in v2
+				// line-clamp is not supported in Edge
+				// used for Referral notes and clinic info
+				.scroll-content {
+					@include font-size(11);
+					line-height:1.3;
+					max-height:100px;
+					overflow-y: auto;
+					word-wrap: break-word; // break up long words.			
+				}
+				
+				// clinic info is complicated <td>
+				// and the data isn't well wrapped
+				.clinic-info {
+					table {
+						margin:10px 0 0 0;
+						width:100%;
+						tr {
+							td, th {
+								@include font-size(11);
+								line-height:1;
+								
+								&:last-child {
+									text-align: right;
+								}
+							}
+						}
+					}
+				}	
+							
+			} // tbody
+		} // .audit-logs	
+	} // table
+}
+
+
