@@ -1766,9 +1766,13 @@ button.header-tab.selected, .button.header-tab.selected, input[type="submit"].he
 }
 
 button.selected, .button.selected, input[type="submit"].selected {
-  color: cyan;
+  color: #5ab4b4;
   font-weight: 400;
   background: #172332;
+}
+
+button.selected:hover, button.selected:focus, button.selected:active, .button.selected:hover, .button.selected:focus, .button.selected:active, input[type="submit"].selected:hover, input[type="submit"].selected:focus, input[type="submit"].selected:active {
+  color: cyan;
 }
 
 button.selected.inactive, .button.selected.inactive, input[type="submit"].selected.inactive {

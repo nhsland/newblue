@@ -51,9 +51,13 @@
 	}
 
 	&.selected {
-		color: $oe-text-highlight; 
+		color: $oe-text-active; 
 		font-weight: $oe-font-medium;
 		background: $oe-btn-selected;
+		
+		&:hover, &:focus, &:active {
+			color: $oe-text-highlight;
+		}
 		
 		&.inactive {
 			background: none;
