@@ -1,14 +1,10 @@
-// OE Virtual Clinic
-
+// VC Patient Selector page (IDG: Virtual Clinic page)
 .oe-virtual-clinic {
 	
 	// extend 'standard' default table
 	table {
-	
-		// audit logs class name is from V2.
-		// it may be used elsewhere but for
-		// now it's coupled with VC. 
-		&.audit-logs {
+
+		&.virtual-clinic {
 			
 			tbody {
 				@include font-size(13);
@@ -24,7 +20,6 @@
 					padding-bottom:10px;
 					
 					// could be multi 'button' or <buttons> in the last column
-					
 					&.actions {
 						// <button> or <a> .button
 						// are in list
@@ -32,9 +27,6 @@
 							margin:0 0 4px 0;
 						}
 					}
-					
-					
-					
 				}
 				
 				// replace "clamp" css in v2
@@ -65,11 +57,10 @@
 							}
 						}
 					}
-				}	
-							
-			} // tbody
-		} // .audit-logs	
-	} // table
+				}					
+			} 
+		} 	
+	} 
 }
 
 

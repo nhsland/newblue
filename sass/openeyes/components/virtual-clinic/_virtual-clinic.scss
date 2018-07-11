@@ -1,0 +1,20 @@
+// VC Patient Selector page (IDG: Virtual Clinic page)
+.oe-virtual-clinic {
+	background:$oe-blue-dark2; // theme changable
+	padding:0 20px;
+	
+	.oe-virtual-clinic-search {
+		padding:0 0 8px 0;
+		margin:10px 0 15px 0;
+		
+		// matches <hr> .divider style:
+		border-bottom:3px solid $oe-line;
+		
+		// wrap for multi-select list filters
+		.list-filters {
+			margin:5px 0 5px 0;
+			@include font-size(12);
+			
+		}
+	}
+}

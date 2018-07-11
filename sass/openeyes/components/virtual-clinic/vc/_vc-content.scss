@@ -1,0 +1,58 @@
+// OE VC content
+
+.oe-vc-mode {
+	
+	.vc-content {
+		position:relative;
+		padding:10px;
+		@include font-size(12);
+		
+		.priority {
+			position:absolute;
+			top:8px;
+			right:8px
+		}
+		
+		h3 {
+			@include font-size(15);
+			padding:0;
+			margin:0;
+		}
+		
+		.data-label {
+			margin:0 0 4px 0;
+			font-weight:500;
+		}
+			
+		// extend row to divide content:
+		.row {
+			margin:8px 0;
+			&.divider {
+				border-bottom:1px solid shade($oe-vc-orange,20);
+				padding:0 0 8px 0;
+				
+				&:last-child { border-bottom:none; } 
+			}		
+			
+			&:first-child { margin-top:0; }
+			&:last-child { margin-bottom:0; } 
+		}
+		
+		// <ul>
+		.vc-steps {
+			li {
+				font-weight:500;
+				padding:2px 0 2px 18px;
+				
+				&.selected {
+					background:transparent url( svg-path('icons/_classic/direction-right') ) left center no-repeat;
+					background-size:13px; // small icon size
+				}
+				
+			}
+		}
+		
+	}
+}
+
+

@@ -18,15 +18,15 @@
 			background-size:$oe-sidebar-event-height - 6px;
 			
 			// eye for quicklook
-			background-image:url('../svg/in-css/sidebar/eye.svg');
+			background-image:url( svg-path('sidebar/eye') );
 			
 			// warning star
 			&.alert {
-				background-image:url('../svg/in-css/sidebar/warning.svg');
+				background-image:url( svg-path('sidebar/warning') );
 			}
 			// tick
 			&.ready {
-				background-image:url('../svg/in-css/sidebar/tick.svg');
+				background-image:url( svg-path('sidebar/tick') );
 			}
 		}
 		

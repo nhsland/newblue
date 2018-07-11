@@ -26,7 +26,7 @@ ul {
 			background-position:left center;
 			background-repeat: no-repeat;
 			background-size:15px;
-			background-image:url('../svg/in-css/ui/double-slash.svg');
+			background-image:url( svg-path( 'ui/double-slash' ) );
 			
 			&:first-child {
 				padding:0 0 0 0;

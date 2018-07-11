@@ -23,6 +23,14 @@ idg.hotList = function(hotlistPopup){
 		}  
 	}
 	
+	
+	/*
+	VC mode?	
+	PHP will have hidden everything else other than VC content
+	*/
+	
+	if( $('#js-hotlist-panel').data('vc') == true ) return 
+	
 	/*
 	Hotlist comments.
 	The comment icon shows comment status. 
@@ -61,6 +69,8 @@ idg.hotList = function(hotlistPopup){
 	
 	
 	
+	
+	
 	// activity datepicker using pickmeup.
 	// CSS controls it's positioning
 	
@@ -73,7 +83,6 @@ idg.hotList = function(hotlistPopup){
 
 	// vanilla: 
 	var activityDatePicker = document.getElementById("js-pickmeup-datepicker");
-	
 	activityDatePicker.addEventListener('pickmeup-change', function (e) {
 		$('#js-pickmeup-closed-date').text(e.detail.formatted_date);
 		$pmuWrap.hide();

@@ -1,0 +1,35 @@
+// OE VC floating inputs, draggable panel
+
+.vc-floating-input {
+	z-index: $oe-z-vc;
+	position:fixed;
+	// default start position
+	top:$oe-header-height + 15px;
+	left: $oe-event-main-default-width + $oe-event-sidebar-width - $oe-hotlist-panel-width - 330px;
+	width:300px;
+	padding:8px 0 0 0; // allow for scrolling
+
+	// add SVG icon to show that it is draggable:	
+	background:$oe-vc-orange url( svg-path('ui/vc-move') ) top 5px right 5px no-repeat;
+	background-size:30px;
+	
+	// offset-x | offset-y | blur-radius | spread-radius | color
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+	
+	.title {
+		@include font-size(13);
+		font-weight:500;
+		padding:0 30px 10px 8px;
+	}
+	
+	// restrict content height in floating input:
+	.vc-content {
+		max-height: 300px;  // must allow for the minimum spec res. displays
+		overflow-y: auto;	// scroll overflow
+		overflow-x: hidden; // otherwise breaks out of popup.
+		padding:0 8px 2px 8px;  // allow for scrollbar
+	}
+	
+}
+
+

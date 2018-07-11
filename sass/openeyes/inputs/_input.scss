@@ -25,7 +25,7 @@ input {
 		background-position:left 5px center;
 		background-repeat: no-repeat;
 		// search icon
-		background-image:url('../svg/in-css/ui/search.svg');
+		background-image:url( svg-path('ui/search') );
 	}
 	// add FILTER icon to input
 	&.filter {
@@ -33,7 +33,7 @@ input {
 		background-position:left 5px center;
 		background-repeat: no-repeat;
 		// search icon
-		background-image:url('../svg/in-css/ui/filter.svg');
+		background-image:url( svg-path('ui/filter') );
 	}
 }
 

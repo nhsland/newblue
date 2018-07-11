@@ -22,7 +22,7 @@ $ed-surgeon-size:60px;
 	background-position:center bottom 20px; // allow for the title
 	background-repeat: no-repeat;
 	background-size:75px;
-	background-image:url('../svg/in-css/eyedraw/op-patient.svg');
+	background-image:url( svg-path('eyedraw/op-patient') );
 	
 	// positioned by flex
 	.title {
@@ -42,7 +42,7 @@ $ed-surgeon-size:60px;
 		background-position:top left;
 		background-repeat: no-repeat;
 		background-size:$ed-surgeon-size;
-		background-image:url('../svg/in-css/eyedraw/op-surgeon.svg');
+		background-image:url( svg-path('eyedraw/op-surgeon') );
 		
 		// positions relate to the patient's eyes
 		&.surgeon-pos-right {

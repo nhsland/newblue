@@ -1,0 +1,12 @@
+// OE VC actions
+
+.oe-vc-mode {
+	.vc-actions {
+		padding:4px 8px;
+		background: shade($oe-vc-orange,20);
+		
+		button {
+			margin:0 0 0 10px;
+		}
+	}
+}

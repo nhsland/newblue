@@ -67,15 +67,15 @@
 			
 			// traffic lights
 			&.green {
-				background-image:url('../svg/in-css/ui/circle-green.svg');
+				background-image:url( svg-path('ui/circle-green') );
 			}
 			
 			&.orange {
-				background-image:url('../svg/in-css/ui/circle-orange.svg');
+				background-image:url( svg-path('ui/circle-orange') );
 			}
 			
 			&.red {
-				background-image:url('../svg/in-css/ui/circle-red.svg');
+				background-image:url( svg-path('ui/circle-red') );
 			}
 			
 		}	

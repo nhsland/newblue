@@ -42,11 +42,11 @@
 			background-repeat: no-repeat;
 			background-size:$oe-sidebar-event-height - 6px;
 			background-color:$oe-btn-red-hint;
-			background-image:url('../svg/in-css/sidebar/warning.svg');
+			background-image:url( svg-path('sidebar/warning') );
 
 			&.ready {
 				background-color:$oe-btn-green-hint;
-				background-image:url('../svg/in-css/sidebar/tick.svg');
+				background-image:url( svg-path('sidebar/tick') );
 			}
 	  	  
 	}

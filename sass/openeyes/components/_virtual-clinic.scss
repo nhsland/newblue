@@ -1,28 +1,16 @@
-// OE Worklist
-// extends the basic:
-// layout oe-full
+// OE Vitural Clinic (Patient Ticketing)
+// VC consists of:
+// patient selector page (IDG: Virtual Clinic page)
+// in VC mode (patient is selected)
+
+// Patient Selector page (not in VC mode)
+@import "virtual-clinic/virtual-clinic";
+@import "virtual-clinic/table";
 
 
-.oe-virtual-clinic {
-	background:$oe-blue-dark2; // theme changable
-	padding:0 20px;
-	
-	.oe-vc-search {
-		padding:0 0 8px 0;
-		margin:10px 0 15px 0;
-		
-		// matches <hr> .divider style:
-		border-bottom:3px solid $oe-line;
-		
-		// wrap for multi-select list filters
-		.list-filters {
-			margin:5px 0 5px 0;
-			@include font-size(12);
-			
-		}
-	}
-}
-
-// search results in <table>
-@import "virtual-clinic/table-audit-log";
-@import "virtual-clinic/vc-floating-input"; 
+// VC mode (Patient Constrained Mode)
+// --- Not Themed!!
+@import "virtual-clinic/vc/vc-mode"; 
+@import "virtual-clinic/vc/vc-content"; 
+@import "virtual-clinic/vc/vc-actions"; 
+@import "virtual-clinic/vc/floating-input"; 
