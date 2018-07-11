@@ -7587,6 +7587,8 @@ table.oe-clinic-list td.center {
   position: relative;
   padding: 10px;
   font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 .oe-vc-mode .vc-content .priority {
@@ -7607,7 +7609,7 @@ table.oe-clinic-list td.center {
 }
 
 .oe-vc-mode .vc-content .row {
-  margin: 8px 0;
+  margin: 4px 0 6px 0;
 }
 
 .oe-vc-mode .vc-content .row.divider {
