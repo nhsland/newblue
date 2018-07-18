@@ -1,0 +1,51 @@
+// SEM Overvice
+// Patient Overview page, is in SEM, and has Element content
+// it also have some different styling options for 'overview' content
+// this is content pulled from the pop
+
+.main-event {
+	
+	.patient-overview {
+		color:rgb(255,255,255);
+		background: transparent; // $oe-blue; // using the info alert
+		padding:10px;
+		// keep it tight.
+		margin:0 3px 3px 0;
+		&:last-child {
+			margin-right:0;
+		}
+	}
+	
+	
+	table.situational-awareness {
+		.data {
+			margin:0 8px 0 0 ;
+			&:after {
+				content:'<span class="fade"> /</span>';
+			}
+			
+			&:last-child {
+				margin:0 0 0 0;
+			}
+		}
+	}
+	
+	.problems-plans {
+		
+		.problems-plans-sortable {
+	
+			li {
+				background: $oe-blue-dark3;
+				}
+		}
+		
+		.create-new-problem-plan {
+			input { 
+				background: $oe-blue-dark3;
+			}
+			
+		}
+	}
+	
+	
+}

@@ -30,8 +30,8 @@
 			z-index:1; // below data
 			position:absolute;
 			top:8px;
-			right:0; 
-			@include font-size(13);
+			left:9px; 
+			@include font-size(14);
 			font-weight:300;
 		 	color: rgba( #ccc,0.6 ); 
 		}

@@ -13,6 +13,14 @@ table.standard {
 		margin:0 0 10px 0;
 	}
 	
+	&.last-right {
+		th, td {
+			&:last-child {
+				text-align: right;
+			}
+		}
+	}
+	
 	th, td {
 		text-align: left;  // standardise align, in Elements this maybe overwritten.
 		

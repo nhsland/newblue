@@ -9,17 +9,22 @@
 		padding:0 0 10px 0;	
 		
 		.group {
-			border-right:1px solid $oe-line;
+			border-right:1px solid $oe-pro-line;
 			padding:0 10px 0 0;
-			margin:0 10px 0 0;
+			margin:0 15px 0 0;
 			
 			.data {
+				font-weight:500;
 				margin:0 8px 0 0 ;
+				&:last-child {
+					margin:0 0 0 0;
+				}
 			}
 			
 			.oe-date {
 				@include font-size(11);
 				opacity:0.5;
+				width:78px; // the default is 88px (see ui.scss for notes)
 			}
 			
 		}

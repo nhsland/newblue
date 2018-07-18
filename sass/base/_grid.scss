@@ -88,11 +88,11 @@ width: 100%;
 		}
 	}
 }
-// same but smaller... (e.g. see injection edit layout)
+// same but smaller
 .col-gap-small {
 	> div[class^="cols-"], 
 	> td {
-		padding-right:10px !important; 
+		padding-right:3px !important; // 3px matches element gap
 		&:last-child {
 			padding-right:0 !important;
 		}

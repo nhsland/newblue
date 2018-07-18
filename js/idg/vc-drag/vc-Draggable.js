@@ -3,7 +3,7 @@ VC Draggable Floating inputs
 **/
 idg.vcDraggable = function(){
 	
-	var id = 'oe-vc-floating-input';
+	var id = 'oe-vc-scratchpad';
 
 	if( $('#'+id).length == 0 ) return;
 	
@@ -40,7 +40,7 @@ idg.vcDraggable = function(){
 	
 	/*
 	Touch version? ... 
-	Not sure if this works, not tested but just in case...	
+	Not sure if this works, not tested... but anyway:	
 	*/
 	var el = document.getElementById(id);
 	el.addEventListener("touchstart", getMouseOffset, false);

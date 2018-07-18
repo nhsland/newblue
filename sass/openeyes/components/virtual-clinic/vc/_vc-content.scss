@@ -9,6 +9,12 @@
 		font-weight:500;
 		line-height:1.4;
 		
+		// button to show / hide scratchpad
+		.scratchpad {
+			position:absolute;
+			top:34px;
+			right:8px
+		}
 		
 		.priority {
 			position:absolute;

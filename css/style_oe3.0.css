@@ -209,7 +209,7 @@ textarea {
 
 .col-gap-small > div[class^="cols-"],
 .col-gap-small > td {
-  padding-right: 10px !important;
+  padding-right: 3px !important;
 }
 
 .col-gap-small > div[class^="cols-"]:last-child,
@@ -1354,6 +1354,10 @@ table.standard {
 
 table.standard:first-child {
   margin: 0 0 10px 0;
+}
+
+table.standard.last-right th:last-child, table.standard.last-right td:last-child {
+  text-align: right;
 }
 
 table.standard th, table.standard td {
@@ -2824,8 +2828,8 @@ html {
   z-index: 1;
   position: absolute;
   top: 8px;
-  right: 0;
-  font-size: 0.8125rem;
+  left: 9px;
+  font-size: 0.875rem;
   font-weight: 300;
   color: rgba(204, 204, 204, 0.6);
 }
@@ -3039,16 +3043,22 @@ html {
 .oe-patient-popup .situational-awareness .group {
   border-right: 1px solid #26303d;
   padding: 0 10px 0 0;
-  margin: 0 10px 0 0;
+  margin: 0 15px 0 0;
 }
 
 .oe-patient-popup .situational-awareness .group .data {
+  font-weight: 500;
   margin: 0 8px 0 0;
+}
+
+.oe-patient-popup .situational-awareness .group .data:last-child {
+  margin: 0 0 0 0;
 }
 
 .oe-patient-popup .situational-awareness .group .oe-date {
   font-size: 0.6875rem;
   opacity: 0.5;
+  width: 78px;
 }
 
 .oe-patient-popup .patient-numbers {
@@ -5243,6 +5253,37 @@ html {
 
 .oe-sem-no-events .sidebar-header button {
   font-size: 1.125rem;
+}
+
+.main-event .patient-overview {
+  color: white;
+  background: transparent;
+  padding: 10px;
+  margin: 0 3px 3px 0;
+}
+
+.main-event .patient-overview:last-child {
+  margin-right: 0;
+}
+
+.main-event table.situational-awareness .data {
+  margin: 0 8px 0 0;
+}
+
+.main-event table.situational-awareness .data:after {
+  content: '<span class="fade"> /</span>';
+}
+
+.main-event table.situational-awareness .data:last-child {
+  margin: 0 0 0 0;
+}
+
+.main-event .problems-plans .problems-plans-sortable li {
+  background: #172332;
+}
+
+.main-event .problems-plans .create-new-problem-plan input {
+  background: #172332;
 }
 
 .oe-eyedraw-app {
@@ -7591,6 +7632,12 @@ table.oe-clinic-list td.center {
   line-height: 1.4;
 }
 
+.oe-vc-mode .vc-content .scratchpad {
+  position: absolute;
+  top: 34px;
+  right: 8px;
+}
+
 .oe-vc-mode .vc-content .priority {
   position: absolute;
   top: 8px;
@@ -7652,9 +7699,9 @@ table.oe-clinic-list td.center {
   z-index: 160;
   position: fixed;
   top: 75px;
-  left: 500px;
+  left: 250px;
   width: 300px;
-  padding: 8px 0 0 0;
+  padding: 8px 0 8px 0;
   background: #ffb400 url("../svg/in-css/ui/vc-move.svg") top 5px right 5px no-repeat;
   background-size: 30px;
   -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
@@ -7668,7 +7715,7 @@ table.oe-clinic-list td.center {
 }
 
 .vc-floating-input .vc-content {
-  max-height: 300px;
+  max-height: 400px;
   overflow-y: auto;
   overflow-x: hidden;
   padding: 0 8px 2px 8px;

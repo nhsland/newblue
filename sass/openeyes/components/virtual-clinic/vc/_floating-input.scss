@@ -5,9 +5,9 @@
 	position:fixed;
 	// default start position
 	top:$oe-header-height + 15px;
-	left: $oe-event-main-default-width + $oe-event-sidebar-width - $oe-hotlist-panel-width - 330px;
+	left: $oe-event-sidebar-width + 50px;
 	width:300px;
-	padding:8px 0 0 0; // allow for scrolling
+	padding:8px 0 8px 0; // allow for scrolling
 
 	// add SVG icon to show that it is draggable:	
 	background:$oe-vc-orange url( svg-path('ui/vc-move') ) top 5px right 5px no-repeat;
@@ -24,7 +24,7 @@
 	
 	// restrict content height in floating input:
 	.vc-content {
-		max-height: 300px;  // must allow for the minimum spec res. displays
+		max-height: 400px;  // must allow for the minimum spec res. displays
 		overflow-y: auto;	// scroll overflow
 		overflow-x: hidden; // otherwise breaks out of popup.
 		padding:0 8px 2px 8px;  // allow for scrollbar
