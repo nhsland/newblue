@@ -39,6 +39,13 @@
 		@include font-size(18);
 		font-weight:200; 
 		color:$oe-pro-text-light; 
+		
+		.extra-actions {
+			position:absolute;
+			top:0;
+			right:0;
+		}
+		
 	}
 }
 

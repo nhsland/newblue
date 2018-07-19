@@ -2801,6 +2801,12 @@ html {
   color: rgba(255, 255, 255, 0.5);
 }
 
+.oe-patient-popup .subtitle .extra-actions {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 .patient-clinic-quicklook .quicklook-data-groups {
   width: 50%;
 }
