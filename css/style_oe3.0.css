@@ -1944,7 +1944,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .oe-tooltip {
-  z-index: 60;
+  z-index: 91;
   width: 200px;
   padding: 8px 8px 4px 8px;
   border-bottom: 1px solid cyan;
@@ -2919,7 +2919,7 @@ html {
   display: block;
   position: relative;
   width: 100%;
-  padding: 8px 5px;
+  padding: 8px 65px 8px 5px;
   margin: 0 0 1px 0;
   background: #182535;
   font-size: 0.75rem;
@@ -2931,48 +2931,41 @@ html {
   margin: 0 5px 0 0;
 }
 
+.problems-plans .problems-plans-sortable li .metadata {
+  position: absolute;
+  right: 35px;
+  top: 8px;
+}
+
 .problems-plans .problems-plans-sortable li .remove {
   position: absolute;
   right: 4px;
-  top: 4px;
-  font-size: 1.0625rem;
-  font-weight: 200;
+  top: 8px;
 }
 
-.problems-plans .problems-plans-sortable li .drag-handle, .problems-plans .problems-plans-sortable li .remove {
+.problems-plans .problems-plans-sortable li .drag-handle {
   color: rgba(255, 255, 255, 0.3);
   cursor: pointer;
 }
 
-.problems-plans .problems-plans-sortable li .drag-handle:hover, .problems-plans .problems-plans-sortable li .drag-handle:focus, .problems-plans .problems-plans-sortable li .drag-handle:active, .problems-plans .problems-plans-sortable li .remove:hover, .problems-plans .problems-plans-sortable li .remove:focus, .problems-plans .problems-plans-sortable li .remove:active {
+.problems-plans .problems-plans-sortable li .drag-handle:hover, .problems-plans .problems-plans-sortable li .drag-handle:focus, .problems-plans .problems-plans-sortable li .drag-handle:active {
   color: #fff;
 }
 
 .problems-plans .create-new-problem-plan {
-  position: relative;
-  padding: 5px 0;
-  margin: 5px 0 0 0;
-  height: 38px;
-}
-
-.problems-plans .create-new-problem-plan .add-problem-plan-btn {
-  display: block;
-  position: absolute;
-  top: 8px;
-  right: 5px;
-  margin: 0;
+  background: rgba(24, 37, 53, 0.8);
+  padding: 3px;
+  margin: 3px 0 0 0;
 }
 
 .problems-plans .create-new-problem-plan input {
   font-size: 0.8125rem;
-  font-weight: 300;
+  font-weight: 400;
   background: #182535;
-  outline: none;
-  border: 0;
-  width: 100%;
   padding: 5px;
   border-radius: 3px;
   color: rgba(255, 255, 255, 0.8);
+  width: calc(100% - 38px);
 }
 
 .oe-patient-popup table.patient-demographics {
@@ -4654,7 +4647,7 @@ html {
   position: fixed;
   bottom: 300px;
   right: 0;
-  z-index: 60;
+  z-index: 91;
   background: #374755;
   padding: 10px 50px 10px 10px;
   min-height: 150px;
@@ -5276,14 +5269,6 @@ html {
 
 .main-event table.situational-awareness .data:last-child {
   margin: 0 0 0 0;
-}
-
-.main-event .problems-plans .problems-plans-sortable li {
-  background: #172332;
-}
-
-.main-event .problems-plans .create-new-problem-plan input {
-  background: #172332;
 }
 
 .oe-eyedraw-app {
@@ -6789,7 +6774,7 @@ span.squiggle {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 60;
+  z-index: 91;
   background: cyan;
   font-size: 0.625rem;
   font-weight: 500;
@@ -6967,7 +6952,7 @@ table.oe-clinic-list td.center {
   position: fixed;
   top: 98px;
   left: 100%;
-  z-index: 60;
+  z-index: 91;
   height: calc(100vh - 98px);
   border-left: 1px solid cyan;
   padding: 0 30px 15px 15px;
@@ -6986,7 +6971,7 @@ table.oe-clinic-list td.center {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 60;
+  z-index: 91;
   border: 1px solid cyan;
   padding: 0 30px 15px 15px;
   width: 330px;
@@ -7035,7 +7020,7 @@ table.oe-clinic-list td.center {
   position: absolute;
   top: 0;
   left: 100px;
-  z-index: 60;
+  z-index: 91;
   background: #141e2b;
   border: 1px solid cyan;
   padding: 0 30px 45px 15px;
@@ -7170,7 +7155,7 @@ table.oe-clinic-list td.center {
   position: absolute;
   top: 0;
   left: 10px;
-  z-index: 60;
+  z-index: 91;
   background: #141e2b;
   border: 1px solid cyan;
   padding: 5px 8px 15px 8px;

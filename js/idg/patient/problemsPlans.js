@@ -13,7 +13,7 @@ idg.problemsPlans = function(){
 		var input = $('#create-problem-plan');
 		var val = input.val();
 		if( val === '') return;				
-		var html = '<li><span class="drag-handle">&#9776;</span>'+ val +'<div class="remove">&times;</div></li>';
+		var html = '<li><span class="drag-handle">&#9776;</span>'+ val +'<div class="remove"><i class="oe-i remove-circle small pro-theme pad"></i></div></li>';
 		$('#problems-plans-sortable').append( html );
 		input.val(''); // refresh input
 	}); 
