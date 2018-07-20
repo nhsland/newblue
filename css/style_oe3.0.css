@@ -6209,7 +6209,7 @@ span.squiggle {
   background: #182535;
 }
 
-.oescape-icon-btns .icon-btn a.lightning-viewer-icon svg {
+.oescape-icon-btns .icon-btn a.lightning-viewer-icon svg, .oescape-icon-btns .icon-btn a.patient-overview-icon svg {
   display: block;
   fill: rgba(255, 255, 255, 0.6);
   width: 15px;
