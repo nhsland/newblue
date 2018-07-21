@@ -3423,7 +3423,7 @@ html {
   position: relative;
   margin: 10px;
   padding: 10px;
-  background: #182535;
+  background: #101923;
   color: rgba(255, 255, 255, 0.8);
 }
 
@@ -3431,7 +3431,7 @@ html {
   margin: 0 0 10px 0;
   font-size: 1.0625rem;
   font-weight: 300;
-  color: #626d7b;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .oe-widget .widget-actions {
