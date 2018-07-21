@@ -3405,6 +3405,48 @@ html {
   background: #141e2b;
 }
 
+.oe-home .home-dashboard {
+  display: -ms-grid;
+  -ms-grid-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr;
+  display: grid;
+  grid: 1fr / 1fr 1fr;
+  grid-column-gap: 30px;
+}
+
+.oe-home .home-dashboard .home-widgets {
+  height: calc(100vh - 136px);
+  overflow-y: auto;
+}
+
+.oe-widget {
+  position: relative;
+  margin: 10px;
+  padding: 10px;
+  background: #182535;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.oe-widget h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.0625rem;
+  font-weight: 300;
+  color: #626d7b;
+}
+
+.oe-widget .widget-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.oe-widget .widget-content.widget-overflow {
+  position: relative;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 0 5px 10px 0;
+}
+
 .oe-search-patient {
   display: -webkit-box;
   display: -ms-flexbox;
