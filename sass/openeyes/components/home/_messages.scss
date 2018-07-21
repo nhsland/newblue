@@ -5,7 +5,7 @@
 	
 	// <table>
 	.messages {
-		width: calc(100% - 300px);
+		width: calc(100% - 300px); // using flex (but need to change to a sub-grid)
 		margin:10px 30px 20px 0;	
 			
 		td:last-child, 

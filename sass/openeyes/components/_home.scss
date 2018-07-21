@@ -18,7 +18,7 @@
 		// CSS3: Grid 
 		display: grid;
 		grid: 1fr / 1fr 1fr;
-		grid-column-gap: 30px; // untested on IE. May need to come back to this. 		
+		grid-column-gap: 20px; // untested on IE. May need to come back to this. 		
 		
 		.home-widgets {
 			height: calc(100vh - #{ $oe-header-height + ($oe-event-header-height * 2) }); 
@@ -52,7 +52,7 @@
 		
 		&.widget-overflow {
 			position:relative;
-			max-height:250px;  			// guessing. may need other height options.
+			max-height:200px;  			// guessing. may need other height options.
 			overflow-y: auto;
 			padding:0 5px 10px 0;
 		}

@@ -3411,7 +3411,7 @@ html {
   -ms-grid-rows: 1fr;
   display: grid;
   grid: 1fr / 1fr 1fr;
-  grid-column-gap: 30px;
+  grid-column-gap: 20px;
 }
 
 .oe-home .home-dashboard .home-widgets {
@@ -3442,7 +3442,7 @@ html {
 
 .oe-widget .widget-content.widget-overflow {
   position: relative;
-  max-height: 250px;
+  max-height: 200px;
   overflow-y: auto;
   padding: 0 5px 10px 0;
 }
