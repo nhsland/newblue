@@ -735,40 +735,6 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   margin-left: -5px;
 }
 
-.oe-popup-wrap {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  background: rgba(16, 25, 37, 0.6);
-  height: 100vh;
-  width: 100vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.oe-multi-select.inline li {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-}
-
-.oe-multi-select li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 2px 4px 2px 6px;
-  color: rgba(255, 255, 255, 0.8);
-  background: rgba(30, 46, 66, 0.5);
-}
-
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -1011,6 +977,40 @@ select.fixed-width {
 .oe-eye-lat-icons {
   display: inline-block;
   white-space: nowrap;
+}
+
+.oe-multi-select.inline li {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+.oe-multi-select li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2px 4px 2px 6px;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(30, 46, 66, 0.5);
+}
+
+.oe-popup-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgba(16, 25, 37, 0.6);
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /*  iconography */

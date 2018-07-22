@@ -14,8 +14,6 @@
 @import "ui/alert-box"; 					// alerts
 @import "ui/status-box"; 					// status
 @import "ui/tool-tip"; 						// tool tip (js generated)
-@import "ui/popup-wrap"; 					// covers and acts as container for ajax loads 
-@import "ui/multi-select"; 					// multi-select list
 @import "ui/scrollbars"; 					// appy some feel
 @import "ui/spinner"; 						// load spinner
 @import "ui/inline"; 						// helpers
@@ -28,7 +26,8 @@
 /* OE UI classes */
 @import "ui/oe-date"; 						// OE date
 @import	"ui/oe-eye-lat-icons";				// OE Eye Lat (r/l) icons
-
+@import "ui/oe-multi-select"; 				// multi-select list
+@import "ui/oe-popup-wrap"; 				// covers and acts as container for ajax loads 
 
 /*  iconography */
 @import "icons"; 							// oe icons 
@@ -41,6 +40,7 @@
 @import "components/hotlist-panel";    		// site wide RHS panel. Patients & Messages
 @import "components/patient-popups";    	// Patient: Quicklook & Demographics (summary)
 @import "components/popups";    			// Popups: GUI for popups
+
 /* Generic Layouts */
 @import "components/layouts/oe-full";		// Layouts. Full-width with ooption to sub-divide (Clinic, Theatre Diaries, Worklist )
 /* Home */
