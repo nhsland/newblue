@@ -2650,12 +2650,12 @@ html {
   overflow-y: auto;
   width: 450px;
   background: #2c3540;
-  padding: 10px 0 20px 0;
+  padding: 0 0 20px 0;
   border-left: 2px solid rgba(16, 25, 35, 0.5);
 }
 
 .oe-hotlist-panel .overview {
-  padding: 0 10px 5px 15px;
+  padding: 10px 10px 5px 15px;
 }
 
 .oe-hotlist-panel .overview h3 {
@@ -2700,7 +2700,7 @@ html {
 
 .oe-hotlist-panel .activity-list {
   width: 100%;
-  margin: 5px 0 20px 0;
+  margin: 5px 0 10px 0;
 }
 
 .oe-hotlist-panel .activity-list tbody tr {
