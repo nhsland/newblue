@@ -34,28 +34,6 @@ input, textarea, select {
 		width:90px; 		// allows for 00000000
 		margin:0 5px 0 0;	// guessing it will have a label after it
 	}
-	
-	
-	
-}
-
-// dates used be handled consistently.
-// therefore...
-input {
-	// inputs
-	&.date {
-		text-align:center;
-		width:90px;	
-	}	
-}
-
-select {
-	// remove all the default appearances for inputs
-	//-moz-appearance: none; 
-	//-webkit-appearance: none; 
-	//appearance: none;
-    // and then whatever styles you want
-	//padding-left: 5px;
 }
 
 @import "inputs/label";

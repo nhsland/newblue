@@ -5,23 +5,35 @@
 // * Include ALL scss files here. Except the __config files
 
 /* GUI */
-@import "ui"; 								// oe general UI 
+@import "ui/flex"; 							// flex layout
+@import "ui/lists"; 						// ul and ol defaults.
+@import "ui/tables"; 						// standard table class.
+@import "ui/typography"; 					// defaults and general typographics.
+@import "ui/collapse-group"; 				// collapse and expand content
+@import "ui/buttons"; 						// button and .button
+@import "ui/alert-box"; 					// alerts
+@import "ui/status-box"; 					// status
+@import "ui/tool-tip"; 						// tool tip (js generated)
+@import "ui/popup-wrap"; 					// covers and acts as container for ajax loads 
+@import "ui/multi-select"; 					// multi-select list
+@import "ui/scrollbars"; 					// appy some feel
+@import "ui/spinner"; 						// load spinner
+@import "ui/inline"; 						// helpers
+@import "ui/row"; 							// basic layout
+@import "ui/highlighted-error"; 			// error, red border
+
+/* inputs */
+@import "inputs"; 							// labels, inputs, selects and textares
+
+/* OE UI classes */
+@import "ui/oe-date"; 						// OE date
+@import	"ui/oe-eye-lat-icons";				// OE Eye Lat (r/l) icons
+
+
+/*  iconography */
 @import "icons"; 							// oe icons 
 @import "icons-events"; 					// oe icons (Events only) 
-@import "lists"; 							// ul and ol defaults.
-@import "tables"; 							// standard table class.
-@import "inputs"; 							// labels, inputs, selects and textares
-@import "typography"; 						// defaults and general typographics.
-@import "flex"; 							// flex layout
-@import "collapse-group"; 					// collapse and expand content
-@import "buttons"; 							// button and .button
-@import "alert-box"; 						// alerts
-@import "status-box"; 						// status
-@import "tool-tip"; 						// tool tip (js generated)
-@import "popup-wrap"; 						// covers and acts as container for ajax loads 
-@import "multi-select"; 					// multi-select list
-@import "scrollbars"; 						// appy feel
-@import "spinner"; 							// load spinner
+
 /* Structure */
 @import "structure/structure";				// DOM structure. CSS Grids for layout
 @import "components/logo";    				// OE logo and Version info

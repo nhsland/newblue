@@ -21,4 +21,10 @@ select {
 		// See: https://code.google.com/p/chromium/issues/detail?id=282918
 		background: #fff !important;
 	}
+	
+	
+	// this will remove all the default appearances for inputs:
+	// -moz-appearance: none; 
+	// -webkit-appearance: none; 
+	// appearance: none;
 }

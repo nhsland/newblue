@@ -1,0 +1,8 @@
+// need a generic div class to 
+// space out a 'rows' of data within 
+// a container
+.row { 
+	margin:15px 0; 
+	&:first-child { margin-top:0; }
+	&:last-child { margin-bottom:0; }
+}
