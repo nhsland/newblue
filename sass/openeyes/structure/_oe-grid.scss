@@ -1,16 +1,9 @@
 // CSS3 OE Grid
 
-// IE implementation of the Grid:
-// grid-template-columns as -ms-grid-columns
-// grid-template-rows as -ms-grid-rows
-// grid-row-start as -ms-grid-row
-// grid-column-start as -ms-grid-column
-// align-self as -ms-grid-column-align
-// justify-self as -ms-grid-row-align
-
-// -ms-grid-column-span and -ms-grid-row-span
-
 // CSS grid for OE. Default set up is for SEM layout
+// V3 design work started with SEM. It is the most used
+// part of OE and need to work well.
+
 .oe-grid {
 	// for Edge < 16
 	display: -ms-grid;

@@ -4,7 +4,7 @@
 
 .oe-hotlist-panel {
 	display:none; // js controlled.
-	z-index:$oe-z-activity; // overlays content
+	z-index:$oe-z-hotlist; // overlays content
 			
 	position:fixed;
 	top:$oe-header-height;

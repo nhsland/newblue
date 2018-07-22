@@ -5,7 +5,6 @@
 
 // Correct the line height in all browsers.
 // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS
-
 html {
   line-height: 1.15; 
   -ms-text-size-adjust: 100%; 
@@ -53,18 +52,17 @@ svg:not(:root) {
 
 // Show the overflow in IE and Show the overflow in Edge.
 button,
-input { /* 1 */
+input { 
   overflow: visible;
 }
 
-//Remove the inheritance of text transform in Edge, Firefox, and IE.
+// Remove the inheritance of text transform in Edge, Firefox, and IE.
 button,
-select { /* 1 */
+select {  
   text-transform: none;
 }
 
-
- // layout resets
+// layout resets
 section,
 nav,
 header,

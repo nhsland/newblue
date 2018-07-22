@@ -47,13 +47,11 @@ svg:not(:root) {
 
 button,
 input {
-  /* 1 */
   overflow: visible;
 }
 
 button,
 select {
-  /* 1 */
   text-transform: none;
 }
 
@@ -707,7 +705,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .oe-tooltip {
-  z-index: 91;
+  z-index: 90;
   width: 200px;
   padding: 8px 8px 4px 8px;
   border-bottom: 1px solid cyan;
@@ -937,6 +935,14 @@ textarea {
   resize: none;
   overflow: auto;
   word-wrap: break-word;
+}
+
+textarea:-moz-read-only {
+  background-color: rgba(30, 46, 66, 0.75);
+}
+
+textarea:read-only {
+  background-color: rgba(30, 46, 66, 0.75);
 }
 
 select {
@@ -2185,12 +2191,7 @@ html {
   overflow-y: auto;
 }
 
-.oe-footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-}
-
+/* Components */
 .oe-logo-flag-help {
   z-index: 149;
   position: fixed;
@@ -2766,7 +2767,7 @@ html {
 
 .oe-patient-popup {
   display: none;
-  z-index: 90;
+  z-index: 80;
   position: fixed;
   top: 60px;
   left: 200px;
@@ -3915,7 +3916,7 @@ html {
 }
 
 .oe-popup-event-audit-trail {
-  z-index: 90;
+  z-index: 80;
   position: absolute;
   top: 47px;
   left: 0;
@@ -4693,7 +4694,7 @@ html {
   position: fixed;
   bottom: 300px;
   right: 0;
-  z-index: 91;
+  z-index: 90;
   background: #374755;
   padding: 10px 50px 10px 10px;
   min-height: 150px;
@@ -6820,7 +6821,7 @@ span.squiggle {
   position: absolute;
   top: 100%;
   left: 0;
-  z-index: 91;
+  z-index: 90;
   background: cyan;
   font-size: 0.625rem;
   font-weight: 500;
@@ -6998,7 +6999,7 @@ table.oe-clinic-list td.center {
   position: fixed;
   top: 98px;
   left: 100%;
-  z-index: 91;
+  z-index: 90;
   height: calc(100vh - 98px);
   border-left: 1px solid cyan;
   padding: 0 30px 15px 15px;
@@ -7017,7 +7018,7 @@ table.oe-clinic-list td.center {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 91;
+  z-index: 90;
   border: 1px solid cyan;
   padding: 0 30px 15px 15px;
   width: 330px;
@@ -7066,7 +7067,7 @@ table.oe-clinic-list td.center {
   position: absolute;
   top: 0;
   left: 100px;
-  z-index: 91;
+  z-index: 90;
   background: #141e2b;
   border: 1px solid cyan;
   padding: 0 30px 45px 15px;
@@ -7201,7 +7202,7 @@ table.oe-clinic-list td.center {
   position: absolute;
   top: 0;
   left: 10px;
-  z-index: 91;
+  z-index: 90;
   background: #141e2b;
   border: 1px solid cyan;
   padding: 5px 8px 15px 8px;

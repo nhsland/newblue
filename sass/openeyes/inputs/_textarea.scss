@@ -5,5 +5,10 @@ textarea {
 	margin:1px 0;
 	resize: none; // hide corner resize
 	overflow: auto; // for IE
-	word-wrap: break-word; // allow long words to break and wrap
+	word-wrap: break-word; // allow long words to break and wrap	
+	
+	// dull out the readonly fields
+	&:read-only { 
+    	background-color: rgba($oe-user-inputs,0.75);
+	}
 }

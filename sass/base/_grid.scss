@@ -71,9 +71,9 @@ width: 91.66667%;
 width: 100%;
 }
 
-// 'col-gap' - mostly used in Element data layout
-// Provide a consistent column gap (gutter) for layouts using
-// either flex or tables to layout data:
+// 'col-gap' - for cols- and <td>
+// provides a consistent column gap (gutter) for layouts using
+// either flex or tables:
 .col-gap {
 	> div[class^="cols-"], 
 	> td {

@@ -1,13 +1,13 @@
 // * OE 3.0 Globals vars
-// * Note: some local variables are located in specific sass files
+// * Note: some local variables maybe located in some specific sass files
 //  
-// * OE v3.0 has a main theme: "PRO" but it also provides a 'classic'
-// * theme for users who prefer viewing the data in the 'old' way
-// * however, in Classic some of elements are set as 'PRO'.  
+// * OE v3.0 has a main theme: "PRO" but it also provides a 'Classic'
+// * theme for users who prefer viewing the data in the 'old' (sort-of) way
+// * however, in Classic some of elements are still hard set in 'PRO'.  
 
 $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 
-// note: CSS3 grid is used for layouts, see structure
+// note: CSS3 grid is used for main layouts, see in 'structure'
 
 // grid px
 $oe-header-height:						60px; 	// top UI bar
@@ -22,23 +22,23 @@ $oe-eyedraw-app-width:					($oe-event-main-default-width + 180px);  // eyedraw p
 $oe-event-extension:					160px; // this just works for laptop width (1440px)
 $oe-event-main-extended-width:			(1080px + $oe-event-extension); // 160px extra width to move headers left.
 $oe-extended-browser-size: 				(1280px + $oe-event-extension); // 1280px is default. 
-$oe-browser-size-activity-panel-fixed:	1800px; // this is based on the JS setting for fixing the activity panel
+$oe-browser-size-activity-panel-fixed:	1800px; // this is based on the JS setting for fixing the hotlist panel
 
 
 // z
-$oe-z-vc:				160;
+$oe-z-vc:				160; // VC ScratchPad
 $oe-z-logo:				150; 
 $oe-z-popup:			100;
 $oe-z-shortcuts:		99;
-$oe-z-activity:			95;
-$oe-z-tooltip:			91;
-$oe-z-quicklook:		90; // & demographics, allergies & risks
+$oe-z-hotlist:			95; // hotlist (previously know as activity)
+$oe-z-tooltip:			90;
+$oe-z-quicklook:		80; // quicklook, demographics, allergies & risks
 $oe-z-element-search:	80; 
-$oe-z-ed-v2: 			20; // ED v2 DOM			
+$oe-z-ed-v2: 			20; // ED v2 DOM. ED v2 still in first V3			
 
 
 // UI colors 
-// (Pro theme, but here because of the need to keep some Pro theme elements in Classsic)
+// PRO Theme. Here because some Pro Theme elements are needed in Classsic
 
 $html-pro-bg: 			rgb(16,25,37);
 

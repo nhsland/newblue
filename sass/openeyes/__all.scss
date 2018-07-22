@@ -2,7 +2,7 @@
 // *
 // * (C) OpenEyes, 2017
 //
-// * Include ALL scss files here. Except the __config files
+// * Include ALL scss files here. Except '__config' files
 
 /* GUI */
 @import "ui/flex"; 							// flex layout
@@ -34,7 +34,10 @@
 @import "icons-events"; 					// oe icons (Events only) 
 
 /* Structure */
-@import "structure/structure";				// DOM structure. CSS Grids for layout
+@import "structure/html-open-eyes";			// DOM base structure
+@import "structure/oe-grid"; 				// CSS3 grid for page layout 
+
+/* Components */
 @import "components/logo";    				// OE logo and Version info
 @import "components/header";    			// site wide header bar: Logo, Patient & User Nav
 @import "components/hotlist-panel";    		// site wide RHS panel. Patients & Messages
