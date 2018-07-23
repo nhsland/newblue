@@ -1,18 +1,16 @@
 // OE tables
-// Tables are used a lot. 
-// Here I have a basic 'standard' OE style.
-// this can be added as a class and extend or removed as needed
-
-// Standard styling
+// Tables are used a lot. This creates a basic 'standard' OE style.
+// It can be extend as needed: 'standard' <table>:
 table.standard {
 	width:100%;
 	@include font-size(14);
 	
 	margin:20px 0 10px 0;
-	&:first-child {
-		margin:0 0 10px 0;
+	&:first-child {	
+		margin:0 0 10px 0; 
 	}
 	
+	// this will match the default align for tables in Elements:
 	&.last-right {
 		th, td {
 			&:last-child {
@@ -22,16 +20,14 @@ table.standard {
 	}
 	
 	th, td {
-		text-align: left;  // standardise align, in Elements this maybe overwritten.
+		text-align: left;  // standardise align
 		
-		// made '.date' more generic.
-		// (but still supporting 'date')
+		// made '.date' more generic (but still supporting 'date' just in case):
 		&.right,
 		&.date {
 			text-align: right;
 			padding-right:4px;
 		}
-		
 	}
 	
 	thead {
@@ -44,14 +40,13 @@ table.standard {
 	}
 	
 	tbody {
-		
 		tr {
 			border-bottom:1px solid $oe-line;
 			&:last-child { 
 				border-bottom: none;
 			}
 			
-			// make specific rows clickable
+			// make specific rows clickable (or make all rows clickable, see further down)
 			&.clickable {
 				&:hover, &:active, &:focus {
 					cursor: pointer;
@@ -97,5 +92,8 @@ table.standard {
 			}
 		}
 	}
+	
+	
+	
 }
 

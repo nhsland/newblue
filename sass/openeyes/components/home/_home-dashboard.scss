@@ -1,0 +1,22 @@
+// OE Homepage
+.oe-home {
+	.home-dashboard {
+		// ! HOME sub-Grid 
+		// Creates 2 independently scrollable columns
+		
+		// for Edge < 16
+		display: -ms-grid;
+		-ms-grid-columns: 1fr 1fr;
+		-ms-grid-rows: 1fr;		
+		
+		// CSS3: Grid 
+		display: grid;
+		grid: 1fr / 1fr 1fr;
+		grid-column-gap: 20px; // untested on IE. May need to come back to this. 		
+		
+		.home-widgets {
+			height: calc(100vh - #{ $oe-header-height + ($oe-event-header-height * 2) }); 
+			overflow-y:auto;
+		}
+	}
+}

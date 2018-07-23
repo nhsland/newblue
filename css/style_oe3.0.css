@@ -518,7 +518,7 @@ button.large, .button.large, input[type="submit"].large {
 }
 
 button.pro-theme, .button.pro-theme, input[type="submit"].pro-theme {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.8);
   background: #1e2e42;
 }
 
@@ -805,6 +805,11 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 
 .row:last-child {
   margin-bottom: 0;
+}
+
+.row.divider {
+  border-bottom: 2px solid #26303d;
+  padding: 0 0 15px 0;
 }
 
 .highlighted-error {
@@ -3404,6 +3409,82 @@ html {
   background: #141e2b;
 }
 
+.patient-search-results .search-details {
+  margin: 20px 0;
+  padding: 0 20px;
+  border-right: 1px solid #626d7b;
+  width: 250px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.75rem;
+}
+
+.patient-search-results .search-details .title {
+  font-size: 1.625rem;
+  font-weight: 200;
+  color: #626d7b;
+  padding: 0 0 10px 0;
+}
+
+.patient-search-results .search-details .found {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 10px 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.patient-search-results .search-details p {
+  padding: 5px 0;
+}
+
+.patient-search-results .search-details .clear-search {
+  margin: 40px 0 0 0;
+}
+
+.patient-search-results .search-results {
+  width: calc(100% - 300px);
+  margin: 10px 30px 20px 0;
+}
+
+.patient-search-results .search-results tbody tr {
+  border-bottom: 1px solid #26303d;
+}
+
+.patient-search-results .search-results tbody tr:last-child {
+  border-bottom: none;
+}
+
+.patient-search-results .search-results tbody tr:hover, .patient-search-results .search-results tbody tr:active, .patient-search-results .search-results tbody tr:focus {
+  cursor: pointer;
+  background: #074598;
+}
+
+.patient-search-results .search-results tbody tr:hover td, .patient-search-results .search-results tbody tr:active td, .patient-search-results .search-results tbody tr:focus td {
+  color: white;
+}
+
+.patient-search-results .search-results th, .patient-search-results .search-results td {
+  padding: 10px 6px;
+  line-height: 1.4;
+}
+
+.patient-search-results .search-results th {
+  text-align: left;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+}
+
+.patient-search-results .search-results td {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+.patient-search-results .search-results tfoot.pagination-container tr td {
+  text-align: right;
+  color: rgba(255, 255, 255, 0.5);
+  border-top: 2px solid #26303d;
+}
+
 .oe-home .home-dashboard {
   display: -ms-grid;
   -ms-grid-columns: 1fr 1fr;
@@ -3608,82 +3689,6 @@ html {
   font-weight: 300;
   color: #626d7b;
   padding: 10px 0 5px 0;
-}
-
-.patient-search-results .search-details {
-  margin: 20px 0;
-  padding: 0 20px;
-  border-right: 1px solid #626d7b;
-  width: 250px;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 0.75rem;
-}
-
-.patient-search-results .search-details .title {
-  font-size: 1.625rem;
-  font-weight: 200;
-  color: #626d7b;
-  padding: 0 0 10px 0;
-}
-
-.patient-search-results .search-details .found {
-  color: rgba(255, 255, 255, 0.8);
-  padding: 10px 0;
-  font-size: 0.875rem;
-  font-weight: 400;
-}
-
-.patient-search-results .search-details p {
-  padding: 5px 0;
-}
-
-.patient-search-results .search-details .clear-search {
-  margin: 40px 0 0 0;
-}
-
-.patient-search-results .search-results {
-  width: calc(100% - 300px);
-  margin: 10px 30px 20px 0;
-}
-
-.patient-search-results .search-results tbody tr {
-  border-bottom: 1px solid #26303d;
-}
-
-.patient-search-results .search-results tbody tr:last-child {
-  border-bottom: none;
-}
-
-.patient-search-results .search-results tbody tr:hover, .patient-search-results .search-results tbody tr:active, .patient-search-results .search-results tbody tr:focus {
-  cursor: pointer;
-  background: #074598;
-}
-
-.patient-search-results .search-results tbody tr:hover td, .patient-search-results .search-results tbody tr:active td, .patient-search-results .search-results tbody tr:focus td {
-  color: white;
-}
-
-.patient-search-results .search-results th, .patient-search-results .search-results td {
-  padding: 10px 6px;
-  line-height: 1.4;
-}
-
-.patient-search-results .search-results th {
-  text-align: left;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: 300;
-}
-
-.patient-search-results .search-results td {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-}
-
-.patient-search-results .search-results tfoot.pagination-container tr td {
-  text-align: right;
-  color: rgba(255, 255, 255, 0.5);
-  border-top: 2px solid #26303d;
 }
 
 /* SEM Event Episodes */
@@ -7827,6 +7832,12 @@ table.oe-clinic-list td.center {
 
 .oe-admin .admin-main {
   padding: 0 10px 20px 0;
+}
+
+.oe-admin .admin-main h2 {
+  font-size: 1.125rem;
+  color: #69939e;
+  font-weight: 300;
 }
 
 .oe-admin .admin-main table.standard th, .oe-admin .admin-main table.standard td {

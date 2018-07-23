@@ -1,72 +1,22 @@
-// OE Homepage
+// OE Home
 
 .oe-home {
 	background:$oe-blue-dark2;	
 }
 
+// patient search
+@import "home/search-details";
+@import "home/search-results";
 
-.oe-home {
-	.home-dashboard {
-		// ! HOME sub-Grid 
-		// Creates 2 independently scrollable columns
-		
-		// for Edge < 16
-		display: -ms-grid;
-		-ms-grid-columns: 1fr 1fr;
-		-ms-grid-rows: 1fr;		
-		
-		// CSS3: Grid 
-		display: grid;
-		grid: 1fr / 1fr 1fr;
-		grid-column-gap: 20px; // untested on IE. May need to come back to this. 		
-		
-		.home-widgets {
-			height: calc(100vh - #{ $oe-header-height + ($oe-event-header-height * 2) }); 
-			overflow-y:auto;
-		}
-	}
-}
+// Home Widgets
+@import "home/home-dashboard";
+@import "home/home-widget";     // oe-widget
 
-// de-coupled widget, although only currently only used on the Homepage.
-.oe-widget {
-	position: relative;
-	margin:10px;
-	padding:10px;
-	background:$oe-bg-highlight;
-	color:$oe-text;
-	
-	h3 {
-		margin:0 0 10px 0;
-		@include font-size(17);
-		font-weight: 300;
-		color:$oe-text;
-	}
-	
-	.widget-actions {
-		position: absolute;
-		top:10px;
-		right:10px;
-	}
-	
-	.widget-content {
-		
-		&.widget-overflow {
-			position:relative;
-			max-height:200px;  			// guessing. may need other height options.
-			overflow-y: auto;
-			padding:0 5px 10px 0;
-		}
-	}
-}
-
-
-
-
-
+// Messages (expanded)
+// here (under home) because Messages
+// were the homepage to start with
 @import "home/search-patient"; 
 @import "home/messages";
 @import "home/message-actions";
 
-// patient search
-@import "home/search-details";
-@import "home/search-results";
+

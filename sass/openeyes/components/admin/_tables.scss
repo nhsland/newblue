@@ -5,6 +5,16 @@
 	
 	.admin-main {
 		padding:0 10px 20px 0;
+		
+		// title (if this can't moved out of page
+		// and into the header area)
+		h2 {
+			@include font-size(18);
+			color:$oe-element-headers;
+			font-weight: $oe-font-light;
+			// opacity:0.7;
+		}
+		
 
 		// extend 'standard'
 		table.standard {
