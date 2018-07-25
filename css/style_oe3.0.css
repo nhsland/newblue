@@ -342,13 +342,17 @@ table.standard tbody tr:last-child {
 }
 
 table.standard tbody td {
-  padding: 5px 10px 5px 0;
-  font-weight: 400;
   color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  padding: 5px 10px 5px 0;
 }
 
 table.standard tbody td.valign-top {
   vertical-align: top;
+}
+
+table.standard tbody td.nowrap {
+  white-space: nowrap;
 }
 
 table.standard tfoot tr {
@@ -366,6 +370,10 @@ table.standard tbody tr.clickable:hover, table.standard.clickable-rows tbody tr:
 
 table.standard tbody tr.clickable:hover td, table.standard.clickable-rows tbody tr:hover td, table.standard tbody tr.clickable:active td, table.standard.clickable-rows tbody tr:active td, table.standard tbody tr.clickable:focus td, table.standard.clickable-rows tbody tr:focus td {
   color: white;
+}
+
+table.standard.highlight-rows tbody tr:hover {
+  background: #101923;
 }
 
 html {
@@ -3563,33 +3571,6 @@ html {
   margin: 10px 30px 20px 0;
 }
 
-.home-messages .messages td:last-child,
-.home-messages .messages th:last-child {
-  text-align: right;
-  padding-right: 0;
-}
-
-.home-messages .messages tr {
-  border-bottom: 1px solid #26303d;
-}
-
-.home-messages .messages tr:last-child {
-  border-bottom: none;
-}
-
-.home-messages .messages tr.unread td {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-}
-
-.home-messages .messages tr.unread td:last-child {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.home-messages .messages tbody tr:hover {
-  background: #101923;
-}
-
 .home-messages .messages th, .home-messages .messages td {
   color: rgba(255, 255, 255, 0.5);
   padding: 10px 6px;
@@ -3597,31 +3578,23 @@ html {
   line-height: 1.4;
 }
 
-.home-messages .messages th {
-  text-align: left;
-  font-weight: 300;
+.home-messages .messages th:last-child, .home-messages .messages td:last-child {
+  text-align: right;
+  padding-right: 0;
 }
 
-.home-messages .messages td {
-  vertical-align: middle;
+.home-messages .messages tbody tr.unread td {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
 }
 
-.home-messages .messages td .urgent-message {
-  fill: #ca7932;
-}
-
-.home-messages .messages td.nowrap {
-  white-space: nowrap;
-  padding-right: 16px;
-}
-
-.home-messages .messages td.patient {
+.home-messages .messages tbody td.patient {
   border-right: 2px solid #26303d;
   padding-right: 12px;
 }
 
-.home-messages .messages td.valign-top {
-  vertical-align: top;
+.home-messages .messages tbody td .urgent-message {
+  fill: #ca7932;
 }
 
 .home-messages .messages .message {

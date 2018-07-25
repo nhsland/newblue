@@ -1,0 +1,36 @@
+// OE tables
+// Clickable rows. 
+// - whole table (tbody)
+// - or individual rows 
+
+table.standard {
+	
+	// Placeholder 
+	%table-clickable-row {
+	  	&:hover, &:active, &:focus {
+			cursor: pointer;
+			background:$oe-btn-blue; 
+			td {
+				color:rgb(255,255,255);
+			}
+		}
+	}
+
+	// make specific rows clickable
+	tbody {
+		tr {
+			&.clickable {
+				@extend %table-clickable-row;	
+			}
+		}
+	}
+	
+	// make ALL rows 'clickable'
+	&.clickable-rows {
+		tbody {
+			tr {
+				@extend %table-clickable-row;
+			}
+		}
+	}
+}

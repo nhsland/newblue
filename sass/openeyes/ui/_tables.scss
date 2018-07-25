@@ -1,72 +1,83 @@
-// OE tables
-// Tables are used a lot. This creates a basic 'standard' OE style.
-// It can be extend as needed: 'standard' <table>:
-table.standard {
-	width:100%;
-	@include font-size(14);
-	
-	margin:20px 0 10px 0;
-	&:first-child {	
-		margin:0 0 10px 0; 
-	}
-	
-	// this will match the default align for tables in Elements:
-	&.last-right {
+// OE "Standard" Tables
+// Tables are used a lot across OE.
+// Here we establish a 'standard' table UI
+// note: we do NOT target the default table DOM because
+// of tables usage within Elements (SEM).
+// see: http://idg.knowego.com/v3.0-UI/ui-tables
+
+table {
+	&.standard {
+		width:100%;
+		@include font-size(14);
+		
+		// this may need putting in a class
+		margin:20px 0 10px 0;
+		&:first-child {	
+			margin:0 0 10px 0; 
+		}
+		
+		// matches the default align for tables in Elements
+		&.last-right {
+			th, td {
+				&:last-child {
+					text-align: right;
+				}
+			}
+		}
+		
 		th, td {
-			&:last-child {
+			text-align: left;  // standardise align
+			// made '.date' redundant... but still supporting it
+			&.right,
+			&.date {
 				text-align: right;
-			}
-		}
-	}
-	
-	th, td {
-		text-align: left;  // standardise align
-		
-		// made '.date' more generic (redundant)... 
-		// but still supporting 'date' just in case still in use somewhwere
-		&.right,
-		&.date {
-			text-align: right;
-			padding-right:4px;
-		}
-	}
-	
-	thead {
-		th {
-			color:$oe-text-light;
-			@include font-size(12);
-			font-weight: $oe-font-light;
-			padding:0 10px 10px 0;
-		}
-	}
-	
-	tbody {
-		tr {
-			border-bottom:1px solid $oe-line;
-			&:last-child { 
-				border-bottom: none;
+				padding-right:4px;
 			}
 		}
 		
-		td {
-			padding:5px 10px 5px 0; 
-			font-weight: $oe-font-medium;
-			color:$oe-text; 
+		thead {
+			th {
+				color:$oe-text-light;
+				@include font-size(12);
+				font-weight: $oe-font-light;
+				padding:0 10px 10px 0;
+			}
+		}
+		
+		tbody {
+			tr {
+				border-bottom:1px solid $oe-line;
+				&:last-child { 
+					border-bottom: none;
+				}
+			}
 			
-			&.valign-top {
-				vertical-align: top;
+			td {
+				color:$oe-text; 
+				font-weight: $oe-font-medium;
+				padding:5px 10px 5px 0; 
+				
+				&.valign-top {
+					vertical-align: top;
+				}
+				
+				&.nowrap {
+					white-space: nowrap;
+				}
 			}
 		}
-	}
-	
-	tfoot {
-		tr {
-			border-top:3px solid $oe-line;
-			td {
-				padding:5px 10px 5px 0; 
+		
+		tfoot {
+			tr {
+				border-top:3px solid $oe-line;
+				td {
+					padding:5px 10px 5px 0; 
+				}
 			}
 		}
 	}
 }
 
 @import "tables/clickable-rows";
+@import "tables/highlight-rows";
+// @import "tables/sortable"; not used 

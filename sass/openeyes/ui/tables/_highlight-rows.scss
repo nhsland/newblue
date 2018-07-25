@@ -1,0 +1,16 @@
+// OE tables
+// Highlight rows
+
+table.standard {
+	
+	// highlight rows on hover
+	&.highlight-rows {
+		tbody {
+			tr {
+				&:hover {
+					background:$oe-bg-highlight;
+				}
+			}
+		}	
+	}
+}

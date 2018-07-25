@@ -1,0 +1,14 @@
+// OE tables
+// Sortable columns
+// <th> <a href="#" class="sortable">Title <i class="oe-i arrow-down-bold small pad"></i></a></th>
+
+table.standard {
+	thead {
+		th {
+			// <a>
+			a.sortable {
+				// no styling 
+			}
+		}
+	}
+}

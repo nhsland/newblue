@@ -1,83 +1,60 @@
-// Home - messages
-// 
+// Home
+// Messages
 
 .home-messages {
 	
-	// <table>
+	// extend 'standard' table
 	.messages {
 		width: calc(100% - 300px); // using flex (but need to change to a sub-grid)
-		margin:10px 30px 20px 0;	
+		margin:10px 30px 20px 0;
+		
+		// set last <td> to the right	
+		th, td {
+			// default (message read)
+			color:$oe-text-light;
+			padding:10px 6px;  			// increase padding
+			@include font-size(12);		// reduce font-size
+			line-height:1.4;			// improve legabilty
 			
-		td:last-child, 
-		th:last-child {
-			text-align: right;
-			padding-right:0;
-		}	
-				
-		// add line to help with reading data
-		tr {
-			border-bottom:1px solid $oe-line;
-			&:last-child { 
-				border-bottom: none;
+			&:last-child {
+				text-align: right;
+				padding-right:0;
 			}
-			// unread messages text color
-			&.unread {
-				td {
-					color:$oe-text;
-					@include font-size(14);
-					&:last-child {
-						color:$oe-text-light;
+		}	
+		
+		tbody {
+			tr {
+				// unread messages
+				&.unread {
+					td {
+						color:$oe-text;
+						@include font-size(14);
 					}
 				}
 			}
-		}
-		
-		tbody tr {
-			&:hover {
-				background:$oe-bg-highlight;
-			}
-		}
-		
-		// default
-		th, td, {
-			color:$oe-text-light;
-			padding:10px 6px;  
-			@include font-size(12);
-			line-height:1.4;
-		}
-		
-		// <th>
-		th {
-			text-align: left;  // overide default 'middle'
-			font-weight: $oe-font-light;
-		}
-		
-		// <td>
-		td {
-			vertical-align: middle;	
-			.urgent-message {
-				fill:rgb(202,121,50);
-			}
 			
-			&.nowrap {
-				white-space: nowrap;
-				padding-right:16px
-			}
-			
-			&.patient {
-				border-right:2px solid $oe-line;
-				padding-right:12px
-			}
-			
-			&.valign-top {
-				vertical-align: top;
+			// <td>
+			td {
+				// create a vertical divider between 
+				// patient data and message data
+				&.patient {
+					border-right:2px solid $oe-line;
+					padding-right:12px
+				}
+				
+				.urgent-message {
+					fill:rgb(202,121,50);
+				}
 			}
 		}
-		
-		// messages 
+			
+
+		// handle the actual messages
+		// within the <td>
+		// DOM: <div class="message">Message</div> 
+		// strucutre to make use of truncated text
 		.message {;
-			width:25vw;
-			
+			width:25vw;  // best guess
 			@include media($oe-extended-browser-size){
 				width:30vw;
 			}
