@@ -22,7 +22,8 @@ table.standard {
 	th, td {
 		text-align: left;  // standardise align
 		
-		// made '.date' more generic (but still supporting 'date' just in case):
+		// made '.date' more generic (redundant)... 
+		// but still supporting 'date' just in case still in use somewhwere
 		&.right,
 		&.date {
 			text-align: right;
@@ -45,17 +46,6 @@ table.standard {
 			&:last-child { 
 				border-bottom: none;
 			}
-			
-			// make specific rows clickable (or make all rows clickable, see further down)
-			&.clickable {
-				&:hover, &:active, &:focus {
-					cursor: pointer;
-					background:$oe-btn-blue; // row is a big button
-					td {
-						color:rgb(255,255,255);
-					}
-				}
-			}
 		}
 		
 		td {
@@ -77,23 +67,6 @@ table.standard {
 			}
 		}
 	}
-	
-	// make ALL rows 'clickable'
-	&.clickable-rows {
-		tbody {
-			tr {
-				&:hover, &:active, &:focus {
-					cursor: pointer;
-					background:$oe-btn-blue; // row is a big button
-					td {
-						color:rgb(255,255,255);
-					}
-				}
-			}
-		}
-	}
-	
-	
-	
 }
 
+@import "tables/clickable-rows";

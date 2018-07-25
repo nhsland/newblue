@@ -341,15 +341,6 @@ table.standard tbody tr:last-child {
   border-bottom: none;
 }
 
-table.standard tbody tr.clickable:hover, table.standard tbody tr.clickable:active, table.standard tbody tr.clickable:focus {
-  cursor: pointer;
-  background: #074598;
-}
-
-table.standard tbody tr.clickable:hover td, table.standard tbody tr.clickable:active td, table.standard tbody tr.clickable:focus td {
-  color: white;
-}
-
 table.standard tbody td {
   padding: 5px 10px 5px 0;
   font-weight: 400;
@@ -368,12 +359,12 @@ table.standard tfoot tr td {
   padding: 5px 10px 5px 0;
 }
 
-table.standard.clickable-rows tbody tr:hover, table.standard.clickable-rows tbody tr:active, table.standard.clickable-rows tbody tr:focus {
+table.standard tbody tr.clickable:hover, table.standard.clickable-rows tbody tr:hover, table.standard tbody tr.clickable:active, table.standard.clickable-rows tbody tr:active, table.standard tbody tr.clickable:focus, table.standard.clickable-rows tbody tr:focus {
   cursor: pointer;
   background: #074598;
 }
 
-table.standard.clickable-rows tbody tr:hover td, table.standard.clickable-rows tbody tr:active td, table.standard.clickable-rows tbody tr:focus td {
+table.standard tbody tr.clickable:hover td, table.standard.clickable-rows tbody tr:hover td, table.standard tbody tr.clickable:active td, table.standard.clickable-rows tbody tr:active td, table.standard tbody tr.clickable:focus td, table.standard.clickable-rows tbody tr:focus td {
   color: white;
 }
 
