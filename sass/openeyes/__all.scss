@@ -36,6 +36,8 @@
 /* Structure */
 @import "structure/html-open-eyes";			// DOM base structure
 @import "structure/oe-grid"; 				// CSS3 grid for page layout 
+/* Generic Layouts */
+@import "structure/layouts/oe-full";		// Layouts. Full-width with ooption to sub-divide (Clinic, Theatre Diaries, Worklist )
 
 /* Components */
 @import "components/logo";    				// OE logo and Version info
@@ -44,8 +46,6 @@
 @import "components/patient-popups";    	// Patient: Quicklook & Demographics (summary)
 @import "components/popups";    			// Popups: GUI for popups
 
-/* Generic Layouts */
-@import "components/layouts/oe-full";		// Layouts. Full-width with ooption to sub-divide (Clinic, Theatre Diaries, Worklist )
 /* Home */
 @import "components/login";					// Login
 @import "components/error-message";			// Message

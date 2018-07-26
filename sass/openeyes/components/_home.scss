@@ -1,22 +1,27 @@
 // OE Home
+// Dashboard for widgets  
 
 .oe-home {
 	background:$oe-blue-dark2;	
 }
 
-// patient search
-@import "home/search-details";
-@import "home/search-results";
+// Patient Search
+@import "home/oe-search-patient";
 
 // Home Widgets
-@import "home/home-dashboard";
-@import "home/home-widget";     // oe-widget
+@import "home/home-dashboard";				// sub-grid layout
+@import "home/oe-widget";     
 
-// Messages (expanded)
-// here (under home) because Messages
-// were the homepage to start with
-@import "home/search-patient"; 
-@import "home/messages";
-@import "home/message-actions";
+
+// Search results
+@import "home/patient-search/search-details";
+@import "home/patient-search/search-results";
+
+
+// Messages (Full)
+// currently only linked to through the Home Widget
+@import "home/messages/subgrid"; 			// sub-grid layout
+@import "home/messages/messages";
+@import "home/messages/message-actions";
 
 

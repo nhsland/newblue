@@ -32,7 +32,7 @@
 		// CSS3: Grid 
 		display: grid;
 		grid: 1fr / 300px 1fr;
-		grid-column-gap: 30px; // but this may NOT work on IE... ?!?
+		grid-column-gap: 30px;  // may not work on Edge < 16
 		
 		
 		.oe-full-side-panel {

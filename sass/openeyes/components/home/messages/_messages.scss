@@ -3,10 +3,16 @@
 
 .home-messages {
 	
-	// extend 'standard' table
+	// wrapper for <table> .messages
+	.messages-all {
+		padding:10px 10px 20px 0;
+	}
+	
+	// <table>
+	// uses and extends 'standard' table
 	.messages {
-		width: calc(100% - 300px); // using flex (but need to change to a sub-grid)
-		margin:10px 30px 20px 0;
+		width: 100%; // calc(100% - 300px); // using flex (but need to change to a sub-grid)
+		
 		
 		// set last <td> to the right	
 		th, td {
@@ -53,8 +59,10 @@
 		// within the <td>
 		// DOM: <div class="message">Message</div> 
 		// strucutre to make use of truncated text
-		.message {;
-			width:25vw;  // best guess
+		.message {
+			// need to push out the containing <td>
+			// this width seems to work well
+			width:25vw;  
 			@include media($oe-extended-browser-size){
 				width:30vw;
 			}
@@ -66,8 +74,8 @@
 			// truncate text
 			white-space: nowrap;
 			text-overflow: ellipsis;
-					
 			
+			// read full message (if truncated)		
 			&.expand {
 				height: auto;
 				text-overflow: none;

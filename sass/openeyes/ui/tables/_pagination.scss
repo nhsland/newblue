@@ -1,0 +1,20 @@
+// OE tables
+// Pagination
+// Can be used in <thead> and/or <tfoot>
+// DOM: 
+
+table.standard {
+	
+	.pagination {
+		// sort out vertical alignment with icons
+		display:flex;
+		align-items:center;	
+		justify-content:flex-end;
+		
+		// style consistently 			
+		color:$oe-text-light;
+		@include font-size(12);
+		font-weight: $oe-font-medium;
+	}
+	
+}

@@ -25,13 +25,15 @@ table {
 			}
 		}
 		
+		$tableStandardPadding: 10px; 
+		
 		th, td {
 			text-align: left;  // standardise align
 			// made '.date' redundant... but still supporting it
 			&.right,
 			&.date {
 				text-align: right;
-				padding-right:4px;
+				padding-right:$tableStandardPadding;
 			}
 		}
 		
@@ -40,7 +42,7 @@ table {
 				color:$oe-text-light;
 				@include font-size(12);
 				font-weight: $oe-font-light;
-				padding:0 10px 10px 0;
+				padding:0 $tableStandardPadding $tableStandardPadding 0;
 			}
 		}
 		
@@ -55,7 +57,7 @@ table {
 			td {
 				color:$oe-text; 
 				font-weight: $oe-font-medium;
-				padding:5px 10px 5px 0; 
+				padding:5px $tableStandardPadding 5px 0; 
 				
 				&.valign-top {
 					vertical-align: top;
@@ -71,7 +73,7 @@ table {
 			tr {
 				border-top:3px solid $oe-line;
 				td {
-					padding:5px 10px 5px 0; 
+					padding:5px $tableStandardPadding 5px 0; 
 				}
 			}
 		}
@@ -80,4 +82,5 @@ table {
 
 @import "tables/clickable-rows";
 @import "tables/highlight-rows";
-// @import "tables/sortable"; not used 
+@import "tables/pagination";
+// @import "tables/sortable"; not used, but DOM has class if I need hook 
