@@ -26,8 +26,9 @@ $oe-blue-dark1: $oe-blue-dark;
 $oe-grey:				rgb(40,52,66);
 $oe-line:				rgb(38,48,61); // don't use alphas, tables with td colspan 2 overlap
 
-$oe-font-light: 300; 	// 400 in Classic
-$oe-font-medium: 400;   // 500 in Classic
+$oe-font-light: 	300; 	// 400 in Classic
+$oe-font-medium: 	400;   	// 500 in Classic
+$oe-font-bold: 		500;  	// 600 in Classic
 
 // buttons
 $oe-btn-default:		$oe-blue;

@@ -38,9 +38,9 @@ p {
 	}
 }
 
-// strong normally looks a bit too heavy
+// set weighting (depends on theme) 
 strong, b {
-	font-weight:500;
+	font-weight:$oe-font-bold;
 }
 
 // used to de-emphasis

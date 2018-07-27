@@ -3541,44 +3541,9 @@ html {
   margin: 10px 30px 20px 0;
 }
 
-.patient-search-results .search-results tbody tr {
-  border-bottom: 1px solid #26303d;
-}
-
-.patient-search-results .search-results tbody tr:last-child {
-  border-bottom: none;
-}
-
-.patient-search-results .search-results tbody tr:hover, .patient-search-results .search-results tbody tr:active, .patient-search-results .search-results tbody tr:focus {
-  cursor: pointer;
-  background: #074598;
-}
-
-.patient-search-results .search-results tbody tr:hover td, .patient-search-results .search-results tbody tr:active td, .patient-search-results .search-results tbody tr:focus td {
-  color: white;
-}
-
 .patient-search-results .search-results th, .patient-search-results .search-results td {
   padding: 10px 6px;
   line-height: 1.4;
-}
-
-.patient-search-results .search-results th {
-  text-align: left;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
-  font-weight: 300;
-}
-
-.patient-search-results .search-results td {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.875rem;
-}
-
-.patient-search-results .search-results tfoot.pagination-container tr td {
-  text-align: right;
-  color: rgba(255, 255, 255, 0.5);
-  border-top: 2px solid #26303d;
 }
 
 .home-messages.subgrid {
