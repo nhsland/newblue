@@ -406,6 +406,7 @@ a:hover, a:focus, a:active {
 
 a.selected {
   color: cyan;
+  font-weight: 400;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -7556,9 +7557,12 @@ table.oe-clinic-list td.center {
   background: #141e2b;
 }
 
+.oe-worklists .oe-full-side-panel {
+  padding: 20px;
+}
+
 .oe-worklists .worklist-summary {
-  margin: 20px 0 0 0;
-  padding: 0 20px 0 0;
+  padding: 20px 20px 0 0;
 }
 
 .oe-worklists .worklist-summary h2 {

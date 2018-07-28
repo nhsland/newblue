@@ -132,6 +132,9 @@ idg.init = function(){
 	// VC Draggable
 	idg.vcDraggable();
 	
+	// Worklist filter 
+	idg.WorkListFilter();
+	
 										
 };
 
