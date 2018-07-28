@@ -2573,4 +2573,10 @@ idg.WorkListFilter = function(){
 			$('#'+listID).show();	
 		}
 	}
+	
+	// fake <tr> row click (always goes to IDG overview demo)
+	$('.clickable-rows tbody tr').click(function(){
+		window.location = '/v3.0-SEM/_overview';
+	});
+	
 }
