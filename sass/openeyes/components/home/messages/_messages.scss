@@ -11,8 +11,7 @@
 	// <table>
 	// uses and extends 'standard' table
 	.messages {
-		width: 100%; // calc(100% - 300px); // using flex (but need to change to a sub-grid)
-		
+		width: 100%; // calc(100% - 300px); was flex but changed sub-grid
 		
 		// set last <td> to the right	
 		th, td {

@@ -3,9 +3,14 @@
 
 .patient-search-results {
 	
+	// wrapper for <table> .messages
+	.results-all {
+		padding:10px 10px 20px 0;
+	}
+	
 	// <table>
 	.search-results {
-		width: calc(100% - 300px);
+		width: 100%; // calc(100% - 300px); was flex but changed sub-grid
 		margin:10px 30px 20px 0;	
 
 		// <tr> is clickable make <tr> more button-ish 

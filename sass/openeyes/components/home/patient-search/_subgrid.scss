@@ -1,12 +1,10 @@
 // OE Home
-// Messages layout
+// Search Results
 
-.home-messages {
-	// Initially laid out with Flex
-	// Now changing to sub-grid to anchor actions
-	// Messages layout is a bit different to the standard
-	// sub-grid layout and we need to allow for the Patient Search
-		
+.patient-search-results {
+	// Copy of Messages hub
+	// Maybe modified in the future.
+	
 	&.subgrid {
 		// ! HOME sub-Grid 
 		// Creates 2 independently scrollable columns
@@ -21,8 +19,8 @@
 		grid: 1fr / 250px 1fr;
 		grid-column-gap: 20px;  		
 		
-		.message-actions,
-		.messages-all {
+		.search-details,
+		.results-all {
 			// height allows for patient search
 			height: calc(100vh - #{ $oe-header-height + ($oe-event-header-height * 2) }); 
 			overflow-y:auto;

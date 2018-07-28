@@ -3505,11 +3505,25 @@ html {
   padding: 0 5px 10px 0;
 }
 
+.patient-search-results.subgrid {
+  display: -ms-grid;
+  -ms-grid-columns: 250px 1fr;
+  -ms-grid-rows: 1fr;
+  display: grid;
+  grid: 1fr / 250px 1fr;
+  grid-column-gap: 20px;
+}
+
+.patient-search-results.subgrid .search-details,
+.patient-search-results.subgrid .results-all {
+  height: calc(100vh - 136px);
+  overflow-y: auto;
+}
+
 .patient-search-results .search-details {
   margin: 20px 0;
   padding: 0 20px;
   border-right: 1px solid #626d7b;
-  width: 250px;
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.75rem;
 }
@@ -3536,8 +3550,12 @@ html {
   margin: 40px 0 0 0;
 }
 
+.patient-search-results .results-all {
+  padding: 10px 10px 20px 0;
+}
+
 .patient-search-results .search-results {
-  width: calc(100% - 300px);
+  width: 100%;
   margin: 10px 30px 20px 0;
 }
 
