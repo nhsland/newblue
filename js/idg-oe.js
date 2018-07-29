@@ -139,159 +139,6 @@ idg.init = function(){
 };
 
 
-/**
-OEscape 
-**/
-var oes = {
-	
-	init:function(){
-		// exit oescape and go back to last viewed (non-oes) page
-		$('#js-exit-oescape').click( function(){
-			window.location = localStorage.getItem("lastPage");
-		});
-	},
-	
-	
-	/*
-	keep track of the last non-oescape page
-	so that you can exit oescape mode and 
-	return to last page	
-	*/
-	oescapeExit:function(){
-		var href = window.location.href;
-		if(href.includes("oescape") == false ){
-			localStorage.setItem( "lastPage",href ); 
-		}
-	}
-}
-/**
-Image Stack animations in OEscape	
-pass in ID string for container and sting ID prefix for images
-returns method to directly update the stack and sets up the Events
-
-@method initStack
-@param 'container' (String) 	- id for container DOM 
-@param 'img_id' (String) 		- id prefix for <img>, assumes numbering 1 to n
-@param 'callBack' (function)  	- callback optional
-@return {object} with method to setImg()	
-**/
-oes.initStack = function(container,img_id_prefix,callBack){
-	var container = $(container);
-	var imgID = 1; 					// default image set in PHP, the rest are 'hidden'
-	var imgTotal = container.children().length;
-	
-	// Mouse & Touch image stack animation
-	$( container ).bind( "mousemove touchmove", function( e ) {
-		e.stopPropagation();
-		
-		var offset = $(this).offset();		// these will update everytime browser is resized
-		var xPos = e.pageX - offset.left;
-		var w = $(this).width();			
-		var num = Math.ceil( xPos / ( w / imgTotal ) );
-		
-		if(num === 0 || num > imgTotal) return; // out of range
-		
-		updateImageStack(num); 
-			
-		if(typeof callBack === "function") callBack(num);			
-	});
-	
-	// update images
-	function updateImageStack(n){
-		$( img_id_prefix + imgID ).hide();
-		$( img_id_prefix + n ).removeClass('hidden').show();
-		imgID = n;
-	}
-	
-	// provide access to update Image directly, e.g. from highCharts
-	return {
-		setImg:function(imgID){
-			updateImageStack(imgID);
-			imgID = imgID;
-		}
-	};
-}
-/**
-Tab buttons control what is shown on the right handside
-
-@param tabBtnInfo (Array) - Array of Objects: {btn:'btn_id',area:'area_id'}
-@param 'callBack' (function)  	- callback optional
-**/
-oes.setupAreaTabButtons = function( tabBtnInfo, callBack ){
-	
-	for( var i=0; i<tabBtnInfo.length; i++ ){
-		
-		var btn = tabBtnInfo[i].btn = $(tabBtnInfo[i].btn);  // turn into jQuery
-		var area = tabBtnInfo[i].content = $(tabBtnInfo[i].content);	
-		var tab = new TabContent( btn,area,i );
-
-	}
-	
-	// assuming first button is default
-	tabBtnInfo[0].btn.addClass('selected');
-	
-	function TabContent( btn, content, i){
-		var btn = btn;
-		var content = content;
-		var i = i;
-		
-		btn.click( function( e ){
-			e.stopPropagation();
-			resetStacks();
-			$(this).addClass('selected');
-			content.removeClass('hidden').show();
-			
-			if(typeof callBack === "function") callBack(i);
-		});		
-	}
-
-	function resetStacks(){
-		for(var i=0; i<tabBtnInfo.length; i++){
-			tabBtnInfo[i].btn.removeClass('selected');
-			tabBtnInfo[i].content.hide();
-		}
-	}
-	
-}
-/**
-OEscape offers 4 resize states for the left hand chart area	
-@param 'callBack' (function)  	- callback optional
-**/
-oes.setupResizeButtons = function( callBack ){
-	
-	var left = $('.oes-left-side'),
-		right = $('.oes-right-side'),
-		size;
-	
-	// setup resize buttons
-	// buttons have data-area attribute: small, medium, large and full
-	$('.js-oes-area-resize').click(function( e ){
-		e.stopPropagation();
-		
-		var str = $(this).data('area');
-		switch(str){
-			case 'small': 	size = 500;
-			break;
-			case 'medium': 	size = 700;
-			break;
-			case 'large': 	size = 900;
-			break;
-			case 'full': 	size = null;  // null, when passed to highcharts makes chart fill container
-			break;
-		}
-		
-		// fullsize requires some tweaking
-		if(size == null){
-			left.css({"min-width":"500px", "width":"100%"});
-			right.hide();
-		} else {
-			left.css({"min-width": size + "px", "width":""});
-			right.show();	
-		}
-		
-		if(typeof callBack === "function" ) callBack(size);	
-	});
-}
 /*
 Clinic JS
 
@@ -1212,528 +1059,6 @@ clinic.updateTasks = function( ){
 	$('#filter-tasks .current').text( clinic.data['tasks'].length );
 }
 /**
-Create 'buttons' for nav menus, 3 different flavours: standard, wrapped and fixed
-- standard: $btn open/closes the popup $content (seperate DOM element). MouseEnter/Leave provides increased functionality for non-touch users
-- wrapped: 'btn' & popup $content wrapped by shared DOM (shortcuts menu), wrapper is used for the eventObj
-- fixed: When the browser width is wide enough CSS fixes open the Activity Panel 
-@ $btn - structurally as <a> but without CSS pseudos :hover, :focus, :active
-@ $content - DOM content to show on click 
-@ wrap - shortcuts has a DOM wrapper, this displays on hover.
-**/
-idg.NavBtnPopup = function(id,$btn,$content){
-		
-	// private
-	var id = id,
-		eventObj = $btn,
-		useMouseEvents = false,
-		isGrouped = false, 		// e.g. patient popups 
-		groupController = null,
-		isFixed = false,
-		css = { 
-			active:'active', 	// hover
-			open:'open' 		// clicked 
-		};	
-		
-	/**
-	public methods
-	**/
-	this.hide = hide;	
-	this.show = show;
-	this.useWrapper = useWrapperEvents;
-	this.fixed = fixed;
-	this.inGroup = inGroup;
-	
-		
-	init(); // all are initiated but useWrapperEvents modifies the eventObj then re-initiates
-		
-	/**
-	provide a way for shortcuts to re-assign
-	the Events to the DOM wrapper
-	**/
-	function init(){
-		// Events
-		eventObj.click(function( e ){
-			e.stopPropagation();
-			// use $btn class as boolean
-			changeContent( $btn.hasClass( css.open ) );
-		})
-		.mouseenter(function(){
-			$btn.addClass( css.active ); 
-			if( useMouseEvents ) show();
-		})
-		.mouseleave(function(){
-			$btn.removeClass( css.active ); 
-			if( useMouseEvents ) hide();
-		});
-	}
-
-	function changeContent( isOpen ){
-		if(isFixed) return; // if popup is fixed
-			
-		if( isOpen ){
-			hide();
-		} else {
-			if(isGrouped) groupController.closeAll(); 
-			show();
-		}
-	}
-	
-	function show(){
-		$btn.addClass( css.open );
-		$content.show();
-		if( ! useMouseEvents &&  ! isFixed  ) addContentEvents();
-	}
-	
-	function hide(){
-		$btn.removeClass( css.open );
-		$content.hide();
-	}	
-	
-	/**
-	Enhance $content behaviour for non-touch users
-	Allow mouseLeave to close $content popup
-	**/
-	function addContentEvents(){
-  		$content.mouseenter(function(){
-	  		$(this).off( 'mouseenter' ); // clean up
-			$(this).mouseleave(function(){
-				$(this).off( 'mouseleave' ); // clean up
-				hide();
-			});
-		});
-	}
-
-	/**
-	DOM structure for the Shortcuts dropdown list is different
-	Need to shift the events to the wrapper DOM rather than the $btn	
-	**/
-	function useWrapperEvents( DOMwrapper ){
-		eventObj.off( 'click mouseenter mouseleave' );
-		eventObj = DOMwrapper;
-		css.open = css.active; // wrap only has 1 class
-		useMouseEvents = true;
-		init(); // re initiate with new eventObj
-	}
-	
-	/**
-	Activity Panel needs to be fixable when the browsers is wide enough
-	(but not in oescape mode)	
-	**/
-	function fixed( b ){
-		isFixed = b;
-		if( b ){
-			$content.off( 'mouseenter mouseleave' );  		
-			show();
-		} else {
-			hide(); 
-		}
-	}
-	
-	/**
-	Group popups to stop overlapping	
-	**/
-	function inGroup( controller ){
-		isGrouped = true;
-		groupController = controller;
-	}	
-}
-
-
-
-/**
-Patient Popup Buttons 
-@ id - id
-@ $btn - structurally as <a> but without CSS pseudos :hover, :focus, :active
-@ $content - DOM content to show on click 
-
-UX: on $btn MouseEvents show the popups (only on the $btn).
-click (touch), locks the popup open. click (touch) to close it 
-
-**/
-idg.PatientBtnPopup = function(id,$btn,$content){
-		
-	// set up vars
-	var id = id,
-		contentPopup = false,
-		useClick = false,
-		useMouse = false,
-		isGrouped = false, 		
-		groupController = null,
-		css = { 
-			active:'active', 	// hover
-			open:'open' 		// clicked 
-		};	
-		
-	/**
-	public methods
-	**/
-	this.inGroup = inGroup;
-	this.hide = reset;
-	this.show = showContent;
-	
-	/**
-	Events
-	**/
-	$btn.click( function( e ){
-			e.stopPropagation();
-			clickChange();				// touch (click)
-			})							
-		.mouseenter( mouseShow )		// MouseEvent enhancements
-		.mouseleave( mouseHide );	
-	
-	/**
-	Handlers
-	click / touch 
-	**/
-	function clickChange(){
-		
-		if(contentPopup){
-			if(useMouse){
-				// user wants to lock it, switch to click events
-				useClick = true;
-				useMouse = false;
-			} else {
-				hideContent();
-			}
-		} else {
-			showContent();
-		}		
-	}	  	
-		  
-	function mouseShow(){
-		if(useClick == false){		
-			showContent();
-			useMouse = true;
-		}
-	}	
-	
-	function mouseHide(){
-		// has user clicked to lock open?
-		if(useClick == false){
-			hideContent();
-			useMouse = false;
-		}
-	}  
-	
-	/**
-	View	
-	**/	  
-  	function showContent(){
-	  	// only 1 Patient Popup open at a time:
-	  	if(isGrouped) groupController.closeAll();
-
-	  	$content.show();
-	  	contentPopup = true;
-	  	$btn.addClass( css.open );
-  	}
-  	
-  	function hideContent(){
-	  	$content.hide();
-	  	contentPopup = false;
-	  	$btn.removeClass( css.open );
-	}
-	
-	// called by the groupController
-	function reset(){
-		hideContent();
-		useClick = false;
-		useMouse = false;
-	}
-
-	/**
-	Group popups to stop overlap	
-	**/
-	function inGroup( controller ){
-		isGrouped = true;
-		groupController = controller;
-	}	
-}
-
-
-
-/**
-Collapse Group
-Uses the DOM and CSS hooks
-**/
-idg.collapseGroups = function(){
-	// find and set up all collapse-groups
-	$('.collapse-group').each(function(){
-		var group = new CollapseGroup( 	$(this).find( '.collapse-group-icon .oe-i' ), 
-										$(this).find( '.collapse-group-header' ), 
-										$(this).find( '.collapse-group-content' ),
-										$(this).data('collapse') );
-	});
-	
-	function CollapseGroup( icon, header, content, initialState ){
-		var $icon = icon, 
-			$header = header, 
-			$content = content,
-			expanded = initialState == 'expanded' ? true : false;
-		
-		if(expanded == false) $content.removeClass('hidden').hide();	
-			
-		$icon.click(function(){
-			change();
-		});	
-	
-		$header.click(function(){
-			change();
-		});	
-		
-		function change(){
-			if(expanded){
-				$content.hide();
-			} else {
-				$content.show();
-			}
-			
-			$icon.toggleClass('minus plus');
-			expanded = !expanded;
-		}	
-	}	
-}
-/**
-Comments
-**/
-idg.comments = function(){
-	/**
-	Comments icon is clicked on to reveal 
-	commets input field. Either:
-	1) Textarea switches places with icon button
-	2) Textarea is shown in different DOM placement  
-	**/
-	
-	$('.js-add-comments').click(function( e ){
-		e.stopPropagation();
-		
-		var $btn = $(this);
-		var $div = $('#'+ $btn.data('input') ); 
-		
-		$btn.hide();
-		
-		
-		
-		$div.show(0,function(){
-			
-			var textArea = $(this).find('textarea');
-			var removeIcon = $(this).find('.js-remove-add-comments');
-			
-			textArea.focus();
-			
-			removeIcon.click(function(){
-				$div.hide();
-				$btn.show();	
-			});
-		});
-		
-	});
-}
-/*
-Hotlist
-*/
-idg.hotList = function(hotlistPopup){
-	
-	if( $('#js-nav-hotlist-btn').length == 0 ) return;
-		
-	// Fix Activity Panel if design allows it to be fixable!
-	if( $('#js-nav-hotlist-btn').data('fixable') == true ){
-		
-		checkBrowserSize();
-		
-		$( window ).resize(function() {
-			checkBrowserSize();
-		});
-		
-		function checkBrowserSize(){	
-	  		if( $( window ).width() > 1800){ // min width for fixing Activity Panel (allows some resizing)
-				hotlistPopup.fixed( true );
-			} else {
-				hotlistPopup.fixed( false );
-			}
-		}  
-	}
-	
-	
-	/*
-	VC mode?	
-	PHP will have hidden everything else other than VC content
-	*/
-	
-	if( $('#js-hotlist-panel').data('vc') == true ) return 
-	
-	/*
-	Hotlist comments.
-	The comment icon shows comment status. 
-	Clicking on it show / hides the <tr> under it. 	
-	*/
-	$('.oe-hotlist-panel .js-patient-comments').click(function( e ){
-		
-		
-		var commentBox = $(this).parent().parent().next();
-		var textArea = commentBox.find('textarea');
-		
-		commentBox.toggle();
-	
-		// update the icon based on the textarea
-		if(textArea.val() == ""){
-
-			if($(this).hasClass("comments-added")){
-				
-				$(this).removeClass("comments-added active");
-				$(this).addClass("comments");
-			}
-
-		} else {
-
-			if($(this).hasClass("comments")){
-				
-				$(this).removeClass("comments");
-				$(this).addClass("comments-added active");
-			
-			}
-		};
-		
-		
-		
-	});
-	
-	
-	
-	
-	
-	// activity datepicker using pickmeup.
-	// CSS controls it's positioning
-	
-	var $pmuWrap = $('#js-pickmeup-datepicker').hide(); 
-	var pmu = pickmeup('#js-pickmeup-datepicker',{
-					format	: 'a d b Y',
-					flat:true,         // position: relative
-					position:'left',
-				});
-
-	// vanilla: 
-	var activityDatePicker = document.getElementById("js-pickmeup-datepicker");
-	activityDatePicker.addEventListener('pickmeup-change', function (e) {
-		$('#js-pickmeup-closed-date').text(e.detail.formatted_date);
-		$pmuWrap.hide();
-	})	
-	
-	$('#js-hotlist-closed-select').click(function(){
-		$pmuWrap.show();
-	});
-	
-	$('#js-hotlist-closed-today').click(function(){
-		pmu.set_date(new Date);
-		$('#js-pickmeup-closed-date').text("Today");
-	});
-}
-/**
-Load content as Overlay
-- Eyedraw App
-- Add New Event	
-@param {btn} - ID or Class of btn 
-@param {phpToLoad} - PHP file name 
-@param {closeBtnID} - ID of close button in overlay content
-@param {callBack} - Optional Callback
-**/
-idg.overlayPopup = function( btn, phpToLoad, closeBtnID, callBack ){
-	
-	// check DOM exists
-	if( $(btn).length ){
-		
-		$(btn).click(function( e ){
-			e.stopPropagation();
-			loadOverlay();
-		});
-	}
-	
-	// for testing and designing UI
-	this.test = loadOverlay;
-	return this;
-	  	
-	/**
-	Create full screen cover using 'oe-popup-wrap'
-	CSS handles the positioning of the loaded DOM
-	**/  	
-	function loadOverlay(){
-		var $overlay = $('<div>');
-  		$overlay.addClass('oe-popup-wrap');
-  		$overlay.load('/php/v3.0/_load/' + phpToLoad,function(){
-	  		closeOverlayBtn( $(closeBtnID, this ), $(this) );
-	  		if(callBack) callBack( $overlay );
-  		});
-  		
-  		$('body').prepend($overlay);
-	}
-	
-	/**
-	Set up a close button	
-	**/
-	function closeOverlayBtn( $closeBtn, $overlay ){
-		$closeBtn.click(function(){
-		  	$overlay.remove();
-	  	});
-	}
-	
-}
-/**
-Toggle Radio Checked
-**/
-idg.toggleRadio = function(){
-	/**
-	With the L / R option as radio
-	we need to be able to toggle there
-	checked state
-	**/
-	$('.js-toggle-radio-checked').each(function(){
-		var checked = true;
-		$(this).click( function(){
-			$(this).prop('checked', checked);
-			checked = !checked;
-		});
-	});
-}
-/*
-Basic tooltip functionality. Quick for IDG demo
-*/
-idg.tooltips = function(){
-	$('.js-has-tooltip').hover(
-		function(){
-			var text = $(this).data('tooltip-content');
-			var offset = $(this).offset();
-			var leftPos, toolCSS; 
-			
-			// check for the available space for tooltip:
-			if ( ( $( window ).width() - offset.left) < 100 ){
-				leftPos = offset.left - 174 // tooltip is 200px (left offset on the icon)
-				toolCSS = "oe-tooltip offset-left";
-			} else {
-				leftPos = offset.left - 94 // tooltip is 200px (center on the icon)
-				toolCSS = "oe-tooltip";
-			}
-			
-			// add, calculate height then show (remove 'hidden')
-			var tip = $( "<div></div>", {
-								"class": toolCSS,
-								"style":"position:fixed; left:"+leftPos+"px; top:0;"
-								});
-			// add the tip:
-			tip.text(text);
-			$('body').append(tip);
-			// calc height:
-			var h = $(".oe-tooltip").height();
-			// update position and show
-			var top = offset.top - h - 20;
-			
-			$(".oe-tooltip").css({"top":top+"px"});
-			
-		},
-		function(){
-			$(".oe-tooltip").remove();
-		}
-	);	
-}
-/**
 Homepage Message expand / contract 	
 **/
 idg.homeMessageExpand = function(){
@@ -1767,6 +1092,253 @@ idg.homeMessageExpand = function(){
 	}
 }
 
+/**
+OEscape 
+**/
+var oes = {
+	
+	init:function(){
+		// exit oescape and go back to last viewed (non-oes) page
+		$('#js-exit-oescape').click( function(){
+			window.location = localStorage.getItem("lastPage");
+		});
+	},
+	
+	
+	/*
+	keep track of the last non-oescape page
+	so that you can exit oescape mode and 
+	return to last page	
+	*/
+	oescapeExit:function(){
+		var href = window.location.href;
+		if(href.includes("oescape") == false ){
+			localStorage.setItem( "lastPage",href ); 
+		}
+	}
+}
+/**
+Image Stack animations in OEscape	
+pass in ID string for container and sting ID prefix for images
+returns method to directly update the stack and sets up the Events
+
+@method initStack
+@param 'container' (String) 	- id for container DOM 
+@param 'img_id' (String) 		- id prefix for <img>, assumes numbering 1 to n
+@param 'callBack' (function)  	- callback optional
+@return {object} with method to setImg()	
+**/
+oes.initStack = function(container,img_id_prefix,callBack){
+	var container = $(container);
+	var imgID = 1; 					// default image set in PHP, the rest are 'hidden'
+	var imgTotal = container.children().length;
+	
+	// Mouse & Touch image stack animation
+	$( container ).bind( "mousemove touchmove", function( e ) {
+		e.stopPropagation();
+		
+		var offset = $(this).offset();		// these will update everytime browser is resized
+		var xPos = e.pageX - offset.left;
+		var w = $(this).width();			
+		var num = Math.ceil( xPos / ( w / imgTotal ) );
+		
+		if(num === 0 || num > imgTotal) return; // out of range
+		
+		updateImageStack(num); 
+			
+		if(typeof callBack === "function") callBack(num);			
+	});
+	
+	// update images
+	function updateImageStack(n){
+		$( img_id_prefix + imgID ).hide();
+		$( img_id_prefix + n ).removeClass('hidden').show();
+		imgID = n;
+	}
+	
+	// provide access to update Image directly, e.g. from highCharts
+	return {
+		setImg:function(imgID){
+			updateImageStack(imgID);
+			imgID = imgID;
+		}
+	};
+}
+/**
+Tab buttons control what is shown on the right handside
+
+@param tabBtnInfo (Array) - Array of Objects: {btn:'btn_id',area:'area_id'}
+@param 'callBack' (function)  	- callback optional
+**/
+oes.setupAreaTabButtons = function( tabBtnInfo, callBack ){
+	
+	for( var i=0; i<tabBtnInfo.length; i++ ){
+		
+		var btn = tabBtnInfo[i].btn = $(tabBtnInfo[i].btn);  // turn into jQuery
+		var area = tabBtnInfo[i].content = $(tabBtnInfo[i].content);	
+		var tab = new TabContent( btn,area,i );
+
+	}
+	
+	// assuming first button is default
+	tabBtnInfo[0].btn.addClass('selected');
+	
+	function TabContent( btn, content, i){
+		var btn = btn;
+		var content = content;
+		var i = i;
+		
+		btn.click( function( e ){
+			e.stopPropagation();
+			resetStacks();
+			$(this).addClass('selected');
+			content.removeClass('hidden').show();
+			
+			if(typeof callBack === "function") callBack(i);
+		});		
+	}
+
+	function resetStacks(){
+		for(var i=0; i<tabBtnInfo.length; i++){
+			tabBtnInfo[i].btn.removeClass('selected');
+			tabBtnInfo[i].content.hide();
+		}
+	}
+	
+}
+/**
+OEscape offers 4 resize states for the left hand chart area	
+@param 'callBack' (function)  	- callback optional
+**/
+oes.setupResizeButtons = function( callBack ){
+	
+	var left = $('.oes-left-side'),
+		right = $('.oes-right-side'),
+		size;
+	
+	// setup resize buttons
+	// buttons have data-area attribute: small, medium, large and full
+	$('.js-oes-area-resize').click(function( e ){
+		e.stopPropagation();
+		
+		var str = $(this).data('area');
+		switch(str){
+			case 'small': 	size = 500;
+			break;
+			case 'medium': 	size = 700;
+			break;
+			case 'large': 	size = 900;
+			break;
+			case 'full': 	size = null;  // null, when passed to highcharts makes chart fill container
+			break;
+		}
+		
+		// fullsize requires some tweaking
+		if(size == null){
+			left.css({"min-width":"500px", "width":"100%"});
+			right.hide();
+		} else {
+			left.css({"min-width": size + "px", "width":""});
+			right.show();	
+		}
+		
+		if(typeof callBack === "function" ) callBack(size);	
+	});
+}
+/*
+Lightening Letter Viewer
+Icon in the Patient banner area links to the 
+Letter Viewer page for the patint
+*/
+idg.lightningViewer = function(){
+	
+	// if on the letter viewing page  
+	// set icon to active 
+	if(window.location.pathname == '/v3.0/lightning-letter-viewer'){
+		$('#js-lightning-viewer-btn').addClass('active');
+		return;	
+	};
+	
+	// Events
+	$('#js-lightning-viewer-btn').click(function( e ){
+		e.stopPropagation();
+		window.location = '/v3.0/lightning-letter-viewer';
+	})
+	.mouseenter(function(){
+		$(this).addClass( 'active' ); 
+	})
+	.mouseleave(function(){
+		$(this).removeClass( 'active' ); 
+	});	
+}
+/**
+All Patient Popups 
+Manage them to avoid any overlapping	
+**/
+idg.patientPopups = {
+	
+	init:function(){
+		
+		if( $('#oe-patient-details').length == 0 ) return;
+		
+		// patient popups
+		var quicklook 		= new idg.PatientBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
+		var demographics 	= new idg.PatientBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
+		var demographics2 	= new idg.PatientBtnPopup( 'management', $('#js-management-btn'), $('#patient-popup-management') );
+		var risks 			= new idg.PatientBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
+	
+	
+		var all = [ quicklook, demographics, demographics2, risks ];
+		
+		for( pBtns in all ) {
+			all[pBtns].inGroup( this ); // register group with PopupBtn 
+		}
+		
+		this.popupBtns = all;
+		
+		/**
+		Problems and Plans
+		These are currently in quicklook popup
+		**/
+		if( $('#problems-plans-sortable').length ){
+			idg.problemsPlans();
+		}
+		
+	},
+
+	closeAll:function(){
+		for( pBtns in this.popupBtns ){
+			this.popupBtns[pBtns].hide();  // close all patient popups
+		}
+	}
+
+}
+
+/*
+Problems &  Plans sortable list 
+In patient quicklook 
+- requires Sortable.js
+*/
+idg.problemsPlans = function(){
+	// make Problems & Plans Sortable:
+	var el = document.getElementById( 'problems-plans-sortable' );
+	var sortable = Sortable.create( el );
+		
+	// Add New Plan / Problem	
+	$('#js-add-pp-btn').click(function(){
+		var input = $('#create-problem-plan');
+		var val = input.val();
+		if( val === '') return;				
+		var html = '<li><span class="drag-handle">&#9776;</span>'+ val +'<div class="remove"><i class="oe-i remove-circle small pro-theme pad"></i></div></li>';
+		$('#problems-plans-sortable').append( html );
+		input.val(''); // refresh input
+	}); 
+
+	// remove a Problem Plan
+	$('#problems-plans-sortable .remove').click(function(){ 
+  		$(this).parent().remove(); 
+  	});
+}
 /*
 Tile Element - watch for data overflow
 */
@@ -2411,6 +1983,528 @@ idg.tileDataOverflow = function(){
 	
 }
 /**
+Create 'buttons' for nav menus, 3 different flavours: standard, wrapped and fixed
+- standard: $btn open/closes the popup $content (seperate DOM element). MouseEnter/Leave provides increased functionality for non-touch users
+- wrapped: 'btn' & popup $content wrapped by shared DOM (shortcuts menu), wrapper is used for the eventObj
+- fixed: When the browser width is wide enough CSS fixes open the Activity Panel 
+@ $btn - structurally as <a> but without CSS pseudos :hover, :focus, :active
+@ $content - DOM content to show on click 
+@ wrap - shortcuts has a DOM wrapper, this displays on hover.
+**/
+idg.NavBtnPopup = function(id,$btn,$content){
+		
+	// private
+	var id = id,
+		eventObj = $btn,
+		useMouseEvents = false,
+		isGrouped = false, 		// e.g. patient popups 
+		groupController = null,
+		isFixed = false,
+		css = { 
+			active:'active', 	// hover
+			open:'open' 		// clicked 
+		};	
+		
+	/**
+	public methods
+	**/
+	this.hide = hide;	
+	this.show = show;
+	this.useWrapper = useWrapperEvents;
+	this.fixed = fixed;
+	this.inGroup = inGroup;
+	
+		
+	init(); // all are initiated but useWrapperEvents modifies the eventObj then re-initiates
+		
+	/**
+	provide a way for shortcuts to re-assign
+	the Events to the DOM wrapper
+	**/
+	function init(){
+		// Events
+		eventObj.click(function( e ){
+			e.stopPropagation();
+			// use $btn class as boolean
+			changeContent( $btn.hasClass( css.open ) );
+		})
+		.mouseenter(function(){
+			$btn.addClass( css.active ); 
+			if( useMouseEvents ) show();
+		})
+		.mouseleave(function(){
+			$btn.removeClass( css.active ); 
+			if( useMouseEvents ) hide();
+		});
+	}
+
+	function changeContent( isOpen ){
+		if(isFixed) return; // if popup is fixed
+			
+		if( isOpen ){
+			hide();
+		} else {
+			if(isGrouped) groupController.closeAll(); 
+			show();
+		}
+	}
+	
+	function show(){
+		$btn.addClass( css.open );
+		$content.show();
+		if( ! useMouseEvents &&  ! isFixed  ) addContentEvents();
+	}
+	
+	function hide(){
+		$btn.removeClass( css.open );
+		$content.hide();
+	}	
+	
+	/**
+	Enhance $content behaviour for non-touch users
+	Allow mouseLeave to close $content popup
+	**/
+	function addContentEvents(){
+  		$content.mouseenter(function(){
+	  		$(this).off( 'mouseenter' ); // clean up
+			$(this).mouseleave(function(){
+				$(this).off( 'mouseleave' ); // clean up
+				hide();
+			});
+		});
+	}
+
+	/**
+	DOM structure for the Shortcuts dropdown list is different
+	Need to shift the events to the wrapper DOM rather than the $btn	
+	**/
+	function useWrapperEvents( DOMwrapper ){
+		eventObj.off( 'click mouseenter mouseleave' );
+		eventObj = DOMwrapper;
+		css.open = css.active; // wrap only has 1 class
+		useMouseEvents = true;
+		init(); // re initiate with new eventObj
+	}
+	
+	/**
+	Activity Panel needs to be fixable when the browsers is wide enough
+	(but not in oescape mode)	
+	**/
+	function fixed( b ){
+		isFixed = b;
+		if( b ){
+			$content.off( 'mouseenter mouseleave' );  		
+			show();
+		} else {
+			hide(); 
+		}
+	}
+	
+	/**
+	Group popups to stop overlapping	
+	**/
+	function inGroup( controller ){
+		isGrouped = true;
+		groupController = controller;
+	}	
+}
+
+
+
+/**
+Patient Popup Buttons 
+@ id - id
+@ $btn - structurally as <a> but without CSS pseudos :hover, :focus, :active
+@ $content - DOM content to show on click 
+
+UX: on $btn MouseEvents show the popups (only on the $btn).
+click (touch), locks the popup open. click (touch) to close it 
+
+**/
+idg.PatientBtnPopup = function(id,$btn,$content){
+		
+	// set up vars
+	var id = id,
+		contentPopup = false,
+		useClick = false,
+		useMouse = false,
+		isGrouped = false, 		
+		groupController = null,
+		css = { 
+			active:'active', 	// hover
+			open:'open' 		// clicked 
+		};	
+		
+	/**
+	public methods
+	**/
+	this.inGroup = inGroup;
+	this.hide = reset;
+	this.show = showContent;
+	
+	/**
+	Events
+	**/
+	$btn.click( function( e ){
+			e.stopPropagation();
+			clickChange();				// touch (click)
+			})							
+		.mouseenter( mouseShow )		// MouseEvent enhancements
+		.mouseleave( mouseHide );	
+	
+	/**
+	Handlers
+	click / touch 
+	**/
+	function clickChange(){
+		
+		if(contentPopup){
+			if(useMouse){
+				// user wants to lock it, switch to click events
+				useClick = true;
+				useMouse = false;
+			} else {
+				hideContent();
+			}
+		} else {
+			showContent();
+		}		
+	}	  	
+		  
+	function mouseShow(){
+		if(useClick == false){		
+			showContent();
+			useMouse = true;
+		}
+	}	
+	
+	function mouseHide(){
+		// has user clicked to lock open?
+		if(useClick == false){
+			hideContent();
+			useMouse = false;
+		}
+	}  
+	
+	/**
+	View	
+	**/	  
+  	function showContent(){
+	  	// only 1 Patient Popup open at a time:
+	  	if(isGrouped) groupController.closeAll();
+
+	  	$content.show();
+	  	contentPopup = true;
+	  	$btn.addClass( css.open );
+  	}
+  	
+  	function hideContent(){
+	  	$content.hide();
+	  	contentPopup = false;
+	  	$btn.removeClass( css.open );
+	}
+	
+	// called by the groupController
+	function reset(){
+		hideContent();
+		useClick = false;
+		useMouse = false;
+	}
+
+	/**
+	Group popups to stop overlap	
+	**/
+	function inGroup( controller ){
+		isGrouped = true;
+		groupController = controller;
+	}	
+}
+
+
+
+/**
+Collapse Group
+Uses the DOM and CSS hooks
+**/
+idg.collapseGroups = function(){
+	// find and set up all collapse-groups
+	$('.collapse-group').each(function(){
+		var group = new CollapseGroup( 	$(this).find( '.collapse-group-icon .oe-i' ), 
+										$(this).find( '.collapse-group-header' ), 
+										$(this).find( '.collapse-group-content' ),
+										$(this).data('collapse') );
+	});
+	
+	function CollapseGroup( icon, header, content, initialState ){
+		var $icon = icon, 
+			$header = header, 
+			$content = content,
+			expanded = initialState == 'expanded' ? true : false;
+		
+		if(expanded == false) $content.removeClass('hidden').hide();	
+			
+		$icon.click(function(){
+			change();
+		});	
+	
+		$header.click(function(){
+			change();
+		});	
+		
+		function change(){
+			if(expanded){
+				$content.hide();
+			} else {
+				$content.show();
+			}
+			
+			$icon.toggleClass('minus plus');
+			expanded = !expanded;
+		}	
+	}	
+}
+/**
+Comments
+**/
+idg.comments = function(){
+	/**
+	Comments icon is clicked on to reveal 
+	commets input field. Either:
+	1) Textarea switches places with icon button
+	2) Textarea is shown in different DOM placement  
+	**/
+	
+	$('.js-add-comments').click(function( e ){
+		e.stopPropagation();
+		
+		var $btn = $(this);
+		var $div = $('#'+ $btn.data('input') ); 
+		
+		$btn.hide();
+		
+		
+		
+		$div.show(0,function(){
+			
+			var textArea = $(this).find('textarea');
+			var removeIcon = $(this).find('.js-remove-add-comments');
+			
+			textArea.focus();
+			
+			removeIcon.click(function(){
+				$div.hide();
+				$btn.show();	
+			});
+		});
+		
+	});
+}
+/*
+Hotlist
+*/
+idg.hotList = function(hotlistPopup){
+	
+	if( $('#js-nav-hotlist-btn').length == 0 ) return;
+		
+	// Fix Activity Panel if design allows it to be fixable!
+	if( $('#js-nav-hotlist-btn').data('fixable') == true ){
+		
+		checkBrowserSize();
+		
+		$( window ).resize(function() {
+			checkBrowserSize();
+		});
+		
+		function checkBrowserSize(){	
+	  		if( $( window ).width() > 1800){ // min width for fixing Activity Panel (allows some resizing)
+				hotlistPopup.fixed( true );
+			} else {
+				hotlistPopup.fixed( false );
+			}
+		}  
+	}
+	
+	
+	/*
+	VC mode?	
+	PHP will have hidden everything else other than VC content
+	*/
+	
+	if( $('#js-hotlist-panel').data('vc') == true ) return 
+	
+	/*
+	Hotlist comments.
+	The comment icon shows comment status. 
+	Clicking on it show / hides the <tr> under it. 	
+	*/
+	$('.oe-hotlist-panel .js-patient-comments').click(function( e ){
+		
+		
+		var commentBox = $(this).parent().parent().next();
+		var textArea = commentBox.find('textarea');
+		
+		commentBox.toggle();
+	
+		// update the icon based on the textarea
+		if(textArea.val() == ""){
+
+			if($(this).hasClass("comments-added")){
+				
+				$(this).removeClass("comments-added active");
+				$(this).addClass("comments");
+			}
+
+		} else {
+
+			if($(this).hasClass("comments")){
+				
+				$(this).removeClass("comments");
+				$(this).addClass("comments-added active");
+			
+			}
+		};
+		
+		
+		
+	});
+	
+	
+	
+	
+	
+	// activity datepicker using pickmeup.
+	// CSS controls it's positioning
+	
+	var $pmuWrap = $('#js-pickmeup-datepicker').hide(); 
+	var pmu = pickmeup('#js-pickmeup-datepicker',{
+					format	: 'a d b Y',
+					flat:true,         // position: relative
+					position:'left',
+				});
+
+	// vanilla: 
+	var activityDatePicker = document.getElementById("js-pickmeup-datepicker");
+	activityDatePicker.addEventListener('pickmeup-change', function (e) {
+		$('#js-pickmeup-closed-date').text(e.detail.formatted_date);
+		$pmuWrap.hide();
+	})	
+	
+	$('#js-hotlist-closed-select').click(function(){
+		$pmuWrap.show();
+	});
+	
+	$('#js-hotlist-closed-today').click(function(){
+		pmu.set_date(new Date);
+		$('#js-pickmeup-closed-date').text("Today");
+	});
+}
+/**
+Load content as Overlay
+- Eyedraw App
+- Add New Event	
+@param {btn} - ID or Class of btn 
+@param {phpToLoad} - PHP file name 
+@param {closeBtnID} - ID of close button in overlay content
+@param {callBack} - Optional Callback
+**/
+idg.overlayPopup = function( btn, phpToLoad, closeBtnID, callBack ){
+	
+	// check DOM exists
+	if( $(btn).length ){
+		
+		$(btn).click(function( e ){
+			e.stopPropagation();
+			loadOverlay();
+		});
+	}
+	
+	// for testing and designing UI
+	this.test = loadOverlay;
+	return this;
+	  	
+	/**
+	Create full screen cover using 'oe-popup-wrap'
+	CSS handles the positioning of the loaded DOM
+	**/  	
+	function loadOverlay(){
+		var $overlay = $('<div>');
+  		$overlay.addClass('oe-popup-wrap');
+  		$overlay.load('/php/v3.0/_load/' + phpToLoad,function(){
+	  		closeOverlayBtn( $(closeBtnID, this ), $(this) );
+	  		if(callBack) callBack( $overlay );
+  		});
+  		
+  		$('body').prepend($overlay);
+	}
+	
+	/**
+	Set up a close button	
+	**/
+	function closeOverlayBtn( $closeBtn, $overlay ){
+		$closeBtn.click(function(){
+		  	$overlay.remove();
+	  	});
+	}
+	
+}
+/**
+Toggle Radio Checked
+**/
+idg.toggleRadio = function(){
+	/**
+	With the L / R option as radio
+	we need to be able to toggle there
+	checked state
+	**/
+	$('.js-toggle-radio-checked').each(function(){
+		var checked = true;
+		$(this).click( function(){
+			$(this).prop('checked', checked);
+			checked = !checked;
+		});
+	});
+}
+/*
+Basic tooltip functionality. Quick for IDG demo
+*/
+idg.tooltips = function(){
+	$('.js-has-tooltip').hover(
+		function(){
+			var text = $(this).data('tooltip-content');
+			var offset = $(this).offset();
+			var leftPos, toolCSS; 
+			
+			// check for the available space for tooltip:
+			if ( ( $( window ).width() - offset.left) < 100 ){
+				leftPos = offset.left - 174 // tooltip is 200px (left offset on the icon)
+				toolCSS = "oe-tooltip offset-left";
+			} else {
+				leftPos = offset.left - 94 // tooltip is 200px (center on the icon)
+				toolCSS = "oe-tooltip";
+			}
+			
+			// add, calculate height then show (remove 'hidden')
+			var tip = $( "<div></div>", {
+								"class": toolCSS,
+								"style":"position:fixed; left:"+leftPos+"px; top:0;"
+								});
+			// add the tip:
+			tip.text(text);
+			$('body').append(tip);
+			// calc height:
+			var h = $(".oe-tooltip").height();
+			// update position and show
+			var top = offset.top - h - 20;
+			
+			$(".oe-tooltip").css({"top":top+"px"});
+			
+		},
+		function(){
+			$(".oe-tooltip").remove();
+		}
+	);	
+}
+/**
 VC Draggable Floating inputs
 **/
 idg.vcDraggable = function(){
@@ -2459,100 +2553,6 @@ idg.vcDraggable = function(){
 	el.addEventListener("touchend", reposFloat, false);
 		
 	
-}
-/*
-Lightening Letter Viewer
-Icon in the Patient banner area links to the 
-Letter Viewer page for the patint
-*/
-idg.lightningViewer = function(){
-	
-	// if on the letter viewing page  
-	// set icon to active 
-	if(window.location.pathname == '/v3.0/lightning-letter-viewer'){
-		$('#js-lightning-viewer-btn').addClass('active');
-		return;	
-	};
-	
-	// Events
-	$('#js-lightning-viewer-btn').click(function( e ){
-		e.stopPropagation();
-		window.location = '/v3.0/lightning-letter-viewer';
-	})
-	.mouseenter(function(){
-		$(this).addClass( 'active' ); 
-	})
-	.mouseleave(function(){
-		$(this).removeClass( 'active' ); 
-	});	
-}
-/**
-All Patient Popups 
-Manage them to avoid any overlapping	
-**/
-idg.patientPopups = {
-	
-	init:function(){
-		
-		if( $('#oe-patient-details').length == 0 ) return;
-		
-		// patient popups
-		var quicklook 		= new idg.PatientBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
-		var demographics 	= new idg.PatientBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
-		var demographics2 	= new idg.PatientBtnPopup( 'management', $('#js-management-btn'), $('#patient-popup-management') );
-		var risks 			= new idg.PatientBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
-	
-	
-		var all = [ quicklook, demographics, demographics2, risks ];
-		
-		for( pBtns in all ) {
-			all[pBtns].inGroup( this ); // register group with PopupBtn 
-		}
-		
-		this.popupBtns = all;
-		
-		/**
-		Problems and Plans
-		These are currently in quicklook popup
-		**/
-		if( $('#problems-plans-sortable').length ){
-			idg.problemsPlans();
-		}
-		
-	},
-
-	closeAll:function(){
-		for( pBtns in this.popupBtns ){
-			this.popupBtns[pBtns].hide();  // close all patient popups
-		}
-	}
-
-}
-
-/*
-Problems &  Plans sortable list 
-In patient quicklook 
-- requires Sortable.js
-*/
-idg.problemsPlans = function(){
-	// make Problems & Plans Sortable:
-	var el = document.getElementById( 'problems-plans-sortable' );
-	var sortable = Sortable.create( el );
-		
-	// Add New Plan / Problem	
-	$('#js-add-pp-btn').click(function(){
-		var input = $('#create-problem-plan');
-		var val = input.val();
-		if( val === '') return;				
-		var html = '<li><span class="drag-handle">&#9776;</span>'+ val +'<div class="remove"><i class="oe-i remove-circle small pro-theme pad"></i></div></li>';
-		$('#problems-plans-sortable').append( html );
-		input.val(''); // refresh input
-	}); 
-
-	// remove a Problem Plan
-	$('#problems-plans-sortable .remove').click(function(){ 
-  		$(this).parent().remove(); 
-  	});
 }
 /**
 Homepage Message expand / contract 	

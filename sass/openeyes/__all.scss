@@ -4,6 +4,9 @@
 //
 // * Include ALL scss files here. Except '__config' files
 
+/* Restrict Printing */
+@import "print";							// Print (from Browser)
+
 /* GUI */
 @import "ui/flex"; 							// flex layout
 @import "ui/lists"; 						// ul and ol defaults.
