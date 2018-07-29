@@ -31,4 +31,13 @@
 		margin-left: -5px;
 	}
 	
+	// offset left 
+	// if too close to the right side or the window
+	// JS will shift it over, need to update the arrow 
+	&.offset-left {
+		&:after {
+			left: 180px;
+		}
+	}
+	
 }

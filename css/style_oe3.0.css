@@ -748,6 +748,10 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   margin-left: -5px;
 }
 
+.oe-tooltip.offset-left:after {
+  left: 180px;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }
