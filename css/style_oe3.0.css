@@ -1527,6 +1527,14 @@ select.fixed-width {
   background-image: url("../svg/in-css/icons/drug-rx.svg");
 }
 
+.oe-i.star {
+  background-image: url("../svg/in-css/icons/star.svg");
+}
+
+.oe-i.star.pro-theme {
+  background-image: url("../svg/in-css/icons/star.svg");
+}
+
 .oe-i.ed-reset {
   background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
 }
@@ -4052,12 +4060,29 @@ html {
 }
 
 .sidebar {
-  padding: 2px 1px 80px 0;
+  padding: 2px 1px 0 0;
   background: #101925;
 }
 
 .sidebar .oescape-icons {
   margin: 0 0 0 6px;
+}
+
+.sidebar.subgrid {
+  display: -ms-grid;
+  -ms-grid-columns: 1fr;
+  -ms-grid-rows: auto 1fr;
+  display: grid;
+  grid: auto 1fr / 1fr;
+}
+
+.sidebar.subgrid .sidebar-fixed-top {
+  height: auto;
+}
+
+.sidebar.subgrid .sidebar-eventlist {
+  padding: 0 0 80px 0;
+  overflow-y: auto;
 }
 
 .sidebar .event {

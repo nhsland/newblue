@@ -7,7 +7,7 @@ $oe-sidebar-sub-height:21px;
 $oe-sidebar-event-height:19px;
 
 .sidebar {
-	padding:2px 1px 80px 0; // pad bottom to allow for quicklook popup 
+	padding:2px 1px 0 0; // pad bottom to allow for quicklook popup 
 	background: $html-pro-bg;
 	
 	.oescape-icons {
@@ -16,6 +16,7 @@ $oe-sidebar-event-height:19px;
 }
 
 // VIEW states
+@import "sidebar/subgrid";
 @import "sidebar/view";
 @import "sidebar/events";
 @import "sidebar/quicklook";
