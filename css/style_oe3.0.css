@@ -494,6 +494,10 @@ strong, b {
   padding: 5px 10px;
 }
 
+.align-right {
+  text-align: right;
+}
+
 .collapse-group {
   position: relative;
   width: 100%;
