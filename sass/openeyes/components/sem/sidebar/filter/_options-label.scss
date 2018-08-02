@@ -1,0 +1,31 @@
+// OE Sidebar - Filter Options
+
+.sidebar-filter-options {
+
+	// Pro-theme label highlights
+	label {
+		&.highlight {
+			color:$oe-pro-user-input-text;
+			background:rgba($oe-pro-user-inputs,0.6);
+			
+			&:hover, &:focus, &:active {
+				background:rgba($oe-pro-user-inputs,0.8);
+			}
+			
+			// due to the styling the white (not checked)
+			// 'looks' more prominent that the checked state
+			// so... 	
+			input[type=checkbox] {
+				opacity:0.1;
+				&:checked  {
+					opacity:1;
+				}
+			} 
+			
+		}
+	}
+	
+}
+
+
+

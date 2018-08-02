@@ -1,0 +1,48 @@
+// OE Sidebar
+// V3 Filter / Order Events
+// replaces previous dropdown selector
+
+.sidebar {
+	
+	// Events by... 
+	
+	.sidebar-filter-btn {
+		position:relative;
+		display:flex;
+		align-items: center; // vertical alignment
+		height:32px;
+		
+		
+		margin:4px 0;
+		padding:0 0 0 28px; // space for background icon
+
+		background: $oe-pro-user-inputs url( svg-path('ui/sidebar') ) left 5px center no-repeat;
+		background-size:15px;
+		
+		// 'button' look
+		@include font-size(12);
+		font-weight:300;
+		color:$oe-pro-text-light;
+		cursor: pointer;
+		
+		// Events by [Date, Types, etc]
+		.order {
+			font-weight:400;
+		}
+		
+		// JS controlled interaction to allow mouse enhancments to touch.
+		&.active {
+			background-color:$oe-btn-blue;
+			color:rgb(255,255,255);
+		}
+		
+		// show the the current sort order (arrow icon up or down)
+		.sorting-order {
+			position:absolute;
+			right:3px;
+			top:7px;
+		}
+
+	}
+	
+}

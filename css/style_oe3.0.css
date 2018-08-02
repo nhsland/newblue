@@ -4064,7 +4064,7 @@ html {
 }
 
 .sidebar {
-  padding: 2px 1px 0 0;
+  padding: 2px 0 0 0;
   background: #101925;
 }
 
@@ -4285,6 +4285,136 @@ html {
 
 .sidebar .groupings .collapse-group-header .count {
   font-size: 0.625rem;
+}
+
+.sidebar .sidebar-filter-btn {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 32px;
+  margin: 4px 0;
+  padding: 0 0 0 28px;
+  background: #1e2e42 url("../svg/in-css/ui/sidebar.svg") left 5px center no-repeat;
+  background-size: 15px;
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.sidebar .sidebar-filter-btn .order {
+  font-weight: 400;
+}
+
+.sidebar .sidebar-filter-btn.active {
+  background-color: #074598;
+  color: white;
+}
+
+.sidebar .sidebar-filter-btn .sorting-order {
+  position: absolute;
+  right: 3px;
+  top: 7px;
+}
+
+.sidebar-filter-options {
+  position: absolute;
+  left: 200px;
+  top: 134px;
+  z-index: 100;
+  width: auto;
+  padding: 10px 20px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  background: #074598;
+}
+
+.sidebar-filter-options .close-icon-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.sidebar-filter-options .options-group {
+  border-right: 1px dotted #396aad;
+  padding: 0 20px 0 0;
+  margin: 0 20px 0 0;
+  min-height: 140px;
+}
+
+.sidebar-filter-options .options-group:last-child {
+  margin-right: 0;
+  border-right: none;
+}
+
+.sidebar-filter-options .options-group h3 {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 10px 0;
+}
+
+.sidebar-filter-options .options-group ul.btn-list {
+  margin: 0 0 10px 0;
+}
+
+.sidebar-filter-options .options-group ul.btn-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px;
+  margin: 0 0 2px 0;
+  height: 21px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(30, 46, 66, 0.6);
+  cursor: pointer;
+}
+
+.sidebar-filter-options .options-group ul.btn-list li:hover, .sidebar-filter-options .options-group ul.btn-list li:focus, .sidebar-filter-options .options-group ul.btn-list li:active, .sidebar-filter-options .options-group ul.btn-list li.selected {
+  background: rgba(30, 46, 66, 0.8);
+  color: #fff;
+}
+
+.sidebar-filter-options .options-group .events-in-list {
+  -webkit-column-count: 4;
+          column-count: 4;
+}
+
+.sidebar-filter-options .options-group .events-select {
+  text-align: right;
+  font-weight: 300;
+  margin: 10px 0 0 0;
+}
+
+.sidebar-filter-options .options-group .events-select a {
+  font-weight: 500;
+  margin: 0 4px;
+}
+
+.sidebar-filter-options label.highlight {
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(30, 46, 66, 0.6);
+}
+
+.sidebar-filter-options label.highlight:hover, .sidebar-filter-options label.highlight:focus, .sidebar-filter-options label.highlight:active {
+  background: rgba(30, 46, 66, 0.8);
+}
+
+.sidebar-filter-options label.highlight input[type=checkbox] {
+  opacity: 0.1;
+}
+
+.sidebar-filter-options label.highlight input[type=checkbox]:checked {
+  opacity: 1;
 }
 
 .sidebar .collapse-group .oe-element-list {

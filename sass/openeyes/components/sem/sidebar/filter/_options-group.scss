@@ -1,0 +1,71 @@
+// OE Sidebar - Filter Options
+// Option Groups
+
+.sidebar-filter-options {
+
+	// layout is achieved with 'flex-layout'
+	.options-group {
+		border-right:1px dotted tint($oe-btn-blue,20);
+		padding:0 20px 0 0;
+		margin:0 20px 0 0;
+		
+		min-height:140px;
+		
+		&:last-child {
+			margin-right:0;
+			border-right:none;
+		}
+		
+		h3 {
+			@include font-size(12);
+			font-weight:300;
+			color:rgba(255,255,255,0.6);
+			margin:0 0 10px 0;
+		}
+		
+		// <ul>
+		ul.btn-list {
+			margin:0 0 10px 0;
+			
+			li {
+				display:flex; 
+				align-items:center;	
+				
+				padding:0 10px;
+				margin:0 0 2px 0;
+				height:21px;
+				
+				@include font-size(12);
+				font-weight:400;
+				color: $oe-pro-text-light; 
+				background:rgba($oe-pro-user-inputs,0.6); 
+				
+				cursor: pointer;
+				
+				&:hover, &:focus, &:active, 
+				&.selected {
+					background:rgba($oe-pro-user-inputs,0.8); 
+					color:#fff;
+				}
+			}
+		}
+		
+		// <ul> Event Types
+		.events-in-list {
+			column-count: 4; 
+		}
+		
+		.events-select {
+			text-align: right;
+			font-weight: 300;
+			margin:10px 0 0 0;
+			a {
+				font-weight:500;
+				margin:0 4px;
+			}
+		}
+	}	
+}
+
+
+

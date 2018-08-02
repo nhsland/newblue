@@ -1,0 +1,31 @@
+// OE Sidebar - Filter Options
+// Located outside of the sidebar DOM
+// to not be constrained by the grid.
+
+.sidebar-filter-options {
+	position:absolute;
+	left:$oe-event-sidebar-width;
+	top:134px;	// top will need updating with JS (depends on OEscape height)
+	
+	z-index:$oe-z-popup;
+	
+	width:auto;
+	padding:10px 20px; 
+	
+	@include font-size(12);
+	color:$oe-pro-text;
+	background:$oe-btn-blue;
+	
+	
+	.close-icon-btn {
+		position:absolute;
+		top:10px;
+		right:10px;
+	}
+}
+
+@import "options-group";	
+@import "options-label";
+
+
+

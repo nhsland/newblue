@@ -135,6 +135,9 @@ idg.init = function(){
 	// Worklist filter 
 	idg.WorkListFilter();
 	
+	// SEM Event Filter Actions 
+	idg.eventFilterActions();
+	
 										
 };
 
