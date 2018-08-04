@@ -138,6 +138,9 @@ idg.init = function(){
 	// SEM Event Filter Actions 
 	idg.eventFilterActions();
 	
+	// OE Filter Options (analytics)
+	idg.filterOptions();
+	
 										
 };
 
@@ -1759,40 +1762,17 @@ idg.eventFilterActions = function(){
 	/*
   	Quick UX / UI JS demo	
   	Setup for touch (click) and enhanced for mouseevents
-  	*/
-  	var options = false;
   	
-  	// handles touch
-  	$('#js-sidebar-filter-btn').click( changeOptions );
-  	
-  	// enchance with mouseevents through DOM wrapper
-  	$('#js-sidebar-filter')
-  		.mouseenter( showOptions )
-  		.mouseleave( hideOptions );
-  	
-  	// controller
-  	function changeOptions(){
-	  	if(!options){
-		  	showOptions()
-	  	} else {
-		  	hideOptions()
-	  	}		  	
-  	}
-  	
-  	function showOptions(){
-	  	$('#js-sidebar-filter-options').show();
-	  	$('#js-sidebar-filter-btn').addClass('active');
-	  	options = true;
-  	}
-  	
-  	function hideOptions(){
-	  	$('#js-sidebar-filter-options').hide();
-	  	$('#js-sidebar-filter-btn').removeClass('active');
-	  	options = false;
-  	}
-
+	@param $wrap
+	@param $btn
+	@param $popup	
+	*/
+	idg.enhancedTouch( 		$('#js-sidebar-filter'), 
+							$('#js-sidebar-filter-btn'), 
+							$('#js-sidebar-filter-options') );
 	
 }
+
 /*
 Right Left Element searching in Examination Edit mode
 All content in popup is static and the inputs only 
@@ -2345,6 +2325,135 @@ idg.comments = function(){
 		});
 		
 	});
+}
+/*
+Enhance Touch.
+1) Provide click (touch) mechanism. 
+2) Enhance for mouse / trackpad
+IDG demo, it assumes a DOM structure of:
+<wrap>
+	<btn />
+	<popup />
+</wrap>	
+... and that there is an 'active' class on button ;)
+*/
+idg.enhancedTouch = function($wrap,$btn,$popup){
+	var popupShow = false;
+	
+  	// handles touch
+  	$btn.click( changePopup );
+  	
+  	// enchance with mouseevents through DOM wrapper
+  	$wrap
+  		.mouseenter( showPopup )
+  		.mouseleave( hidePopup );
+  	
+  	// controller
+  	function changePopup(){
+	  	if(!popupShow){
+		  	showPopup()
+	  	} else {
+		  	hidePopup()
+	  	}		  	
+  	}
+  	
+  	function showPopup(){
+	  	$popup.show();
+	  	$btn.addClass('active');
+	  	popupShow = true;
+  	}
+  	
+  	function hidePopup(){
+	  	$popup.hide();
+	  	$btn.removeClass('active');
+	  	popupShow = false;
+  	}
+  	
+  	// should be a close icon button in the popup
+	var $closeBtn = $popup.find('.close-icon-btn');
+	$closeBtn.click( hidePopup );
+}
+/*
+OE Filter Options
+*/
+
+idg.filterOptions = function(){
+	
+	if( $('.oe-filter-options').length == 0 ) return;
+	
+	/*
+  	Quick UX / UI JS demo	
+  	Setup for touch (click) and enhanced for mouseevents
+  	
+  	Loop through and set up (each filter group as unique IDs)
+  	#oe-filter-options-{id}
+  	#oe-filter-btn-{id}
+	#filter-options-popup-{id}
+	
+	note: JS gets {id} from: data-filter-id="{id}"
+  	*/
+  	
+  	$('.oe-filter-options').each(function(){
+  		var id = $(this).data('filter-id');
+  		/*
+  		@param $wrap
+  		@param $btn
+  		@param $popup	
+		*/
+		idg.enhancedTouch( 		$('#oe-filter-options-'+id), 
+								$('#oe-filter-btn-'+id), 
+								$('#filter-options-popup-'+id) );
+													
+		// position popup based on screen location
+		// options: top-left, top-right, bottom-left, bottom-right
+		var offset = $('#oe-filter-options-'+id).offset();
+		
+		var css;
+		var w = window.innerWidth;
+		var h = window.innerHeight;
+		
+		if( offset.top < ( h / 2 ) ){
+			css = "top-";
+		} else {
+			css = "bottom-";
+		}
+		
+		if(offset.left < ( w / 2 ) ){
+			css += "left";
+		} else {
+			css += "right";
+		}
+		
+		$('#filter-options-popup-'+id).addClass(css);
+		
+		var $allOptionGroups =  $('#filter-options-popup-'+id).find('.options-group');
+		$allOptionGroups.each( function(){
+			// listen to filter changes in the groups
+			updateUI( $(this) );
+		});
+
+	});
+	
+	// update UI to show how Filter works
+	// this is pretty basic but only to demo on IDG
+	function updateUI( $optionGroup ){
+		// get the ID of the IDG demo text element
+		var textID = $optionGroup.data('filter-ui-id');
+		var $allListElements = $('.btn-list li',$optionGroup);
+		
+		$allListElements.click( function(){
+			$('#'+textID).text( $(this).text() );
+			$allListElements.removeClass('selected');
+			$(this).addClass('selected');
+			
+			
+			// $optionGroup.find('.btn-list li').
+		});
+		
+		
+	}
+  	
+
 }
 /*
 Hotlist

@@ -5,7 +5,10 @@
 .sidebar-filter-options {
 	position:absolute;
 	left:$oe-event-sidebar-width;
-	top:134px;	// top will need updating with JS (depends on OEscape height)
+	// top will need updating with JS (depends on OEscape height)
+	// can't use the same technique as the filter-options 
+	// because of the subgrid (at least I think this is why!)
+	top:134px;	// update with JS. (default is for 1 OEscape button row)
 	
 	z-index:$oe-z-popup;
 	
@@ -16,7 +19,7 @@
 	color:$oe-pro-text;
 	background:$oe-btn-blue;
 	
-	
+	// close btn (for touch)
 	.close-icon-btn {
 		position:absolute;
 		top:10px;

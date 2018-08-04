@@ -322,6 +322,29 @@ ul.dslash-list li:first-child {
   background-image: none;
 }
 
+ul.btn-list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  white-space: nowrap;
+  padding: 0 10px;
+  margin: 0 0 2px 0;
+  height: 19px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(30, 46, 66, 0.6);
+  cursor: pointer;
+}
+
+ul.btn-list li:hover, ul.btn-list li:focus, ul.btn-list li:active, ul.btn-list li.selected {
+  background: rgba(30, 46, 66, 0.8);
+  color: #fff;
+}
+
 ul.large-text li, ul.large li {
   font-size: 0.875rem;
 }
@@ -599,12 +622,12 @@ button .oe-i, .button .oe-i, input[type="submit"] .oe-i {
   pointer-events: none;
 }
 
-button:hover, button:focus, button:active, .button:hover, .button:focus, .button:active, input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active {
+button:hover, button:focus, button:active, button.active, .button:hover, .button:focus, .button:active, .button.active, input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active, input[type="submit"].active {
   color: white;
   background: #074598;
 }
 
-button:hover .oe-i, button:focus .oe-i, button:active .oe-i, .button:hover .oe-i, .button:focus .oe-i, .button:active .oe-i, input[type="submit"]:hover .oe-i, input[type="submit"]:focus .oe-i, input[type="submit"]:active .oe-i {
+button:hover .oe-i, button:focus .oe-i, button:active .oe-i, button.active .oe-i, .button:hover .oe-i, .button:focus .oe-i, .button:active .oe-i, .button.active .oe-i, input[type="submit"]:hover .oe-i, input[type="submit"]:focus .oe-i, input[type="submit"]:active .oe-i, input[type="submit"].active .oe-i {
   opacity: 1;
 }
 
@@ -1059,6 +1082,74 @@ select.fixed-width {
   padding: 2px 4px 2px 6px;
   color: rgba(255, 255, 255, 0.8);
   background: rgba(30, 46, 66, 0.5);
+}
+
+.oe-filter-options {
+  position: relative;
+}
+
+.oe-filter-options .filter-options-popup {
+  position: absolute;
+  z-index: 100;
+  padding: 10px 40px 10px 10px;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #074598;
+  background-image: url("../svg/in-css/icons/filter.svg");
+  background-repeat: no-repeat;
+  background-size: 21px;
+}
+
+.oe-filter-options .filter-options-popup.top-left {
+  top: 0;
+  left: 0;
+  padding-left: 40px;
+  background-position: top 8px left 8px;
+}
+
+.oe-filter-options .filter-options-popup.bottom-left {
+  bottom: 0;
+  left: 0;
+  padding-left: 40px;
+  background-position: bottom 8px left 8px;
+}
+
+.oe-filter-options .filter-options-popup.top-right {
+  top: 0;
+  right: 0;
+  padding-right: 40px;
+  background-image: none;
+}
+
+.oe-filter-options .filter-options-popup.bottom-right {
+  bottom: 0;
+  right: 0;
+  background-position: bottom 8px right 8px;
+}
+
+.oe-filter-options .filter-options-popup .close-icon-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.oe-filter-options .filter-options-popup .options-group {
+  max-height: 200px;
+  overflow-y: auto;
+  border-right: 1px dotted #396aad;
+  padding: 0 20px 0 0;
+  margin: 0 20px 0 0;
+}
+
+.oe-filter-options .filter-options-popup .options-group:last-child {
+  margin-right: 0;
+  border-right: none;
+}
+
+.oe-filter-options .filter-options-popup .options-group h3 {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 10px 0;
 }
 
 .oe-popup-wrap {
@@ -4356,32 +4447,6 @@ html {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.6);
   margin: 0 0 10px 0;
-}
-
-.sidebar-filter-options .options-group ul.btn-list {
-  margin: 0 0 10px 0;
-}
-
-.sidebar-filter-options .options-group ul.btn-list li {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 0 10px;
-  margin: 0 0 2px 0;
-  height: 21px;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
-  background: rgba(30, 46, 66, 0.6);
-  cursor: pointer;
-}
-
-.sidebar-filter-options .options-group ul.btn-list li:hover, .sidebar-filter-options .options-group ul.btn-list li:focus, .sidebar-filter-options .options-group ul.btn-list li:active, .sidebar-filter-options .options-group ul.btn-list li.selected {
-  background: rgba(30, 46, 66, 0.8);
-  color: #fff;
 }
 
 .sidebar-filter-options .options-group .events-in-list {

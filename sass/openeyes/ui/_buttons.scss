@@ -73,7 +73,8 @@
 		pointer-events: none;
 	}
 	
-	&:hover, &:focus, &:active {
+	// .active class allows JS controls
+	&:hover, &:focus, &:active, &.active {
 		color: rgb(255,255,255);
 		background: $oe-btn-blue;
 		

@@ -138,6 +138,9 @@ idg.init = function(){
 	// SEM Event Filter Actions 
 	idg.eventFilterActions();
 	
+	// OE Filter Options (analytics)
+	idg.filterOptions();
+	
 										
 };
 

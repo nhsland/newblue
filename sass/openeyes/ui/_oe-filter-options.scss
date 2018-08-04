@@ -1,0 +1,83 @@
+// OE Filter Options
+// Based on the Sidebar Event Filter UI
+
+.oe-filter-options {
+	position: relative; 
+	
+	// filer-options overlays the button
+	.filter-options-popup {
+		position:absolute;
+		
+		z-index:$oe-z-popup;
+		
+		padding:10px 40px 10px 10px;
+		color:$oe-pro-text;
+		background-color:$oe-btn-blue;
+		background-image: url( svg-path('icons/filter') );
+		background-repeat: no-repeat;
+		background-size:21px;
+		
+		
+		
+		// allow popup to anchored by the 4 corners
+		// alignment options
+		&.top-left {
+			top:0;
+			left:0;
+			padding-left:40px;
+			background-position: top 8px left 8px;
+		}
+		
+		&.bottom-left {
+			bottom:0;
+			left:0;
+			padding-left:40px;
+			background-position: bottom 8px left 8px;
+		}
+		
+		&.top-right {
+			top:0;
+			right:0;
+			padding-right:40px;
+			background-image: none; // hide, because of the close icon
+			// background-position: top 8px right 8px;
+		}
+		
+		&.bottom-right {
+			bottom:0;
+			right:0;
+			background-position: bottom 8px right 8px;
+		}
+		
+		// close icon btn (for touch) 
+		.close-icon-btn {
+			position:absolute;
+			top:10px;
+			right:10px;
+		}
+		
+		.options-group {
+			max-height:200px;
+			overflow-y: auto;
+			
+			border-right:1px dotted tint($oe-btn-blue,20);
+			padding:0 20px 0 0;
+			margin:0 20px 0 0;
+			
+			&:last-child {
+				margin-right:0;
+				border-right:none;
+			}
+			
+			h3 {
+				@include font-size(12);
+				font-weight:300;
+				color:rgba(255,255,255,0.6);
+				margin:0 0 10px 0;
+			}
+		}
+
+	}
+
+
+}

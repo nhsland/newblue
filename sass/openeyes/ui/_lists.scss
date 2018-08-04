@@ -35,6 +35,36 @@ ul {
 		}
 	}
 	
+	// based on the Add New Event UI
+	// this provides a generic option to use it
+	&.btn-list {			
+		li {
+			display:flex; 
+			align-items:center;	
+			white-space: nowrap; 	// can't allow wrapping. 
+			
+			padding:0 10px;
+			margin:0 0 2px 0;
+			height:19px;			// 19px matches Event icon type small size
+			
+			@include font-size(12);
+			font-weight:400;
+			
+			// assumes the button list will be used on a blue background colour
+			color: $oe-pro-text-light; 
+			background:rgba($oe-pro-user-inputs,0.6); 
+			
+			cursor: pointer;
+			
+			&:hover, &:focus, &:active, 
+			&.selected {
+				background:rgba($oe-pro-user-inputs,0.8); 
+				color:#fff;
+			}
+		}
+	}
+	
+	
 	&.large-text, 
 	&.large {
 		li {
