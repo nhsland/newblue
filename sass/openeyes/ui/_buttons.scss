@@ -41,31 +41,45 @@
 		background: $oe-pro-user-inputs;
 	}
 	
-	// Event Header variation
-	// make buttons work like tabs in the Event Header
+	// Header Tab Buttons, make buttons work like tabs 
+	// (e.g. Event Header, Theatre Diaries, etc 
 	&.header-tab {
-		background: $oe-grey; 		// match the Header background
+		background: none; 		// to match the Header background
+		&:hover, &:focus, &:active {
+			color: rgb(255,255,255);
+			background: $oe-btn-blue;
+		}
 		&.selected {
+			cursor:default;
+			color:$oe-text-highlight;
 			background: $oe-blue; 	// match the Event background 
 		}	
-	}
-
-	&.selected {
-		color: $oe-text-active; 
-		font-weight: $oe-font-medium;
-		background: $oe-btn-selected;
 		
-		&:hover, &:focus, &:active {
-			color: $oe-text-highlight;
-		}
-		
+		&.disabled,
 		&.inactive {
 			background: none;
-			&:hover, &:focus, &:active {
-				color: $oe-text-highlight;
-				background: none;
-			}
 		}
+		
+	}
+	
+	// this was too complicated. 
+	// made selected same as :hover
+	//&.selected {
+	//	color: $oe-text; 
+	//	font-weight: $oe-font-medium;
+	//	background: $oe-btn-selected;
+		
+	//	&:hover, &:focus, &:active {
+	//	 color: $oe-text-highlight;
+	//	}
+	//}
+	
+	&.disabled,
+	&.inactive {
+		cursor:default;
+		color: rgba($oe-text-light,0.6);
+		background: $oe-btn-default;
+		pointer-events: none; // disable pseudos
 	}
 	
 	// handle icons in buttons
@@ -73,8 +87,10 @@
 		pointer-events: none;
 	}
 	
-	// .active class allows JS controls
-	&:hover, &:focus, &:active, &.active {
+	// .active class allows JS control
+	&:hover, &:focus, &:active, 
+	&.active, 
+	&.selected {
 		color: rgb(255,255,255);
 		background: $oe-btn-blue;
 		

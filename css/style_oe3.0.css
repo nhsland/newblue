@@ -592,42 +592,41 @@ button.pro-theme, .button.pro-theme, input[type="submit"].pro-theme {
 }
 
 button.header-tab, .button.header-tab, input[type="submit"].header-tab {
-  background: #283442;
+  background: none;
+}
+
+button.header-tab:hover, button.header-tab:focus, button.header-tab:active, .button.header-tab:hover, .button.header-tab:focus, .button.header-tab:active, input[type="submit"].header-tab:hover, input[type="submit"].header-tab:focus, input[type="submit"].header-tab:active {
+  color: white;
+  background: #074598;
 }
 
 button.header-tab.selected, .button.header-tab.selected, input[type="submit"].header-tab.selected {
+  cursor: default;
+  color: cyan;
   background: #1e2e42;
 }
 
-button.selected, .button.selected, input[type="submit"].selected {
-  color: #5ab4b4;
-  font-weight: 400;
-  background: #172332;
-}
-
-button.selected:hover, button.selected:focus, button.selected:active, .button.selected:hover, .button.selected:focus, .button.selected:active, input[type="submit"].selected:hover, input[type="submit"].selected:focus, input[type="submit"].selected:active {
-  color: cyan;
-}
-
-button.selected.inactive, .button.selected.inactive, input[type="submit"].selected.inactive {
+button.header-tab.disabled, button.header-tab.inactive, .button.header-tab.disabled, .button.header-tab.inactive, input[type="submit"].header-tab.disabled, input[type="submit"].header-tab.inactive {
   background: none;
 }
 
-button.selected.inactive:hover, button.selected.inactive:focus, button.selected.inactive:active, .button.selected.inactive:hover, .button.selected.inactive:focus, .button.selected.inactive:active, input[type="submit"].selected.inactive:hover, input[type="submit"].selected.inactive:focus, input[type="submit"].selected.inactive:active {
-  color: cyan;
-  background: none;
+button.disabled, button.inactive, .button.disabled, .button.inactive, input[type="submit"].disabled, input[type="submit"].inactive {
+  cursor: default;
+  color: rgba(255, 255, 255, 0.6);
+  background: #1e2e42;
+  pointer-events: none;
 }
 
 button .oe-i, .button .oe-i, input[type="submit"] .oe-i {
   pointer-events: none;
 }
 
-button:hover, button:focus, button:active, button.active, .button:hover, .button:focus, .button:active, .button.active, input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active, input[type="submit"].active {
+button:hover, button:focus, button:active, button.active, button.selected, .button:hover, .button:focus, .button:active, .button.active, .button.selected, input[type="submit"]:hover, input[type="submit"]:focus, input[type="submit"]:active, input[type="submit"].active, input[type="submit"].selected {
   color: white;
   background: #074598;
 }
 
-button:hover .oe-i, button:focus .oe-i, button:active .oe-i, button.active .oe-i, .button:hover .oe-i, .button:focus .oe-i, .button:active .oe-i, .button.active .oe-i, input[type="submit"]:hover .oe-i, input[type="submit"]:focus .oe-i, input[type="submit"]:active .oe-i, input[type="submit"].active .oe-i {
+button:hover .oe-i, button:focus .oe-i, button:active .oe-i, button.active .oe-i, button.selected .oe-i, .button:hover .oe-i, .button:focus .oe-i, .button:active .oe-i, .button.active .oe-i, .button.selected .oe-i, input[type="submit"]:hover .oe-i, input[type="submit"]:focus .oe-i, input[type="submit"]:active .oe-i, input[type="submit"].active .oe-i, input[type="submit"].selected .oe-i {
   opacity: 1;
 }
 
