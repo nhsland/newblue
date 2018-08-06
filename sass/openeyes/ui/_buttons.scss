@@ -39,6 +39,18 @@
 	&.pro-theme {
 		color: $oe-pro-text;
 		background: $oe-pro-user-inputs;
+		
+		&.active,
+		&.selected {
+			background: $oe-pro-btn-blue;
+		}
+		
+		&.disabled,
+		&.inactive {
+			color: rgba($oe-pro-text-light,0.5);
+			background: rgba($oe-pro-blue,0.4);
+		}
+		
 	}
 	
 	// Header Tab Buttons, make buttons work like tabs 
@@ -77,8 +89,8 @@
 	&.disabled,
 	&.inactive {
 		cursor:default;
-		color: rgba($oe-text-light,0.6);
-		background: $oe-btn-default;
+		color: rgba($oe-text-light,0.5);
+		background: rgba($oe-btn-default,0.4);
 		pointer-events: none; // disable pseudos
 	}
 	

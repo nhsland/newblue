@@ -365,6 +365,7 @@ table.standard:first-child {
 
 table.standard.last-right th:last-child, table.standard.last-right td:last-child {
   text-align: right;
+  padding-right: 0;
 }
 
 table.standard th, table.standard td {
@@ -591,6 +592,15 @@ button.pro-theme, .button.pro-theme, input[type="submit"].pro-theme {
   background: #1e2e42;
 }
 
+button.pro-theme.active, button.pro-theme.selected, .button.pro-theme.active, .button.pro-theme.selected, input[type="submit"].pro-theme.active, input[type="submit"].pro-theme.selected {
+  background: #074598;
+}
+
+button.pro-theme.disabled, button.pro-theme.inactive, .button.pro-theme.disabled, .button.pro-theme.inactive, input[type="submit"].pro-theme.disabled, input[type="submit"].pro-theme.inactive {
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(30, 46, 66, 0.4);
+}
+
 button.header-tab, .button.header-tab, input[type="submit"].header-tab {
   background: none;
 }
@@ -612,8 +622,8 @@ button.header-tab.disabled, button.header-tab.inactive, .button.header-tab.disab
 
 button.disabled, button.inactive, .button.disabled, .button.inactive, input[type="submit"].disabled, input[type="submit"].inactive {
   cursor: default;
-  color: rgba(255, 255, 255, 0.6);
-  background: #1e2e42;
+  color: rgba(255, 255, 255, 0.5);
+  background: rgba(30, 46, 66, 0.4);
   pointer-events: none;
 }
 
@@ -2437,6 +2447,13 @@ html {
   color: #626d7b;
 }
 
+.oe-full-content .oe-full-side-panel h4 {
+  margin: 12px 0 6px 0;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #626d7b;
+}
+
 .oe-full-content .oe-full-side-panel ul {
   margin: 10px 0;
 }
@@ -3797,10 +3814,10 @@ html {
 }
 
 .home-messages .message-actions .search-messages h3 {
+  margin: 20px 0 10px 0;
   font-size: 0.9375rem;
   font-weight: 300;
   color: #626d7b;
-  padding: 10px 0 5px 0;
 }
 
 /* SEM Event Episodes */
@@ -7510,7 +7527,7 @@ table.oe-clinic-list td.center {
   font-size: 1.25rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
-  margin: 20px 0 10px 0;
+  margin: 10px 0 10px 0;
 }
 
 .analytics-options .service {
@@ -7546,11 +7563,11 @@ table.oe-clinic-list td.center {
   position: relative;
 }
 
-.analytics-options .chart-filters {
+.analytics-options .custom-filters {
   position: relative;
 }
 
-.analytics-options .chart-filters .filters-selected li {
+.analytics-options .custom-filters .filters-selected li {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
   padding: 4px 0;
@@ -8092,6 +8109,66 @@ table.oe-clinic-list td.center {
 .oe-admin .admin-main table.standard tfoot td {
   padding: 20px 0 0 0;
   margin: 20px 0 0 0;
+}
+
+/* Audit */
+.oe-audit {
+  background: #141e2b;
+}
+
+.oe-audit .audit-filters {
+  padding: 20px;
+}
+
+.oe-audit .audit-main {
+  padding: 0 10px 20px 0;
+}
+
+.oe-audit .audit-main table.standard {
+  margin: 10px 0 40px 0;
+}
+
+.oe-audit .audit-main table.standard th, .oe-audit .audit-main table.standard td {
+  font-size: 0.75rem;
+}
+
+.oe-audit .audit-main table.standard tbody td {
+  padding: 8px 10px 8px 0;
+  vertical-align: top;
+}
+
+.oe-audit .audit-main table.standard tbody td:first-child {
+  padding-left: 3px;
+}
+
+.oe-audit .audit-main table.standard tbody tr.green {
+  background: #123c1f;
+}
+
+.oe-audit .audit-main table.standard tbody tr.red {
+  background: #561313;
+}
+
+.oe-audit .audit-main .logs {
+  padding: 0 10px 20px 10px;
+}
+
+.oe-audit .audit-main table.log-details {
+  width: 100%;
+}
+
+.oe-audit .audit-main table.log-details th {
+  width: 120px;
+}
+
+.oe-audit .audit-main table.log-details .data {
+  width: 750px;
+}
+
+.oe-audit .audit-main table.log-details .data pre {
+  width: 100%;
+  background: #101923;
+  overflow-x: auto;
 }
 
 /* ------------------------ */

@@ -41,10 +41,10 @@
 		.search-messages {
 			
 			h3 {
+				margin:20px 0 10px 0;
 				@include font-size(15);
 				font-weight: 300;
 				color:$oe-blue-light;
-				padding:10px 0 5px 0;
 			}
 		}
 	}

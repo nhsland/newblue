@@ -21,7 +21,7 @@
 		@include font-size(20);
 		font-weight:300;
 		color:$oe-pro-text;
-		margin:20px 0 10px 0;
+		margin:10px 0 10px 0;
 	}
 	
 	.service {
@@ -59,7 +59,7 @@
 		position:relative;
 	}
 	
-	.chart-filters {
+	.custom-filters {
 		position:relative;
 		// <ul>
 		.filters-selected {
