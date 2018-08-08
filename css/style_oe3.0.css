@@ -451,7 +451,7 @@ a {
   text-decoration: none;
 }
 
-a:hover, a:focus, a:active {
+a.hint, a:hover, a:focus, a:active {
   color: #5ab4b4;
 }
 
@@ -2452,6 +2452,7 @@ html {
   font-size: 0.75rem;
   font-weight: 400;
   color: #626d7b;
+  line-height: 1.4;
 }
 
 .oe-full-content .oe-full-side-panel ul {
@@ -8169,6 +8170,42 @@ table.oe-clinic-list td.center {
   width: 100%;
   background: #101923;
   overflow-x: auto;
+}
+
+/* NOD Export */
+.oe-nod-export {
+  background: #141e2b;
+}
+
+.oe-nod-export .oe-full-side-panel {
+  padding: 20px;
+}
+
+.oe-nod-export .oe-full-main {
+  padding: 0 10px 20px 0;
+}
+
+.oe-nod-export .oe-full-main .nod-intro {
+  margin: 20px;
+  padding: 20px;
+  background: #101923;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.oe-nod-export .oe-full-main .nod-intro h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.3125rem;
+  font-weight: 300;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.oe-nod-export .oe-full-main .nod-intro h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.0625rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ------------------------ */
