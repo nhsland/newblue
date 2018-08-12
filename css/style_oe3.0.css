@@ -5610,8 +5610,14 @@ html {
 .main-event .patient-overview {
   color: white;
   background: transparent;
+  width: 50%;
   padding: 10px;
   margin: 0 3px 3px 0;
+}
+
+.main-event .patient-overview:first-child {
+  width: 47%;
+  padding-left: 20px;
 }
 
 .main-event .patient-overview:last-child {

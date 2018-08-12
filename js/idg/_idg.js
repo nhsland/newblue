@@ -13,8 +13,13 @@ idg.init = function(){
 	- Activity panel
 	**/ 
 	var openeyes 	= new idg.NavBtnPopup( 'logo', $('#js-openeyes-btn'), $('#js-openeyes-info') );
-	var shortcuts 	= new idg.NavBtnPopup( 'shortcuts', $('#js-nav-shortcuts-btn'), $('#js-nav-shortcuts-subnav') ).useWrapper( $('#js-nav-shortcuts') );
+	var shortcuts 	= new idg.NavBtnPopup( 'shortcuts', $('#js-nav-shortcuts-btn'), $('#js-nav-shortcuts-subnav') );
 	var hotlist 	= new idg.NavBtnPopup( 'hotlist', $('#js-nav-hotlist-btn'), $('#js-hotlist-panel') );
+	
+
+	openeyes.basic();
+	shortcuts.useWrapper( $('#js-nav-shortcuts') );
+	hotlist.enhanced( $('#js-hotlist-panel-wrapper') );
 	
 	// Activity List popup
 	idg.hotList(hotlist);
