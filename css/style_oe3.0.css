@@ -1145,6 +1145,7 @@ select.fixed-width {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 2px 4px 2px 6px;
+  margin: 0 3px 0 0;
   color: rgba(255, 255, 255, 0.8);
   background: rgba(30, 46, 66, 0.5);
 }
