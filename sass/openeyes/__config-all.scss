@@ -22,7 +22,7 @@ $oe-eyedraw-app-width:					($oe-event-main-default-width + 180px);  // eyedraw p
 $oe-event-extension:					160px; // this just works for laptop width (1440px)
 $oe-event-main-extended-width:			(1080px + $oe-event-extension); // 160px extra width to move headers left.
 $oe-extended-browser-size: 				(1280px + $oe-event-extension); // 1280px is default. 
-$oe-browser-size-activity-panel-fixed:	1800px; // this is based on the JS setting for fixing the hotlist panel
+$oe-browser-size-hotlist-fixed:			1800px; // this is based on the JS setting for fixing the hotlist panel
 
 
 // z

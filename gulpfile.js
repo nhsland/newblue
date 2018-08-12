@@ -230,7 +230,7 @@ gulp.task('uglyJS', function (cb) {
   pump([
       gulp.src( config.idgJS ),
       concat( 'idg-oe.min.js' ),
-      uglify(),
+      // uglify(),
       gulp.dest('./js')
     ],
     cb

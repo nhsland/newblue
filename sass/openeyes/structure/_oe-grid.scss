@@ -74,12 +74,13 @@
 		}
 	}
 	// full width header and content allows for the 
-	// activity panel which is fixed at large resolutions. 
+	// hotlist panel which is fixed at large resolutions. 
 	// JS controls the fixing: fixed at 1800px;
 	.oe-full-header, 
-	.oe-full-content {
-		@include media($oe-browser-size-activity-panel-fixed){
-			width: $oe-browser-size-activity-panel-fixed - $oe-hotlist-panel-width;
+	.oe-full-content,
+	.oe-home  {
+		@include media($oe-browser-size-hotlist-fixed){
+			width: $oe-browser-size-hotlist-fixed - $oe-hotlist-panel-width;
 		}
 	}
 	

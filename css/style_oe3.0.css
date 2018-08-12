@@ -2355,7 +2355,8 @@ html {
 
 @media only screen and (min-width: 1800px) {
   .oe-grid .oe-full-header,
-  .oe-grid .oe-full-content {
+  .oe-grid .oe-full-content,
+  .oe-grid .oe-home {
     width: 1350px;
   }
 }

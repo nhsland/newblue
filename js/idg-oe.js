@@ -2119,6 +2119,9 @@ idg.NavBtnPopup = function(id,$btn,$content){
 			e.stopPropagation();
 			
 			if(mouseOpened && isFixed == false){
+				
+				console.log( isLocked );
+				
 				if(isLocked){
 					// if open it
 					isLocked = false;
@@ -2190,18 +2193,20 @@ idg.NavBtnPopup = function(id,$btn,$content){
 	}
 	
 	/**
-	Activity Panel needs to be fixable when the browsers is wide enough
+	Hotlist Panel needs to be fixable when the browsers is wide enough
 	(but not in oescape mode)	
 	**/
 	function fixed( b ){
 		isFixed = b;
 		
 		if( b ){
-			$content.off( 'mouseenter mouseleave' );  		
+			$content.off( 'mouseenter mouseleave' );  	
+			$btn.addClass( css.locked );	
 			show();
 		} else {
-			hide(); 
 			isLocked = false; // reset this too.
+			$btn.removeClass( css.locked );
+			hide(); 
 		}
 	}
 

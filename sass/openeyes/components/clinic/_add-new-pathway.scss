@@ -28,8 +28,8 @@
 	width:310px;
 	transform: translateX( -310px ); // and shift left
 	
-	@include media($oe-browser-size-activity-panel-fixed){
-		left: $oe-browser-size-activity-panel-fixed - $oe-hotlist-panel-width;
+	@include media($oe-browser-size-hotlist-fixed){
+		left: $oe-browser-size-hotlist-fixed - $oe-hotlist-panel-width;
 	}
 }
 
