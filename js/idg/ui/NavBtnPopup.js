@@ -126,7 +126,7 @@ idg.NavBtnPopup = function(id,$btn,$content){
 				show(); 
 			})
 			.mouseleave(function(){ 
-				if(isLocked == false) hide(); 
+				if(isLocked == false && isFixed == false) hide(); 
 			});	
 
 	}
