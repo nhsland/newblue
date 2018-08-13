@@ -2119,9 +2119,7 @@ idg.NavBtnPopup = function(id,$btn,$content){
 			e.stopPropagation();
 			
 			if(mouseOpened && isFixed == false){
-				
-				console.log( isLocked );
-				
+	
 				if(isLocked){
 					// if open it
 					isLocked = false;
