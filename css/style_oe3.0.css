@@ -988,6 +988,7 @@ input.fixed-width-medium, textarea.fixed-width-medium, select.fixed-width-medium
 label,
 .label {
   margin: 0 10px 0 0;
+  white-space: nowrap;
 }
 
 label.inline,
@@ -1020,6 +1021,12 @@ label.highlight:hover, label.highlight:focus, label.highlight:active,
 label.highlight:last-child,
 .label.highlight:last-child {
   margin-right: 0;
+}
+
+label.highlight.error,
+.label.highlight.error {
+  color: white;
+  background-color: #9b0000;
 }
 
 label .required,

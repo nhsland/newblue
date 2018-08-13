@@ -8,6 +8,7 @@ label,
 	// assuming thats labels will only
 	// be used next to an input:
 	margin:0 10px 0 0;
+	white-space: nowrap;
 	
 	&.inline {
 		display: inline-block;
@@ -33,6 +34,12 @@ label,
 		&:last-child {
 			margin-right:0;
 		}
+		
+		&.error {
+			color:rgb(255,255,255);
+			background-color: $oe-alert-red;
+		}
+		
 	}
 
 	.required {
