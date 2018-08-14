@@ -1,0 +1,47 @@
+/* OE 2 */
+// CSS grabbed and modified from OE v2 print styling.
+// not great v3.0 requires a quick fix to work with current DOM
+
+html {
+	background: #fff;
+	font-family: 'Roboto','Helvetica','Arial',sans-serif;
+	font-weight:400;
+	font-size: 10pt;
+}
+
+
+h1 {
+    font-size: 12pt;
+    margin: 0;
+    vertical-align: bottom;
+    float: left;
+    width: 50%;
+}
+
+h2,b {
+	font-size: 10pt;
+	line-height: 1em;
+}
+
+.from-address {
+    float: right;
+    width: 300px;
+    text-align: right;
+    font-size:6pt;
+    padding-bottom: 10px;
+}
+
+.watermark {
+    position: relative;    
+    img {
+	    position: absolute;
+	    z-index: -1;
+	    top: 120px;
+	    left: 60px;
+	}
+
+}
+
+div.clearfix {
+    clear: both;
+}

@@ -4,8 +4,12 @@
 //
 // * Include ALL scss files here. Except '__config' files
 
+/* Structure */
+@import "structure/html-open-eyes";			// DOM base structure
+@import "structure/oe-grid"; 				// CSS3 grid for page layout 
+
 /* Restrict Printing */
-@import "print";							// Print (from Browser)
+@import "print";							// Restrict Print (from Browser)
 
 /* GUI */
 @import "ui/flex"; 							// flex layout
@@ -37,9 +41,6 @@
 @import "icons"; 							// oe icons 
 @import "icons-events"; 					// oe icons (Events only) 
 
-/* Structure */
-@import "structure/html-open-eyes";			// DOM base structure
-@import "structure/oe-grid"; 				// CSS3 grid for page layout 
 /* Generic Layouts */
 @import "structure/layouts/oe-full";		// Layouts. Full-width with ooption to sub-divide (Clinic, Theatre Diaries, Worklist )
 

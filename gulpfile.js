@@ -37,6 +37,7 @@ Config
 var config = {
 	sass:			'./sass/style_oe3.0_pro.scss',					// root scss file for OE v3.0  (Pro, default theme)
 	classic:		'./sass/style_oe3.0_classic.scss', 				// ... scss for Classic theme
+	print:			'./sass/style_oe3.0_print.scss',				// print
 	eyedrawSass:	'./sass/style_eyedraw-draw-icons.scss', 		// eyedraw draw doodle icons
 	cssFile:		'style_oe3.0',									// suffixed 
 	css:			'./css',
@@ -57,7 +58,7 @@ gulp.task('default',['eyedraw_sprites','event_sprites','sass','uglyJS','readJS',
 watch scss (Pro & Classic themes)	
 **/
 gulp.task('watch-build', function() {
-    gulp.watch( config.watchSass , ['sass','sass-classic']);
+    gulp.watch( config.watchSass , ['sass','sass-classic','sass-print']);
     gulp.watch( config.idgJS , ['readJS','uglyJS'] ); // IDG demo JS files
 });
 
@@ -112,6 +113,25 @@ gulp.task('sass-classic',function(){
 		.pipe( header( datestamp) )				
 		.pipe( gulp.dest( config.css ) );
 });
+
+
+/**
+Print (v3.0) 
+only creates compressed css 
+**/
+gulp.task('sass-print',function(){
+	
+	// datestamp CSS file
+	var datestamp = '/* ' + new Date( Date.now() ) + ' */';
+	
+	return gulp.src( config.print )
+		.pipe( sass( {outputStyle:'expanded'} ) )
+		.pipe( rename( config.cssFile + '_print.css') )
+		.pipe( autoprefixer() ) 
+		.pipe( header( datestamp) )				
+		.pipe( gulp.dest( config.css ) );
+});
+
 
 /**
 Eyedraw sprite PNG and SCSS
@@ -230,7 +250,7 @@ gulp.task('uglyJS', function (cb) {
   pump([
       gulp.src( config.idgJS ),
       concat( 'idg-oe.min.js' ),
-      // uglify(),
+      uglify(),
       gulp.dest('./js')
     ],
     cb
