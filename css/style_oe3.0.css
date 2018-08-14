@@ -4810,7 +4810,7 @@ select.fixed-width {
   background-color: #141e2b;
   margin: 0 20px 10px 0;
   padding: 10px 0 10px 10px;
-  border-bottom: 3px solid #26303d;
+  border-bottom: 2px dotted #26303d;
 }
 
 .main-event .element-header {
