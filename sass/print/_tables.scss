@@ -19,6 +19,10 @@ td, th {
  	text-align:left;   
 }
 
+td {
+	border-bottom: none !important;
+}
+
 .done_bys {
 	th {
 		 width: 22%;

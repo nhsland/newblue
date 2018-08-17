@@ -1,4 +1,4 @@
-/* Fri Aug 17 2018 17:03:05 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Fri Aug 17 2018 18:28:03 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -373,6 +373,10 @@ td, th {
   text-align: left;
 }
 
+td {
+  border-bottom: none !important;
+}
+
 .done_bys th {
   width: 22%;
 }
@@ -424,6 +428,10 @@ td, th {
 
 .prescription_items .prescriptionLabel {
   width: 28%;
+}
+
+.prescription_items .prescriptionTaper td {
+  border-top: none;
 }
 
 .prescription_items .prescriptionTaper td.prescriptionLabel {
