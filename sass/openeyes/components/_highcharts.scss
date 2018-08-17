@@ -242,7 +242,7 @@ $oe-hs-anal-orange:	rgb(230,115,0);				// Analytics orange
 		}
 		
 		&:first-child {
-			display:none; // columnRange addes 2 dataLabels, 1 before, 1 after, this hides the one after
+			//display:none; // columnRange addes 2 dataLabels, 1 before, 1 after, this hides the one after
 		}
 	}
 	

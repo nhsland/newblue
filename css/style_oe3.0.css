@@ -6980,10 +6980,6 @@ span.squiggle {
   fill: none;
 }
 
-.highcharts-root .oes-hs-columnrange-label:first-child {
-  display: none;
-}
-
 .highcharts-root .oes-hs-placeholder-hidden {
   fill: none !important;
   stroke: none !important;
