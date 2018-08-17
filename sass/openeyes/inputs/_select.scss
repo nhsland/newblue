@@ -25,7 +25,7 @@ select {
 	
 	// this fixes the issues where the browser
 	// will use the system-ui fonts:
-	font: inherit;
+	font-family: inherit;
 	
 	// this will remove all the default appearances for inputs:
 	// -moz-appearance: none; 
