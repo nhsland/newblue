@@ -16,6 +16,8 @@ input, textarea {
 		color:$oe-input-placeholder; // Future?
 	}
 	
+	// this fixes the issues where the browser
+	// will use the system-ui fonts:
 	font: inherit;
 }
 
