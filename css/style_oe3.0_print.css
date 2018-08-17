@@ -1,4 +1,4 @@
-/* Fri Aug 17 2018 10:32:41 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Fri Aug 17 2018 15:06:37 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -124,6 +124,7 @@ ol,
 li,
 h1,
 h2,
+b,
 h3,
 h4,
 h5,
@@ -271,8 +272,7 @@ textarea {
   padding-right: 0 !important;
 }
 
-/* OpenEyes UI v3.0 -- PRINT */
-/* OE 2 */
+/* OpenEyes UI v3.0 -- PRINT (bases on v2, minimal touch to style v2 Print DOM) */
 html {
   background: #fff;
   font-family: 'Roboto','Helvetica','Arial',sans-serif;
@@ -280,17 +280,31 @@ html {
   font-size: 10pt;
 }
 
-h1 {
-  font-size: 12pt;
-  margin: 0;
-  vertical-align: bottom;
-  float: left;
-  width: 50%;
+.clearfix {
+  zoom: 1;
 }
 
-h2, b {
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+div.clearfix {
+  clear: both;
+}
+
+.spacer {
+  height: 10px;
+}
+
+.print-form-div {
+  padding: 0 0 0 0;
+  page-break-after: always;
   font-size: 10pt;
-  line-height: 1em;
 }
 
 .from-address {
@@ -312,6 +326,109 @@ h2, b {
   left: 60px;
 }
 
-div.clearfix {
-  clear: both;
+h1 {
+  font-size: 15pt;
+  font-weight: 300;
+  margin: 0;
+  vertical-align: bottom;
+  float: left;
+  width: 50%;
+}
+
+h2, b {
+  font-size: 11pt;
+  font-weight: 300;
+  line-height: 1em;
+  margin: 14px 0 6px 0;
+}
+
+b {
+  display: inline-block;
+}
+
+ul li, ol li {
+  font-size: 8pt !important;
+}
+
+table {
+  width: 100%;
+  border: 2px solid #ddd;
+}
+
+tr.handWritten td {
+  height: 30px;
+}
+
+td, th {
+  border: 1.5px #ddd solid;
+  padding: 4px !important;
+  font-size: 8pt !important;
+  text-align: left;
+}
+
+.done_bys th {
+  width: 22%;
+}
+
+.done_bys td {
+  width: 28%;
+}
+
+.banner {
+  position: relative;
+  max-height: 100px;
+  margin-bottom: 20px;
+}
+
+.banner .letter-seal {
+  width: 50% !important;
+  display: inline-block;
+}
+
+.banner .letter-seal img {
+  width: 80px !important;
+}
+
+.banner .letter-logo {
+  float: right;
+}
+
+.banner .ophdrprescription-letter-logo {
+  width: 49%;
+  display: inline-block;
+}
+
+.banner .ophdrprescription-letter-logo img {
+  width: 350px;
+}
+
+.prescription_header th {
+  width: 20%;
+}
+
+.prescription_header td {
+  width: 30%;
+}
+
+.prescription_header .prescription_items td,
+.prescription_items th {
+  width: 12%;
+}
+
+.prescription_items .prescriptionLabel {
+  width: 28%;
+}
+
+.prescription_items .prescriptionTaper td.prescriptionLabel,
+.prescription_items .prescriptionComments td.prescriptionLabel {
+  text-align: right;
+  padding-right: 5px !important;
+}
+
+.pharmacy_checkboxes th {
+  width: 30%;
+}
+
+.pharmacy_checkboxes td {
+  width: 20%;
 }

@@ -1,0 +1,27 @@
+// OE PRINT
+
+table {
+    width: 100%;
+    border:2px solid #ddd;
+}
+
+tr.handWritten td {
+    height: 30px;
+}
+
+td, th {
+    border: 1.5px #ddd solid;
+    padding: 4px !important;
+    font-size: 8pt !important;
+ 	text-align:left;   
+}
+
+.done_bys {
+	th {
+		 width: 22%;
+	}
+	td {
+		 width: 28%;
+	}
+}
+

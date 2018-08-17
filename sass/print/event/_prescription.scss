@@ -1,0 +1,40 @@
+// OE PRINT
+// Prescription Event
+
+.prescription_header {
+	th {
+    	width: 20%;
+    }
+    
+    td {
+		width: 30%;
+	}
+}
+
+.prescription_header .prescription_items td,
+.prescription_items th {
+    width: 12%;
+}
+
+.prescription_items {
+	.prescriptionLabel {
+	    width: 28%;
+	}
+
+}
+
+.prescription_items .prescriptionTaper td.prescriptionLabel, 
+.prescription_items .prescriptionComments td.prescriptionLabel {
+    text-align: right;
+    padding-right: 5px !important;
+}
+
+.pharmacy_checkboxes {
+	th {
+	    width: 30%;
+	}
+	td {
+	    width: 20%;
+	}
+}
+

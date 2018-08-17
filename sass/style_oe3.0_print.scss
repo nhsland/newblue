@@ -10,6 +10,15 @@
 @import "base/h5bp";		// H5BP, some opinionated defaults 
 @import "base/grid";		// Simple grid layout 
 
-/* OpenEyes UI v3.0 -- PRINT */
+/* OpenEyes UI v3.0 -- PRINT (bases on v2, minimal touch to style v2 Print DOM) */
 // Quick fix required for v3.0 uses existing DOM
 @import "print/base"; 
+@import "print/typography";
+@import "print/lists";
+@import "print/tables";
+@import "print/banner";
+
+@import "print/event/prescription";
+
+
+

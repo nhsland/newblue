@@ -1,4 +1,4 @@
-/* OE 2 */
+// OE PRINT
 // CSS grabbed and modified from OE v2 print styling.
 // not great v3.0 requires a quick fix to work with current DOM
 
@@ -9,19 +9,27 @@ html {
 	font-size: 10pt;
 }
 
-
-h1 {
-    font-size: 12pt;
-    margin: 0;
-    vertical-align: bottom;
-    float: left;
-    width: 50%;
+.clearfix {
+	zoom: 1;
+	&:before, &:after { content: ""; display: table; }
+	&:after { clear: both; }
 }
 
-h2,b {
-	font-size: 10pt;
-	line-height: 1em;
+div.clearfix {
+    clear: both;
 }
+
+// empty <div>
+.spacer {
+	height:10px;
+}
+
+.print-form-div {
+    padding: 0 0 0 0;
+    page-break-after: always;
+    font-size: 10pt;
+}
+
 
 .from-address {
     float: right;
@@ -39,9 +47,5 @@ h2,b {
 	    top: 120px;
 	    left: 60px;
 	}
-
 }
 
-div.clearfix {
-    clear: both;
-}
