@@ -1,4 +1,4 @@
-/* Fri Aug 17 2018 15:10:25 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Fri Aug 17 2018 15:15:57 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -346,8 +346,13 @@ b {
   display: inline-block;
 }
 
+ul, ol {
+  list-style-position: inside;
+}
+
 ul li, ol li {
   font-size: 8pt !important;
+  padding: 2px 0;
 }
 
 table {
