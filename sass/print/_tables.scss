@@ -3,6 +3,9 @@
 table {
     width: 100%;
     border:2px solid #ddd;
+    margin:8px 0;
+    
+    page-break-inside:avoid !important; 
 }
 
 tr.handWritten td {
