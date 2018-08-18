@@ -1,0 +1,39 @@
+// OE Reports
+
+.oe-reports {	
+	
+	// Reports Summary
+	.report-summary {
+		
+		padding:0 0 40px 0;
+		
+		// extend 'standard'
+		table.standard {
+			th, td {
+				@include font-size(12);		
+			}
+			
+			tbody {
+				td {
+					padding:8px 10px 8px 0; 
+					vertical-align: top;
+					
+					&:first-child {
+						padding-left:3px;
+					}
+				}
+			}
+			
+			tfoot {
+				td {
+					padding:20px 0 0 0;
+					margin:20px 0 0 0;
+				}
+			}
+		}
+		
+	}
+	
+}
+
+

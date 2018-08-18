@@ -1261,10 +1261,15 @@ select.fixed-width {
   white-space: nowrap;
 }
 
+.oe-multi-select {
+  margin: 4px 0;
+}
+
 .oe-multi-select.inline li {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
+  margin: 2px 2px 0 0;
 }
 
 .oe-multi-select li {
@@ -1278,7 +1283,7 @@ select.fixed-width {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 2px 4px 2px 6px;
-  margin: 0 3px 0 0;
+  margin: 0 0 2px 0;
   color: rgba(255, 255, 255, 0.8);
   background: rgba(30, 46, 66, 0.5);
 }
@@ -8176,6 +8181,91 @@ table.oe-clinic-list td.center {
 }
 
 .oe-admin .admin-main table.standard tfoot td {
+  padding: 20px 0 0 0;
+  margin: 20px 0 0 0;
+}
+
+.oe-reports {
+  background: #283442;
+}
+
+.oe-reports .reports-main {
+  padding-right: 20px;
+}
+
+.oe-reports .reports-panels {
+  padding: 5px 10px 20px 10px;
+  border-right: 1px solid #626d7b;
+}
+
+.oe-reports .reports-panels .collapse-group {
+  margin: 10px 0 10px 0;
+}
+
+.oe-reports .reports-panels .collapse-group .collapse-group-icon {
+  top: -1px;
+}
+
+.oe-reports .reports-panels .collapse-group h3.collapse-group-header {
+  padding: 0 30px 0 0;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 300;
+}
+
+.oe-reports ul.reports-nav {
+  margin: 5px 0 20px 0;
+}
+
+.oe-reports ul.reports-nav li {
+  display: block;
+  font-size: 0.6875rem;
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid #26303d;
+}
+
+.oe-reports ul.reports-nav li:last-child {
+  border-bottom: none;
+}
+
+.oe-reports ul.reports-nav li a {
+  display: block;
+  padding: 3px 0 3px 3px;
+}
+
+.oe-reports ul.reports-nav li a:hover, .oe-reports ul.reports-nav li a:active, .oe-reports ul.reports-nav li a:focus, .oe-reports ul.reports-nav li a.selected {
+  color: white;
+  background: #074598;
+}
+
+.oe-reports form table {
+  font-size: 0.75rem;
+}
+
+.oe-reports form h3 {
+  font-size: 0.8125rem;
+  margin: 0 0 8px 0;
+}
+
+.oe-reports .report-summary {
+  padding: 0 0 40px 0;
+}
+
+.oe-reports .report-summary table.standard th, .oe-reports .report-summary table.standard td {
+  font-size: 0.75rem;
+}
+
+.oe-reports .report-summary table.standard tbody td {
+  padding: 8px 10px 8px 0;
+  vertical-align: top;
+}
+
+.oe-reports .report-summary table.standard tbody td:first-child {
+  padding-left: 3px;
+}
+
+.oe-reports .report-summary table.standard tfoot td {
   padding: 20px 0 0 0;
   margin: 20px 0 0 0;
 }
