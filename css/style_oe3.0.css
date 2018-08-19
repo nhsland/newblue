@@ -1838,6 +1838,38 @@ select.fixed-width {
   background-image: url("../svg/in-css/icons/star.svg");
 }
 
+.oe-i.letter-1 {
+  background-image: url("../svg/in-css/icons/letter-1.svg");
+}
+
+.oe-i.letter-1.pro-theme {
+  background-image: url("../svg/in-css/icons/letter-1.svg");
+}
+
+.oe-i.letter-2 {
+  background-image: url("../svg/in-css/icons/letter-2.svg");
+}
+
+.oe-i.letter-2.pro-theme {
+  background-image: url("../svg/in-css/icons/letter-2.svg");
+}
+
+.oe-i.letter-in {
+  background-image: url("../svg/in-css/icons/letter-invitation.svg");
+}
+
+.oe-i.letter-in.pro-theme {
+  background-image: url("../svg/in-css/icons/letter-invitation.svg");
+}
+
+.oe-i.letter-GP {
+  background-image: url("../svg/in-css/icons/letter-GP.svg");
+}
+
+.oe-i.letter-GP.pro-theme {
+  background-image: url("../svg/in-css/icons/letter-GP.svg");
+}
+
 .oe-i.ed-reset {
   background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
 }

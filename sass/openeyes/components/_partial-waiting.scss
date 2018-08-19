@@ -1,0 +1,84 @@
+// OE Partial Booking Waiting List
+// extends the basic:
+// layout oe-full
+// table standard layout
+
+.oe-partial-waiting {
+	background:$oe-blue-dark2; // theme changable
+	
+	// extend "oe-full-side-panel"
+	.partial-waiting-filters {
+		padding:20px;
+		
+		table {
+			@include font-size(12);
+		}
+	}
+	
+	// extend "oe-full-main"
+	.partial-waiting-main {
+		padding:0 10px 20px 0;
+
+		table.standard {
+			margin:10px 0 40px 0;
+			th, td {
+				@include font-size(12);		
+			}
+			
+			tbody {
+				td {
+					padding:8px 10px 8px 0; 
+					vertical-align: top;
+					
+					&:first-child {
+						padding-left:3px;
+					}
+				}
+				
+				tr {
+					&.green {
+						background: $oe-bg-hint-green; 
+					}
+					
+					&.red {
+						background: $oe-bg-hint-red;					}
+				}
+			}
+		}
+		
+		// this is all a bit messy.
+		// the DOM is straight grab from current V2.
+		// and this styles it:
+		
+		// <div> wrapper from log-details
+		.logs {
+			padding:0 10px 20px 10px;
+		}
+		
+		table.log-details {
+			width:100%;
+			
+			th {
+				width:120px;
+			} 
+			
+			.data {
+					// needs fixing, or else the <pre> will blow out the table
+					width:750px;
+					pre {	
+						width:100%;
+						background: $oe-bg-highlight;
+						overflow-x:auto;
+					}		
+			}
+			
+			
+		}
+		
+	}
+	
+	
+	
+}
+
+

@@ -180,6 +180,10 @@
 	&.female			{ @include oe3-icons('female'); }
 	&.drug-rx			{ @include oe3-icons('drug-rx'); }
 	&.star				{ @include oe3-icons('star'); }
+	&.letter-1			{ @include oe3-icons('letter-1'); }
+	&.letter-2			{ @include oe3-icons('letter-2'); }
+	&.letter-in			{ @include oe3-icons('letter-invitation'); }
+	&.letter-GP			{ @include oe3-icons('letter-GP'); }
 
 	
 	// Eyedraw icons 
