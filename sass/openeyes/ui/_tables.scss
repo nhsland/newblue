@@ -12,10 +12,16 @@ table {
 		
 		// this may need putting in a class
 		margin:20px 0 10px 0;
+		
+		// first-child isn't working not sure why
 		&:first-child {	
 			margin:0 0 10px 0; 
 		}
 		
+		&.no-padding {
+			margin:0 0 0 0;
+		}
+
 		// matches the default align for tables in Elements
 		&.last-right {
 			th, td {

@@ -543,6 +543,10 @@ table.standard:first-child {
   margin: 0 0 10px 0;
 }
 
+table.standard.no-padding {
+  margin: 0 0 0 0;
+}
+
 table.standard.last-right th:last-child, table.standard.last-right td:last-child {
   text-align: right;
   padding-right: 0;
@@ -8163,7 +8167,7 @@ table.oe-clinic-list td.center {
 
 .oe-admin .admin-main h2 {
   font-size: 1.125rem;
-  color: #69939e;
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 300;
 }
 
@@ -8190,7 +8194,7 @@ table.oe-clinic-list td.center {
 }
 
 .oe-reports .reports-main {
-  padding-right: 20px;
+  padding-right: 10px;
 }
 
 .oe-reports .reports-panels {
@@ -8325,6 +8329,70 @@ table.oe-clinic-list td.center {
 }
 
 .oe-audit .audit-main table.log-details .data pre {
+  width: 100%;
+  background: #101923;
+  overflow-x: auto;
+}
+
+/* Partial Booking Waiting List */
+.oe-partial-waiting {
+  background: #141e2b;
+}
+
+.oe-partial-waiting .partial-waiting-filters {
+  padding: 20px;
+}
+
+.oe-partial-waiting .partial-waiting-filters table {
+  font-size: 0.75rem;
+}
+
+.oe-partial-waiting .partial-waiting-main {
+  padding: 0 10px 20px 0;
+}
+
+.oe-partial-waiting .partial-waiting-main table.standard {
+  margin: 10px 0 40px 0;
+}
+
+.oe-partial-waiting .partial-waiting-main table.standard th, .oe-partial-waiting .partial-waiting-main table.standard td {
+  font-size: 0.75rem;
+}
+
+.oe-partial-waiting .partial-waiting-main table.standard tbody td {
+  padding: 8px 10px 8px 0;
+  vertical-align: top;
+}
+
+.oe-partial-waiting .partial-waiting-main table.standard tbody td:first-child {
+  padding-left: 3px;
+}
+
+.oe-partial-waiting .partial-waiting-main table.standard tbody tr.green {
+  background: #123c1f;
+}
+
+.oe-partial-waiting .partial-waiting-main table.standard tbody tr.red {
+  background: #561313;
+}
+
+.oe-partial-waiting .partial-waiting-main .logs {
+  padding: 0 10px 20px 10px;
+}
+
+.oe-partial-waiting .partial-waiting-main table.log-details {
+  width: 100%;
+}
+
+.oe-partial-waiting .partial-waiting-main table.log-details th {
+  width: 120px;
+}
+
+.oe-partial-waiting .partial-waiting-main table.log-details .data {
+  width: 750px;
+}
+
+.oe-partial-waiting .partial-waiting-main table.log-details .data pre {
   width: 100%;
   background: #101923;
   overflow-x: auto;

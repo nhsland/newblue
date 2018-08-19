@@ -80,9 +80,11 @@
 @import "components/user-profile";			// User Profile
 /* Admin */
 @import "components/admin";					// Admin
-@import "components/reports";				// Reports (based on Admin)
+@import "components/reports";				// Reports (based on Admin, maybe could be combined)
 /* Audit */
 @import "components/audit";					// Audit
+/* Partial Booking Waiting List */
+@import "components/partial-waiting";		// Partial Booking Waiting List
 /* NOD Export */
 @import "components/nod-export";			// NOD export
 
