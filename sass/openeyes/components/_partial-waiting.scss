@@ -22,59 +22,60 @@
 		table.standard {
 			margin:10px 0 40px 0;
 			th, td {
-				@include font-size(12);		
+				@include font-size(12);	
+				padding-left:3px;	
 			}
 			
 			tbody {
+
 				td {
-					padding:8px 10px 8px 0; 
+					padding:8px 10px 8px 3px; 
 					vertical-align: top;
 					
-					&:first-child {
-						padding-left:3px;
+					// make sure icons (in,1,2,GP) don't wrap
+					&.letter-status {
+						white-space: nowrap;
 					}
-				}
-				
-				tr {
-					&.green {
-						background: $oe-bg-hint-green; 
-					}
-					
-					&.red {
-						background: $oe-bg-hint-red;					}
 				}
 			}
 		}
+	}
+	
+	// Key to show the letter icons
+	// and the colour states
+	.waiting-list-key {
+		display:flex;
+		justify-content:flex-end;
+		align-items:flex-start;	
 		
-		// this is all a bit messy.
-		// the DOM is straight grab from current V2.
-		// and this styles it:
+		margin:10px 0 0 0;
 		
-		// <div> wrapper from log-details
-		.logs {
-			padding:0 10px 20px 10px;
+		// "Key"
+		h3 {
+			@include font-size(14);
+			font-weight:300;
+			color:$oe-text-light;
+			padding:0 30px 0 0;
 		}
 		
-		table.log-details {
-			width:100%;
-			
-			th {
-				width:120px;
-			} 
-			
-			.data {
-					// needs fixing, or else the <pre> will blow out the table
-					width:750px;
-					pre {	
-						width:100%;
-						background: $oe-bg-highlight;
-						overflow-x:auto;
-					}		
+		// Keys <ul>
+		// Seems to be a unique UI
+		// so bespoking it. 
+		ul {
+			margin:0 20px 0 0;
+			li {
+				@include font-size(10);
+				margin:0 0 8px 0;
+				color:$oe-text-light;
+				font-weight:$oe-font-light;
+				vertical-align: bottom; // sort out the icon alignment
+				.oe-i {
+					vertical-align: bottom;
+					margin:0 10px 0 0;
+				}
 			}
-			
-			
 		}
-		
+
 	}
 	
 	

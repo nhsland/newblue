@@ -1253,11 +1253,11 @@ select.fixed-width {
 }
 
 .oe-date .mth {
-  padding: 0 0 0 6px;
+  padding: 0 0 0 5px;
 }
 
 .oe-date .yr {
-  padding: 0 0 0 6px;
+  padding: 0 0 0 5px;
 }
 
 .oe-eye-lat-icons {
@@ -8389,45 +8389,53 @@ table.oe-clinic-list td.center {
 
 .oe-partial-waiting .partial-waiting-main table.standard th, .oe-partial-waiting .partial-waiting-main table.standard td {
   font-size: 0.75rem;
-}
-
-.oe-partial-waiting .partial-waiting-main table.standard tbody td {
-  padding: 8px 10px 8px 0;
-  vertical-align: top;
-}
-
-.oe-partial-waiting .partial-waiting-main table.standard tbody td:first-child {
   padding-left: 3px;
 }
 
-.oe-partial-waiting .partial-waiting-main table.standard tbody tr.green {
-  background: #123c1f;
+.oe-partial-waiting .partial-waiting-main table.standard tbody td {
+  padding: 8px 10px 8px 3px;
+  vertical-align: top;
 }
 
-.oe-partial-waiting .partial-waiting-main table.standard tbody tr.red {
-  background: #561313;
+.oe-partial-waiting .partial-waiting-main table.standard tbody td.letter-status {
+  white-space: nowrap;
 }
 
-.oe-partial-waiting .partial-waiting-main .logs {
-  padding: 0 10px 20px 10px;
+.oe-partial-waiting .waiting-list-key {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 10px 0 0 0;
 }
 
-.oe-partial-waiting .partial-waiting-main table.log-details {
-  width: 100%;
+.oe-partial-waiting .waiting-list-key h3 {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0 30px 0 0;
 }
 
-.oe-partial-waiting .partial-waiting-main table.log-details th {
-  width: 120px;
+.oe-partial-waiting .waiting-list-key ul {
+  margin: 0 20px 0 0;
 }
 
-.oe-partial-waiting .partial-waiting-main table.log-details .data {
-  width: 750px;
+.oe-partial-waiting .waiting-list-key ul li {
+  font-size: 0.625rem;
+  margin: 0 0 8px 0;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  vertical-align: bottom;
 }
 
-.oe-partial-waiting .partial-waiting-main table.log-details .data pre {
-  width: 100%;
-  background: #101923;
-  overflow-x: auto;
+.oe-partial-waiting .waiting-list-key ul li .oe-i {
+  vertical-align: bottom;
+  margin: 0 10px 0 0;
 }
 
 /* NOD Export */
