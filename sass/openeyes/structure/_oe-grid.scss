@@ -78,7 +78,7 @@
 	// JS controls the fixing: fixed at 1800px;
 	.oe-full-header, 
 	.oe-full-content,
-	.oe-home  {
+	.oe-allow-for-fixing-hotlist  {
 		@include media($oe-browser-size-hotlist-fixed){
 			width: $oe-browser-size-hotlist-fixed - $oe-hotlist-panel-width;
 		}
