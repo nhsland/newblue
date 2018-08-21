@@ -8447,7 +8447,7 @@ table.oe-clinic-list td.center {
 }
 
 .oe-partial-waiting .send-another-reminder {
-  background: linear-gradient(to right, cyan 7px, transparent 7px);
+  background: linear-gradient(to right, #5ab4b4 7px, transparent 7px);
   padding-left: 12px !important;
 }
 

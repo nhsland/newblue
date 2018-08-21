@@ -1,4 +1,4 @@
-/* Tue Aug 21 2018 11:16:44 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Tue Aug 21 2018 13:21:12 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -443,6 +443,12 @@ td {
 
 .prescription_items .prescriptionTaper td.prescriptionLabel:before {
   content: '\2026 ';
+}
+
+.prescription_items .prescriptionComments td {
+  border-top: none;
+  font-weight: 500;
+  font-style: italic;
 }
 
 .prescription_items .prescriptionComments td.prescriptionLabel {

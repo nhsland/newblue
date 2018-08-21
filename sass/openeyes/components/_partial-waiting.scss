@@ -87,7 +87,7 @@
 	}
 	
 	.send-another-reminder {
-		background: linear-gradient(to right,$oe-text-highlight $colour-flag-w, transparent $colour-flag-w);
+		background: linear-gradient(to right,$oe-text-active $colour-flag-w, transparent $colour-flag-w);
 		padding-left: $colour-flag-w + 5px !important;
 	}
 	
