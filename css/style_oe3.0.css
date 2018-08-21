@@ -515,7 +515,7 @@ ul.btn-list li {
   height: 19px;
   font-size: 0.75rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   background: rgba(30, 46, 66, 0.6);
   cursor: pointer;
 }
@@ -562,7 +562,7 @@ table.standard th.right, table.standard th.date, table.standard td.right, table.
 }
 
 table.standard thead th {
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-size: 0.75rem;
   font-weight: 300;
   padding: 0 10px 10px 0;
@@ -577,7 +577,7 @@ table.standard tbody tr:last-child {
 }
 
 table.standard tbody td {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-weight: 400;
   padding: 5px 10px 5px 0;
 }
@@ -621,7 +621,7 @@ table.standard .pagination {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-size: 0.75rem;
   font-weight: 400;
 }
@@ -684,7 +684,7 @@ strong, b {
 
 .highlighter.orange {
   background: #b45a00;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .right-color-text {
@@ -759,7 +759,7 @@ button, .button, input[type="submit"] {
   border-radius: 0 !important;
   font-size: 0.75rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #1e2e42;
   cursor: pointer;
   padding: 0 8px;
@@ -772,7 +772,7 @@ button.large, .button.large, input[type="submit"].large {
 }
 
 button.pro-theme, .button.pro-theme, input[type="submit"].pro-theme {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #1e2e42;
 }
 
@@ -781,8 +781,9 @@ button.pro-theme.active, button.pro-theme.selected, .button.pro-theme.active, .b
 }
 
 button.pro-theme.disabled, button.pro-theme.inactive, .button.pro-theme.disabled, .button.pro-theme.inactive, input[type="submit"].pro-theme.disabled, input[type="submit"].pro-theme.inactive {
-  color: rgba(255, 255, 255, 0.5);
-  background: rgba(30, 46, 66, 0.4);
+  color: rgba(140, 140, 140, 0.6) !important;
+  background: rgba(40, 52, 66, 0.8) !important;
+  border: 1px solid rgba(140, 140, 140, 0.1);
 }
 
 button.header-tab, .button.header-tab, input[type="submit"].header-tab {
@@ -802,13 +803,14 @@ button.header-tab.selected, .button.header-tab.selected, input[type="submit"].he
 
 button.header-tab.disabled, button.header-tab.inactive, .button.header-tab.disabled, .button.header-tab.inactive, input[type="submit"].header-tab.disabled, input[type="submit"].header-tab.inactive {
   background: none;
+  border: none !important;
 }
 
 button.disabled, button.inactive, .button.disabled, .button.inactive, input[type="submit"].disabled, input[type="submit"].inactive {
   cursor: default;
-  color: rgba(255, 255, 255, 0.6) !important;
+  color: rgba(140, 140, 140, 0.6) !important;
   background: rgba(40, 52, 66, 0.8) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(140, 140, 140, 0.1);
   pointer-events: none;
 }
 
@@ -880,7 +882,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .alert-box.alert, .alert-box.issue {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #b45a00;
 }
 
@@ -909,11 +911,11 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .oe-popup .status-box {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .status-box {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-size: 0.8125rem;
   line-height: 1.4;
   border: 4px solid cyan;
@@ -973,7 +975,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   padding: 8px 8px 4px 8px;
   border-bottom: 1px solid cyan;
   background: #0a0a14;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-size: 0.6875rem;
   font-weight: 400;
   line-height: 1.5;
@@ -1013,7 +1015,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: #8c8c8c;
 }
 
 .oe-eyedraw-app ::-webkit-scrollbar-track {
@@ -1088,12 +1090,12 @@ input, textarea, select {
   border: 0;
   outline: none;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background-color: #1e2e42;
 }
 
 input.pro-theme, textarea.pro-theme, select.pro-theme {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background-color: #1e2e42;
 }
 
@@ -1129,7 +1131,7 @@ label.highlight,
 .label.highlight {
   padding: 3px 6px 3px 6px;
   margin: 1px 3px 1px 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: rgba(30, 46, 66, 0.1);
   border-radius: 3px;
   cursor: pointer;
@@ -1172,19 +1174,19 @@ input, textarea {
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: rgba(185, 185, 185, 0.84);
+  color: #a3a3a3;
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: rgba(185, 185, 185, 0.84);
+  color: #a3a3a3;
 }
 
 input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-  color: rgba(185, 185, 185, 0.84);
+  color: #a3a3a3;
 }
 
 input::placeholder, textarea::placeholder {
-  color: rgba(185, 185, 185, 0.84);
+  color: #a3a3a3;
 }
 
 input.search {
@@ -1289,7 +1291,7 @@ select.fixed-width {
           justify-content: space-between;
   padding: 2px 4px 2px 6px;
   margin: 0 0 2px 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: rgba(30, 46, 66, 0.5);
 }
 
@@ -1301,7 +1303,7 @@ select.fixed-width {
   position: absolute;
   z-index: 100;
   padding: 10px 40px 10px 10px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background-color: #074598;
   background-image: url("../svg/in-css/icons/filter.svg");
   background-repeat: no-repeat;
@@ -2471,7 +2473,7 @@ select.fixed-width {
 }
 
 .oe-full-header .title {
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 200;
@@ -2537,11 +2539,11 @@ select.fixed-width {
 }
 
 .oe-full-content .oe-full-main {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-full-content .oe-full-side-panel {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-full-content .oe-full-side-panel p {
@@ -2570,7 +2572,7 @@ select.fixed-width {
 
 .oe-full-content .oe-full-side-panel ul li {
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   padding: 0 0 10px 0;
 }
 
@@ -2585,7 +2587,7 @@ select.fixed-width {
   position: fixed;
   top: 22px;
   left: 200px;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-size: 0.875rem;
   font-weight: 300;
 }
@@ -2638,7 +2640,7 @@ select.fixed-width {
 
 .openeyes-brand .oe-product-info p {
   font-size: 0.6875rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-weight: 300;
   line-height: 1.4;
   margin: 0 0 5px 0;
@@ -2659,14 +2661,14 @@ select.fixed-width {
 .openeyes-brand .oe-product-info h3 {
   font-size: 1.4375rem;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   margin: 0 0 10px 0;
 }
 
 .openeyes-brand .oe-product-info h4 {
   font-size: 0.625rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   margin: 0 0 5px 0;
 }
 
@@ -2686,7 +2688,7 @@ select.fixed-width {
 }
 
 .oe-patient {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-size: 0.6875rem;
 }
 
@@ -2857,7 +2859,7 @@ select.fixed-width {
 .oe-user .oe-user-profile-context {
   margin: auto 0 auto 5px;
   width: 290px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -3009,7 +3011,7 @@ select.fixed-width {
   left: 0;
   font-size: 1.4375rem;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-clinic-management .change-clinic {
@@ -3049,7 +3051,7 @@ select.fixed-width {
 
 .oe-hotlist-panel .overview h3 {
   font-size: 1.125rem;
-  color: rgba(219, 219, 219, 0.82);
+  color: #b8b8b8;
   font-weight: 300;
 }
 
@@ -3069,7 +3071,7 @@ select.fixed-width {
 .oe-hotlist-panel .overview .closed-search .closed-date {
   display: inline-block;
   padding: 0 15px 0 0;
-  color: rgba(219, 219, 219, 0.82);
+  color: #b8b8b8;
   cursor: pointer;
 }
 
@@ -3128,7 +3130,7 @@ select.fixed-width {
 .oe-hotlist-panel .activity-list td {
   font-size: 0.75rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-hotlist-panel .activity-list .duration {
@@ -3185,7 +3187,7 @@ select.fixed-width {
   padding: 0 0 0 0;
   font-size: 1.125rem;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-patient-popup .subtitle .extra-actions {
@@ -3203,7 +3205,7 @@ select.fixed-width {
   margin: 0 8px 0 0;
   font-size: 0.6875rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .quicklook-data-groups:last-child {
@@ -3243,11 +3245,11 @@ select.fixed-width {
 }
 
 .quicklook-data-groups table th {
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .quicklook-data-groups table td {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .quicklook-data-groups table th, .quicklook-data-groups table td {
@@ -3286,7 +3288,7 @@ select.fixed-width {
   padding: 5px 0px 3px 0px;
   font-size: 0.6875rem;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .management-summaries li h6 {
@@ -3294,7 +3296,7 @@ select.fixed-width {
   padding: 5px 0 0 0;
   font-size: 0.8125rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   float: left;
 }
 
@@ -3316,7 +3318,7 @@ select.fixed-width {
   margin: 0 0 1px 0;
   background: #182535;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .problems-plans .problems-plans-sortable li .drag-handle {
@@ -3357,7 +3359,7 @@ select.fixed-width {
   background: #182535;
   padding: 5px;
   border-radius: 3px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   width: calc(100% - 38px);
 }
 
@@ -3377,14 +3379,14 @@ select.fixed-width {
   margin: 0;
   padding: 8px 0;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   line-height: 1.5;
 }
 
 .oe-patient-popup table.patient-demographics tr td:first-child {
   width: 30%;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-patient-popup table.patient-demographics tr td b {
@@ -3409,7 +3411,7 @@ select.fixed-width {
   padding: 1px 0 1px 4px;
   vertical-align: middle;
   height: 28px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-patient-popup table.risks td:last-child {
@@ -3422,7 +3424,7 @@ select.fixed-width {
 
 .oe-patient-popup .situational-awareness {
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   padding: 0 0 10px 0;
 }
 
@@ -3449,7 +3451,7 @@ select.fixed-width {
 
 .oe-patient-popup .patient-numbers {
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   padding: 5px 10px 6px 5px;
   margin: 0 0 10px 0;
   background: #182535;
@@ -3464,7 +3466,7 @@ select.fixed-width {
 }
 
 .oe-patient-popup .patient-numbers label.highlight {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #182535;
 }
 
@@ -3480,13 +3482,13 @@ select.fixed-width {
   min-width: 600px;
   max-width: 1160px;
   padding: 20px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-popup .title {
   font-size: 1.125rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   padding: 0 0 10px 0;
 }
 
@@ -3510,7 +3512,7 @@ select.fixed-width {
   line-height: 19px;
   font-size: 0.75rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   background: #313f4c;
   cursor: pointer;
 }
@@ -3559,7 +3561,7 @@ select.fixed-width {
 }
 
 .oe-popup-content.previous-elements table td .metadata {
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-popup-content.previous-elements table td .metadata .info {
@@ -3567,7 +3569,7 @@ select.fixed-width {
 }
 
 .oe-popup-content.previous-elements table td .metadata .user {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-popup-content.previous-elements .element-eyes {
@@ -3610,7 +3612,7 @@ select.fixed-width {
   font-size: 3.625rem;
   text-align: center;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-login .login .user {
@@ -3632,7 +3634,7 @@ select.fixed-width {
   margin: 30px auto 0 auto;
   padding: 20px 0 20px 0;
   border-top: 1px solid #26303d;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-size: 0.75rem;
 }
 
@@ -3648,7 +3650,7 @@ select.fixed-width {
   position: relative;
   top: -50px;
   width: 500px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-error-message .message h1 {
@@ -3656,14 +3658,14 @@ select.fixed-width {
   font-size: 3.625rem;
   text-align: center;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-error-message .message h2, .oe-error-message .message h3 {
   margin: 15px 0 10px 0;
   font-size: 1.375rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-error-message .message ul {
@@ -3721,7 +3723,7 @@ select.fixed-width {
   margin: 6px 0 0 0;
   font-size: 0.6875rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-home .home-dashboard {
@@ -3743,14 +3745,14 @@ select.fixed-width {
   margin: 10px;
   padding: 10px;
   background: #101923;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-widget h3 {
   margin: 0 0 10px 0;
   font-size: 1.0625rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-widget .widget-actions {
@@ -3785,7 +3787,7 @@ select.fixed-width {
   margin: 20px 0;
   padding: 0 20px;
   border-right: 1px solid #626d7b;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-size: 0.75rem;
 }
 
@@ -3797,7 +3799,7 @@ select.fixed-width {
 }
 
 .patient-search-results .search-details .found {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   padding: 10px 0;
   font-size: 0.875rem;
   font-weight: 400;
@@ -3849,7 +3851,7 @@ select.fixed-width {
 }
 
 .home-messages .messages th, .home-messages .messages td {
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   padding: 10px 6px;
   font-size: 0.75rem;
   line-height: 1.4;
@@ -3861,7 +3863,7 @@ select.fixed-width {
 }
 
 .home-messages .messages tbody tr.unread td {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-size: 0.875rem;
 }
 
@@ -3893,7 +3895,7 @@ select.fixed-width {
   height: auto;
   text-overflow: none;
   white-space: normal;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .home-messages .message-actions {
@@ -3904,7 +3906,7 @@ select.fixed-width {
 .home-messages .message-actions .user {
   font-size: 1.25rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   margin: 0 0 20px 0;
 }
 
@@ -3914,7 +3916,7 @@ select.fixed-width {
 
 .home-messages .message-actions .filter-messages li {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   padding: 0 0 12px 0;
 }
 
@@ -3943,7 +3945,7 @@ select.fixed-width {
 .oe-create-event-popup .title {
   font-size: 1.125rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   padding: 0 0 10px 0;
 }
 
@@ -3955,7 +3957,7 @@ select.fixed-width {
 
 .oe-create-event-popup h3 {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   margin: 0 0 10px 0;
 }
 
@@ -3967,7 +3969,7 @@ select.fixed-width {
   line-height: 19px;
   font-size: 0.75rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   background: #313f4c;
   cursor: pointer;
 }
@@ -4040,7 +4042,7 @@ select.fixed-width {
 
 .oe-create-event-popup .change-subspecialty h6 {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   padding: 0 0 0 2px;
   margin: 0 0 5px 0;
 }
@@ -4048,7 +4050,7 @@ select.fixed-width {
 .oe-create-event-popup .change-subspecialty .fixed-service {
   margin: 10px 0 0 8px;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-create-event-popup .change-subspecialty .select-service {
@@ -4094,7 +4096,7 @@ select.fixed-width {
   height: 21px;
   font-size: 0.6875rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   background: #182535;
 }
 
@@ -4133,7 +4135,7 @@ select.fixed-width {
 .main-event {
   position: relative;
   background: #1e2e42;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   padding: 10px 0 40px 0;
   font-size: 0.75rem;
   line-height: 1.5;
@@ -4155,7 +4157,7 @@ select.fixed-width {
 .main-event .event-title-extra-info .extra-info {
   font-size: 1.125rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   margin: 0 0 0 20px;
 }
 
@@ -4167,8 +4169,8 @@ select.fixed-width {
   width: 400px;
   background: #1e2e42;
   padding: 0 10px 10px 11px;
-  border-right: 2px solid rgba(255, 255, 255, 0.5);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  border-right: 2px solid #8c8c8c;
+  border-bottom: 2px solid #8c8c8c;
 }
 
 .oe-popup-event-audit-trail table {
@@ -4185,7 +4187,7 @@ select.fixed-width {
 
 .oe-popup-event-audit-trail table td {
   padding: 2px 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-size: 0.75rem;
 }
 
@@ -4243,7 +4245,7 @@ select.fixed-width {
   padding: 0 16px 0 8px;
   font-size: 0.625rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .event-header .buttons-right {
@@ -4262,7 +4264,7 @@ select.fixed-width {
 .sidebar-header .add-event {
   height: 38px;
   width: 100%;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #1e2e42;
   border-radius: 0;
 }
@@ -4270,12 +4272,12 @@ select.fixed-width {
 .sidebar-header .title {
   font-size: 0.8125rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   margin: auto;
 }
 
 .sidebar-header input, .sidebar-header textarea, .sidebar-header select {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background-color: #1e2e42;
   border-radius: 0;
 }
@@ -4323,7 +4325,7 @@ select.fixed-width {
   line-height: 19px;
   font-size: 0.75rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   background: #1e2e42;
 }
 
@@ -4357,7 +4359,7 @@ select.fixed-width {
   height: 19px;
   font-size: 0.625rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   background: #182535;
 }
 
@@ -4427,7 +4429,7 @@ select.fixed-width {
   z-index: 1;
   width: 100%;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #374755;
   padding: 8px 0;
 }
@@ -4481,7 +4483,7 @@ select.fixed-width {
 
 .sidebar .sidebar-grouping .grouping-picker {
   width: 99%;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #374755;
 }
 
@@ -4492,12 +4494,12 @@ select.fixed-width {
 .sidebar .groupings .collapse-group-header {
   font-size: 0.8125rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   padding: 10px 25px 5px 5px;
 }
 
 .sidebar .groupings .collapse-group-header:hover, .sidebar .groupings .collapse-group-header:focus {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .sidebar .groupings .collapse-group-header .count {
@@ -4519,7 +4521,7 @@ select.fixed-width {
   background-size: 15px;
   font-size: 0.75rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   cursor: pointer;
 }
 
@@ -4546,7 +4548,7 @@ select.fixed-width {
   width: auto;
   padding: 10px 20px;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #074598;
 }
 
@@ -4592,7 +4594,7 @@ select.fixed-width {
 }
 
 .sidebar-filter-options label.highlight {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: rgba(30, 46, 66, 0.6);
 }
 
@@ -4630,7 +4632,7 @@ select.fixed-width {
   font-size: 0.6875rem;
   font-weight: 400;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   background: #1e2e42;
   background-position: right center;
   background-repeat: no-repeat;
@@ -4644,7 +4646,7 @@ select.fixed-width {
 }
 
 .sidebar .oe-element-list a.selected {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background-color: #374755;
 }
 
@@ -4686,7 +4688,7 @@ select.fixed-width {
   margin: auto;
   /* flex */
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-weight: 300;
 }
 
@@ -4711,7 +4713,7 @@ select.fixed-width {
   background: #141e2b;
   padding: 32px 5px 10px 10px;
   margin: 0 0 3px 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-weight: 400;
   border: 1px solid rgba(255, 255, 255, 0);
   -webkit-transition: border-color 0.2s ease-in;
@@ -5038,7 +5040,7 @@ select.fixed-width {
 .main-event .element table th {
   text-align: left;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .main-event .element table td {
@@ -5104,7 +5106,7 @@ select.fixed-width {
 
 .oe-add-select-search table.select-options th {
   text-align: left;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-size: 0.6875rem;
   font-weight: 300;
   padding: 0 0 5px 0;
@@ -5140,7 +5142,7 @@ select.fixed-width {
   cursor: pointer;
   padding: 3px 8px 3px 8px;
   margin: 0 0 2px 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #32404d;
 }
 
@@ -5215,7 +5217,7 @@ select.fixed-width {
       -ms-flex-align: center;
           align-items: center;
   padding: 5px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #29384b;
 }
 
@@ -5286,7 +5288,7 @@ select.fixed-width {
 }
 
 .main-event .element .element-fields .data-label {
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .main-event .element .element-fields .large-text {
@@ -5305,7 +5307,7 @@ select.fixed-width {
 }
 
 .main-event .element .note {
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-weight: 300;
   margin: 0 5px;
 }
@@ -5399,7 +5401,7 @@ select.fixed-width {
 
 .element .eyedraw.ed-v2 .eyedraw-data {
   font-size: 0.6875rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .element.edit .eyedraw {
@@ -5463,7 +5465,7 @@ select.fixed-width {
 
 .main-event .element table.calendar td.inthepast {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-weight: 300;
 }
 
@@ -5555,7 +5557,7 @@ select.fixed-width {
 .search-in-event .search-results .search-criteria {
   font-size: 1rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   padding: 10px 0;
   margin: 0 0 0 5px;
 }
@@ -5574,7 +5576,7 @@ select.fixed-width {
   line-height: 21px;
   font-size: 0.75rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   background: #182535;
   vertical-align: middle;
   padding: 0 5px;
@@ -5583,7 +5585,7 @@ select.fixed-width {
 }
 
 .search-in-event .results_list .lvl1:hover, .search-in-event .results_list .lvl1:focus, .search-in-event .results_list .lvl1:active, .search-in-event .results_list .lvl2:hover, .search-in-event .results_list .lvl2:focus, .search-in-event .results_list .lvl2:active, .search-in-event .results_list .lvl3:hover, .search-in-event .results_list .lvl3:focus, .search-in-event .results_list .lvl3:active {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #074598;
 }
 
@@ -5595,7 +5597,7 @@ select.fixed-width {
   font-size: 0.6875rem;
   font-weight: 400;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   margin-left: 10px;
 }
 
@@ -5627,7 +5629,7 @@ select.fixed-width {
   font-size: 0.6875rem;
   font-weight: 400;
   line-height: 1.3;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   margin: 0 0 1rem 0;
 }
 
@@ -5646,7 +5648,7 @@ select.fixed-width {
 .oe-sem-no-events h3 {
   font-size: 1.625rem;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   padding: 0 0 10px 0;
 }
 
@@ -6411,7 +6413,7 @@ span.squiggle {
   padding: 6px 6px 3px 4px;
   border-left: 1px solid #26303d;
   vertical-align: top;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-size: 0.6875rem;
 }
 
@@ -6560,7 +6562,7 @@ span.squiggle {
   padding: 5px 3px 5px 8px;
   font-size: 0.75rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #283442;
 }
 
@@ -6576,7 +6578,7 @@ span.squiggle {
 .oe-lightning-viewer .oe-lightning-meta .help {
   margin: 10px 0 0 0;
   font-size: 0.625rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-style: italic;
 }
 
@@ -6616,7 +6618,7 @@ span.squiggle {
           justify-content: center;
   font-size: 0.875rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #182535;
 }
 
@@ -6669,7 +6671,7 @@ span.squiggle {
 }
 
 .oescape-header .title {
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 200;
@@ -6744,12 +6746,12 @@ span.squiggle {
 .oescape .oes-data-row-input {
   margin: 25px 0 25px 0;
   font-size: 0.6875rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oescape .oes-data-row-input .data-row-title {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oescape .oes-data-row-input table {
@@ -6775,7 +6777,7 @@ span.squiggle {
 .oescape .oes-data-element-input h3 {
   font-size: 0.875rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   margin: 0 0 10px 0;
 }
 
@@ -6822,21 +6824,21 @@ span.squiggle {
   margin: 0 0 10px 0;
   font-size: 1.125rem;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oescape .oes-summary .data-label {
   margin: 0 0 3px 0;
   font-size: 0.6875rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oescape .oes-summary .data-value {
   margin: 0 0 10px 0;
   font-size: 0.8125rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 /* highstock js styling */
@@ -6856,7 +6858,7 @@ span.squiggle {
 }
 
 .highcharts-root text {
-  fill: rgba(255, 255, 255, 0.5);
+  fill: #8c8c8c;
   stroke-width: 0;
 }
 
@@ -7004,11 +7006,11 @@ span.squiggle {
 
 .highcharts-root .oes-banner-title {
   font-size: 0.75rem;
-  fill: rgba(255, 255, 255, 0.8);
+  fill: #cccccc;
 }
 
 .highcharts-root .oes-banner-title * {
-  fill: rgba(255, 255, 255, 0.8);
+  fill: #cccccc;
 }
 
 .highcharts-root .oes-hs-columnrange-label {
@@ -7016,7 +7018,7 @@ span.squiggle {
 }
 
 .highcharts-root .oes-hs-columnrange-label text {
-  fill: rgba(255, 255, 255, 0.8);
+  fill: #cccccc;
 }
 
 .highcharts-root .oes-hs-columnrange-label .highcharts-data-label-box {
@@ -7065,11 +7067,11 @@ span.squiggle {
 }
 
 .highcharts-legend-item text:hover {
-  fill: rgba(255, 255, 255, 0.8);
+  fill: #cccccc;
 }
 
 .highcharts-legend-item.highcharts-legend-item-hidden text {
-  fill: rgba(167, 167, 167, 0.575);
+  fill: #777777;
 }
 
 .highcharts-xaxis {
@@ -7101,7 +7103,7 @@ span.squiggle {
 }
 
 .highcharts-tooltip text {
-  fill: rgba(255, 255, 255, 0.8);
+  fill: #cccccc;
 }
 
 .highcharts-tooltip-box {
@@ -7132,7 +7134,7 @@ span.squiggle {
 }
 
 .highcharts-button:hover text {
-  fill: rgba(255, 255, 255, 0.8);
+  fill: #cccccc;
 }
 
 .highcharts-range-selector-buttons > text {
@@ -7240,18 +7242,18 @@ table.oe-clinic-list th {
   font-size: 0.75rem;
   text-align: left;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 table.oe-clinic-list td {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   vertical-align: middle;
   padding: 5px 0;
 }
 
 table.oe-clinic-list td a {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 table.oe-clinic-list td a:hover, table.oe-clinic-list td a:focus, table.oe-clinic-list td a:active {
@@ -7327,7 +7329,7 @@ table.oe-clinic-list td.center {
 }
 
 .pathway-step.blue {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   background: #182535;
   cursor: pointer;
 }
@@ -7394,19 +7396,19 @@ table.oe-clinic-list td.center {
 .oec-add-new-pathway, .oec-add-to-all-pathways {
   background: #141e2b;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oec-add-new-pathway h3, .oec-add-to-all-pathways h3 {
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-weight: 300;
   margin: 20px 0 5px 0;
 }
 
 .oec-add-new-pathway h3.title, .oec-add-to-all-pathways h3.title {
   font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   margin: 10px 0 15px 0;
 }
 
@@ -7440,19 +7442,19 @@ table.oe-clinic-list td.center {
   width: 250px;
   border-radius: 3px;
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oec-active-step-info h3 {
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-weight: 300;
   padding: 10px 0;
 }
 
 .oec-active-step-info .eye {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-weight: 300;
   padding: 0 0 10px 0;
 }
@@ -7492,7 +7494,7 @@ table.oe-clinic-list td.center {
 
 .oec-active-step-info .who-completed {
   font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-weight: 300;
 }
 
@@ -7505,7 +7507,7 @@ table.oe-clinic-list td.center {
 .oe-clinic-filter {
   display: inline-block;
   position: relative;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   background: #1e2e42;
   height: 38px;
   padding: 0 10px;
@@ -7577,7 +7579,7 @@ table.oe-clinic-list td.center {
 }
 
 .patient-clinic-quicklook .patient-details {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-size: 0.875rem;
   padding: 5px;
 }
@@ -7590,7 +7592,7 @@ table.oe-clinic-list td.center {
   margin: 10px 3px 5px 0;
   font-size: 0.875rem;
   font-weight: 200;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   text-align: right;
 }
 
@@ -7614,7 +7616,7 @@ table.oe-clinic-list td.center {
 }
 
 .analytics-header .title {
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   text-transform: uppercase;
   font-size: 1.5rem;
   font-weight: 200;
@@ -7622,7 +7624,7 @@ table.oe-clinic-list td.center {
 
 .analytics-options {
   margin: 20px 0 0 45px;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-size: 0.75rem;
   width: 300px;
 }
@@ -7637,7 +7639,7 @@ table.oe-clinic-list td.center {
 .analytics-options .specialty {
   font-size: 1.25rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   margin: 10px 0 10px 0;
 }
 
@@ -7648,7 +7650,7 @@ table.oe-clinic-list td.center {
 
 .analytics-options .service .service-selected {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-weight: 300;
 }
 
@@ -7658,7 +7660,7 @@ table.oe-clinic-list td.center {
 
 .analytics-options .charts li {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   padding: 0 0 8px 0;
 }
 
@@ -7680,7 +7682,7 @@ table.oe-clinic-list td.center {
 
 .analytics-options .custom-filters .filters-selected li {
   font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   padding: 4px 0;
   border-bottom: 1px solid #26303d;
 }
@@ -7758,20 +7760,20 @@ table.oe-clinic-list td.center {
 }
 
 .analytics-patient-list table tbody tr:hover td {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .analytics-patient-list table th {
   text-align: left;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-size: 0.6875rem;
 }
 
 .analytics-patient-list table td {
   vertical-align: middle;
   padding: 8px 2px;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-size: 0.875rem;
 }
 
@@ -7785,7 +7787,7 @@ table.oe-clinic-list td.center {
 }
 
 .oe-theatre-diaries .diaries-search table.search-options tr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(140, 140, 140, 0.15);
 }
 
 .oe-theatre-diaries .diaries-search table.search-options tr:last-child {
@@ -7818,7 +7820,7 @@ table.oe-clinic-list td.center {
   font-size: 1.1875rem;
   font-weight: 300;
   margin: 20px 0 15px 0;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-theatre-diaries .theatres-list .schedule-group {
@@ -7850,7 +7852,7 @@ table.oe-clinic-list td.center {
 
 .theatre-sessions table.theatre-bookings {
   width: 100%;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-size: 0.75rem;
   margin: 0 0 10px 0;
 }
@@ -7865,7 +7867,7 @@ table.oe-clinic-list td.center {
 
 .theatre-sessions table.theatre-bookings th {
   text-align: left;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-weight: 300;
   padding: 10px 5px 10px 0;
 }
@@ -7917,7 +7919,7 @@ table.oe-clinic-list td.center {
   font-size: 0.8125rem;
   font-weight: 400;
   vertical-align: bottom;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions .session-comments .oe-i {
@@ -7956,7 +7958,7 @@ table.oe-clinic-list td.center {
 .oe-worklists .worklist-summary .summary {
   font-size: 0.875rem;
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-worklists table.standard {
@@ -8125,13 +8127,13 @@ table.oe-clinic-list td.center {
 /* User Profile */
 .oe-user-profile {
   background: #141e2b;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-user-profile h2 {
   font-size: 1.1875rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   margin: 20px 0 10px 0;
 }
 
@@ -8164,7 +8166,7 @@ table.oe-clinic-list td.center {
 .oe-admin .admin-panels .collapse-group h3.collapse-group-header {
   padding: 0 30px 0 0;
   margin: 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-weight: 300;
 }
 
@@ -8200,7 +8202,7 @@ table.oe-clinic-list td.center {
 
 .oe-admin .admin-main h2 {
   font-size: 1.125rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-weight: 300;
 }
 
@@ -8246,7 +8248,7 @@ table.oe-clinic-list td.center {
 .oe-reports .reports-panels .collapse-group h3.collapse-group-header {
   padding: 0 30px 0 0;
   margin: 0;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   font-weight: 300;
 }
 
@@ -8418,7 +8420,7 @@ table.oe-clinic-list td.center {
 .oe-partial-waiting .waiting-list-key h3 {
   font-size: 0.875rem;
   font-weight: 300;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   padding: 0 30px 0 0;
 }
 
@@ -8429,7 +8431,7 @@ table.oe-clinic-list td.center {
 .oe-partial-waiting .waiting-list-key ul li {
   font-size: 0.625rem;
   margin: 0 0 8px 0;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
   font-weight: 300;
   vertical-align: bottom;
 }
@@ -8476,7 +8478,7 @@ table.oe-clinic-list td.center {
   margin: 20px;
   padding: 20px;
   background: #101923;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 .oe-nod-export .oe-full-main .nod-intro h2 {
@@ -8484,7 +8486,7 @@ table.oe-clinic-list td.center {
   font-size: 1.3125rem;
   font-weight: 300;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.5);
+  color: #8c8c8c;
 }
 
 .oe-nod-export .oe-full-main .nod-intro h3 {
@@ -8492,7 +8494,7 @@ table.oe-clinic-list td.center {
   font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.4;
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
 }
 
 /* ------------------------ */
@@ -8526,7 +8528,7 @@ table.oe-clinic-list td.center {
 }
 
 .pickmeup .pmu-instance .pmu-button {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   cursor: pointer;
   outline: none;
   text-decoration: none;
@@ -8562,7 +8564,7 @@ table.oe-clinic-list td.center {
 }
 
 .pickmeup .pmu-instance nav {
-  color: rgba(255, 255, 255, 0.8);
+  color: #cccccc;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;

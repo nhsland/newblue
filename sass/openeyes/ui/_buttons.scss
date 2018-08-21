@@ -47,8 +47,9 @@
 		
 		&.disabled,
 		&.inactive {
-			color: rgba($oe-pro-text-light,0.5);
-			background: rgba($oe-pro-blue,0.4);
+			color: rgba($oe-pro-text-light,0.6) !important;
+			background: rgba($oe-pro-grey,0.8) !important;
+			border:1px solid rgba($oe-pro-text-light,0.1);
 		}
 		
 	}
@@ -70,6 +71,7 @@
 		&.disabled,
 		&.inactive {
 			background: none;
+			border:none !important;
 		}
 		
 	}
