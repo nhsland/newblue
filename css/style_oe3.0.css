@@ -806,8 +806,9 @@ button.header-tab.disabled, button.header-tab.inactive, .button.header-tab.disab
 
 button.disabled, button.inactive, .button.disabled, .button.inactive, input[type="submit"].disabled, input[type="submit"].inactive {
   cursor: default;
-  color: rgba(255, 255, 255, 0.5);
-  background: rgba(30, 46, 66, 0.4);
+  color: rgba(255, 255, 255, 0.6) !important;
+  background: rgba(40, 52, 66, 0.8) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   pointer-events: none;
 }
 

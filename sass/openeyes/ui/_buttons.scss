@@ -89,14 +89,15 @@
 	&.disabled,
 	&.inactive {
 		cursor:default;
-		color: rgba($oe-text-light,0.5);
-		background: rgba($oe-btn-default,0.4);
+		color: rgba($oe-text-light,0.6) !important;
+		background: rgba($oe-grey,0.8) !important;
+		border:1px solid rgba($oe-text-light,0.1);
 		pointer-events: none; // disable pseudos
 	}
 	
 	// handle icons in buttons
 	.oe-i {
-		pointer-events: none;
+		pointer-events: none; 
 	}
 	
 	// .active class allows JS control
