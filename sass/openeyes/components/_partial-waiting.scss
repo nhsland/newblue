@@ -45,10 +45,10 @@
 	// and the colour states
 	.waiting-list-key {
 		display:flex;
-		justify-content:flex-end;
+		justify-content:flex-start;
 		align-items:flex-start;	
 		
-		margin:10px 0 0 0;
+		margin:15px 0 0 0;
 		
 		// "Key"
 		h3 {
@@ -75,8 +75,32 @@
 				}
 			}
 		}
-
 	}
+	
+	$colour-flag-w: 7px;
+	
+	// waiting list colour flags
+	// add to <td> or <li>
+	.send-invitation-letter {
+		background: linear-gradient(to right,$oe-btn-green-hint $colour-flag-w, transparent $colour-flag-w);
+		padding-left: $colour-flag-w + 5px !important;
+	}
+	
+	.send-another-reminder {
+		background: linear-gradient(to right,$oe-text-highlight $colour-flag-w, transparent $colour-flag-w);
+		padding-left: $colour-flag-w + 5px !important;
+	}
+	
+	.send-gp-removal-letter {
+		background: linear-gradient(to right,$oe-alert-orange $colour-flag-w, transparent $colour-flag-w);
+		padding-left: $colour-flag-w + 5px !important;
+	}
+	
+	.patient-due-removed {
+		background: linear-gradient(to right,$oe-alert-red $colour-flag-w, transparent $colour-flag-w);
+		padding-left: $colour-flag-w + 5px !important;
+	}
+	
 	
 	
 	
