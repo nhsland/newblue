@@ -8541,6 +8541,12 @@ table.oe-clinic-list td.center {
   font-size: 0.8125rem;
 }
 
+.oe-new-patient table.standard tbody td.required {
+  background: transparent url("../svg/in-css/icons/asterisk.svg") center right 8px no-repeat;
+  background-size: 13px;
+  padding-right: 30px;
+}
+
 .oe-new-patient table.standard tbody td:first-child {
   padding-left: 5px;
   width: 40%;

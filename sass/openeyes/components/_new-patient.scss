@@ -21,6 +21,12 @@
 			td {
 				@include font-size(13);	
 				
+				&.required {
+					background:transparent url( svg-icon-path-theme( 'asterisk' ) ) center right 8px no-repeat;
+					background-size:13px;
+					padding-right:30px;
+				}
+				
 				&:first-child {
 					padding-left:5px;
 					width:40%;
