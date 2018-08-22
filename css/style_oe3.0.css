@@ -3274,7 +3274,38 @@ select.fixed-width {
   font-weight: 400;
 }
 
-.management-summaries li {
+table.management-summaries {
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+
+table.management-summaries tbody tr {
+  border-top: 1px dotted rgba(204, 204, 255, 0.2);
+}
+
+table.management-summaries tbody td {
+  color: #cccccc;
+  font-size: 0.6875rem;
+  padding: 6px 3px;
+  line-height: 1.4;
+}
+
+table.management-summaries tbody td:first-child {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  padding-left: 0;
+  width: 120px;
+}
+
+table.management-summaries tbody td:nth-child(2) {
+  padding-right: 8px;
+}
+
+table.management-summaries tbody td:last-child {
+  text-align: right;
+}
+
+ul.management-summaries li {
   display: block;
   width: 100%;
   padding: 3px 5px 2px 5px;
@@ -3283,7 +3314,7 @@ select.fixed-width {
   border-top: 1px dotted rgba(204, 204, 255, 0.2);
 }
 
-.management-summaries li p {
+ul.management-summaries li p {
   margin: 0 0 0 180px;
   padding: 5px 0px 3px 0px;
   font-size: 0.6875rem;
@@ -3291,7 +3322,7 @@ select.fixed-width {
   color: #cccccc;
 }
 
-.management-summaries li h6 {
+ul.management-summaries li h6 {
   margin: 0;
   padding: 5px 0 0 0;
   font-size: 0.8125rem;
