@@ -25,31 +25,12 @@ idg.filterOptions = function(){
   		@param $btn
   		@param $popup	
 		*/
-		idg.enhancedTouch( 		$('#oe-filter-options-'+id), 
-								$('#oe-filter-btn-'+id), 
-								$('#filter-options-popup-'+id) );
-													
-		// position popup based on screen location
-		// options: top-left, top-right, bottom-left, bottom-right
-		var offset = $('#oe-filter-options-'+id).offset();
+		idg.enhancedPopupFixed( 		$('#oe-filter-options-'+id), 
+										$('#oe-filter-btn-'+id), 
+										$('#filter-options-popup-'+id) );
+												
 		
-		var css;
-		var w = window.innerWidth;
-		var h = window.innerHeight;
-		
-		if( offset.top < ( h / 2 ) ){
-			css = "top-";
-		} else {
-			css = "bottom-";
-		}
-		
-		if(offset.left < ( w / 2 ) ){
-			css += "left";
-		} else {
-			css += "right";
-		}
-		
-		$('#filter-options-popup-'+id).addClass(css);
+		// workout fixed poition
 		
 		var $allOptionGroups =  $('#filter-options-popup-'+id).find('.options-group');
 		$allOptionGroups.each( function(){
@@ -58,6 +39,7 @@ idg.filterOptions = function(){
 		});
 
 	});
+
 	
 	// update UI to show how Filter works
 	// this is pretty basic but only to demo on IDG
@@ -74,8 +56,6 @@ idg.filterOptions = function(){
 			
 			// $optionGroup.find('.btn-list li').
 		});
-		
-		
 	}
   	
 

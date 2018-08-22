@@ -2,13 +2,18 @@
 // Based on the Sidebar Event Filter UI
 
 .oe-filter-options {
+	display:inline-block; // need as <div> wrapper
 	position: relative; 
+	
 	
 	// filer-options overlays the button
 	.filter-options-popup {
-		position:absolute;
-		
+		// the ONLY way to do this and get this to work 
+		// with CSS3 grids is to use FIXED 
+		// otherwise it may be cropped by the Grid item it is within.
+		position:fixed;
 		z-index:$oe-z-popup;
+		
 		
 		padding:10px 40px 10px 10px;
 		color:$oe-pro-text;
@@ -21,31 +26,23 @@
 		
 		// allow popup to anchored by the 4 corners
 		// alignment options
-		&.top-left {
-			top:0;
-			left:0;
+		&.top-left {;
 			padding-left:40px;
 			background-position: top 8px left 8px;
 		}
 		
 		&.bottom-left {
-			bottom:0;
-			left:0;
 			padding-left:40px;
 			background-position: bottom 8px left 8px;
 		}
 		
 		&.top-right {
-			top:0;
-			right:0;
 			padding-right:40px;
 			background-image: none; // hide, because of the close icon
 			// background-position: top 8px right 8px;
 		}
 		
 		&.bottom-right {
-			bottom:0;
-			right:0;
 			background-position: bottom 8px right 8px;
 		}
 		

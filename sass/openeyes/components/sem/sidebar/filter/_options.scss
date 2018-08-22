@@ -3,12 +3,14 @@
 // to not be constrained by the grid.
 
 .sidebar-filter-options {
-	position:absolute;
-	left:$oe-event-sidebar-width;
+	// Fixed! move it out of the Grid
+	position:fixed; 
+	
 	// top will need updating with JS (depends on OEscape height)
 	// can't use the same technique as the filter-options 
 	// because of the subgrid (at least I think this is why!)
 	top:134px;	// update with JS. (default is for 1 OEscape button row)
+	left:$oe-event-sidebar-width;
 	
 	z-index:$oe-z-popup;
 	

@@ -9,7 +9,7 @@ IDG demo, it assumes a DOM structure of:
 </wrap>	
 ... and that there is an 'active' class on button ;)
 */
-idg.enhancedTouch = function($wrap,$btn,$popup){
+idg.enhancedTouch = function($wrap,$btn,$popup,calcFixedPosFn){
 	var popupShow = false;
 	
   	// handles touch

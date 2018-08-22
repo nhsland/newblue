@@ -1296,11 +1296,12 @@ select.fixed-width {
 }
 
 .oe-filter-options {
+  display: inline-block;
   position: relative;
 }
 
 .oe-filter-options .filter-options-popup {
-  position: absolute;
+  position: fixed;
   z-index: 100;
   padding: 10px 40px 10px 10px;
   color: #d6d6d6;
@@ -1311,29 +1312,21 @@ select.fixed-width {
 }
 
 .oe-filter-options .filter-options-popup.top-left {
-  top: 0;
-  left: 0;
   padding-left: 40px;
   background-position: top 8px left 8px;
 }
 
 .oe-filter-options .filter-options-popup.bottom-left {
-  bottom: 0;
-  left: 0;
   padding-left: 40px;
   background-position: bottom 8px left 8px;
 }
 
 .oe-filter-options .filter-options-popup.top-right {
-  top: 0;
-  right: 0;
   padding-right: 40px;
   background-image: none;
 }
 
 .oe-filter-options .filter-options-popup.bottom-right {
-  bottom: 0;
-  right: 0;
   background-position: bottom 8px right 8px;
 }
 
@@ -4572,9 +4565,9 @@ ul.management-summaries li h6 {
 }
 
 .sidebar-filter-options {
-  position: absolute;
-  left: 200px;
+  position: fixed;
   top: 134px;
+  left: 200px;
   z-index: 100;
   width: auto;
   padding: 10px 20px;
