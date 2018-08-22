@@ -1,0 +1,53 @@
+// OE (Add) New Patient 
+
+.oe-new-patient {
+	background:$oe-blue-dark url( svg-path('backgrounds/patient-watermark') ) bottom -20px right 10px no-repeat;
+	background-size:160px;
+	
+	color:$oe-text;
+	padding:20px;
+	
+	
+	
+	.patient-inputs-column {
+		width:48%;
+	}
+	
+	// extend 'standard'
+	table.standard {
+		width:100%; 
+		
+		tbody {
+			td {
+				@include font-size(13);	
+				
+				&:first-child {
+					padding-left:5px;
+					width:40%;
+				}
+				
+				&:last-child {
+					text-align: right;
+				}
+				
+				// save adding 'col-full' 
+				select, 
+				input[type=text],
+				input[type=tel],
+				input[type=email] {
+					width:100%;
+					
+					&.date,
+					&.postcode {
+						width:50%;
+						text-align: center;
+					}
+				}
+				
+			}
+		}
+		
+	}
+
+	
+}

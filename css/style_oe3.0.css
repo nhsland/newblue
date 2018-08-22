@@ -8521,6 +8521,53 @@ table.oe-clinic-list td.center {
   color: #d6d6d6;
 }
 
+/* Add New Patient */
+.oe-new-patient {
+  background: #182535 url("../svg/in-css/backgrounds/patient-watermark.svg") bottom -20px right 10px no-repeat;
+  background-size: 160px;
+  color: #d6d6d6;
+  padding: 20px;
+}
+
+.oe-new-patient .patient-inputs-column {
+  width: 48%;
+}
+
+.oe-new-patient table.standard {
+  width: 100%;
+}
+
+.oe-new-patient table.standard tbody td {
+  font-size: 0.8125rem;
+}
+
+.oe-new-patient table.standard tbody td:first-child {
+  padding-left: 5px;
+  width: 40%;
+}
+
+.oe-new-patient table.standard tbody td:last-child {
+  text-align: right;
+}
+
+.oe-new-patient table.standard tbody td select,
+.oe-new-patient table.standard tbody td input[type=text],
+.oe-new-patient table.standard tbody td input[type=tel],
+.oe-new-patient table.standard tbody td input[type=email] {
+  width: 100%;
+}
+
+.oe-new-patient table.standard tbody td select.date, .oe-new-patient table.standard tbody td select.postcode,
+.oe-new-patient table.standard tbody td input[type=text].date,
+.oe-new-patient table.standard tbody td input[type=text].postcode,
+.oe-new-patient table.standard tbody td input[type=tel].date,
+.oe-new-patient table.standard tbody td input[type=tel].postcode,
+.oe-new-patient table.standard tbody td input[type=email].date,
+.oe-new-patient table.standard tbody td input[type=email].postcode {
+  width: 50%;
+  text-align: center;
+}
+
 /* ------------------------ */
 /* ------ 3rd party ------- */
 /* Pick me up */
