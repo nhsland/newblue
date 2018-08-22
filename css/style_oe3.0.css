@@ -577,7 +577,7 @@ table.standard tbody tr:last-child {
 }
 
 table.standard tbody td {
-  color: #cccccc;
+  color: #d6d6d6;
   font-weight: 400;
   padding: 5px 10px 5px 0;
 }
@@ -683,8 +683,8 @@ strong, b {
 }
 
 .highlighter.orange {
-  background: #b45a00;
-  color: #cccccc;
+  background: #a04600;
+  color: #d6d6d6;
 }
 
 .right-color-text {
@@ -759,7 +759,7 @@ button, .button, input[type="submit"] {
   border-radius: 0 !important;
   font-size: 0.75rem;
   font-weight: 400;
-  color: #cccccc;
+  color: #d6d6d6;
   background: #1e2e42;
   cursor: pointer;
   padding: 0 8px;
@@ -772,7 +772,7 @@ button.large, .button.large, input[type="submit"].large {
 }
 
 button.pro-theme, .button.pro-theme, input[type="submit"].pro-theme {
-  color: #cccccc;
+  color: #d6d6d6;
   background: #1e2e42;
 }
 
@@ -872,27 +872,27 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .alert-box.info {
-  color: #fafafa;
+  color: rgba(250, 250, 250, 0.9);
   background: #505050;
 }
 
 .alert-box.success {
-  color: #f0f0f0;
+  color: rgba(250, 250, 250, 0.9);
   background: #006900;
 }
 
 .alert-box.alert, .alert-box.issue {
-  color: #cccccc;
-  background: #b45a00;
+  color: #d6d6d6;
+  background: #a04600;
 }
 
 .alert-box.warning, .alert-box.error, .alert-box.injection-warning {
-  color: #f0f0f0;
+  color: rgba(250, 250, 250, 0.9);
   background: #9b0000;
 }
 
 .alert-box.patient {
-  color: #f0f0f0;
+  color: rgba(250, 250, 250, 0.9);
   background: #6b1400;
 }
 
@@ -911,11 +911,11 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .oe-popup .status-box {
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .status-box {
-  color: #cccccc;
+  color: #d6d6d6;
   font-size: 0.8125rem;
   line-height: 1.4;
   border: 4px solid cyan;
@@ -975,7 +975,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   padding: 8px 8px 4px 8px;
   border-bottom: 1px solid cyan;
   background: #0a0a14;
-  color: #cccccc;
+  color: #d6d6d6;
   font-size: 0.6875rem;
   font-weight: 400;
   line-height: 1.5;
@@ -1090,12 +1090,12 @@ input, textarea, select {
   border: 0;
   outline: none;
   font-size: 0.75rem;
-  color: #cccccc;
+  color: #d6d6d6;
   background-color: #1e2e42;
 }
 
 input.pro-theme, textarea.pro-theme, select.pro-theme {
-  color: #cccccc;
+  color: #d6d6d6;
   background-color: #1e2e42;
 }
 
@@ -1131,7 +1131,7 @@ label.highlight,
 .label.highlight {
   padding: 3px 6px 3px 6px;
   margin: 1px 3px 1px 0;
-  color: #cccccc;
+  color: #d6d6d6;
   background: rgba(30, 46, 66, 0.1);
   border-radius: 3px;
   cursor: pointer;
@@ -1174,19 +1174,19 @@ input, textarea {
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #a3a3a3;
+  color: #ababab;
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #a3a3a3;
+  color: #ababab;
 }
 
 input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-  color: #a3a3a3;
+  color: #ababab;
 }
 
 input::placeholder, textarea::placeholder {
-  color: #a3a3a3;
+  color: #ababab;
 }
 
 input.search {
@@ -1291,7 +1291,7 @@ select.fixed-width {
           justify-content: space-between;
   padding: 2px 4px 2px 6px;
   margin: 0 0 2px 0;
-  color: #cccccc;
+  color: #d6d6d6;
   background: rgba(30, 46, 66, 0.5);
 }
 
@@ -1303,7 +1303,7 @@ select.fixed-width {
   position: absolute;
   z-index: 100;
   padding: 10px 40px 10px 10px;
-  color: #cccccc;
+  color: #d6d6d6;
   background-color: #074598;
   background-image: url("../svg/in-css/icons/filter.svg");
   background-repeat: no-repeat;
@@ -2539,11 +2539,11 @@ select.fixed-width {
 }
 
 .oe-full-content .oe-full-main {
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-full-content .oe-full-side-panel {
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-full-content .oe-full-side-panel p {
@@ -2640,7 +2640,7 @@ select.fixed-width {
 
 .openeyes-brand .oe-product-info p {
   font-size: 0.6875rem;
-  color: #cccccc;
+  color: #d6d6d6;
   font-weight: 300;
   line-height: 1.4;
   margin: 0 0 5px 0;
@@ -2661,7 +2661,7 @@ select.fixed-width {
 .openeyes-brand .oe-product-info h3 {
   font-size: 1.4375rem;
   font-weight: 200;
-  color: #cccccc;
+  color: #d6d6d6;
   margin: 0 0 10px 0;
 }
 
@@ -2688,7 +2688,7 @@ select.fixed-width {
 }
 
 .oe-patient {
-  color: #cccccc;
+  color: #d6d6d6;
   font-size: 0.6875rem;
 }
 
@@ -2859,7 +2859,7 @@ select.fixed-width {
 .oe-user .oe-user-profile-context {
   margin: auto 0 auto 5px;
   width: 290px;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -3051,7 +3051,7 @@ select.fixed-width {
 
 .oe-hotlist-panel .overview h3 {
   font-size: 1.125rem;
-  color: #b8b8b8;
+  color: #c1c1c1;
   font-weight: 300;
 }
 
@@ -3071,7 +3071,7 @@ select.fixed-width {
 .oe-hotlist-panel .overview .closed-search .closed-date {
   display: inline-block;
   padding: 0 15px 0 0;
-  color: #b8b8b8;
+  color: #c1c1c1;
   cursor: pointer;
 }
 
@@ -3205,7 +3205,7 @@ select.fixed-width {
   margin: 0 8px 0 0;
   font-size: 0.6875rem;
   font-weight: 400;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .quicklook-data-groups:last-child {
@@ -3249,7 +3249,7 @@ select.fixed-width {
 }
 
 .quicklook-data-groups table td {
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .quicklook-data-groups table th, .quicklook-data-groups table td {
@@ -3284,7 +3284,7 @@ table.management-summaries tbody tr {
 }
 
 table.management-summaries tbody td {
-  color: #cccccc;
+  color: #d6d6d6;
   font-size: 0.6875rem;
   padding: 6px 3px;
   line-height: 1.4;
@@ -3319,7 +3319,7 @@ ul.management-summaries li p {
   padding: 5px 0px 3px 0px;
   font-size: 0.6875rem;
   line-height: 1.4;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 ul.management-summaries li h6 {
@@ -3327,7 +3327,7 @@ ul.management-summaries li h6 {
   padding: 5px 0 0 0;
   font-size: 0.8125rem;
   font-weight: 300;
-  color: #cccccc;
+  color: #d6d6d6;
   float: left;
 }
 
@@ -3349,7 +3349,7 @@ ul.management-summaries li h6 {
   margin: 0 0 1px 0;
   background: #182535;
   font-size: 0.75rem;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .problems-plans .problems-plans-sortable li .drag-handle {
@@ -3390,7 +3390,7 @@ ul.management-summaries li h6 {
   background: #182535;
   padding: 5px;
   border-radius: 3px;
-  color: #cccccc;
+  color: #d6d6d6;
   width: calc(100% - 38px);
 }
 
@@ -3410,7 +3410,7 @@ ul.management-summaries li h6 {
   margin: 0;
   padding: 8px 0;
   font-size: 0.75rem;
-  color: #cccccc;
+  color: #d6d6d6;
   line-height: 1.5;
 }
 
@@ -3442,7 +3442,7 @@ ul.management-summaries li h6 {
   padding: 1px 0 1px 4px;
   vertical-align: middle;
   height: 28px;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-patient-popup table.risks td:last-child {
@@ -3455,7 +3455,7 @@ ul.management-summaries li h6 {
 
 .oe-patient-popup .situational-awareness {
   font-size: 0.8125rem;
-  color: #cccccc;
+  color: #d6d6d6;
   padding: 0 0 10px 0;
 }
 
@@ -3497,7 +3497,7 @@ ul.management-summaries li h6 {
 }
 
 .oe-patient-popup .patient-numbers label.highlight {
-  color: #cccccc;
+  color: #d6d6d6;
   background: #182535;
 }
 
@@ -3513,13 +3513,13 @@ ul.management-summaries li h6 {
   min-width: 600px;
   max-width: 1160px;
   padding: 20px;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-popup .title {
   font-size: 1.125rem;
   font-weight: 300;
-  color: #cccccc;
+  color: #d6d6d6;
   padding: 0 0 10px 0;
 }
 
@@ -3600,7 +3600,7 @@ ul.management-summaries li h6 {
 }
 
 .oe-popup-content.previous-elements table td .metadata .user {
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-popup-content.previous-elements .element-eyes {
@@ -3681,7 +3681,7 @@ ul.management-summaries li h6 {
   position: relative;
   top: -50px;
   width: 500px;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-error-message .message h1 {
@@ -3776,14 +3776,14 @@ ul.management-summaries li h6 {
   margin: 10px;
   padding: 10px;
   background: #101923;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-widget h3 {
   margin: 0 0 10px 0;
   font-size: 1.0625rem;
   font-weight: 300;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-widget .widget-actions {
@@ -3830,7 +3830,7 @@ ul.management-summaries li h6 {
 }
 
 .patient-search-results .search-details .found {
-  color: #cccccc;
+  color: #d6d6d6;
   padding: 10px 0;
   font-size: 0.875rem;
   font-weight: 400;
@@ -3894,7 +3894,7 @@ ul.management-summaries li h6 {
 }
 
 .home-messages .messages tbody tr.unread td {
-  color: #cccccc;
+  color: #d6d6d6;
   font-size: 0.875rem;
 }
 
@@ -3926,7 +3926,7 @@ ul.management-summaries li h6 {
   height: auto;
   text-overflow: none;
   white-space: normal;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .home-messages .message-actions {
@@ -3937,7 +3937,7 @@ ul.management-summaries li h6 {
 .home-messages .message-actions .user {
   font-size: 1.25rem;
   font-weight: 300;
-  color: #cccccc;
+  color: #d6d6d6;
   margin: 0 0 20px 0;
 }
 
@@ -3976,7 +3976,7 @@ ul.management-summaries li h6 {
 .oe-create-event-popup .title {
   font-size: 1.125rem;
   font-weight: 300;
-  color: #cccccc;
+  color: #d6d6d6;
   padding: 0 0 10px 0;
 }
 
@@ -4081,7 +4081,7 @@ ul.management-summaries li h6 {
 .oe-create-event-popup .change-subspecialty .fixed-service {
   margin: 10px 0 0 8px;
   font-size: 0.75rem;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-create-event-popup .change-subspecialty .select-service {
@@ -4166,7 +4166,7 @@ ul.management-summaries li h6 {
 .main-event {
   position: relative;
   background: #1e2e42;
-  color: #cccccc;
+  color: #d6d6d6;
   padding: 10px 0 40px 0;
   font-size: 0.75rem;
   line-height: 1.5;
@@ -4188,7 +4188,7 @@ ul.management-summaries li h6 {
 .main-event .event-title-extra-info .extra-info {
   font-size: 1.125rem;
   font-weight: 300;
-  color: #cccccc;
+  color: #d6d6d6;
   margin: 0 0 0 20px;
 }
 
@@ -4218,7 +4218,7 @@ ul.management-summaries li h6 {
 
 .oe-popup-event-audit-trail table td {
   padding: 2px 0;
-  color: #cccccc;
+  color: #d6d6d6;
   font-size: 0.75rem;
 }
 
@@ -4295,7 +4295,7 @@ ul.management-summaries li h6 {
 .sidebar-header .add-event {
   height: 38px;
   width: 100%;
-  color: #cccccc;
+  color: #d6d6d6;
   background: #1e2e42;
   border-radius: 0;
 }
@@ -4308,7 +4308,7 @@ ul.management-summaries li h6 {
 }
 
 .sidebar-header input, .sidebar-header textarea, .sidebar-header select {
-  color: #cccccc;
+  color: #d6d6d6;
   background-color: #1e2e42;
   border-radius: 0;
 }
@@ -4460,7 +4460,7 @@ ul.management-summaries li h6 {
   z-index: 1;
   width: 100%;
   font-size: 0.75rem;
-  color: #cccccc;
+  color: #d6d6d6;
   background: #374755;
   padding: 8px 0;
 }
@@ -4514,7 +4514,7 @@ ul.management-summaries li h6 {
 
 .sidebar .sidebar-grouping .grouping-picker {
   width: 99%;
-  color: #cccccc;
+  color: #d6d6d6;
   background: #374755;
 }
 
@@ -4530,7 +4530,7 @@ ul.management-summaries li h6 {
 }
 
 .sidebar .groupings .collapse-group-header:hover, .sidebar .groupings .collapse-group-header:focus {
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .sidebar .groupings .collapse-group-header .count {
@@ -4579,7 +4579,7 @@ ul.management-summaries li h6 {
   width: auto;
   padding: 10px 20px;
   font-size: 0.75rem;
-  color: #cccccc;
+  color: #d6d6d6;
   background: #074598;
 }
 
@@ -4625,7 +4625,7 @@ ul.management-summaries li h6 {
 }
 
 .sidebar-filter-options label.highlight {
-  color: #cccccc;
+  color: #d6d6d6;
   background: rgba(30, 46, 66, 0.6);
 }
 
@@ -4677,7 +4677,7 @@ ul.management-summaries li h6 {
 }
 
 .sidebar .oe-element-list a.selected {
-  color: #cccccc;
+  color: #d6d6d6;
   background-color: #374755;
 }
 
@@ -4719,7 +4719,7 @@ ul.management-summaries li h6 {
   margin: auto;
   /* flex */
   font-size: 0.875rem;
-  color: #cccccc;
+  color: #d6d6d6;
   font-weight: 300;
 }
 
@@ -4744,7 +4744,7 @@ ul.management-summaries li h6 {
   background: #141e2b;
   padding: 32px 5px 10px 10px;
   margin: 0 0 3px 0;
-  color: #cccccc;
+  color: #d6d6d6;
   font-weight: 400;
   border: 1px solid rgba(255, 255, 255, 0);
   -webkit-transition: border-color 0.2s ease-in;
@@ -5173,7 +5173,7 @@ ul.management-summaries li h6 {
   cursor: pointer;
   padding: 3px 8px 3px 8px;
   margin: 0 0 2px 0;
-  color: #cccccc;
+  color: #d6d6d6;
   background: #32404d;
 }
 
@@ -5248,7 +5248,7 @@ ul.management-summaries li h6 {
       -ms-flex-align: center;
           align-items: center;
   padding: 5px;
-  color: #cccccc;
+  color: #d6d6d6;
   background: #29384b;
 }
 
@@ -5432,7 +5432,7 @@ ul.management-summaries li h6 {
 
 .element .eyedraw.ed-v2 .eyedraw-data {
   font-size: 0.6875rem;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .element.edit .eyedraw {
@@ -5588,7 +5588,7 @@ ul.management-summaries li h6 {
 .search-in-event .search-results .search-criteria {
   font-size: 1rem;
   font-weight: 300;
-  color: #cccccc;
+  color: #d6d6d6;
   padding: 10px 0;
   margin: 0 0 0 5px;
 }
@@ -5616,7 +5616,7 @@ ul.management-summaries li h6 {
 }
 
 .search-in-event .results_list .lvl1:hover, .search-in-event .results_list .lvl1:focus, .search-in-event .results_list .lvl1:active, .search-in-event .results_list .lvl2:hover, .search-in-event .results_list .lvl2:focus, .search-in-event .results_list .lvl2:active, .search-in-event .results_list .lvl3:hover, .search-in-event .results_list .lvl3:focus, .search-in-event .results_list .lvl3:active {
-  color: #cccccc;
+  color: #d6d6d6;
   background: #074598;
 }
 
@@ -6593,7 +6593,7 @@ span.squiggle {
   padding: 5px 3px 5px 8px;
   font-size: 0.75rem;
   line-height: 1.5;
-  color: #cccccc;
+  color: #d6d6d6;
   background: #283442;
 }
 
@@ -6649,7 +6649,7 @@ span.squiggle {
           justify-content: center;
   font-size: 0.875rem;
   font-weight: 300;
-  color: #cccccc;
+  color: #d6d6d6;
   background: #182535;
 }
 
@@ -6782,7 +6782,7 @@ span.squiggle {
 
 .oescape .oes-data-row-input .data-row-title {
   font-size: 0.75rem;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oescape .oes-data-row-input table {
@@ -6869,7 +6869,7 @@ span.squiggle {
   margin: 0 0 10px 0;
   font-size: 0.8125rem;
   font-weight: 400;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 /* highstock js styling */
@@ -7037,11 +7037,11 @@ span.squiggle {
 
 .highcharts-root .oes-banner-title {
   font-size: 0.75rem;
-  fill: #cccccc;
+  fill: #d6d6d6;
 }
 
 .highcharts-root .oes-banner-title * {
-  fill: #cccccc;
+  fill: #d6d6d6;
 }
 
 .highcharts-root .oes-hs-columnrange-label {
@@ -7049,7 +7049,7 @@ span.squiggle {
 }
 
 .highcharts-root .oes-hs-columnrange-label text {
-  fill: #cccccc;
+  fill: #d6d6d6;
 }
 
 .highcharts-root .oes-hs-columnrange-label .highcharts-data-label-box {
@@ -7098,7 +7098,7 @@ span.squiggle {
 }
 
 .highcharts-legend-item text:hover {
-  fill: #cccccc;
+  fill: #d6d6d6;
 }
 
 .highcharts-legend-item.highcharts-legend-item-hidden text {
@@ -7134,7 +7134,7 @@ span.squiggle {
 }
 
 .highcharts-tooltip text {
-  fill: #cccccc;
+  fill: #d6d6d6;
 }
 
 .highcharts-tooltip-box {
@@ -7165,7 +7165,7 @@ span.squiggle {
 }
 
 .highcharts-button:hover text {
-  fill: #cccccc;
+  fill: #d6d6d6;
 }
 
 .highcharts-range-selector-buttons > text {
@@ -7278,13 +7278,13 @@ table.oe-clinic-list th {
 
 table.oe-clinic-list td {
   font-size: 0.875rem;
-  color: #cccccc;
+  color: #d6d6d6;
   vertical-align: middle;
   padding: 5px 0;
 }
 
 table.oe-clinic-list td a {
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 table.oe-clinic-list td a:hover, table.oe-clinic-list td a:focus, table.oe-clinic-list td a:active {
@@ -7360,7 +7360,7 @@ table.oe-clinic-list td.center {
 }
 
 .pathway-step.blue {
-  color: #cccccc;
+  color: #d6d6d6;
   background: #182535;
   cursor: pointer;
 }
@@ -7427,7 +7427,7 @@ table.oe-clinic-list td.center {
 .oec-add-new-pathway, .oec-add-to-all-pathways {
   background: #141e2b;
   font-size: 0.75rem;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oec-add-new-pathway h3, .oec-add-to-all-pathways h3 {
@@ -7439,7 +7439,7 @@ table.oe-clinic-list td.center {
 
 .oec-add-new-pathway h3.title, .oec-add-to-all-pathways h3.title {
   font-size: 0.9375rem;
-  color: #cccccc;
+  color: #d6d6d6;
   margin: 10px 0 15px 0;
 }
 
@@ -7473,7 +7473,7 @@ table.oe-clinic-list td.center {
   width: 250px;
   border-radius: 3px;
   font-size: 0.75rem;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oec-active-step-info h3 {
@@ -7485,7 +7485,7 @@ table.oe-clinic-list td.center {
 
 .oec-active-step-info .eye {
   font-size: 1rem;
-  color: #cccccc;
+  color: #d6d6d6;
   font-weight: 300;
   padding: 0 0 10px 0;
 }
@@ -7525,7 +7525,7 @@ table.oe-clinic-list td.center {
 
 .oec-active-step-info .who-completed {
   font-size: 0.875rem;
-  color: #cccccc;
+  color: #d6d6d6;
   font-weight: 300;
 }
 
@@ -7610,7 +7610,7 @@ table.oe-clinic-list td.center {
 }
 
 .patient-clinic-quicklook .patient-details {
-  color: #cccccc;
+  color: #d6d6d6;
   font-size: 0.875rem;
   padding: 5px;
 }
@@ -7670,7 +7670,7 @@ table.oe-clinic-list td.center {
 .analytics-options .specialty {
   font-size: 1.25rem;
   font-weight: 300;
-  color: #cccccc;
+  color: #d6d6d6;
   margin: 10px 0 10px 0;
 }
 
@@ -7681,7 +7681,7 @@ table.oe-clinic-list td.center {
 
 .analytics-options .service .service-selected {
   font-size: 1rem;
-  color: #cccccc;
+  color: #d6d6d6;
   font-weight: 300;
 }
 
@@ -7713,7 +7713,7 @@ table.oe-clinic-list td.center {
 
 .analytics-options .custom-filters .filters-selected li {
   font-size: 0.75rem;
-  color: #cccccc;
+  color: #d6d6d6;
   padding: 4px 0;
   border-bottom: 1px solid #26303d;
 }
@@ -7791,7 +7791,7 @@ table.oe-clinic-list td.center {
 }
 
 .analytics-patient-list table tbody tr:hover td {
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .analytics-patient-list table th {
@@ -7883,7 +7883,7 @@ table.oe-clinic-list td.center {
 
 .theatre-sessions table.theatre-bookings {
   width: 100%;
-  color: #cccccc;
+  color: #d6d6d6;
   font-size: 0.75rem;
   margin: 0 0 10px 0;
 }
@@ -7950,7 +7950,7 @@ table.oe-clinic-list td.center {
   font-size: 0.8125rem;
   font-weight: 400;
   vertical-align: bottom;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-theatre-diaries .theatres-list .schedule-group .theatre-sessions .session-comments .oe-i {
@@ -8158,13 +8158,13 @@ table.oe-clinic-list td.center {
 /* User Profile */
 .oe-user-profile {
   background: #141e2b;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-user-profile h2 {
   font-size: 1.1875rem;
   font-weight: 300;
-  color: #cccccc;
+  color: #d6d6d6;
   margin: 20px 0 10px 0;
 }
 
@@ -8197,7 +8197,7 @@ table.oe-clinic-list td.center {
 .oe-admin .admin-panels .collapse-group h3.collapse-group-header {
   padding: 0 30px 0 0;
   margin: 0;
-  color: #cccccc;
+  color: #d6d6d6;
   font-weight: 300;
 }
 
@@ -8279,7 +8279,7 @@ table.oe-clinic-list td.center {
 .oe-reports .reports-panels .collapse-group h3.collapse-group-header {
   padding: 0 30px 0 0;
   margin: 0;
-  color: #cccccc;
+  color: #d6d6d6;
   font-weight: 300;
 }
 
@@ -8483,7 +8483,7 @@ table.oe-clinic-list td.center {
 }
 
 .oe-partial-waiting .send-gp-removal-letter {
-  background: linear-gradient(to right, #b45a00 7px, transparent 7px);
+  background: linear-gradient(to right, #a04600 7px, transparent 7px);
   padding-left: 12px !important;
 }
 
@@ -8509,7 +8509,7 @@ table.oe-clinic-list td.center {
   margin: 20px;
   padding: 20px;
   background: #101923;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 .oe-nod-export .oe-full-main .nod-intro h2 {
@@ -8525,7 +8525,7 @@ table.oe-clinic-list td.center {
   font-size: 1.0625rem;
   font-weight: 400;
   line-height: 1.4;
-  color: #cccccc;
+  color: #d6d6d6;
 }
 
 /* ------------------------ */
@@ -8559,7 +8559,7 @@ table.oe-clinic-list td.center {
 }
 
 .pickmeup .pmu-instance .pmu-button {
-  color: #cccccc;
+  color: #d6d6d6;
   cursor: pointer;
   outline: none;
   text-decoration: none;
@@ -8595,7 +8595,7 @@ table.oe-clinic-list td.center {
 }
 
 .pickmeup .pmu-instance nav {
-  color: #cccccc;
+  color: #d6d6d6;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
