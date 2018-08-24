@@ -42,13 +42,6 @@ clinic.setupDemoUI = function(){
 	tr.find('.clinic-assign-options').parent().text('Dr Amit Baum (AB)');
 	tr.find('.js-add-pathway').hide();
 	$('#filter-AB .total').text(1);
-	
-	/**
-	Flag some Risks / Allergies	
-	**/
-	var tr = $( '#patient-'+1008002 );
-	tr.find('.js-clinic-quicklook').append('<i class="oe-i warning small-icon">');
-	var tr = $( '#patient-'+ 1897143 );
-	tr.find('.js-clinic-quicklook').append('<i class="oe-i warning small-icon">');
+
 	
 }
