@@ -15,6 +15,12 @@ table.standard {
 		color:$oe-text-light;
 		@include font-size(12);
 		font-weight: $oe-font-medium;
+		
+		.pagination-pages {
+			a {
+				margin:0 4px;
+			}
+		}
 	}
 	
 }

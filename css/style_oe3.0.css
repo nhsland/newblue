@@ -626,6 +626,10 @@ table.standard .pagination {
   font-weight: 400;
 }
 
+table.standard .pagination .pagination-pages a {
+  margin: 0 4px;
+}
+
 html {
   -webkit-font-smoothing: subpixel-antialiased;
 }
