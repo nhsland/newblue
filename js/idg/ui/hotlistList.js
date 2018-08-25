@@ -15,7 +15,7 @@ idg.hotList = function(hotlistPopup){
 		});
 		
 		function checkBrowserSize(){	
-	  		if( $( window ).width() > 1800){ // min width for fixing Activity Panel (allows some resizing)
+	  		if( $( window ).width() > 1890){ // min width for fixing Activity Panel (allows some resizing)
 				hotlistPopup.fixed( true );
 			} else {
 				hotlistPopup.fixed( false );
@@ -42,6 +42,7 @@ idg.hotList = function(hotlistPopup){
 		var commentBox = $(this).parent().parent().next();
 		var textArea = commentBox.find('textarea');
 		
+		commentsQuickLook(false); // hide Quicklook 
 		commentBox.toggle();
 	
 		// update the icon based on the textarea
@@ -61,11 +62,39 @@ idg.hotList = function(hotlistPopup){
 				$(this).addClass("comments-added active");
 			
 			}
-		};
-		
-		
-		
+		};	
 	});
+	
+	
+	
+	// enchance with mouseevents through DOM wrapper
+  	$('.oe-hotlist-panel .js-patient-comments')
+  		.mouseenter( function(){ commentsQuickLook(true, $(this) ); } )
+  		.mouseleave( function(){ commentsQuickLook(false); } );
+	
+	
+	function commentsQuickLook(show,$icon){
+		
+		$quick = $('#hotlist-quicklook');
+		
+		if(!show){
+			$quick.hide();
+			return
+		}
+		
+		// quick and dirty JS to demo UI/UX
+		var commentBox = $icon.parent().parent().next();
+		var textArea = commentBox.find('textarea');
+		
+		if(textArea.val() != "") {
+			$quick.text( textArea.val() );
+			$quick.show();
+			$quick.css('top',($icon.position().top + 19));
+		}	
+	
+	}
+
+	
 	
 	
 	

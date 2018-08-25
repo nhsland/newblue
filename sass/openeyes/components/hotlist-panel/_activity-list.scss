@@ -1,6 +1,5 @@
-// OE Activity Panel (RHS)
-// On minimum 1280px displays hidden, on 1920px+ displayed right hand side (RHS)
-// 
+// OE Hotlist
+// Activity List : Open / Closed
 
 .oe-hotlist-panel {
 	
@@ -8,74 +7,65 @@
 	.activity-list {
 		width:100%;
 		margin:5px 0 10px 0;
-		
-		tbody tr {
-			background:tint( $oe-pro-bg,5 );
-			&:hover, &:active, &:focus {
-				cursor: pointer;
-				background:$oe-btn-blue; // row is a big button
-				td {
-					color:rgb(255,255,255);
+
+		tbody {
+			
+			td {
+				padding:4px 5px; 
+				@include font-size(12);
+				font-weight:400;
+				color:$oe-pro-text-light; 
+				line-height:1.4;
+				
+				// icons 
+				&:last-child {
+					text-align: right;
+					white-space: nowrap;
 				}
+				
+				// Patient name
+				&:nth-child(2){
+					width:60%;
+				}
+				
+				// CSS added AFTER JS. so hooking into the JS class 
+				// but covered with normal CSS class as well. 
+				.js-hotlist-comment-readonly,
+				.hotlist-comment-readonly {
+					font-style: italic;
+					font-weight: 300;
+					width:105px;
+					overflow: hidden;
+					// truncate text
+					white-space: nowrap;
+					text-overflow: ellipsis;
+					
+					border-left:1px solid rgba(200,200,200,0.1);
+					padding:0 0 0 4px;
+					
+				}
+				
 			}
 			
-			&.hotlist-comment {
+			// show <tr> as a clickable row
+			tr {
+				background:tint( $oe-pro-bg,5 );	
 				&:hover, &:active, &:focus {
-					cursor: auto;
-					background:tint( $oe-pro-bg,5 );
+					cursor: pointer;
+					background:$oe-btn-blue; // row is a big button
+					td {
+						color:rgb(255,255,255);	
+					}
 				}
-			}
-			
-		}
-		
-		// tables generally all require that the last cell 
-		// is aligned right
-		td:last-child, 
-		th:last-child {
-			text-align: right;
-		}
-		
-		// default
-		th, td, {
-			padding:4px 6px;  
-			line-height:1.4;
-			
-		}
-		
-		// <th>
-		th {
-			text-align: left;  // overide default 'middle'
-			@include font-size(11);
-		}
-		
-		// <td>
-		td {
-			@include font-size(12);
-			font-weight:400;
-			color:$oe-pro-text-light;
-		}
-		
-		
-		.duration {
-			display:inline-block;
-			@include font-size(11);
-			padding:0 18px 0 0;
-			margin:0 5px 0 0;
-			background-size:11px;
-			background-position:right center; 
-			background-repeat: no-repeat;
-			
-			// traffic lights
-			&.green {
-				background-image:url( svg-path('ui/circle-green') );
-			}
-			
-			&.orange {
-				background-image:url( svg-path('ui/circle-orange') );
-			}
-			
-			&.red {
-				background-image:url( svg-path('ui/circle-red') );
+				
+				// but not hotlist-comment 
+				// (textarea on seperate row to create comment)
+				&.hotlist-comment {
+					&:hover, &:active, &:focus {
+						cursor: auto;
+						background:tint( $oe-pro-bg,5 );
+					}
+				}
 			}
 			
 		}	

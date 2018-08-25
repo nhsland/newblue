@@ -1,0 +1,59 @@
+// OE Hotlist
+// Overview for Open / Closed
+
+.oe-hotlist-panel {
+	
+	// header for Opened / Closed
+	.overview {
+		padding:10px 10px 5px 15px; 
+		
+		h3 {
+			@include font-size(18);
+			color: shade( $oe-pro-text,10 );
+			font-weight:300;
+			
+			.count {
+				display: inline-block;
+				margin:0 0 0 5px;
+				padding:0 0 0 10px;
+				border-left:1px solid $oe-pro-line;
+				opacity:0.5;
+			}
+		}
+		
+		// in closed date searches for 'today and search' 
+		.closed-search {
+			position:relative;
+			@include font-size(12);
+			
+			.closed-date {
+				display:inline-block;
+				padding:0 15px 0 0;
+				color: shade( $oe-pro-text,10 );
+				cursor: pointer;
+	
+				&:last-child {
+					padding:0 0 0 0;
+				}
+				
+				&:hover, &:focus, &:active {
+					color:$oe-pro-text-highlight;
+				}
+			}
+			
+			
+			// wrapper for pickmeup js
+			// js adds the dom to this element
+			// CSS then can control it's position
+			#js-pickmeup-datepicker {
+				position:absolute;
+				top:15px;
+				right:0;
+			}
+			
+		}
+	}
+	
+}
+
+

@@ -23,6 +23,7 @@ idg.init = function(){
 	
 	// Activity List popup
 	idg.hotList(hotlist);
+
 	
 	// set up 'hidden' for JS 
 	// hidden in the CSS is helpful in the DOM

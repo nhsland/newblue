@@ -8,21 +8,32 @@
 $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 
 // note: CSS3 grid is used for main layouts, see in 'structure'
+// Minimum supported screen width: 1280px.
+$oe-minimum-supported-width: 1280px;
 
 // grid px
 $oe-header-height:						60px; 	// top UI bar
-$oe-event-header-height:				38px; 	// event header
-$oe-event-sidebar-width:				200px;	// event sidebar
-$oe-event-main-default-width:			1080px; // for average monitors
-$oe-hotlist-panel-width:				450px; 	// activity panel 
-$oe-eyedraw-app-width:					($oe-event-main-default-width + 180px);  // eyedraw popup app
+$oe-event-header-height:				38px; 	// SEM header
+$oe-event-sidebar-width:				200px;	// SEM sidebar
+$oe-event-main-default-width:			1080px; // SEM for minimum support monitors (+ sidebar is 1280px)
+$oe-hotlist-panel-width:				450px; 	// hotlist list panel
+$oe-eyedraw-app-width:					($oe-minimum-supported-width + 20px);  // eyedraw popup app
 
-// Wide screen users
-// note: activity panel + extended event area + sidebar must NOT exceed 1920px (1910px ideally)
-$oe-event-extension:					160px; // this just works for laptop width (1440px)
-$oe-event-main-extended-width:			(1080px + $oe-event-extension); // 160px extra width to move headers left.
-$oe-extended-browser-size: 				(1280px + $oe-event-extension); // 1280px is default. 
-$oe-browser-size-hotlist-fixed:			1800px; // this is based on the JS setting for fixing the hotlist panel
+// Provide Enhancement for Users on largest supported screens (up to 1920px)
+// note: sidebar + main event area + hotlist must NOT exceed 1920px (1910px ideally)
+$oe-event-extension:					160px; // moves headers left (just fits 1440px)
+$oe-event-main-extended-width:			($oe-event-main-default-width + $oe-event-extension); // SEM main area extend width size
+
+// media query: 
+// when browser exceeds this width enchancements are made.
+// basically we have enough space to show the extended SEM event view
+// and reduce vertical height, as soon as possibe we do this:
+$oe-extended-browser-size: 				($oe-minimum-supported-width + $oe-event-extension); // 1440px! 
+
+// hotlist fixed.
+// the next enhancement is to fix hotlist when there is enough width. 
+$oe-browser-size-hotlist-fixed:			1800px; // JS is setting the fixing the hotlist panel at 1890px;
+$oe-js-browser-fix-size:				1890px; 
 
 
 // z

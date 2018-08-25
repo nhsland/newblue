@@ -343,7 +343,7 @@ html {
   .oe-grid .oe-full-header,
   .oe-grid .oe-full-content,
   .oe-grid .oe-allow-for-fixing-hotlist {
-    width: 1350px;
+    width: 1440px;
   }
 }
 
@@ -3042,6 +3042,13 @@ select.fixed-width {
   border-left: 2px solid rgba(16, 25, 35, 0.5);
 }
 
+@media only screen and (min-width: 1890px) {
+  .oe-hotlist-panel {
+    width: calc(100vw - 1440px);
+    max-width: 600px !important;
+  }
+}
+
 .oe-hotlist-panel .overview {
   padding: 10px 10px 5px 15px;
 }
@@ -3091,6 +3098,35 @@ select.fixed-width {
   margin: 5px 0 10px 0;
 }
 
+.oe-hotlist-panel .activity-list tbody td {
+  padding: 4px 5px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #8c8c8c;
+  line-height: 1.4;
+}
+
+.oe-hotlist-panel .activity-list tbody td:last-child {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.oe-hotlist-panel .activity-list tbody td:nth-child(2) {
+  width: 60%;
+}
+
+.oe-hotlist-panel .activity-list tbody td .js-hotlist-comment-readonly,
+.oe-hotlist-panel .activity-list tbody td .hotlist-comment-readonly {
+  font-style: italic;
+  font-weight: 300;
+  width: 105px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  border-left: 1px solid rgba(200, 200, 200, 0.1);
+  padding: 0 0 0 4px;
+}
+
 .oe-hotlist-panel .activity-list tbody tr {
   background: #202936;
 }
@@ -3109,47 +3145,32 @@ select.fixed-width {
   background: #202936;
 }
 
-.oe-hotlist-panel .activity-list td:last-child,
-.oe-hotlist-panel .activity-list th:last-child {
-  text-align: right;
+.patient-activity {
+  position: relative;
 }
 
-.oe-hotlist-panel .activity-list th, .oe-hotlist-panel .activity-list td {
-  padding: 4px 6px;
-  line-height: 1.4;
-}
-
-.oe-hotlist-panel .activity-list th {
-  text-align: left;
-  font-size: 0.6875rem;
-}
-
-.oe-hotlist-panel .activity-list td {
+.patient-activity .hotlist-quicklook {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 8px 60px 8px 10px;
+  width: 100%;
   font-size: 0.75rem;
-  font-weight: 400;
-  color: #8c8c8c;
+  font-style: italic;
+  color: #d6d6d6;
+  background: #374755;
 }
 
-.oe-hotlist-panel .activity-list .duration {
-  display: inline-block;
-  font-size: 0.6875rem;
-  padding: 0 18px 0 0;
-  margin: 0 5px 0 0;
-  background-size: 11px;
-  background-position: right center;
-  background-repeat: no-repeat;
-}
-
-.oe-hotlist-panel .activity-list .duration.green {
-  background-image: url("../svg/in-css/ui/circle-green.svg");
-}
-
-.oe-hotlist-panel .activity-list .duration.orange {
-  background-image: url("../svg/in-css/ui/circle-orange.svg");
-}
-
-.oe-hotlist-panel .activity-list .duration.red {
-  background-image: url("../svg/in-css/ui/circle-red.svg");
+.patient-activity .hotlist-quicklook:after {
+  content: 'click to edit';
+  position: absolute;
+  bottom: 3px;
+  right: 5px;
+  font-size: 0.625rem;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(200, 200, 200, 0.4);
 }
 
 .oe-patient-popup {
@@ -3966,7 +3987,7 @@ ul.management-summaries li h6 {
   /* flex (wrapper) */
   position: relative;
   background: #374755;
-  width: 1260px;
+  width: 1300px;
   padding: 20px;
 }
 
@@ -5721,7 +5742,7 @@ ul.management-summaries li h6 {
 .oe-eyedraw-app {
   position: relative;
   margin: auto;
-  width: 1260px;
+  width: 1300px;
   min-height: 200px;
   padding: 7px;
   background: #dae6f1;

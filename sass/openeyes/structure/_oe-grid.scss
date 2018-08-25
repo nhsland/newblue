@@ -64,13 +64,13 @@
 	
 	// --------------------------------------- Restrict Widths
 	
-	// 2 fix widths to better handle complex data layouts
+	// 2 fix widths to better handle complex data layouts in SEM and lightning viewer
 	.event-header, 
 	.oe-lightning-viewer,
 	.main-event {
 		width:$oe-event-main-default-width;
-		@include media($oe-extended-browser-size){
-			width:$oe-event-main-extended-width;
+		@include media($oe-extended-browser-size){	  // 1440px
+			width:$oe-event-main-extended-width;      // 1240px (not including sidebar: 200px = 1440px )
 		}
 	}
 	// full width header and content allows for the 
@@ -79,8 +79,10 @@
 	.oe-full-header, 
 	.oe-full-content,
 	.oe-allow-for-fixing-hotlist  {
-		@include media($oe-browser-size-hotlist-fixed){
-			width: $oe-browser-size-hotlist-fixed - $oe-hotlist-panel-width;
+		@include media($oe-browser-size-hotlist-fixed){		// 1800px
+			// content using these widths stretch to fill width until 
+			// they are restricted and hotlist pops in
+			width: $oe-extended-browser-size; 				// 1440px;
 		}
 	}
 	
