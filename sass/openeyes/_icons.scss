@@ -145,6 +145,9 @@
 	&.direction-up 		{ @include oe3-icons('direction-up'); }
 	&.direction-down 	{ @include oe3-icons('direction-down'); }
 	&.direction-right-circle 	{ @include oe3-icons('direction-right-circle'); }
+	&.direction-left-circle 	{ @include oe3-icons('direction-left-circle'); }
+	&.direction-up-circle 		{ @include oe3-icons('direction-up-circle'); }
+	&.direction-down-circle 	{ @include oe3-icons('direction-down-circle'); }
 	&.move				{ @include oe3-icons('move'); }
 	&.child-arrow 		{ @include oe3-icons('child-arrow'); }
 	&.menu 				{ @include oe3-icons('menu'); }

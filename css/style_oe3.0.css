@@ -1558,6 +1558,30 @@ select.fixed-width {
   background-image: url("../svg/in-css/icons/direction-right-circle.svg");
 }
 
+.oe-i.direction-left-circle {
+  background-image: url("../svg/in-css/icons/direction-left-circle.svg");
+}
+
+.oe-i.direction-left-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-left-circle.svg");
+}
+
+.oe-i.direction-up-circle {
+  background-image: url("../svg/in-css/icons/direction-up-circle.svg");
+}
+
+.oe-i.direction-up-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-up-circle.svg");
+}
+
+.oe-i.direction-down-circle {
+  background-image: url("../svg/in-css/icons/direction-down-circle.svg");
+}
+
+.oe-i.direction-down-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-down-circle.svg");
+}
+
 .oe-i.move {
   background-image: url("../svg/in-css/icons/move.svg");
 }
@@ -4713,7 +4737,7 @@ ul.management-summaries li h6 {
   height: calc(100vh - 60px);
   overflow: hidden;
   background: #374755;
-  width: 572px;
+  width: 582px;
 }
 
 .oe-event-quickview .event-quickview {
@@ -4745,10 +4769,16 @@ ul.management-summaries li h6 {
   position: absolute;
   top: 38px;
   right: 5px;
+  padding: 5px;
+}
+
+.oe-event-quickview .event-quickview .quickview-details .step-through-arrows .oe-i {
+  display: block;
+  margin: 0 0 10px 0;
 }
 
 .oe-event-quickview .event-quickview .quickview-screenshots {
-  padding: 0 0 0 5px;
+  padding: 5px 0 0 5px;
 }
 
 .oe-event-quickview .event-quickview .quickview-screenshots img {

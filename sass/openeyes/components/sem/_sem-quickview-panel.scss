@@ -20,7 +20,7 @@
 	// IDG demo PNGs are 520px wide
 	$png-width:537px; 
 	$padding:5px;
-	$icons-space:30px; 
+	$icons-space:40px; 
 	
 	width: ($png-width + $padding + $icons-space);
 	
@@ -51,11 +51,19 @@
 				position:absolute;
 				top:$oe-event-header-height;
 				right:5px;
+				padding:$padding;
+				
+				// has up down icons: 
+				.oe-i {
+					display:block;
+					margin:0 0 10px 0;
+				}
+				
 			}
 		}
 		
 		.quickview-screenshots {
-			padding:0 0 0 $padding;
+			padding:$padding 0 0 $padding;
 			img {
 				width:$png-width;
 				height:auto;
