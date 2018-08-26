@@ -5562,7 +5562,7 @@ ul.management-summaries li h6 {
 }
 
 .search-in-event {
-  z-index: 80;
+  z-index: 75;
   position: fixed;
   top: 98px;
   left: 200px;
