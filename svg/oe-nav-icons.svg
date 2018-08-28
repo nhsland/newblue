@@ -26,5 +26,9 @@
 		</symbol>
 		<symbol id="local-edit-icon" viewBox="0 0 30 30"><title>local patient edit</title><path d="M20.56,17.93,12.07,9.44,21.51,0H0V30H30V8.49ZM8.28,21.72,10,11.47,18.53,20Z"/>
 		</symbol>
+		<symbol id="switcher-events-icon" viewBox="0 0 20 25"><title>switcher events</title><path d="M6.47,3.21v3h-3v-3h3M8,1.71H2v6H8v-6Z"/><path d="M6.47,18.79v3h-3v-3h3M8,17.29H2v6H8v-6Z"/><path d="M6.47,11v3h-3V11h3M8,9.5H2v6H8v-6Z"/>
+		</symbol>
+		<symbol id="switcher-elements-icon" viewBox="0 0 20 25"><title>switcher elements</title><path d="M6,11v3H3V11H6M7.5,9.5h-6v6h6v-6Z"/><rect x="10.9" y="1.75" width="7" height="1.5"/><rect x="10.9" y="5.75" width="7" height="1.5"/><rect x="10.9" y="9.75" width="7" height="1.5"/><rect x="10.9" y="13.75" width="7" height="1.5"/><rect x="10.9" y="17.75" width="7" height="1.5"/><rect x="10.9" y="21.75" width="7" height="1.5"/>
+		</symbol>
 	</defs>
 </svg>

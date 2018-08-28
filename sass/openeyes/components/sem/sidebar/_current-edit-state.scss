@@ -1,0 +1,32 @@
+// OE Sidebar
+// 
+// 
+
+.sidebar {
+	
+	// when in edit mode and switching to 
+	// view events flag users currnent state
+	.current-edit-state {
+		position:relative;
+		width:100%;	
+		margin:8px 0;
+		
+		// little event icon
+		.edit-icon {
+			position:absolute;
+			top:0;
+			left:0;
+		}
+		
+		// edit state message
+		.edit-state {
+			padding:0 4px 0 30px;
+			@include font-size(11);
+			color:$oe-pro-text-light;
+		}
+		
+		
+
+	}
+}
+

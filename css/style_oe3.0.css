@@ -4342,6 +4342,12 @@ ul.management-summaries li h6 {
   border-radius: 0;
 }
 
+.sidebar-header .add-event.disabled {
+  color: rgba(140, 140, 140, 0.6) !important;
+  background: rgba(40, 52, 66, 0.8) !important;
+  border: 1px solid rgba(140, 140, 140, 0.1);
+}
+
 .sidebar-header .title {
   font-size: 0.8125rem;
   font-weight: 300;
@@ -4353,6 +4359,19 @@ ul.management-summaries li h6 {
   color: #d6d6d6;
   background-color: #1e2e42;
   border-radius: 0;
+}
+
+.sidebar-header.switcher button, .sidebar-header.switcher .button, .sidebar-header.switcher input[type="submit"] {
+  vertical-align: top;
+  height: 38px;
+}
+
+.sidebar-header.switcher .icon {
+  display: inline-block;
+  width: 20px;
+  height: 25px;
+  fill: white;
+  opacity: 0.5;
 }
 
 .sidebar {
@@ -4577,6 +4596,24 @@ ul.management-summaries li h6 {
 
 .sidebar .groupings .collapse-group-header .count {
   font-size: 0.625rem;
+}
+
+.sidebar .current-edit-state {
+  position: relative;
+  width: 100%;
+  margin: 8px 0;
+}
+
+.sidebar .current-edit-state .edit-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.sidebar .current-edit-state .edit-state {
+  padding: 0 4px 0 30px;
+  font-size: 0.6875rem;
+  color: #8c8c8c;
 }
 
 .sidebar .sidebar-filter-btn {

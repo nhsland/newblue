@@ -22,6 +22,7 @@ $oe-sidebar-event-height:19px;
 @import "sidebar/quicklook";
 @import "sidebar/list-controls";
 @import "sidebar/grouping";
+@import "sidebar/current-edit-state";
 
 // new V3 filters to replace old dropdown
 @import "sidebar/filter/btn";	 		

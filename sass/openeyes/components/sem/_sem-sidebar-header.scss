@@ -6,12 +6,23 @@
 	display:flex;
 	background:$oe-pro-grey;
 	
+	// button
 	.add-event {
 		height:$oe-event-header-height;
 		width:100%;
 		color: $oe-pro-user-input-text; 		// UI theme
 		background: $oe-pro-user-inputs; 	    // UI theme
 		border-radius:0;
+		
+		// when disable make 'pro-themed'
+		// disable is designed to overwrite 
+		// other styles
+		&.disabled {
+			color: rgba($oe-pro-text-light,0.6) !important;
+			background: rgba($oe-pro-grey,0.8) !important;
+			border:1px solid rgba($oe-pro-text-light,0.1);
+		}
+		
 	}
 	
 	.title {
@@ -28,6 +39,26 @@
 		background-color: $oe-pro-user-inputs;
 		border-radius:0;
 	}
+	
+	&.switcher {
+		// create 'tab' buttons
+		@include buttons {
+			vertical-align: top; // overwrite default 'bottom' to fix alignment issues
+			height:$oe-event-header-height;
+			// padding:0 16px;
+		}
+		
+		// svg icon
+		.icon {
+			display:inline-block;
+			width:20px;  
+			height:25px;
+			fill:rgb(255,255,255);
+			opacity: 0.5;	
+		}
+		
+	}
+	
 	
 }
 
