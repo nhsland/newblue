@@ -1,0 +1,38 @@
+// OE Browser Not Supported page
+
+.browser-not-supported {
+	
+	background:$oe-pro-blue;
+	color:$oe-pro-text;
+
+	margin:20px;
+	padding:20px;
+	
+	h3 {
+		@include font-size(26);
+		font-weight:200;
+		margin:0 0 20px 0;
+	}
+	
+	h4 {
+		@include font-size(18);
+		font-weight:300;
+		color:$oe-pro-text-light;
+		margin:20px 0 15px 0;
+	}
+	
+	p {
+		@include font-size(13);
+		font-weight:400;
+		margin:0 0 10px 0;
+		line-height:1.4;
+		max-width:500px;
+	}
+	
+	a {
+		color:$oe-pro-text-highlight;
+	}
+	
+	
+
+}

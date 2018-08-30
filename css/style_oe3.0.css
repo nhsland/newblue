@@ -425,6 +425,39 @@ html {
   }
 }
 
+/* Browser Not Support */
+.browser-not-supported {
+  background: #1e2e42;
+  color: #d6d6d6;
+  margin: 20px;
+  padding: 20px;
+}
+
+.browser-not-supported h3 {
+  font-size: 1.625rem;
+  font-weight: 200;
+  margin: 0 0 20px 0;
+}
+
+.browser-not-supported h4 {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #8c8c8c;
+  margin: 20px 0 15px 0;
+}
+
+.browser-not-supported p {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+  max-width: 500px;
+}
+
+.browser-not-supported a {
+  color: cyan;
+}
+
 /* GUI */
 .flex-layout {
   display: -webkit-box;

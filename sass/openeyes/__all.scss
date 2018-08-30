@@ -11,6 +11,10 @@
 /* Restrict Printing */
 @import "print";							// Restrict Print (from Browser)
 
+/* Browser Not Support */
+@import "browser-not-supported";			// Browser not Supported page
+
+
 /* GUI */
 @import "ui/flex"; 							// flex layout
 @import "ui/lists"; 						// ul and ol defaults.
