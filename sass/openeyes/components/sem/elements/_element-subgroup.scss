@@ -1,0 +1,49 @@
+// OE Element - Subgroups
+//
+.main-event {
+
+	.element {
+		// Data group within an subgroup
+		// i.e Header
+		// content w/ divider (opitonal)
+		// collapsable optional
+		
+		.element-subgroup {
+			
+			padding:10px 0 10px 0;
+			border-bottom: 2px dotted $oe-line;
+			
+			&:first-child {
+				padding-top:0;
+			}
+			
+			&:last-child {
+				border-bottom: none;
+			}
+			
+			// <header>
+			.subgroup-header {
+				display:flex;
+				align-items:center;				// vertical alignment (no stretch)
+				justify-content:space-between; 	// make sure items align to left AND right edge;
+				
+				margin:0 0 5px 0;
+			}
+			
+			// line to divide R & L
+			&.eye-divider {
+				background-image: url( svg-path-theme('ui/element-divider') );
+				background-position: 50.7% 0;
+				background-repeat: repeat-y;
+				background-size:19px;
+			}
+			
+			.left-eye {
+				// 17px in element pushed +4px in subgroup
+				// to align with other element data
+				padding-left: 21px; 	 
+			}
+		}				
+	}
+}
+

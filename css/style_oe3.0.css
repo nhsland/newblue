@@ -5008,6 +5008,43 @@ ul.management-summaries li h6 {
   border-bottom: 2px dotted #26303d;
 }
 
+.main-event .element .element-subgroup {
+  padding: 10px 0 10px 0;
+  border-bottom: 2px dotted #26303d;
+}
+
+.main-event .element .element-subgroup:first-child {
+  padding-top: 0;
+}
+
+.main-event .element .element-subgroup:last-child {
+  border-bottom: none;
+}
+
+.main-event .element .element-subgroup .subgroup-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 0 5px 0;
+}
+
+.main-event .element .element-subgroup.eye-divider {
+  background-image: url("../svg/in-css/ui/element-divider.pro.svg");
+  background-position: 50.7% 0;
+  background-repeat: repeat-y;
+  background-size: 19px;
+}
+
+.main-event .element .element-subgroup .left-eye {
+  padding-left: 21px;
+}
+
 .main-event .element-header {
   position: absolute;
   top: 5px;

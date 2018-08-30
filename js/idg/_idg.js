@@ -147,6 +147,9 @@ idg.init = function(){
 	// OE Filter Options (analytics)
 	idg.filterOptions();
 	
+	// Element subgroups
+	idg.elementSubgroup();
+	
 										
 };
 
