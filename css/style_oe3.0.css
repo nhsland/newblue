@@ -425,6 +425,27 @@ html {
   }
 }
 
+/* Minimum Width Warning */
+#oe-minimum-width-warning {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  z-index: 9999;
+  background: #9b0000 url("../svg/in-css/icons/direction-right.svg") top 50% right 5px no-repeat;
+  background-size: 19px;
+  padding: 15px 30px 15px 10px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 400;
+  display: none;
+}
+
+@media only screen and (max-width: 1280px) {
+  #oe-minimum-width-warning {
+    display: block;
+  }
+}
+
 /* Browser Not Support */
 .browser-not-supported {
   background: #1e2e42;

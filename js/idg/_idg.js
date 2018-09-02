@@ -108,6 +108,9 @@ idg.init = function(){
 	// Expand Collapse View lists
 	idg.expandElementList();
 	
+	// SEM sidebar 
+	idg.sidebar();
+	
 	// SEM View sidebar: Quicklook and QuickView
 	idg.sidebarQuickInfo();
 	

@@ -1,0 +1,30 @@
+// OE Printing from Browser (Ctrl-P)
+// This is not allowed and should be  
+// restricted as much as possible!
+
+#oe-minimum-width-warning {
+	position:fixed;
+	top:50%;
+	right:0;
+	z-index:9999;
+	
+	background:$oe-alert-red url( svg-path('icons/direction-right') ) top 50% right 5px no-repeat;
+	background-size:19px;
+	padding:15px 30px 15px 10px; // allow for icon
+	
+	color:rgb(255,255,255);
+	
+	@include font-size(12);
+	font-weight:400;
+	
+	
+	display:none;
+	
+	// only show when too small
+	@media only screen and (max-width: $oe-minimum-supported-width) {
+		display:block;
+  	}
+	
+	
+}
+

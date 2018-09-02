@@ -11,6 +11,9 @@
 /* Restrict Printing */
 @import "print";							// Restrict Print (from Browser)
 
+/* Minimum Width Warning */
+@import "minimum-width-warning";			// Warning appears below 1280px;
+
 /* Browser Not Support */
 @import "browser-not-supported";			// Browser not Supported page
 
