@@ -27,16 +27,16 @@ ul {
 	&.dslash-list {
 		li {
 			display:inline-block;
-			margin:0 4px 5px 0;
-			padding:0 0 0 20px;
+			margin:0 5px 5px 0;
+			padding:0 0 0 14px;
 			
 			
 			// double-slash icon
 			// must work across both themes
 			background-position:left center;
 			background-repeat: no-repeat;
-			background-size:15px;
-			background-image:url( svg-path( 'ui/double-slash' ) );
+			background-size:6px;
+			background-image:url( svg-path( 'ui/list-dot' ) );
 			
 			&:first-child {
 				padding:0 0 0 0;

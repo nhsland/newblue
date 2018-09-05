@@ -552,12 +552,12 @@ ul.inline-list li {
 
 ul.dslash-list li {
   display: inline-block;
-  margin: 0 4px 5px 0;
-  padding: 0 0 0 20px;
+  margin: 0 5px 5px 0;
+  padding: 0 0 0 14px;
   background-position: left center;
   background-repeat: no-repeat;
-  background-size: 15px;
-  background-image: url("../svg/in-css/ui/double-slash.svg");
+  background-size: 6px;
+  background-image: url("../svg/in-css/ui/list-dot.svg");
 }
 
 ul.dslash-list li:first-child {
