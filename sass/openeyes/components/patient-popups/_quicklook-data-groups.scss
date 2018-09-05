@@ -1,14 +1,6 @@
 // OE Popup - Quicklook Data Groups
-// These are used in the Quicklook popup and in the Clinic List 
-// in the Clinic list the popup is smaller, width is therefore
-// increase so that we have 2 columns rather than 3
+// De-coupled for use in Patient Popups and Patient Mini Overview
 
-.patient-clinic-quicklook {
-	.quicklook-data-groups {
-		width:50%;  	// 2 columns in clinic popup
-	}
-}
-	
 .quicklook-data-groups {
 	width:33.333%;		// 3 columns in patient popup (default)
 	margin:0 8px 0 0;
@@ -21,16 +13,11 @@
 	color:$oe-pro-text; 
 	
 	.group {
-		position: relative;
 		margin:0 0 3px 0;
-		padding:25px 0 0 0; // allow for label
 		background:$oe-pro-blue;
 		
 		.label { 
-			z-index:1; // below data
-			position:absolute;
-			top:8px;
-			left:9px; 
+			padding:8px 9px;
 			@include font-size(14);
 			font-weight:300;
 		 	color: rgba( #ccc,0.6 ); 
@@ -38,8 +25,7 @@
 		
 		// basic data list, uses <br>
 		.data {
-			z-index:2; // above label
-			padding:5px 10px;
+			padding:0 10px 5px 10px;
 			line-height:1.6;
 		}
 	} 
@@ -49,11 +35,9 @@
 		margin:0 0 10px 0; 
 		width:100%;
 		
-		tr {
-			&:hover {
-				background:$oe-pro-blue-dark;
-			}
-		} 
+		// not sure <tr> hover was a help. 
+		// turned it off
+		// tr:hover { background:$oe-pro-blue-dark; } 
 		
 		th { color:$oe-pro-text-light; }
 		td { color:$oe-pro-text; }

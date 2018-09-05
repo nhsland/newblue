@@ -37,7 +37,7 @@
 /* inputs */
 @import "inputs"; 							// labels, inputs, selects and textares
 
-/* OE UI classes */
+/* UI classes */
 @import "ui/oe-date"; 						// OE date
 @import	"ui/oe-eye-lat-icons";				// OE Eye Lat (r/l) icons
 @import "ui/oe-multi-select"; 				// multi-select list
@@ -57,6 +57,7 @@
 @import "components/hotlist-panel";    		// Hotlist: Open and Closed Patients
 @import "components/patient-popups";    	// Patient: Quicklook & Demographics (summary)
 @import "components/popups";    			// Popups: GUI for popups
+@import "components/patient-mini-overview"; // Patient Mini Overview (popup)
 
 /* Home */
 @import "components/login";					// Login
@@ -95,7 +96,7 @@
 /* NOD Export */
 @import "components/nod-export";			// NOD export
 /* Add New Patient */
-@import "components/new-patient";		// Add New Patient
+@import "components/new-patient";			// Add New Patient
 
 
 

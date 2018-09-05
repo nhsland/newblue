@@ -534,6 +534,15 @@ ul {
 ul li {
   padding: 0;
   margin: 0;
+  line-height: 1.2;
+}
+
+ul.standard {
+  margin: 3px 0;
+}
+
+ul.standard li {
+  padding: 0 0 6px 0;
 }
 
 ul.inline-list li {
@@ -543,8 +552,8 @@ ul.inline-list li {
 
 ul.dslash-list li {
   display: inline-block;
-  margin: 0 10px 6px 0;
-  padding: 0 0 0 30px;
+  margin: 0 4px 5px 0;
+  padding: 0 0 0 20px;
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 15px;
@@ -1305,7 +1314,7 @@ select.fixed-width {
   }
 }
 
-/* OE UI classes */
+/* UI classes */
 .oe-date {
   text-align: right;
   white-space: nowrap;
@@ -3292,10 +3301,6 @@ select.fixed-width {
   right: 0;
 }
 
-.patient-clinic-quicklook .quicklook-data-groups {
-  width: 50%;
-}
-
 .quicklook-data-groups {
   width: 33.333%;
   margin: 0 8px 0 0;
@@ -3309,35 +3314,25 @@ select.fixed-width {
 }
 
 .quicklook-data-groups .group {
-  position: relative;
   margin: 0 0 3px 0;
-  padding: 25px 0 0 0;
   background: #1e2e42;
 }
 
 .quicklook-data-groups .group .label {
-  z-index: 1;
-  position: absolute;
-  top: 8px;
-  left: 9px;
+  padding: 8px 9px;
   font-size: 0.875rem;
   font-weight: 300;
   color: rgba(204, 204, 204, 0.6);
 }
 
 .quicklook-data-groups .group .data {
-  z-index: 2;
-  padding: 5px 10px;
+  padding: 0 10px 5px 10px;
   line-height: 1.6;
 }
 
 .quicklook-data-groups table {
   margin: 0 0 10px 0;
   width: 100%;
-}
-
-.quicklook-data-groups table tr:hover {
-  background: #182535;
 }
 
 .quicklook-data-groups table th {
@@ -3718,6 +3713,49 @@ ul.management-summaries li h6 {
 
 .oe-popup-content.previous-elements .element-eyes .left-eye {
   width: 490px;
+}
+
+.oe-patient-mini-overview {
+  position: fixed;
+  z-index: 100;
+  right: 10px;
+  top: 10px;
+  padding: 10px;
+  width: 485px;
+  background: #374755;
+  color: #d6d6d6;
+  -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.oe-patient-mini-overview .data-group .quicklook-data-groups {
+  color: #d6d6d6;
+}
+
+.oe-patient-mini-overview .data-group .quicklook-data-groups .group {
+  background: #141e2b;
+}
+
+.oe-patient-mini-overview .data-group .quicklook-data-groups .group .label {
+  color: #8c8c8c;
+}
+
+.oe-patient-mini-overview .close-icon-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.oe-patient-mini-overview .patient-number {
+  position: absolute;
+  top: 15px;
+  right: 40px;
+  font-size: 0.75rem;
+}
+
+.oe-patient-mini-overview .patient-name {
+  font-size: 1rem;
+  margin: 0 0 8px 0;
 }
 
 /* Home */
@@ -5487,6 +5525,18 @@ ul.management-summaries li h6 {
   font-size: 0.875rem;
   color: #69939e;
   font-weight: 300;
+}
+
+.main-event .element .listview-expand-collapse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .main-event .element .element-fields.full-width {

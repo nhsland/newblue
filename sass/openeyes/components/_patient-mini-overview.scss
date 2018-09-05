@@ -1,0 +1,59 @@
+// OE Patient Mini Overview
+// Provide a 'quicklook' at Patient Overview.
+// Should flexible enough to show a variety of info
+
+.oe-patient-mini-overview {
+	// the ONLY way to do this and get this to work 
+	// with CSS3 grids is to use FIXED 
+	// otherwise it may be cropped by the Grid item it is within.
+	position:fixed;
+	z-index:$oe-z-popup;
+	right:10px;
+	top:10px;
+	padding:10px;
+	width:485px;
+	
+	background:$oe-popup-bg;
+	color:$oe-text;
+	
+	// offset-x | offset-y | blur-radius | spread-radius | color
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+	
+	.data-group {
+		// uses the same DOM as popups but they are pro-themed.
+		// for use here it needs to change with the theme
+		.quicklook-data-groups {
+			color:$oe-text;
+			.group {
+				background:$oe-blue-dark2;
+				.label { 						
+			 		color: $oe-text-light; 
+				}
+			} 
+		}
+	}
+	
+	// close icon btn (for touch) 
+	.close-icon-btn {
+		position:absolute;
+		top:10px;
+		right:10px;
+	}
+	
+	.patient-number {
+		position: absolute;
+		top:15px;
+		right:40px;
+		@include font-size(12);
+	}
+	
+	.patient-name {
+		@include font-size(16);
+		margin:0 0 8px 0;
+	}
+}
+
+
+
+
+
