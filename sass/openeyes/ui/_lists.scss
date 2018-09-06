@@ -24,6 +24,10 @@ ul {
 		}
 	}
 	
+	// changed from a double slash icon to a dot
+	// still supporting old 'dslash' but dot makes more 
+	// sense as we move forward.
+	&.dot-list,
 	&.dslash-list {
 		li {
 			display:inline-block;
