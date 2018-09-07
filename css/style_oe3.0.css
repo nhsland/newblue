@@ -754,6 +754,11 @@ strong, b {
   color: #d6d6d6;
 }
 
+.highlighter.good {
+  background: #006900;
+  color: #fafafa;
+}
+
 .right-color-text {
   color: #00a000;
 }

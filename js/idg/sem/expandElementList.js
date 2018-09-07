@@ -7,29 +7,43 @@ idg.expandElementList = function(){
 	if( $('.element-data').length == 0 ) return;
 	
 	$('.js-listview-expand-btn').each(function(){	
-		// id= js-listview-[data-list]-full | quick
-		var listid = $(this).data('list');
-		var listview = new ListView( $(this),
-									 $('#js-listview-'+listid+'-pro'),
-									 $('#js-listview-'+listid+'-full') );
+		/* 
+		Generally there is 1 list. But it could handle 2 (R/L Eye)	
+		DOM: id= js-listview-[data-list]-full | pro
+		*/
+		
+		var listId = $(this).data('list');
+		var listId2 = $(this).data('list2'); // (optional) R / L Eye control (see PCR Risks)
+		var listview = new ListView( $(this),listId,listId2);
 	});
 	
-	function ListView( $iconBtn, $quick, $full ){
-		var quick = true;
-		
+	function ListView( $iconBtn, listId, listId2 ){
+		var proView = true;
+		var list = new List(listId);
+		var list2 = listId2 == undefined ? false : new List(listId2);	
 		
 		$iconBtn.click(function(){
 			$(this).toggleClass('collapse expand');
-			quick = !quick;
-			
-			if(quick){
-				$quick.show();
-				$full.hide();
-			} else {
-				$quick.hide();
-				$full.show();
-			}
+			proView = !proView;
+			changeView(proView,list);
+			if(list2 != false) changeView( proView,list2);
 		});
+		
+		function changeView(proView,list){
+			if(proView){
+				list.$pro.show();
+				list.$full.hide();
+			} else {
+				list.$pro.hide();
+				list.$full.show();
+			}
+		}
+		
+		function List(id){
+			this.$pro = $('#js-listview-'+id+'-pro');
+			this.$full = $('#js-listview-'+id+'-full');
+		}
+		
 	}
 
 
