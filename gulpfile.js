@@ -51,7 +51,7 @@ default
 - Build IDG demo JS 
 - watch...
 **/
-gulp.task('default',['sass','readJS','watch-build']);
+gulp.task('default',['sass','sass-classic','sass-print','readJS','watch-build']);
 
 /**
 Eyedraw icons
