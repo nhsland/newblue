@@ -1457,6 +1457,36 @@ select.fixed-width {
   display: flex;
 }
 
+.oe-autocomplete {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 5px;
+  border: 1px solid #1e2e42;
+  z-index: 100;
+  background: #374755;
+  color: #d6d6d6;
+}
+
+.oe-autocomplete li {
+  border-bottom: 1px dotted #26303d;
+}
+
+.oe-autocomplete li:last-child {
+  border-bottom: none;
+}
+
+.oe-autocomplete li a {
+  display: block;
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 5px 2px;
+}
+
+.oe-autocomplete li a .autocomplete-match {
+  font-weight: 700;
+}
+
 /*  iconography */
 .oe-i {
   display: inline-block;
