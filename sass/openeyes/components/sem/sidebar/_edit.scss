@@ -44,7 +44,7 @@
 			
 			&.selected {
 				color: $oe-pro-text; // electric blue was too much for select state
-				background-color:$oe-pro-popup-bg;
+				// background-color:$oe-pro-popup-bg; // background colour removed
 			}
 			
 			&.error {
