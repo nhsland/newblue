@@ -5689,6 +5689,11 @@ ul.management-summaries li h6 {
   font-weight: 600;
 }
 
+.element .eyedraw .eyedraw-data .data-value.not-recorded {
+  text-align: left;
+  font-size: 0.75rem;
+}
+
 .element .eyedraw .eyedraw-data.stack .data-value {
   padding: 0 0 10px 0;
 }

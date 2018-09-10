@@ -61,6 +61,11 @@
 				.priority-text {
 					font-weight:600;
 				}
+				
+				&.not-recorded {
+					text-align: left;
+					@include font-size(12);
+				}
 			}
 			
 			// when the data-label and data-values are stacked
