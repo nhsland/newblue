@@ -6684,7 +6684,7 @@ span.squiggle {
   float: left;
 }
 
-.element-eye .gonio-cross {
+.element-eyes .gonio-cross {
   position: relative;
   height: 120px;
   width: auto;
@@ -6693,7 +6693,7 @@ span.squiggle {
   margin: 10px 0;
 }
 
-.element-eye .gonio-cross .gonio-sup {
+.element-eyes .gonio-cross .gonio-sup {
   position: absolute;
   top: 0;
   left: 50%;
@@ -6702,7 +6702,7 @@ span.squiggle {
           transform: translate(-50%, 0);
 }
 
-.element-eye .gonio-cross .gonio-tem {
+.element-eyes .gonio-cross .gonio-tem {
   position: absolute;
   left: 5px;
   top: 48%;
@@ -6710,7 +6710,7 @@ span.squiggle {
           transform: translate(0, -50%);
 }
 
-.element-eye .gonio-cross .gonio-nas {
+.element-eyes .gonio-cross .gonio-nas {
   position: absolute;
   right: 5px;
   top: 48%;
@@ -6718,7 +6718,7 @@ span.squiggle {
           transform: translate(0, -50%);
 }
 
-.element-eye .gonio-cross .gonio-inf {
+.element-eyes .gonio-cross .gonio-inf {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -8351,12 +8351,10 @@ table.oe-clinic-list td.center {
 }
 
 .oe-virtual-clinic table.virtual-clinic tbody .clinic-info table tr td, .oe-virtual-clinic table.virtual-clinic tbody .clinic-info table tr th {
+  padding: 5px 0;
   font-size: 0.6875rem;
   line-height: 1;
-}
-
-.oe-virtual-clinic table.virtual-clinic tbody .clinic-info table tr td:last-child, .oe-virtual-clinic table.virtual-clinic tbody .clinic-info table tr th:last-child {
-  text-align: right;
+  text-align: left;
 }
 
 .oe-vc-mode {
