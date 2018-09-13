@@ -1142,8 +1142,8 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   margin-top: -30px;
   margin-left: -30px;
   border-radius: 50%;
-  border: 4px solid white;
-  border-top-color: rgba(255, 255, 255, 0);
+  border: 4px solid cyan;
+  border-top-color: rgba(0, 255, 255, 0);
   -webkit-animation: spinner .8s linear infinite;
           animation: spinner .8s linear infinite;
 }
