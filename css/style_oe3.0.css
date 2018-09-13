@@ -1135,15 +1135,40 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 .spinner:before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
   width: 60px;
   height: 60px;
+  top: 50%;
+  left: 50%;
   margin-top: -30px;
   margin-left: -30px;
   border-radius: 50%;
   border: 4px solid white;
   border-top-color: rgba(255, 255, 255, 0);
+  -webkit-animation: spinner .8s linear infinite;
+          animation: spinner .8s linear infinite;
+}
+
+.spinner.as-icon {
+  display: inline-block;
+  position: relative;
+  width: 19px;
+  height: 19px;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+
+.spinner.as-icon:before {
+  content: '';
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 50%;
+  left: 50%;
+  margin-top: -9.5px;
+  margin-left: -9.5px;
+  border-radius: 50%;
+  border: 2px solid cyan;
+  border-top-color: rgba(0, 255, 255, 0);
   -webkit-animation: spinner .8s linear infinite;
           animation: spinner .8s linear infinite;
 }
