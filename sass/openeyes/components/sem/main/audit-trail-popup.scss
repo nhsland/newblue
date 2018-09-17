@@ -5,9 +5,9 @@
 // (note: Clinic Quicklook is cut down verion of Quicklook for Clinic lists)
 
 .oe-popup-event-audit-trail {
-	z-index:$oe-z-quicklook;
+	z-index:$oe-z-quicklook - 1; // make sure it's under the Patient popups
 	position: absolute;
-	top:47px;
+	top:47px ;
 	left:0;
 	width:400px; // arbitary (by eye)
 	background: $oe-blue;

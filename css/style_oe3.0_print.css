@@ -1,4 +1,4 @@
-/* Thu Sep 13 2018 16:36:07 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Mon Sep 17 2018 15:19:15 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -124,7 +124,6 @@ ol,
 li,
 h1,
 h2,
-b,
 h3,
 h4,
 h5,
@@ -206,7 +205,7 @@ textarea {
   width: 16.66667%;
 }
 
-.cols-3, cols-quarter {
+.cols-3, .cols-quarter {
   width: 25%;
 }
 
@@ -272,12 +271,38 @@ textarea {
   padding-right: 0 !important;
 }
 
-/* OpenEyes UI v3.0 -- PRINT (bases on v2, minimal touch to style v2 Print DOM) */
+/* OpenEyes UI v3.0 */
 html {
   background: #fff;
   font-family: 'Roboto','Helvetica','Arial',sans-serif;
   font-weight: 400;
   font-size: 10pt;
+}
+
+.spacer {
+  height: 3em;
+}
+
+.break {
+  page-break-after: always !important;
+}
+
+hr {
+  border-top: 2px solid #ddd;
+}
+
+div.dotted-write {
+  height: 1.5em;
+  width: 100%;
+  border-bottom: 2px dotted #646464;
+}
+
+div.dotted-write.cols-half {
+  width: 50%;
+}
+
+div.dotted-write.cols-quarter {
+  width: 25%;
 }
 
 .clearfix {
@@ -297,8 +322,131 @@ div.clearfix {
   clear: both;
 }
 
-.spacer {
-  height: 6px;
+.flex-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.flex-layout.flex-right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.flex-layout.flex-left {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.flex-layout.flex-center {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+h1 {
+  font-size: 18pt;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 0 0 1.3em 0;
+}
+
+h2 {
+  font-size: 15pt;
+  font-weight: 400;
+  line-height: 1.2em;
+  margin: 0.5em 0 0.8em 0;
+}
+
+h3 {
+  font-size: 13pt;
+  font-weight: 500;
+  line-height: 1.1em;
+  margin: 0.4em 0 0.6em 0;
+}
+
+h4 {
+  font-size: 11pt;
+  font-weight: 500;
+  line-height: 1.1em;
+  margin: 0.4em 0 0.4em 0;
+}
+
+p {
+  font-size: 11pt;
+  font-weight: 400;
+  line-height: 1.3em;
+  margin: 0.3em 0 0.3em 0;
+}
+
+h5 {
+  font-size: 8pt;
+  font-weight: 500;
+  line-height: 1.2em;
+  margin: 0.5em 0 0.5em 0;
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+.right-align {
+  text-align: right;
+}
+
+.print-header {
+  margin: 0 0 1em 0;
+}
+
+.print-header .logo {
+  text-align: right;
+}
+
+ul, ol {
+  list-style-position: inside;
+}
+
+ul li, ol li {
+  font-size: 8pt !important;
+  padding: 2px 0;
+}
+
+table {
+  width: 100%;
+  border: 2px solid #ddd;
+  margin: 0.5em 0 1em 0;
+  page-break-inside: avoid !important;
+}
+
+table td, table th {
+  padding: 4px !important;
+  font-size: 8pt !important;
+  text-align: left;
+}
+
+table th {
+  font-weight: 400;
+}
+
+table td {
+  font-weight: 600;
+  border-bottom: none !important;
+}
+
+table.borders td, table.borders th {
+  border: 1.5px #ddd solid;
+}
+
+table.borders tr.no-borders td {
+  border-top: none;
 }
 
 .print-form-div {
@@ -324,65 +472,6 @@ div.clearfix {
   z-index: -1;
   top: 120px;
   left: 60px;
-}
-
-h1 {
-  font-size: 15pt;
-  font-weight: 300;
-  margin: 0;
-  vertical-align: bottom;
-  float: left;
-  width: 50%;
-}
-
-h2, b {
-  font-size: 11pt;
-  font-weight: 300;
-  line-height: 1em;
-  margin: 8px 0 4px 0;
-}
-
-b {
-  display: inline-block;
-}
-
-ul, ol {
-  list-style-position: inside;
-}
-
-ul li, ol li {
-  font-size: 8pt !important;
-  padding: 2px 0;
-}
-
-table {
-  width: 100%;
-  border: 2px solid #ddd;
-  margin: 8px 0;
-  page-break-inside: avoid !important;
-}
-
-tr.handWritten td {
-  height: 30px;
-}
-
-td, th {
-  border: 1.5px #ddd solid;
-  padding: 4px !important;
-  font-size: 8pt !important;
-  text-align: left;
-}
-
-td {
-  border-bottom: none !important;
-}
-
-.done_bys th {
-  width: 22%;
-}
-
-.done_bys td {
-  width: 28%;
 }
 
 .banner {
@@ -419,6 +508,18 @@ td {
 
 .prescription_header td {
   width: 30%;
+}
+
+tr.handWritten td {
+  height: 30px;
+}
+
+.done_bys th {
+  width: 22%;
+}
+
+.done_bys td {
+  width: 28%;
 }
 
 .prescription_header .prescription_items td,

@@ -5,19 +5,27 @@
 
 @import 'style_fonts'; 		// localhost for Roboto https://fonts.google.com/specimen/Roboto 
 
+
+
 // Based on HTML5 Boilerplate v4.3.0
 @import "base/resets";		// reset (selected normalize)
 @import "base/h5bp";		// H5BP, some opinionated defaults 
 @import "base/grid";		// Simple grid layout 
 
-/* OpenEyes UI v3.0 -- PRINT (bases on v2, minimal touch to style v2 Print DOM) */
-// Quick fix required for v3.0 uses existing DOM
+// config for PRINT
+@import "print/_config-print";
+
+/* OpenEyes UI v3.0 */
 @import "print/base"; 
+@import "print/flex";
 @import "print/typography";
+@import "print/header"; 
 @import "print/lists";
 @import "print/tables";
-@import "print/banner";
 
+
+// Print specific styling
+// Quick fixes required for v3.0 for existing DOMs
 @import "print/event/prescription";
 
 

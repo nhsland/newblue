@@ -3,32 +3,42 @@
 table {
     width: 100%;
     border:2px solid #ddd;
-    margin:8px 0;
+    margin:0.5em 0 1em 0;
     
-    page-break-inside:avoid !important; 
-}
-
-tr.handWritten td {
-    height: 30px;
-}
-
-td, th {
-    border: 1.5px #ddd solid;
-    padding: 4px !important;
-    font-size: 8pt !important;
- 	text-align:left;   
-}
-
-td {
-	border-bottom: none !important;
-}
-
-.done_bys {
-	th {
-		 width: 22%;
+    // try to avoid breaking up tabular data
+    page-break-inside:avoid !important;
+    
+    // setup defaults
+    td, th {
+	    padding: 4px !important;
+	    font-size: $fontsize-small !important; 		// 8pt was set in v2, sticking with this.
+	 	text-align:left;   
+	}
+	
+	th { 
+		font-weight:400;				// header less prominent
 	}
 	td {
-		 width: 28%;
+		font-weight:600;				// make data more readable than headers
+		border-bottom: none !important; // remove bottom border, solves a layout issue.
 	}
+	
+	// add borders to the data (standard table)
+	&.borders {
+		td, th {
+			border: 1.5px #ddd solid;
+			
+		}
+		
+		// merge data in <tr> with <tr> above
+		tr {
+			&.no-borders {
+				td {
+					border-top: none;	
+				}
+			}
+		}
+	}  
 }
+
 

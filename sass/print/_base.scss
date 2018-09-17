@@ -6,9 +6,42 @@ html {
 	background: #fff;
 	font-family: 'Roboto','Helvetica','Arial',sans-serif;
 	font-weight:400;
-	font-size: 10pt;
+	font-size: $fontsize-base;
 }
 
+// empty <div>
+.spacer {
+	height:3em;
+}
+
+.break {
+	page-break-after: always !important;
+}
+
+hr {
+	border-top:2px solid #ddd;
+}
+
+// indicate place to input data with 
+// dotted line. 
+div.dotted-write {
+	height:1.5em;
+	width:100%;
+	border-bottom:2px dotted rgb(100,100,100);
+	
+	&.cols-half {
+		width:50%;
+	}
+	
+	&.cols-quarter {
+		width: 25%;
+	}
+}
+
+
+// clearfix is unnecessary (should be flex)
+// but keeping in case it helps 
+// with DOM transition 
 .clearfix {
 	zoom: 1;
 	&:before, &:after { content: ""; display: table; }
@@ -19,33 +52,6 @@ div.clearfix {
     clear: both;
 }
 
-// empty <div>
-.spacer {
-	height:6px;
-}
-
-.print-form-div {
-    padding: 0 0 0 0;
-    page-break-after: always;
-    font-size: 10pt;
-}
 
 
-.from-address {
-    float: right;
-    width: 300px;
-    text-align: right;
-    font-size:6pt;
-    padding-bottom: 10px;
-}
-
-.watermark {
-    position: relative;    
-    img {
-	    position: absolute;
-	    z-index: -1;
-	    top: 120px;
-	    left: 60px;
-	}
-}
 

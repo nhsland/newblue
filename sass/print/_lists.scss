@@ -3,7 +3,7 @@
 ul, ol {
 	 list-style-position: inside;
 	 li {
-		 font-size: 8pt !important;
+		 font-size: $fontsize-small !important;
 		 padding:2px 0;
 	 }
 }

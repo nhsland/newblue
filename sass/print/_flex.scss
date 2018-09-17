@@ -1,0 +1,18 @@
+// OE Print flex 
+// a basic version of the main UI flex
+.flex-layout {
+	display:flex;
+	align-items:flex-start;			// vertical top
+	justify-content:space-between; 	// make sure items align to left AND right edge;
+	
+	// horizontal alignments
+	&.flex-right {
+		justify-content:flex-end; 		// group items to the right
+	}
+	&.flex-left {
+		justify-content:flex-start; 	// group items to the left
+	}
+	&.flex-center {
+		justify-content:center; 		// group items in the center
+	}
+}

@@ -1,0 +1,16 @@
+// OE Header
+// for logo (and maybe a secondary logo but yet to see usage of this)
+
+// <header> 
+.print-header {
+	margin: 0 0 1em 0;
+	
+	// so far only has a logo
+	// logo img is in this wrapper
+	.logo {
+		text-align: right;
+	}
+	
+	// and maybe a secondary logo?
+	// .logo-secondary {}
+}

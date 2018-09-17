@@ -221,7 +221,7 @@ textarea {
   width: 16.66667%;
 }
 
-.cols-3, cols-quarter {
+.cols-3, .cols-quarter {
   width: 25%;
 }
 
@@ -4403,7 +4403,7 @@ ul.management-summaries li h6 {
 }
 
 .oe-popup-event-audit-trail {
-  z-index: 80;
+  z-index: 79;
   position: absolute;
   top: 47px;
   left: 0;
