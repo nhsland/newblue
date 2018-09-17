@@ -11,7 +11,7 @@ html {
 
 // empty <div>
 .spacer {
-	height:3em;
+	height:2em;
 }
 
 .break {
@@ -22,10 +22,14 @@ hr {
 	border-top:2px solid #ddd;
 }
 
+.nowrap {
+	white-space: nowrap;
+}
+
 // indicate place to input data with 
 // dotted line. 
 div.dotted-write {
-	height:1.5em;
+	height:2em;
 	width:100%;
 	border-bottom:2px dotted rgb(100,100,100);
 	

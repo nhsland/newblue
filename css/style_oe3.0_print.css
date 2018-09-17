@@ -1,4 +1,4 @@
-/* Mon Sep 17 2018 15:19:15 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Mon Sep 17 2018 16:35:42 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -280,7 +280,7 @@ html {
 }
 
 .spacer {
-  height: 3em;
+  height: 2em;
 }
 
 .break {
@@ -291,8 +291,12 @@ hr {
   border-top: 2px solid #ddd;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 div.dotted-write {
-  height: 1.5em;
+  height: 2em;
   width: 100%;
   border-bottom: 2px dotted #646464;
 }
