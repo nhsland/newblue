@@ -38,7 +38,13 @@ table {
 				}
 			}
 		}
-	}  
+	} 
+	
+	&.large {
+		td, th {
+			font-size: $fontsize-normal !important; 
+		}
+	} 
 }
 
 

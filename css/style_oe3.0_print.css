@@ -1,4 +1,4 @@
-/* Mon Sep 17 2018 16:35:42 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Tue Sep 18 2018 09:57:51 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -283,6 +283,7 @@ html {
   height: 2em;
 }
 
+.pageBreak,
 .break {
   page-break-after: always !important;
 }
@@ -295,18 +296,19 @@ hr {
   white-space: nowrap;
 }
 
-div.dotted-write {
-  height: 2em;
+.group {
+  margin: 1em 0;
+}
+
+.dotted-write {
+  display: inline-block;
+  height: 1.5em;
   width: 100%;
-  border-bottom: 2px dotted #646464;
+  border-bottom: 1px dotted #787878;
 }
 
-div.dotted-write.cols-half {
+.dotted-write.cols-half, .dotted-write.half {
   width: 50%;
-}
-
-div.dotted-write.cols-quarter {
-  width: 25%;
 }
 
 .clearfix {
@@ -416,11 +418,17 @@ b, strong {
 
 ul, ol {
   list-style-position: inside;
+  margin: 1em 0;
 }
 
 ul li, ol li {
   font-size: 8pt !important;
+  font-weight: 600;
   padding: 2px 0;
+}
+
+ul.large li, ol.large li {
+  font-size: 11pt !important;
 }
 
 table {
@@ -451,6 +459,10 @@ table.borders td, table.borders th {
 
 table.borders tr.no-borders td {
   border-top: none;
+}
+
+table.large td, table.large th {
+  font-size: 11pt !important;
 }
 
 .print-form-div {
