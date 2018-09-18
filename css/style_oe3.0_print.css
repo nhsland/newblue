@@ -1,4 +1,4 @@
-/* Tue Sep 18 2018 09:57:51 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Tue Sep 18 2018 13:06:22 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -309,6 +309,26 @@ hr {
 
 .dotted-write.cols-half, .dotted-write.half {
   width: 50%;
+}
+
+.checkbox {
+  display: inline-block;
+  vertical-align: baseline;
+  border: 2px solid black;
+  height: 1.4em;
+  width: 1.4em;
+  margin: 0 0.5em;
+  position: relative;
+  top: 4px;
+}
+
+.checkbox.checked:after {
+  content: 'x';
+  font-size: 12pt;
+  font-weight: 500;
+  position: absolute;
+  top: -2px;
+  left: 3px;
 }
 
 .clearfix {
