@@ -1,0 +1,33 @@
+// OE Patient Mini Overview
+.oe-patient-mini-overview {
+
+	// situational awareness
+	// flex-layout removed
+	.situational-awareness {
+		@include font-size(11);
+		font-weight: $oe-font-medium;
+		margin:8px 0 4px 0;
+		
+		.group {
+			border-bottom:1px dotted $oe-line;
+			padding:0 0 3px 0;
+			margin:0 0 3px 0;
+			
+			&:last-child {
+				border-bottom: none;
+			}
+
+			.oe-date {
+				@include font-size(11);
+				float: right;
+				opacity:0.5;
+			}
+			
+		}
+	}
+}
+
+
+
+
+

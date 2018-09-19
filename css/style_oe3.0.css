@@ -1825,6 +1825,14 @@ select.fixed-width {
   background-image: url("../svg/in-css/icons/eye.svg");
 }
 
+.oe-i.eye-circle {
+  background-image: url("../svg/in-css/icons/eye-circle.svg");
+}
+
+.oe-i.eye-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/eye-circle.svg");
+}
+
 .oe-i.comments {
   background-image: url("../svg/in-css/icons/comments.svg");
 }
@@ -3794,26 +3802,20 @@ ul.management-summaries li h6 {
 .oe-patient-mini-overview {
   position: fixed;
   z-index: 100;
-  right: 10px;
-  top: 10px;
-  padding: 10px;
-  width: 485px;
+  left: 10px;
+  top: 200px;
+  padding: 10px 5px 10px 10px;
+  width: 505px;
   background: #374755;
   color: #d6d6d6;
   -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-.oe-patient-mini-overview .data-group .quicklook-data-groups {
-  color: #d6d6d6;
-}
-
-.oe-patient-mini-overview .data-group .quicklook-data-groups .group {
-  background: #141e2b;
-}
-
-.oe-patient-mini-overview .data-group .quicklook-data-groups .group .label {
-  color: #8c8c8c;
+.oe-patient-mini-overview .mini-overview {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 0 5px 0 0;
 }
 
 .oe-patient-mini-overview .close-icon-btn {
@@ -3832,6 +3834,76 @@ ul.management-summaries li h6 {
 .oe-patient-mini-overview .patient-name {
   font-size: 1rem;
   margin: 0 0 8px 0;
+}
+
+.oe-patient-mini-overview .situational-awareness {
+  font-size: 0.6875rem;
+  font-weight: 400;
+  margin: 8px 0 4px 0;
+}
+
+.oe-patient-mini-overview .situational-awareness .group {
+  border-bottom: 1px dotted #26303d;
+  padding: 0 0 3px 0;
+  margin: 0 0 3px 0;
+}
+
+.oe-patient-mini-overview .situational-awareness .group:last-child {
+  border-bottom: none;
+}
+
+.oe-patient-mini-overview .situational-awareness .group .oe-date {
+  font-size: 0.6875rem;
+  float: right;
+  opacity: 0.5;
+}
+
+.oe-patient-mini-overview .data-group .quicklook-data-groups {
+  color: #d6d6d6;
+}
+
+.oe-patient-mini-overview .data-group .quicklook-data-groups .group {
+  background: #141e2b;
+}
+
+.oe-patient-mini-overview .data-group .quicklook-data-groups .group .label {
+  font-size: 0.75rem;
+  padding: 5px 9px;
+  color: #8c8c8c;
+}
+
+.oe-patient-mini-overview .data-group.split-data {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.oe-patient-mini-overview .data-group.split-data > .quicklook-data-groups {
+  width: 50%;
+}
+
+.oe-patient-mini-overview .data-group h3 {
+  font-size: 0.75rem;
+  margin: 8px 0 2px 0;
+}
+
+.oe-patient-mini-overview table.management-summaries tbody tr {
+  border-top: 1px dotted rgba(140, 140, 140, 0.2);
+}
+
+.oe-patient-mini-overview table.management-summaries tbody td {
+  color: #d6d6d6;
+  font-weight: 400;
+}
+
+.oe-patient-mini-overview table.management-summaries tbody td:last-child {
+  text-align: left;
 }
 
 /* Home */

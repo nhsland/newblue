@@ -1,0 +1,27 @@
+// OE Patient Mini Overview
+.oe-patient-mini-overview {
+
+	// make theme-able!
+	table.management-summaries {	
+		tbody {
+			tr {
+				border-top:1px dotted rgba( $oe-text-light,0.2 );
+			}
+			
+			td {
+				color:$oe-text;
+				font-weight: $oe-font-medium;
+				
+				&:last-child {
+					text-align: left;
+				}
+			}
+		}
+		
+	}
+}
+
+
+
+
+

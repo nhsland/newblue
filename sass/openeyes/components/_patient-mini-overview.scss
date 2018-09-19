@@ -8,30 +8,25 @@
 	// otherwise it may be cropped by the Grid item it is within.
 	position:fixed;
 	z-index:$oe-z-popup;
-	right:10px;
-	top:10px;
-	padding:10px;
-	width:485px;
+	left:10px;
+	top:200px;
+	padding:10px 5px 10px 10px;
+	width:505px;
 	
+	// themed
 	background:$oe-popup-bg;
 	color:$oe-text;
 	
 	// offset-x | offset-y | blur-radius | spread-radius | color
 	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
 	
-	.data-group {
-		// uses the same DOM as popups but they are pro-themed.
-		// for use here it needs to change with the theme
-		.quicklook-data-groups {
-			color:$oe-text;
-			.group {
-				background:$oe-blue-dark2;
-				.label { 						
-			 		color: $oe-text-light; 
-				}
-			} 
-		}
+	// wrapper to control height
+	.mini-overview {
+		max-height: 300px;
+		overflow-y: auto;
+		padding:0 5px 0 0; // for scrolling
 	}
+		
 	
 	// close icon btn (for touch) 
 	.close-icon-btn {
@@ -52,6 +47,10 @@
 		margin:0 0 8px 0;
 	}
 }
+
+@import "patient-mini-overview/situational-awareness";
+@import "patient-mini-overview/data-group";
+@import "patient-mini-overview/management-summaries";
 
 
 

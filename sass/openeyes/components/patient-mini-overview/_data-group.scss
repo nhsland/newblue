@@ -1,0 +1,42 @@
+// OE Patient Mini Overview
+.oe-patient-mini-overview {
+
+	.data-group {
+		// uses the same DOM as popups but they are pro-themed.
+		// for use here it needs to change with the theme
+		.quicklook-data-groups {
+			color:$oe-text;
+			.group {
+				background:$oe-blue-dark2;
+				.label { 
+					@include font-size(12);
+					padding:5px 9px;						
+			 		color: $oe-text-light; 
+				}
+			} 
+		}
+		
+		// provide data layout options
+		// split assumes 2 quicklook-data-groups
+		&.split-data {
+			display:flex;
+			justify-content:space-between; 
+			align-items:flex-start;
+			
+			> .quicklook-data-groups {
+				width:50%;
+			}	
+		} 
+		
+		h3 {
+			@include font-size(12);
+			margin:8px 0 2px 0;
+		}
+		
+	}
+}
+
+
+
+
+
