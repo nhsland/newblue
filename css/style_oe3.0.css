@@ -5970,6 +5970,19 @@ ul.management-summaries li h6 {
   margin: 0 0 1rem 0;
 }
 
+.main-event .element .upload-box {
+  border: 1px dotted #d6d6d6;
+  padding: 10px;
+  text-align: center;
+}
+
+.main-event .element .upload-box label {
+  display: inline-block;
+  width: 100%;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
 .oe-sem-no-events {
   position: absolute;
   top: 100px;

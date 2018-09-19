@@ -1,0 +1,31 @@
+// only seen this used in Documents Upload 
+// coupled to main-event (SEM)
+// might need de-coupling
+
+// DOM
+// <div class="upload-box">
+// <label for="Document_right_document_id" id="upload_box" class="upload-label" ondrop="drop(event)" ondragover="allowDrop(event)">
+// <i class="oe-i download medium"></i>
+// <br> Click to select file or DROP here</label>
+// <input autocomplete="off" type="file" name="Document[right_document_id]" id="Document_right_document_id" style="display:none;">
+// </div>
+
+
+
+.main-event {
+	.element {
+		.upload-box {
+			border:1px dotted $oe-text;
+			padding:10px;
+			text-align: center;
+			
+			label {
+				display:inline-block;
+				width:100%;
+				@include font-size(14);
+				cursor: pointer;
+			}
+			
+		}
+	}
+}
