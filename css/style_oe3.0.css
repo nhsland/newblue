@@ -8567,6 +8567,11 @@ table.oe-clinic-list td.center {
   padding-left: 3px;
 }
 
+.oe-admin .admin-main table.standard tbody td .restrict-filename {
+  word-wrap: break-word;
+  width: 200px;
+}
+
 .oe-admin .admin-main table.standard tfoot td {
   padding: 20px 0 0 0;
   margin: 20px 0 0 0;

@@ -29,6 +29,14 @@
 					&:first-child {
 						padding-left:3px;
 					}
+					
+					// in DICOM logs there are very long 
+					// filenames these need restricting 
+					// and wrapping
+					.restrict-filename {
+						word-wrap:break-word;
+						width:200px;
+					}
 				}
 			}
 			
