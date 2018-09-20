@@ -11,7 +11,7 @@
 	left:10px;
 	top:200px;
 	padding:10px 5px 10px 10px;
-	width:505px;
+	width:465px;
 	
 	// themed
 	background:$oe-popup-bg;
@@ -40,6 +40,7 @@
 		top:15px;
 		right:40px;
 		@include font-size(12);
+		font-weight:$oe-font-medium;
 	}
 	
 	.patient-name {

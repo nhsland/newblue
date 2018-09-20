@@ -3805,7 +3805,7 @@ ul.management-summaries li h6 {
   left: 10px;
   top: 200px;
   padding: 10px 5px 10px 10px;
-  width: 505px;
+  width: 465px;
   background: #374755;
   color: #d6d6d6;
   -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
@@ -3829,6 +3829,7 @@ ul.management-summaries li h6 {
   top: 15px;
   right: 40px;
   font-size: 0.75rem;
+  font-weight: 400;
 }
 
 .oe-patient-mini-overview .patient-name {
@@ -7986,36 +7987,6 @@ table.oe-clinic-list td.center {
 
 .oe-clinic-add-to-all .add-icon .oe-i {
   margin: auto;
-}
-
-.patient-clinic-quicklook {
-  position: absolute;
-  top: 0;
-  left: 10px;
-  z-index: 90;
-  background: #141e2b;
-  border: 1px solid cyan;
-  padding: 5px 8px 15px 8px;
-  width: 470px;
-  border-radius: 3px;
-}
-
-.patient-clinic-quicklook .patient-details {
-  color: #d6d6d6;
-  font-size: 0.875rem;
-  padding: 5px;
-}
-
-.patient-clinic-quicklook .patient-details .name {
-  font-size: 1.125rem;
-}
-
-.patient-clinic-quicklook .subtitle {
-  margin: 10px 3px 5px 0;
-  font-size: 0.875rem;
-  font-weight: 200;
-  color: #8c8c8c;
-  text-align: right;
 }
 
 /* Analytics */

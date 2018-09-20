@@ -1,23 +1,27 @@
 /**
-quicklook popup
+Patient Mini Overview
+This is click only. Big popup, could be irritating if 
+it was popping up on rollover... 
 **/
-clinic.quicklook = function(){
-	var $popup = $('#patient-clinic-quicklook');
+idg.patientMiniOverview = function(){
+	
+	if( $('.oe-patient-mini-overview').length == 0 ) return;
 
 	/**
-	Events	
+	IDG is only using 1 DOM as a demo for all interactions
 	**/
-	// quicklook and warning triangle are wrapped
-	// unclick to close
-	$('.js-clinic-quicklook').click(function( e ){
+
+	var $mini = $('#patient-mini-overview');
+	
+	// wrapper for icons (covers warning triangle too)
+	$('.js-patient-quick-overview').click(function( e ){
 		e.stopPropagation();
-		var pos = clinic.getPosition( $(this) );
-		showQuicklook( $(this), pos.top );
+		$mini.show();
 	});
 	
-	$popup.click(function( e ){
+	$('#patient-mini-overview .close-icon-btn').click(function( e ){
 		e.stopPropagation();
-		hideQuicklook();
+		$mini.hide();
 	});
 	
 	function showQuicklook( $wrapper, top ){

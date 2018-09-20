@@ -70,5 +70,4 @@ clinic.init = function( data ){
 	this.setupFilters(); 				
 	this.setDurationGraphics();	
 	this.showCurrentTime();
-	this.quicklook();
 }

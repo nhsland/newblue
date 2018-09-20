@@ -153,6 +153,9 @@ idg.init = function(){
 	// Element subgroups
 	idg.elementSubgroup();
 	
+	// Patient Mini Overview
+	idg.patientMiniOverview();
+	
 										
 };
 
@@ -229,7 +232,6 @@ clinic.init = function( data ){
 	this.setupFilters(); 				
 	this.setDurationGraphics();	
 	this.showCurrentTime();
-	this.quicklook();
 }
 /** 
 Inital setup for Active steps
@@ -821,51 +823,6 @@ clinic.makeStepComplete = function( $step ){
 	$step.children('.time').text('10:35');
 	
 	clinic.updateTasks();
-}
-/**
-quicklook popup
-**/
-clinic.quicklook = function(){
-	var $popup = $('#patient-clinic-quicklook');
-
-	/**
-	Events	
-	**/
-	// quicklook and warning triangle are wrapped
-	// unclick to close
-	$('.js-clinic-quicklook').click(function( e ){
-		e.stopPropagation();
-		var pos = clinic.getPosition( $(this) );
-		showQuicklook( $(this), pos.top );
-	});
-	
-	$popup.click(function( e ){
-		e.stopPropagation();
-		hideQuicklook();
-	});
-	
-	function showQuicklook( $wrapper, top ){
-		offsetTop = top + 30;
-		$popup.find('.patient-details .name').text( $wrapper.data('name') );
-		$popup.find('.patient-details .number').text( $wrapper.data('id') );
-		
-		// show alert?
-		if( $wrapper.find('.triangle').length ){
-			$popup.find('.alert-box').show();
-		} else {
-			$popup.find('.alert-box').hide();
-		}
-		
-		$popup
-			.removeClass('hidden')
-			.css( {'top':offsetTop} )
-			.show();
-	}
-	
-	function hideQuicklook(){
-		$popup.hide();
-	}
-	
 }
 /** 
 set waiting light graphics based on the duration minutes
@@ -2404,6 +2361,55 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 
 
 
+/**
+Patient Mini Overview
+This is click only. Big popup, could be irritating if 
+it was popping up on rollover... 
+**/
+idg.patientMiniOverview = function(){
+	
+	if( $('.oe-patient-mini-overview').length == 0 ) return;
+
+	/**
+	IDG is only using 1 DOM as a demo for all interactions
+	**/
+
+	var $mini = $('#patient-mini-overview');
+	
+	// wrapper for icons (covers warning triangle too)
+	$('.js-patient-quick-overview').click(function( e ){
+		e.stopPropagation();
+		$mini.show();
+	});
+	
+	$('#patient-mini-overview .close-icon-btn').click(function( e ){
+		e.stopPropagation();
+		$mini.hide();
+	});
+	
+	function showQuicklook( $wrapper, top ){
+		offsetTop = top + 30;
+		$popup.find('.patient-details .name').text( $wrapper.data('name') );
+		$popup.find('.patient-details .number').text( $wrapper.data('id') );
+		
+		// show alert?
+		if( $wrapper.find('.triangle').length ){
+			$popup.find('.alert-box').show();
+		} else {
+			$popup.find('.alert-box').hide();
+		}
+		
+		$popup
+			.removeClass('hidden')
+			.css( {'top':offsetTop} )
+			.show();
+	}
+	
+	function hideQuicklook(){
+		$popup.hide();
+	}
+	
+}
 /**
 Collapse Group
 Uses the DOM and CSS hooks

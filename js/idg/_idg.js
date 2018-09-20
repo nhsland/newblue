@@ -153,6 +153,9 @@ idg.init = function(){
 	// Element subgroups
 	idg.elementSubgroup();
 	
+	// Patient Mini Overview
+	idg.patientMiniOverview();
+	
 										
 };
 
