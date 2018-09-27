@@ -8449,6 +8449,21 @@ table.oe-clinic-list td.center {
   font-weight: 500;
 }
 
+.oe-vc-mode .vc-content table {
+  margin: 6px 0;
+  width: 100%;
+}
+
+.oe-vc-mode .vc-content table.borders {
+  border: 2px solid #cc9000;
+}
+
+.oe-vc-mode .vc-content table.borders th, .oe-vc-mode .vc-content table.borders td {
+  border: 1px solid #b37e00;
+  border-bottom: none;
+  padding: 1px 2px;
+}
+
 .oe-vc-mode .vc-content .row {
   margin: 4px 0 6px 0;
 }

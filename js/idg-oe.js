@@ -2387,6 +2387,7 @@ idg.patientMiniOverview = function(){
 		$mini.hide();
 	});
 	
+/*
 	function showQuicklook( $wrapper, top ){
 		offsetTop = top + 30;
 		$popup.find('.patient-details .name').text( $wrapper.data('name') );
@@ -2408,6 +2409,7 @@ idg.patientMiniOverview = function(){
 	function hideQuicklook(){
 		$popup.hide();
 	}
+*/
 	
 }
 /**

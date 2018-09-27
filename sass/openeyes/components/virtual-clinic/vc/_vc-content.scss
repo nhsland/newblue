@@ -32,6 +32,22 @@
 			margin:0 0 4px 0;
 			font-weight:500;
 		}
+		
+		// tables 
+		table {
+			margin:6px 0;
+			width:100%;
+			
+			&.borders {
+				border: 2px solid shade($oe-vc-orange,20);
+				th,td {
+					border: 1px solid shade($oe-vc-orange,30);
+					border-bottom: none;
+					padding:1px 2px;
+				}
+			}
+			
+		}
 			
 		// extend row to divide content:
 		.row {
