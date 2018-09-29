@@ -1,4 +1,4 @@
-/* Thu Sep 27 2018 15:21:47 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Sat Sep 29 2018 17:03:57 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -274,6 +274,9 @@ textarea {
 /* OpenEyes UI v3.0 */
 html {
   background: #fff;
+}
+
+body {
   font-family: 'Roboto','Helvetica','Arial',sans-serif;
   font-weight: 400;
   font-size: 10pt;
@@ -406,6 +409,10 @@ h4 {
   margin: 0.4em 0 0.4em 0;
 }
 
+h4.subtitle {
+  margin-top: 0.8em;
+}
+
 p {
   font-size: 11pt;
   font-weight: 400;
@@ -473,6 +480,10 @@ table td {
   border-bottom: none !important;
 }
 
+table.borders {
+  border: 2px solid #ddd;
+}
+
 table.borders td, table.borders th {
   border: 1.5px #ddd solid;
 }
@@ -481,8 +492,21 @@ table.borders tr.no-borders td {
   border-top: none;
 }
 
-table.large td, table.large th {
+table.large td, table.large th, table.normal-text td, table.normal-text th {
   font-size: 11pt !important;
+}
+
+table.label-item {
+  border: none;
+}
+
+table.label-item td, table.label-item th {
+  font-size: 11pt !important;
+  padding-bottom: 1em;
+}
+
+table.label-item th {
+  width: 25% !important;
 }
 
 .print-form-div {

@@ -293,9 +293,6 @@ textarea {
 /* Structure */
 html {
   background: #101925;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
 }
 
 .open-eyes {
@@ -303,6 +300,9 @@ html {
   min-width: 1250px;
   padding: 0;
   margin: 0;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .oe-grid {
@@ -5849,6 +5849,10 @@ ul.management-summaries li h6 {
   font-size: 1.0625rem;
   font-weight: 400;
   padding: 15px 10px;
+}
+
+.main-event .mce-tinymce button:hover {
+  background: #c8e6ff;
 }
 
 .main-event .element table.calendar {

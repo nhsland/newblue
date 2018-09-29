@@ -25,9 +25,10 @@ table {
 	
 	// add borders to the data (standard table)
 	&.borders {
+		// need this here again, because of TinyMCE editor
+		border:2px solid #ddd;
 		td, th {
 			border: 1.5px #ddd solid;
-			
 		}
 		
 		// merge data in <tr> with <tr> above
@@ -40,11 +41,33 @@ table {
 		}
 	} 
 	
-	&.large {
+	// make text "normal"
+	&.large,
+	&.normal-text {
 		td, th {
 			font-size: $fontsize-normal !important; 
 		}
-	} 
+	}
+	
+	// label - view layout
+	// to replace tab layouts
+	// structure is <tr><th>Label<th><td>Data<td></tr>
+	&.label-item {
+		border: none;
+		td, th {
+			font-size: $fontsize-normal !important; 
+			padding-bottom:1em;
+		}
+		
+		th {
+			width:25% !important;
+		}
+		
+	}
+	
+	 
 }
+
+
 
 
