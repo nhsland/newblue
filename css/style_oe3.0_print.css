@@ -1,4 +1,4 @@
-/* Sat Sep 29 2018 17:03:57 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Sun Sep 30 2018 19:48:12 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -469,6 +469,7 @@ table td, table th {
   padding: 4px !important;
   font-size: 8pt !important;
   text-align: left;
+  vertical-align: top;
 }
 
 table th {
@@ -506,7 +507,24 @@ table.label-item td, table.label-item th {
 }
 
 table.label-item th {
-  width: 25% !important;
+  width: 26% !important;
+}
+
+table.label-r-l {
+  border: none;
+}
+
+table.label-r-l td, table.label-r-l th {
+  font-size: 11pt !important;
+  padding-bottom: 1em;
+}
+
+table.label-r-l th {
+  width: 26% !important;
+}
+
+table.label-r-l td {
+  width: 37% !important;
 }
 
 .print-form-div {

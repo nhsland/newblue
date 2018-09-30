@@ -12,7 +12,8 @@ table {
     td, th {
 	    padding: 4px !important;
 	    font-size: $fontsize-small !important; 		// 8pt was set in v2, sticking with this.
-	 	text-align:left;   
+	 	text-align:left; 
+	 	vertical-align: top;  
 	}
 	
 	th { 
@@ -60,7 +61,27 @@ table {
 		}
 		
 		th {
-			width:25% !important;
+			width:26% !important;
+		}
+		
+	}
+	
+	// label - right - left layout
+	// to replace tab layouts
+	// structure is <tr><th>Label<th><td>Data<td></tr>
+	&.label-r-l {
+		border: none;
+		td, th {
+			font-size: $fontsize-normal !important; 
+			padding-bottom:1em;
+		}
+		
+		th {
+			width:26% !important;
+		}
+		
+		td {
+			width:37% !important;
 		}
 		
 	}
