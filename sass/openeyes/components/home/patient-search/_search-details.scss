@@ -4,9 +4,8 @@
 .patient-search-results {
 	
 	.search-details {
-		
-		margin:20px 0;
-		padding:0 20px;
+		// don't use margins, in subgrid. margin causes overflow issues on container.
+		padding:20px;
 		border-right:1px solid $oe-blue-light;
 		
 		color:$oe-text-light;

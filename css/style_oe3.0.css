@@ -4098,8 +4098,7 @@ ul.management-summaries li h6 {
 }
 
 .patient-search-results .search-details {
-  margin: 20px 0;
-  padding: 0 20px;
+  padding: 20px;
   border-right: 1px solid #626d7b;
   color: #8c8c8c;
   font-size: 0.75rem;
@@ -4985,10 +4984,6 @@ ul.management-summaries li h6 {
   font-style: italic;
   color: #8c8c8c;
   background: #1e2e42;
-  background-position: right center;
-  background-repeat: no-repeat;
-  background-size: 13px;
-  background-image: url("../svg/in-css/ui/sidebar/direction-right.svg");
 }
 
 .sidebar .oe-element-list a:hover, .sidebar .oe-element-list a:focus {
