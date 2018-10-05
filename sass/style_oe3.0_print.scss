@@ -23,10 +23,16 @@
 @import "print/lists";
 @import "print/tables";
 
+/* icons - note _config-print setup to use '_classic' icon set */
+@import "openeyes/icons";
+
+
+/* SEM (basic) */
+@import "print/sem/element-eyes";
 
 // Print specific styling
 // Quick fixes required for v3.0 for existing DOMs
-@import "print/event/prescription";
+@import "print/sem/event/prescription";
 
 
 

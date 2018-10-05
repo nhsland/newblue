@@ -1,0 +1,20 @@
+// R & L data split
+.element-eyes {
+	display:flex;
+	align-items:flex-start;			
+	justify-content:space-between;
+
+	// these are were tricky to get right
+	// had to tweak the 'left' side to get the + icon
+	// to line up with the full width + icon
+	.right-eye {
+		width:50%; 
+		padding-left: 10px; 	// indent data
+		padding-right: 29px;	// L / R not the same! - ED 490px 
+	}
+	.left-eye {
+		width:50%; 
+		padding-left: 17px; 	// indent data 
+		padding-right: 20px; 	// L / R not the same! - ED 491px (+1px)
+	}
+}

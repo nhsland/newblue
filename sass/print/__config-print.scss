@@ -10,5 +10,17 @@ $fontsize-h3:		13pt;
 $fontsize-normal:	11pt; 	// h4 & p
 $fontsize-small: 	8pt;	// h5
 
+// ... different SVGs for 'pro' & 'classic' theme
+// ... for printing use 'classic' they are basically black (#003)
 
+// icon opacity (default)
+$oe-icon-opacity: 	1;
+
+// SVG paths - general UI
+@function svg-path($svg){
+	@return "../svg/in-css/" + $svg + ".svg";
+}
+@function svg-icon-path-theme($svg){
+	@return "../svg/in-css/icons/_classic/" + $svg + ".svg";
+}
 

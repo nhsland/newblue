@@ -1,4 +1,4 @@
-/* Mon Oct 01 2018 14:28:14 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Fri Oct 05 2018 20:05:54 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -525,6 +525,617 @@ table.label-r-l th {
 
 table.label-r-l td {
   width: 37% !important;
+}
+
+/* icons - note _config-print setup to use '_classic' icon set */
+.oe-i {
+  display: inline-block;
+  vertical-align: middle;
+  width: 19px;
+  height: 19px;
+  background-size: 19px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.oe-i.small {
+  width: 13px;
+  height: 13px;
+  background-size: 13px;
+}
+
+.oe-i.medium {
+  width: 16px;
+  height: 16px;
+  background-size: 16px;
+}
+
+.oe-i.small-icon {
+  background-size: 13px;
+}
+
+.oe-i.medium-icon {
+  background-size: 16px;
+}
+
+.oe-i.pad {
+  margin: 0 4px;
+}
+
+.oe-i.pad-right {
+  margin: 0 8px 0 0;
+}
+
+.oe-i.pad-left {
+  margin: 0 0 0 8px;
+}
+
+.oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i.active, .oe-i.no-hover, .oe-i.circle-green, .oe-i.circle-amber, .oe-i.circle-red, .oe-i.warning {
+  opacity: 1;
+}
+
+.oe-i.selected {
+  opacity: 1;
+  cursor: default;
+}
+
+.oe-i.start, .oe-i.stop, .oe-i.change, .oe-i.d-slash, .oe-i.no-click {
+  cursor: default;
+  pointer-events: none;
+}
+
+.oe-i.start:hover, .oe-i.start:focus, .oe-i.start:active, .oe-i.stop:hover, .oe-i.stop:focus, .oe-i.stop:active, .oe-i.change:hover, .oe-i.change:focus, .oe-i.change:active, .oe-i.d-slash:hover, .oe-i.d-slash:focus, .oe-i.d-slash:active, .oe-i.no-click:hover, .oe-i.no-click:focus, .oe-i.no-click:active {
+  opacity: 1;
+}
+
+.oe-i.disabled {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.25;
+}
+
+.oe-i.disabled:hover, .oe-i.disabled:focus, .oe-i.disabled:active {
+  opacity: inherit;
+}
+
+.oe-i.plus {
+  background-image: url("../svg/in-css/icons/_classic/plus.svg");
+}
+
+.oe-i.plus.pro-theme {
+  background-image: url("../svg/in-css/icons/plus.svg");
+}
+
+.oe-i.plus-circle {
+  background-image: url("../svg/in-css/icons/_classic/plus-circle.svg");
+}
+
+.oe-i.plus-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/plus-circle.svg");
+}
+
+.oe-i.minus {
+  background-image: url("../svg/in-css/icons/_classic/minus.svg");
+}
+
+.oe-i.minus.pro-theme {
+  background-image: url("../svg/in-css/icons/minus.svg");
+}
+
+.oe-i.arrow-down {
+  background-image: url("../svg/in-css/icons/_classic/arrow-down.svg");
+}
+
+.oe-i.arrow-down.pro-theme {
+  background-image: url("../svg/in-css/icons/arrow-down.svg");
+}
+
+.oe-i.arrow-up {
+  background-image: url("../svg/in-css/icons/_classic/arrow-up.svg");
+}
+
+.oe-i.arrow-up.pro-theme {
+  background-image: url("../svg/in-css/icons/arrow-up.svg");
+}
+
+.oe-i.arrow-down-bold {
+  background-image: url("../svg/in-css/icons/_classic/arrow-down-bold.svg");
+}
+
+.oe-i.arrow-down-bold.pro-theme {
+  background-image: url("../svg/in-css/icons/arrow-down-bold.svg");
+}
+
+.oe-i.arrow-up-bold {
+  background-image: url("../svg/in-css/icons/_classic/arrow-up-bold.svg");
+}
+
+.oe-i.arrow-up-bold.pro-theme {
+  background-image: url("../svg/in-css/icons/arrow-up-bold.svg");
+}
+
+.oe-i.arrow-right-bold {
+  background-image: url("../svg/in-css/icons/_classic/arrow-right-bold.svg");
+}
+
+.oe-i.arrow-right-bold.pro-theme {
+  background-image: url("../svg/in-css/icons/arrow-right-bold.svg");
+}
+
+.oe-i.arrow-left-bold {
+  background-image: url("../svg/in-css/icons/_classic/arrow-left-bold.svg");
+}
+
+.oe-i.arrow-left-bold.pro-theme {
+  background-image: url("../svg/in-css/icons/arrow-left-bold.svg");
+}
+
+.oe-i.direction-right {
+  background-image: url("../svg/in-css/icons/_classic/direction-right.svg");
+}
+
+.oe-i.direction-right.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-right.svg");
+}
+
+.oe-i.direction-left {
+  background-image: url("../svg/in-css/icons/_classic/direction-left.svg");
+}
+
+.oe-i.direction-left.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-left.svg");
+}
+
+.oe-i.direction-up {
+  background-image: url("../svg/in-css/icons/_classic/direction-up.svg");
+}
+
+.oe-i.direction-up.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-up.svg");
+}
+
+.oe-i.direction-down {
+  background-image: url("../svg/in-css/icons/_classic/direction-down.svg");
+}
+
+.oe-i.direction-down.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-down.svg");
+}
+
+.oe-i.direction-right-circle {
+  background-image: url("../svg/in-css/icons/_classic/direction-right-circle.svg");
+}
+
+.oe-i.direction-right-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-right-circle.svg");
+}
+
+.oe-i.direction-left-circle {
+  background-image: url("../svg/in-css/icons/_classic/direction-left-circle.svg");
+}
+
+.oe-i.direction-left-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-left-circle.svg");
+}
+
+.oe-i.direction-up-circle {
+  background-image: url("../svg/in-css/icons/_classic/direction-up-circle.svg");
+}
+
+.oe-i.direction-up-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-up-circle.svg");
+}
+
+.oe-i.direction-down-circle {
+  background-image: url("../svg/in-css/icons/_classic/direction-down-circle.svg");
+}
+
+.oe-i.direction-down-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-down-circle.svg");
+}
+
+.oe-i.move {
+  background-image: url("../svg/in-css/icons/_classic/move.svg");
+}
+
+.oe-i.move.pro-theme {
+  background-image: url("../svg/in-css/icons/move.svg");
+}
+
+.oe-i.child-arrow {
+  background-image: url("../svg/in-css/icons/_classic/child-arrow.svg");
+}
+
+.oe-i.child-arrow.pro-theme {
+  background-image: url("../svg/in-css/icons/child-arrow.svg");
+}
+
+.oe-i.menu {
+  background-image: url("../svg/in-css/icons/_classic/menu.svg");
+}
+
+.oe-i.menu.pro-theme {
+  background-image: url("../svg/in-css/icons/menu.svg");
+}
+
+.oe-i.trash {
+  background-image: url("../svg/in-css/icons/_classic/trash.svg");
+}
+
+.oe-i.trash.pro-theme {
+  background-image: url("../svg/in-css/icons/trash.svg");
+}
+
+.oe-i.trash-blue {
+  background-image: url("../svg/in-css/icons/_classic/trash-blue.svg");
+}
+
+.oe-i.trash-blue.pro-theme {
+  background-image: url("../svg/in-css/icons/trash-blue.svg");
+}
+
+.oe-i.print {
+  background-image: url("../svg/in-css/icons/_classic/print.svg");
+}
+
+.oe-i.print.pro-theme {
+  background-image: url("../svg/in-css/icons/print.svg");
+}
+
+.oe-i.search {
+  background-image: url("../svg/in-css/icons/_classic/search.svg");
+}
+
+.oe-i.search.pro-theme {
+  background-image: url("../svg/in-css/icons/search.svg");
+}
+
+.oe-i.filter {
+  background-image: url("../svg/in-css/icons/_classic/filter.svg");
+}
+
+.oe-i.filter.pro-theme {
+  background-image: url("../svg/in-css/icons/filter.svg");
+}
+
+.oe-i.remove {
+  background-image: url("../svg/in-css/icons/_classic/remove.svg");
+}
+
+.oe-i.remove.pro-theme {
+  background-image: url("../svg/in-css/icons/remove.svg");
+}
+
+.oe-i.remove-circle {
+  background-image: url("../svg/in-css/icons/_classic/remove-circle.svg");
+}
+
+.oe-i.remove-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/remove-circle.svg");
+}
+
+.oe-i.duplicate {
+  background-image: url("../svg/in-css/icons/_classic/duplicate.svg");
+}
+
+.oe-i.duplicate.pro-theme {
+  background-image: url("../svg/in-css/icons/duplicate.svg");
+}
+
+.oe-i.info {
+  background-image: url("../svg/in-css/icons/_classic/info.svg");
+}
+
+.oe-i.info.pro-theme {
+  background-image: url("../svg/in-css/icons/info.svg");
+}
+
+.oe-i.eye {
+  background-image: url("../svg/in-css/icons/_classic/eye.svg");
+}
+
+.oe-i.eye.pro-theme {
+  background-image: url("../svg/in-css/icons/eye.svg");
+}
+
+.oe-i.eye-circle {
+  background-image: url("../svg/in-css/icons/_classic/eye-circle.svg");
+}
+
+.oe-i.eye-circle.pro-theme {
+  background-image: url("../svg/in-css/icons/eye-circle.svg");
+}
+
+.oe-i.comments {
+  background-image: url("../svg/in-css/icons/_classic/comments.svg");
+}
+
+.oe-i.comments.pro-theme {
+  background-image: url("../svg/in-css/icons/comments.svg");
+}
+
+.oe-i.comments-added {
+  background-image: url("../svg/in-css/icons/_classic/comments-added.svg");
+}
+
+.oe-i.comments-added.pro-theme {
+  background-image: url("../svg/in-css/icons/comments-added.svg");
+}
+
+.oe-i.start {
+  background-image: url("../svg/in-css/icons/_classic/start.svg");
+}
+
+.oe-i.start.pro-theme {
+  background-image: url("../svg/in-css/icons/start.svg");
+}
+
+.oe-i.stop {
+  background-image: url("../svg/in-css/icons/_classic/stop.svg");
+}
+
+.oe-i.stop.pro-theme {
+  background-image: url("../svg/in-css/icons/stop.svg");
+}
+
+.oe-i.change {
+  background-image: url("../svg/in-css/icons/_classic/change.svg");
+}
+
+.oe-i.change.pro-theme {
+  background-image: url("../svg/in-css/icons/change.svg");
+}
+
+.oe-i.d-slash {
+  background-image: url("../svg/in-css/icons/_classic/double-slash.svg");
+}
+
+.oe-i.d-slash.pro-theme {
+  background-image: url("../svg/in-css/icons/double-slash.svg");
+}
+
+.oe-i.expand {
+  background-image: url("../svg/in-css/icons/_classic/expand.svg");
+}
+
+.oe-i.expand.pro-theme {
+  background-image: url("../svg/in-css/icons/expand.svg");
+}
+
+.oe-i.collapse {
+  background-image: url("../svg/in-css/icons/_classic/collapse.svg");
+}
+
+.oe-i.collapse.pro-theme {
+  background-image: url("../svg/in-css/icons/collapse.svg");
+}
+
+.oe-i.downup {
+  background-image: url("../svg/in-css/icons/_classic/downup.svg");
+}
+
+.oe-i.downup.pro-theme {
+  background-image: url("../svg/in-css/icons/downup.svg");
+}
+
+.oe-i.history {
+  background-image: url("../svg/in-css/icons/_classic/history.svg");
+}
+
+.oe-i.history.pro-theme {
+  background-image: url("../svg/in-css/icons/history.svg");
+}
+
+.oe-i.tick {
+  background-image: url("../svg/in-css/icons/_classic/tick.svg");
+}
+
+.oe-i.tick.pro-theme {
+  background-image: url("../svg/in-css/icons/tick.svg");
+}
+
+.oe-i.triangle {
+  background-image: url("../svg/in-css/icons/_classic/triangle.svg");
+}
+
+.oe-i.triangle.pro-theme {
+  background-image: url("../svg/in-css/icons/triangle.svg");
+}
+
+.oe-i.time {
+  background-image: url("../svg/in-css/icons/_classic/time.svg");
+}
+
+.oe-i.time.pro-theme {
+  background-image: url("../svg/in-css/icons/time.svg");
+}
+
+.oe-i.audit-trail {
+  background-image: url("../svg/in-css/icons/_classic/audit-trail.svg");
+}
+
+.oe-i.audit-trail.pro-theme {
+  background-image: url("../svg/in-css/icons/audit-trail.svg");
+}
+
+.oe-i.download {
+  background-image: url("../svg/in-css/icons/_classic/download.svg");
+}
+
+.oe-i.download.pro-theme {
+  background-image: url("../svg/in-css/icons/download.svg");
+}
+
+.oe-i.asterisk {
+  background-image: url("../svg/in-css/icons/_classic/asterisk.svg");
+}
+
+.oe-i.asterisk.pro-theme {
+  background-image: url("../svg/in-css/icons/asterisk.svg");
+}
+
+.oe-i.pencil {
+  background-image: url("../svg/in-css/icons/_classic/pencil.svg");
+}
+
+.oe-i.pencil.pro-theme {
+  background-image: url("../svg/in-css/icons/pencil.svg");
+}
+
+.oe-i.exclamation {
+  background-image: url("../svg/in-css/icons/_classic/exclamation.svg");
+}
+
+.oe-i.exclamation.pro-theme {
+  background-image: url("../svg/in-css/icons/exclamation.svg");
+}
+
+.oe-i.male {
+  background-image: url("../svg/in-css/icons/_classic/male.svg");
+}
+
+.oe-i.male.pro-theme {
+  background-image: url("../svg/in-css/icons/male.svg");
+}
+
+.oe-i.female {
+  background-image: url("../svg/in-css/icons/_classic/female.svg");
+}
+
+.oe-i.female.pro-theme {
+  background-image: url("../svg/in-css/icons/female.svg");
+}
+
+.oe-i.drug-rx {
+  background-image: url("../svg/in-css/icons/_classic/drug-rx.svg");
+}
+
+.oe-i.drug-rx.pro-theme {
+  background-image: url("../svg/in-css/icons/drug-rx.svg");
+}
+
+.oe-i.star {
+  background-image: url("../svg/in-css/icons/_classic/star.svg");
+}
+
+.oe-i.star.pro-theme {
+  background-image: url("../svg/in-css/icons/star.svg");
+}
+
+.oe-i.letter-1 {
+  background-image: url("../svg/in-css/icons/_classic/letter-1.svg");
+}
+
+.oe-i.letter-1.pro-theme {
+  background-image: url("../svg/in-css/icons/letter-1.svg");
+}
+
+.oe-i.letter-2 {
+  background-image: url("../svg/in-css/icons/_classic/letter-2.svg");
+}
+
+.oe-i.letter-2.pro-theme {
+  background-image: url("../svg/in-css/icons/letter-2.svg");
+}
+
+.oe-i.letter-in {
+  background-image: url("../svg/in-css/icons/_classic/letter-invitation.svg");
+}
+
+.oe-i.letter-in.pro-theme {
+  background-image: url("../svg/in-css/icons/letter-invitation.svg");
+}
+
+.oe-i.letter-GP {
+  background-image: url("../svg/in-css/icons/_classic/letter-GP.svg");
+}
+
+.oe-i.letter-GP.pro-theme {
+  background-image: url("../svg/in-css/icons/letter-GP.svg");
+}
+
+.oe-i.ed-reset {
+  background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
+}
+
+.oe-i.ed-zoom {
+  background-image: url("../svg/in-css/eyedraw/ed-zoom.svg");
+}
+
+.oe-i.ed-lock {
+  background-image: url("../svg/in-css/eyedraw/ed-lock.svg");
+}
+
+.oe-i.ed-trash {
+  background-image: url("../svg/in-css/eyedraw/ed-trash.svg");
+}
+
+.oe-i.ed-move-back {
+  background-image: url("../svg/in-css/eyedraw/ed-backward.svg");
+}
+
+.oe-i.ed-move-forward {
+  background-image: url("../svg/in-css/eyedraw/ed-forward.svg");
+}
+
+.oe-i.circle-green {
+  background-image: url("../svg/in-css/ui/circle-green.svg");
+}
+
+.oe-i.circle-amber {
+  background-image: url("../svg/in-css/ui/circle-orange.svg");
+}
+
+.oe-i.circle-red {
+  background-image: url("../svg/in-css/ui/circle-red.svg");
+}
+
+.oe-i.warning {
+  background-image: url("../svg/in-css/ui/warning.svg");
+}
+
+.oe-i.laterality {
+  opacity: 1;
+  cursor: auto;
+}
+
+.oe-i.laterality.R {
+  background-image: url("../svg/in-css/icons/_laterality/lat-R.svg");
+}
+
+.oe-i.laterality.L {
+  background-image: url("../svg/in-css/icons/_laterality/lat-L.svg");
+}
+
+.oe-i.laterality.NA {
+  background-image: url("../svg/in-css/icons/_laterality/lat-NA.svg");
+}
+
+/* SEM (basic) */
+.element-eyes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.element-eyes .right-eye {
+  width: 50%;
+  padding-left: 10px;
+  padding-right: 29px;
+}
+
+.element-eyes .left-eye {
+  width: 50%;
+  padding-left: 17px;
+  padding-right: 20px;
 }
 
 .print-form-div {
