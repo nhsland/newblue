@@ -22,13 +22,9 @@ idg.elementAddSelectSearch = function(){
 
 	function AddSelectSearch( $btn, $popup ){
 		
-  		var search 		= $popup.find('.search-options'),
-  			select 		= $popup.find('.select-options'),
+  		var select 		= $popup.find('.select-options'),
   			closeBtn 	= $popup.find('.close-icon-btn'),
-  			selectBtn 	= $popup.find('.select-icon-btn'),
-  			searchBtn 	= $popup.find('.search-icon-btn'),
-  			addBtn 		= $popup.find('.add-icon-btn'),
-  			searchInput = $popup.find('.js-search-autocomplete');
+  			addBtn 		= $popup.find('.add-icon-btn');
   			
   			
   		var resetPopupData = true;
@@ -54,6 +50,7 @@ idg.elementAddSelectSearch = function(){
   		used to close all popups
   		*/
   		this.closePopup = closeCancel;
+  		this.openPopup = openAdd; // need this to demo all pop UIs
 
   		/*
 	  	Events	
@@ -63,11 +60,7 @@ idg.elementAddSelectSearch = function(){
 	  		closeCancel();
   		});
   		
-  		selectBtn.click(function(e){
-  			e.stopPropagation();
-  			addSelect();
-  			if( searchBtn.length ) iconSelected();
-		});
+  		
 			
 			
 		// setup based on the DOM
@@ -79,13 +72,7 @@ idg.elementAddSelectSearch = function(){
   			});
   		}
   		
-  		if(searchBtn.length){
-	  		searchBtn.click(function(e){
-	  			e.stopPropagation();
-	  			addSearch();
-	  			iconSelected();
-  			});
-  		}
+  		
   	
   		
   		// list have 2 states multi or single 
@@ -103,10 +90,6 @@ idg.elementAddSelectSearch = function(){
 			var clickAdd = clickAdd; 
 			var $active = null; // if only single entry 
 			var selectedData = [];
-			
-			if(clickAdd){
-				addBtn.hide();
-			}
 			
 			
 			if(multi){
@@ -170,12 +153,10 @@ idg.elementAddSelectSearch = function(){
   		
 */
 
-		$btn.click( function( e ){
+		$btn.click( function( e , demoAll = false ){
 			e.stopPropagation();
-			openAdd();
+			openAdd(!demoAll);
 		});
-		
-		
 		
 		
 		function positionFixedPopup( $btn ){
@@ -200,7 +181,7 @@ idg.elementAddSelectSearch = function(){
 			Close popup on scroll.
 			note: scroll event fires on assignment.
 			so check against scroll position
-			*/				
+			*/		
 			var scrollPos = $(".main-event").scrollTop();
 			$(".main-event").on("scroll", function(){ 
 				if( scrollPos !=  $(this).scrollTop() ){
@@ -213,23 +194,15 @@ idg.elementAddSelectSearch = function(){
 		}
 		
 		
-		function openAdd(){
-			
-			closeAll();
-			addSelect();
-			
+		function openAdd( closeOthers=true ){
+			if(closeOthers) closeAll();
 			positionFixedPopup( $btn );
-			$popup.show();
-			
-			selectBtn.children('.oe-i').addClass('selected');
-			searchBtn.children('.oe-i').removeClass('selected');	  				  		
+			$popup.show();	  				  		
 		}
+		
 
 		// Close and reset
-  		function closeCancel(){
-	  		search.hide();
-	  		searchInput.val('');
-	  		
+  		function closeCancel(){	  		
 	  		$popup.hide();
 	
 	  		if(resetPopupData){
@@ -362,30 +335,6 @@ idg.elementAddSelectSearch = function(){
 	  		closeCancel();
   		}
   		
-  		function addSearch(){
-	  		select.hide();
-	  		search.show();
-	  		searchInput.focus();
-	  		
-	  		// fake ajax search
-	  		var fakeAjax = $('.js-search-results').hide();
-	  		searchInput.keypress(function() {
-		  		if(searchInput.val() === 'au'){
-			  		fakeAjax.show(); // show fake autocomplete results
-		  		}
-			})
-  		}
   		
-  		function addSelect(){
-	  		select.show();
-	  		search.hide();
-	  		searchInput.val('');
-  		}
-  		
-  		function iconSelected(){
-	  		selectBtn.children('.oe-i').toggleClass('selected');
-	  		searchBtn.children('.oe-i').toggleClass('selected');
-  		}
-	
 	}
 }

@@ -5450,7 +5450,7 @@ ul.management-summaries li h6 {
   right: 0;
   z-index: 90;
   background: #374755;
-  padding: 10px 50px 10px 10px;
+  padding: 10px 10px 50px 10px;
   min-height: 150px;
   font-size: 0.75rem;
   font-weight: 500;
@@ -5464,32 +5464,51 @@ ul.management-summaries li h6 {
   width: auto;
 }
 
+.oe-add-select-search .close-icon-btn,
+.oe-add-select-search .add-icon-btn {
+  position: absolute;
+  bottom: 0;
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
 .oe-add-select-search .close-icon-btn {
-  position: absolute;
-  top: 10px;
-  right: 15px;
+  right: 0;
+  width: 40px;
+  background-color: #05306a;
 }
 
-.oe-add-select-search .select-icon-btn {
-  position: absolute;
-  top: 41px;
-  right: 14px;
-}
-
-.oe-add-select-search .search-icon-btn {
-  position: absolute;
-  top: 70px;
-  right: 14px;
+.oe-add-select-search .close-icon-btn:hover, .oe-add-select-search .close-icon-btn:focus, .oe-add-select-search .close-icon-btn:active {
+  background-color: #074598;
 }
 
 .oe-add-select-search .add-icon-btn {
-  position: absolute;
-  bottom: 10px;
-  right: 8px;
+  left: 0;
+  width: calc(100% - 40px);
+  background-color: #0a6512;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
 }
 
-.oe-add-select-search .type-search-autocomplete {
-  margin: 8px 0 4px 0;
+.oe-add-select-search .add-icon-btn:hover, .oe-add-select-search .add-icon-btn:focus, .oe-add-select-search .add-icon-btn:active {
+  background-color: #0e9019;
+  color: white;
+}
+
+.oe-add-select-search .add-icon-btn.required {
+  background-color: #a04600;
+  cursor: not-allowed;
+  color: white;
 }
 
 .oe-add-select-search table.select-options th {
@@ -5512,6 +5531,10 @@ ul.management-summaries li h6 {
 .oe-add-select-search table.select-options td:last-child {
   padding: 0 0 0 0;
   text-align: left;
+}
+
+.oe-add-select-search .has-filter input {
+  margin-bottom: 4px;
 }
 
 .oe-add-select-search .has-filter .add-options {
@@ -5542,25 +5565,28 @@ ul.management-summaries li h6 {
 
 .oe-add-select-search .add-options li:hover, .oe-add-select-search .add-options li:focus, .oe-add-select-search .add-options li:active, .oe-add-select-search .add-options li.selected {
   color: #fff;
-  background: #27323c;
+  background: #27323c !important;
 }
 
 .oe-add-select-search .add-options li.selected {
   color: #fff;
-  background: #074598;
+  background: #074598 !important;
 }
 
 .oe-add-select-search .add-options li.active {
-  color: cyan;
+  color: cyan !important;
 }
 
-.oe-add-select-search .search-options {
-  width: 290px;
-  height: 180px;
+.oe-add-select-search .add-options.single.required li, .oe-add-select-search .add-options.number.required li {
+  background: linear-gradient(to right, #a04600 3px, #32404d 3px);
 }
 
-.oe-add-select-search .search-options .add-options {
-  max-height: 160px;
+.oe-add-select-search .add-options.multi li {
+  background: linear-gradient(to right, #05306a 3px, #32404d 3px);
+}
+
+.oe-add-select-search .add-options.multi.required li {
+  background: linear-gradient(to right, #05306a 3px, #a04600 6px, #32404d 6px);
 }
 
 .main-event .element hr.divider {
