@@ -1,0 +1,40 @@
+// OE Element - Add - Select or Search
+// Popup box showing the common options 
+// and an input to allow search with autocomplete
+
+.oe-add-select-search {	
+
+	// Select lists
+	// are group in <td>
+	table.select-options {
+			
+		thead {
+			th {
+				text-align: left;
+				color:$oe-text-light;
+				@include font-size(11);
+				font-weight:$oe-font-light;
+				padding:0 0 5px 0;
+				
+				&:last-child {
+					text-align: left;
+				}
+			}
+		}
+		
+		tbody {
+			td {
+				vertical-align: top;
+				padding:0 15px 0 0; // space the list groups 
+				
+				&:last-child {
+					padding:0 0 0 0;
+					text-align: left;
+				}
+			}
+		}		
+	}
+}
+
+
+

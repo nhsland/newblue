@@ -1,0 +1,82 @@
+// OE Element - Add - Select or Search
+// Popup box showing the common options 
+// and an input to allow search with autocomplete
+
+.oe-add-select-search {	
+	
+	// All options lists <ul>:
+	.add-options{
+		max-height:160px;		// limit the displayed results.  
+		overflow-y: auto;
+		margin:0 2px 0 0;
+		max-width: 500px; 		// Meds can be really long
+		
+		$bg-default: shade( $oe-popup-bg, 10 );
+		$bg-default-hover: shade( $oe-popup-bg, 30 );
+		
+		li {
+			display:block;
+			cursor: pointer;
+			padding:3px 8px 3px 8px;
+			margin:0 0 2px 0;
+			color:$oe-text;
+			// border-radius:3px;
+			background: $bg-default;
+			
+			// data has a span wrapper to control the width
+			// not possible through the li css
+			// this assumes a text value:
+			.restrict-width {
+				display:inline-block;
+				min-width:120px;
+				max-width:130px;
+			}
+			
+			// this is for numerics (i.e. 1,2,3 and 0.35)
+			// this is <span>
+			.auto-width {
+				// white-space:nowrap; // this cause really look text to break the popup box
+				// max-width: 400px;
+			}
+			
+			&:hover, &:focus, &:active, &.selected {
+				color:#fff;
+				background: $bg-default-hover !important;  // must override the linear-gradient below
+			}
+			
+			&.selected {
+				color:#fff;
+				background:$oe-btn-blue !important;
+			}
+			
+			&.active {
+				color:$oe-text-highlight !important;
+			}
+		}
+		
+		// color hint functionality
+		$list-hint-w: 3px;
+		$list-hint-w2: 6px;
+		&.single,
+		&.number {
+			&.required {
+				li {
+					background: linear-gradient(to right,$oe-alert-orange $list-hint-w, $bg-default $list-hint-w);
+				}
+			}
+		}
+		
+		&.multi {
+			li {
+				background: linear-gradient(to right, $oe-btn-blue-hint $list-hint-w, $bg-default $list-hint-w);
+			}
+			
+			&.required {
+				li {
+					background: linear-gradient(to right, $oe-btn-blue-hint $list-hint-w, $oe-alert-orange $list-hint-w2, $bg-default $list-hint-w2 );
+				}
+			}
+		}
+	}
+}
+

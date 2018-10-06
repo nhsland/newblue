@@ -1,0 +1,50 @@
+// OE Element - Add - Select or Search
+
+.oe-add-select-search {	
+	// Button Bar (bottom)
+	// these are <div> not buttons to ensure greater UI control
+	// <div>
+	.close-icon-btn,
+	.add-icon-btn {
+		position: absolute;
+		bottom:0;
+		height:32px; // large button height
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		cursor: pointer;
+	}
+	
+	.close-icon-btn {
+		right:0;
+		width:40px;
+		background-color:$oe-btn-blue-hint;
+		&:hover, &:focus, &:active {
+			background-color:$oe-btn-blue;
+		}
+	}
+	
+	// <div>
+	// icon + text message
+	.add-icon-btn {
+		left:0;
+		width: calc(100% - 40px);
+		background-color:$oe-btn-green-hint;
+		&:hover, &:focus, &:active {
+			background-color:$oe-btn-green;
+			color:rgba(255,255,255,1);
+		}
+		
+		@include font-size(13);
+		font-weight:300;
+		color:rgba(255,255,255,0.8);
+		
+		&.required {
+			background-color: $oe-alert-orange;
+			cursor: not-allowed;
+			color:rgba(255,255,255,1);	
+		}
+		
+	}
+}
+

@@ -1,0 +1,19 @@
+// OE Element - Add - Select or Search
+// Popup box showing the common options 
+// and an input to allow search with autocomplete
+
+.oe-add-select-search {	
+	// if the list has a filter input search input:
+	.has-filter {
+		
+		input {
+			margin-bottom:4px;
+		}
+		
+		.add-options {
+			max-height:133px;	// limit the displayed results - input 
+		}
+	}
+}
+
+

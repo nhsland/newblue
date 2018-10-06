@@ -1,0 +1,35 @@
+// OE Element - Add - Select or Search
+// Popup box showing the common options 
+// and an input to allow search with autocomplete
+
+.oe-add-select-search {	
+	position:fixed; 					// Fixed take it out of the Grid. 
+	bottom:300px; 						// JS will override and position
+	right:0; 
+	z-index:$oe-z-tooltip; 				// make sure it floats over elements
+	background:$oe-popup-bg;
+	padding:10px 10px 50px 10px; 		// allow for bottom 'btn' bar 
+	min-height:150px;
+	@include font-size(12);			
+	font-weight:500;
+	
+	// offset-x | offset-y | blur-radius | spread-radius | color
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+	
+	// popup widths
+	// history has 5 inputs lists, pro
+	width:350px; 						// need to fixed a width for single column auto-width lists
+	min-width: 350px;					// default width (to fit in Analytics column)
+	
+	&.auto-width {
+		width:auto;						// php adds this class IF 1> options
+	}
+}
+
+@import "add-select-search/icon-btns";
+@import "add-select-search/select-options";
+@import "add-select-search/has-filter";
+@import "add-select-search/add-options";
+
+
+

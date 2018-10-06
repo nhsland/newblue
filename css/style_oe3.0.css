@@ -1512,6 +1512,151 @@ select.fixed-width {
   font-weight: 700;
 }
 
+.oe-add-select-search {
+  position: fixed;
+  bottom: 300px;
+  right: 0;
+  z-index: 90;
+  background: #374755;
+  padding: 10px 10px 50px 10px;
+  min-height: 150px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  min-width: 350px;
+}
+
+.oe-add-select-search.auto-width {
+  width: auto;
+}
+
+.oe-add-select-search .close-icon-btn,
+.oe-add-select-search .add-icon-btn {
+  position: absolute;
+  bottom: 0;
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+}
+
+.oe-add-select-search .close-icon-btn {
+  right: 0;
+  width: 40px;
+  background-color: #05306a;
+}
+
+.oe-add-select-search .close-icon-btn:hover, .oe-add-select-search .close-icon-btn:focus, .oe-add-select-search .close-icon-btn:active {
+  background-color: #074598;
+}
+
+.oe-add-select-search .add-icon-btn {
+  left: 0;
+  width: calc(100% - 40px);
+  background-color: #0a6512;
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.oe-add-select-search .add-icon-btn:hover, .oe-add-select-search .add-icon-btn:focus, .oe-add-select-search .add-icon-btn:active {
+  background-color: #0e9019;
+  color: white;
+}
+
+.oe-add-select-search .add-icon-btn.required {
+  background-color: #a04600;
+  cursor: not-allowed;
+  color: white;
+}
+
+.oe-add-select-search table.select-options thead th {
+  text-align: left;
+  color: #8c8c8c;
+  font-size: 0.6875rem;
+  font-weight: 300;
+  padding: 0 0 5px 0;
+}
+
+.oe-add-select-search table.select-options thead th:last-child {
+  text-align: left;
+}
+
+.oe-add-select-search table.select-options tbody td {
+  vertical-align: top;
+  padding: 0 15px 0 0;
+}
+
+.oe-add-select-search table.select-options tbody td:last-child {
+  padding: 0 0 0 0;
+  text-align: left;
+}
+
+.oe-add-select-search .has-filter input {
+  margin-bottom: 4px;
+}
+
+.oe-add-select-search .has-filter .add-options {
+  max-height: 133px;
+}
+
+.oe-add-select-search .add-options {
+  max-height: 160px;
+  overflow-y: auto;
+  margin: 0 2px 0 0;
+  max-width: 500px;
+}
+
+.oe-add-select-search .add-options li {
+  display: block;
+  cursor: pointer;
+  padding: 3px 8px 3px 8px;
+  margin: 0 0 2px 0;
+  color: #d6d6d6;
+  background: #32404d;
+}
+
+.oe-add-select-search .add-options li .restrict-width {
+  display: inline-block;
+  min-width: 120px;
+  max-width: 130px;
+}
+
+.oe-add-select-search .add-options li:hover, .oe-add-select-search .add-options li:focus, .oe-add-select-search .add-options li:active, .oe-add-select-search .add-options li.selected {
+  color: #fff;
+  background: #27323c !important;
+}
+
+.oe-add-select-search .add-options li.selected {
+  color: #fff;
+  background: #074598 !important;
+}
+
+.oe-add-select-search .add-options li.active {
+  color: cyan !important;
+}
+
+.oe-add-select-search .add-options.single.required li, .oe-add-select-search .add-options.number.required li {
+  background: linear-gradient(to right, #a04600 3px, #32404d 3px);
+}
+
+.oe-add-select-search .add-options.multi li {
+  background: linear-gradient(to right, #05306a 3px, #32404d 3px);
+}
+
+.oe-add-select-search .add-options.multi.required li {
+  background: linear-gradient(to right, #05306a 3px, #a04600 6px, #32404d 6px);
+}
+
 /*  iconography */
 .oe-i {
   display: inline-block;
@@ -5442,151 +5587,6 @@ ul.management-summaries li h6 {
 
 .main-event .element table tfoot tr {
   border-top: 3px solid #26303d;
-}
-
-.oe-add-select-search {
-  position: fixed;
-  bottom: 300px;
-  right: 0;
-  z-index: 90;
-  background: #374755;
-  padding: 10px 10px 50px 10px;
-  min-height: 150px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
-          box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
-  width: 350px;
-  min-width: 350px;
-}
-
-.oe-add-select-search.auto-width {
-  width: auto;
-}
-
-.oe-add-select-search .close-icon-btn,
-.oe-add-select-search .add-icon-btn {
-  position: absolute;
-  bottom: 0;
-  height: 32px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  cursor: pointer;
-}
-
-.oe-add-select-search .close-icon-btn {
-  right: 0;
-  width: 40px;
-  background-color: #05306a;
-}
-
-.oe-add-select-search .close-icon-btn:hover, .oe-add-select-search .close-icon-btn:focus, .oe-add-select-search .close-icon-btn:active {
-  background-color: #074598;
-}
-
-.oe-add-select-search .add-icon-btn {
-  left: 0;
-  width: calc(100% - 40px);
-  background-color: #0a6512;
-  font-size: 0.8125rem;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.oe-add-select-search .add-icon-btn:hover, .oe-add-select-search .add-icon-btn:focus, .oe-add-select-search .add-icon-btn:active {
-  background-color: #0e9019;
-  color: white;
-}
-
-.oe-add-select-search .add-icon-btn.required {
-  background-color: #a04600;
-  cursor: not-allowed;
-  color: white;
-}
-
-.oe-add-select-search table.select-options th {
-  text-align: left;
-  color: #8c8c8c;
-  font-size: 0.6875rem;
-  font-weight: 300;
-  padding: 0 0 5px 0;
-}
-
-.oe-add-select-search table.select-options th:last-child {
-  text-align: left;
-}
-
-.oe-add-select-search table.select-options td {
-  vertical-align: top;
-  padding: 0 15px 0 0;
-}
-
-.oe-add-select-search table.select-options td:last-child {
-  padding: 0 0 0 0;
-  text-align: left;
-}
-
-.oe-add-select-search .has-filter input {
-  margin-bottom: 4px;
-}
-
-.oe-add-select-search .has-filter .add-options {
-  max-height: 133px;
-}
-
-.oe-add-select-search .add-options {
-  max-height: 160px;
-  overflow-y: auto;
-  margin: 0 2px 0 0;
-  max-width: 500px;
-}
-
-.oe-add-select-search .add-options li {
-  display: block;
-  cursor: pointer;
-  padding: 3px 8px 3px 8px;
-  margin: 0 0 2px 0;
-  color: #d6d6d6;
-  background: #32404d;
-}
-
-.oe-add-select-search .add-options li .restrict-width {
-  display: inline-block;
-  min-width: 120px;
-  max-width: 130px;
-}
-
-.oe-add-select-search .add-options li:hover, .oe-add-select-search .add-options li:focus, .oe-add-select-search .add-options li:active, .oe-add-select-search .add-options li.selected {
-  color: #fff;
-  background: #27323c !important;
-}
-
-.oe-add-select-search .add-options li.selected {
-  color: #fff;
-  background: #074598 !important;
-}
-
-.oe-add-select-search .add-options li.active {
-  color: cyan !important;
-}
-
-.oe-add-select-search .add-options.single.required li, .oe-add-select-search .add-options.number.required li {
-  background: linear-gradient(to right, #a04600 3px, #32404d 3px);
-}
-
-.oe-add-select-search .add-options.multi li {
-  background: linear-gradient(to right, #05306a 3px, #32404d 3px);
-}
-
-.oe-add-select-search .add-options.multi.required li {
-  background: linear-gradient(to right, #05306a 3px, #a04600 6px, #32404d 6px);
 }
 
 .main-event .element hr.divider {
