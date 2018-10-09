@@ -1497,9 +1497,15 @@ idg.elementAddSelectSearch = function(){
 			var btnPos = elem.getBoundingClientRect();		
 			var w = document.documentElement.clientWidth;
 			var h = document.documentElement.clientHeight;
+			
+			// check popup doesn't go off the top of the screen 
+			var posH = (h - btnPos.bottom);
+			if(h - posH < 240){
+				posH = h - 245;
+			}
 	
 			// set CSS Fixed position
-			$popup.css(	{	"bottom": (h - btnPos.bottom),
+			$popup.css(	{	"bottom": posH,
 							"right": (w - btnPos.right) });
 	  					
 			/*

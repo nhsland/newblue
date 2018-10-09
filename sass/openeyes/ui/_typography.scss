@@ -70,6 +70,7 @@ strong, b {
 		color:rgb(255,255,255);
 	}
 	
+	&.issue,
 	&.orange {
 		background:$oe-alert-orange;
 		color:$oe-text;

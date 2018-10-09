@@ -765,7 +765,7 @@ strong, b {
   color: white;
 }
 
-.highlighter.orange {
+.highlighter.issue, .highlighter.orange {
   background: #a04600;
   color: #d6d6d6;
 }
