@@ -1627,8 +1627,8 @@ select.fixed-width {
 
 .oe-add-select-search .add-options li .restrict-width {
   display: inline-block;
-  min-width: 120px;
-  max-width: 130px;
+  min-width: 130px;
+  max-width: 140px;
 }
 
 .oe-add-select-search .add-options li:hover, .oe-add-select-search .add-options li:focus, .oe-add-select-search .add-options li:active, .oe-add-select-search .add-options li.selected {
