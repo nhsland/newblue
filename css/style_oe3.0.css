@@ -8996,7 +8996,7 @@ table.oe-clinic-list td.center {
   position: absolute;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
-  z-index: 10;
+  z-index: 90;
   font-size: 0.75rem;
 }
 
