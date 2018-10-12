@@ -5549,7 +5549,7 @@ ul.management-summaries li h6 {
 }
 
 .main-event .element table th:first-child, .main-event .element table td:first-child {
-  padding-left: 0;
+  padding-left: 1px;
 }
 
 .main-event .element table th.nowrap, .main-event .element table td.nowrap {
