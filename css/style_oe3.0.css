@@ -5513,6 +5513,11 @@ ul.management-summaries li h6 {
   color: white;
 }
 
+.main-event .element table.clickable-rows tr td {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .main-event .element table tr {
   border-bottom: 1px solid #26303d;
 }

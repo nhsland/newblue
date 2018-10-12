@@ -64,6 +64,13 @@
 							color:rgb(255,255,255);
 						}
 					}
+					
+					td {
+						// increase the hit area slightly (thinking touch!)
+						padding-top:5px;
+						padding-bottom:5px; 
+					}
+					
 				}
 			}
 			
