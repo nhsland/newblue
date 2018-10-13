@@ -1,4 +1,4 @@
-/* Fri Oct 12 2018 11:05:15 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Sat Oct 13 2018 12:11:59 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -525,6 +525,12 @@ table.label-r-l th {
 
 table.label-r-l td {
   width: 37% !important;
+}
+
+/* UI element required in PRINT */
+.oe-eye-lat-icons {
+  display: inline-block;
+  white-space: nowrap;
 }
 
 /* icons - note _config-print setup to use '_classic' icon set */
@@ -1114,6 +1120,26 @@ table.label-r-l td {
 }
 
 /* SEM (basic) */
+.element {
+  position: relative;
+  min-height: 50px;
+  padding: 10px 5px 10px 150px;
+  margin: 0 0 3px 0;
+  border-bottom: 2px solid #ddd;
+}
+
+.element .element-header {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  max-width: 150px;
+}
+
+.element .element-header .element-title {
+  font-size: 10pt;
+  font-weight: 600;
+}
+
 .element-eyes {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1136,6 +1162,85 @@ table.label-r-l td {
   width: 50%;
   padding-left: 17px;
   padding-right: 20px;
+}
+
+.element .element-eyes .right-eye {
+  padding-left: 5px;
+  padding-right: 9px;
+}
+
+.element .element-eyes .left-eye {
+  padding-left: 12px;
+  padding-right: 0;
+}
+
+.element.eye-divider {
+  background-image: url(svg-path-theme("ui/element-divider"));
+  background-position: 50% 0;
+  background-repeat: repeat-y;
+  background-size: 19px;
+}
+
+.element-tile-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.element-tile-group .element {
+  padding: 10px 5px 10px 5px;
+}
+
+.element-tile-group .element .element-header {
+  position: static !important;
+  max-width: none;
+}
+
+.element.tile {
+  width: 33.33333%;
+  margin: 0 3px 3px 0;
+}
+
+.element.tile:last-child {
+  margin-right: 0;
+}
+
+.element .element-data .large-text {
+  font-size: 12pt;
+}
+
+.element .element-data .priority-text {
+  font-size: 12pt;
+  font-weight: 500;
+}
+
+.element .element-data .data-value.not-recorded {
+  opacity: 0.6;
+}
+
+.element table {
+  border: none;
+  margin: 0.2em 0 0.5em 0;
+}
+
+.element table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.element table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.element .element-both-eyes {
+  margin: 0 0 0.5em 0;
+  padding: 10px;
+  border-bottom: 2px dotted #eee;
 }
 
 .print-form-div {

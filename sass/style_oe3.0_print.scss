@@ -23,12 +23,16 @@
 @import "print/lists";
 @import "print/tables";
 
+/* UI element required in PRINT */
+@import "print/ui/oe-eye-lat-icons";
+
 /* icons - note _config-print setup to use '_classic' icon set */
 @import "openeyes/icons";
 
 
 /* SEM (basic) */
-@import "print/sem/element-eyes";
+// All Element styling
+@import "print/sem/elements";
 
 // Print specific styling
 // Quick fixes required for v3.0 for existing DOMs

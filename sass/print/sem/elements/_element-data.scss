@@ -1,0 +1,22 @@
+// Simplified Element layouts for print
+.element {
+	// element-data is ONLY used in VIEW mode (edit uses 'element-fields')
+	.element-data {
+				
+		// large text if needed, matches Element header size
+		.large-text {
+			font-size:$fontsize-sem-large;
+		}
+		.priority-text {
+			font-size:$fontsize-sem-large;
+			font-weight: 500;	
+		}
+	
+		.data-value {
+			&.not-recorded {
+				opacity:0.6;
+			}
+		}
+	}	
+}
+
