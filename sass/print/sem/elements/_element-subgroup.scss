@@ -1,0 +1,22 @@
+// OE Element - Subgroups
+
+.element {
+
+	.element-subgroup {
+		padding:10px 0 10px 0;
+		border-bottom: 2px dotted #ddd;
+		
+		.viewstate-icon {
+			display:none;
+		}
+	
+		// <header>
+		.subgroup-header {
+			h3 {
+				font-size:$fontsize-normal;
+			}
+		}
+	}				
+}
+
+
