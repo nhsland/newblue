@@ -1,0 +1,30 @@
+// OE Element - Both eyes
+//
+.element {
+		
+	// listview expand / collapse
+	// this was previous handled with: flex-layout and flex-top
+	// but seems more ellegant to cover with a specific class
+	.listview-expand-collapse {
+		
+		// hide this icon
+		.expand-collapse-icon-btn {
+			display:none;
+		}
+		
+		// CSS hooks for the different views
+		// not used in UI but v.useful in PRINT!
+		.listview-pro { 
+			display: none;
+		}
+		
+		// I use 'hidden' in IDG
+		// OE may be different.
+		.listview-full,
+		.hidden {
+			display:block;
+		}
+	}				
+}
+
+

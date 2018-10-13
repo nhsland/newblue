@@ -1,4 +1,4 @@
-/* Sat Oct 13 2018 12:11:59 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Sat Oct 13 2018 14:01:00 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -1241,6 +1241,19 @@ table.label-r-l td {
   margin: 0 0 0.5em 0;
   padding: 10px;
   border-bottom: 2px dotted #eee;
+}
+
+.element .listview-expand-collapse .expand-collapse-icon-btn {
+  display: none;
+}
+
+.element .listview-expand-collapse .listview-pro {
+  display: none;
+}
+
+.element .listview-expand-collapse .listview-full,
+.element .listview-expand-collapse .hidden {
+  display: block;
 }
 
 .print-form-div {
