@@ -1,4 +1,4 @@
-/* Sat Oct 13 2018 18:27:09 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Sun Oct 14 2018 13:37:34 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -279,7 +279,7 @@ html {
 body {
   font-family: 'Roboto','Helvetica','Arial',sans-serif;
   font-weight: 400;
-  font-size: 10pt;
+  font-size: 9pt;
 }
 
 .spacer {
@@ -382,28 +382,28 @@ div.clearfix {
 }
 
 h1 {
-  font-size: 18pt;
+  font-size: 17pt;
   font-weight: 400;
   line-height: 1.2em;
   margin: 0 0 1.3em 0;
 }
 
 h2 {
-  font-size: 15pt;
+  font-size: 13pt;
   font-weight: 400;
   line-height: 1.2em;
   margin: 0.5em 0 0.8em 0;
 }
 
 h3 {
-  font-size: 13pt;
+  font-size: 11pt;
   font-weight: 500;
   line-height: 1.1em;
   margin: 0.4em 0 0.6em 0;
 }
 
 h4 {
-  font-size: 11pt;
+  font-size: 9pt;
   font-weight: 500;
   line-height: 1.1em;
   margin: 0.4em 0 0.4em 0;
@@ -414,14 +414,14 @@ h4.subtitle {
 }
 
 p {
-  font-size: 11pt;
+  font-size: 9pt;
   font-weight: 400;
   line-height: 1.3em;
   margin: 0.3em 0 0.3em 0;
 }
 
 h5 {
-  font-size: 8pt;
+  font-size: 7pt;
   font-weight: 500;
   line-height: 1.2em;
   margin: 0.5em 0 0.5em 0;
@@ -449,13 +449,13 @@ ul, ol {
 }
 
 ul li, ol li {
-  font-size: 8pt !important;
+  font-size: 7pt !important;
   font-weight: 600;
   padding: 2px 0;
 }
 
 ul.large li, ol.large li {
-  font-size: 11pt !important;
+  font-size: 9pt !important;
 }
 
 table {
@@ -467,7 +467,7 @@ table {
 
 table td, table th {
   padding: 4px !important;
-  font-size: 8pt !important;
+  font-size: 7pt !important;
   text-align: left;
   vertical-align: top;
 }
@@ -494,7 +494,7 @@ table.borders tr.no-borders td {
 }
 
 table.large td, table.large th, table.normal-text td, table.normal-text th {
-  font-size: 11pt !important;
+  font-size: 9pt !important;
 }
 
 table.label-item {
@@ -502,7 +502,7 @@ table.label-item {
 }
 
 table.label-item td, table.label-item th {
-  font-size: 11pt !important;
+  font-size: 9pt !important;
   padding-bottom: 1em;
 }
 
@@ -515,7 +515,7 @@ table.label-r-l {
 }
 
 table.label-r-l td, table.label-r-l th {
-  font-size: 11pt !important;
+  font-size: 9pt !important;
   padding-bottom: 1em;
 }
 
@@ -1136,7 +1136,7 @@ table.label-r-l td {
 }
 
 .element .element-header .element-title {
-  font-size: 10pt;
+  font-size: 9pt;
   font-weight: 600;
 }
 
@@ -1212,11 +1212,11 @@ table.label-r-l td {
 }
 
 .element .element-data .large-text {
-  font-size: 12pt;
+  font-size: 10pt;
 }
 
 .element .element-data .priority-text {
-  font-size: 12pt;
+  font-size: 10pt;
   font-weight: 500;
 }
 
@@ -1266,11 +1266,11 @@ table.label-r-l td {
 }
 
 .element .element-subgroup .subgroup-header h3 {
-  font-size: 11pt;
+  font-size: 9pt;
 }
 
 .eyedraw .eyedraw-data {
-  font-size: 8pt;
+  font-size: 7pt;
 }
 
 .print-form-div {

@@ -3,14 +3,19 @@
 $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 
 // print font-sizes 
-$fontsize-base: 	10pt;
-$fontsize-h1: 		18pt;
-$fontsize-h2:		15pt;
-$fontsize-h3:		13pt;
-$fontsize-normal:	11pt; 	// h4 & p
-$fontsize-small: 	8pt;	// h5
+// base size from v2 was 10pt
+// in v3 this is reduced to 9pt
+// other sizes are adjusted to this
+// "large-fonts" class needs to provided
 
-$fontsize-sem-large: 12pt;  // using this for both large and priority
+$fontsize-base: 	9pt;  // was 10pt
+$fontsize-h1: 		17pt;
+$fontsize-h2:		13pt;
+$fontsize-h3:		11pt;
+$fontsize-normal:	9pt; 	// h4 & p
+$fontsize-small: 	7pt;	// h5
+
+$fontsize-sem-large: 10pt;  // using this for both large and priority
 $element-title-max-width: 150px;
 
 // ... different SVGs for 'pro' & 'classic' theme
