@@ -1,4 +1,4 @@
-/* Sun Oct 14 2018 13:37:34 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Sun Oct 14 2018 13:57:02 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -435,6 +435,11 @@ b, strong {
   text-align: right;
 }
 
+.highlighter {
+  padding: 0 4px 2px 4px;
+  border-bottom: 1px solid #aaa;
+}
+
 .print-header {
   margin: 0 0 1em 0;
 }
@@ -456,6 +461,10 @@ ul li, ol li {
 
 ul.large li, ol.large li {
   font-size: 9pt !important;
+}
+
+table td ul, table td ol {
+  margin: 0.2em 0;
 }
 
 table {
@@ -1122,15 +1131,15 @@ table.label-r-l td {
 /* SEM (basic) */
 .element {
   position: relative;
-  min-height: 50px;
-  padding: 10px 5px 10px 150px;
+  min-height: 40px;
+  padding: 3px 5px 3px 150px;
   margin: 0 0 3px 0;
   border-bottom: 2px solid #ddd;
 }
 
 .element .element-header {
   position: absolute;
-  top: 5px;
+  top: 0;
   left: 0;
   max-width: 150px;
 }
@@ -1271,6 +1280,11 @@ table.label-r-l td {
 
 .eyedraw .eyedraw-data {
   font-size: 7pt;
+}
+
+.eyedraw .eyedraw-canvas {
+  white-space: nowrap;
+  margin: 0 5px 0 0;
 }
 
 .print-form-div {

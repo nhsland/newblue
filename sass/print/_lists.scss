@@ -15,3 +15,12 @@ ul, ol {
 		}
 	} 
 }
+
+// lists in tables 
+table {
+	td {
+		ul, ol {
+			 margin:0.2em 0;
+		}
+	}
+}

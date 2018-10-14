@@ -3,7 +3,7 @@
 	// <h3> shifted to the left (extended view)
 	.element-header {
 		position:absolute;
-		top:5px;
+		top:0;
 		left:0;
 		max-width: $element-title-max-width;	// force to wrap to not overflow data			
 		.element-title {
