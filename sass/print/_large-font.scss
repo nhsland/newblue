@@ -1,5 +1,5 @@
 // OE PRINT
-// add "large-font" to body classes to up them
+// add "large-font" to body classes to increase font-size
 
 body {
 	&.large-font {
@@ -7,7 +7,6 @@ body {
 		
 		// typography.
 		// h1,h2 are big enough
-		
 		h3 {
 			font-size: $fontsize-h3 + 1;
 		}

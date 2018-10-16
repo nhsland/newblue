@@ -38,9 +38,25 @@
 				}
 			}
 		
-			// set up states
-			&.active {					
+			&.selected {
+				color:$oe-pro-text-highlight;
+				svg {
+					fill:$oe-pro-text-highlight;
+				}
+			}
+			
+			// inactive means that the patient doesn't
+			// have any active episode under that sub-speciality
+			// a misnomer on my part!
+			&.inactive {
+				opacity:0.5;
+			}
+			
+			
+			&.active,
+			&.inactive {
 				&:hover, &:focus, &:active {
+					opacity:1;
 					color:#fff;
 					background:$oe-btn-blue;
 					svg {
@@ -49,17 +65,6 @@
 				}
 			}
 			
-			&.selected {
-				color:$oe-pro-text-highlight;
-				svg {
-					fill:$oe-pro-text-highlight;
-				}
-			}
-			
-			&.inactive {
-				opacity:0.4;
-				cursor: default;
-			}
 			
 			
 		}

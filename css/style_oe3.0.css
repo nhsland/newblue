@@ -7092,15 +7092,6 @@ span.squiggle {
   height: 15px;
 }
 
-.oescape-icon-btns .icon-btn a.active:hover, .oescape-icon-btns .icon-btn a.active:focus, .oescape-icon-btns .icon-btn a.active:active {
-  color: #fff;
-  background: #074598;
-}
-
-.oescape-icon-btns .icon-btn a.active:hover svg, .oescape-icon-btns .icon-btn a.active:focus svg, .oescape-icon-btns .icon-btn a.active:active svg {
-  fill: white;
-}
-
 .oescape-icon-btns .icon-btn a.selected {
   color: cyan;
 }
@@ -7110,8 +7101,17 @@ span.squiggle {
 }
 
 .oescape-icon-btns .icon-btn a.inactive {
-  opacity: 0.4;
-  cursor: default;
+  opacity: 0.5;
+}
+
+.oescape-icon-btns .icon-btn a.active:hover, .oescape-icon-btns .icon-btn a.active:focus, .oescape-icon-btns .icon-btn a.active:active, .oescape-icon-btns .icon-btn a.inactive:hover, .oescape-icon-btns .icon-btn a.inactive:focus, .oescape-icon-btns .icon-btn a.inactive:active {
+  opacity: 1;
+  color: #fff;
+  background: #074598;
+}
+
+.oescape-icon-btns .icon-btn a.active:hover svg, .oescape-icon-btns .icon-btn a.active:focus svg, .oescape-icon-btns .icon-btn a.active:active svg, .oescape-icon-btns .icon-btn a.inactive:hover svg, .oescape-icon-btns .icon-btn a.inactive:focus svg, .oescape-icon-btns .icon-btn a.inactive:active svg {
+  fill: white;
 }
 
 .oescape-header {
