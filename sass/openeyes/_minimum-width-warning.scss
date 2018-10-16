@@ -21,7 +21,7 @@
 	display:none;
 	
 	// only show when too small
-	@media only screen and (max-width: $oe-minimum-supported-width) {
+	@media only screen and (max-width: $oe-minimum-supported-width - 1) {
 		display:block;
   	}
 	

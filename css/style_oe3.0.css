@@ -456,7 +456,7 @@ html {
   display: none;
 }
 
-@media only screen and (max-width: 1280px) {
+@media only screen and (max-width: 1279px) {
   #oe-minimum-width-warning {
     display: block;
   }
