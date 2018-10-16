@@ -1,10 +1,14 @@
-// OE Browser Not Supported page
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE does some sniffing and if the users
+// browser isn't supported a simple 'Not Supported page'
+// is displayed. Basic HTML layout
 
 .browser-not-supported {
-	
 	background:$oe-pro-blue;
 	color:$oe-pro-text;
-
 	margin:20px;
 	padding:20px;
 	
@@ -32,7 +36,4 @@
 	a {
 		color:$oe-pro-text-highlight;
 	}
-	
-	
-
 }

@@ -1,10 +1,12 @@
-// Simplified Grid layout
-// 
-// This provides the basic 12 column grid 
-// with some extra bespoke column options
-// for v3 we make use of flex and the cols-n are 
-// useful to help for consistent data layouts
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
 
+// Simplified Grid layout 
+// This provides a basic 12 column grid 
+// with some extra column options
+// OE v3 makes use of flex and the cols-n are 
+// useful to help with consistent data layouts
 
 // Left Right Split (provides a central gap)
 // use cols-6 for no gap

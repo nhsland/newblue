@@ -1,10 +1,16 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
 /* normalize */
 // normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css
 
-// OE UI v3.0 targets Chrome 60+, only relevant resets need be used:
+// OE UI v3.0 targets Chrome 60+, only relevant resets need be used
+// could possible remove this... but have left it for now. 
 
 // Correct the line height in all browsers.
 // Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS
+
 html {
   line-height: 1.15; 
   -ms-text-size-adjust: 100%; 
@@ -12,6 +18,7 @@ html {
 }
 
 // Universal Box Sizing with Inheritance - CSS Tricks Box-sizing.
+
 html {
 	box-sizing: border-box;
 }
@@ -19,16 +26,21 @@ html {
   box-sizing: inherit;
 }
 
+// correct strong styling
+
 b,
 strong {
   font-weight: bolder;
 }
+
+// use small
 
 small {
   font-size: 80%;
 }
 
 // Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+
 sub,
 sup {
   font-size: 75%;
@@ -91,6 +103,7 @@ td {
 }
 
 // table defaults
+
 table {
   border-collapse:collapse;
   border-spacing: 0;
