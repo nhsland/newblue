@@ -9,14 +9,19 @@ idg.patientMiniOverview = function(){
 
 	/**
 	IDG is only using 1 DOM as a demo for all interactions
+	Martin Luther King
 	**/
 
 	var $mini = $('#patient-mini-overview');
+	var $name = $('#patient-mini-overview .patient-name');
+	var $id = $('#patient-mini-overview .patient-number');
 	
 	// wrapper for icons (covers warning triangle too)
 	$('.js-patient-quick-overview').click(function( e ){
 		e.stopPropagation();
-		$mini.show();
+		$name.text( $(this).data('name') );
+		$id.text( $(this).data('id') );
+		positionAndShow( $(this) );
 	});
 	
 	$('#patient-mini-overview .close-icon-btn').click(function( e ){
@@ -24,28 +29,39 @@ idg.patientMiniOverview = function(){
 		$mini.hide();
 	});
 	
-/*
-	function showQuicklook( $wrapper, top ){
-		offsetTop = top + 30;
-		$popup.find('.patient-details .name').text( $wrapper.data('name') );
-		$popup.find('.patient-details .number').text( $wrapper.data('id') );
+	function positionAndShow( $iconBtn ){
 		
-		// show alert?
-		if( $wrapper.find('.triangle').length ){
-			$popup.find('.alert-box').show();
-		} else {
-			$popup.find('.alert-box').hide();
-		}
+		/* 
+			Popup is FIXED positioned
+			work out offset position 
+			setup events to close it on resize or scroll.
+			*/
+			
+			var miniH = 350;
+			var miniW = 465;
+			
+			var elem = $iconBtn[ 0 ];
+			
+			// js vanilla:
+			var btnPos = elem.getBoundingClientRect();		
+			var w = document.documentElement.clientWidth;
+			var h = document.documentElement.clientHeight;
+			
+			var posTop = btnPos.top;
+			var posLeft = btnPos.right - miniW;
 		
-		$popup
-			.removeClass('hidden')
-			.css( {'top':offsetTop} )
-			.show();
+			// check popup doesn't go off the top of the screen 
+			if(h - posTop < miniH) posTop = h - miniH;
+			if(posLeft < 0) posLeft = 0;
+			
+			// set CSS Fixed position
+			$mini.css(	{	"top": posTop,
+							"left": posLeft });			
+							
+			$mini.show();
+		
+		
 	}
 	
-	function hideQuicklook(){
-		$popup.hide();
-	}
-*/
 	
 }

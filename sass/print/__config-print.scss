@@ -8,15 +8,19 @@ $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 // other sizes are adjusted to this
 // "large-fonts" class needs to provided
 
-$fontsize-base: 	9pt;  // was 10pt
+$fontsize-base: 	9pt;  	// h4 & p  (was 10pt in v2)
 $fontsize-h1: 		17pt;
 $fontsize-h2:		13pt;
-$fontsize-h3:		11pt;
-$fontsize-normal:	9pt; 	// h4 & p
+$fontsize-h3:		11pt; 	
 $fontsize-small: 	7pt;	// h5
 
 $fontsize-sem-large: 10pt;  // using this for both large and priority
 $element-title-max-width: 150px;
+
+
+$table-border-color: #ccc;
+$table-line-color: #bbb;
+
 
 // ... different SVGs for 'pro' & 'classic' theme
 // ... for printing use 'classic' they are basically black (#003)

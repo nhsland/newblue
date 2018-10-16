@@ -1,0 +1,37 @@
+// OE PRINT
+// add "large-font" to body classes to up them
+
+body {
+	&.large-font {
+		font-size: $fontsize-base + 1;
+		
+		// typography.
+		// h1,h2 are big enough
+		
+		h3 {
+			font-size: $fontsize-h3 + 1;
+		}
+		h4 {
+			font-size: $fontsize-base + 1;
+		}
+		p {
+			font-size: $fontsize-base + 1;
+		}
+		
+		// tables
+		table {
+	    	td, th {
+		    	font-size: $fontsize-small + 1;
+		    }
+		    
+		    &.label-item,
+		    &.label-r-l {
+				td, th {
+					font-size: $fontsize-base + 1; 
+				}
+			}
+		}		
+	}
+}
+
+

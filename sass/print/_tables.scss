@@ -4,7 +4,7 @@
 
 table {
     width: 100%;
-    border:2px solid #ddd;
+    border:2px solid $table-border-color;
     margin:0.5em 0 1em 0;
     
     // try to avoid breaking up tabular data
@@ -12,8 +12,8 @@ table {
     
     // setup defaults
     td, th {
-	    padding: 4px !important;
-	    font-size: $fontsize-small !important; 		// 8pt was set in v2, sticking with this.
+	    padding: 4px;
+	    font-size: $fontsize-small; 		// 8pt was set in v2
 	 	text-align:left; 
 	 	vertical-align: top;  
 	}
@@ -29,9 +29,9 @@ table {
 	// add borders to the data (standard table)
 	&.borders {
 		// need this here again, because of TinyMCE editor
-		border:2px solid #ddd;
+		border:2px solid $table-border-color;
 		td, th {
-			border: 1.5px #ddd solid;
+			border: 1.5px solid $table-line-color;
 		}
 		
 		// merge data in <tr> with <tr> above
@@ -48,7 +48,7 @@ table {
 	&.large,
 	&.normal-text {
 		td, th {
-			font-size: $fontsize-normal !important; 
+			font-size: $fontsize-sem-large; 
 		}
 	}
 	
@@ -58,7 +58,7 @@ table {
 	&.label-item {
 		border: none;
 		td, th {
-			font-size: $fontsize-normal !important; 
+			font-size: $fontsize-base; 
 			padding-bottom:1em;
 		}
 		
@@ -70,11 +70,11 @@ table {
 	
 	// label - right - left layout
 	// to replace tab layouts
-	// structure is <tr><th>Label<th><td>Data<td></tr>
+	// structure is <tr><th>Label<th><td>Right<td><td>Left</td></tr>
 	&.label-r-l {
 		border: none;
 		td, th {
-			font-size: $fontsize-normal !important; 
+			font-size: $fontsize-base; 
 			padding-bottom:1em;
 		}
 		
@@ -84,11 +84,8 @@ table {
 		
 		td {
 			width:37% !important;
-		}
-		
-	}
-	
-	 
+		}	
+	} 
 }
 
 

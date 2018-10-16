@@ -2,7 +2,6 @@
 
 // Page title 
 // could be used in main but not encouraged
-
 h1 {
     font-size: $fontsize-h1;
     font-weight:400;
@@ -25,7 +24,7 @@ h3 {
 }
 
 h4 {
-	font-size: $fontsize-normal;
+	font-size: $fontsize-base;
 	font-weight:500;
 	line-height: 1.1em;
 	margin:0.4em 0 0.4em 0;
@@ -37,7 +36,7 @@ h4 {
 }
 
 p {
-	font-size: $fontsize-normal;
+	font-size: $fontsize-base;
 	font-weight:400;
 	line-height: 1.3em;
 	margin:0.3em 0 0.3em 0;
@@ -65,6 +64,6 @@ b, strong {
 // highlighter
 .highlighter {
 	padding:0 4px 2px 4px;
-	border-bottom:1px solid #aaa;
+	border-bottom:1px solid $table-line-color;
 }
 

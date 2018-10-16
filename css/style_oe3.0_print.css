@@ -1,4 +1,4 @@
-/* Sun Oct 14 2018 13:57:02 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Tue Oct 16 2018 10:34:11 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -437,7 +437,7 @@ b, strong {
 
 .highlighter {
   padding: 0 4px 2px 4px;
-  border-bottom: 1px solid #aaa;
+  border-bottom: 1px solid #bbb;
 }
 
 .print-header {
@@ -469,14 +469,14 @@ table td ul, table td ol {
 
 table {
   width: 100%;
-  border: 2px solid #ddd;
+  border: 2px solid #ccc;
   margin: 0.5em 0 1em 0;
   page-break-inside: avoid !important;
 }
 
 table td, table th {
-  padding: 4px !important;
-  font-size: 7pt !important;
+  padding: 4px;
+  font-size: 7pt;
   text-align: left;
   vertical-align: top;
 }
@@ -491,11 +491,11 @@ table td {
 }
 
 table.borders {
-  border: 2px solid #ddd;
+  border: 2px solid #ccc;
 }
 
 table.borders td, table.borders th {
-  border: 1.5px #ddd solid;
+  border: 1.5px solid #bbb;
 }
 
 table.borders tr.no-borders td {
@@ -503,7 +503,7 @@ table.borders tr.no-borders td {
 }
 
 table.large td, table.large th, table.normal-text td, table.normal-text th {
-  font-size: 9pt !important;
+  font-size: 10pt;
 }
 
 table.label-item {
@@ -511,7 +511,7 @@ table.label-item {
 }
 
 table.label-item td, table.label-item th {
-  font-size: 9pt !important;
+  font-size: 9pt;
   padding-bottom: 1em;
 }
 
@@ -524,7 +524,7 @@ table.label-r-l {
 }
 
 table.label-r-l td, table.label-r-l th {
-  font-size: 9pt !important;
+  font-size: 9pt;
   padding-bottom: 1em;
 }
 
@@ -534,6 +534,31 @@ table.label-r-l th {
 
 table.label-r-l td {
   width: 37% !important;
+}
+
+/* large-font sizes */
+body.large-font {
+  font-size: 10pt;
+}
+
+body.large-font h3 {
+  font-size: 12pt;
+}
+
+body.large-font h4 {
+  font-size: 10pt;
+}
+
+body.large-font p {
+  font-size: 10pt;
+}
+
+body.large-font table td, body.large-font table th {
+  font-size: 8pt;
+}
+
+body.large-font table.label-item td, body.large-font table.label-item th, body.large-font table.label-r-l td, body.large-font table.label-r-l th {
+  font-size: 10pt;
 }
 
 /* UI element required in PRINT */
@@ -1239,7 +1264,7 @@ table.label-r-l td {
 }
 
 .element table tbody tr {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #bbb;
 }
 
 .element table tbody tr:last-child {

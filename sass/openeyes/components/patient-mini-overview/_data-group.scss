@@ -6,6 +6,9 @@
 		// for use here it needs to change with the theme
 		.quicklook-data-groups {
 			color:$oe-text;
+			// in popup this is set to 33.3%
+			width:100%;
+			
 			.group {
 				background:$oe-blue-dark2;
 				.label { 
@@ -14,6 +17,16 @@
 			 		color: $oe-text-light; 
 				}
 			} 
+			
+			// theme text in tables
+			table {
+				th { 
+					color:$oe-text-light; 
+				}
+				td { 
+					color:$oe-text; 
+				}
+			}
 		}
 		
 		// provide data layout options

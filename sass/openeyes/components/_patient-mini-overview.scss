@@ -7,13 +7,14 @@
 	// with CSS3 grids is to use FIXED 
 	// otherwise it may be cropped by the Grid item it is within.
 	position:fixed;
-	z-index:$oe-z-popup;
-	left:10px;
-	top:200px;
+	z-index:$oe-z-quicklook;
+	top:100px;		// JS sets this.
+	left:100px;
 	padding:10px 5px 10px 10px;
 	width:465px;
 	
 	// themed
+	border:1px solid rgba($oe-text,0.5);
 	background:$oe-popup-bg;
 	color:$oe-text;
 	
