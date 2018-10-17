@@ -1,0 +1,34 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Admin Notifications
+// used for "System down..." , "demo", etc
+// default state is collapsed
+// only on LOGIN is it displayed full
+
+
+#oe-admin-notifcation {
+	position:fixed;
+	bottom:20px;
+	right:0;
+	z-index:999;
+	
+	display:flex;
+	justify-content: flex-start;
+	align-items: center;
+	
+	height:30px;
+	padding:0 15px;
+	
+	background:rgb(30,30,30);
+	color:rgb(255,255,255);
+	
+	@include font-size(12);
+	font-weight:400;
+	
+	#notification-short {
+		opacity:0.6;
+	}
+}
+
