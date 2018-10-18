@@ -1,4 +1,4 @@
-/* Thu Oct 18 2018 11:10:58 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Thu Oct 18 2018 11:19:53 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -437,7 +437,7 @@ b, strong {
 
 .highlighter {
   padding: 0 4px 2px 4px;
-  border-bottom: 1px solid #bbb;
+  border-bottom: 1px solid #323232;
 }
 
 .print-header {
@@ -503,7 +503,7 @@ table.borders tr.no-borders td {
 }
 
 table.large td, table.large th, table.normal-text td, table.normal-text th {
-  font-size: 10pt;
+  font-size: 9pt;
 }
 
 table.label-item {
@@ -1157,20 +1157,21 @@ body.large-font table.label-item td, body.large-font table.label-item th, body.l
 .element {
   position: relative;
   min-height: 40px;
-  padding: 3px 5px 3px 150px;
+  padding: 3px 5px 3px 130px;
   margin: 0 0 3px 0;
   border-bottom: 2px solid #ddd;
+  font-size: 8pt;
 }
 
 .element .element-header {
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 150px;
+  max-width: 130px;
 }
 
 .element .element-header .element-title {
-  font-size: 9pt;
+  font-size: 8pt;
   font-weight: 600;
 }
 
@@ -1246,11 +1247,11 @@ body.large-font table.label-item td, body.large-font table.label-item th, body.l
 }
 
 .element .element-data .large-text {
-  font-size: 10pt;
+  font-size: 9pt;
 }
 
 .element .element-data .priority-text {
-  font-size: 10pt;
+  font-size: 9pt;
   font-weight: 500;
 }
 
