@@ -1,4 +1,4 @@
-/* Wed Oct 17 2018 23:03:26 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Thu Oct 18 2018 11:10:58 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -1310,6 +1310,49 @@ body.large-font table.label-item td, body.large-font table.label-item th, body.l
 .eyedraw .eyedraw-canvas {
   white-space: nowrap;
   margin: 0 5px 0 0;
+}
+
+.eyedraw .gonio-cross {
+  position: relative;
+  height: 120px;
+  width: auto;
+  background: transparent url("../svg/in-css/eyedraw/gonio.svg") center center no-repeat;
+  background-size: 80px;
+  margin: 10px 0;
+}
+
+.eyedraw .gonio-cross .gonio-sup {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.eyedraw .gonio-cross .gonio-tem {
+  position: absolute;
+  left: 5px;
+  top: 48%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.eyedraw .gonio-cross .gonio-nas {
+  position: absolute;
+  right: 5px;
+  top: 48%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.eyedraw .gonio-cross .gonio-inf {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
 }
 
 .print-form-div {
