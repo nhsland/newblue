@@ -1,0 +1,51 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Element - Correspondence Letter
+// Currently only used in the Correspondence Event
+
+.main-event {
+	.element {
+	
+		// tiny tweak for Tiny buttons
+		.mce-tinymce button:hover {
+			background: rgb(200,230,255);
+		}
+		
+		// correspondence letter only controls 
+		// the HTML layouts. if available JS 
+		// adds an overlay of the PNGs. 
+		.correspondence-letter {
+			background:rgb(255,255,255);
+			color:rgb(0,0,0);
+			padding:10px 20px 40px 20px;
+
+			.letter-logo {
+				text-align: right;
+				padding:0 0 10px 0;
+			}
+			
+			.from-address {
+				float: right;
+			}
+			
+			.letter-date {
+				font-weight: 700;
+				margin:15px 0 0 0;
+			}
+			
+		}
+		
+		// make text area look like a letter (even in Pro mode)
+		.correspondence-letter-text {
+			//font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+			line-height:1.6;
+			@include font-size(17);
+			font-weight:400;
+			padding:15px 10px;
+		}	
+	}
+	
+	
+}

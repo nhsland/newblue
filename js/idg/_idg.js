@@ -147,6 +147,9 @@ idg.init = function(){
 	// SEM Event Filter Actions 
 	idg.eventFilterActions();
 	
+	// SEM Correspondence Scroller 
+	idg.correspondenceScrolling();
+	
 	// OE Filter Options (analytics)
 	idg.filterOptions();
 	

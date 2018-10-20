@@ -5,41 +5,8 @@
 // OE Element - Correspondence Letter
 // Currently only used in the Correspondence Event
 
-.main-event {
-	.element {
-		.correspondence-letter {
-			background:rgb(255,255,255);
-			color:rgb(0,0,0);
-			padding:10px 20px 40px 20px;
 
-			.letter-logo {
-				text-align: right;
-				padding:0 0 10px 0;
-			}
-			
-			.from-address {
-				float: right;
-			}
-			
-			.letter-date {
-				font-weight: 700;
-				margin:15px 0 0 0;
-			}
-			
-		}
-		
-		// make text area look like a letter (even in Pro mode)
-		.correspondence-letter-text {
-			//font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
-			line-height:1.6;
-			@include font-size(17);
-			font-weight:400;
-			padding:15px 10px;
-		}	
-	}
-	
-	// tiny tweak for Tiny buttons
-	.mce-tinymce button:hover {
-		background: rgb(200,230,255);
-	}
-}
+@import "correspondence/tinyMCE";
+@import "correspondence/correspondence-letter";		// HTML fallback if no PNGs 
+@import "correspondence/correspondence-page-scroll";	// JS PNG page scroller
+

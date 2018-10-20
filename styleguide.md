@@ -54,7 +54,6 @@ the following conventions if you want to make changes to the stylesheet.
   a prefix of the class you're extending. For example, if you're adding a secondary
   button style, the class list will be: 'button secondary' and NOT 'button button-secondary'.
 * Generally use semantic and descriptive classnames that describe the content.
-  (eg, `.button.primary`, not `.button.blue`)
 * Use rgb() for colors where possible or 3 character hexadecimal notation (eg `#000`).
 * Avoid qualifying class names with type selectors (eg, don't do this: `div.myclass`).
 * Keep your selectors short! Try to keep your selectors shallow. 
