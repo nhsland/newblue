@@ -10,6 +10,9 @@
 	margin:0 0 3px 0;
 	border-bottom:2px solid #ddd;
 	
-	font-size:$fontsize-sem-base;		
+	font-size:$fontsize-sem-base;	
+	
+	 // try to avoid breaking up tabular data
+    page-break-inside:avoid !important;	
 }
 
