@@ -92,7 +92,14 @@ idg.init = function(){
 	idg.overlayPopup(	'#js-add-new-event',			// SEM header button
 						'add-new-event.php',			// PHP
 						'.close-icon-btn',				// wraps remove icon
-						fakeAddNewEvent );				// callBack				
+						fakeAddNewEvent );				// callBack	
+						
+						
+	// duplicate history element					
+	idg.overlayPopup( 	'#js-idg-preview-correspondence',  	// "Preview Letter" in Correspondence EDIT
+						'letter-preview.php', 				// Demo content
+						'.close-icon-btn' );				// wraps remove icon					
+									
 	
 	// IDG demo some interaction
 	function fakeAddNewEvent( $overlay ){
@@ -148,7 +155,7 @@ idg.init = function(){
 	idg.eventFilterActions();
 	
 	// SEM Correspondence Scroller 
-	idg.correspondenceScrolling();
+	idg.correspondencePageScroll();
 	
 	// OE Filter Options (analytics)
 	idg.filterOptions();

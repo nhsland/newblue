@@ -1,7 +1,7 @@
 /*
 Correspondence Scrolling
 */
-idg.correspondenceScrolling = function(){
+idg.correspondencePageScroll = function(){
 	
 	/*
 	first check UI is available

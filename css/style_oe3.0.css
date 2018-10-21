@@ -5922,17 +5922,17 @@ ul.management-summaries li h6 {
   padding: 15px 10px;
 }
 
-.main-event .element .correspondence-page-scroll {
+.correspondence-page-scroll {
   position: relative;
 }
 
-.main-event .element .correspondence-page-scroll .page-nav {
+.correspondence-page-scroll .page-nav {
   position: absolute;
   top: 1px;
   left: 1px;
 }
 
-.main-event .element .correspondence-page-scroll .page-nav .page-num-btn {
+.correspondence-page-scroll .page-nav .page-num-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5952,18 +5952,18 @@ ul.management-summaries li h6 {
   background: #05306a;
 }
 
-.main-event .element .correspondence-page-scroll .page-nav .page-num-btn:hover, .main-event .element .correspondence-page-scroll .page-nav .page-num-btn:active {
+.correspondence-page-scroll .page-nav .page-num-btn:hover, .correspondence-page-scroll .page-nav .page-num-btn:active {
   background: #074598;
 }
 
-.main-event .element .correspondence-page-scroll .page-images {
+.correspondence-page-scroll .page-images {
   min-height: 280px;
   height: 63vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.main-event .element .correspondence-page-scroll .page-images img {
+.correspondence-page-scroll .page-images img {
   display: block;
   padding: 0 0 10px 0;
 }
