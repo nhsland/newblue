@@ -69,5 +69,8 @@ b, strong {
 .highlighter {
 	padding:0 4px 2px 4px;
 	border-bottom:1px solid rgb(50,50,50);
+	&.large-text {
+		font-size:$fontsize-sem-large;
+	}
 }
 

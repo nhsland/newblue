@@ -1,4 +1,4 @@
-/* Sun Oct 21 2018 09:36:54 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Mon Oct 22 2018 22:08:19 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -438,6 +438,10 @@ b, strong {
 .highlighter {
   padding: 0 4px 2px 4px;
   border-bottom: 1px solid #323232;
+}
+
+.highlighter.large-text {
+  font-size: 9pt;
 }
 
 .print-header {
