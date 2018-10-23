@@ -52,7 +52,11 @@
 				}
 				
 				.urgent-message {
-					fill:rgb(202,121,50);
+					fill:rgb(202,121,50); // must work across themes
+					margin:0 3px 0 0;
+				}
+				.reply-message {
+					fill:$oe-text-active;
 				}
 			}
 		}

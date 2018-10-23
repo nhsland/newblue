@@ -4369,6 +4369,11 @@ ul.management-summaries li h6 {
 
 .home-messages .messages tbody td .urgent-message {
   fill: #ca7932;
+  margin: 0 3px 0 0;
+}
+
+.home-messages .messages tbody td .reply-message {
+  fill: #5ab4b4;
 }
 
 .home-messages .messages .message {
