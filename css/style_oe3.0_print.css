@@ -1,4 +1,4 @@
-/* Tue Oct 23 2018 13:16:55 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Tue Oct 23 2018 20:55:44 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -1320,10 +1320,12 @@ body.large-font table.label-item td, body.large-font table.label-item th, body.l
 
 .eyedraw .gonio-cross {
   position: relative;
-  height: 120px;
-  width: auto;
+  height: 80px;
+  width: 80px;
+  margin: 5px 0;
+  font-size: 9pt;
   background: transparent url("../svg/in-css/eyedraw/gonio.svg") center center no-repeat;
-  background-size: 80px;
+  background-size: 60px;
   margin: 10px 0;
 }
 

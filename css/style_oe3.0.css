@@ -6935,6 +6935,48 @@ span.squiggle {
           transform: translate(-50%, 0);
 }
 
+.element-eyes.element-data .gonio-cross {
+  height: 80px;
+  width: 80px;
+  background-size: 60px;
+  margin: 5px 0;
+  font-size: 0.875rem;
+}
+
+.element-eyes.element-data .gonio-cross .gonio-sup {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
+.element-eyes.element-data .gonio-cross .gonio-tem {
+  position: absolute;
+  left: 5px;
+  top: 48%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.element-eyes.element-data .gonio-cross .gonio-nas {
+  position: absolute;
+  right: 5px;
+  top: 48%;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
+}
+
+.element-eyes.element-data .gonio-cross .gonio-inf {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+}
+
 /* Lightening viewer */
 .oe-lightning-viewer {
   background: #182535;

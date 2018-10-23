@@ -16,11 +16,15 @@
 	
 	.gonio-cross {
 		position:relative;
-		height:120px;
-		width:auto;
+		height:80px;
+		width:80px;
+		
+		margin:5px 0;
+		font-size:$fontsize-sem-large;
+		
 		// add a gonio cross to the background
 		background:transparent url( svg-path( 'eyedraw/gonio' ) ) center center no-repeat;
-		background-size:80px;
+		background-size:60px;
 		
 		margin:10px 0;
 		

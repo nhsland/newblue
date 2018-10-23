@@ -50,5 +50,49 @@
 		
 	}
 	
+	// VIEW mode
+	&.element-data {
+		.gonio-cross {
+			height:80px;
+			width:80px;
+			background-size:60px;
+			margin:5px 0;
+			@include font-size(14);
+			
+			// position all the option relative to the ED.
+			.gonio-sup {
+				position:absolute;
+				top:0;
+				left:50%;
+				margin-right: -50%;
+				transform: translate(-50%, 0);
+			}
+			
+			.gonio-tem {
+				position:absolute;
+				left:5px;
+				top:48%;
+				transform: translate(0, -50%);
+			}
+			
+			.gonio-nas {
+				position:absolute;
+				right:5px;
+				top:48%;
+				transform: translate(0, -50%);
+			}
+			
+			.gonio-inf {
+				position:absolute;
+				bottom:0;
+				left:50%;
+				margin-right: -50%;
+				transform: translate(-50%, 0);
+			}
+			
+		}
+	}
+	
+	
 }
 
