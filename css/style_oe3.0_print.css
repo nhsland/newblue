@@ -1,4 +1,4 @@
-/* Tue Oct 23 2018 20:55:44 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
+/* Thu Oct 25 2018 10:59:00 GMT+0100 (BST) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -1161,7 +1161,7 @@ body.large-font table.label-item td, body.large-font table.label-item th, body.l
 .element {
   position: relative;
   min-height: 40px;
-  padding: 3px 5px 3px 130px;
+  padding: 3px 5px 3px 120px;
   margin: 0 0 3px 0;
   border-bottom: 2px solid #ddd;
   font-size: 8pt;
@@ -1172,7 +1172,7 @@ body.large-font table.label-item td, body.large-font table.label-item th, body.l
   position: absolute;
   top: 0;
   left: 0;
-  max-width: 130px;
+  max-width: 120px;
 }
 
 .element .element-header .element-title {

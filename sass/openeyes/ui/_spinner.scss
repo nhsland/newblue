@@ -7,12 +7,20 @@
   to {transform: rotate(360deg);}
 }
  
- 
+// <div> wrapper to center a spinner
+// in a container
+.spinner-overlay {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	background:rgba(0,0,0,0.2);
+	height:100%;
+	z-index:1;
+} 
  
 .spinner {
-	
 	$spinner-large:60px;
-	$spinner-icon:19px; // 19px matches 
+	$spinner-icon:16px; // medium icon sizes
 	
 	&:before {
 		content: '';
