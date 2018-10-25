@@ -10,12 +10,11 @@
 // <div> wrapper to center a spinner
 // in a container
 .spinner-overlay {
-	display:flex;
-	justify-content: center;
-	align-items: center;
-	background:rgba(0,0,0,0.2);
-	height:100%;
-	z-index:1;
+	position: relative;
+	display:inline-block;  // make container wrap exactly it's contents
+	.spinner {
+		z-index:1;
+	}
 } 
  
 .spinner {

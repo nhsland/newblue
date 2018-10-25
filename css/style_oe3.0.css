@@ -1160,17 +1160,11 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 }
 
 .spinner-overlay {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  background: rgba(0, 0, 0, 0.2);
-  height: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+.spinner-overlay .spinner {
   z-index: 1;
 }
 
