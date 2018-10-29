@@ -59,23 +59,27 @@
 				}
 			}
 			
+			// clickable rows ... but only <tbody>
 			&.clickable-rows {
-				tr {
-					&:hover, &:active, &:focus {
-						cursor: pointer;
-						background:$oe-btn-blue; // row is a big button
-						td {
-							color:rgb(255,255,255);
+				tbody {
+					tr {
+						&:hover, &:active, &:focus {
+							cursor: pointer;
+							background:$oe-btn-blue; // row is a big button
+							td {
+								color:rgb(255,255,255);
+							}
 						}
+						
+						td {
+							// increase the hit area slightly (thinking touch!)
+							padding-top:5px;
+							padding-bottom:5px; 
+						}
+						
 					}
-					
-					td {
-						// increase the hit area slightly (thinking touch!)
-						padding-top:5px;
-						padding-bottom:5px; 
-					}
-					
 				}
+				
 			}
 			
 			// add line to help with reading data
@@ -94,6 +98,13 @@
 				
 				&.divider {
 					border-bottom-width: 6px;
+				}
+				
+				&.selected-row {
+					background:$oe-btn-blue; // row is a big button
+					td {
+						color:rgb(255,255,255);
+					}
 				}
 			}
 			

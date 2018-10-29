@@ -5629,16 +5629,16 @@ ul.management-summaries li h6 {
   border-bottom: none;
 }
 
-.main-event .element table.clickable-rows tr:hover, .main-event .element table.clickable-rows tr:active, .main-event .element table.clickable-rows tr:focus {
+.main-event .element table.clickable-rows tbody tr:hover, .main-event .element table.clickable-rows tbody tr:active, .main-event .element table.clickable-rows tbody tr:focus {
   cursor: pointer;
   background: #074598;
 }
 
-.main-event .element table.clickable-rows tr:hover td, .main-event .element table.clickable-rows tr:active td, .main-event .element table.clickable-rows tr:focus td {
+.main-event .element table.clickable-rows tbody tr:hover td, .main-event .element table.clickable-rows tbody tr:active td, .main-event .element table.clickable-rows tbody tr:focus td {
   color: white;
 }
 
-.main-event .element table.clickable-rows tr td {
+.main-event .element table.clickable-rows tbody tr td {
   padding-top: 5px;
   padding-bottom: 5px;
 }
@@ -5657,6 +5657,14 @@ ul.management-summaries li h6 {
 
 .main-event .element table tr.divider {
   border-bottom-width: 6px;
+}
+
+.main-event .element table tr.selected-row {
+  background: #074598;
+}
+
+.main-event .element table tr.selected-row td {
+  color: white;
 }
 
 .main-event .element table.large td, .main-event .element table.large-text td {
