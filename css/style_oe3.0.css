@@ -3062,13 +3062,28 @@ select.fixed-width {
   right: 0;
 }
 
-.oe-patient .hospital-number, .oe-patient .nhs-number, .oe-patient .patient-gender, .oe-patient .patient-age, .oe-patient .warning {
+.oe-patient .hospital-number,
+.oe-patient .nhs-number,
+.oe-patient .patient-gender,
+.oe-patient .patient-age,
+.oe-patient .patient-died,
+.oe-patient .warning {
   display: inline-block;
   padding: 0 6px 5px 6px;
   border-left: 1px solid #26303d;
 }
 
-.oe-patient .hospital-number span, .oe-patient .hospital-number em, .oe-patient .nhs-number span, .oe-patient .nhs-number em, .oe-patient .patient-gender span, .oe-patient .patient-gender em, .oe-patient .patient-age span, .oe-patient .patient-age em, .oe-patient .warning span, .oe-patient .warning em {
+.oe-patient .hospital-number span, .oe-patient .hospital-number em,
+.oe-patient .nhs-number span,
+.oe-patient .nhs-number em,
+.oe-patient .patient-gender span,
+.oe-patient .patient-gender em,
+.oe-patient .patient-age span,
+.oe-patient .patient-age em,
+.oe-patient .patient-died span,
+.oe-patient .patient-died em,
+.oe-patient .warning span,
+.oe-patient .warning em {
   opacity: 0.5;
 }
 
@@ -3076,6 +3091,24 @@ select.fixed-width {
   padding-left: 0;
   border-left: none;
   font-size: 0.8125rem;
+}
+
+.oe-patient.deceased .patient-name {
+  color: red;
+  font-weight: 400;
+}
+
+.oe-patient .patient-died {
+  font-size: 0.8125rem;
+  color: red;
+}
+
+.oe-patient .patient-died em {
+  opacity: 0.75;
+}
+
+.oe-patient .patient-died em:nth-child(2) em {
+  padding: 0 0 0 3px;
 }
 
 .oe-patient .patient-quicklook,

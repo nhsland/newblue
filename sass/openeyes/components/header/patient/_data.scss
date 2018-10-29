@@ -32,7 +32,12 @@
 		right:0;
 	}
 	
-	.hospital-number, .nhs-number, .patient-gender, .patient-age, .warning {
+	.hospital-number, 
+	.nhs-number, 
+	.patient-gender, 
+	.patient-age, 
+	.patient-died,
+	.warning {
 		display:inline-block;
 		padding:0 6px 5px 6px;
 		border-left:1px solid $oe-pro-line;	
@@ -44,6 +49,28 @@
 		padding-left:0;
 		border-left:none;
 		@include font-size(13);
+	}
+	
+	// DECEASED
+	&.deceased {
+		.patient-name {
+			color:rgb(255,0,0);
+			font-weight:400;
+		}
+	}
+	
+	// replaces patient-age
+	.patient-died {
+		@include font-size(13);
+		color:rgb(255,0,0);
+		em {
+			opacity:0.75;
+			&:nth-child(2){
+				em {
+					padding:0 0 0 3px;
+				}
+			}
+		}
 	}
 	
 }
