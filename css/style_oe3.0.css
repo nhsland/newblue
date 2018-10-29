@@ -3413,6 +3413,47 @@ select.fixed-width {
   color: cyan;
 }
 
+.oe-hd-title {
+  position: absolute;
+  top: 0;
+  left: 180px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 1rem;
+  color: #8c8c8c;
+  font-weight: 300;
+}
+
+.oe-hd-right {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-size: 0.75rem;
+  color: #8c8c8c;
+}
+
+.oe-hd-right .group {
+  margin: 0 15px 0 0;
+}
+
 .oe-hotlist-panel {
   display: none;
   z-index: 95;
