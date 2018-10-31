@@ -166,6 +166,9 @@ idg.init = function(){
 	// Patient Mini Overview
 	idg.patientMiniOverview();
 	
+	// Notification (user/admin)
+	idg.notificationBanner();
+	
 										
 };
 
@@ -2887,6 +2890,20 @@ idg.hotList = function(hotlistPopup){
 		pmu.set_date(new Date);
 		$('#js-pickmeup-closed-date').text("Today");
 	});
+}
+/**
+Notification banner (User / Admin)
+**/
+idg.notificationBanner = function(){
+	if( $('#oe-admin-notifcation').length == 0 ) return;
+	
+	// icon toggles Short/ Full Message
+	$('#oe-admin-notifcation .oe-i').click( toggleNotification);
+	
+	function toggleNotification(){
+		$('#notification-short').toggle();
+		$('#notification-full').toggle();
+	}
 }
 /**
 Load content as Overlay

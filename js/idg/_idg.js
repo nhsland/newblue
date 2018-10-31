@@ -166,6 +166,9 @@ idg.init = function(){
 	// Patient Mini Overview
 	idg.patientMiniOverview();
 	
+	// Notification (user/admin)
+	idg.notificationBanner();
+	
 										
 };
 

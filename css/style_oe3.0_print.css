@@ -1,4 +1,4 @@
-/* Wed Oct 31 2018 10:10:18 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
+/* Wed Oct 31 2018 16:05:14 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -1098,6 +1098,14 @@ body.large-font table.label-item td, body.large-font table.label-item th, body.l
 
 .oe-i.letter-GP.pro-theme {
   background-image: url("../svg/in-css/icons/letter-GP.svg");
+}
+
+.oe-i.trials {
+  background-image: url("../svg/in-css/icons/_classic/trials.svg");
+}
+
+.oe-i.trials.pro-theme {
+  background-image: url("../svg/in-css/icons/trials.svg");
 }
 
 .oe-i.ed-reset {

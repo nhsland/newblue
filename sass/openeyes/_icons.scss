@@ -188,6 +188,10 @@
 	&.letter-2			{ @include oe3-icons('letter-2'); }
 	&.letter-in			{ @include oe3-icons('letter-invitation'); }
 	&.letter-GP			{ @include oe3-icons('letter-GP'); }
+	
+	// trials is nav icon 
+	// but may be required in the IU
+	&.trials			{ @include oe3-icons('trials'); }
 
 	
 	// Eyedraw icons 

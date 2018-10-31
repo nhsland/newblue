@@ -2222,6 +2222,14 @@ select.fixed-width {
   background-image: url("../svg/in-css/icons/letter-GP.svg");
 }
 
+.oe-i.trials {
+  background-image: url("../svg/in-css/icons/trials.svg");
+}
+
+.oe-i.trials.pro-theme {
+  background-image: url("../svg/in-css/icons/trials.svg");
+}
+
 .oe-i.ed-reset {
   background-image: url("../svg/in-css/eyedraw/ed-reset.svg");
 }
