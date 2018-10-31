@@ -10,7 +10,7 @@
 	position:fixed; 					// Fixed take it out of the Grid. 
 	bottom:300px; 						// JS will override and position
 	right:0; 
-	z-index:$oe-z-tooltip; 				// make sure it floats over elements
+	z-index:$oe-z-add-insert; 			// z
 	background:$oe-popup-bg;
 	padding:10px 10px 50px 10px; 		// allow for bottom 'btn' bar 
 	min-height:150px;
