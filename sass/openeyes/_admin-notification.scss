@@ -7,16 +7,14 @@
 // default state is collapsed
 // only on LOGIN is it displayed full
 
-
 #oe-admin-notifcation {
 	position:fixed;
 	bottom:20px;
 	right:0;
 	z-index:999;
 	
-	display:flex;
-	justify-content: flex-start;
-	align-items: center;
+	// Flex: justify-content (h), align-items (v)
+	@include flex(flex-start, center);
 	
 	height:30px;
 	padding:0 15px;

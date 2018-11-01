@@ -8,9 +8,8 @@
 // group of 3 'tile' elements in rank
 	
 .element-tile-group {
-	display:flex;
-	justify-content:flex-start; 	// group items to the left
-	align-items:stretch;			// fill vertical space
+	// Flex: justify-content (h), align-items (v)
+	@include flex(flex-start, stretch);
 	
 	// over specifify to correct layout in tiles
 	// stack the header above the data

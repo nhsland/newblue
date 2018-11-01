@@ -20,9 +20,8 @@
 		
 		.page-num-btn {
 			// page buttons:
-			display:flex;
-			justify-content: center;
-			align-items: center;
+			// Flex: justify-content (h), align-items (v)
+			@include flex(center, center);
 			
 			height:30px;
 			width:30px;

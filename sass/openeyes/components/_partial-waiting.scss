@@ -48,10 +48,9 @@
 	// Key to show the letter icons
 	// and the colour states
 	.waiting-list-key {
-		display:flex;
-		justify-content:flex-start;
-		align-items:flex-start;	
 		
+		// Flex: justify-content (h), align-items (v)
+		@include flex(flex-start, flex-start);		
 		margin:15px 0 0 0;
 		
 		// "Key"

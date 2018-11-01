@@ -104,9 +104,8 @@
 		}
 		
 		.row {
-			display:flex;
-			align-items:flex-start;
-			justify-content:space-between; 
+			// Flex: justify-content (h), align-items (v)
+			@include flex(space-between, flex-start);
 		}
 		
 		.index_col_left_lvl1 {

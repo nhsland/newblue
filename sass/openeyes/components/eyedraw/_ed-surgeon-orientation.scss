@@ -18,9 +18,8 @@ $ed-surgeon-size:60px;
 	margin:5px;
 	
 	// align the title
-	display:flex;
-	align-items: flex-end;
-	justify-content: center;
+	// Flex: justify-content (h), align-items (v)
+	@include flex(flex-end, center);
 	
 	// patient on op bed svg
 	background-position:center bottom 20px; // allow for the title

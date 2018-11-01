@@ -12,7 +12,8 @@
 // use cols-6 for no gap
 // this is used with flex-layout
 .cols-left, .cols-right {
-	width:49%;
+	// note: no padding required with this approach. could change it to calc(50% - 15px) but for now leaving it
+	width:49%; 	
 }
 
 // not covered by 12 col grid

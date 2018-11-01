@@ -21,9 +21,8 @@
 			height:28px;
 			width:28px; 
 			
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			// Flex: justify-content (h), align-items (v)
+			@include flex(center, center);
 			
 			@include font-size(14);
 			font-weight: 300;

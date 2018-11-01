@@ -1,4 +1,4 @@
-/* Wed Oct 31 2018 16:05:14 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
+/* Wed Oct 31 2018 23:11:26 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -355,12 +355,12 @@ div.clearfix {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .flex-layout.flex-right {
@@ -1192,12 +1192,12 @@ body.large-font table.label-item td, body.large-font table.label-item th, body.l
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .element-eyes .right-eye {

@@ -11,9 +11,8 @@ table.standard {
 	
 	.pagination {
 		// sort out vertical alignment with icons
-		display:flex;
-		align-items:center;	
-		justify-content:flex-end;
+		// Flex: justify-content (h), align-items (v)
+		@include flex(flex-end, center);
 		
 		// style consistently 			
 		color:$oe-text-light;

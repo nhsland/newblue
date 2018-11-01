@@ -41,3 +41,11 @@ $oe-icon-opacity: 	1;
 	@return "../svg/in-css/icons/_classic/" + $svg + ".svg";
 }
 
+
+// ------------------------------ Patterns
+@mixin flex($horizontal,$vertical){
+	display:flex;
+	justify-content: $horizontal;
+	align-items: $vertical;	
+}
+

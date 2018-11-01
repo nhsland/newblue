@@ -17,9 +17,9 @@
 		// Reset and Zoom
 		// Doodle selection dropdown
 		.ed-draw-view {
-			display:flex;
-			justify-content:space-between;
-			align-items:center;
+			// Flex: justify-content (h), align-items (v)
+			@include flex(space-between, center);
+			
 			height:$ed-top-panel-height;
 			width:300px;
 		}

@@ -16,6 +16,14 @@
   }
 }
 
+// ------------------------------ Patterns
+/// Flex
+@mixin flex($horizontal,$vertical){
+	display:flex;
+	justify-content: $horizontal;
+	align-items: $vertical;	
+}
+
 // ------------------------------ CSS Tricks
 
 /// Slightly lighten a color

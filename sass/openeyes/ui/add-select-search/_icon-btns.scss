@@ -12,10 +12,11 @@
 	.add-icon-btn {
 		position: absolute;
 		bottom:0;
-		height:32px; // large button height
-		display:flex;
-		align-items:center;
-		justify-content:center;
+		height:32px; // large button height		
+		
+		// Flex: justify-content (h), align-items (v)
+		@include flex(center, center);
+		
 		cursor: pointer;
 	}
 	
