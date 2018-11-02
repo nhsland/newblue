@@ -3123,7 +3123,8 @@ select.fixed-width {
 .oe-patient .patient-demographics,
 .oe-patient .patient-management,
 .oe-patient .patient-allergies-risks,
-.oe-patient .patient-local-edit {
+.oe-patient .patient-local-edit,
+.oe-patient .patient-extra {
   position: absolute;
   padding: 5px 12px 4px 8px;
   cursor: pointer;
@@ -3133,7 +3134,8 @@ select.fixed-width {
 .oe-patient .patient-demographics .icon,
 .oe-patient .patient-management .icon,
 .oe-patient .patient-allergies-risks .icon,
-.oe-patient .patient-local-edit .icon {
+.oe-patient .patient-local-edit .icon,
+.oe-patient .patient-extra .icon {
   display: inline-block;
   fill: #fff;
   opacity: 0.8;
@@ -3147,7 +3149,9 @@ select.fixed-width {
 .oe-patient .patient-demographics.open .icon,
 .oe-patient .patient-demographics.active .icon,
 .oe-patient .patient-management.open .icon,
-.oe-patient .patient-management.active .icon {
+.oe-patient .patient-management.active .icon,
+.oe-patient .patient-trials.open .icon,
+.oe-patient .patient-trials.active .icon {
   fill: cyan;
 }
 
@@ -3179,6 +3183,18 @@ select.fixed-width {
 }
 
 .oe-patient .patient-demographics .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.oe-patient .patient-extra {
+  bottom: 0;
+  right: -30px;
+  padding-bottom: 4px;
+  z-index: 1;
+}
+
+.oe-patient .patient-extra .icon {
   width: 16px;
   height: 16px;
 }
@@ -3233,7 +3249,7 @@ select.fixed-width {
 .oe-user {
   position: absolute;
   top: 0;
-  right: 230px;
+  right: 235px;
   height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3242,19 +3258,19 @@ select.fixed-width {
 
 @media only screen and (min-width: 1440px) {
   .oe-user {
-    right: 280px;
+    right: 265px;
   }
 }
 
 .oe-user .oe-user-profile-context {
-  margin: auto 0 auto 5px;
-  width: 290px;
+  margin: auto 0;
+  width: 280px;
   color: #d6d6d6;
 }
 
 @media only screen and (min-width: 1440px) {
   .oe-user .oe-user-profile-context {
-    width: auto;
+    width: 400px;
   }
 }
 

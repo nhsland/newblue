@@ -13,7 +13,8 @@
 	.patient-demographics, 
 	.patient-management, 
 	.patient-allergies-risks,
-	.patient-local-edit {
+	.patient-local-edit,
+	.patient-extra {
 		position:absolute;
 		padding:5px 12px 4px 8px; // increase icon hitarea
 		cursor:pointer;
@@ -37,7 +38,8 @@
 	// icon behaviour
 	.patient-quicklook, 
 	.patient-demographics,
-	.patient-management {
+	.patient-management,
+	.patient-trials {
 		// js controlled interaction... 
 		&.open, &.active {
 			.icon {
@@ -72,6 +74,24 @@
 		bottom:0;
 		right:63px;
 		padding-bottom:4px; // use pad to increase hitarea.
+		.icon {
+			width:16px;  
+			height:16px;
+		}
+	}
+	
+	// Extra space for 4th Patient icon
+	// created for trials (CERA) not v3 core 
+	// but left as generic container for future use
+	.patient-extra {
+		bottom:0;
+		right:-30px;
+		padding-bottom:4px; // use pad to increase hitarea.
+		
+		// as this overlaps the user panel
+		// raise it above:
+		z-index:1;
+		
 		.icon {
 			width:16px;  
 			height:16px;

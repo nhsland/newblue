@@ -9,23 +9,30 @@
 .oe-user {
 	position:absolute;
 	top:0; 
-	right:230px; // pos by eye
+	// anchored to right of screen so that it 
+	// can expand with screen (pushed to right)
+	right:235px; // pos by eye
 	height:$oe-header-height;
+	// use flex to position user-profile
 	display:flex;
-	
+
 	@include media($oe-extended-browser-size){
-		right:280px; 
+		// give right nav icons a bit more space
+		right:265px; 
 	}
 	
 	// on large displays shift the user group over the right (but allow for icons worst case 240px)
 	
 	.oe-user-profile-context {
-		margin:auto 0 auto 5px; // flex centering
-		// at minimum screen res this must be restriced to stop over-lap with icons 
-		width:290px; 
+		// uses flex to vertically center
+		// the user profile info within container
+		margin:auto 0; // flex magic.
 		
+		// at minimum screen res this must be 
+		// restriced to stop over-lap with icons 
+		width:280px; 
 		@include media($oe-extended-browser-size){
-			width:auto; 
+			width:400px; 
 		}
 	
 		color:$oe-pro-text;
