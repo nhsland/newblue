@@ -2,8 +2,11 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// Home
-// Messages
+// Home - Messages
+// Table data lists Patient (No, Gender, Age, Name)
+// then message: data, who, message, actions.
+// at lowest supported resolutiion a very long name can push 
+// table into horizontal scrolling
 
 .home-messages {
 	
@@ -13,9 +16,9 @@
 	}
 	
 	// <table>
-	// uses and extends 'standard' table
+	// extends 'standard' table and uses highlight-rows
 	.messages {
-		width: 100%; // calc(100% - 300px); was flex but changed sub-grid
+		width: 100%; 
 		
 		// set last <td> to the right	
 		th, td {
@@ -37,7 +40,20 @@
 				&.unread {
 					td {
 						color:$oe-text;
-						@include font-size(14);
+						
+						// at lowest resolution change style
+						// smaller font (to fit longer names) and bold
+						@include font-size(12);
+						font-weight:$oe-font-bold;
+						
+						// after extended browser 
+						// change back to original design style
+						@include media($oe-extended-browser-size){
+							@include font-size(14);
+							font-weight:$oe-font-medium;
+						}
+						
+						
 					}
 				}
 			}
@@ -67,11 +83,13 @@
 		// DOM: <div class="message">Message</div> 
 		// strucutre to make use of truncated text
 		.message {
-			// need to push out the containing <td>
-			// this width seems to work well
-			width:25vw;  
+			// push out the containing <td>
+			// using vw:
+			width:17vw; // tested this with a long patient and long user name  
+			
+			// when we have a bit more space bum it up:
 			@include media($oe-extended-browser-size){
-				width:22vw;
+				width:21vw;
 			}
 			
 			height:1.2rem;
@@ -82,7 +100,7 @@
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			
-			// read full message (if truncated)		
+			// expand and read full message (if truncated)		
 			&.expand {
 				height: auto;
 				text-overflow: none;

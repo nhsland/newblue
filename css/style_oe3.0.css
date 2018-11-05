@@ -4466,7 +4466,15 @@ ul.management-summaries li h6 {
 
 .home-messages .messages tbody tr.unread td {
   color: #d6d6d6;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 1440px) {
+  .home-messages .messages tbody tr.unread td {
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
 }
 
 .home-messages .messages tbody td.patient {
@@ -4484,7 +4492,7 @@ ul.management-summaries li h6 {
 }
 
 .home-messages .messages .message {
-  width: 25vw;
+  width: 17vw;
   height: 1.2rem;
   overflow: hidden;
   color: inherit;
@@ -4494,7 +4502,7 @@ ul.management-summaries li h6 {
 
 @media only screen and (min-width: 1440px) {
   .home-messages .messages .message {
-    width: 22vw;
+    width: 21vw;
   }
 }
 
