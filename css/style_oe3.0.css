@@ -427,10 +427,13 @@ html {
 }
 
 @media print {
+  html {
+    background: white;
+  }
   body.open-eyes {
     display: block !important;
     width: 100%;
-    background: none;
+    background: white;
     color: black;
   }
   body.open-eyes > * {
