@@ -1557,14 +1557,14 @@ select.fixed-width {
   right: 0;
   z-index: 70;
   background: #374755;
-  padding: 10px 10px 50px 10px;
+  padding: 10px 10px 40px 10px;
   min-height: 150px;
   font-size: 0.75rem;
   font-weight: 500;
   -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
           box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
-  width: 350px;
-  min-width: 350px;
+  width: 290px;
+  min-width: 290px;
 }
 
 .oe-add-select-search.auto-width {
@@ -1645,11 +1645,11 @@ select.fixed-width {
 }
 
 .oe-add-select-search .has-filter .add-options {
-  max-height: 133px;
+  max-height: 150px;
 }
 
 .oe-add-select-search .add-options {
-  max-height: 160px;
+  max-height: 178px;
   overflow-y: auto;
   margin: 0 2px 0 0;
   max-width: 500px;
@@ -5765,7 +5765,7 @@ ul.management-summaries li h6 {
 .main-event .element hr.divider {
   display: block;
   border: 0;
-  margin: 20px 0 15px 0;
+  margin: 12px 0 12px 0;
   border-bottom: 3px solid #26303d;
 }
 
@@ -6302,6 +6302,84 @@ ul.management-summaries li h6 {
   width: 100%;
   font-size: 0.875rem;
   cursor: copy;
+}
+
+.main-event .element table.nine-positions {
+  width: 100%;
+}
+
+.main-event .element table.nine-positions > tbody > tr:first-child > td {
+  width: 10%;
+}
+
+.main-event .element table.nine-positions > tbody > tr:first-child > td:nth-child(4n+1) {
+  width: 15%;
+}
+
+.main-event .element table.nine-positions > tbody > tr:first-child > td:nth-child(4n+3) {
+  width: 175px;
+}
+
+.main-event .element table.nine-positions > tbody td {
+  padding: 0;
+  text-align: center;
+}
+
+.main-event .element table.nine-positions .ninepositions-look-value {
+  margin: 2px auto;
+  width: 80px;
+}
+
+.main-event .element table.nine-positions .ninepositions-look-value .ninepositions-look-h {
+  height: 25px;
+  padding: 2px 0;
+  border-bottom: 1.5px solid #8c8c8c;
+}
+
+.main-event .element table.nine-positions .ninepositions-look-value .ninepositions-look-v {
+  height: 25px;
+  padding: 2px 0;
+}
+
+.main-event .element table.nine-positions .ninepositions-look-value .fade {
+  opacity: 0.4;
+}
+
+.main-event .element table.nine-positions .ocular {
+  font-size: 110%;
+}
+
+.main-event .element table.nine-positions .ocular .fade {
+  opacity: 0.2;
+}
+
+.main-event .element table.nine-positions .ed-ninepos-canvas {
+  border-radius: 5px;
+}
+
+.main-event .element table.nine-positions.v1-layout td {
+  position: relative;
+}
+
+.main-event .element table.nine-positions.v1-layout td .ninepositions-look-value {
+  width: 60px;
+  position: relative;
+  left: -8px;
+}
+
+.main-event .element table.nine-positions.v1-layout td .js-add-select-search {
+  position: absolute;
+  bottom: 17px;
+  right: 0;
+  padding: 0 3px;
+}
+
+.main-event .element .eyedraw-controls {
+  margin: 10px 0;
+}
+
+.main-event .element .ninepos-ed-controls-spacer {
+  width: 50px;
 }
 
 .oe-sem-no-events {

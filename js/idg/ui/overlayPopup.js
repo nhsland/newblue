@@ -29,7 +29,7 @@ idg.overlayPopup = function( btn, phpToLoad, closeBtnID, callBack ){
 	function loadOverlay(){
 		var $overlay = $('<div>');
   		$overlay.addClass('oe-popup-wrap');
-  		$overlay.load('/php/v3.0/_load/' + phpToLoad,function(){
+  		$overlay.load('/idg-php/v3.0/_load/' + phpToLoad,function(){
 	  		closeOverlayBtn( $(closeBtnID, this ), $(this) );
 	  		if(callBack) callBack( $overlay );
   		});

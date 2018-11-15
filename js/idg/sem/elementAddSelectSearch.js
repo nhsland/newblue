@@ -178,10 +178,20 @@ idg.elementAddSelectSearch = function(){
 			if(h - posH < 240){
 				posH = h - 245;
 			}
-	
-			// set CSS Fixed position
-			$popup.css(	{	"bottom": posH,
-							"right": (w - btnPos.right) });
+			
+			// close to the left?
+			if( btnPos.left < 310 ){
+				// set CSS Fixed position
+				$popup.css(	{	"bottom": posH,
+								"right": "auto",
+								"left": (btnPos.left) });
+			} else {
+				// set CSS Fixed position
+				$popup.css(	{	"bottom": posH,
+								"right": (w - btnPos.right) });
+			}
+			
+			
 	  					
 			/*
 			Close popup on scroll.
