@@ -5975,6 +5975,7 @@ ul.management-summaries li h6 {
 
 .element .eyedraw .eyedraw-data .data-value {
   font-weight: 500;
+  word-break: break-word;
 }
 
 .element .eyedraw .eyedraw-data .data-value .priority-text {
