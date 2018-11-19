@@ -1,4 +1,4 @@
-/* Mon Nov 19 2018 14:50:42 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
+/* Mon Nov 19 2018 15:02:17 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -421,7 +421,7 @@ p {
 }
 
 h5 {
-  font-size: 7pt;
+  font-size: 8pt;
   font-weight: 500;
   line-height: 1.2em;
   margin: 0.5em 0 0.5em 0;
@@ -458,7 +458,7 @@ ul, ol {
 }
 
 ul li, ol li {
-  font-size: 7pt !important;
+  font-size: 8pt !important;
   font-weight: 600;
   padding: 2px 0;
 }
@@ -480,7 +480,7 @@ table {
 
 table td, table th {
   padding: 4px;
-  font-size: 7pt;
+  font-size: 8pt;
   text-align: left;
   vertical-align: top;
 }
@@ -558,7 +558,7 @@ body.large-font p {
 }
 
 body.large-font table td, body.large-font table th {
-  font-size: 8pt;
+  font-size: 9pt;
 }
 
 body.large-font table.label-item td, body.large-font table.label-item th, body.large-font table.label-r-l td, body.large-font table.label-r-l th {
@@ -566,27 +566,27 @@ body.large-font table.label-item td, body.large-font table.label-item th, body.l
 }
 
 body.impaired-vision {
-  font-size: 11pt;
+  font-size: 12pt;
 }
 
 body.impaired-vision h3 {
-  font-size: 13pt;
+  font-size: 14pt;
 }
 
 body.impaired-vision h4 {
-  font-size: 11pt;
+  font-size: 12pt;
 }
 
 body.impaired-vision p {
-  font-size: 11pt;
+  font-size: 12pt;
 }
 
 body.impaired-vision table td, body.impaired-vision table th {
-  font-size: 9pt;
+  font-size: 11pt;
 }
 
 body.impaired-vision table.label-item td, body.impaired-vision table.label-item th, body.impaired-vision table.label-r-l td, body.impaired-vision table.label-r-l th {
-  font-size: 11pt;
+  font-size: 12pt;
 }
 
 /* UI element required in PRINT */
@@ -1342,7 +1342,7 @@ body.impaired-vision table.label-item td, body.impaired-vision table.label-item 
 }
 
 .eyedraw .eyedraw-data {
-  font-size: 7pt;
+  font-size: 8pt;
 }
 
 .eyedraw .eyedraw-canvas {
