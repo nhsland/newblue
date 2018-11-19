@@ -1623,7 +1623,7 @@ select.fixed-width {
   color: #8c8c8c;
   font-size: 0.6875rem;
   font-weight: 300;
-  padding: 0 0 5px 0;
+  padding: 0 8px 5px 0;
 }
 
 .oe-add-select-search table.select-options thead th:last-child {
