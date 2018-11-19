@@ -1,4 +1,4 @@
-/* Sat Nov 17 2018 12:38:23 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
+/* Mon Nov 19 2018 14:50:42 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -563,6 +563,30 @@ body.large-font table td, body.large-font table th {
 
 body.large-font table.label-item td, body.large-font table.label-item th, body.large-font table.label-r-l td, body.large-font table.label-r-l th {
   font-size: 10pt;
+}
+
+body.impaired-vision {
+  font-size: 11pt;
+}
+
+body.impaired-vision h3 {
+  font-size: 13pt;
+}
+
+body.impaired-vision h4 {
+  font-size: 11pt;
+}
+
+body.impaired-vision p {
+  font-size: 11pt;
+}
+
+body.impaired-vision table td, body.impaired-vision table th {
+  font-size: 9pt;
+}
+
+body.impaired-vision table.label-item td, body.impaired-vision table.label-item th, body.impaired-vision table.label-r-l td, body.impaired-vision table.label-r-l th {
+  font-size: 11pt;
 }
 
 /* UI element required in PRINT */

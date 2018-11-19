@@ -8,35 +8,36 @@
 // there is also "impaired-vision" - very poor eye sight 
 
 body {
-	&.large-font {
-		font-size: $fontsize-base + 1;
+	&.impaired-vision {
+		font-size: $fontsize-base + 3;
 		
 		// typography.
 		// h1,h2 are big enough
 		h3 {
-			font-size: $fontsize-h3 + 1;
+			font-size: $fontsize-h3 + 3;
 		}
 		h4 {
-			font-size: $fontsize-base + 1;
+			font-size: $fontsize-base + 3;
 		}
 		p {
-			font-size: $fontsize-base + 1;
+			font-size: $fontsize-base + 3;
 		}
 		
 		// tables
 		table {
 	    	td, th {
-		    	font-size: $fontsize-small + 1;
+		    	font-size: $fontsize-small + 3;
 		    }
 		    
 		    &.label-item,
 		    &.label-r-l {
 				td, th {
-					font-size: $fontsize-base + 1; 
+					font-size: $fontsize-base + 3; 
 				}
 			}
 		}		
 	}
+	
 }
 
 
