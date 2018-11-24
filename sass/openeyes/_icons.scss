@@ -170,6 +170,9 @@
 	&.d-slash 			{ @include oe3-icons('double-slash'); }
 	&.expand 			{ @include oe3-icons('expand'); }
 	&.collapse 			{ @include oe3-icons('collapse'); }
+	&.reduce-height 	{ @include oe3-icons('reduce-height'); }
+	&.increase-height 	{ @include oe3-icons('increase-height'); }
+	&.increase-height-orange 	{ @include oe3-icons('increase-height-orange'); }
 	&.downup 			{ @include oe3-icons('downup'); }
 	&.history 			{ @include oe3-icons('history'); }
 	&.tick 				{ @include oe3-icons('tick'); }
@@ -214,9 +217,7 @@
 	
 	// RED warning triangle
 	&.warning 			{ background-image: url( svg-path('ui/warning') ); } 
-	
-	
-	
+
 	// R = Green; L = Red; B = Green/Red 
 	// Eye icons are the same across both themes		
 	&.laterality {

@@ -114,6 +114,7 @@ idg.init = function(){
 	
 	// Expand Collapse View lists
 	idg.expandElementList();
+
 	
 	// SEM sidebar 
 	idg.sidebar();
@@ -126,6 +127,9 @@ idg.init = function(){
 	
 	// tile collapsable
 	idg.collapseTiles();
+	
+	// reduce height.
+	idg.reduceElementHeight();
 	
 	// Comments
 	idg.comments();
@@ -1878,6 +1882,39 @@ idg.expandElementList = function(){
 
 }
 /*
+Reduce Increase height
+*/
+idg.reduceElementHeight = function(){
+	// find and set up all
+	$('.js-reduce-element-height-btn').each(function(){
+		
+		var elementID = $(this).data('id');
+		var tiles = new ReduceElementHeight ( 	$(this), elementID );
+	});
+	
+	function ReduceElementHeight( $icon, elementID ){
+		
+		var reduced = false;
+		var $element = $('#'+elementID);
+		// var $header = $element.find('.element-title');
+		
+		$icon.click(function(){
+			changeHeight();
+		});		
+		
+		function changeHeight(){
+			if(reduced){
+				$element.removeClass('reduced-height');			
+			} else {
+				$element.addClass('reduced-height');
+			}
+			
+			$icon.toggleClass('increase-height-orange reduce-height');
+			reduced = !reduced;
+		}	
+	}	
+}
+/*
 Sidebar
 */
 idg.sidebar = function(){
@@ -2016,7 +2053,7 @@ idg.collapseTiles = function(){
 				of content (so user knows state...)
 				*/
 				var collapseIcon = $('<i class="oe-i expand small pad-right js-data-collapsed-icon"></i>');	
-				var dataState = $('<span class="js-data-hidden-state"> [0]</span>');
+				var dataState = $('<span class="element-data-count js-data-hidden-state"> [0]</span>');
 					
 				//$tiles.append( collapseIcon.click( change ) );
 				
@@ -2030,7 +2067,7 @@ idg.collapseTiles = function(){
 				$tiles.find('.tile-more-data-flag').show();
 			}
 			
-			$icon.toggleClass('expand collapse');
+			$icon.toggleClass('reduce-height increase-height');
 			expanded = !expanded;
 		}	
 	}	

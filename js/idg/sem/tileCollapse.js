@@ -38,7 +38,7 @@ idg.collapseTiles = function(){
 				of content (so user knows state...)
 				*/
 				var collapseIcon = $('<i class="oe-i expand small pad-right js-data-collapsed-icon"></i>');	
-				var dataState = $('<span class="js-data-hidden-state"> [0]</span>');
+				var dataState = $('<span class="element-data-count js-data-hidden-state"> [0]</span>');
 					
 				//$tiles.append( collapseIcon.click( change ) );
 				
@@ -52,7 +52,7 @@ idg.collapseTiles = function(){
 				$tiles.find('.tile-more-data-flag').show();
 			}
 			
-			$icon.toggleClass('expand collapse');
+			$icon.toggleClass('reduce-height increase-height');
 			expanded = !expanded;
 		}	
 	}	

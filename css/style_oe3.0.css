@@ -2081,6 +2081,30 @@ select.fixed-width {
   background-image: url("../svg/in-css/icons/collapse.svg");
 }
 
+.oe-i.reduce-height {
+  background-image: url("../svg/in-css/icons/reduce-height.svg");
+}
+
+.oe-i.reduce-height.pro-theme {
+  background-image: url("../svg/in-css/icons/reduce-height.svg");
+}
+
+.oe-i.increase-height {
+  background-image: url("../svg/in-css/icons/increase-height.svg");
+}
+
+.oe-i.increase-height.pro-theme {
+  background-image: url("../svg/in-css/icons/increase-height.svg");
+}
+
+.oe-i.increase-height-orange {
+  background-image: url("../svg/in-css/icons/increase-height-orange.svg");
+}
+
+.oe-i.increase-height-orange.pro-theme {
+  background-image: url("../svg/in-css/icons/increase-height-orange.svg");
+}
+
 .oe-i.downup {
   background-image: url("../svg/in-css/icons/downup.svg");
 }
@@ -5374,6 +5398,23 @@ ul.management-summaries li h6 {
   border: 1px solid rgba(255, 255, 255, 0);
   -webkit-transition: border-color 0.2s ease-in;
   transition: border-color 0.2s ease-in;
+}
+
+.main-event .element.reduced-height {
+  height: 120px;
+  overflow-y: hidden;
+  border-color: #c86400;
+}
+
+.main-event .element.reduced-height:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(20, 30, 43, 0)), to(#141e2b));
+  background: linear-gradient(rgba(20, 30, 43, 0), #141e2b);
 }
 
 .main-event .element.eye-divider {

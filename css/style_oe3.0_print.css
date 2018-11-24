@@ -1,4 +1,4 @@
-/* Mon Nov 19 2018 21:55:42 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
+/* Sat Nov 24 2018 21:46:09 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -978,6 +978,30 @@ body.impaired-vision table.label-item td, body.impaired-vision table.label-item 
 
 .oe-i.collapse.pro-theme {
   background-image: url("../svg/in-css/icons/collapse.svg");
+}
+
+.oe-i.reduce-height {
+  background-image: url("../svg/in-css/icons/_classic/reduce-height.svg");
+}
+
+.oe-i.reduce-height.pro-theme {
+  background-image: url("../svg/in-css/icons/reduce-height.svg");
+}
+
+.oe-i.increase-height {
+  background-image: url("../svg/in-css/icons/_classic/increase-height.svg");
+}
+
+.oe-i.increase-height.pro-theme {
+  background-image: url("../svg/in-css/icons/increase-height.svg");
+}
+
+.oe-i.increase-height-orange {
+  background-image: url("../svg/in-css/icons/_classic/increase-height-orange.svg");
+}
+
+.oe-i.increase-height-orange.pro-theme {
+  background-image: url("../svg/in-css/icons/increase-height-orange.svg");
 }
 
 .oe-i.downup {

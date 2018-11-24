@@ -114,6 +114,7 @@ idg.init = function(){
 	
 	// Expand Collapse View lists
 	idg.expandElementList();
+
 	
 	// SEM sidebar 
 	idg.sidebar();
@@ -126,6 +127,9 @@ idg.init = function(){
 	
 	// tile collapsable
 	idg.collapseTiles();
+	
+	// reduce height.
+	idg.reduceElementHeight();
 	
 	// Comments
 	idg.comments();
