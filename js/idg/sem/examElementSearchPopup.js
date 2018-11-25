@@ -17,12 +17,19 @@ idg.examElementSearchPopup = function(){
 	// popup
 	function showPopup(){
 		$('#js-search-in-event-popup').show();
+		
+		// modify the main area to allow for 
+		// compact search area:
+		$('.main-event').addClass('examination-search-active');
+		
 	
 		$('.close-icon-btn').click(function(){
 			$('#js-search-in-event-popup').hide();
 			$('#js-search-in-event').removeClass('selected');
 			$('#js-search-event-input-right').val('');
 			$('#js-search-event-results').hide();
+			
+			$('.main-event').removeClass('examination-search-active');
 		});
 		
 		$('#js-search-event-input-right').keyup(function(){

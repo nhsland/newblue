@@ -4803,6 +4803,10 @@ ul.management-summaries li h6 {
   margin: 0 0 0 20px;
 }
 
+.main-event.examination-search-active {
+  padding-top: 70px;
+}
+
 .oe-popup-event-audit-trail {
   z-index: 79;
   position: absolute;
