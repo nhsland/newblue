@@ -5926,6 +5926,14 @@ ul.management-summaries li h6 {
           justify-content: space-between;
 }
 
+.main-event .element .listview-expand-collapse ul.listview {
+  font-size: 0.75rem;
+}
+
+.main-event .element .listview-expand-collapse ul.listview li {
+  margin: 0 0 3px 0;
+}
+
 .main-event .element .element-fields.full-width {
   padding-right: 20px;
   padding-left: 10px;

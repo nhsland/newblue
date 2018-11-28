@@ -100,9 +100,20 @@
 			// .expand-collapse-icon-btn {}
 			
 			// CSS hooks for the different views
-			// not used in UI but useful in PRINT!
+			// not using PRO but useful in PRINT!
 			// .listview-pro {}
 			// .listview-full {}
+			
+			// listview of data in FULL, tabular layout
+			ul.listview {
+				@include font-size(12);
+				li {
+					margin:0 0 3px 0;
+				}
+			}
+			
+		
+			
 		}
 		
 				
