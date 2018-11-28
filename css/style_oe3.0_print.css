@@ -1,4 +1,4 @@
-/* Sun Nov 25 2018 19:59:53 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
+/* Wed Nov 28 2018 11:53:17 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -1211,6 +1211,10 @@ body.impaired-vision table.label-item td, body.impaired-vision table.label-item 
 
 .oe-i.laterality.NA {
   background-image: url("../svg/in-css/icons/_laterality/lat-NA.svg");
+}
+
+.print .oe-i.expand, .print .oe-i.collapse, .print .oe-i.reduce-height, .print .oe-i.increase-height {
+  display: none;
 }
 
 /* SEM (basic) */
