@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "openeyes UI v3",
   "devDependencies": {
-    "event-stream": "^3.3.4",
+    "event-stream": "3.3.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.1",
