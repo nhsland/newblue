@@ -1563,9 +1563,10 @@ idg.elementAddSelectSearch = function(){
 			var h = document.documentElement.clientHeight;
 			
 			// check popup doesn't go off the top of the screen 
+			// and don't overlay Logo or Patient Name
 			var posH = (h - btnPos.bottom);
-			if(h - posH < 240){
-				posH = h - 245;
+			if(h - posH < 310){
+				posH = h - 315;
 			}
 			
 			// close to the left?

@@ -22,6 +22,9 @@ $oe-event-sidebar-width:				200px;	// SEM sidebar
 $oe-event-main-default-width:			1080px; // SEM for minimum support monitors (+ sidebar is 1280px)
 $oe-hotlist-panel-width:				450px; 	// hotlist list panel
 $oe-eyedraw-app-width:					($oe-minimum-supported-width + 20px);  // eyedraw popup app
+$oe-add-insert-popup-height:			204px; 	// Adder Popup
+
+
 
 // Provide Enhancement for Users on largest supported screens (up to 1920px)
 // note: sidebar + main event area + hotlist must NOT exceed 1920px (1910px ideally)

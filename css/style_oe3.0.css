@@ -1558,9 +1558,9 @@ select.fixed-width {
   z-index: 70;
   background: #374755;
   padding: 10px 10px 40px 10px;
-  min-height: 150px;
-  font-size: 0.75rem;
-  font-weight: 500;
+  min-height: 204px;
+  font-size: 0.6875rem;
+  font-weight: 400;
   -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
           box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.1);
   width: 290px;
@@ -1632,7 +1632,7 @@ select.fixed-width {
 
 .oe-add-select-search table.select-options tbody td {
   vertical-align: top;
-  padding: 0 15px 0 0;
+  padding: 0 10px 0 0;
 }
 
 .oe-add-select-search table.select-options tbody td:last-child {
@@ -1645,11 +1645,11 @@ select.fixed-width {
 }
 
 .oe-add-select-search .has-filter .add-options {
-  max-height: 150px;
+  max-height: 204px;
 }
 
 .oe-add-select-search .add-options {
-  max-height: 178px;
+  max-height: 224px;
   overflow-y: auto;
   margin: 0 2px 0 0;
   max-width: 500px;
@@ -1658,16 +1658,18 @@ select.fixed-width {
 .oe-add-select-search .add-options li {
   display: block;
   cursor: pointer;
-  padding: 3px 8px 3px 8px;
+  padding: 3px 8px;
   margin: 0 0 2px 0;
   color: #d6d6d6;
   background: #32404d;
+  min-width: 30px;
 }
 
 .oe-add-select-search .add-options li .restrict-width {
   display: inline-block;
-  min-width: 130px;
-  max-width: 140px;
+  min-width: 125px;
+  max-width: 130px;
+  word-break: break-word;
 }
 
 .oe-add-select-search .add-options li:hover, .oe-add-select-search .add-options li:focus, .oe-add-select-search .add-options li:active, .oe-add-select-search .add-options li.selected {
