@@ -9,30 +9,30 @@
 
 body {
 	&.impaired-vision {
-		font-size: $fontsize-base + 3;
+		font-size: $fontsize-base + 4;
 		
 		// typography.
 		// h1,h2 are big enough
 		h3 {
-			font-size: $fontsize-h3 + 3;
+			font-size: $fontsize-h3 + 4;
 		}
 		h4 {
-			font-size: $fontsize-base + 3;
+			font-size: $fontsize-base + 4;
 		}
 		p {
-			font-size: $fontsize-base + 3;
+			font-size: $fontsize-base + 4;
 		}
 		
 		// tables
 		table {
 	    	td, th {
-		    	font-size: $fontsize-small + 3;
+		    	font-size: $fontsize-small + 4;
 		    }
 		    
 		    &.label-item,
 		    &.label-r-l {
 				td, th {
-					font-size: $fontsize-base + 3; 
+					font-size: $fontsize-base + 4; 
 				}
 			}
 		}		

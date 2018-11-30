@@ -1,4 +1,4 @@
-/* Thu Nov 29 2018 10:20:54 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
+/* Fri Nov 30 2018 13:38:03 GMT+0000 (GMT) *//* FONT: Roboto - latin_greek, local hosting */
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
@@ -542,7 +542,7 @@ table.label-r-l td {
 
 /* large-font sizes */
 body.large-font {
-  font-size: 10pt;
+  font-size: 11pt;
 }
 
 body.large-font h3 {
@@ -566,27 +566,27 @@ body.large-font table.label-item td, body.large-font table.label-item th, body.l
 }
 
 body.impaired-vision {
-  font-size: 12pt;
+  font-size: 13pt;
 }
 
 body.impaired-vision h3 {
-  font-size: 14pt;
+  font-size: 15pt;
 }
 
 body.impaired-vision h4 {
-  font-size: 12pt;
+  font-size: 13pt;
 }
 
 body.impaired-vision p {
-  font-size: 12pt;
+  font-size: 13pt;
 }
 
 body.impaired-vision table td, body.impaired-vision table th {
-  font-size: 11pt;
+  font-size: 12pt;
 }
 
 body.impaired-vision table.label-item td, body.impaired-vision table.label-item th, body.impaired-vision table.label-r-l td, body.impaired-vision table.label-r-l th {
-  font-size: 12pt;
+  font-size: 13pt;
 }
 
 /* UI element required in PRINT */
