@@ -154,7 +154,7 @@ only creates compressed css
 gulp.task('sass-print',function(){
 	
 	return gulp.src( config.print )
-		.pipe( sass( {outputStyle:'expanded'} ) )
+		.pipe( sass( {outputStyle:'compressed'} ) )
 		.pipe( rename( config.cssFile + '_print.css') )
 		.pipe( autoprefixer() ) 
 		.pipe( header( cssDateStamp() ) )				

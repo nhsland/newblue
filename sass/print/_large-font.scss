@@ -9,30 +9,32 @@
 
 body {
 	&.large-font {
-		font-size: $fontsize-base + 2;
+		$large-font-increase: 2;
+		
+		font-size: $fontsize-base + $large-font-increase;
 		
 		// typography.
 		// h1,h2 are big enough
 		h3 {
-			font-size: $fontsize-h3 + 1;
+			font-size: $fontsize-h3 + $large-font-increase;
 		}
 		h4 {
-			font-size: $fontsize-base + 1;
+			font-size: $fontsize-base + $large-font-increase;
 		}
 		p {
-			font-size: $fontsize-base + 1;
+			font-size: $fontsize-base + $large-font-increase;
 		}
 		
 		// tables
 		table {
 	    	td, th {
-		    	font-size: $fontsize-small + 1;
+		    	font-size: $fontsize-small + $large-font-increase;
 		    }
 		    
 		    &.label-item,
 		    &.label-r-l {
 				td, th {
-					font-size: $fontsize-base + 1; 
+					font-size: $fontsize-base + $large-font-increase; 
 				}
 			}
 		}		

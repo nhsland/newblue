@@ -9,30 +9,33 @@
 
 body {
 	&.impaired-vision {
-		font-size: $fontsize-base + 4;
+		
+		$impaired-vision-increase: 4;
+		
+		font-size: $fontsize-base + $impaired-vision-increase;
 		
 		// typography.
-		// h1,h2 are big enough
+		// h1,h2 are big enough (i think?)
 		h3 {
-			font-size: $fontsize-h3 + 4;
+			font-size: $fontsize-h3 + $impaired-vision-increase;
 		}
 		h4 {
-			font-size: $fontsize-base + 4;
+			font-size: $fontsize-base + $impaired-vision-increase;
 		}
 		p {
-			font-size: $fontsize-base + 4;
+			font-size: $fontsize-base + $impaired-vision-increase;
 		}
 		
 		// tables
 		table {
 	    	td, th {
-		    	font-size: $fontsize-small + 4;
+		    	font-size: $fontsize-small + $impaired-vision-increase;
 		    }
 		    
 		    &.label-item,
 		    &.label-r-l {
 				td, th {
-					font-size: $fontsize-base + 4; 
+					font-size: $fontsize-base + $impaired-vision-increase; 
 				}
 			}
 		}		
