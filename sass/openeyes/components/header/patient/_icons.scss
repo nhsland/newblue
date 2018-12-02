@@ -106,12 +106,18 @@
 	.patient-allergies-risks {
 		bottom:0;
 		right:105px;
+		
+		// Allergies, Alerts text
+		// reduce this down to create a little
+		// bit more horizontal space
+		@include font-size(10);
+		font-weight:500;
 	
 		display:flex;
 		align-items:center;
-		padding:6px 24px 5px 4px; // padding matches the data padding to align text
-		
-		// ;
+		height:23px;
+		padding:0 21px 0 4px; // padding matches the data padding to align text
+	
 		
 		background:transparent url( svg-path('icons/triangle') ) center right 4px no-repeat;
 		background-size:15px;	

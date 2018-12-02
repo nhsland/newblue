@@ -2,15 +2,13 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Element - Correspondence Letter
-// Used in VIEW, but de-coupled to use 
-// in EDIT as a PREVIEW in a popup
-
-// if correspondence has PNGs of the letter
-// pages these are used and the HTML is hidden
+// Lightning MultiPage Scroller
+// Multiple images can be dropped into
+// the DOM, CSS allows scrolling. JS
+// enhances with Page Nav Btns
 
 
-.correspondence-page-scroll {
+.lightning-multipage-scroll {
 	position: relative;
 	
 	// DOM JS hook
@@ -41,18 +39,19 @@
 			&.selected {
 				background:$oe-btn-blue; 
 			}
-			
 		}
 	}	
 	
 	// DOM container for IMGs
-	.page-images {
-		height: 63vh;  		// allow content area to grow in relation to display
+	.multipage-stack {
+		// must have a height for the scroll
+		// allow content area to grow in relation to display
+		height: 63vh;  		
 		
 		overflow-y: auto;
 		overflow-x: hidden;	
 		
-		// all IMGs should be loaded in the DOM
+		// all IMGs should be loaded in the DOM 
 		img {
 			display:block;
 			padding:0 0 10px 0;
@@ -60,4 +59,5 @@
 		
 	}
 }
+
 

@@ -3231,13 +3231,16 @@ select.fixed-width {
 .oe-patient .patient-allergies-risks {
   bottom: 0;
   right: 105px;
+  font-size: 0.625rem;
+  font-weight: 500;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 6px 24px 5px 4px;
+  height: 23px;
+  padding: 0 21px 0 4px;
   background: transparent url("../svg/in-css/icons/triangle.svg") center right 4px no-repeat;
   background-size: 15px;
 }
@@ -6113,13 +6116,13 @@ ul.management-summaries li h6 {
   position: relative;
 }
 
-.correspondence-page-scroll .page-nav {
+.correspondence-page-scroll .multipage-nav {
   position: absolute;
   top: 1px;
   left: 1px;
 }
 
-.correspondence-page-scroll .page-nav .page-num-btn {
+.correspondence-page-scroll .multipage-nav .page-num-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6139,12 +6142,11 @@ ul.management-summaries li h6 {
   background: #05306a;
 }
 
-.correspondence-page-scroll .page-nav .page-num-btn:hover, .correspondence-page-scroll .page-nav .page-num-btn:active {
+.correspondence-page-scroll .multipage-nav .page-num-btn:hover, .correspondence-page-scroll .multipage-nav .page-num-btn:active, .correspondence-page-scroll .multipage-nav .page-num-btn.selected {
   background: #074598;
 }
 
 .correspondence-page-scroll .page-images {
-  min-height: 280px;
   height: 63vh;
   overflow-y: auto;
   overflow-x: hidden;
@@ -7441,6 +7443,51 @@ span.squiggle {
   border-left-color: #283442;
   border-width: 6px;
   margin-top: -6px;
+}
+
+.lightning-multipage-scroll {
+  position: relative;
+}
+
+.lightning-multipage-scroll .multipage-nav {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+
+.lightning-multipage-scroll .multipage-nav .page-num-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 30px;
+  width: 30px;
+  margin: 0 0 1px 0;
+  color: white;
+  font-size: 0.6875rem;
+  font-weight: 400;
+  cursor: pointer;
+  background: #05306a;
+}
+
+.lightning-multipage-scroll .multipage-nav .page-num-btn:hover, .lightning-multipage-scroll .multipage-nav .page-num-btn:active, .lightning-multipage-scroll .multipage-nav .page-num-btn.selected {
+  background: #074598;
+}
+
+.lightning-multipage-scroll .multipage-stack {
+  height: 63vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.lightning-multipage-scroll .multipage-stack img {
+  display: block;
+  padding: 0 0 10px 0;
 }
 
 /* OEscape */

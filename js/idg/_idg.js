@@ -159,7 +159,10 @@ idg.init = function(){
 	idg.eventFilterActions();
 	
 	// SEM Correspondence Scroller 
-	idg.correspondencePageScroll();
+	// idg.correspondencePageScroll(); NOW: MultiPage Scroll
+	
+	// Multi Page Scroll
+	idg.multiPageScroll();
 	
 	// OE Filter Options (analytics)
 	idg.filterOptions();
@@ -172,6 +175,8 @@ idg.init = function(){
 	
 	// Notification (user/admin)
 	idg.notificationBanner();
+	
+	
 	
 										
 };

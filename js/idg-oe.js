@@ -159,7 +159,10 @@ idg.init = function(){
 	idg.eventFilterActions();
 	
 	// SEM Correspondence Scroller 
-	idg.correspondencePageScroll();
+	// idg.correspondencePageScroll(); NOW: MultiPage Scroll
+	
+	// Multi Page Scroll
+	idg.multiPageScroll();
 	
 	// OE Filter Options (analytics)
 	idg.filterOptions();
@@ -172,6 +175,8 @@ idg.init = function(){
 	
 	// Notification (user/admin)
 	idg.notificationBanner();
+	
+	
 	
 										
 };
@@ -1077,6 +1082,63 @@ idg.homeMessageExpand = function(){
 	}
 }
 
+/*
+Mulit Page Scroll Widget. 
+Used in Correspondence VIEW and Lightning Viewer for Letters 
+... and maybe other places too.
+*/
+idg.multiPageScroll = function(){
+	/*
+	check DOM... 
+	*/
+	if( $('.lightning-multipage-scroll').length == 0 ) return;
+	
+	/*
+	Allowing for 1 to n widgets
+	*/
+	$('.lightning-multipage-scroll').each( function(){
+		var mps = new MultiPage( $(this) );
+	});
+	
+	function MultiPage( $div ){
+		var me = this;
+		var $nav = $('.multipage-nav',$div);
+		var $stack = $('.multipage-stack',$div);
+		var numOfImgs = $('.multipage-stack > img',$div).length;
+		/*
+		Build Page Nav Btns
+		loop through and create page buttons
+		e.g. <div class="page-num-btn">1/4</div>
+		*/	
+		for(var i=0;i<numOfImgs;i++){
+			var btn = $( "<div></div>", {
+							text: (i+1)+"/"+numOfImgs,
+							"class": "page-num-btn",
+							"data-page": i,
+							mouseenter: function( e ) {
+								me.animateScrolling( $(this).data('page') );
+							},
+							click: function( event ) {
+								me.animateScrolling( $(this).data('page') );
+							}
+						}).appendTo( $nav );
+		}
+		
+		/*
+		CSS settings:
+		$pageHeight: 	842px;
+		$pageSpacing:	10px; (bottom)
+		*/
+		var pageY = 852;
+		this.animateScrolling = function( page ){
+			var scroll = pageY * page;	
+			$stack.animate({scrollTop: scroll+'px'},200,'swing');
+		}
+	}
+		
+	
+}
+
 /**
 OEscape 
 **/
@@ -1340,53 +1402,6 @@ idg.auditTrail = function(){
 	});
 	
 }
-/*
-Correspondence Scrolling
-*/
-idg.correspondencePageScroll = function(){
-	
-	/*
-	first check UI is available
-	using demo ID here 
-	*/
-	var pageScroller = document.getElementById('js-idg-correspondence-scroll-demo');
-	if(pageScroller == null) return;
-	
-	/*
-	loop through and create page buttons
-	e.g. <div class="page-num-btn">1/4</div>
-	*/
-	var numOfPages = $("#js-correspondence-page-images > img").length;
-	
-	for(var i=0;i<numOfPages;i++){
-		$( "<div></div>", {
-			text: (i+1)+"/"+numOfPages,
-			"class": "page-num-btn",
-			"data-page": i,
-			mouseenter: function( e ) {
-				animateScrolling( $(this).data('page') );
-			},
-			click: function( event ) {
-				animateScrolling( $(this).data('page') );
-			}
-		}).appendTo( "#js-correspondence-page-nav" );
-	}
-	
-	/*
-	CSS settings:
-	$pageHeight: 	842px;
-	$pageSpacing:	10px; (bottom)
-	*/
-	var pageY = 852;
-	var pages = $("#js-correspondence-page-images");
-	
-	function animateScrolling( page ){
-		var scroll = pageY * page;	
-		pages.animate({scrollTop: scroll+'px'},200,'swing');
-	}
-	
-}
-
 /*
 SEM Element - Add or Search
 Popup to add selected list to element
