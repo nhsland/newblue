@@ -25,6 +25,10 @@ body {
 		p {
 			font-size: $fontsize-base + $impaired-vision-increase;
 		}
+		// small text 
+		h5 {
+			font-size: $fontsize-base + $impaired-vision-increase;;
+		}
 		
 		// tables
 		table {

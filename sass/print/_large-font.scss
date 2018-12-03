@@ -24,6 +24,11 @@ body {
 		p {
 			font-size: $fontsize-base + $large-font-increase;
 		}
+		// small text 
+		h5 {
+			font-size: $fontsize-small + $large-font-increase;
+		}
+		
 		
 		// tables
 		table {

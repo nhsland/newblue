@@ -7250,6 +7250,20 @@ span.squiggle {
   padding: 5px 4px 5px 10px;
 }
 
+.oe-lightning-viewer .lightning-view {
+  position: relative;
+}
+
+.oe-lightning-viewer .lightning-view .lightning-ui-controller {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0.2);
+}
+
 .oe-lightning-viewer .oe-lightning-quick-view {
   margin-top: 5px;
 }

@@ -1094,7 +1094,7 @@ idg.multiPageScroll = function(){
 	if( $('.lightning-multipage-scroll').length == 0 ) return;
 	
 	/*
-	Allowing for 1 to n widgets
+	Allowing for 'n' number of widgets
 	*/
 	$('.lightning-multipage-scroll').each( function(){
 		var mps = new MultiPage( $(this) );
@@ -1105,6 +1105,14 @@ idg.multiPageScroll = function(){
 		var $nav = $('.multipage-nav',$div);
 		var $stack = $('.multipage-stack',$div);
 		var numOfImgs = $('.multipage-stack > img',$div).length;
+		
+		/*
+		Get first IMG height Attribute 
+		to work out page scrolling.
+		Note: CSS adds 10px padding to the (bottom) of all images !
+		*/
+		var pageH = 10 + parseInt( $('.multipage-stack > img:first-child',$div).attr('height') );
+
 		/*
 		Build Page Nav Btns
 		loop through and create page buttons
@@ -1125,13 +1133,10 @@ idg.multiPageScroll = function(){
 		}
 		
 		/*
-		CSS settings:
-		$pageHeight: 	842px;
-		$pageSpacing:	10px; (bottom)
-		*/
-		var pageY = 852;
+		Animate the scrolling
+		*/	
 		this.animateScrolling = function( page ){
-			var scroll = pageY * page;	
+			var scroll = pageH * page;	
 			$stack.animate({scrollTop: scroll+'px'},200,'swing');
 		}
 	}
