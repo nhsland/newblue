@@ -14,7 +14,7 @@ lightning.init = function(){
 	this.iconPrefix = '#lqv_';
 	this.stackPrefix = '#lsg_';
 	this.totalStackNum = $('.stack-group').length;
-	this.xscrollWidth = $('.lightning-ui-controller').width();
+	this.xscrollWidth = $('.lightning-view').width();
 	this.locked = true;
 	
 	
@@ -26,7 +26,7 @@ lightning.init = function(){
 	this.updateMeta = function(meta){
 		var $div = $('.lightning-meta');
 		var d = meta.split(',');
-		$div.children('.type').text('Letter '+d[0]);
+		$div.children('.type').text(d[0]);
 		$div.children('.date').text(d[1]);
 		$div.children('.who').text(d[2]);
 	}
@@ -40,7 +40,7 @@ lightning.init = function(){
 	}
 	
 	this.updateCounter = function(){
-		$('.lightning-ui-assist .stack-position').text( this.currentStack+1 + '/' + this.totalStackNum);
+		$('.lightning-ui .stack-position').text( this.currentStack+1 + '/' + this.totalStackNum);
 	}
 	
 	this.timelineIcon = function(){
@@ -62,9 +62,9 @@ lightning.init = function(){
 	this.swipeLock = function(){
 		this.locked = !this.locked;
 		if(this.locked){
-			$('.lightning-ui-assist .user-help').text( 'Swipe is LOCKED | Click to unlock' );
+			$('.lightning-ui .user-help').text( 'Swipe is LOCKED | Click to unlock' );
 		} else {
-			$('.lightning-ui-assist .user-help').text( 'Swipe to scan or use key RIGHT / LEFT | Click to LOCK swipe' );
+			$('.lightning-ui .user-help').text( 'Swipe to scan or use key RIGHT / LEFT | Click to LOCK swipe' );
 		}
 	}
 	
@@ -124,9 +124,9 @@ lightning.init = function(){
 	    if ((e.keyCode || e.which) == 39)	me.stepThrough( 1 );
 	});
 		
-	// watch for resize (the lightning-ui-controller has 2 widths )
+	// watch for resize (the view has 2 widths )
 	$( window ).resize(function() {
-		me.xscrollWidth = $('.lightning-ui-controller').width();
+		me.xscrollWidth = $('.lightning-view').width();
 	});
 	
 

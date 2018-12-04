@@ -4,13 +4,13 @@
 
 .oe-lightning-viewer {
 			
-	// user UI helper	
-	.lightning-ui-assist {
+	// UI controls and help	
+	.lightning-ui {
 		position: fixed;
 		bottom:0;
 		left:$oe-event-sidebar-width;
 	
-		z-index:$lightning-z-assist;
+		z-index:$lightning-z-ui;
 		
 		height:20px;
 		width:$oe-event-main-default-width;
@@ -19,7 +19,6 @@
 			width:$oe-event-main-extended-width;			
 		}
 	
-		
 		.direction {
 			position:absolute;
 			bottom:0;

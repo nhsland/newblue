@@ -48,12 +48,13 @@
 		// allow content area to grow in relation to display
 		height: 50vh;  // set a default
 		
+		
 		&.correspondence {
-			height: 63vh;		
+			height: 63vh; // in an element, this is something of a guess	
 		}	
 		
 		&.lightning {
-			height: calc(100vh - 190px);
+			height: calc(100vh - 200px);
 		}	
 		
 		overflow-y: auto;

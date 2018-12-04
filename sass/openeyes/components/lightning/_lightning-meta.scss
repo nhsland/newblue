@@ -8,10 +8,15 @@
 	
 	// DOM hook for JS data
 	.lightning-meta {
-		position: relative;
+		position: absolute;
+		top:5px;
+		left:10px;
+		
+		z-index:$lightning-z-meta;
+		
 		width:180px; // make width enough to fit most names
-		margin:5px 0 0 10px;
 		padding:5px 3px 5px 8px;
+		
 		@include font-size(12);
 		line-height:1.5;
 		color:$oe-text;

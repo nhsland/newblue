@@ -6,9 +6,9 @@
 
 // z-index are important for interactions
 $lightning-z-timeline-options: 4;
-$lightning-z-stack: 3;
-$lightning-z-assist: 2;
-$lightning-z-controller: 1;
+$lightning-z-meta: 3;
+$lightning-z-ui: 2;
+$lightning-z-stack: 1;
 
 .oe-lightning-viewer {
 	background:$oe-blue-dark;
@@ -21,14 +21,13 @@ $lightning-z-controller: 1;
 @import 'lightning/timeline-icons';
 
 
-@import 'lightning/_lightning-current';
+//@import 'lightning/_lightning-current';  // current CSS for Lightning Viewer 
 
-//@import 'lightning/lightning-view';
-//@import 'lightning/lightning-ui-controller';
-//@import 'lightning/lightning-ui-assist';
-//@import 'lightning/lightning-meta';
+@import 'lightning/lightning-view';
+@import 'lightning/lightning-ui';
+@import 'lightning/lightning-meta';
 
-//@import 'lightning/lightning-stack';
+@import 'lightning/lightning-stack';
 
 
 // also used in Correspondence VIEW

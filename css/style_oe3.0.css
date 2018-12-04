@@ -7417,209 +7417,99 @@ span.squiggle {
   border-bottom: 3px solid cyan;
 }
 
-.oe-lightning-viewer {
-  background: #182535;
-}
-
-.oe-lightning-viewer .lightning-timeline {
+.oe-lightning-viewer .lightning-view {
   position: relative;
-  background: #141e2b;
-  padding: 5px 4px 5px 10px;
-}
-
-.oe-lightning-viewer .oe-lightning-quick-view {
-  margin-top: 5px;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline {
-  padding: 0 0 0 50px;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline table td {
-  padding: 6px 6px 3px 4px;
-  border-left: 1px solid #26303d;
-  vertical-align: top;
-  color: #8c8c8c;
-  font-size: .6875rem;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline table td.date-divider {
-  white-space: nowrap;
-  font-size: .9375rem;
-  font-weight: 300;
-  min-width: 70px;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline table td.date-divider .oe-i {
-  position: relative;
-  top: -2px;
-  margin: 0 0 0 5px;
-  opacity: 0.25;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline table td.date-divider .oe-i:hover, .oe-lightning-viewer .lightning-timeline .timeline table td.date-divider .oe-i:focus, .oe-lightning-viewer .lightning-timeline .timeline table td.date-divider .oe-i:active {
-  opacity: 1;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline table td .icon-group {
-  min-width: 90px;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline-options {
-  position: absolute;
-  top: 0;
-  left: 10px;
-  height: 100%;
-  width: 50px;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn {
-  width: 40px;
-  height: 100%;
-  background: #1e2e42;
-  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  position: relative;
 }
 
-.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn.active {
-  background: #074598;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn.active .oe-i {
-  opacity: 1;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn .lightning-icon {
-  width: 20px;
+.oe-lightning-viewer .lightning-ui {
+  position: fixed;
+  bottom: 0;
+  left: 200px;
+  z-index: 2;
   height: 20px;
-  fill: cyan;
-  position: relative;
-  top: -5px;
+  width: 1080px;
 }
 
-.oe-lightning-viewer .lightning-timeline .timeline-options .lightning-btn .oe-i {
-  pointer-events: none;
+@media only screen and (min-width: 1440px) {
+  .oe-lightning-viewer .lightning-ui {
+    width: 1240px;
+  }
+}
+
+.oe-lightning-viewer .lightning-ui .direction {
   position: absolute;
   bottom: 0;
-  left: 11px;
+  height: 150px;
+  width: 50px;
+  background-position: top 20% center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-color: rgba(40, 52, 66, 0.9);
 }
 
-.oe-lightning-viewer .lightning-timeline {
-  z-index: 1;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline {
-  position: absolute;
-  top: 100%;
+.oe-lightning-viewer .lightning-ui .direction.left {
   left: 0;
-  width: 300px;
-  background: #074598;
-  padding: 12px;
-  font-size: .75rem;
-  font-weight: 400;
-  color: #cdcdcd;
+  background-image: url("../svg/in-css/icons/arrow-left-bold.svg");
 }
 
-.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li {
-  display: block;
-  margin: 0 0 2px 0;
-  height: 19px;
-  line-height: 19px;
-  font-size: .75rem;
-  font-weight: 400;
-  background: #063e89;
-  cursor: pointer;
+.oe-lightning-viewer .lightning-ui .direction.right {
+  right: 0;
+  background-image: url("../svg/in-css/icons/arrow-right-bold.svg");
 }
 
-.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:hover, .oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:active, .oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:focus, .oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li.selected {
-  background-color: #05306a;
-  color: #fff;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li:last-child {
-  margin: 0 0 0 0;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline-options .change-timeline li i {
-  margin: 0 10px 0 0;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline .icon-group {
-  min-width: 90px;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline .icon-event {
-  position: relative;
-  display: inline-block;
-  padding: 1px;
-  margin: 0 0 3px 0;
-  width: 21px;
-  height: 21px;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline .icon-event:hover, .oe-lightning-viewer .lightning-timeline .timeline .icon-event.js-hover {
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.oe-lightning-viewer .lightning-timeline .timeline .icon-event.selected:after {
+.oe-lightning-viewer .lightning-ui .stack-position {
   position: absolute;
-  left: 1px;
-  top: 100%;
-  content: " ";
-  height: 2px;
-  width: 19px;
-  border-bottom: 3px solid cyan;
+  bottom: 0;
+  left: 50%;
+  margin-right: -50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #d6d6d6;
+  padding: 8px 14px;
+  background-color: rgba(40, 52, 66, 0.9);
 }
 
-.oe-lightning-viewer .oe-lightning-meta {
-  position: relative;
+.oe-lightning-viewer .lightning-ui .user-help {
+  position: absolute;
+  bottom: 0;
+  right: 60px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #d6d6d6;
+  padding: 8px 14px;
+  background-color: rgba(40, 52, 66, 0.7);
+}
+
+.oe-lightning-viewer .lightning-meta {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  z-index: 3;
   width: 180px;
-  margin: 5px 0 0 10px;
   padding: 5px 3px 5px 8px;
-  font-size: .75rem;
+  font-size: 0.75rem;
   line-height: 1.5;
   color: #d6d6d6;
-  background: #283442;
+  background: rgba(40, 52, 66, 0.9);
 }
 
-.oe-lightning-viewer .oe-lightning-meta .date {
-  font-size: .875rem;
+.oe-lightning-viewer .lightning-meta .date {
+  font-size: 0.875rem;
   font-weight: 500;
 }
 
-.oe-lightning-viewer .oe-lightning-meta .sender {
+.oe-lightning-viewer .lightning-meta .who {
   font-style: italic;
 }
 
-.oe-lightning-viewer .oe-lightning-meta .help {
-  margin: 10px 0 0 0;
-  font-size: .625rem;
-  color: #8c8c8c;
-  font-style: italic;
-}
-
-.oe-lightning-viewer .oe-lightning-meta:after {
-  left: 100%;
-  top: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
-  position: absolute;
-  pointer-events: none;
-  border-left-color: #283442;
-  border-width: 6px;
-  margin-top: -6px;
+.oe-lightning-viewer .lightning-stack {
+  margin: 5px auto 40px auto;
+  z-index: 1;
 }
 
 .lightning-multipage-scroll {
@@ -7667,7 +7557,7 @@ span.squiggle {
 }
 
 .lightning-multipage-scroll .multipage-stack.lightning {
-  height: calc(100vh - 190px);
+  height: calc(100vh - 200px);
 }
 
 .lightning-multipage-scroll .multipage-stack img {
