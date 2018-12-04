@@ -8,7 +8,7 @@
 .oe-lightning-viewer {
 	.lightning-timeline {
 		
-		z-index:1; // for the timeline options popup. 
+		z-index:$lightning-z-timeline-options; // for the timeline options popup. 
 		
 		// popup options.
 		// like Shortcuts BUT this is theme-able! 

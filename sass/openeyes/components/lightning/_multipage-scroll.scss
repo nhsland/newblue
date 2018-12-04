@@ -46,7 +46,15 @@
 	.multipage-stack {
 		// must have a height for the scroll
 		// allow content area to grow in relation to display
-		height: 63vh;  		
+		height: 50vh;  // set a default
+		
+		&.correspondence {
+			height: 63vh;		
+		}	
+		
+		&.lightning {
+			height: calc(100vh - 190px);
+		}	
 		
 		overflow-y: auto;
 		overflow-x: hidden;	

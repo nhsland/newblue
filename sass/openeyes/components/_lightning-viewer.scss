@@ -4,40 +4,14 @@
 
 // OE Lightning Viewer
 
+// z-index are important for interactions
+$lightning-z-timeline-options: 4;
+$lightning-z-stack: 3;
+$lightning-z-assist: 2;
+$lightning-z-controller: 1;
+
 .oe-lightning-viewer {
 	background:$oe-blue-dark;
-	
-	// Timeline has options (dropdown) 
-	// and icons in <table> to create the timeline
-	.lightning-timeline {
-		position: relative;
-		background:$oe-blue-dark2;
-		padding:5px 4px 5px 10px;
-	}
-	
-	// viewer
-	.lightning-view {
-		position: relative;
-		
-		.lightning-ui-controller {
-			position: absolute;
-			top:0;
-			left:0;
-			z-index:1;
-			width:100%;
-			height:100%;
-			background: rgba(255,0,0,0.2);
-		}
-
-		
-	}
-	
-	
-		
-	// PNG preview placeholder
-	.oe-lightning-quick-view { 
-		margin-top:5px; 
-	} 
 }
 
 
@@ -45,7 +19,17 @@
 @import 'lightning/timeline-lightning-btn';
 @import 'lightning/timeline-options';
 @import 'lightning/timeline-icons';
-@import 'lightning/image-meta';
+
+
+@import 'lightning/_lightning-current';
+
+//@import 'lightning/lightning-view';
+//@import 'lightning/lightning-ui-controller';
+//@import 'lightning/lightning-ui-assist';
+//@import 'lightning/lightning-meta';
+
+//@import 'lightning/lightning-stack';
+
 
 // also used in Correspondence VIEW
 @import 'lightning/multipage-scroll';

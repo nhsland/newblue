@@ -175,9 +175,6 @@ idg.init = function(){
 	
 	// Notification (user/admin)
 	idg.notificationBanner();
-	
-	
-	
 										
 };
 

@@ -214,6 +214,19 @@
 	&.circle-green		{ background-image: url( svg-path('ui/circle-green') ); }
 	&.circle-amber		{ background-image: url( svg-path('ui/circle-orange') ); }
 	&.circle-red		{ background-image: url( svg-path('ui/circle-red') ); }
+
+	// exclamation mark (amber, red)
+	// ONLY for NHS Number status
+	&.exclamation-green		{ background-image: url( svg-path('ui/exclamation-green') ); }
+	&.exclamation-amber		{ background-image: url( svg-path('ui/exclamation-orange') ); }
+	&.exclamation-red		{ background-image: url( svg-path('ui/exclamation-red') ); }
+
+	&.exclamation-green,
+	&.exclamation-amber,
+	&.exclamation-red {
+		opacity:1;
+		margin:0 0 0 2px;
+	}
 	
 	// RED warning triangle
 	&.warning 			{ background-image: url( svg-path('ui/warning') ); } 

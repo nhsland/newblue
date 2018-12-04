@@ -1,0 +1,76 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-lightning-viewer {
+			
+	// user UI helper	
+	.lightning-ui-assist {
+		position: fixed;
+		bottom:0;
+		left:$oe-event-sidebar-width;
+	
+		z-index:$lightning-z-assist;
+		
+		height:20px;
+		width:$oe-event-main-default-width;
+		
+		@include media($oe-extended-browser-size){		
+			width:$oe-event-main-extended-width;			
+		}
+	
+		
+		.direction {
+			position:absolute;
+			bottom:0;
+			height:150px;
+			width:50px;
+			background-position: top 20% center;
+			background-repeat: no-repeat;
+			background-size: 30px;
+			background-color:rgba($oe-grey,0.9);
+			
+			&.left {
+				left:0;
+				background-image: url( svg-path('icons/arrow-left-bold') );
+			}
+			
+			&.right {
+				right:0;
+				background-image: url( svg-path('icons/arrow-right-bold') );
+				
+			}
+		}	
+		
+		.stack-position {
+			position:absolute;
+			bottom:0;
+			left:50%;
+			margin-right: -50%;
+			transform : translateX(-50%);
+			
+			@include font-size(12);
+			font-weight:700;
+			color:$oe-text;
+	
+			padding:8px 14px;
+			background-color:rgba($oe-grey,0.9);
+		}
+		
+		// user help text: 
+		// 'swipe to scan or use key RIGHT / LEFT | click to lock'
+		.user-help {
+			position:absolute;
+			bottom:0;
+			right:60px;
+			
+			@include font-size(12);
+			font-weight:500;
+			color:$oe-text;
+	
+			padding:8px 14px;
+			background-color:rgba($oe-grey,0.7);
+		}	
+	}
+	
+}

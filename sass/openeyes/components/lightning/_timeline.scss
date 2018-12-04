@@ -8,6 +8,12 @@
 .oe-lightning-viewer {
 	.lightning-timeline {
 		
+		// Timeline has options (dropdown) 
+		// and icons in <table> to create the timeline
+		position: relative;
+		background:$oe-blue-dark2;
+		padding:5px 4px 5px 10px;
+		
 		// icon timeline
 		.timeline {
 			padding:0 0 0 50px; // 'button' width + 10px for a bit of padding.
