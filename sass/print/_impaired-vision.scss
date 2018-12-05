@@ -27,7 +27,7 @@ body {
 		}
 		// small text 
 		h5 {
-			font-size: $fontsize-base + $impaired-vision-increase;;
+			font-size: $fontsize-base + $impaired-vision-increase;
 		}
 		
 		// tables
@@ -42,7 +42,22 @@ body {
 					font-size: $fontsize-base + $impaired-vision-increase; 
 				}
 			}
-		}		
+		}
+		
+		ul, ol {
+			 li {
+				 font-size: $fontsize-base + $impaired-vision-increase;
+				 font-weight:500;
+			 }
+			 
+			 &.large {
+				li {
+					font-size: $fontsize-base + $impaired-vision-increase; 
+				}
+			} 
+		}
+		
+				
 	}
 }
 
