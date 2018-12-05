@@ -7417,6 +7417,51 @@ span.squiggle {
   border-bottom: 3px solid cyan;
 }
 
+.oe-lightning-viewer .oe-lightning-quick-view {
+  margin-top: 5px;
+}
+
+.oe-lightning-viewer .oe-lightning-meta {
+  position: relative;
+  width: 180px;
+  margin: 5px 0 0 10px;
+  padding: 5px 3px 5px 8px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #d6d6d6;
+  background: #283442;
+}
+
+.oe-lightning-viewer .oe-lightning-meta .date {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.oe-lightning-viewer .oe-lightning-meta .sender {
+  font-style: italic;
+}
+
+.oe-lightning-viewer .oe-lightning-meta .help {
+  margin: 10px 0 0 0;
+  font-size: 0.625rem;
+  color: #8c8c8c;
+  font-style: italic;
+}
+
+.oe-lightning-viewer .oe-lightning-meta:after {
+  left: 100%;
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-left-color: #283442;
+  border-width: 6px;
+  margin-top: -6px;
+}
+
 .oe-lightning-viewer .lightning-view {
   position: relative;
   display: -webkit-box;

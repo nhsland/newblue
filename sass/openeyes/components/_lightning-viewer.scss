@@ -20,13 +20,13 @@ $lightning-z-stack: 1;
 @import 'lightning/timeline-options';
 @import 'lightning/timeline-icons';
 
+// Lightning Viewer v1.0 
+@import 'lightning/_lightning-1.0';  
 
-//@import 'lightning/_lightning-current';  // current CSS for Lightning Viewer 
-
+// v1.1
 @import 'lightning/lightning-view';
 @import 'lightning/lightning-ui';
 @import 'lightning/lightning-meta';
-
 @import 'lightning/lightning-stack';
 
 

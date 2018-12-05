@@ -1,0 +1,58 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+
+// CSS support for v1.0 DOM 
+// before I modified it for v1.1
+
+.oe-lightning-viewer {
+	// PNG preview placeholder
+	.oe-lightning-quick-view { 
+		margin-top:5px; 
+	}
+	
+	// v1.0 Meta box
+	// JS generated meta data for PNG preview
+	// this was setup for letters, will need more work
+	.oe-lightning-meta {
+		position: relative;
+		width:180px; // make width enough to fit most names
+		margin:5px 0 0 10px;
+		padding:5px 3px 5px 8px;
+		@include font-size(12);
+		line-height:1.5;
+		color:$oe-text;
+		background:$oe-grey;
+		
+		.date { 
+			@include font-size(14);
+			font-weight:500; 
+		}
+		
+		.sender { font-style:italic;}
+		
+		.help {
+			margin:10px 0 0 0;
+			@include font-size(10);
+			color:$oe-text-light;
+			font-style: italic;
+		}
+		
+	}
+	
+	// add arrow to box:
+	.oe-lightning-meta:after{
+			left: 100%;
+			top: 50%;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-left-color: $oe-grey;
+			border-width: 6px;
+			margin-top: -6px;
+	};
+}
