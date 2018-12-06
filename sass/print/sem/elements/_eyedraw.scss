@@ -7,12 +7,21 @@
 	
 	.eyedraw-data {
 		font-size:$fontsize-small;
+		// this needed a fixed width and a smaller size
+		// to hand the overflow issue
+		&.stack {
+			width:120px;
+			font-size:$fontsize-small - 1;
+		}
+		
 	}	
 		
 	.eyedraw-canvas {
 		white-space: nowrap;
 		margin:0 5px 0 0;
 	}	
+	
+	
 	
 	.gonio-cross {
 		position:relative;
