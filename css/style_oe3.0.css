@@ -4038,6 +4038,10 @@ ul.management-summaries li h6 {
   overflow-x: hidden;
 }
 
+.oe-popup .oe-popup-content .spacer {
+  height: 40px;
+}
+
 .oe-popup ul.oe-btn-list li {
   display: block;
   margin: 0 0 2px 0;

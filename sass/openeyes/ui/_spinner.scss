@@ -31,8 +31,8 @@
 		margin-top: 0 - ($spinner-large / 2);
 		margin-left: 0 - ($spinner-large / 2);
 		border-radius: 50%;
-		border: 4px solid $oe-text-highlight;
-		border-top-color: rgba($oe-text-highlight,0);
+		border: 4px solid $oe-spinner;
+		border-top-color: rgba($oe-spinner,0);
 		animation: spinner .8s linear infinite;
   }
   
@@ -54,10 +54,11 @@
 		margin-top: 0 - ($spinner-icon / 2);
 		margin-left: 0 - ($spinner-icon / 2);		
 		border-radius: 50%;
-		border: 2px solid $oe-text-highlight;
-		border-top-color: rgba($oe-text-highlight,0);
+		border: 2px solid $oe-spinner;
+		border-top-color: rgba($oe-spinner,0);
 		animation: spinner .8s linear infinite;
   	}
+  	
   }
   
 }

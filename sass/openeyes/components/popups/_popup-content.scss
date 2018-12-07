@@ -12,5 +12,11 @@
 		max-height: 500px;  // must allow for the minimum spec res. displays
 		overflow-y: auto;	// scroll overflow
 		overflow-x: hidden; // otherwise breaks out of popup.
+		
+		// create a visual breathing space between elements
+		.spacer {
+			height:40px;	
+		}
+		
 	}	
 }

@@ -98,9 +98,13 @@ idg.init = function(){
 	// duplicate history element					
 	idg.overlayPopup( 	'#js-idg-preview-correspondence',  	// "Preview Letter" in Correspondence EDIT
 						'letter-preview.php', 				// Demo content
+						'.close-icon-btn' );				// wraps remove icon
+						
+	// Examination VA COMPLog					
+	idg.overlayPopup( 	'#js-idg-exam-complog',  			// VA in Exam
+						'exam-va-COMPlog.php', 				// Demo content
 						'.close-icon-btn' );				// wraps remove icon					
 									
-	
 	// IDG demo some interaction
 	function fakeAddNewEvent( $overlay ){
 		// fake the links on Events
