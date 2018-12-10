@@ -20,7 +20,7 @@
 	@include media($oe-js-browser-fix-size){		// 1890px
 		// as we are going up to 1920px we have an extra 30px... use them
 		width: calc(100vw - #{$oe-js-browser-fix-size - $oe-hotlist-panel-width}); 
-		// for those with crazy monitors restrict it
+		// for those with crazy big monitors restrict it
 		max-width: 600px !important;			
 	}
 	
@@ -33,6 +33,7 @@
 }
 
 @import "hotlist-panel/overview";
+@import "hotlist-panel/patient-search";
 @import "hotlist-panel/activity-list";
 @import "hotlist-panel/hotlist-quicklook";
 // @import "activity-panel/msg-timeline"; // chat / message system 

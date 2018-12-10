@@ -3592,6 +3592,35 @@ select.fixed-width {
   right: 0;
 }
 
+.oe-hotlist-panel .hotlist-search-patient {
+  background: #202936;
+  padding: 12px 0;
+  margin: 0 0 10px 0;
+}
+
+.oe-hotlist-panel .hotlist-search-patient .search-patient {
+  margin: 0 0 0 14px;
+}
+
+.oe-hotlist-panel .hotlist-search-patient .search-patient input {
+  border-radius: 0;
+  height: 28px;
+  width: 70%;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  margin: 0 0;
+  background-color: transparent;
+  color: #fff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.oe-hotlist-panel .hotlist-search-patient .search-patient button {
+  height: 28px;
+  width: 24%;
+  font-size: 0.8125rem;
+  margin: 0 0 0 2px;
+}
+
 .oe-hotlist-panel .activity-list {
   width: 100%;
   margin: 5px 0 10px 0;
@@ -3695,6 +3724,7 @@ select.fixed-width {
   max-height: 415px;
   overflow: auto;
   padding: 0 5px 0 0;
+  margin: 3px 0 0 0;
 }
 
 .oe-patient-popup .subtitle {
@@ -4366,6 +4396,7 @@ ul.management-summaries li h6 {
   width: 365px;
   font-size: 1.125rem;
   font-weight: 400;
+  margin: 0 0;
 }
 
 .oe-search-patient .search-patient button {

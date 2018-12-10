@@ -24,7 +24,7 @@
 			width:365px;
 			@include font-size(18);
 			font-weight:400;
-			// border-bottom:1px solid $oe-line;
+			margin:0 0; // overide the default for this.
 		}
 		
 		// increase the defaults for buttons

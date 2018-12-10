@@ -3140,6 +3140,7 @@ idg.hotList = function(hotlistPopup){
 			return
 		}
 		
+		
 		// quick and dirty JS to demo UI/UX
 		var commentBox = $icon.parent().parent().next();
 		var textArea = commentBox.find('textarea');
@@ -3147,7 +3148,7 @@ idg.hotList = function(hotlistPopup){
 		if(textArea.val() != "") {
 			$quick.text( textArea.val() );
 			$quick.show();
-			$quick.css('top',($icon.position().top + 19));
+			$quick.css('top',($icon.offset().top) - 102);
 		}	
 	
 	}
