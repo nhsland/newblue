@@ -12,14 +12,17 @@ $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 // other sizes are adjusted to this
 // "large-fonts" class needs to provided
 
-$fontsize-base: 	9pt;  	// h4 & p  (was 10pt in v2)
-$fontsize-h1: 		17pt;
-$fontsize-h2:		13pt;
-$fontsize-h3:		11pt; 	
-$fontsize-small: 	8pt;	// h5
+// due to print issues these have all been increased
+// by 2pts, this will knock on to large-font and impaired-vision
 
-$fontsize-sem-base:		8pt;
-$fontsize-sem-large: 	9pt;  // using this for both large and priority
+$fontsize-base: 	11pt;  	// was 9pt...
+$fontsize-h1: 		18pt;
+$fontsize-h2:		15pt;
+$fontsize-h3:		13pt; 	
+$fontsize-small: 	10pt;	// h5
+
+$fontsize-sem-base:		9pt;  // was 8pt
+$fontsize-sem-large: 	10pt;  // was 9pt
 $element-title-max-width: 120px;
 
 
