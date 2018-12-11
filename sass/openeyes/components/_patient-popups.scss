@@ -32,7 +32,7 @@
 		max-height: 415px; // this restricts the popup's vertical hieight (for lowest res. monitors)
 		overflow: auto;
 		padding:0 5px 0 0; // breathing space next to scrollbar
-		margin:3px 0 0 0;
+		margin:3px 0 0 0; // a bit of breathing space if alerts are added above content
 	}
 	
 	// area subtitles
