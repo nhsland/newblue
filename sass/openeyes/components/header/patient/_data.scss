@@ -39,10 +39,14 @@
 	.patient-died,
 	.warning {
 		display:inline-block;
-		padding:0 6px 5px 6px;
+		padding:0 3px 5px 5px;
 		border-left:1px solid $oe-pro-line;	
 		
 		span, em { opacity:0.5 }
+		em {
+			@include font-size(10);
+		}
+		
 	}
 	
 	.hospital-number {
@@ -65,6 +69,7 @@
 		color:rgb(255,0,0);
 		em {
 			opacity:0.75;
+			@include font-size(12);
 			&:nth-child(2){
 				em {
 					padding:0 0 0 3px;
