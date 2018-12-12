@@ -15,20 +15,18 @@ $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 // due to print issues these have all been increased
 // by 2pts, this will knock on to large-font and impaired-vision
 
-$fontsize-base: 	11pt;  	// was 9pt...
-$fontsize-h1: 		18pt;
-$fontsize-h2:		15pt;
-$fontsize-h3:		13pt; 	
-$fontsize-small: 	10pt;	// h5
+$fontsize-base: 	13pt;  	// was 9pt...
+$fontsize-h1: 		19pt;   // was 18pt
+$fontsize-h2:		17pt;
+$fontsize-h3:		15pt; 	
+$fontsize-small: 	12pt;	// h5
 
-$fontsize-sem-base:		9pt;  // was 8pt
-$fontsize-sem-large: 	10pt;  // was 9pt
+$fontsize-sem-base:		10pt;  // was 8pt
+$fontsize-sem-large: 	11pt;  // was 9pt
 $element-title-max-width: 120px;
-
 
 $table-border-color: #ccc;
 $table-line-color: #bbb;
-
 
 // ... different SVGs for 'pro' & 'classic' theme
 // ... for printing use 'classic' they are basically black (#003)
