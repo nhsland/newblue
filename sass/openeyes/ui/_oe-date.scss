@@ -6,7 +6,6 @@
 // to align the column layout of dd MMM YYYY
 // Dates are wrapped with spans
 .oe-date {
-	text-align: right;
 	white-space: nowrap;
 	
 	// this is tricky. the problem here occurred in Meds
@@ -16,6 +15,7 @@
 	// fixed width approach... 
 	display:inline-block;
 	width:88px;
+	text-align: right; // then align right within wrapper
 	
 	.day {}
 	.mth {

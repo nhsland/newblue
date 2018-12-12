@@ -64,13 +64,6 @@
   src: local("Roboto Bold"), local("Roboto-Bold"), url(../fonts/roboto-v18-latin_greek/roboto-v18-latin_greek-700.woff2) format("woff2");
 }
 
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  src: local("Roboto Black"), local("Roboto-Black"), url(../fonts/roboto-v18-latin_greek/roboto-v18-latin_greek-900.woff2) format("woff2");
-}
-
 /* normalize */
 html {
   line-height: 1.15;
@@ -475,7 +468,7 @@ html {
 
 .browser-not-supported h3 {
   font-size: 1.625rem;
-  font-weight: 200;
+  font-weight: 300;
   margin: 0 0 20px 0;
 }
 
@@ -1401,10 +1394,10 @@ select.fixed-width {
 
 /* UI classes */
 .oe-date {
-  text-align: right;
   white-space: nowrap;
   display: inline-block;
   width: 88px;
+  text-align: right;
 }
 
 .oe-date .mth {
@@ -1557,7 +1550,7 @@ select.fixed-width {
   right: 0;
   z-index: 70;
   background: #374755;
-  padding: 10px 10px 40px 10px;
+  padding: 5px 10px 35px 10px;
   min-height: 204px;
   font-size: 0.6875rem;
   font-weight: 400;
@@ -1623,7 +1616,7 @@ select.fixed-width {
   color: #8c8c8c;
   font-size: 0.6875rem;
   font-weight: 300;
-  padding: 0 8px 5px 0;
+  padding: 0 8px 3px 0;
 }
 
 .oe-add-select-search table.select-options thead th:last-child {
@@ -2879,7 +2872,7 @@ select.fixed-width {
   color: #8c8c8c;
   text-transform: uppercase;
   font-size: 1.5rem;
-  font-weight: 200;
+  font-weight: 100;
   line-height: 38px;
 }
 
@@ -3063,7 +3056,7 @@ select.fixed-width {
 
 .openeyes-brand .oe-product-info h3 {
   font-size: 1.4375rem;
-  font-weight: 200;
+  font-weight: 100;
   color: #d6d6d6;
   margin: 0 0 10px 0;
 }
@@ -3475,7 +3468,7 @@ select.fixed-width {
   top: 12px;
   left: 0;
   font-size: 1.4375rem;
-  font-weight: 200;
+  font-weight: 100;
   color: #8c8c8c;
 }
 
@@ -3743,7 +3736,7 @@ select.fixed-width {
   margin: 0 0 10px 0;
   padding: 0 0 0 0;
   font-size: 1.125rem;
-  font-weight: 200;
+  font-weight: 100;
   color: #8c8c8c;
 }
 
@@ -4307,7 +4300,7 @@ ul.management-summaries li h6 {
   margin: 0 0 40px 0;
   font-size: 3.625rem;
   text-align: center;
-  font-weight: 200;
+  font-weight: 100;
   color: #8c8c8c;
 }
 
@@ -4353,7 +4346,7 @@ ul.management-summaries li h6 {
   margin: 0 0 40px 0;
   font-size: 3.625rem;
   text-align: center;
-  font-weight: 200;
+  font-weight: 100;
   color: #8c8c8c;
 }
 
@@ -4489,7 +4482,7 @@ ul.management-summaries li h6 {
 
 .patient-search-results .search-details .title {
   font-size: 1.625rem;
-  font-weight: 200;
+  font-weight: 300;
   color: #626d7b;
   padding: 0 0 10px 0;
 }
@@ -6099,7 +6092,7 @@ ul.management-summaries li h6 {
 }
 
 .element .eyedraw .eyedraw-data .data-value .priority-text {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .element .eyedraw .eyedraw-data .data-value.not-recorded {
@@ -6516,7 +6509,7 @@ ul.management-summaries li h6 {
 
 .oe-sem-no-events h3 {
   font-size: 1.625rem;
-  font-weight: 200;
+  font-weight: 100;
   color: #8c8c8c;
   padding: 0 0 10px 0;
 }
@@ -7733,7 +7726,7 @@ span.squiggle {
   color: #8c8c8c;
   text-transform: uppercase;
   font-size: 1.5rem;
-  font-weight: 200;
+  font-weight: 100;
   margin: 0 25px 0 0;
 }
 
@@ -7923,7 +7916,7 @@ span.squiggle {
 .oescape .oes-summary .title {
   margin: 0 0 10px 0;
   font-size: 1.125rem;
-  font-weight: 200;
+  font-weight: 100;
   color: #8c8c8c;
 }
 
@@ -8689,7 +8682,7 @@ table.oe-clinic-list td.center {
   color: #8c8c8c;
   text-transform: uppercase;
   font-size: 1.5rem;
-  font-weight: 200;
+  font-weight: 100;
 }
 
 .analytics-options {
