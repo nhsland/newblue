@@ -24,6 +24,13 @@
 	align-items: $vertical;	
 }
 
+// standardise box-shadows for popups
+@mixin boxshadow(){
+	// offset-x | offset-y | blur-radius | spread-radius | color
+	box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+
 // ------------------------------ CSS Tricks
 
 /// Slightly lighten a color
