@@ -52,30 +52,6 @@ hr {
 	}
 }
 
-// this was [ x ] but made it into a proper box
-.checkbox {
-	display:inline-block;	
-	vertical-align:baseline;
-	border:2px solid black;
-	height:1.4em;
-	width:1.4em;
-	margin:0 0.5em;
-	position: relative;
-	top:4px;
-	
-	&.checked {
-		&:after {
-			content:'x';
-			font-size:12pt;
-			font-weight:500;
-			position: absolute;
-			top:-3px;
-			left:2px;
-		}
-	}
-}
-
-
 // clearfix is unnecessary (should be flex)
 // but keeping in case it helps 
 // with DOM transition 
