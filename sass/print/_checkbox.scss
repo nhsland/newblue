@@ -13,8 +13,7 @@
 	height:$fontsize-base + 2;
 	width:$fontsize-base + 2;
 	margin:0 0.5em;
-	
-	
+
 	&.checked {
 		&:after {
 			content:'x';
