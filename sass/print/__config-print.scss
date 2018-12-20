@@ -13,13 +13,14 @@ $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 // "large-fonts" class needs to provided
 
 // due to print issues these have all been increased
-// by 2pts, this will knock on to large-font and impaired-vision
+// by 4pts, this will knock on to large-font and impaired-vision
 
 $fontsize-base: 	13pt;  	// was 9pt...
 $fontsize-h1: 		19pt;   // was 18pt
 $fontsize-h2:		17pt;
 $fontsize-h3:		15pt; 	
 $fontsize-small: 	12pt;	// h5
+$fontsize-tiny: 	9pt;	// h6
 
 $fontsize-sem-base:		10pt;  // was 8pt
 $fontsize-sem-large: 	11pt;  // was 9pt
