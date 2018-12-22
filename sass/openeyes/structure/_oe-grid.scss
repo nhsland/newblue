@@ -17,8 +17,8 @@
 	// CSS3:
 	// Grid is setup for primary usage (SEM pages)
 	display: grid;
-	grid-template-columns: $oe-event-sidebar-width auto;
-	grid-template-rows: $oe-header-height $oe-event-header-height auto;	
+	grid-template-columns: $oe-event-sidebar-width 1fr;
+	grid-template-rows: $oe-header-height $oe-event-header-height 1fr;	
 	grid-template-areas: 
     	"header header"
 		"addevent eventheader"

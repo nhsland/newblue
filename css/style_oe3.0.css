@@ -303,8 +303,8 @@ html {
   -ms-grid-columns: 200px 1fr;
   -ms-grid-rows: 60px 38px 1fr;
   display: grid;
-  grid-template-columns: 200px auto;
-  grid-template-rows: 60px 38px auto;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 60px 38px 1fr;
   grid-template-areas: "header header" "addevent eventheader" "sidebar main";
   width: 100vw;
   height: 100vh;
@@ -5499,11 +5499,11 @@ ul.management-summaries li h6 {
   }
 }
 
-.main-event .element:hover, .main-event .element:focus {
+.main-event .element:hover {
   border-color: #074598;
 }
 
-.main-event .element:hover .element-header .element-title, .main-event .element:focus .element-header .element-title {
+.main-event .element:hover .element-header .element-title {
   -webkit-transition: color 0.5s ease-out;
   transition: color 0.5s ease-out;
   color: cyan;

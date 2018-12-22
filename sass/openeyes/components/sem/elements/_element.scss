@@ -64,7 +64,7 @@
 		border:1px solid rgba(#fff,0);
 		transition: border-color 0.2s ease-in; // animate
 		
-		&:hover, &:focus {
+		&:hover {
 			border-color:$oe-btn-blue;
 			.element-header {
 				.element-title {
