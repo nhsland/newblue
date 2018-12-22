@@ -56,6 +56,15 @@ strong, b {
 	opacity:0.7; 
 }
 
+// horizontal "tab" space
+// many occassions ended up requiring a bigger
+// horizonal space than &nbsp; or &emsp; provided
+.tabspace {
+	display:inline-block;
+	width:25px;	
+}
+
+
 // highlighter (like the pen)
 // applied to text with <span>
 .highlighter {

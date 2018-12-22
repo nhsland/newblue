@@ -771,6 +771,11 @@ strong, b {
   opacity: 0.7;
 }
 
+.tabspace {
+  display: inline-block;
+  width: 25px;
+}
+
 .highlighter {
   background: rgba(255, 230, 172, 0.7);
   color: black;
