@@ -11,7 +11,7 @@
 .oe-add-select-search {	
 	position:fixed; 					// Fixed take it out of the Grid. 
 	bottom:300px; 						// JS will override and position
-	right:0; 
+	right:0; 							// generally assumed right anchoring
 	z-index:$oe-z-add-insert; 			// z
 	background:$oe-popup-bg;
 	// allow for bottom 'btn' bar 
@@ -25,7 +25,7 @@
 	
 	// popup widths
 	// history has 5 inputs lists, pro
-	width:290px; 						// need to fixed a width for single column auto-width lists
+	width:290px; 						// need a fixed width for single column auto-width lists
 	min-width: 290px;					// default width (to fit in Analytics column)
 	
 	&.auto-width {
@@ -37,6 +37,8 @@
 @import "add-select-search/select-options";
 @import "add-select-search/has-filter";
 @import "add-select-search/add-options";
+@import "add-select-search/optional-placeholder";
+
 
 
 

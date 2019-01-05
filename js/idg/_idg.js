@@ -1,12 +1,12 @@
 /**
-IDG Demo JS
-Provided to demo & review UI design concept work on idg.knowego.com
-Loaded on all pages, js activates depending on the DOM setup
+IDG Demo JS is ONLY for OpenEyes internal prototyping/testing of UI/UX concepts
 **/
 var idg = idg || {};
 
 idg.init = function(){	
-
+	
+	"use strict";
+	
 	/**
 	- OpenEyes logo, info and theme switcher
 	- Shortcuts Nav in <header> 
@@ -140,6 +140,8 @@ idg.init = function(){
 	
 	// Add Search and Autocomplete
 	idg.elementAddSelectSearch();
+	// v2!
+	idg.addSelectInsert.init();
 	
 	// Toggle Radio Buttons R / L
 	idg.toggleRadio();

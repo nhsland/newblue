@@ -35,6 +35,15 @@
 					padding:0 0 0 0;
 					text-align: left;
 				}
+				
+				// wrapper multiple lists in the td 
+				// but used all the time, even for single lists
+				.lists-layout {
+					display:flex;
+					align-items:flex-start;
+					justify-content:flex-start;
+				}
+				
 			}
 		}		
 	}

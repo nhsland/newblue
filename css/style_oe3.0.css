@@ -1638,6 +1638,18 @@ select.fixed-width {
   text-align: left;
 }
 
+.oe-add-select-search table.select-options tbody td .lists-layout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
 .oe-add-select-search .has-filter input {
   margin-bottom: 4px;
 }
@@ -1694,6 +1706,14 @@ select.fixed-width {
 
 .oe-add-select-search .add-options.multi.required li {
   background: linear-gradient(to right, #05306a 3px, #a04600 6px, #32404d 6px);
+}
+
+.oe-add-select-search .optional-placeholder {
+  margin: 0 0 2px 0;
+  padding: 3px 8px;
+  width: 130px;
+  word-break: break-word;
+  font-style: italic;
 }
 
 /*  iconography */
