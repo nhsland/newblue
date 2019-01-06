@@ -3438,21 +3438,89 @@ idg.addSelectInsert.updateElement = {
 	}
 }
 /*
+List has extra Lists
+find group ID: 	"add-to-{uniqueID}-listgroup{n}";
+find list ID: 	"add-to-{uniqueID}-list{n}";
+
+@param dependents: String e.g. "2.1" or "2.1,2.2": 
+*/
+
+idg.addSelectInsert.OptionDependents = function( dependents, listId ){
+	
+	if(dependents === undefined)  return false;
+	
+	/*
+	List has extra list options	
+	*/
+	let extraListOptions = [];
+	let idPrefix = "#add-to-" + listId + "-";
+	
+	dependents.split(',').forEach( group => {
+
+		let findIDs = group.split('.');
+		let obj = {};
+		obj.$group 	= $(idPrefix + 'listgroup'+findIDs[0] ); 		// <div> wrapper for optional lists
+		obj.$list1	= $(idPrefix + 'list'+findIDs[1] ); 			// the list to show
+		obj.$list2	= $(idPrefix + 'list'+findIDs[2] ); 			// the list to show
+		obj.$holder = obj.$group.find('.optional-placeholder'); // default placeholder for Optional Lists
+		extraListOptions.push( obj );
+		
+	});
+
+	/*
+	Methods
+	*/
+	this.show = function( show ){
+		if(show){
+			this.showLists();
+		} else {
+			this.reset();
+		}
+	}
+
+	this.showLists = function(){
+		extraListOptions.forEach( xtras => {
+			// in the group hide other lists:
+			xtras.$group.children('.optional-list').hide();
+			xtras.$holder.hide();
+			// show required Lists
+			xtras.$list1.show();
+			xtras.$list2.show();
+		});
+	}
+	
+	// if Option is UNclicked need to reset the groups
+	this.reset = function(){
+		extraListOptions.forEach( xtras => {
+			xtras.$group.children('.optional-list').hide();
+			xtras.$holder.show();
+		});
+	}	
+}
+
+
+ 
+/*
 List Options Constructor
 */
 
 idg.addSelectInsert.ListOption = function ( $li, optionList ){
-	const _value = $li.data('insert').value;	
-	const _extraOptions = $li.data('insert').extraOptions;
 	
+	const _value = $li.data('insert').value;	
+	const dependents = new idg.addSelectInsert.OptionDependents( $li.data('insert').dependents, optionList.uniqueId );
 	let _selected = $li.hasClass('selected') ? true : false; // check not setup to be selected:
 	
 	/*
 	Methods
-	*/
+	*/ 
 	this.click = function(){
 		this.toggleState();
 		optionList.optionClicked( _selected, this );
+		
+		if(dependents !== false){
+			dependents.show( _selected );
+		}
+		
 	}
 	
 	this.toggleState = function() {
@@ -3478,15 +3546,8 @@ idg.addSelectInsert.ListOption = function ( $li, optionList ){
 			return _value;
 		}
 	});
-	
-	Object.defineProperty(this, 'extraOptions',{
-		get: () => {
-			return _extraOptions === undefined ? false : _extraOptions;
-		}
-	});
-	
-	
-	
+
+
 	/*
 	Events 
 	*/
@@ -3533,26 +3594,15 @@ idg.addSelectInsert.OptionsList = function ( $ul ){
 	*/
 	this.optionClicked = function( selected, listOption ){
 		/*
-		Depending on type manage the list.
-		multi is the default	
+		Manage this list. Multi is the default	
 		*/
 		if(selected){
 			if(single){
 				options.forEach( option => {
 					if(option !== listOption) option.deselect();
 				});
-				
-				// does list have extraOptions?
-				if(hasOptions && listOption.extraOptions != false){
-					this.extraOptions( listOption.extraOptions );	
-				}
 			}
-		} else {
-			// UN-selected!
-			if(hasOptions && single){
-				this.extraOptions( false );
-			}
-		}	
+		} 
 	}
 	
 	this.gatherData = function(){
@@ -3578,41 +3628,6 @@ idg.addSelectInsert.OptionsList = function ( $ul ){
 			
 }
 
-/*
-Extra Options
-*/
-
-idg.addSelectInsert.OptionsList.prototype.extraOptions = function( groupList ){
-	
-	if( typeof groupList === 'string'){
-		/*
-		Show optional lists, String e.g. "2.1" : 
-		find group ID: 	"add-to-{uniqueID}-listgroup{n}";
-		find list ID: 	"add-to-{uniqueID}-list{n}";
-		*/
-		let findIDs = groupList.split('.');
-		let idPrefix = "#add-to-" + this.uniqueId + "-";
-		
-		// find the <div> wrappers
-		this.$extraGroup 	= $(idPrefix + 'listgroup'+findIDs[0] ); // <div> wrapper for optional lists
-		this.$extraList 	= $(idPrefix + 'list'+findIDs[1] ); // the list to show
-		this.$extraHolder 	= this.$extraGroup.find('.optional-placeholder'); // default placeholder for Optional Lists
-		
-		// update DOM and record the state
-		this.$extraHolder.hide();
-		this.$extraGroup.children('.optional-list').hide();
-		this.$extraList.show();
-		
-	} else {
-		/*
-		Reset
-		*/
-		this.$extraHolder.show();
-		this.$extraGroup.children('.optional-list').hide();
-	}
-}
-
- 
 /*
 Add Select Search insert  
 Popup Constructor

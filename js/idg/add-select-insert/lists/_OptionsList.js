@@ -38,26 +38,15 @@ idg.addSelectInsert.OptionsList = function ( $ul ){
 	*/
 	this.optionClicked = function( selected, listOption ){
 		/*
-		Depending on type manage the list.
-		multi is the default	
+		Manage this list. Multi is the default	
 		*/
 		if(selected){
 			if(single){
 				options.forEach( option => {
 					if(option !== listOption) option.deselect();
 				});
-				
-				// does list have extraOptions?
-				if(hasOptions && listOption.extraOptions != false){
-					this.extraOptions( listOption.extraOptions );	
-				}
 			}
-		} else {
-			// UN-selected!
-			if(hasOptions && single){
-				this.extraOptions( false );
-			}
-		}	
+		} 
 	}
 	
 	this.gatherData = function(){
