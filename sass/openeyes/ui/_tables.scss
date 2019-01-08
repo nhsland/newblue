@@ -31,7 +31,7 @@ table {
 			th, td {
 				&:last-child {
 					text-align: right;
-					padding-right:0;
+					padding-right:2px;
 				}
 			}
 		}
@@ -54,6 +54,11 @@ table {
 				@include font-size(12);
 				font-weight: $oe-font-light;
 				padding:0 $tableStandardPadding $tableStandardPadding 0;
+				
+				// improve visual layout of data
+				&:first-child {
+					padding-left:2px;
+				}
 			}
 		}
 		
@@ -69,6 +74,11 @@ table {
 				color:$oe-text; 
 				font-weight: $oe-font-medium;
 				padding:5px $tableStandardPadding 5px 0; 
+				
+				// improve visual layout of data
+				&:first-child {
+					padding-left:2px;
+				}
 				
 				&.valign-top {
 					vertical-align: top;

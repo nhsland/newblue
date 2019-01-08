@@ -651,7 +651,7 @@ table.standard.no-padding {
 
 table.standard.last-right th:last-child, table.standard.last-right td:last-child {
   text-align: right;
-  padding-right: 0;
+  padding-right: 2px;
 }
 
 table.standard th, table.standard td {
@@ -670,6 +670,10 @@ table.standard thead th {
   padding: 0 10px 10px 0;
 }
 
+table.standard thead th:first-child {
+  padding-left: 2px;
+}
+
 table.standard tbody tr {
   border-bottom: 1px solid #26303d;
 }
@@ -682,6 +686,10 @@ table.standard tbody td {
   color: #d6d6d6;
   font-weight: 400;
   padding: 5px 10px 5px 0;
+}
+
+table.standard tbody td:first-child {
+  padding-left: 2px;
 }
 
 table.standard tbody td.valign-top {
@@ -9031,6 +9039,10 @@ table.oe-clinic-list td.center {
 
 .oe-worklists .oe-full-side-panel {
   padding: 20px;
+}
+
+.oe-worklists .worklist-group {
+  padding: 0 20px 0 0;
 }
 
 .oe-worklists .worklist-summary {

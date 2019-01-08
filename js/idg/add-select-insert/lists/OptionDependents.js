@@ -22,7 +22,13 @@ idg.addSelectInsert.OptionDependents = function( dependents, listId ){
 		let obj = {};
 		obj.$group 	= $(idPrefix + 'listgroup'+findIDs[0] ); 		// <div> wrapper for optional lists
 		obj.$list1	= $(idPrefix + 'list'+findIDs[1] ); 			// the list to show
-		obj.$list2	= $(idPrefix + 'list'+findIDs[2] ); 			// the list to show
+		
+		if(findIDs.length == 3){
+			obj.$list2	= $(idPrefix + 'list'+findIDs[2] ); 			// the list to show
+		} else {
+			obj.$list2 = null;
+		}
+		
 		obj.$holder = obj.$group.find('.optional-placeholder'); // default placeholder for Optional Lists
 		extraListOptions.push( obj );
 		
@@ -46,7 +52,7 @@ idg.addSelectInsert.OptionDependents = function( dependents, listId ){
 			xtras.$holder.hide();
 			// show required Lists
 			xtras.$list1.show();
-			xtras.$list2.show();
+			if(xtras.$list2 != null) xtras.$list2.show();
 		});
 	}
 	
