@@ -30,6 +30,25 @@ body {
 			font-size: $fontsize-base + $impaired-vision-increase;
 		}
 		
+		// lists
+		ul, ol {
+			li {
+				font-size: $fontsize-small + $impaired-vision-increase;
+				font-weight:500;
+	 		}
+	 		&.normal {
+	 			li {
+	 				font-size: $fontsize-base + $impaired-vision-increase; 
+				}
+			} 
+			&.large {
+				li {
+					font-size: $fontsize-h3 + $impaired-vision-increase; 
+				}
+			} 
+		}
+		
+		
 		// tables
 		table {
 	    	td, th {
@@ -44,20 +63,6 @@ body {
 			}
 		}
 		
-		ul, ol {
-			 li {
-				 font-size: $fontsize-base + $impaired-vision-increase;
-				 font-weight:500;
-			 }
-			 
-			 &.large {
-				li {
-					font-size: $fontsize-base + $impaired-vision-increase; 
-				}
-			} 
-		}
-		
-				
 	}
 }
 

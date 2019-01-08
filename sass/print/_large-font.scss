@@ -30,6 +30,25 @@ body {
 		}
 		
 		
+		// lists
+		ul, ol {
+			li {
+				font-size: $fontsize-small + $large-font-increase;
+				font-weight:500;
+	 		}
+	 		&.normal {
+	 			li {
+	 				font-size: $fontsize-base + $large-font-increase; 
+				}
+			} 
+			&.large {
+				li {
+					font-size: $fontsize-h3 + $large-font-increase; 
+				}
+			} 
+		}
+		
+		
 		// tables
 		table {
 	    	td, th {
