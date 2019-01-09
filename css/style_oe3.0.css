@@ -627,6 +627,18 @@ ul.btn-list li:hover, ul.btn-list li:focus, ul.btn-list li:active, ul.btn-list l
   color: #fff;
 }
 
+ul.btn-list.blue-highlight li:hover, ul.btn-list.blue-highlight li:focus, ul.btn-list.blue-highlight li:active, ul.btn-list.blue-highlight li.selected {
+  background: #074598;
+}
+
+ul.btn-list.fixed-width li {
+  height: auto;
+  width: 180px;
+  padding: 3px 8px;
+  white-space: normal;
+  word-break: break-word;
+}
+
 ul.large-text li, ul.large li {
   font-size: 0.875rem;
 }
@@ -1316,6 +1328,12 @@ label.highlight.error,
 .label.highlight.error {
   color: white;
   background-color: #9b0000;
+}
+
+label.highlight.pro-theme,
+.label.highlight.pro-theme {
+  color: #d6d6d6;
+  background-color: #1e2e42;
 }
 
 label .required,
@@ -4108,24 +4126,6 @@ ul.management-summaries li h6 {
   height: 40px;
 }
 
-.oe-popup ul.oe-btn-list li {
-  display: block;
-  margin: 0 0 2px 0;
-  padding-left: 10px;
-  height: 19px;
-  line-height: 19px;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #8c8c8c;
-  background: #313f4c;
-  cursor: pointer;
-}
-
-.oe-popup ul.oe-btn-list li:hover, .oe-popup ul.oe-btn-list li:focus, .oe-popup ul.oe-btn-list li:active, .oe-popup ul.oe-btn-list li.selected {
-  background-color: #074598;
-  color: #fff;
-}
-
 .oe-popup table {
   margin: 20px auto 0 auto;
   width: 90%;
@@ -4195,6 +4195,76 @@ ul.management-summaries li h6 {
 
 .oe-popup-content.previous-elements .element-eyes .left-eye {
   width: 490px;
+}
+
+.oe-popup-content.popup-add-psd {
+  max-width: 1280px;
+}
+
+.oe-popup-content.popup-add-psd h3 {
+  font-size: 0.75rem;
+  color: #8c8c8c;
+  margin: 0 0 10px 0;
+}
+
+.oe-popup-content.popup-add-psd hr.divider {
+  display: block;
+  border: 0;
+  margin: 15px 0;
+  border-bottom: 1px solid #26303d;
+}
+
+.oe-popup-content.popup-add-psd .psd-selected-patients {
+  width: 150px;
+}
+
+.oe-popup-content.popup-add-psd .psd-selected-patients ul li {
+  font-size: 0.6875rem;
+  padding: 2px 0;
+}
+
+.oe-popup-content.popup-add-psd .psd-options {
+  padding: 0 20px;
+  margin: 0 20px;
+  border-left: 1px solid #26303d;
+  border-right: 1px solid #26303d;
+}
+
+.oe-popup-content.popup-add-psd .psd-options table {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.oe-popup-content.popup-add-psd .psd-options table td {
+  padding: 0 8px;
+  vertical-align: top;
+}
+
+.oe-popup-content.popup-add-psd .psd-build {
+  width: 400px;
+}
+
+.oe-popup-content.popup-add-psd .psd-build table.psd-build-list {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.oe-popup-content.popup-add-psd .psd-build table.psd-build-list tr {
+  border-bottom: 1px solid #26303d;
+}
+
+.oe-popup-content.popup-add-psd .psd-build table.psd-build-list tr:last-child {
+  border-bottom: none;
+}
+
+.oe-popup-content.popup-add-psd .psd-build table.psd-build-list td {
+  padding: 4px 8px 4px 0;
+  font-size: 0.75rem;
+}
+
+.oe-popup-content.popup-add-psd .psd-build table.psd-build-list td:last-child {
+  text-align: right;
+  padding-right: 0;
 }
 
 .oe-patient-mini-overview {
@@ -4673,7 +4743,7 @@ ul.management-summaries li h6 {
   /* flex (wrapper) */
   position: relative;
   background: #374755;
-  width: 1300px;
+  width: 1000px;
   padding: 20px;
 }
 
@@ -6588,7 +6658,7 @@ ul.management-summaries li h6 {
 .oe-eyedraw-app {
   position: relative;
   margin: auto;
-  width: 1300px;
+  width: 1260px;
   min-height: 200px;
   padding: 7px;
   background: #dae6f1;

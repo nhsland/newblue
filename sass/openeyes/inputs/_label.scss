@@ -44,6 +44,12 @@ label,
 			background-color: $oe-alert-red;
 		}
 		
+		// if used in a OE UI themed area 	
+		&.pro-theme {
+			color: $oe-pro-user-input-text;
+			background-color: $oe-pro-user-inputs;
+		}	
+		
 	}
 
 	.required {

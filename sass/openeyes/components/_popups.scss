@@ -21,15 +21,12 @@
 // Content wrap. Handle scrolling for contnet (min res displays)
 @import "popups/popup-content"; 
 
-// Generic Button List (based on Add New Event)			
-@import "popups/btn-list"; 
-
 // Default Tables		
 @import "popups/table";  
 
 // Specific Popups: 
-// Previous Elements (popup for coping data from previous elements)
-@import "popups/previous-elements";  
+@import "popups/specific/previous-elements";   	// Previous Elements (popup for coping data from previous elements)
+@import "popups/specific/popup-add-psd";		// Popup Add to PSD
 
 
 

@@ -103,7 +103,15 @@ idg.init = function(){
 	// Examination VA COMPLog					
 	idg.overlayPopup( 	'#js-idg-exam-complog',  			// VA in Exam
 						'exam-va-COMPlog.php', 				// Demo content
+						'.close-icon-btn' );				// wraps remove icon
+						
+						
+	
+	// Worklist PSD / PSG					
+	idg.overlayPopup( 	'#js-idg-worklist-ps-add',  			// VA in Exam
+						'worklist-PS.php', 						// Demo content
 						'.close-icon-btn' );				// wraps remove icon					
+											
 									
 	// IDG demo some interaction
 	function fakeAddNewEvent( $overlay ){

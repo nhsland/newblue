@@ -74,10 +74,32 @@ ul {
 			
 			cursor: pointer;
 			
+			// this works on filter options (but is quite subtle)
 			&:hover, &:focus, &:active, 
 			&.selected {
 				background:rgba($oe-pro-user-inputs,0.8); 
 				color:#fff;
+			}
+		}
+		
+		// for use on regular popups (e.g. PSD)
+		&.blue-highlight {
+			li {
+				&:hover, &:focus, &:active, 
+				&.selected {
+					background:$oe-pro-btn-blue;
+				}
+			}
+		}
+		
+		// fixed with btn-list
+		&.fixed-width {
+			li {
+				height:auto;
+				width: 180px;	 		// setup to handle PSD popup (180px is a best guess)			
+				padding:3px 8px;
+				white-space: normal;
+				word-break: break-word;
 			}
 		}
 	}

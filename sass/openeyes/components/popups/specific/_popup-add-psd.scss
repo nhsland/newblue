@@ -1,0 +1,92 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Popups
+// notes: see openeyes/components/popups
+
+// Specific: Add to PSD
+.oe-popup-content {
+	
+	// modify popup table default
+	&.popup-add-psd {
+		max-width:$oe-minimum-supported-width;
+		
+		// step sub-titles
+		h3 {
+			@include font-size(12);
+			color:$oe-pro-text-light;
+			margin:0 0 10px 0;
+		}
+		
+		hr.divider {
+			display:block;
+			border: 0;
+			margin:15px 0;  // reduced was 20px 0 15px 0;
+			border-bottom:1px solid $oe-pro-line;
+		}
+		
+		// control width of sections
+		.psd-selected-patients {			
+			width:150px;
+			
+			ul {
+				li {
+					@include font-size(11);
+					padding:2px 0;
+				}
+			}
+		}
+		
+		// widths in here are limited by btn-list.fixed-width
+		.psd-options {
+			padding:0 20px;
+			margin:0 20px;
+			border-left:1px solid $oe-pro-line;
+			border-right:1px solid $oe-pro-line;
+			
+			table {
+				width:100%;	
+				margin:0 auto;
+				td {
+					padding:0 8px; 
+					vertical-align: top;
+						
+				}		
+			}
+		}
+		
+		.psd-build {
+			width:400px;
+			
+			table.psd-build-list {
+				width:100%;	
+				margin:0 auto;
+				
+				// add line to help with reading data
+				tr {
+					border-bottom:1px solid $oe-pro-line;				
+					&:last-child { 
+						border-bottom: none;
+					}
+				}
+				
+				
+				td {
+					padding:4px 8px 4px 0;
+					@include font-size(12);	
+					
+					// trash icon
+					&:last-child {
+						text-align: right;
+						padding-right:0;
+					}				
+				}
+			}
+		}
+	
+		
+	
+	}
+
+}
