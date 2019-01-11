@@ -17,8 +17,8 @@ const idgTest = {
 		ul.appendChild(li);
 	},
 
-	assert:function(value,desc){
-		let state = value ? "pass" : "fail";
-		this.report( "[" + state + "] " + desc );			
+	assert:function(statement, desc){
+		let test = statement ? "pass" : "fail";
+		this.report( "[" + test + "] " + desc );			
 	},
 }

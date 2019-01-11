@@ -1,0 +1,41 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Worklist
+
+// patient action step 
+// based on the clinic pathway step (a bit simplier)
+.pathstep-btn {
+	// <span>  
+	display:inline-block;
+	margin:1px 3px 1px 0;
+	padding:4px 8px 3px 8px;
+	@include font-size(12);
+	font-style: italic;
+	border-radius:3px;
+	cursor: pointer;
+
+	// these colours must work in both themes:
+	background:		rgb(100,100,100); 	// default grey
+	color:			rgb(240,240,240);
+	
+	// colours
+	&.green { 
+		background: $oe-clinic-green; 
+	}
+	
+	&.orange { 
+		background: $oe-clinic-orange; 
+	}
+
+	&.red { 
+		background:$oe-clinic-red; 
+	}
+		
+	&.themed { 
+		color:$oe-text;
+		background:$oe-blue-dark; 
+	}
+	
+}

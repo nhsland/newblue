@@ -189,6 +189,9 @@ idg.init = function(){
 	
 	// Notification (user/admin)
 	idg.notificationBanner();
+	
+	// Patient Step Info Popup
+	idg.pathSteps.init();
 										
 };
 
