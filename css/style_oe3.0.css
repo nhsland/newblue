@@ -9171,7 +9171,7 @@ table.oe-clinic-list td.center {
   z-index: 90;
   background: #141e2b;
   border: 1px solid cyan;
-  padding: 15px 10px 55px 15px;
+  padding: 15px 10px 45px 15px;
   width: 300px;
   border-radius: 3px;
   font-size: 0.75rem;
@@ -9188,11 +9188,11 @@ table.oe-clinic-list td.center {
   position: absolute;
   bottom: 8px;
   right: 0;
-  padding: 7px 9px 5px 9px;
-  border-radius: 3px 0 0 3px;
+  padding: 6px 9px 5px 9px;
+  border-radius: 5px 0 0 5px;
   font-size: 0.6875rem;
   font-weight: 700;
-  color: #f0f0f0;
+  color: #e6e6e6;
 }
 
 .pathstep-popup .step-status.green {
@@ -9214,6 +9214,10 @@ table.oe-clinic-list td.center {
   padding: 0 0 10px 0;
 }
 
+.pathstep-popup .eye .side {
+  font-weight: 500;
+}
+
 .pathstep-popup h3 {
   font-size: 0.8125rem;
   color: #8c8c8c;
@@ -9232,22 +9236,58 @@ table.oe-clinic-list td.center {
 }
 
 .pathstep-popup .data-group ul.data-list li {
-  margin: 0 0 5px 0;
+  margin: 0 0 3px 0;
+  padding: 0 0 3px 0;
+  border-bottom: 1px solid #26303d;
+}
+
+.pathstep-popup .data-group ul.data-list li:last-child {
+  border-bottom: none;
 }
 
 .pathstep-popup .pin-confirmation {
-  padding: 5px;
-  margin: 0 3px 0 0;
-  background: #146400;
-  border-radius: 3px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.pathstep-popup .pin-confirmation input {
+.pathstep-popup .pin-confirmation .eye-confirmation {
+  width: 49%;
+  margin: 10px 0;
+  padding: 4px;
+  background: #b45016;
+  border-radius: 3px;
   text-align: center;
 }
 
-.pathstep-popup .pin-confirmation.wrong-pin {
+.pathstep-popup .pin-confirmation .eye-confirmation h3 {
+  font-size: 0.8125rem;
+  color: white;
+  padding: 0 0 5px 0;
+}
+
+.pathstep-popup .pin-confirmation .eye-confirmation input {
+  width: 70px;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.pathstep-popup .pin-confirmation .eye-confirmation.wrong-pin {
   background: #a0280a;
+}
+
+.pathstep-popup .pin-confirmation .eye-confirmation.correct-pin {
+  background: #146400;
+}
+
+.pathstep-popup .step-actions {
+  padding: 10px 0;
 }
 
 /* Virtual Clinic */
