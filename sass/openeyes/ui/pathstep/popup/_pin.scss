@@ -1,0 +1,44 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-pathstep-popup {
+	
+	.pin-confirmation {
+		display:flex;
+		align-items:flex-start;			
+		justify-content:space-between;
+		
+		.eye-confirmation {
+			width:49%;
+			margin: 10px 0;
+			padding:4px;
+			background:$oe-clinic-orange;
+			border-radius:3px;
+			text-align: center;
+			
+			h3 {
+				@include font-size(13);
+				color:rgb(255,255,255);
+				padding:0 0 5px 0;
+			}
+			
+			input {
+				width:70px;
+				@include font-size(14);
+				text-align: center;
+				
+			}
+			
+			&.wrong-pin {
+				background:$oe-clinic-red;
+			}
+			
+			&.correct-pin {
+				background:$oe-clinic-green;
+			}
+		}	
+	}
+
+}
+

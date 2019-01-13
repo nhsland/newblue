@@ -1742,6 +1742,188 @@ select.fixed-width {
   font-style: italic;
 }
 
+.oe-pathstep-btn {
+  display: inline-block;
+  margin: 1px 3px 1px 0;
+  padding: 4px 8px 3px 8px;
+  font-size: 0.75rem;
+  font-style: italic;
+  border-radius: 3px;
+  cursor: pointer;
+  background: #646464;
+  color: #f0f0f0;
+}
+
+.oe-pathstep-btn.green {
+  background: #146400;
+}
+
+.oe-pathstep-btn.orange {
+  background: #b45016;
+}
+
+.oe-pathstep-btn.red {
+  background: #a0280a;
+}
+
+.oe-pathstep-btn.themed {
+  color: #d6d6d6;
+  background: #182535;
+}
+
+.oe-pathstep-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 90;
+  background: #141e2b;
+  border: 1px solid cyan;
+  padding: 15px 10px 45px 15px;
+  width: 320px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  color: #d6d6d6;
+}
+
+.oe-pathstep-popup.data-only {
+  padding: 12px 10px;
+}
+
+.oe-pathstep-popup .close-icon-btn {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+}
+
+.oe-pathstep-popup .step-actions {
+  padding: 10px 0;
+}
+
+.oe-pathstep-popup .eye {
+  font-size: 1rem;
+  color: #d6d6d6;
+  font-weight: 300;
+  padding: 0 0 10px 0;
+}
+
+.oe-pathstep-popup .eye .side {
+  font-weight: 500;
+}
+
+.oe-pathstep-popup h3 {
+  font-size: 0.8125rem;
+  color: #8c8c8c;
+  font-weight: 300;
+  padding: 0 0 10px 0;
+}
+
+.oe-pathstep-popup h3:first-child {
+  padding-top: 0;
+}
+
+.oe-pathstep-popup .step-status {
+  position: absolute;
+  bottom: 8px;
+  right: 0;
+  padding: 6px 9px 5px 9px;
+  border-radius: 5px 0 0 5px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #e6e6e6;
+}
+
+.oe-pathstep-popup .step-status.green {
+  background: #146400;
+}
+
+.oe-pathstep-popup .step-status.orange {
+  background: #b45016;
+}
+
+.oe-pathstep-popup .step-status.red {
+  background: #a0280a;
+}
+
+.oe-pathstep-popup .data-group {
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 0 5px 0 0;
+}
+
+.oe-pathstep-popup .data-group ul.data-list li {
+  margin: 0 0 3px 0;
+  padding: 0 0 3px 0;
+  border-bottom: 1px solid #26303d;
+}
+
+.oe-pathstep-popup .data-group ul.data-list li:last-child {
+  border-bottom: none;
+}
+
+.oe-pathstep-popup .data-group table.data-table {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.oe-pathstep-popup .data-group table.data-table tr {
+  border-bottom: 1px solid #26303d;
+}
+
+.oe-pathstep-popup .data-group table.data-table tr:last-child {
+  border-bottom: none;
+}
+
+.oe-pathstep-popup .data-group table.data-table td {
+  padding: 5px 8px 3px 0;
+  font-size: 0.6875rem;
+}
+
+.oe-pathstep-popup .data-group table.data-table td:last-child {
+  text-align: right;
+  padding-right: 0;
+}
+
+.oe-pathstep-popup .pin-confirmation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.oe-pathstep-popup .pin-confirmation .eye-confirmation {
+  width: 49%;
+  margin: 10px 0;
+  padding: 4px;
+  background: #b45016;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.oe-pathstep-popup .pin-confirmation .eye-confirmation h3 {
+  font-size: 0.8125rem;
+  color: white;
+  padding: 0 0 5px 0;
+}
+
+.oe-pathstep-popup .pin-confirmation .eye-confirmation input {
+  width: 70px;
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+.oe-pathstep-popup .pin-confirmation .eye-confirmation.wrong-pin {
+  background: #a0280a;
+}
+
+.oe-pathstep-popup .pin-confirmation .eye-confirmation.correct-pin {
+  background: #146400;
+}
+
 /*  iconography */
 .oe-i {
   display: inline-block;
@@ -9133,161 +9315,6 @@ table.oe-clinic-list td.center {
 
 .oe-worklists table.standard {
   margin: 10px 0 40px 0;
-}
-
-.pathstep-btn {
-  display: inline-block;
-  margin: 1px 3px 1px 0;
-  padding: 4px 8px 3px 8px;
-  font-size: 0.75rem;
-  font-style: italic;
-  border-radius: 3px;
-  cursor: pointer;
-  background: #646464;
-  color: #f0f0f0;
-}
-
-.pathstep-btn.green {
-  background: #146400;
-}
-
-.pathstep-btn.orange {
-  background: #b45016;
-}
-
-.pathstep-btn.red {
-  background: #a0280a;
-}
-
-.pathstep-btn.themed {
-  color: #d6d6d6;
-  background: #182535;
-}
-
-.pathstep-popup {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 90;
-  background: #141e2b;
-  border: 1px solid cyan;
-  padding: 15px 10px 45px 15px;
-  width: 300px;
-  border-radius: 3px;
-  font-size: 0.75rem;
-  color: #d6d6d6;
-}
-
-.pathstep-popup .close-icon-btn {
-  position: absolute;
-  top: 8px;
-  right: 9px;
-}
-
-.pathstep-popup .step-status {
-  position: absolute;
-  bottom: 8px;
-  right: 0;
-  padding: 6px 9px 5px 9px;
-  border-radius: 5px 0 0 5px;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  color: #e6e6e6;
-}
-
-.pathstep-popup .step-status.green {
-  background: #146400;
-}
-
-.pathstep-popup .step-status.orange {
-  background: #b45016;
-}
-
-.pathstep-popup .step-status.red {
-  background: #a0280a;
-}
-
-.pathstep-popup .eye {
-  font-size: 1rem;
-  color: #d6d6d6;
-  font-weight: 300;
-  padding: 0 0 10px 0;
-}
-
-.pathstep-popup .eye .side {
-  font-weight: 500;
-}
-
-.pathstep-popup h3 {
-  font-size: 0.8125rem;
-  color: #8c8c8c;
-  font-weight: 300;
-  padding: 0 0 10px 0;
-}
-
-.pathstep-popup h3:first-child {
-  padding-top: 0;
-}
-
-.pathstep-popup .data-group {
-  max-height: 180px;
-  overflow-y: auto;
-  padding: 0 5px 0 0;
-}
-
-.pathstep-popup .data-group ul.data-list li {
-  margin: 0 0 3px 0;
-  padding: 0 0 3px 0;
-  border-bottom: 1px solid #26303d;
-}
-
-.pathstep-popup .data-group ul.data-list li:last-child {
-  border-bottom: none;
-}
-
-.pathstep-popup .pin-confirmation {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.pathstep-popup .pin-confirmation .eye-confirmation {
-  width: 49%;
-  margin: 10px 0;
-  padding: 4px;
-  background: #b45016;
-  border-radius: 3px;
-  text-align: center;
-}
-
-.pathstep-popup .pin-confirmation .eye-confirmation h3 {
-  font-size: 0.8125rem;
-  color: white;
-  padding: 0 0 5px 0;
-}
-
-.pathstep-popup .pin-confirmation .eye-confirmation input {
-  width: 70px;
-  font-size: 0.875rem;
-  text-align: center;
-}
-
-.pathstep-popup .pin-confirmation .eye-confirmation.wrong-pin {
-  background: #a0280a;
-}
-
-.pathstep-popup .pin-confirmation .eye-confirmation.correct-pin {
-  background: #146400;
-}
-
-.pathstep-popup .step-actions {
-  padding: 10px 0;
 }
 
 /* Virtual Clinic */

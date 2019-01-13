@@ -3302,10 +3302,11 @@ Clinic steps and Patient actions steps in WS
 idg.pathSteps = {
 	
 	/*
-	popup is built by JS.
+	popup & quickview is built by JS.
 	content and position is then modified for each step	
 	*/
 	popup:null,
+	quickview:null,
 	steps:[],
 		
 	/*
@@ -3315,13 +3316,16 @@ idg.pathSteps = {
 		/*
 		do we have elems?
 		*/
-		if( $('.pathstep-btn').length){
+		if( $('.oe-pathstep-btn').length){
 			
 			this.popup = new this.CreatePopup();
+			this.popup.init(true);
+			this.quickview = new this.CreatePopup();
+			this.quickview.init(false);
 			/*
 			Use $ for DOM work
 			*/
-			$('.pathstep-btn').each(function( ){
+			$('.oe-pathstep-btn').each(function( ){
 				idg.pathSteps.setupSteps( $(this) );
 			});
 		}
@@ -3331,13 +3335,13 @@ idg.pathSteps = {
 	setup Btns
 	*/ 
 	setupSteps:function( $stepBtn ){
-		this.steps.push( new this.StepBtn( $stepBtn, this.popup ) );	
+		this.steps.push( new this.StepBtn( $stepBtn, this.popup, this.quickview ) );	
 	},
 	
 	/*
 	build Step Btn	
 	*/
-	StepBtn:function( $btn, popup ){
+	StepBtn:function( $btn, popup, quickview ){
 		const elem = $btn[ 0 ];
 		const data = $btn.data("step");
 
@@ -3347,126 +3351,202 @@ idg.pathSteps = {
 		this.click = function(){
 			let btnPos = elem.getBoundingClientRect();
 			let w = document.documentElement.clientWidth;
+			quickview.close();
 			popup.show( data, btnPos.top, w - btnPos.right  );
+		}
+		
+		this.enter = function(){
+			let btnPos = elem.getBoundingClientRect();
+			let w = document.documentElement.clientWidth;
+			popup.close();
+			quickview.show( data, btnPos.top + btnPos.height, w - btnPos.right );
+			
+			
+		}
+		
+		this.leave = function(){
+			quickview.close();
 		}
 		
 		/*
 		Events 
 		*/
 		elem.addEventListener( "click", this.click.bind( this ) );	
+		elem.addEventListener( "mouseenter", this.enter.bind( this ) );
+		elem.addEventListener( "mouseleave", this.leave.bind( this ) );
 	},
 
 	/*
-	the popup	
+	info popup. 
+	full (on click) and data-only (hover enhancement)	
 	*/
 	CreatePopup:function(){
+		
+		this.full = true;
 		
 		/*
 		build Data DOM
 		*/
-		const $div 		= $('<div class="pathstep-popup"></div>');	
-	 	const $close 	= $('<div class="close-icon-btn"><i class="oe-i remove-circle medium"></i></div>');	
-	 	const $status 	= $('<div class="step-status">status</div>');
- 		const $title 	= $('<h3 class="title"></h3>');
-		const $eye 		= $('<div class="eye">Eye: <span class="side"></span></div>');
+		const $div 		= $('<div class="oe-pathstep-popup"></div>');	
 		const $dataGroup = $('<div class="data-group"></div>');
 		const $dataList = $('<ul class="data-list"></ul>');
+		const $dataTable = $('<table class="data-table"></table>');
 		
-		// pin confirmation
-		const $pin		= $('<div class="pin-confirmation"></div>');
-		const $pinRight = $('<div class="eye-confirmation right"><h3>Right</h3></div>');
-		const $pinLeft = $('<div class="eye-confirmation left"><h3>Left</h3></div>');
-		const $inputPinRight = inputPIN('right');
-		const $inputPinLeft = inputPIN('left');
-	
-		function inputPIN( side ){
-			return $('<input id="pathstep-user-pin-'+side+'" type="text" maxlength="4" inputmode="numeric" placeholder="****">');
-		}
+		// full DOM elements
+		let $close 	= null;	
+		let $status = null;
+		let $title = null;
+		let $eye = null;
+		let $pin = null;
+		let $pinRight = null;		
+		let $pinLeft = null;
+		let $inputPinRight = null;
+		let $inputPinLeft = null;
+		let $edit = null;
 		
-		// edit PSD
-		const $edit 	= $('<div class="step-actions"><button class="blue hint">Edit PSD</button></div>').hide();
-		
-		/*
-		compile DOM
-		*/
-
-		// dataList DOM
-		$dataGroup.append( $dataList );
-		
-		// pin
-		$pinRight.append( $inputPinRight );
-		$pinLeft.append( $inputPinLeft );
-		$pin.append( $pinRight, $pinLeft ).hide();
-				
-		// build DOM element, and hide it
-		$div.append(	$close, 
-						$status,
-						$title, 
-						$eye, 
-						$dataGroup,
-						$pin,
-						$edit ).hide();
-
-		// attach to DOM
-		$('body').append( $div );
-		
-		function resetDOM(){
-			$status.removeClass();
-			$edit.hide();
-			$pin.hide();
-		}
 		
 		/*
 		Methods	
 		*/
-		this.show =function( stepData, top, right){
+		this.init = function( full ){
+			this.full = full;
+			
+			if( full ){
+				
+				$close 	= $('<div class="close-icon-btn"><i class="oe-i remove-circle medium"></i></div>');	
+				$status = $('<div class="step-status"></div>');
+				$title 	= $('<h3 class="title"></h3>');
+				// $eye 	= $('<div class="eye">Eye: <span class="side"></span></div>');
+				
+				// pin confirmation
+				$pin		= $('<div class="pin-confirmation"></div>');
+				$pinRight 	= $('<div class="eye-confirmation right"><h3>Right</h3></div>');
+				$pinLeft 	= $('<div class="eye-confirmation left"><h3>Left</h3></div>');
+				
+				function inputPIN( side ){
+					return $('<input id="pathstep-user-pin-'+side+'" type="text" maxlength="4" inputmode="numeric" placeholder="****">');
+				}
+				$inputPinRight = inputPIN('right');
+				$inputPinLeft = inputPIN('left');
+		
+				// edit PSD
+				$edit = $('<div class="step-actions"><button class="blue hint">Edit PSD</button></div>').hide();
+				
+				/*
+				compile DOM
+				*/
+		
+				// dataList DOM
+				$dataGroup.append( $dataList, $dataTable );
+				// pin
+				$pinRight.append( $inputPinRight );
+				$pinLeft.append( $inputPinLeft );
+				$pin.append( $pinRight, $pinLeft ).hide();
+						
+				// build DOM element, and hide it
+				$div.append(	$close, 
+								$status,
+								$title, 
+								$dataGroup,
+								$pin,
+								$edit );
+				
+				
+				/*
+				Events
+				*/
+				$close[0].addEventListener( "click", this.close.bind( this ) );
+				$inputPinRight[0].addEventListener("input", this.pinRightChange.bind( this ));
+				$inputPinLeft[0].addEventListener("input", this.pinLeftChange.bind( this ));
+				
+			} else {
+				$div.addClass("data-only");
+				$dataGroup.append( $dataList, $dataTable );
+				$div.append( $dataGroup );
+				
+			}
+	
+			// attach to DOM
+			$div.hide();
+			$('body').append( $div );
+			
+		}
+	
+		this.show = function( stepData, top, right){
 			// position
 			$div.css({ 	top : top,
 					 	right: right });
-							
-			// update popup content
-			$title.text( stepData.title );
-			$eye.children('.side').text( stepData.eye );
-			
+					 	
 			/*
-			data is ALL handled as a list	
-			*/
-			// clear previous data.
+			data can be either a list or table	
+			*/	
+			let fragment = null;	
 			$dataList.children('li').remove();
-			// build list
-			let list = stepData.data.split(";");
-			list.forEach( list => $dataList.append('<li>'+list+'</li>') );	
+			$dataTable.children('tr').remove();
 			
-			
-			/*
-			status	
-			*/
-			switch( stepData.status ){
-				case "done":
-					$status.text('Done: 09:20');
-					$status.addClass('step-status green');
-				break;
-				case "todo":
-					$status.text('Waiting');
-					$status.addClass('step-status orange');
-					$edit.show();
-					$pin.show();
-				break;
-				case "problem":
-					$status.text('Problem! e.g. Patient has left');
-					$status.addClass('step-status red');
-					$edit.show();
-					$pin.show();
-				break;
-				
-				default: $status.text('no status');
+			if( stepData.data.type == "list"){
+				// build list
+				fragment = idg.pathSteps.buildDataList( stepData.data.data );
+				$dataList.append( fragment );
 			}
+			
+			if( stepData.data.type == "table"){
+				// build table
+				fragment = idg.pathSteps.buildDataTable( stepData.data.data );
+				$dataTable.append( fragment );
+			}
+			
+			$dataList.append( fragment );	
+				
+					 	
+			if( this.full ){
+				// update popup content
+				$title.text( stepData.title );
 					
+				/*
+				DOM depends on status	
+				*/
+				switch( stepData.status ){
+					case "done":
+						$status.text('Done: 09:20');
+						$status.addClass('step-status green');
+					break;
+					case "todo":
+						$status.text('Waiting');
+						$status.addClass('step-status orange');
+						$edit.show();
+						$pin.show();
+					break;
+					case "problem":
+						$status.text('Problem! e.g. Patient has left');
+						$status.addClass('step-status red');
+						$edit.show();
+						$pin.show();
+					break;
+					
+					default: $status.text('no status set');
+				}
+			
+			} 
 			
 			// now show it
 			$div.show();
-		}
+		}		
 		
+		this.close = function(){
+			
+			$div.hide();
+			
+			if( this.full ){
+				$status.removeClass();
+				$edit.hide();
+				$pin.hide();
+			}
+		}
+	
+		/*
+		Demo PIN UI
+		*/
 		this.pinRightChange = function( e ){
 			checkPin( e.target.value, $pinRight, "right");
 		}
@@ -3484,26 +3564,63 @@ idg.pathSteps = {
 				}
 			} else {
 				$side.removeClass("wrong-pin correct-pin");
-			}
-			
+			}	
 		}
+	},
+ 
 	
-		this.close = function(){
-			$div.hide();
-			resetDOM();
-		}
+	/*
+	Build DOM (use fragments to avoid re-flowing the DOM)
+	*/
+	
+	buildDataList:function( dataArrOfObjs ){
 		
+		let fragment = document.createDocumentFragment();
+			
+		dataArrOfObjs.forEach( obj => {
+			let li = document.createElement('li');
+			li.textContent = obj.li;
+			fragment.appendChild(li);
+		});
 		
+		return fragment;
+	},
+	
+	buildDataTable:function( dataArrOfObjs ){
+		
+		let fragment = document.createDocumentFragment();
 
-		/*
-		Events
-		*/
-		$close[0].addEventListener( "click", this.close.bind( this ) );
-		$inputPinRight[0].addEventListener("input", this.pinRightChange.bind( this ));
-		$inputPinLeft[0].addEventListener("input", this.pinLeftChange.bind( this ));
+		dataArrOfObjs.forEach( obj => {
+			
+			console.log(obj);
+			
+			let tr = document.createElement('tr');
+			let tds = obj.tr.split(';');
+			tds.forEach( data => {
+				let td = document.createElement('td'); 
+				
+				switch( data ){
+					case 'R':
+					td.innerHTML = '<span class="oe-eye-lat-icons"><i class="oe-i laterality R small pad"></i><i class="oe-i laterality NA small pad"></i></span>';
+					break;
+					case 'L':
+					td.innerHTML ='<span class="oe-eye-lat-icons"><i class="oe-i laterality NA small pad"></i><i class="oe-i laterality L small pad"></i></span>';
+					break;
+					case "B":
+					td.innerHTML ='<span class="oe-eye-lat-icons"><i class="oe-i laterality R small pad"></i><i class="oe-i laterality L small pad"></i></span>';
+					break;
+					
+					default: td.innerHTML = data;
+				}
+				
+				tr.appendChild(td);
+			});
+			fragment.appendChild(tr);
+		});
 		
-		
+		return fragment;
 	}
+	
 	
 }
 /**
