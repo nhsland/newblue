@@ -38,6 +38,13 @@
 		height: 32px;    // tab is 38px
 	}
 	
+	// add primarily for + buttons
+	// in 9 positions as I need a more "square" button
+	&.thin {
+		padding: 0 3px;
+	}
+	
+	
 	// PRO theme 
 	// For individual styling of butons when in Classic theme	
 	&.pro-theme {

@@ -62,6 +62,10 @@ strong, b {
 .tabspace {
 	display:inline-block;
 	width:25px;	
+	&.double {
+		width:50px;
+	}
+	
 }
 
 

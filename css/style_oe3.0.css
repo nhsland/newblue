@@ -796,6 +796,10 @@ strong, b {
   width: 25px;
 }
 
+.tabspace.double {
+  width: 50px;
+}
+
 .highlighter {
   background: rgba(255, 230, 172, 0.7);
   color: black;
@@ -905,6 +909,10 @@ button, .button, input[type="submit"] {
 button.large, .button.large, input[type="submit"].large {
   padding: 0 12px;
   height: 32px;
+}
+
+button.thin, .button.thin, input[type="submit"].thin {
+  padding: 0 3px;
 }
 
 button.pro-theme, .button.pro-theme, input[type="submit"].pro-theme {
@@ -6755,17 +6763,17 @@ ul.management-summaries li h6 {
   border-radius: 5px;
 }
 
-.main-event .element table.nine-positions.v1-layout td {
+.main-event .element table.nine-positions td {
   position: relative;
 }
 
-.main-event .element table.nine-positions.v1-layout td .ninepositions-look-value {
+.main-event .element table.nine-positions td .ninepositions-look-value {
   width: 60px;
   position: relative;
   left: -8px;
 }
 
-.main-event .element table.nine-positions.v1-layout td .js-add-select-search {
+.main-event .element table.nine-positions td .js-add-select-search {
   position: absolute;
   bottom: 17px;
   right: 0;
@@ -6774,10 +6782,6 @@ ul.management-summaries li h6 {
 
 .main-event .element .eyedraw-controls {
   margin: 10px 0;
-}
-
-.main-event .element .ninepos-ed-controls-spacer {
-  width: 50px;
 }
 
 .oe-sem-no-events {

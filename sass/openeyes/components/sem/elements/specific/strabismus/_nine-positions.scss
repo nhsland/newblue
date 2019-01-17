@@ -78,11 +78,7 @@
 			.ed-ninepos-canvas {
 				border-radius:5px; // a touch! to bring inline with ED view UI
 			}
-		
-		}
-		
-		// quick layout for individual editing.
-		table.nine-positions.v1-layout {
+			
 			td {
 				
 				.ninepositions-look-value {
@@ -100,24 +96,13 @@
 					padding: 0 3px;
 				}
 			}
-			
-		}
 		
+		}
 		
 		// eyedraw-controls
 		.eyedraw-controls {
 			margin:10px 0;
 		}
-		
-		// using flex to layout ed controls 
-		// useing a spacer to space them better
-		.ninepos-ed-controls-spacer {
-			width:50px;
-		}
-	
-		
-		
-		
 			
 	}
 }
