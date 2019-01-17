@@ -9924,6 +9924,482 @@ table.oe-clinic-list td.center {
   text-align: center;
 }
 
+/* V2 OLD CSS */
+.dashboard-container select {
+  font-family: inherit;
+  background-color: transparent;
+  width: 100%;
+  padding: 4px 0;
+  font-size: 16px;
+  color: inherit;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0, 0.12);
+}
+
+.dashboard-container select:focus {
+  outline: none;
+}
+
+.dashboard-container .mdl-selectfield select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.dashboard-container .mdl-selectfield {
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  position: relative;
+}
+
+.dashboard-container .mdl-selectfield select:after {
+  position: absolute;
+  top: 0.75em;
+  right: 0.5em;
+  /* Styling the down arrow */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: .25em solid transparent;
+  border-right: .25em solid transparent;
+  border-top: 0.375em solid rgba(0,0,0, 0.12);
+  pointer-events: none;
+}
+
+.dashboard-container .ui-datepicker {
+  padding: 0;
+  border: none;
+  -webkit-box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24);
+          box-shadow: 0 12px 36px 16px rgba(0, 0, 0, 0.24);
+  width: 295px !important;
+  font-family: 'Roboto','Helvetica','Arial',sans-serif;
+  z-index: 10;
+  background-color: white;
+}
+
+.dashboard-container .ui-corner-all {
+  border-radius: 0;
+}
+
+.dashboard-container .ui-widget-header {
+  border: 0;
+}
+
+.dashboard-container .ui-datepicker-header {
+  text-align: center;
+  background: white;
+  padding-bottom: 15px;
+  font-weight: 300;
+}
+
+.dashboard-container .ui-datepicker-header .ui-datepicker-prev,
+.dashboard-container .ui-datepicker-header .ui-datepicker-next,
+.dashboard-container .ui-datepicker-header .ui-datepicker-title {
+  border: none;
+  outline: none;
+  margin: 5px;
+}
+
+.dashboard-container .ui-datepicker-header .ui-datepicker-prev,
+.dashboard-container .ui-datepicker-header .ui-datepicker-next {
+  cursor: pointer;
+  color: #3f51b5;
+}
+
+.dashboard-container .ui-datepicker-prev.ui-state-hover,
+.dashboard-container .ui-datepicker-next.ui-state-hover {
+  border: none;
+  outline: none;
+}
+
+.dashboard-container .ui-datepicker-calendar .ui-state-default {
+  background: none;
+  border: none;
+  text-align: center;
+  height: 33px;
+  width: 33px;
+  line-height: 36px;
+}
+
+.dashboard-container .ui-datepicker-calendar .ui-state-highlight {
+  color: #3f51b5;
+}
+
+.dashboard-container .ui-datepicker-calendar .ui-state-active {
+  border-radius: 50%;
+  background-color: #3f51b5;
+  color: white;
+}
+
+.dashboard-container .ui-datepicker-calendar thead th {
+  color: #999999;
+  font-weight: 400;
+}
+
+.dashboard-container .ui-datepicker-calendar a {
+  color: #757575;
+  padding: 0;
+}
+
+.dashboard-container .ui-datepicker-buttonpane {
+  border: none;
+}
+
+.dashboard-container .ui-datepicker-buttonpane .ui-state-default {
+  background: white;
+  border: none;
+}
+
+.dashboard-container .ui-datepicker-buttonpane .ui-datepicker-close,
+.dashboard-container .ui-datepicker-buttonpane .ui-datepicker-current {
+  background: white;
+  color: #3f51b5;
+  text-transform: uppercase;
+  border: none;
+  opacity: 1;
+  font-weight: 200;
+  outline: none;
+}
+
+.dashboard-container .ui-datepicker-buttonpane .ui-datepicker-close:hover,
+.dashboard-container .ui-datepicker-buttonpane .ui-datepicker-current:hover {
+  background: #f7f8fc;
+}
+
+.dashboard-container .drawer {
+  border: none;
+}
+
+.dashboard-container .drawer .mdl-navigation .mdl-navigation__link {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.56);
+  font-weight: 500;
+}
+
+.dashboard-container .drawer .mdl-navigation .mdl-navigation__link:hover {
+  background-color: #00BCD4;
+  color: #37474F;
+}
+
+.dashboard-container .drawer .mdl-navigation .mdl-navigation__link i {
+  margin-right: 25px;
+}
+
+.dashboard-container .mdl-layout--fixed-drawer > .mdl-layout__content {
+  margin-left: 0;
+}
+
+.dashboard-container .mdl-layout--fixed-drawer.is-upgraded:not(.is-small-screen) > .mdl-layout__header {
+  margin-left: 0;
+  width: 100%;
+}
+
+.dashboard-container .mdl-layout__header-row {
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .dashboard-container .mdl-layout__header-row {
+    padding: 5px;
+  }
+}
+
+.dashboard-container .mdl-layout__header-row > * {
+  width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+  .dashboard-container .mdl-layout__header-row > * {
+    width: auto;
+  }
+}
+
+.dashboard-container .mdl-layout__header-row #search-form {
+  margin-bottom: 5px;
+}
+
+.dashboard-container .mdl-layout__header-row #search-form div {
+  width: 100%;
+}
+
+@media screen and (min-width: 700px) {
+  .dashboard-container .mdl-layout__header-row #search-form div {
+    width: auto;
+  }
+}
+
+.dashboard-container .mdl-layout__header-row #search-form div #from-date, .dashboard-container .mdl-layout__header-row #search-form div #to-date {
+  position: relative;
+  z-index: 50;
+}
+
+.dashboard-container .mdl-layout__header-row #export {
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.dashboard-container .mdl-layout__content {
+  height: calc(100% - 64px);
+}
+
+.dashboard-container .mdl-layout__content #dash-grid {
+  height: calc(100% - 64px);
+}
+
+.dashboard-container .mdl-layout__content #dash-grid .mdl-cell {
+  background-color: white;
+  padding: 0;
+  min-height: 350px;
+  height: 50%;
+  overflow: hidden;
+}
+
+.dashboard-container .mdl-layout__content #dash-grid .highcharts-xaxis-labels text, .dashboard-container .mdl-layout__content #dash-grid .highcharts-yaxis-labels text {
+  font-size: 0.8em !important;
+}
+
+.dashboard-container .report-container {
+  position: relative;
+  height: 100%;
+}
+
+.dashboard-container .report-container .search-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.dashboard-container .report-container .search-icon:after {
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-size: 0.7em;
+  line-height: 1.5em;
+  vertical-align: top;
+  content: 'Search';
+  -webkit-transition: width 1s;
+  transition: width 1s;
+  width: 0;
+  display: inline-block;
+}
+
+.dashboard-container .report-container .search-icon:hover:after {
+  width: 55px;
+}
+
+.dashboard-container .report-container > div {
+  height: 100%;
+}
+
+.dashboard-container .report-container .report-search {
+  height: 0;
+  overflow: hidden;
+}
+
+.dashboard-container .report-container .report-search fieldset {
+  width: 60%;
+  margin: auto;
+}
+
+.dashboard-container .report-container .report-search fieldset div {
+  margin: 20px;
+}
+
+.dashboard-container .report-container .report-search fieldset div.checkbox-select {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.dashboard-container .report-container .report-search fieldset div .mdl-radio {
+  margin-right: 20px;
+}
+
+.dashboard-container .report-container .report-search fieldset div button[type="submit"] {
+  float: right;
+}
+
+.dashboard-container .report-container .chart-container {
+  z-index: 5;
+}
+
+.dashboard-container .mdl-layout__content #dash-grid .mdl-cell-top {
+  background-color: white;
+  padding: 0;
+  min-height: 430px;
+  height: 70%;
+  overflow: hidden;
+}
+
+.dashboard-container .mdl-layout__content #dash-grid .mdl-cell-bottom {
+  background-color: white;
+  padding: 0;
+  min-height: 300px;
+  height: 30%;
+  overflow: hidden;
+}
+
+.dashboard-container .mdl-layout__content #dash-grid .mdl-cell-top-right {
+  background-color: white;
+  padding: 0;
+  min-height: 427px;
+  height: 70%;
+  overflow: hidden;
+}
+
+.dashboard-container .mdl-layout__content #dash-grid .mdl-cell-bottom-right {
+  background-color: white;
+  padding: 0;
+  min-height: 300px;
+  height: 30%;
+  width: 85%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.dashboard-container .mdl-tabs__tab-bar {
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  border-bottom: 1px solid #e0e0e0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 23px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-container .mdl-tabs__tab {
+  border: medium none;
+  color: rgba(0, 0, 0, 0.54);
+  display: block;
+  float: left;
+  font-size: 14px;
+  font-weight: 500;
+  height: 23px;
+  line-height: 23px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0 24px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.dashboard-container .mdl-layout__content #dash-grid .mdl-cell-side {
+  background-color: white;
+  padding: 0;
+  min-height: 700px;
+  height: 100%;
+}
+
+.dashboard-container .nhs-number {
+  background-color: #107ebd;
+  background-image: url("../img/_elements/icons/nhs_tiny.png");
+  background-position: left center;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  color: white;
+  display: inline-block;
+  padding: 2px 3px 1px 33px;
+}
+
+.dashboard-container .patient-details {
+  clear: both;
+  display: block;
+  padding: 10px;
+}
+
+.dashboard-container .openeyes-logo {
+  display: block;
+  float: left;
+}
+
+.dashboard-container .vfthumbnail {
+  width: 100%;
+}
+
+.dashboard-container .vfthumbnail-hidden {
+  width: 100%;
+  display: none;
+}
+
+.dashboard-container .octimage-hidden {
+  display: none;
+}
+
+.dashboard-container .regression_chart {
+  width: 100%;
+  display: block;
+}
+
+.dashboard-container .left-side {
+  display: block;
+  float: right;
+  width: 50%;
+}
+
+.dashboard-container .right-side {
+  display: block;
+  float: left;
+  width: 50%;
+}
+
+.dashboard-container .side-title {
+  text-align: center;
+  font-weight: bold;
+  display: block;
+}
+
+.dashboard-container .vfimage {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.dashboard-container .kowaimage {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.dashboard-container .vfcolorplot {
+  width: 55%;
+  margin: 0 auto;
+}
+
+.dashboard-container .colorplot-hover {
+  border: 1px solid black;
+}
+
+.dashboard-container .oescape-images {
+  background: white;
+  height: calc(100% - 23px);
+}
+
+.dashboard-container .header-icon {
+  font-size: 32px;
+}
+
 /* ------------------------ */
 /* ------ 3rd party ------- */
 /* Pick me up */
