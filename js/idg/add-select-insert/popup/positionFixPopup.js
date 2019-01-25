@@ -13,21 +13,18 @@ idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
 	let h = document.documentElement.clientHeight;
 	
 	// check popup doesn't go off the top of the screen 
-	// and don't overlay Logo or Patient Name
+	// and don't overlay Logo! or Patient Name
 	let posH = (h - btnPos.bottom);
-	if(h - posH < 310){
-		posH = h - 315;
+	if(h - posH < 325){
+		posH = h - 325;
 	}
+
+	// is popup pushing off the left
+	let leftSideEdge = btnPos.right - this.$popup.width();
+	let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
+
+	this.$popup.css(	{	"bottom": posH + 'px',
+							"right": (w - btnPos.right) + adjustRight + 'px' });
 	
-	// set CSS Fixed position appropriately:
-	if( btnPos.left < 310 ){
-		this.$popup.css(	{	"bottom": posH,
-								"right": "auto",
-								"left": (btnPos.left) });
-	} else {
-		
-		this.$popup.css(	{	"bottom": posH,
-								"right": (w - btnPos.right) });
-	}
 
 }

@@ -10,7 +10,7 @@
 	
 	// All options lists <ul>:
 	.add-options{
-		max-height:$oe-add-insert-popup-height + 20;		// limit the displayed results (based on 9 positions to show all options without scroll!)  
+		height:$oe-add-insert-popup-height + 20;		// fix height (based on 0-9, shows all options without scroll!)  
 		overflow-y: auto;
 		margin:0 2px 0 0;
 		max-width: 500px; 		// Meds can be really long

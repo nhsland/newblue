@@ -210,7 +210,7 @@ idg.pathSteps = {
 				*/
 				switch( stepData.status ){
 					case "done":
-						$status.text('Done: 09:20');
+						$status.text('HCA: F. Nightingale - 09:20');
 						$status.addClass('step-status green');
 					break;
 					case "todo":

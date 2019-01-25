@@ -5,17 +5,26 @@ List Options Constructor
 idg.addSelectInsert.ListOption = function ( $li, optionList ){
 	
 	const _value = $li.data('insert').value;	
-	const dependents = new idg.addSelectInsert.OptionDependents( $li.data('insert').dependents, optionList.uniqueId );
 	let _selected = $li.hasClass('selected') ? true : false; // check not setup to be selected:
 	
+	/*
+	Does list have any dependency lists?
+	*/
+	let dependentsData = $li.data('insert').dependents;
+	let dependents = false;
+	if( dependentsData !== undefined ){
+		// build dependents
+		dependents = new idg.addSelectInsert.OptionDependents( dependentsData , optionList.uniqueId );
+	}
+
 	/*
 	Methods
 	*/ 
 	this.click = function(){
 		this.toggleState();
 		optionList.optionClicked( _selected, this );
-		
-		if(dependents !== false){
+
+		if(dependents != false){
 			dependents.show( _selected );
 		}
 		

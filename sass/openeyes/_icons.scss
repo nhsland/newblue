@@ -144,6 +144,7 @@
 	&.direction-left 	{ @include oe3-icons('direction-left'); }
 	&.direction-up 		{ @include oe3-icons('direction-up'); }
 	&.direction-down 	{ @include oe3-icons('direction-down'); }
+	&.direction-horizontal 	{ @include oe3-icons('direction-horizontal'); }
 	&.direction-right-circle 	{ @include oe3-icons('direction-right-circle'); }
 	&.direction-left-circle 	{ @include oe3-icons('direction-left-circle'); }
 	&.direction-up-circle 		{ @include oe3-icons('direction-up-circle'); }
@@ -174,7 +175,9 @@
 	&.increase-height 	{ @include oe3-icons('increase-height'); }
 	&.increase-height-orange 	{ @include oe3-icons('increase-height-orange'); }
 	&.downup 			{ @include oe3-icons('downup'); }
-	&.history 			{ @include oe3-icons('history'); }
+	&.history 			{ @include oe3-icons('rotate-left'); }
+	&.rotate-left 		{ @include oe3-icons('rotate-left'); }	// added a rotate right (made 'history' more descriptive but kept support)
+	&.rotate-right 		{ @include oe3-icons('rotate-right'); }
 	&.tick 				{ @include oe3-icons('tick'); }
 	&.triangle			{ @include oe3-icons('triangle'); }
 	&.time 				{ @include oe3-icons('time'); }

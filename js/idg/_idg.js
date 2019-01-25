@@ -110,7 +110,9 @@ idg.init = function(){
 	// Worklist PSD / PSG					
 	idg.overlayPopup( 	'#js-idg-worklist-ps-add',  			// VA in Exam
 						'worklist-PS.php', 						// Demo content
-						'.close-icon-btn' );				// wraps remove icon					
+						'.close-icon-btn' );				// wraps remove icon
+						
+					
 											
 									
 	// IDG demo some interaction

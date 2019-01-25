@@ -110,7 +110,9 @@ idg.init = function(){
 	// Worklist PSD / PSG					
 	idg.overlayPopup( 	'#js-idg-worklist-ps-add',  			// VA in Exam
 						'worklist-PS.php', 						// Demo content
-						'.close-icon-btn' );				// wraps remove icon					
+						'.close-icon-btn' );				// wraps remove icon
+						
+					
 											
 									
 	// IDG demo some interaction
@@ -3508,7 +3510,7 @@ idg.pathSteps = {
 				*/
 				switch( stepData.status ){
 					case "done":
-						$status.text('Done: 09:20');
+						$status.text('HCA: F. Nightingale - 09:20');
 						$status.addClass('step-status green');
 					break;
 					case "todo":
@@ -3784,7 +3786,7 @@ find list ID: 	"add-to-{uniqueID}-list{n}";
 */
 
 idg.addSelectInsert.OptionDependents = function( dependents, listId ){
-	
+
 	if(dependents === undefined)  return false;
 	
 	/*
@@ -3792,18 +3794,27 @@ idg.addSelectInsert.OptionDependents = function( dependents, listId ){
 	*/
 	let extraListOptions = [];
 	let idPrefix = "#add-to-" + listId + "-";
+	let showDefaultText = false;
 	
 	dependents.split(',').forEach( group => {
 
 		let findIDs = group.split('.');
 		let obj = {};
 		obj.$group 	= $(idPrefix + 'listgroup'+findIDs[0] ); 		// <div> wrapper for optional lists
-		obj.$list1	= $(idPrefix + 'list'+findIDs[1] ); 			// the list to show
-		
-		if(findIDs.length == 3){
-			obj.$list2	= $(idPrefix + 'list'+findIDs[2] ); 			// the list to show
+		obj.$list1 = null;
+		obj.$list2 = null;
+		/*
+		if list == 0, reset to default placeholderText	
+		*/
+	
+		if( findIDs[1] == 0 ){
+			showDefaultText = true;
 		} else {
-			obj.$list2 = null;
+			obj.$list1	= $(idPrefix + 'list'+findIDs[1] ); 			// the list to show
+			// allow for 2 lists options
+			if(findIDs.length == 3){
+				obj.$list2	= $(idPrefix + 'list'+findIDs[2] ); 	    // the second list to show
+			} 
 		}
 		
 		obj.$holder = obj.$group.find('.optional-placeholder'); // default placeholder for Optional Lists
@@ -3815,7 +3826,7 @@ idg.addSelectInsert.OptionDependents = function( dependents, listId ){
 	Methods
 	*/
 	this.show = function( show ){
-		if(show){
+		if(show && showDefaultText == false){
 			this.showLists();
 		} else {
 			this.reset();
@@ -3851,17 +3862,26 @@ List Options Constructor
 idg.addSelectInsert.ListOption = function ( $li, optionList ){
 	
 	const _value = $li.data('insert').value;	
-	const dependents = new idg.addSelectInsert.OptionDependents( $li.data('insert').dependents, optionList.uniqueId );
 	let _selected = $li.hasClass('selected') ? true : false; // check not setup to be selected:
 	
+	/*
+	Does list have any dependency lists?
+	*/
+	let dependentsData = $li.data('insert').dependents;
+	let dependents = false;
+	if( dependentsData !== undefined ){
+		// build dependents
+		dependents = new idg.addSelectInsert.OptionDependents( dependentsData , optionList.uniqueId );
+	}
+
 	/*
 	Methods
 	*/ 
 	this.click = function(){
 		this.toggleState();
 		optionList.optionClicked( _selected, this );
-		
-		if(dependents !== false){
+
+		if(dependents != false){
 			dependents.show( _selected );
 		}
 		
@@ -4089,21 +4109,18 @@ idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
 	let h = document.documentElement.clientHeight;
 	
 	// check popup doesn't go off the top of the screen 
-	// and don't overlay Logo or Patient Name
+	// and don't overlay Logo! or Patient Name
 	let posH = (h - btnPos.bottom);
-	if(h - posH < 310){
-		posH = h - 315;
+	if(h - posH < 325){
+		posH = h - 325;
 	}
+
+	// is popup pushing off the left
+	let leftSideEdge = btnPos.right - this.$popup.width();
+	let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
+
+	this.$popup.css(	{	"bottom": posH + 'px',
+							"right": (w - btnPos.right) + adjustRight + 'px' });
 	
-	// set CSS Fixed position appropriately:
-	if( btnPos.left < 310 ){
-		this.$popup.css(	{	"bottom": posH,
-								"right": "auto",
-								"left": (btnPos.left) });
-	} else {
-		
-		this.$popup.css(	{	"bottom": posH,
-								"right": (w - btnPos.right) });
-	}
 
 }

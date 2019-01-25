@@ -1693,7 +1693,7 @@ select.fixed-width {
 }
 
 .oe-add-select-search .add-options {
-  max-height: 224px;
+  height: 224px;
   overflow-y: auto;
   margin: 0 2px 0 0;
   max-width: 500px;
@@ -1789,6 +1789,8 @@ select.fixed-width {
   padding: 15px 10px 45px 15px;
   width: 320px;
   border-radius: 3px;
+  -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
   font-size: 0.75rem;
   color: #d6d6d6;
 }
@@ -2109,6 +2111,14 @@ select.fixed-width {
   background-image: url("../svg/in-css/icons/direction-down.svg");
 }
 
+.oe-i.direction-horizontal {
+  background-image: url("../svg/in-css/icons/direction-horizontal.svg");
+}
+
+.oe-i.direction-horizontal.pro-theme {
+  background-image: url("../svg/in-css/icons/direction-horizontal.svg");
+}
+
 .oe-i.direction-right-circle {
   background-image: url("../svg/in-css/icons/direction-right-circle.svg");
 }
@@ -2350,11 +2360,27 @@ select.fixed-width {
 }
 
 .oe-i.history {
-  background-image: url("../svg/in-css/icons/history.svg");
+  background-image: url("../svg/in-css/icons/rotate-left.svg");
 }
 
 .oe-i.history.pro-theme {
-  background-image: url("../svg/in-css/icons/history.svg");
+  background-image: url("../svg/in-css/icons/rotate-left.svg");
+}
+
+.oe-i.rotate-left {
+  background-image: url("../svg/in-css/icons/rotate-left.svg");
+}
+
+.oe-i.rotate-left.pro-theme {
+  background-image: url("../svg/in-css/icons/rotate-left.svg");
+}
+
+.oe-i.rotate-right {
+  background-image: url("../svg/in-css/icons/rotate-right.svg");
+}
+
+.oe-i.rotate-right.pro-theme {
+  background-image: url("../svg/in-css/icons/rotate-right.svg");
 }
 
 .oe-i.tick {
@@ -4463,7 +4489,7 @@ ul.management-summaries li h6 {
   top: 100px;
   left: 100px;
   padding: 10px 5px 10px 10px;
-  width: 465px;
+  width: 500px;
   border: 1px solid rgba(214, 214, 214, 0.5);
   background: #374755;
   color: #d6d6d6;
@@ -6773,7 +6799,7 @@ ul.management-summaries li h6 {
   left: -8px;
 }
 
-.main-event .element table.nine-positions td .js-add-select-search {
+.main-event .element table.nine-positions td button.green {
   position: absolute;
   bottom: 17px;
   right: 0;
@@ -6782,6 +6808,49 @@ ul.management-summaries li h6 {
 
 .main-event .element .eyedraw-controls {
   margin: 10px 0;
+}
+
+.main-event .element table.nystagmus {
+  width: 100%;
+}
+
+.main-event .element table.nystagmus td:last-child {
+  text-align: center;
+}
+
+.main-event .element table.nystagmus td .nysta-graphic {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.main-event .element table.nystagmus td .nysta-graphic .nysta-text {
+  font-size: 0.625rem;
+}
+
+.main-event .element table.nystagmus td .nysta-graphic .nysta-h-arrow {
+  width: 60px;
+  height: 12px;
+  background-size: 60px 12px;
+  background-image: url("../svg/in-css/nystagmus/arrow-h-3.pro.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.main-event .element table.nystagmus td .nysta-graphic .nysta-h-arrow.amp1 {
+  background-image: url("../svg/in-css/nystagmus/arrow-h-1.pro.svg");
+}
+
+.main-event .element table.nystagmus td .nysta-graphic .nysta-h-arrow.amp2 {
+  background-image: url("../svg/in-css/nystagmus/arrow-h-2.pro.svg");
+}
+
+.main-event .element table.nystagmus td .nysta-graphic .nysta-h-arrow.amp3 {
+  background-image: url("../svg/in-css/nystagmus/arrow-h-3.pro.svg");
+}
+
+.main-event .element table.nystagmus td .nysta-graphic .nysta-h-arrow.to-left {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 .oe-sem-no-events {
@@ -7346,7 +7415,7 @@ ul.management-summaries li h6 {
   margin-top: 4px;
 }
 
-canvas.ed-canvas-edit {
+canvas.ed-canvas-edit, img.ed-canvas-edit {
   background: #dae6f1;
   border: 1px solid #aeb8c1;
   cursor: pointer;
@@ -7354,17 +7423,21 @@ canvas.ed-canvas-edit {
   z-index: 20;
 }
 
-canvas.ed-canvas-edit.secondary {
+canvas.ed-canvas-edit.secondary, img.ed-canvas-edit.secondary {
   z-index: auto;
 }
 
-canvas.ed-canvas-display {
+canvas.ed-canvas-edit.rounded, img.ed-canvas-edit.rounded {
+  border-radius: 5px;
+}
+
+canvas.ed-canvas-display, img.ed-canvas-display {
   cursor: auto;
   position: relative;
   z-index: 20;
 }
 
-canvas.ed-canvas-edit:focus, canvas.ed-canvas-display:focus {
+canvas.ed-canvas-edit:focus, canvas.ed-canvas-display:focus, img.ed-canvas-edit:focus, img.ed-canvas-display:focus {
   outline: none;
 }
 

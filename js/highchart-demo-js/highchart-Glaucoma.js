@@ -110,7 +110,7 @@ var optionsMeds = {
 		]
 	};
 	
-var optionsIOP = {
+var optionsSquint = {
         chart: {
             height:300,
             marginRight: marginRight,			// plot to chart edge (align right side)

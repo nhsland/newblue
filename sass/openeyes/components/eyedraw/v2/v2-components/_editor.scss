@@ -45,7 +45,9 @@
 	margin-top: 4px;
 }
 
-canvas {
+// <img> on IDG is place holder for <canvas>
+// but style it in the same way... for demoing
+canvas, img {
 	// Canvas element in edit mode
 	&.ed-canvas-edit {
 		background: $oe-ed-bg;
@@ -56,6 +58,12 @@ canvas {
 		&.secondary {
 			z-index: auto;
 		}
+		
+		// bring in line with VIEW in v3:
+		&.rounded {
+			border-radius: 5px;
+		}
+		
 	}
 	// Canvas element in display mode
 	&.ed-canvas-display {

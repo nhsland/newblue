@@ -7,7 +7,7 @@ find list ID: 	"add-to-{uniqueID}-list{n}";
 */
 
 idg.addSelectInsert.OptionDependents = function( dependents, listId ){
-	
+
 	if(dependents === undefined)  return false;
 	
 	/*
@@ -15,18 +15,27 @@ idg.addSelectInsert.OptionDependents = function( dependents, listId ){
 	*/
 	let extraListOptions = [];
 	let idPrefix = "#add-to-" + listId + "-";
+	let showDefaultText = false;
 	
 	dependents.split(',').forEach( group => {
 
 		let findIDs = group.split('.');
 		let obj = {};
 		obj.$group 	= $(idPrefix + 'listgroup'+findIDs[0] ); 		// <div> wrapper for optional lists
-		obj.$list1	= $(idPrefix + 'list'+findIDs[1] ); 			// the list to show
-		
-		if(findIDs.length == 3){
-			obj.$list2	= $(idPrefix + 'list'+findIDs[2] ); 			// the list to show
+		obj.$list1 = null;
+		obj.$list2 = null;
+		/*
+		if list == 0, reset to default placeholderText	
+		*/
+	
+		if( findIDs[1] == 0 ){
+			showDefaultText = true;
 		} else {
-			obj.$list2 = null;
+			obj.$list1	= $(idPrefix + 'list'+findIDs[1] ); 			// the list to show
+			// allow for 2 lists options
+			if(findIDs.length == 3){
+				obj.$list2	= $(idPrefix + 'list'+findIDs[2] ); 	    // the second list to show
+			} 
 		}
 		
 		obj.$holder = obj.$group.find('.optional-placeholder'); // default placeholder for Optional Lists
@@ -38,7 +47,7 @@ idg.addSelectInsert.OptionDependents = function( dependents, listId ){
 	Methods
 	*/
 	this.show = function( show ){
-		if(show){
+		if(show && showDefaultText == false){
 			this.showLists();
 		} else {
 			this.reset();
