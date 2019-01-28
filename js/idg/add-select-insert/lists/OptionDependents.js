@@ -1,5 +1,5 @@
 /*
-List has extra Lists
+Optional Lists based on List selection
 find group ID: 	"add-to-{uniqueID}-listgroup{n}";
 find list ID: 	"add-to-{uniqueID}-list{n}";
 
@@ -13,33 +13,40 @@ idg.addSelectInsert.OptionDependents = function( dependents, listId ){
 	/*
 	List has extra list options	
 	*/
-	let extraListOptions = [];
-	let idPrefix = "#add-to-" + listId + "-";
-	let showDefaultText = false;
+	const idPrefix = "#add-to-" + listId + "-";
+	let groups = [];
 	
+	/*
+	Can be mulitple list groups.
+	Check string for commas "2.1,2.2" for groups
+	*/
 	dependents.split(',').forEach( group => {
 
-		let findIDs = group.split('.');
+		let ids = group.split('.');
 		let obj = {};
-		obj.$group 	= $(idPrefix + 'listgroup'+findIDs[0] ); 		// <div> wrapper for optional lists
-		obj.$list1 = null;
-		obj.$list2 = null;
+		// find group
+		obj.$group 	= $(idPrefix + 'listgroup'+ids[0] ); 		// <div> wrapper for optional lists
+		obj.$holder = obj.$group.find('.optional-placeholder'); // default placeholder for Optional Lists
+
 		/*
-		if list == 0, reset to default placeholderText	
+		Does it have lists, or show default text?
+		e.g. 2.0
 		*/
-	
-		if( findIDs[1] == 0 ){
-			showDefaultText = true;
+		if( ids[1] == 0 ){
+			obj.showDefaultText = true;
 		} else {
-			obj.$list1	= $(idPrefix + 'list'+findIDs[1] ); 			// the list to show
-			// allow for 2 lists options
-			if(findIDs.length == 3){
-				obj.$list2	= $(idPrefix + 'list'+findIDs[2] ); 	    // the second list to show
-			} 
+			obj.showDefaultText = false;
+			/*
+			Loop through option lists required
+			e.g. 2.4.5 (two lists in group '2')
+			*/
+			obj.lists = [];
+			for(let i=1;i<ids.length;i++ ){
+				obj.lists.push( $(idPrefix + 'list'+ids[ i ] ) )
+			}
 		}
 		
-		obj.$holder = obj.$group.find('.optional-placeholder'); // default placeholder for Optional Lists
-		extraListOptions.push( obj );
+		groups.push( obj );
 		
 	});
 
@@ -47,29 +54,46 @@ idg.addSelectInsert.OptionDependents = function( dependents, listId ){
 	Methods
 	*/
 	this.show = function( show ){
-		if(show && showDefaultText == false){
-			this.showLists();
+		if(show){
+			/*
+			hide ALL optional lists
+			$('#add-to-'+listId+' .optional-list').hide();
+			*/
+			this.myLists();
 		} else {
+			// unclick
 			this.reset();
 		}
 	}
 
-	this.showLists = function(){
-		extraListOptions.forEach( xtras => {
-			// in the group hide other lists:
-			xtras.$group.children('.optional-list').hide();
-			xtras.$holder.hide();
-			// show required Lists
-			xtras.$list1.show();
-			if(xtras.$list2 != null) xtras.$list2.show();
+	this.myLists = function(){
+
+		groups.forEach( group => {
+			/*
+			in group hide other lists
+			*/
+			group.$group.children('.optional-list').hide();
+			
+			if(group.showDefaultText){
+				group.$holder.show();
+			} else {
+				group.$holder.hide();
+				// show required Lists
+				group.lists.forEach( list => {
+					list.show();
+				});
+			}
+			
 		});
 	}
 	
-	// if Option is UNclicked need to reset the groups
+	/*
+	Reset (these!) groups!	
+	*/
 	this.reset = function(){
-		extraListOptions.forEach( xtras => {
-			xtras.$group.children('.optional-list').hide();
-			xtras.$holder.show();
+		groups.forEach( group => {
+			group.$group.children('.optional-list').hide();
+			group.$holder.show();
 		});
 	}	
 }
