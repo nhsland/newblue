@@ -20,7 +20,7 @@ idg.tooltips = function(){
 			// add, calculate height then show (remove 'hidden')
 			var tip = $( "<div></div>", {
 								"class": toolCSS,
-								"style":"position:fixed; left:"+leftPos+"px; top:0;"
+								"style":"left:"+leftPos+"px; top:0;"
 								});
 			// add the tip:
 			tip.text(text);

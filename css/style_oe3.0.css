@@ -1115,6 +1115,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 
 .oe-tooltip {
   z-index: 90;
+  position: fixed;
   width: 200px;
   padding: 8px 8px 4px 8px;
   border-bottom: 1px solid cyan;

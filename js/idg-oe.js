@@ -3664,7 +3664,7 @@ idg.tooltips = function(){
 			// add, calculate height then show (remove 'hidden')
 			var tip = $( "<div></div>", {
 								"class": toolCSS,
-								"style":"position:fixed; left:"+leftPos+"px; top:0;"
+								"style":"left:"+leftPos+"px; top:0;"
 								});
 			// add the tip:
 			tip.text(text);
@@ -3769,6 +3769,14 @@ idg.WorkListFilter = function(){
 	
 }
 
+/*
+Dirty demo to show data insertion into IDG Elements where required
+*/
+idg.addSelectInsert.updateElement = {
+	test:function( arr ){
+		idgTest.report( 'test insert' );
+	}
+}
 /*
 Optional Lists based on List selection
 find group ID: 	"add-to-{uniqueID}-listgroup{n}";
@@ -4139,13 +4147,4 @@ idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
 							"right": (w - btnPos.right) + adjustRight + 'px' });
 	
 
-}
-
-/*
-Dirty demo to show data insertion into IDG Elements where required
-*/
-idg.addSelectInsert.updateElement = {
-	test:function( arr ){
-		idgTest.report( 'test insert' );
-	}
 }
