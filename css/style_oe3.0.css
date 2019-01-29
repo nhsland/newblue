@@ -672,14 +672,14 @@ table.standard th, table.standard td {
 
 table.standard th.right, table.standard th.date, table.standard td.right, table.standard td.date {
   text-align: right;
-  padding-right: 10px;
+  padding-right: 12px;
 }
 
 table.standard thead th {
   color: #8c8c8c;
   font-size: 0.75rem;
   font-weight: 300;
-  padding: 0 10px 10px 0;
+  padding: 0 12px 12px 0;
 }
 
 table.standard thead th:first-child {
@@ -697,7 +697,7 @@ table.standard tbody tr:last-child {
 table.standard tbody td {
   color: #d6d6d6;
   font-weight: 400;
-  padding: 5px 10px 5px 0;
+  padding: 5px 12px 5px 0;
 }
 
 table.standard tbody td:first-child {
@@ -717,7 +717,7 @@ table.standard tfoot tr {
 }
 
 table.standard tfoot tr td {
-  padding: 5px 10px 5px 0;
+  padding: 5px 12px 5px 0;
 }
 
 table.standard tbody tr.clickable:hover, table.standard.clickable-rows tbody tr:hover, table.standard tbody tr.clickable:active, table.standard.clickable-rows tbody tr:active, table.standard tbody tr.clickable:focus, table.standard.clickable-rows tbody tr:focus {
@@ -6752,7 +6752,7 @@ ul.management-summaries li h6 {
   width: 175px;
 }
 
-.main-event .element table.nine-positions > tbody td {
+.main-event .element table.nine-positions > tbody > td {
   padding: 0;
   text-align: center;
 }
