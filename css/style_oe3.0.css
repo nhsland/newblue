@@ -6604,7 +6604,7 @@ ul.management-summaries li h6 {
 }
 
 .search-in-event {
-  z-index: 75;
+  z-index: 65;
   position: fixed;
   top: 98px;
   left: 200px;
