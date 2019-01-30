@@ -21,7 +21,7 @@ var spritesmith 	= require('gulp.spritesmith');
 // js
 var concat       	= require('gulp-concat');
 var uglify       	= require('gulp-uglify'); 
-var pump 			= require('pump');
+// var pump 			= require('pump');
 // files
 var rename 			= require('gulp-rename');
 var es 				= require('event-stream');
