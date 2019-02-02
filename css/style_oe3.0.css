@@ -438,11 +438,13 @@ html {
   top: 50%;
   right: 0;
   z-index: 9999;
-  background: #9b0000 url("../svg/in-css/icons/direction-right.svg") top 50% right 5px no-repeat;
-  background-size: 19px;
-  padding: 15px 30px 15px 10px;
+  -webkit-transform: rotate(90deg) translateY(-69px);
+          transform: rotate(90deg) translateY(-69px);
+  background: #9b0000 url("../svg/in-css/icons/direction-up.svg") top 50% right 5px no-repeat;
+  background-size: 15px;
+  padding: 5px 30px 5px 10px;
   color: white;
-  font-size: 0.75rem;
+  font-size: 0.625rem;
   font-weight: 400;
   display: none;
 }
@@ -5431,6 +5433,10 @@ ul.management-summaries li h6 {
   background-image: url("../svg/in-css/sidebar/tick.svg");
 }
 
+.sidebar .event .event-type.virtual-clinic {
+  background-image: url("../svg/in-css/sidebar/vc.svg");
+}
+
 .sidebar .event .event-extra {
   display: inline-block;
   width: 32px;
@@ -5494,6 +5500,9 @@ ul.management-summaries li h6 {
   color: #fff;
   margin: 2px 0 0 0;
   padding: 5px 5px 5px 25px;
+  /*
+			default state is for warning!	
+			*/
   background-position: left 5px top 4px;
   background-repeat: no-repeat;
   background-size: 13px;
@@ -5504,6 +5513,14 @@ ul.management-summaries li h6 {
 .sidebar .tooltip.quicklook .event-issue.ready {
   background-color: #0a6512;
   background-image: url("../svg/in-css/sidebar/tick.svg");
+}
+
+.sidebar .tooltip.quicklook .event-issue.virtual-clinic {
+  background-color: #ffb400;
+  background-image: none;
+  color: #000;
+  font-weight: 500;
+  padding-left: 10px;
 }
 
 .sidebar .list-controls {

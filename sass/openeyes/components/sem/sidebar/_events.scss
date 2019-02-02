@@ -32,6 +32,11 @@
 			&.ready {
 				background-image:url( svg-path('sidebar/tick') );
 			}
+			
+			// VC 
+			&.virtual-clinic {
+				background-image:url( svg-path('sidebar/vc') );
+			}
 		}
 		
 		// <span>

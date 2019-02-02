@@ -42,6 +42,9 @@
 			margin:2px 0 0 0;
 			padding: 5px 5px 5px 25px;
 			
+			/*
+			default state is for warning!	
+			*/
 			background-position:left 5px top 4px;
 			background-repeat: no-repeat;
 			background-size:$oe-sidebar-event-height - 6px;
@@ -51,6 +54,14 @@
 			&.ready {
 				background-color:$oe-btn-green-hint;
 				background-image:url( svg-path('sidebar/tick') );
+			}
+			
+			&.virtual-clinic {
+				background-color:$oe-vc-orange;
+				background-image: none;
+				color:#000;	
+				font-weight:500;
+				padding-left:10px;
 			}
 	  	  
 	}
