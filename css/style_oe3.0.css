@@ -4132,6 +4132,44 @@ ul.management-summaries li h6 {
   float: left;
 }
 
+table.appointments {
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+
+table.appointments tbody tr {
+  border-top: 1px dotted rgba(204, 204, 255, 0.2);
+}
+
+table.appointments tbody td {
+  color: #d6d6d6;
+  font-size: 0.6875rem;
+  padding: 6px 3px;
+  line-height: 1.4;
+}
+
+table.appointments tbody td:first-child {
+  font-size: 0.8125rem;
+  font-weight: 300;
+  padding-left: 0;
+}
+
+table.appointments tbody td:nth-child(2) {
+  padding-right: 8px;
+}
+
+table.appointments tbody td:last-child {
+  text-align: right;
+}
+
+.main-event .problems-plans .problems-plans-sortable li {
+  background: #172332;
+}
+
+.main-event .problems-plans .create-new-problem-plan {
+  background: #172332;
+}
+
 .problems-plans {
   padding: 0;
   margin: 0;
@@ -4180,7 +4218,7 @@ ul.management-summaries li h6 {
 }
 
 .problems-plans .create-new-problem-plan {
-  background: rgba(24, 37, 53, 0.8);
+  background: #182535;
   padding: 3px;
   margin: 3px 0 0 0;
 }
@@ -4188,10 +4226,10 @@ ul.management-summaries li h6 {
 .problems-plans .create-new-problem-plan input {
   font-size: 0.8125rem;
   font-weight: 400;
-  background: #182535;
+  color: #d6d6d6;
+  background: #121c28;
   padding: 5px;
   border-radius: 3px;
-  color: #d6d6d6;
   width: calc(100% - 38px);
 }
 

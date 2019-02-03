@@ -5,10 +5,28 @@
 // OE Problems and Plan
 // Sortable list of P & Ps
 
+
+// because of the new Overview page P & P is now used in 
+// a themeable area. need to style it to fit better in this scenario
+.main-event {
+	.problems-plans {
+		.problems-plans-sortable {
+			li {
+				background: $oe-blue-dark3; // not inverted in classic
+			}
+		}
+		.create-new-problem-plan {
+			background: $oe-blue-dark3; 	// not inverted in classic
+		}
+	}
+}
+
+
 .problems-plans {	
 	padding:0; 
 	margin:0;
 	
+
 	// <ul>
 	// list all the problems plans
 	.problems-plans-sortable {
@@ -53,20 +71,21 @@
 		}
 	}
 
-	// create a new one
+	// create a new P & P 
 	.create-new-problem-plan {
-		background:rgba($oe-pro-blue-dark,0.8);
+		background: $oe-pro-blue-dark;
 		padding:3px;
 		margin:3px 0 0 0;
 	
-		// js controlled input area
 		input { 
 			@include font-size(13);
 			font-weight: 400;
-			background: $oe-pro-blue-dark;
+			// this colour set up works across both themes
+			// check Overview, Patient Popup, Mini-overview?
+			color:$oe-pro-text;
+			background: shade($oe-blue-dark3,20);
 			padding:5px;
 			border-radius:3px;
-			color:$oe-pro-text;
 			width: calc(100% - 38px);
 		}
 	}
