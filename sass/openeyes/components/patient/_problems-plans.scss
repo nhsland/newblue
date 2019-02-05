@@ -4,19 +4,20 @@
 
 // OE Problems and Plan
 // Sortable list of P & Ps
+// used in: 
+// Patient Popups (PRO), 
+// Overview (themed)
 
-
-// because of the new Overview page P & P is now used in 
-// a themeable area. need to style it to fit better in this scenario
-.main-event {
+// Popup PRO
+.oe-patient-popup {
 	.problems-plans {
 		.problems-plans-sortable {
 			li {
-				background: $oe-blue-dark3; // not inverted in classic
+				background: $oe-pro-blue-dark;
 			}
 		}
 		.create-new-problem-plan {
-			background: $oe-blue-dark3; 	// not inverted in classic
+			background: $oe-pro-blue-dark; 	
 		}
 	}
 }
@@ -25,7 +26,6 @@
 .problems-plans {	
 	padding:0; 
 	margin:0;
-	
 
 	// <ul>
 	// list all the problems plans
@@ -38,9 +38,10 @@
 			width:100%;
 			padding:8px 65px 8px 5px; // allow for icons i & x 
 			margin:0 0 1px 0;
-			background: $oe-pro-blue-dark;
+			
 			@include font-size(12);
-			color:$oe-pro-text;
+			color:$oe-pro-text;			// fixed across themes
+			background: $oe-blue-dark3; // not inverted in classic
 
 			.drag-handle {
 				padding:0 3px;
@@ -60,20 +61,14 @@
 				top:8px;
 			}
 			
-			// this is HTML 'burger' character
-			.drag-handle {
-				color: rgba( #fff,0.3);
-				cursor:pointer;
-				&:hover, &:focus, &:active {
-					color:#fff;
-				}
-			}
+			// JS hook, wraps 'oe-i menu'
+			// .drag-handle {}
 		}
 	}
 
-	// create a new P & P 
+	// add a new P & P to the list
 	.create-new-problem-plan {
-		background: $oe-pro-blue-dark;
+		background: $oe-blue-dark3; // not inverted in classic	
 		padding:3px;
 		margin:3px 0 0 0;
 	
@@ -82,7 +77,7 @@
 			font-weight: 400;
 			// this colour set up works across both themes
 			// check Overview, Patient Popup, Mini-overview?
-			color:$oe-pro-text;
+			color:$oe-pro-text;						// fixed across themes
 			background: shade($oe-blue-dark3,20);
 			padding:5px;
 			border-radius:3px;

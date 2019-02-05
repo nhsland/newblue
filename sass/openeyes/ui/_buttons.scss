@@ -24,7 +24,7 @@
 	border-radius:0 !important; // weird border-radius bug fix
 	
 	@include font-size(12);
-	font-weight:400;
+	font-weight:$oe-font-medium;
 	color: $oe-text;
 	background: $oe-btn-default;
 	cursor: pointer;

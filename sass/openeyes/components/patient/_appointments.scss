@@ -2,10 +2,23 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Appointnments
+// OE Patient Appointnments
+// used in: 
+// Patient Popups (PRO), 
+// Overview (& maybe Mini Overview) themed
 
-// <table>
-table.appointments {
+// Popup PRO
+.oe-patient-popup {
+	table.patient-appointments {
+		td {
+			color:$oe-pro-text;
+		}
+	}
+}
+
+
+// set up as themeable
+table.patient-appointments {
 	width:100%;
 	margin:0 0 10px 0;
 
@@ -15,21 +28,13 @@ table.appointments {
 		}
 		
 		td {
-			color:$oe-pro-text;
-			@include font-size(11);
 			padding:6px 3px; 
+			
+			// overidden in main-event
+			@include font-size(11);
 			line-height:1.4;
 			
-			&:first-child {
-				@include font-size(13);
-				font-weight: 300;
-				padding-left:0;
-			}
-			
-			// date is appears to align right
-			&:nth-child(2){
-				padding-right:8px;
-			}
+			color:$oe-text; // themed
 			
 			// info icon
 			&:last-child {

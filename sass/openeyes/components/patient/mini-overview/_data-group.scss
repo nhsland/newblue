@@ -6,23 +6,32 @@
 .oe-patient-mini-overview {
 
 	.data-group {
-		// uses the same DOM as popups but they are pro-themed.
+		
+		// sub-headers 
+		h3 {
+			@include font-size(13);
+			font-weight: $oe-font-medium;
+			margin:8px 0 6px 0;
+		}
+		
+		// uses the same DOM as Quick Look Popup 
+		// but this IS themed (as in page)
 		// for use here it needs to change with the theme
 		.quicklook-data-groups {
 			color:$oe-text;
-			// in popup this is set to 33.3%
-			width:100%;
+			width:100%; 				// in popup this is set to 33.3% to create the 3 columns
 			
+			
+			// set up colours to be Theme-able:
 			.group {
-				background:$oe-blue-dark2;
+				background:$oe-blue-dark2;	 
 				.label { 
 					@include font-size(12);
 					padding:5px 9px;						
-			 		color: $oe-text-light; 
+			 		color: $oe-text-light; 	 
 				}
 			} 
 			
-			// theme text in tables
 			table {
 				th { 
 					color:$oe-text-light; 
@@ -33,7 +42,7 @@
 			}
 		}
 		
-		// provide data layout options
+		// provide a 2 column data layout option
 		// split assumes 2 quicklook-data-groups
 		&.split-data {
 			display:flex;
@@ -41,15 +50,9 @@
 			align-items:flex-start;
 			
 			> .quicklook-data-groups {
-				width:50%;
+				width:50%;					// create 2 column layout
 			}	
-		} 
-		
-		h3 {
-			@include font-size(12);
-			margin:8px 0 2px 0;
-		}
-		
+		} 	
 	}
 }
 

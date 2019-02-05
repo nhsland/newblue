@@ -1,0 +1,59 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Management Summaries
+// used in: 
+// Patient Popups (PRO), 
+// Overview (& maybe Mini Overview) themed
+
+// Popup PRO
+.oe-patient-popup {
+	table.management-summaries {
+		td {
+			color:$oe-pro-text;
+		}
+	}
+}
+
+// set up as themeable
+table.management-summaries {
+	width:100%;
+	margin:0 0 10px 0;
+
+	tbody {
+		tr {
+			border-top:1px dotted rgba( #ccf,0.2 );
+		}
+		
+		td {
+			color:$oe-text;
+			@include font-size(11);
+			padding:6px 3px; 
+			line-height:1.4;
+			
+			// summary title (old <h6>)
+			&:first-child {
+				@include font-size(12);
+				font-weight: $oe-font-light;
+				padding-left:0;
+				width:120px;
+			}
+			
+			// date is appears to align right
+			&:nth-child(2){
+				padding-right:8px;
+			}
+			
+			// info icon
+			&:last-child {
+				text-align:right;
+			}
+		}
+	}
+	
+}
+
+
+		
+
