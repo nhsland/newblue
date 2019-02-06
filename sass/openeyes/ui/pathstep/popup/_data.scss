@@ -26,7 +26,7 @@
 			
 			// add line to help with reading data
 			tr {
-				border-bottom:1px solid $oe-pro-line;				
+				border-bottom:1px solid $oe-line;				
 				&:last-child { 
 					border-bottom: none;
 				}
@@ -36,6 +36,7 @@
 			td {
 				padding:5px 8px 3px 0;
 				@include font-size(11);	
+				font-weight: $oe-font-bold;
 				
 				// trash icon
 				&:last-child {

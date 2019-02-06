@@ -13,6 +13,8 @@
 		overflow-y: auto;	// scroll overflow
 		overflow-x: hidden; // otherwise breaks out of popup.
 		
+		padding:0 5px 0 0;  // don't allow data to push up to scrollbar
+		
 		// create a visual breathing space between elements
 		.spacer {
 			height:40px;	

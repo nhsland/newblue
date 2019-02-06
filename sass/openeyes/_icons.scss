@@ -82,6 +82,9 @@
 	&.circle-green,	// no hover for coloured graphics	
 	&.circle-amber,			
 	&.circle-red,
+	&.triangle-green,
+	&.triangle-amber,
+	&.triangle-red,
 	&.warning
 	{ 
 		opacity:1; 
@@ -217,6 +220,12 @@
 	&.circle-green		{ background-image: url( svg-path('ui/circle-green') ); }
 	&.circle-amber		{ background-image: url( svg-path('ui/circle-orange') ); }
 	&.circle-red		{ background-image: url( svg-path('ui/circle-red') ); }
+	
+	// triangles G / A / R
+	// Patient Risk Status
+	&.triangle-green		{ background-image: url( svg-path('ui/triangle-green') ); }
+	&.triangle-amber		{ background-image: url( svg-path('ui/triangle-amber') ); }
+	&.triangle-red			{ background-image: url( svg-path('ui/triangle-red') ); }
 
 	// exclamation mark (amber, red)
 	// ONLY for NHS Number status

@@ -268,6 +268,285 @@ idg.homeMessageExpand = function(){
 }
 
 /*
+Lightning
+*/
+var lightning = lightning || {};
+
+lightning.init = function(){
+
+	/*
+	All IMGs are pre-loaded in DOM
+	Speed of interaction is PRIORITY!
+	*/
+	var me = this;
+	this.currentStack = 0;
+	this.iconPrefix = '#lqv_';
+	this.stackPrefix = '#lsg_';
+	this.totalStackNum = $('.stack-group').length;
+	this.xscrollWidth = $('.lightning-view').width();
+	this.locked = true;
+	
+	
+	this.updateView = function( id ){
+		this.updateStack( id );
+		this.updateMeta( $(this.iconPrefix + id).data('meta') );
+	}
+
+	this.updateMeta = function(meta){
+		var $div = $('.lightning-meta');
+		var d = meta.split(',');
+		$div.children('.type').text(d[0]);
+		$div.children('.date').text(d[1]);
+		$div.children('.who').text(d[2]);
+	}
+	
+	this.updateStack = function( stackID ){
+		$(this.stackPrefix + this.currentStack).hide();
+		$(this.stackPrefix + stackID).show();
+		this.currentStack = stackID; // track id
+		this.updateCounter();
+		this.timelineIcon();
+	}
+	
+	this.updateCounter = function(){
+		$('.lightning-ui .stack-position').text( this.currentStack+1 + '/' + this.totalStackNum);
+	}
+	
+	this.timelineIcon = function(){
+		$('.icon-event').removeClass('js-hover');
+		$(this.iconPrefix + this.currentStack).addClass('js-hover');	
+	}
+	
+	/*
+	xscroll using DOM overlay (rather than the image)
+	(note: the overlay has 2 possible widths depending on browser size)
+	*/
+	this.xscroll = function(xCoord,e){
+		var xpos = Math.floor(xCoord/(this.xscrollWidth / this.totalStackNum));
+		if(this.locked == false){
+			this.updateView( xpos );
+		} 
+	}
+	
+	this.swipeLock = function(){
+		this.locked = !this.locked;
+		if(this.locked){
+			$('.lightning-ui .user-help').text( 'Swipe is LOCKED | Click to unlock' );
+		} else {
+			$('.lightning-ui .user-help').text( 'Swipe to scan or use key RIGHT / LEFT | Click to LOCK swipe' );
+		}
+	}
+	
+	/*
+	Step through stack (arrows or KEYs)	
+	*/
+	this.stepThrough = function( dir ){
+		var next = this.currentStack + dir;
+		if( next >= 0 && next < this.totalStackNum){
+			this.updateView( next );
+		}
+	}
+	
+	/*
+	Events
+	*/
+	$('.icon-event')
+		.hover(
+			function(){
+				me.updateStack(	$(this).data('id') );
+				me.updateMeta( 	$(this).data('meta') );
+			}, function(){
+				// no out action
+			})
+		.click(function(){
+			me.swipeLock();
+		});
+		
+		
+	// mouse xscroll
+	$('.lightning-view').mousemove(function(e) {
+	  	var offset = $(this).offset();
+	  	me.xscroll(e.pageX - offset.left,e);
+	});		
+	
+	// Click to LOCK swiping
+	$('.lightning-view').click(function(e){
+		e.stopPropagation();
+		me.swipeLock();
+	});				
+
+	// step through
+	// use either the < > btn
+	$('#lightning-left-btn').click(function( e ){
+		e.stopPropagation();
+		me.stepThrough( -1 );
+	});
+	
+	$('#lightning-right-btn').click(function( e ){
+		e.stopPropagation();
+		me.stepThrough( 1 );
+	});
+	
+	// or LEFT - RIGHT Keys
+	$("body").keydown(function(e){
+	    if ((e.keyCode || e.which) == 37)	me.stepThrough( -1 );
+	    if ((e.keyCode || e.which) == 39)	me.stepThrough( 1 );
+	});
+		
+	// watch for resize (the view has 2 widths )
+	$( window ).resize(function() {
+		me.xscrollWidth = $('.lightning-view').width();
+	});
+	
+
+	/*
+	setup timeline
+	*/
+	this.filterOptions();
+	this.iconGroup();
+	/*
+	setup viewer	
+	*/
+	this.updateCounter();
+	this.swipeLock();
+
+	
+}
+/*
+Lightning
+*/
+
+lightning.filterOptions = function(){
+	
+	/*
+  	Quick UX / UI JS demo	
+  	Setup for touch (click) and enhanced for mouseevents
+  	*/
+  	var options = false;
+  	
+  	// handles touch
+  	$('.lightning-btn').click( changeOptions );
+  	
+  	// enchance with mouseevents through DOM wrapper
+  	$('.js-lightning-options')
+  		.mouseenter( showOptions )
+  		.mouseleave( hideOptions );
+  	
+  	// controller
+  	function changeOptions(){
+	  	if(!options){
+		  	showOptions()
+	  	} else {
+		  	hideOptions()
+	  	}		  	
+  	}
+  	
+  	function showOptions(){
+	  	$('.change-timeline').show();
+	  	$('.lightning-btn').addClass('active');
+	  	options = true;
+  	}
+  	
+  	function hideOptions(){
+	  	$('.change-timeline').hide();
+	  	$('.lightning-btn').removeClass('active');
+	  	options = false;
+  	}
+
+}
+/*
+Lightning
+*/
+
+lightning.iconGroup = function(){
+	
+	/*
+  	Quick UX / UI JS demo	
+  	Collapse and Expand the timeline
+  	*/
+  	$('.icon-group').each(function(){
+	  	var count = $(this)[0].childElementCount;
+		var $div = $('<div />').text('('+count+')').hide();
+		$(this).parent().append( $div );
+  	});
+  	
+  	$('.js-timeline-date').click(function( e ){
+	  	var iconGroup = $(this).data('icons');
+	  	
+	  	if($(this).hasClass('collapse')){
+		  	$('#js-icon-'+iconGroup).hide();
+		  	$('#js-icon-'+iconGroup).next().show();
+	  	} else {
+		  	$('#js-icon-'+iconGroup).show();
+		  	$('#js-icon-'+iconGroup).next().hide();
+	  	}
+	  
+	  	$(this).toggleClass('collapse expand');
+  	});
+}
+/*
+Mulit Page Scroll Widget. 
+Used in Correspondence VIEW and Lightning Viewer for Letters 
+... and maybe other places too.
+*/
+idg.multiPageScroll = function(){
+	/*
+	check DOM... 
+	*/
+	if( $('.lightning-multipage-scroll').length == 0 ) return;
+	
+	/*
+	Allowing for 'n' number of widgets
+	*/
+	$('.lightning-multipage-scroll').each( function(){
+		var mps = new MultiPage( $(this) );
+	});
+	
+	function MultiPage( $div ){
+		var me = this;
+		var $nav = $('.multipage-nav',$div);
+		var $stack = $('.multipage-stack',$div);
+		var numOfImgs = $('.multipage-stack > img',$div).length;
+		
+		/*
+		Get first IMG height Attribute 
+		to work out page scrolling.
+		Note: CSS adds 10px padding to the (bottom) of all images !
+		*/
+		var pageH = 10 + parseInt( $('.multipage-stack > img:first-child',$div).attr('height') );
+
+		/*
+		Build Page Nav Btns
+		loop through and create page buttons
+		e.g. <div class="page-num-btn">1/4</div>
+		*/	
+		for(var i=0;i<numOfImgs;i++){
+			var btn = $( "<div></div>", {
+							text: (i+1)+"/"+numOfImgs,
+							"class": "page-num-btn",
+							"data-page": i,
+							mouseenter: function( e ) {
+								me.animateScrolling( $(this).data('page') );
+							},
+							click: function( event ) {
+								me.animateScrolling( $(this).data('page') );
+							}
+						}).appendTo( $nav );
+		}
+		
+		/*
+		Animate the scrolling
+		*/	
+		this.animateScrolling = function( page ){
+			var scroll = pageH * page;	
+			$stack.animate({scrollTop: scroll+'px'},200,'swing');
+		}
+	}
+		
+	
+}
+
+/*
 Clinic JS
 
 The logic for the pathway steps is:
@@ -1133,285 +1412,6 @@ clinic.updateTasks = function( ){
 	
 	$('#filter-tasks .current').text( clinic.data['tasks'].length );
 }
-/*
-Lightning
-*/
-var lightning = lightning || {};
-
-lightning.init = function(){
-
-	/*
-	All IMGs are pre-loaded in DOM
-	Speed of interaction is PRIORITY!
-	*/
-	var me = this;
-	this.currentStack = 0;
-	this.iconPrefix = '#lqv_';
-	this.stackPrefix = '#lsg_';
-	this.totalStackNum = $('.stack-group').length;
-	this.xscrollWidth = $('.lightning-view').width();
-	this.locked = true;
-	
-	
-	this.updateView = function( id ){
-		this.updateStack( id );
-		this.updateMeta( $(this.iconPrefix + id).data('meta') );
-	}
-
-	this.updateMeta = function(meta){
-		var $div = $('.lightning-meta');
-		var d = meta.split(',');
-		$div.children('.type').text(d[0]);
-		$div.children('.date').text(d[1]);
-		$div.children('.who').text(d[2]);
-	}
-	
-	this.updateStack = function( stackID ){
-		$(this.stackPrefix + this.currentStack).hide();
-		$(this.stackPrefix + stackID).show();
-		this.currentStack = stackID; // track id
-		this.updateCounter();
-		this.timelineIcon();
-	}
-	
-	this.updateCounter = function(){
-		$('.lightning-ui .stack-position').text( this.currentStack+1 + '/' + this.totalStackNum);
-	}
-	
-	this.timelineIcon = function(){
-		$('.icon-event').removeClass('js-hover');
-		$(this.iconPrefix + this.currentStack).addClass('js-hover');	
-	}
-	
-	/*
-	xscroll using DOM overlay (rather than the image)
-	(note: the overlay has 2 possible widths depending on browser size)
-	*/
-	this.xscroll = function(xCoord,e){
-		var xpos = Math.floor(xCoord/(this.xscrollWidth / this.totalStackNum));
-		if(this.locked == false){
-			this.updateView( xpos );
-		} 
-	}
-	
-	this.swipeLock = function(){
-		this.locked = !this.locked;
-		if(this.locked){
-			$('.lightning-ui .user-help').text( 'Swipe is LOCKED | Click to unlock' );
-		} else {
-			$('.lightning-ui .user-help').text( 'Swipe to scan or use key RIGHT / LEFT | Click to LOCK swipe' );
-		}
-	}
-	
-	/*
-	Step through stack (arrows or KEYs)	
-	*/
-	this.stepThrough = function( dir ){
-		var next = this.currentStack + dir;
-		if( next >= 0 && next < this.totalStackNum){
-			this.updateView( next );
-		}
-	}
-	
-	/*
-	Events
-	*/
-	$('.icon-event')
-		.hover(
-			function(){
-				me.updateStack(	$(this).data('id') );
-				me.updateMeta( 	$(this).data('meta') );
-			}, function(){
-				// no out action
-			})
-		.click(function(){
-			me.swipeLock();
-		});
-		
-		
-	// mouse xscroll
-	$('.lightning-view').mousemove(function(e) {
-	  	var offset = $(this).offset();
-	  	me.xscroll(e.pageX - offset.left,e);
-	});		
-	
-	// Click to LOCK swiping
-	$('.lightning-view').click(function(e){
-		e.stopPropagation();
-		me.swipeLock();
-	});				
-
-	// step through
-	// use either the < > btn
-	$('#lightning-left-btn').click(function( e ){
-		e.stopPropagation();
-		me.stepThrough( -1 );
-	});
-	
-	$('#lightning-right-btn').click(function( e ){
-		e.stopPropagation();
-		me.stepThrough( 1 );
-	});
-	
-	// or LEFT - RIGHT Keys
-	$("body").keydown(function(e){
-	    if ((e.keyCode || e.which) == 37)	me.stepThrough( -1 );
-	    if ((e.keyCode || e.which) == 39)	me.stepThrough( 1 );
-	});
-		
-	// watch for resize (the view has 2 widths )
-	$( window ).resize(function() {
-		me.xscrollWidth = $('.lightning-view').width();
-	});
-	
-
-	/*
-	setup timeline
-	*/
-	this.filterOptions();
-	this.iconGroup();
-	/*
-	setup viewer	
-	*/
-	this.updateCounter();
-	this.swipeLock();
-
-	
-}
-/*
-Lightning
-*/
-
-lightning.filterOptions = function(){
-	
-	/*
-  	Quick UX / UI JS demo	
-  	Setup for touch (click) and enhanced for mouseevents
-  	*/
-  	var options = false;
-  	
-  	// handles touch
-  	$('.lightning-btn').click( changeOptions );
-  	
-  	// enchance with mouseevents through DOM wrapper
-  	$('.js-lightning-options')
-  		.mouseenter( showOptions )
-  		.mouseleave( hideOptions );
-  	
-  	// controller
-  	function changeOptions(){
-	  	if(!options){
-		  	showOptions()
-	  	} else {
-		  	hideOptions()
-	  	}		  	
-  	}
-  	
-  	function showOptions(){
-	  	$('.change-timeline').show();
-	  	$('.lightning-btn').addClass('active');
-	  	options = true;
-  	}
-  	
-  	function hideOptions(){
-	  	$('.change-timeline').hide();
-	  	$('.lightning-btn').removeClass('active');
-	  	options = false;
-  	}
-
-}
-/*
-Lightning
-*/
-
-lightning.iconGroup = function(){
-	
-	/*
-  	Quick UX / UI JS demo	
-  	Collapse and Expand the timeline
-  	*/
-  	$('.icon-group').each(function(){
-	  	var count = $(this)[0].childElementCount;
-		var $div = $('<div />').text('('+count+')').hide();
-		$(this).parent().append( $div );
-  	});
-  	
-  	$('.js-timeline-date').click(function( e ){
-	  	var iconGroup = $(this).data('icons');
-	  	
-	  	if($(this).hasClass('collapse')){
-		  	$('#js-icon-'+iconGroup).hide();
-		  	$('#js-icon-'+iconGroup).next().show();
-	  	} else {
-		  	$('#js-icon-'+iconGroup).show();
-		  	$('#js-icon-'+iconGroup).next().hide();
-	  	}
-	  
-	  	$(this).toggleClass('collapse expand');
-  	});
-}
-/*
-Mulit Page Scroll Widget. 
-Used in Correspondence VIEW and Lightning Viewer for Letters 
-... and maybe other places too.
-*/
-idg.multiPageScroll = function(){
-	/*
-	check DOM... 
-	*/
-	if( $('.lightning-multipage-scroll').length == 0 ) return;
-	
-	/*
-	Allowing for 'n' number of widgets
-	*/
-	$('.lightning-multipage-scroll').each( function(){
-		var mps = new MultiPage( $(this) );
-	});
-	
-	function MultiPage( $div ){
-		var me = this;
-		var $nav = $('.multipage-nav',$div);
-		var $stack = $('.multipage-stack',$div);
-		var numOfImgs = $('.multipage-stack > img',$div).length;
-		
-		/*
-		Get first IMG height Attribute 
-		to work out page scrolling.
-		Note: CSS adds 10px padding to the (bottom) of all images !
-		*/
-		var pageH = 10 + parseInt( $('.multipage-stack > img:first-child',$div).attr('height') );
-
-		/*
-		Build Page Nav Btns
-		loop through and create page buttons
-		e.g. <div class="page-num-btn">1/4</div>
-		*/	
-		for(var i=0;i<numOfImgs;i++){
-			var btn = $( "<div></div>", {
-							text: (i+1)+"/"+numOfImgs,
-							"class": "page-num-btn",
-							"data-page": i,
-							mouseenter: function( e ) {
-								me.animateScrolling( $(this).data('page') );
-							},
-							click: function( event ) {
-								me.animateScrolling( $(this).data('page') );
-							}
-						}).appendTo( $nav );
-		}
-		
-		/*
-		Animate the scrolling
-		*/	
-		this.animateScrolling = function( page ){
-			var scroll = pageH * page;	
-			$stack.animate({scrollTop: scroll+'px'},200,'swing');
-		}
-	}
-		
-	
-}
-
 /**
 OEscape 
 **/
@@ -2410,6 +2410,56 @@ idg.tileDataOverflow = function(){
 	});
 	
 	
+	
+}
+/**
+VC Draggable Floating inputs
+**/
+idg.vcDraggable = function(){
+	
+	var id = 'oe-vc-scratchpad';
+
+	if( $('#'+id).length == 0 ) return;
+	
+	/* 	
+	Drag...
+	*/	
+	var relativeX, relativeY;
+		
+	document.addEventListener("dragstart", getMouseOffset, false);
+	document.addEventListener("dragend", reposFloat, false);
+		
+	
+	function getMouseOffset( e ){
+		e.dataTransfer.dropEffect = "move";
+		
+		// need to work out mouse offset in <div> before dragging
+		var offset = $('#'+id).offset();
+		relativeX = (e.clientX - offset.left);
+		relativeY = (e.clientY - offset.top);		
+	}
+	
+	function reposFloat( e ) {
+		// Update the panel position
+		var left = e.clientX - relativeX;
+		var top = e.clientY - relativeY;
+		
+		// stop it being dragged off screen
+		top = top < 1 ? 1 : top;
+		left = left < 1 ? 1 : left;
+		
+		$('#'+id).css({"top":top+"px","left":left+"px"});
+	}
+	
+	
+	/*
+	Touch version? ... 
+	Not sure if this works, not tested... but anyway:	
+	*/
+	var el = document.getElementById(id);
+	el.addEventListener("touchstart", getMouseOffset, false);
+	el.addEventListener("touchend", reposFloat, false);
+		
 	
 }
 /**
@@ -3420,6 +3470,11 @@ idg.pathSteps = {
 				$title 	= $('<h3 class="title"></h3>');
 				// $eye 	= $('<div class="eye">Eye: <span class="side"></span></div>');
 				
+				/*
+				PIN not being added in this version 
+				BUT will be in Clinic list! (when built)	
+				
+				// PIN not be
 				// pin confirmation
 				$pin		= $('<div class="pin-confirmation"></div>');
 				$pinRight 	= $('<div class="eye-confirmation right"><h3>Right</h3></div>');
@@ -3430,27 +3485,28 @@ idg.pathSteps = {
 				}
 				$inputPinRight = inputPIN('right');
 				$inputPinLeft = inputPIN('left');
-		
-				// edit PSD
-				$edit = $('<div class="step-actions"><button class="blue hint">Edit PSD</button></div>').hide();
 				
-				/*
-				compile DOM
-				*/
-		
-				// dataList DOM
-				$dataGroup.append( $dataList, $dataTable );
 				// pin
 				$pinRight.append( $inputPinRight );
 				$pinLeft.append( $inputPinLeft );
 				$pin.append( $pinRight, $pinLeft ).hide();
+				
+				*/
+		
+		
+				// edit PSD
+				$edit = $('<div class="step-actions"><button class="blue hint">Edit PSD</button></div>').hide();
+				
+				// dataList DOM
+				$dataGroup.append( $dataList, $dataTable );
+				
 						
 				// build DOM element, and hide it
 				$div.append(	$close, 
 								$status,
 								$title, 
 								$dataGroup,
-								$pin,
+								//$pin,
 								$edit );
 				
 				
@@ -3458,8 +3514,8 @@ idg.pathSteps = {
 				Events
 				*/
 				$close[0].addEventListener( "click", this.close.bind( this ) );
-				$inputPinRight[0].addEventListener("input", this.pinRightChange.bind( this ));
-				$inputPinLeft[0].addEventListener("input", this.pinLeftChange.bind( this ));
+				//$inputPinRight[0].addEventListener("input", this.pinRightChange.bind( this ));
+				//$inputPinLeft[0].addEventListener("input", this.pinLeftChange.bind( this ));
 				
 			} else {
 				$div.addClass("data-only");
@@ -3514,16 +3570,22 @@ idg.pathSteps = {
 						$status.addClass('step-status green');
 					break;
 					case "todo":
-						$status.text('Waiting');
+						$status.text('Waiting to do');
+						$status.addClass('step-status');
+						$edit.show();
+						//$pin.show();
+					break;
+					case "progress":
+						$status.text('In progress');
 						$status.addClass('step-status orange');
 						$edit.show();
-						$pin.show();
+						//$pin.show();
 					break;
 					case "problem":
 						$status.text('Problem! e.g. Patient has left');
 						$status.addClass('step-status red');
 						$edit.show();
-						$pin.show();
+						//$pin.show();
 					break;
 					
 					default: $status.text('no status set');
@@ -3542,7 +3604,7 @@ idg.pathSteps = {
 			if( this.full ){
 				$status.removeClass();
 				$edit.hide();
-				$pin.hide();
+				//$pin.hide();
 			}
 		}
 	
@@ -3683,56 +3745,6 @@ idg.tooltips = function(){
 	);	
 }
 /**
-VC Draggable Floating inputs
-**/
-idg.vcDraggable = function(){
-	
-	var id = 'oe-vc-scratchpad';
-
-	if( $('#'+id).length == 0 ) return;
-	
-	/* 	
-	Drag...
-	*/	
-	var relativeX, relativeY;
-		
-	document.addEventListener("dragstart", getMouseOffset, false);
-	document.addEventListener("dragend", reposFloat, false);
-		
-	
-	function getMouseOffset( e ){
-		e.dataTransfer.dropEffect = "move";
-		
-		// need to work out mouse offset in <div> before dragging
-		var offset = $('#'+id).offset();
-		relativeX = (e.clientX - offset.left);
-		relativeY = (e.clientY - offset.top);		
-	}
-	
-	function reposFloat( e ) {
-		// Update the panel position
-		var left = e.clientX - relativeX;
-		var top = e.clientY - relativeY;
-		
-		// stop it being dragged off screen
-		top = top < 1 ? 1 : top;
-		left = left < 1 ? 1 : left;
-		
-		$('#'+id).css({"top":top+"px","left":left+"px"});
-	}
-	
-	
-	/*
-	Touch version? ... 
-	Not sure if this works, not tested... but anyway:	
-	*/
-	var el = document.getElementById(id);
-	el.addEventListener("touchstart", getMouseOffset, false);
-	el.addEventListener("touchend", reposFloat, false);
-		
-	
-}
-/**
 Homepage Message expand / contract 	
 **/
 idg.WorkListFilter = function(){
@@ -3777,139 +3789,6 @@ idg.addSelectInsert.updateElement = {
 		idgTest.report( 'test insert' );
 	}
 }
-/*
-Add Select Search insert  
-Popup Constructor
-*/
-
-idg.addSelectInsert.Popup = function ( $btn, popupID,){	
-	
-	let $popup = $('#'+popupID);
-	const reset = true;
-	const require = false; 
-	const callback = $popup.data('callback');  // optional
-	
-	/*
-	Props
-	*/ 
-	this.$btn = $btn;  
-	this.$popup = $popup;
-	
-	/*
-	Methods
-	*/
-	this.open = function(){
-		this.positionFixPopup();
-		this.onScrollClose();
-		$popup.show();
-	}
-	
-	this.close = function(){
-		$popup.hide();		
-	}
-	
-	this.reset = function(){
-		// reset (to default state)
-	}
-	
-	this.insertData = function(){
-		/*
-		gather data and send to callback (if requested)
-		*/
-		let JSONdata = []
-		lists.forEach( list => {
-			JSONdata.push( list.gatherData() );
-		});
-		
-		/*
-		callback handles Element insert demo
-		*/
-		if( callback != undefined){
-			idg.addSelectInsert.updateElement[callback]( JSONdata );
-		}
-		
-		this.close();
-	}
-	
-	/*
-	Store lists
-	*/
-	let lists = [];
-	
-	$('.add-options',$popup).each( function(){
-		lists.push( new idg.addSelectInsert.OptionsList( $(this) ) );
-	});
-	
-	/*
-	Setup Btn Events. 
-	*/
-	idg.addSelectInsert.btnEvent( this, $btn, this.open );
-	idg.addSelectInsert.btnEvent( this, $popup.children('.close-icon-btn'), this.close );
-	idg.addSelectInsert.btnEvent( this, $popup.find('.add-icon-btn'), this.insertData );
-	  					
-}
-
-/*
-Set up Btn click events
-*/
-idg.addSelectInsert.btnEvent = function ( popup, $btn, callback ){
-  	$btn.click(function(e) {
-  		e.stopPropagation();
-  		callback.call(popup);
-	});	  					
-}
-
-
-idg.addSelectInsert.Popup.prototype.onScrollClose = function(){
-	/*
-	Close popup on scroll.
-	note: scroll event fires on assignment.
-	so check against scroll position
-	*/	
-	let popup = this;	
-	let scrollPos = $(".main-event").scrollTop();
-	$(".main-event").on("scroll", function(){ 
-		if( scrollPos !=  $(this).scrollTop() ){
-			// Remove scroll event:	
-			$(".main-event").off("scroll");
-			popup.close();
-		}
-			
-	});
-
-}
-
-/*
-Set up Btn click events
-*/
-
-idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
-	/* 
-	Popup is FIXED positioned, work out offset position based on button
-	To do this proved easer with Vanilla JS
-	*/
-	let elem = this.$btn[ 0 ];
-	let btnPos = elem.getBoundingClientRect();		
-	let w = document.documentElement.clientWidth;
-	let h = document.documentElement.clientHeight;
-	
-	// check popup doesn't go off the top of the screen 
-	// and don't overlay Logo! or Patient Name
-	let posH = (h - btnPos.bottom);
-	if(h - posH < 325){
-		posH = h - 325;
-	}
-
-	// is popup pushing off the left
-	let leftSideEdge = btnPos.right - this.$popup.width();
-	let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
-
-	this.$popup.css(	{	"bottom": posH + 'px',
-							"right": (w - btnPos.right) + adjustRight + 'px' });
-	
-
-}
-
 /*
 Optional Lists based on List selection
 find group ID: 	"add-to-{uniqueID}-listgroup{n}";
@@ -4147,4 +4026,137 @@ idg.addSelectInsert.OptionsList = function ( $ul ){
 		return data.join(', ');
 	}
 			
+}
+
+/*
+Add Select Search insert  
+Popup Constructor
+*/
+
+idg.addSelectInsert.Popup = function ( $btn, popupID,){	
+	
+	let $popup = $('#'+popupID);
+	const reset = true;
+	const require = false; 
+	const callback = $popup.data('callback');  // optional
+	
+	/*
+	Props
+	*/ 
+	this.$btn = $btn;  
+	this.$popup = $popup;
+	
+	/*
+	Methods
+	*/
+	this.open = function(){
+		this.positionFixPopup();
+		this.onScrollClose();
+		$popup.show();
+	}
+	
+	this.close = function(){
+		$popup.hide();		
+	}
+	
+	this.reset = function(){
+		// reset (to default state)
+	}
+	
+	this.insertData = function(){
+		/*
+		gather data and send to callback (if requested)
+		*/
+		let JSONdata = []
+		lists.forEach( list => {
+			JSONdata.push( list.gatherData() );
+		});
+		
+		/*
+		callback handles Element insert demo
+		*/
+		if( callback != undefined){
+			idg.addSelectInsert.updateElement[callback]( JSONdata );
+		}
+		
+		this.close();
+	}
+	
+	/*
+	Store lists
+	*/
+	let lists = [];
+	
+	$('.add-options',$popup).each( function(){
+		lists.push( new idg.addSelectInsert.OptionsList( $(this) ) );
+	});
+	
+	/*
+	Setup Btn Events. 
+	*/
+	idg.addSelectInsert.btnEvent( this, $btn, this.open );
+	idg.addSelectInsert.btnEvent( this, $popup.children('.close-icon-btn'), this.close );
+	idg.addSelectInsert.btnEvent( this, $popup.find('.add-icon-btn'), this.insertData );
+	  					
+}
+
+/*
+Set up Btn click events
+*/
+idg.addSelectInsert.btnEvent = function ( popup, $btn, callback ){
+  	$btn.click(function(e) {
+  		e.stopPropagation();
+  		callback.call(popup);
+	});	  					
+}
+
+
+idg.addSelectInsert.Popup.prototype.onScrollClose = function(){
+	/*
+	Close popup on scroll.
+	note: scroll event fires on assignment.
+	so check against scroll position
+	*/	
+	let popup = this;	
+	let scrollPos = $(".main-event").scrollTop();
+	$(".main-event").on("scroll", function(){ 
+		if( scrollPos !=  $(this).scrollTop() ){
+			// Remove scroll event:	
+			$(".main-event").off("scroll");
+			popup.close();
+		}
+			
+	});
+
+}
+
+/*
+Set up Btn click events
+*/
+
+idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
+	/* 
+	Popup is FIXED positioned, work out offset position based on button
+	To do this proved easer with Vanilla JS
+	*/
+	let elem = this.$btn[ 0 ];
+	let btnPos = elem.getBoundingClientRect();		
+	let w = document.documentElement.clientWidth;
+	let h = document.documentElement.clientHeight;
+	
+	// check popup doesn't go off the top of the screen 
+	// and don't overlay Logo! or Patient Name
+	let posH = (h - btnPos.bottom);
+	if(h - posH < 325){
+		posH = h - 325;
+	}
+
+	// is popup pushing off the left
+	let leftSideEdge = btnPos.right - this.$popup.width();
+	let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
+
+	this.$popup.css(	{	"bottom": posH + 'px',
+							"right": (w - btnPos.right) + adjustRight + 'px' });
+	
+
 }

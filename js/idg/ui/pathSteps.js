@@ -120,6 +120,11 @@ idg.pathSteps = {
 				$title 	= $('<h3 class="title"></h3>');
 				// $eye 	= $('<div class="eye">Eye: <span class="side"></span></div>');
 				
+				/*
+				PIN not being added in this version 
+				BUT will be in Clinic list! (when built)	
+				
+				// PIN not be
 				// pin confirmation
 				$pin		= $('<div class="pin-confirmation"></div>');
 				$pinRight 	= $('<div class="eye-confirmation right"><h3>Right</h3></div>');
@@ -130,27 +135,28 @@ idg.pathSteps = {
 				}
 				$inputPinRight = inputPIN('right');
 				$inputPinLeft = inputPIN('left');
-		
-				// edit PSD
-				$edit = $('<div class="step-actions"><button class="blue hint">Edit PSD</button></div>').hide();
 				
-				/*
-				compile DOM
-				*/
-		
-				// dataList DOM
-				$dataGroup.append( $dataList, $dataTable );
 				// pin
 				$pinRight.append( $inputPinRight );
 				$pinLeft.append( $inputPinLeft );
 				$pin.append( $pinRight, $pinLeft ).hide();
+				
+				*/
+		
+		
+				// edit PSD
+				$edit = $('<div class="step-actions"><button class="blue hint">Edit PSD</button></div>').hide();
+				
+				// dataList DOM
+				$dataGroup.append( $dataList, $dataTable );
+				
 						
 				// build DOM element, and hide it
 				$div.append(	$close, 
 								$status,
 								$title, 
 								$dataGroup,
-								$pin,
+								//$pin,
 								$edit );
 				
 				
@@ -158,8 +164,8 @@ idg.pathSteps = {
 				Events
 				*/
 				$close[0].addEventListener( "click", this.close.bind( this ) );
-				$inputPinRight[0].addEventListener("input", this.pinRightChange.bind( this ));
-				$inputPinLeft[0].addEventListener("input", this.pinLeftChange.bind( this ));
+				//$inputPinRight[0].addEventListener("input", this.pinRightChange.bind( this ));
+				//$inputPinLeft[0].addEventListener("input", this.pinLeftChange.bind( this ));
 				
 			} else {
 				$div.addClass("data-only");
@@ -214,16 +220,22 @@ idg.pathSteps = {
 						$status.addClass('step-status green');
 					break;
 					case "todo":
-						$status.text('Waiting');
+						$status.text('Waiting to do');
+						$status.addClass('step-status');
+						$edit.show();
+						//$pin.show();
+					break;
+					case "progress":
+						$status.text('In progress');
 						$status.addClass('step-status orange');
 						$edit.show();
-						$pin.show();
+						//$pin.show();
 					break;
 					case "problem":
 						$status.text('Problem! e.g. Patient has left');
 						$status.addClass('step-status red');
 						$edit.show();
-						$pin.show();
+						//$pin.show();
 					break;
 					
 					default: $status.text('no status set');
@@ -242,7 +254,7 @@ idg.pathSteps = {
 			if( this.full ){
 				$status.removeClass();
 				$edit.hide();
-				$pin.hide();
+				//$pin.hide();
 			}
 		}
 	

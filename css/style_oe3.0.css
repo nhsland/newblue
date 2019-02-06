@@ -1114,7 +1114,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   z-index: 90;
   position: fixed;
   width: 200px;
-  padding: 8px 8px 4px 8px;
+  padding: 6px 8px 6px 8px;
   border-bottom: 1px solid cyan;
   background: #0a0a14;
   color: #d6d6d6;
@@ -1756,8 +1756,8 @@ select.fixed-width {
   font-style: italic;
   border-radius: 3px;
   cursor: pointer;
-  background: #646464;
   color: #f0f0f0;
+  background: #323237;
 }
 
 .oe-pathstep-btn.green {
@@ -1772,20 +1772,15 @@ select.fixed-width {
   background: #a0280a;
 }
 
-.oe-pathstep-btn.themed {
-  color: #d6d6d6;
-  background: #182535;
-}
-
 .oe-pathstep-popup {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 90;
-  background: #141e2b;
+  background: #0a0a14;
   border: 1px solid cyan;
   padding: 15px 10px 45px 15px;
-  width: 320px;
+  width: 360px;
   border-radius: 3px;
   -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
@@ -1884,6 +1879,7 @@ select.fixed-width {
 .oe-pathstep-popup .data-group table.data-table td {
   padding: 5px 8px 3px 0;
   font-size: 0.6875rem;
+  font-weight: 500;
 }
 
 .oe-pathstep-popup .data-group table.data-table td:last-child {
@@ -1977,7 +1973,7 @@ select.fixed-width {
   margin: 0 0 0 8px;
 }
 
-.oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i.active, .oe-i.no-hover, .oe-i.circle-green, .oe-i.circle-amber, .oe-i.circle-red, .oe-i.warning {
+.oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i.active, .oe-i.no-hover, .oe-i.circle-green, .oe-i.circle-amber, .oe-i.circle-red, .oe-i.triangle-green, .oe-i.triangle-amber, .oe-i.triangle-red, .oe-i.warning {
   opacity: 1;
 }
 
@@ -2551,6 +2547,18 @@ select.fixed-width {
 
 .oe-i.circle-red {
   background-image: url("../svg/in-css/ui/circle-red.svg");
+}
+
+.oe-i.triangle-green {
+  background-image: url("../svg/in-css/ui/triangle-green.svg");
+}
+
+.oe-i.triangle-amber {
+  background-image: url("../svg/in-css/ui/triangle-amber.svg");
+}
+
+.oe-i.triangle-red {
+  background-image: url("../svg/in-css/ui/triangle-red.svg");
 }
 
 .oe-i.exclamation-green {
@@ -3975,7 +3983,7 @@ select.fixed-width {
   position: relative;
   background: #374755;
   min-width: 600px;
-  max-width: 1160px;
+  max-width: 1260px;
   padding: 20px;
   color: #d6d6d6;
 }
@@ -3997,6 +4005,7 @@ select.fixed-width {
   max-height: 500px;
   overflow-y: auto;
   overflow-x: hidden;
+  padding: 0 5px 0 0;
 }
 
 .oe-popup .oe-popup-content .spacer {
@@ -4074,14 +4083,14 @@ select.fixed-width {
   width: 490px;
 }
 
-.oe-popup-content.popup-add-psd {
-  max-width: 1280px;
-}
-
 .oe-popup-content.popup-add-psd h3 {
   font-size: 0.75rem;
   color: #8c8c8c;
-  margin: 0 0 10px 0;
+  margin: 10px 0;
+}
+
+.oe-popup-content.popup-add-psd h3:first-child {
+  margin-top: 0;
 }
 
 .oe-popup-content.popup-add-psd hr.divider {
@@ -4097,12 +4106,12 @@ select.fixed-width {
 
 .oe-popup-content.popup-add-psd .psd-selected-patients ul li {
   font-size: 0.6875rem;
-  padding: 2px 0;
+  padding: 3px 0;
 }
 
 .oe-popup-content.popup-add-psd .psd-options {
-  padding: 0 20px;
-  margin: 0 20px;
+  padding: 0 10px;
+  margin: 0 10px;
   border-left: 1px solid #26303d;
   border-right: 1px solid #26303d;
 }
@@ -4121,9 +4130,23 @@ select.fixed-width {
   width: 400px;
 }
 
+.oe-popup-content.popup-add-psd .psd-build table.psd-authorised {
+  width: 100%;
+  margin-top: 0;
+}
+
+.oe-popup-content.popup-add-psd .psd-build table.psd-authorised td {
+  vertical-align: top;
+  padding: 4px 8px 4px 0;
+  font-size: 0.75rem;
+}
+
+.oe-popup-content.popup-add-psd .psd-build table.psd-authorised td:first-child {
+  color: #8c8c8c;
+}
+
 .oe-popup-content.popup-add-psd .psd-build table.psd-build-list {
   width: 100%;
-  margin: 0 auto;
 }
 
 .oe-popup-content.popup-add-psd .psd-build table.psd-build-list tr {

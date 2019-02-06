@@ -8,10 +8,10 @@
 	top:0;
 	right:0;
 	z-index:$oe-z-tooltip;
-	background:$oe-blue-dark2;
+	background:$oe-tooltip-bg;
 	border:1px solid $oe-text-highlight;
 	padding:15px 10px 45px 15px; // space for status
-	width:320px;
+	width:360px;
 	border-radius:3px;
 	
 	@include boxshadow();
