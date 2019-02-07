@@ -45,6 +45,11 @@
 			.oe-i-e { 
 				margin-right:10px; 
 			}
+			
+			&.add_event_disabled {
+				opacity:0.4;
+				pointer-events: none; // disabled!
+			}
 		}
 	
 		

@@ -5027,6 +5027,11 @@ table.management-summaries tbody td:last-child {
   margin-right: 10px;
 }
 
+.oe-create-event-popup li.oe-event-type.add_event_disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 .oe-create-event-popup .oe-create-event-step-through {
   width: 100%;
 }
