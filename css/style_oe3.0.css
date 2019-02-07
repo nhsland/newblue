@@ -1114,7 +1114,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   z-index: 90;
   position: fixed;
   width: 200px;
-  padding: 6px 8px 6px 8px;
+  padding: 8px 10px;
   border-bottom: 1px solid cyan;
   background: #0a0a14;
   color: #d6d6d6;
