@@ -51,13 +51,11 @@
 		// event date layout
 		.event-date {
 			display: inline-block;
-			vertical-align:top;
-			padding:0 0 0 0; // allow for .ev_date
+			padding:0; // allow for .ev_date
 				  
 			.day, .mth, .yr {
 			  display: inline-block;
 			  height:$oe-sidebar-event-height;
-			  vertical-align: middle;
 			}
 			
 			.day {

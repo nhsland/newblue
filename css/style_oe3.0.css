@@ -5465,14 +5465,12 @@ table.management-summaries tbody td:last-child {
 
 .sidebar .event .event-date {
   display: inline-block;
-  vertical-align: top;
-  padding: 0 0 0 0;
+  padding: 0;
 }
 
 .sidebar .event .event-date .day, .sidebar .event .event-date .mth, .sidebar .event .event-date .yr {
   display: inline-block;
   height: 19px;
-  vertical-align: middle;
 }
 
 .sidebar .event .event-date .day {
