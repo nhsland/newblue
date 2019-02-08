@@ -1869,15 +1869,23 @@ select.fixed-width {
 }
 
 .oe-pathstep-popup .data-group table.data-table tr {
-  border-bottom: 1px solid #26303d;
+  border-top: 1px solid #26303d;
 }
 
-.oe-pathstep-popup .data-group table.data-table tr:last-child {
-  border-bottom: none;
+.oe-pathstep-popup .data-group table.data-table tr:first-child {
+  border-top: none;
+}
+
+.oe-pathstep-popup .data-group table.data-table tr.administer {
+  border-top: none;
+}
+
+.oe-pathstep-popup .data-group table.data-table tr.administer td {
+  padding-bottom: 6px;
 }
 
 .oe-pathstep-popup .data-group table.data-table td {
-  padding: 5px 8px 3px 0;
+  padding: 4px 8px 4px 0;
   font-size: 0.6875rem;
   font-weight: 500;
 }

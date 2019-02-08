@@ -24,17 +24,28 @@
 			width:100%;	
 			margin:0 auto;
 			
-			// add line to help with reading data
+			// add line to TOP!
+			// when a drug is completed a TR below with 
+			// who did it 
 			tr {
-				border-bottom:1px solid $oe-line;				
-				&:last-child { 
-					border-bottom: none;
+				border-top:1px solid $oe-line;				
+				&:first-child { 
+					border-top: none;
+				}
+				
+				// Administer: who and when 
+				&.administer {
+					border-top: none; // visual merge rows
+					
+					td {
+						padding-bottom:6px;
+					}
 				}
 			}
 			
 			
 			td {
-				padding:5px 8px 3px 0;
+				padding:4px 8px 4px 0;
 				@include font-size(11);	
 				font-weight: $oe-font-bold;
 				

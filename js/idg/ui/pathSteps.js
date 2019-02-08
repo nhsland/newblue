@@ -200,7 +200,7 @@ idg.pathSteps = {
 			
 			if( stepData.data.type == "table"){
 				// build table
-				fragment = idg.pathSteps.buildDataTable( stepData.data.data );
+				fragment = idg.pathSteps.buildDataTable( stepData.data.data, stepData.status );
 				$dataTable.append( fragment );
 			}
 			
@@ -300,13 +300,16 @@ idg.pathSteps = {
 		return fragment;
 	},
 	
-	buildDataTable:function( dataArrOfObjs ){
+	/*
+	Need to show different table data states.
+	Progress: show who completed one of the drugs and when
+	Done: show all as completed	
+	*/
+	buildDataTable:function( dataArrOfObjs, status ){
 		
 		let fragment = document.createDocumentFragment();
 
 		dataArrOfObjs.forEach( obj => {
-			
-			console.log(obj);
 			
 			let tr = document.createElement('tr');
 			let tds = obj.tr.split(';');
@@ -330,7 +333,32 @@ idg.pathSteps = {
 				tr.appendChild(td);
 			});
 			fragment.appendChild(tr);
+			
+			if(status == "done") addWhoWhen();
 		});
+		
+		function addWhoWhen(){
+			let tr = document.createElement('tr');
+			tr.setAttribute('class', 'administer');
+			
+			let td = document.createElement('td')
+			td.innerHTML = '';
+			tr.appendChild(td);
+			
+			// Who when
+			td = document.createElement('td'); 
+			td.innerHTML = 'HCA: F. Nightingale @ 11:12';
+			tr.appendChild(td);
+			
+			// tick!
+			td = document.createElement('td'); 
+			td.innerHTML = '<i class="oe-i tick small pad"></i>';
+			tr.appendChild( td );
+			
+			fragment.appendChild(tr);
+			
+		}
+		
 		
 		return fragment;
 	}
