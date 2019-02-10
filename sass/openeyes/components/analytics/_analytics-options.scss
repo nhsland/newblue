@@ -44,7 +44,7 @@
 		margin:15px 0 0 0;
 		
 		li {
-			@include font-size(12);
+			@include font-size(13);
 			color:$oe-pro-text-light;
 			padding:0 0 8px 0;
 			
@@ -59,41 +59,33 @@
 		}	
 	}
 	
-	.custom-options {
-		position:relative;
-	}
-	
-	.custom-filters {
-		position:relative;
-		// <ul>
-		.filters-selected {
-			li {
-				@include font-size(12);
-				color:$oe-pro-text;
-				padding:4px 0;
+	// 
+	table.custom-filters {
+		width:100%;
+		margin:10px 0;
+		
+		tbody {
+			tr {
 				border-bottom:1px solid $oe-pro-line;
+				
+				td {
+					color:$oe-pro-text;
+					padding:5px 0;
+					
+					&:first-child {
+						color:$oe-pro-text-light;
+						padding-right:5px;
+					}
+					
+					&:last-child {
+						text-align: right;
+					}
+				}
+				
 			}
 		}
-	}
-	
-	
-	
-	.date-range {
-		margin:20px 0;
-		.datepicker-range {
-			text-align: center;
-		}
-	}
-	
-	.update-chart-btn {
-		margin:10px 0 0 0;
-	}
-	
-	.extra-actions {
-		margin:20px 0 0 0;
-		button {
-			margin:0 0 8px 0;
-		}
+		
+		
 	}
 	
 }

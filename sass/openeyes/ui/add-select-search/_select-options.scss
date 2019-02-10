@@ -6,13 +6,22 @@
 // Popup box showing the common options 
 // and an input to allow search with autocomplete
 
-.oe-add-select-search {	
+// NOTE: may be placed within another <table>
+// need to set everything to avoid Cascades!
+// wrapped with .open-eyes to provide greater specificity!! 
+
+.open-eyes .oe-add-select-search {	
 
 	// Select lists
 	// are group in <td>
 	table.select-options {
 			
 		thead {
+			tr {
+				border-top: none;
+				border-bottom: none;
+			}
+			
 			th {
 				text-align: left;
 				color:$oe-text-light;
@@ -27,9 +36,19 @@
 		}
 		
 		tbody {
+			tr {
+				border-top: none;
+				border-bottom: none;
+			}
+			
 			td {
+				text-align: left;
 				vertical-align: top;
 				padding:0 10px 0 0; // space the list groups 
+				
+				&:first-child {
+					padding:0 10px 0 0; // to avoid cascade issues! 
+				}
 				
 				&:last-child {
 					padding:0 0 0 0;

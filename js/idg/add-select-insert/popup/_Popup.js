@@ -3,12 +3,20 @@ Add Select Search insert
 Popup Constructor
 */
 
-idg.addSelectInsert.Popup = function ( $btn, popupID,){	
+idg.addSelectInsert.Popup = function ( $btn, popupID ){	
 	
 	let $popup = $('#'+popupID);
 	const reset = true;
 	const require = false; 
 	const callback = $popup.data('callback');  // optional
+	
+	/*
+	Using in analytics to build the data filters. Popup
+	needs to anchor left. Can not rely to x < n to do this.
+	Checking therefore the data- 
+	*/
+	
+	this.anchorLeft = $popup.data('anchor-left') ==! undefined ? true : false;
 	
 	/*
 	Props
@@ -22,6 +30,7 @@ idg.addSelectInsert.Popup = function ( $btn, popupID,){
 	this.open = function(){
 		this.positionFixPopup();
 		this.onScrollClose();
+		idg.addSelectInsert.closeAll();
 		$popup.show();
 	}
 	

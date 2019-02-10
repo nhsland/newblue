@@ -216,7 +216,7 @@ idg.pathSteps = {
 				*/
 				switch( stepData.status ){
 					case "done":
-						$status.text('HCA: F. Nightingale - 09:20');
+						$status.text('Completed PSD at 11:12');
 						$status.addClass('step-status green');
 					break;
 					case "todo":
@@ -347,7 +347,7 @@ idg.pathSteps = {
 			
 			// Who when
 			td = document.createElement('td'); 
-			td.innerHTML = 'HCA: F. Nightingale @ 11:12';
+			td.innerHTML = 'HCA: F. Nightingale at 11:12';
 			tr.appendChild(td);
 			
 			// tick!

@@ -1583,8 +1583,7 @@ select.fixed-width {
 
 .oe-add-select-search {
   position: fixed;
-  bottom: 300px;
-  right: 0;
+  bottom: 0;
   z-index: 70;
   background: #374755;
   padding: 5px 10px 35px 10px;
@@ -1648,7 +1647,12 @@ select.fixed-width {
   color: white;
 }
 
-.oe-add-select-search table.select-options thead th {
+.open-eyes .oe-add-select-search table.select-options thead tr {
+  border-top: none;
+  border-bottom: none;
+}
+
+.open-eyes .oe-add-select-search table.select-options thead th {
   text-align: left;
   color: #8c8c8c;
   font-size: 0.6875rem;
@@ -1656,21 +1660,31 @@ select.fixed-width {
   padding: 0 8px 3px 0;
 }
 
-.oe-add-select-search table.select-options thead th:last-child {
+.open-eyes .oe-add-select-search table.select-options thead th:last-child {
   text-align: left;
 }
 
-.oe-add-select-search table.select-options tbody td {
+.open-eyes .oe-add-select-search table.select-options tbody tr {
+  border-top: none;
+  border-bottom: none;
+}
+
+.open-eyes .oe-add-select-search table.select-options tbody td {
+  text-align: left;
   vertical-align: top;
   padding: 0 10px 0 0;
 }
 
-.oe-add-select-search table.select-options tbody td:last-child {
+.open-eyes .oe-add-select-search table.select-options tbody td:first-child {
+  padding: 0 10px 0 0;
+}
+
+.open-eyes .oe-add-select-search table.select-options tbody td:last-child {
   padding: 0 0 0 0;
   text-align: left;
 }
 
-.oe-add-select-search table.select-options tbody td .lists-layout {
+.open-eyes .oe-add-select-search table.select-options tbody td .lists-layout {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1742,8 +1756,7 @@ select.fixed-width {
 
 .oe-add-select-search .optional-placeholder {
   margin: 0 0 2px 0;
-  padding: 3px 8px;
-  width: 130px;
+  padding: 3px 18px 3px 8px;
   word-break: break-word;
   font-style: italic;
 }
@@ -9087,6 +9100,10 @@ table.oe-clinic-list td.center {
   font-weight: 100;
 }
 
+.analytics-header .title b, .analytics-header .title strong {
+  font-weight: 300;
+}
+
 .analytics-options {
   margin: 20px 0 0 45px;
   color: #8c8c8c;
@@ -9124,7 +9141,7 @@ table.oe-clinic-list td.center {
 }
 
 .analytics-options .charts li {
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   color: #8c8c8c;
   padding: 0 0 8px 0;
 }
@@ -9137,39 +9154,27 @@ table.oe-clinic-list td.center {
   margin: 8px 0 0 4px;
 }
 
-.analytics-options .custom-options {
-  position: relative;
+.analytics-options table.custom-filters {
+  width: 100%;
+  margin: 10px 0;
 }
 
-.analytics-options .custom-filters {
-  position: relative;
-}
-
-.analytics-options .custom-filters .filters-selected li {
-  font-size: 0.75rem;
-  color: #d6d6d6;
-  padding: 4px 0;
+.analytics-options table.custom-filters tbody tr {
   border-bottom: 1px solid #26303d;
 }
 
-.analytics-options .date-range {
-  margin: 20px 0;
+.analytics-options table.custom-filters tbody tr td {
+  color: #d6d6d6;
+  padding: 5px 0;
 }
 
-.analytics-options .date-range .datepicker-range {
-  text-align: center;
+.analytics-options table.custom-filters tbody tr td:first-child {
+  color: #8c8c8c;
+  padding-right: 5px;
 }
 
-.analytics-options .update-chart-btn {
-  margin: 10px 0 0 0;
-}
-
-.analytics-options .extra-actions {
-  margin: 20px 0 0 0;
-}
-
-.analytics-options .extra-actions button {
-  margin: 0 0 8px 0;
+.analytics-options table.custom-filters tbody tr td:last-child {
+  text-align: right;
 }
 
 .analytics-charts {

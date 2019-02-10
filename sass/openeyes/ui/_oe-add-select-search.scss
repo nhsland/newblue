@@ -10,8 +10,7 @@
 
 .oe-add-select-search {	
 	position:fixed; 					// Fixed take it out of the Grid. 
-	bottom:300px; 						// JS will override and position
-	right:0; 							// generally assumed right anchoring
+	bottom:0; 						// JS will override and position
 	z-index:$oe-z-add-insert; 			// z
 	background:$oe-popup-bg;
 	// allow for bottom 'btn' bar 

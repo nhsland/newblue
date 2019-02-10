@@ -112,6 +112,11 @@ idg.init = function(){
 						'worklist-PS.php', 						// Demo content
 						'.close-icon-btn' );				// wraps remove icon
 						
+	// Analytics Custom Filters					
+	idg.overlayPopup( 	'#analytics-change-filters',  			// VA in Exam
+						'analytics-filters.php', 						// Demo content
+						'.close-icon-btn' );				// wraps remove icon
+						
 					
 											
 									
