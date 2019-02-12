@@ -32,7 +32,7 @@ idg.tooltips = function(){
 			// calc height:
 			var h = $(".oe-tooltip").height();
 			// update position and show
-			var top = iconPos.y - h - 20;
+			var top = iconPos.y - h - 25;
 			
 			$(".oe-tooltip").css({"top":top+"px"});
 			

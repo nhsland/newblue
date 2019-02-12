@@ -2526,6 +2526,14 @@ select.fixed-width {
   background-image: url("../svg/in-css/icons/letter-GP.svg");
 }
 
+.oe-i.no-permissions {
+  background-image: url("../svg/in-css/icons/no-permissions.svg");
+}
+
+.oe-i.no-permissions.pro-theme {
+  background-image: url("../svg/in-css/icons/no-permissions.svg");
+}
+
 .oe-i.trials {
   background-image: url("../svg/in-css/icons/trials.svg");
 }
