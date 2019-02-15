@@ -1,0 +1,65 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// top area is for
+// selecting Speciality and Protocol
+// and for Protocol-timeline
+.select-timeline {
+	
+	display:flex;
+	align-items:flex-start;
+	justify-content:space-between;
+	
+	margin:10px 0 15px 0;
+	padding:0 0 15px 0;
+	
+	// matches <hr> .divider style:
+	border-bottom:3px solid $oe-line;
+	
+	// area to select options:
+	.select-speciality-protocol {
+		width: 25%;
+		
+		// following Analytics here:
+		.service-selected {	
+			@include font-size(18);
+			color:$oe-text;
+			font-weight:$oe-font-light;
+		}
+		
+		// Existing Protocols...
+		.protocols-list {
+			// Protocol list could be very long!!	
+			max-height: 110px; 
+			overflow-y: auto;
+			padding: 0 5px 0 0;
+			margin:15px 0;
+			
+			width:100%;
+			
+			// btn-list is set to PRO-theme.
+			// Make it theme-able
+			ul.btn-list {
+				
+				li {
+					color: $oe-text-light; 
+					background:rgba($oe-btn-default,0.8); 
+					// this works on filter options (but is quite subtle)
+					&:hover, &:focus, &:active, 
+					&.selected {
+						color:rgb(255,255,255);
+						background:$oe-btn-blue;
+					}
+				}
+				
+			}
+		}
+		
+	}
+	
+	
+	
+	
+	
+}

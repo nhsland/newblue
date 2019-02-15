@@ -1670,16 +1670,19 @@ select.fixed-width {
 }
 
 .open-eyes .oe-add-select-search table.select-options tbody td {
+  font-size: 0.75rem;
   text-align: left;
   vertical-align: top;
   padding: 0 10px 0 0;
 }
 
 .open-eyes .oe-add-select-search table.select-options tbody td:first-child {
+  font-size: 0.75rem;
   padding: 0 10px 0 0;
 }
 
 .open-eyes .oe-add-select-search table.select-options tbody td:last-child {
+  font-size: 0.75rem;
   padding: 0 0 0 0;
   text-align: left;
 }
@@ -9177,6 +9180,7 @@ table.oe-clinic-list td.center {
 }
 
 .analytics-options table.custom-filters tbody tr td:first-child {
+  font-size: 0.625rem;
   color: #8c8c8c;
   padding-right: 5px;
 }
@@ -9617,6 +9621,56 @@ table.oe-clinic-list td.center {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 0 8px 2px 8px;
+}
+
+/* Protocol Manager */
+.oe-protocol-manager {
+  padding: 0 20px;
+  background: #141e2b;
+  color: #d6d6d6;
+}
+
+.select-timeline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px 0 15px 0;
+  padding: 0 0 15px 0;
+  border-bottom: 3px solid #26303d;
+}
+
+.select-timeline .select-speciality-protocol {
+  width: 25%;
+}
+
+.select-timeline .select-speciality-protocol .service-selected {
+  font-size: 1.125rem;
+  color: #d6d6d6;
+  font-weight: 300;
+}
+
+.select-timeline .select-speciality-protocol .protocols-list {
+  max-height: 110px;
+  overflow-y: auto;
+  padding: 0 5px 0 0;
+  margin: 15px 0;
+  width: 100%;
+}
+
+.select-timeline .select-speciality-protocol .protocols-list ul.btn-list li {
+  color: #8c8c8c;
+  background: rgba(30, 46, 66, 0.8);
+}
+
+.select-timeline .select-speciality-protocol .protocols-list ul.btn-list li:hover, .select-timeline .select-speciality-protocol .protocols-list ul.btn-list li:focus, .select-timeline .select-speciality-protocol .protocols-list ul.btn-list li:active, .select-timeline .select-speciality-protocol .protocols-list ul.btn-list li.selected {
+  color: white;
+  background: #074598;
 }
 
 /* User Profile */

@@ -12,8 +12,10 @@
 
 .open-eyes .oe-add-select-search {	
 
-	// Select lists
-	// are group in <td>
+	// Option <ul> select lists are laid out using <table>
+	// HOWEVER this can be an issue when inserted into another <table>
+	// THEREFORE ensure all UI aspects are set here, rather than relying on cascades
+	
 	table.select-options {
 			
 		thead {
@@ -42,15 +44,19 @@
 			}
 			
 			td {
+				@include font-size(12);
 				text-align: left;
 				vertical-align: top;
 				padding:0 10px 0 0; // space the list groups 
 				
+				
 				&:first-child {
+					@include font-size(12);
 					padding:0 10px 0 0; // to avoid cascade issues! 
 				}
 				
 				&:last-child {
+					@include font-size(12);
 					padding:0 0 0 0;
 					text-align: left;
 				}
