@@ -62,7 +62,6 @@ gulp.task('watch-build', function() {
 });
 
 /**
-
 Eyedraw icons
 Build spritesheet & scss for Eyedraw icons, rarely updated, run these tasks in order:
 1) run task 'eyedraw_sprites'
@@ -73,7 +72,6 @@ Event (SEM )icons.
 Build spritesheet & scss for Event Icons, rarely updated, run this task, then default.
 1) run task 'event-sprites' (SEM Event icons)
 2) Run default 
-
 **/
 
 /*
