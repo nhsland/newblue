@@ -54,25 +54,6 @@ default
 gulp.task('default',['sass','sass-classic','sass-print','readJS','watch-build']);
 
 /**
-Eyedraw icons
-- Build sprites & scss for Eyedraw icons
-rarely updated, seperate task
-1) run eyedraw_sprites.
-2) run eyedraw_sass (sprites needs to be finished!)
-**/
-// gulp.task('eyedraw-icons',['eyedraw_sprites','eyedraw_sass']);
-
-/**
-Event icons
-- Build sprites for Events
-rarely updated, seperate task
-**/
-gulp.task('event-icons', function() {
-    gulp.watch( 'img/icons-events/76x76/*.png', ['event_sprites']); // don't use relative paths if you want to catch new / deleted files
-    gulp.watch( config.watchSass , ['sass']);
-});
-
-/**
 watch scss (Pro & Classic themes)	
 **/
 gulp.task('watch-build', function() {
@@ -80,6 +61,20 @@ gulp.task('watch-build', function() {
     gulp.watch( config.idgJS , ['readJS'] ); // IDG demo JS files
 });
 
+/**
+
+Eyedraw icons
+Build spritesheet & scss for Eyedraw icons, rarely updated, run these tasks in order:
+1) run task 'eyedraw_sprites'
+2) run task 'eyedraw_sass' (sprites needs to be finished to do this task)
+
+
+Event (SEM )icons.
+Build spritesheet & scss for Event Icons, rarely updated, run this task, then default.
+1) run task 'event-sprites' (SEM Event icons)
+2) Run default 
+
+**/
 
 /*
 DateStamp files to allow for comparisson between IDG & OE development
