@@ -39,7 +39,8 @@
 	.patient-quicklook, 
 	.patient-demographics,
 	.patient-management,
-	.patient-trials {
+	.patient-trials,
+	.patient-extra {
 		// js controlled interaction... 
 		&.open, &.active {
 			.icon {

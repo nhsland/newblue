@@ -3505,7 +3505,9 @@ select.fixed-width {
 .oe-patient .patient-management.open .icon,
 .oe-patient .patient-management.active .icon,
 .oe-patient .patient-trials.open .icon,
-.oe-patient .patient-trials.active .icon {
+.oe-patient .patient-trials.active .icon,
+.oe-patient .patient-extra.open .icon,
+.oe-patient .patient-extra.active .icon {
   fill: cyan;
 }
 
