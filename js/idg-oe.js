@@ -2419,6 +2419,56 @@ idg.tileDataOverflow = function(){
 	
 }
 /**
+VC Draggable Floating inputs
+**/
+idg.vcDraggable = function(){
+	
+	var id = 'oe-vc-scratchpad';
+
+	if( $('#'+id).length == 0 ) return;
+	
+	/* 	
+	Drag...
+	*/	
+	var relativeX, relativeY;
+		
+	document.addEventListener("dragstart", getMouseOffset, false);
+	document.addEventListener("dragend", reposFloat, false);
+		
+	
+	function getMouseOffset( e ){
+		e.dataTransfer.dropEffect = "move";
+		
+		// need to work out mouse offset in <div> before dragging
+		var offset = $('#'+id).offset();
+		relativeX = (e.clientX - offset.left);
+		relativeY = (e.clientY - offset.top);		
+	}
+	
+	function reposFloat( e ) {
+		// Update the panel position
+		var left = e.clientX - relativeX;
+		var top = e.clientY - relativeY;
+		
+		// stop it being dragged off screen
+		top = top < 1 ? 1 : top;
+		left = left < 1 ? 1 : left;
+		
+		$('#'+id).css({"top":top+"px","left":left+"px"});
+	}
+	
+	
+	/*
+	Touch version? ... 
+	Not sure if this works, not tested... but anyway:	
+	*/
+	var el = document.getElementById(id);
+	el.addEventListener("touchstart", getMouseOffset, false);
+	el.addEventListener("touchend", reposFloat, false);
+		
+	
+}
+/**
 Create 'buttons' for nav menus, 3 different flavours: standard, wrapped and fixed
 - standard: $btn open/closes the popup $content (seperate DOM element). MouseEnter/Leave provides increased functionality for non-touch users
 - wrapped: 'btn' & popup $content wrapped by shared DOM (shortcuts menu), wrapper is used for the $eventObj
@@ -3731,56 +3781,6 @@ idg.tooltips = function(){
 			$(".oe-tooltip").remove();
 		}
 	);	
-}
-/**
-VC Draggable Floating inputs
-**/
-idg.vcDraggable = function(){
-	
-	var id = 'oe-vc-scratchpad';
-
-	if( $('#'+id).length == 0 ) return;
-	
-	/* 	
-	Drag...
-	*/	
-	var relativeX, relativeY;
-		
-	document.addEventListener("dragstart", getMouseOffset, false);
-	document.addEventListener("dragend", reposFloat, false);
-		
-	
-	function getMouseOffset( e ){
-		e.dataTransfer.dropEffect = "move";
-		
-		// need to work out mouse offset in <div> before dragging
-		var offset = $('#'+id).offset();
-		relativeX = (e.clientX - offset.left);
-		relativeY = (e.clientY - offset.top);		
-	}
-	
-	function reposFloat( e ) {
-		// Update the panel position
-		var left = e.clientX - relativeX;
-		var top = e.clientY - relativeY;
-		
-		// stop it being dragged off screen
-		top = top < 1 ? 1 : top;
-		left = left < 1 ? 1 : left;
-		
-		$('#'+id).css({"top":top+"px","left":left+"px"});
-	}
-	
-	
-	/*
-	Touch version? ... 
-	Not sure if this works, not tested... but anyway:	
-	*/
-	var el = document.getElementById(id);
-	el.addEventListener("touchstart", getMouseOffset, false);
-	el.addEventListener("touchend", reposFloat, false);
-		
-	
 }
 /**
 Homepage Message expand / contract 	
