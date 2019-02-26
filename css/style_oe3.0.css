@@ -152,6 +152,11 @@ table {
   border-spacing: 0;
 }
 
+::-moz-selection {
+  background: #89d8e9;
+  text-shadow: none;
+}
+
 ::selection {
   background: #89d8e9;
   text-shadow: none;
@@ -1134,7 +1139,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-color: rgba(0, 0, 0, 0);
+  border-color: transparent;
   border-top-color: cyan;
   border-width: 5px;
   margin-left: -5px;

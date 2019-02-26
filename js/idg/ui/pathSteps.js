@@ -308,11 +308,14 @@ idg.pathSteps = {
 	buildDataTable:function( dataArrOfObjs, status ){
 		
 		let fragment = document.createDocumentFragment();
-
+		let count = 1;
+		
 		dataArrOfObjs.forEach( obj => {
+			
 			
 			let tr = document.createElement('tr');
 			let tds = obj.tr.split(';');
+			
 			tds.forEach( data => {
 				let td = document.createElement('td'); 
 				
@@ -334,7 +337,14 @@ idg.pathSteps = {
 			});
 			fragment.appendChild(tr);
 			
+			/*
+			Hack to demo the UI / UX states
+			*/
 			if(status == "done") addWhoWhen();
+			if(status == "progress" && count == 1) addWhoWhen();
+			
+			count++;
+			
 		});
 		
 		function addWhoWhen(){
