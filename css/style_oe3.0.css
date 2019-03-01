@@ -152,11 +152,6 @@ table {
   border-spacing: 0;
 }
 
-::-moz-selection {
-  background: #89d8e9;
-  text-shadow: none;
-}
-
 ::selection {
   background: #89d8e9;
   text-shadow: none;
@@ -1139,7 +1134,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   width: 0;
   position: absolute;
   pointer-events: none;
-  border-color: transparent;
+  border-color: rgba(0, 0, 0, 0);
   border-top-color: cyan;
   border-width: 5px;
   margin-left: -5px;
@@ -1771,7 +1766,7 @@ select.fixed-width {
 
 .oe-pathstep-btn {
   display: inline-block;
-  margin: 1px 3px 1px 0;
+  margin: 1px 0 1px 3px;
   padding: 4px 8px 3px 8px;
   font-size: 0.75rem;
   font-style: italic;
@@ -1779,6 +1774,10 @@ select.fixed-width {
   cursor: pointer;
   color: #f0f0f0;
   background: #323237;
+}
+
+.oe-pathstep-btn:first-child {
+  margin-left: 0;
 }
 
 .oe-pathstep-btn.green {
@@ -9471,6 +9470,19 @@ table.oe-clinic-list td.center {
 }
 
 .oe-worklists table.standard {
+  margin: 10px 0 40px 0;
+}
+
+/* Trials */
+.oe-trials {
+  background: #141e2b;
+}
+
+.oe-trials .oe-full-side-panel {
+  padding: 20px;
+}
+
+.oe-trials table.standard {
   margin: 10px 0 40px 0;
 }
 

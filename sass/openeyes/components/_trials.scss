@@ -1,0 +1,25 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Trials
+// extends the basic:
+// layout oe-full
+// table standard layout
+
+.oe-trials {
+	background:$oe-blue-dark2; // theme changable
+	
+	// extend 
+	.oe-full-side-panel {
+		padding:20px;
+	}
+		
+	// extend standard default table
+	table.standard {
+		margin:10px 0 40px 0;
+	}
+}
+
+
+
