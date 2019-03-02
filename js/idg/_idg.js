@@ -188,6 +188,9 @@ idg.init = function(){
 	// OE Filter Options (analytics)
 	idg.filterOptions();
 	
+	// sidebar Date Filters
+	idg.sidebarDateFilter();
+	
 	// Element subgroups
 	idg.elementSubgroup();
 	

@@ -8,7 +8,7 @@
 html {
 	// Experimented with this and decided to leave it set to default values	
 	// but may return to it in the future... so leaving it here
-	-webkit-font-smoothing: subpixel-antialiased; // this is the default setting in Chrome, including it incase it helps IE.
+	-webkit-font-smoothing: subpixel-antialiased; // this is the default setting in Chrome, including it incase it helps Safari (iPads).
 	//-webkit-font-smoothing: antialiased; // this is crisper but looks shit
 	// text-rendering: optimizeLegibility; // default 'auto'
 }

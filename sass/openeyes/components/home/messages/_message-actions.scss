@@ -10,6 +10,7 @@
 	.message-actions {
 		padding:20px;
 		border-right:1px solid $oe-blue-light;
+		@include font-size(12);
 		
 		// user name
 		.user {

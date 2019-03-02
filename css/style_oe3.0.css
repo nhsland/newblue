@@ -3269,18 +3269,22 @@ select.fixed-width {
 
 .oe-full-content .oe-full-side-panel {
   color: #d6d6d6;
+  font-size: 0.75rem;
 }
 
 .oe-full-content .oe-full-side-panel p {
-  font-size: 0.75rem;
   margin: 5px 0 10px 0;
 }
 
 .oe-full-content .oe-full-side-panel h3 {
   margin: 20px 0 10px 0;
-  font-size: 1 5/16rem;
+  font-size: 0.9375rem;
   font-weight: 300;
   color: #626d7b;
+}
+
+.oe-full-content .oe-full-side-panel h3.no-pad-top {
+  margin-top: 0;
 }
 
 .oe-full-content .oe-full-side-panel h4 {
@@ -4990,6 +4994,7 @@ table.management-summaries tbody td:last-child {
 .home-messages .message-actions {
   padding: 20px;
   border-right: 1px solid #626d7b;
+  font-size: 0.75rem;
 }
 
 .home-messages .message-actions .user {
@@ -9480,6 +9485,30 @@ table.oe-clinic-list td.center {
 
 .oe-trials .oe-full-side-panel {
   padding: 20px;
+}
+
+.oe-trials .trial-group {
+  padding: 0 20px 0 0;
+}
+
+.oe-trials .trial-group:last-child {
+  padding-bottom: 40px;
+}
+
+.oe-trials .trial-summary {
+  padding: 20px 20px 0 0;
+}
+
+.oe-trials .trial-summary h2 {
+  font-size: 1.1875rem;
+  font-weight: 300;
+  color: cyan;
+}
+
+.oe-trials .trial-summary .summary {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #8c8c8c;
 }
 
 .oe-trials table.standard {

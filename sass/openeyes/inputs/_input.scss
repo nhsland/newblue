@@ -43,6 +43,10 @@ input {
 		// search icon
 		background-image:url( svg-path('ui/filter') );
 	}
+	
+	&.date {
+		//text-align: center;
+	}
 }
 
 // Normalize for range

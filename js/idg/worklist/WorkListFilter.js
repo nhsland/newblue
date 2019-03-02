@@ -1,36 +1,34 @@
 /**
 Homepage Message expand / contract 	
+- used in WorkList and Trials
 **/
 idg.WorkListFilter = function(){
 	
-	if( $('.js-worklist-filter').length == 0 ) return;
+	if( $('.js-list-filter').length == 0 ) return;
 	
-	$('.js-worklist-filter').each(function(){
+	$('.js-list-filter').each(function(){
 		$(this).click( function(e){
 			e.preventDefault();
 			resetFilters();
 			$(this).addClass('selected');
-			updateWorkLists( $(this).data('worklist') );
+			updateListView( $(this).data('list') );
 			
 		});
 	});
 	
 	function resetFilters(){
-		$('.js-worklist-filter').removeClass('selected');
+		$('.js-list-filter').removeClass('selected');
 	}
 	
-	function updateWorkLists( listID ){
+	function updateListView( listID ){
 		if(listID == 'all'){
-			$('.worklist-group').show();
+			$('.js-filter-group').show();
 		} else {
-			$('.worklist-group').hide();
+			$('.js-filter-group').hide();
 			$('#'+listID).show();	
 		}
 	}
 	
-	// fake <tr> row click (always goes to IDG overview demo)
-	$('.clickable-rows tbody tr').click(function(){
-		window.location = '/v3.0-SEM/_overview';
-	});
+	
 	
 }
