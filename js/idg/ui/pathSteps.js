@@ -92,7 +92,7 @@ idg.pathSteps = {
 		
 		const $div 		= $('<div class="oe-pathstep-popup"></div>');
 		const $close 	= $('<div class="close-icon-btn"><i class="oe-i remove-circle medium"></i></div>');	
-		const $status 	= $('<div class="step-status"></div>');
+		const $status 	= $('<div class="step-status">Status</div>');
 		const $title 	= $('<h3 class="title"></h3>');
 		const $dataGroup = $('<div class="data-group"></div>');
 		const $edit 	= $('<div class="step-actions"><button class="blue hint">Edit PSD</button></div>');
@@ -101,10 +101,10 @@ idg.pathSteps = {
 		
 		// build DOM element, and hide it
 		$div.append(	$close, 
-						$status,
 						$title, 
 						$dataGroup,
-						$edit );
+						$edit,
+						$status );
 		
 		// attach to DOM
 		$div.hide();
@@ -126,11 +126,38 @@ idg.pathSteps = {
 			
 			if( lock ){
 				$title.text(data.title).show();
-				
-				
+
 				$close.show();
-				$status.show();
-				$edit.show();
+				$status.removeClass().show();
+				
+				switch( data.status ){
+					case "done":
+						$status.text('Completed PSD at 11:12');
+						$status.addClass('step-status green');
+					break;
+					case "todo":
+						$status.text('Waiting to do');
+						$status.addClass('step-status');
+						$edit.show();
+						//$pin.show();
+					break;
+					case "progress":
+						$status.text('In progress');
+						$status.addClass('step-status orange');
+						$edit.show();
+						//$pin.show();
+					break;
+					case "problem":
+						$status.text('Problem! e.g. Patient has left');
+						$status.addClass('step-status red');
+						$edit.show();
+						//$pin.show();
+					break;
+					
+					default: $status.text('no status set');
+				}
+	
+				
 				$close[0].addEventListener( "click", this.close.bind( this ) );
 			
 			} else {

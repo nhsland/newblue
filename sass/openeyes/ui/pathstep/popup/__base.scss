@@ -10,7 +10,7 @@
 	z-index:$oe-z-tooltip;
 	background:$oe-tooltip-bg;
 	border:1px solid $oe-text-highlight;
-	padding:15px 10px 45px 15px; // space for status
+	padding:10px; 
 	width:360px;
 	border-radius:3px;
 	
@@ -29,18 +29,13 @@
 	// cross icon
 	.close-icon-btn {
 		position: absolute;
-		top:8px;
-		right:9px;
+		top:9px;
+		right:8px;
 	}
 	
 	// wrapper for btns e.g "Edit"
 	.step-actions {
-		padding:10px 0;	
+		padding:10px 0 0 0;	
 	}	
 }
-
-@import "popup/typography";
-@import "popup/step-status";
-@import "popup/data";
-@import "popup/pin";
 
