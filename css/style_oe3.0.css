@@ -705,10 +705,6 @@ table.standard tbody td.valign-top {
   vertical-align: top;
 }
 
-table.standard tbody td.nowrap {
-  white-space: nowrap;
-}
-
 table.standard tfoot tr {
   border-top: 3px solid #26303d;
 }
@@ -795,6 +791,10 @@ strong, b {
 
 .tabspace.double {
   width: 50px;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .highlighter {
@@ -1889,19 +1889,21 @@ select.fixed-width {
 }
 
 .oe-pathstep-popup .data-group table.data-table tr {
-  border-top: 1px solid #26303d;
+  border-top: 2px solid #26303d;
 }
 
 .oe-pathstep-popup .data-group table.data-table tr:first-child {
   border-top: none;
 }
 
-.oe-pathstep-popup .data-group table.data-table tr.administer {
+.oe-pathstep-popup .data-group table.data-table tr.administer-details {
   border-top: none;
 }
 
-.oe-pathstep-popup .data-group table.data-table tr.administer td {
-  padding-bottom: 6px;
+.oe-pathstep-popup .data-group table.data-table tr.administer-details td {
+  font-size: 0.6875rem;
+  font-weight: 300;
+  padding-bottom: 5px;
 }
 
 .oe-pathstep-popup .data-group table.data-table td {
@@ -2017,6 +2019,10 @@ select.fixed-width {
 
 .oe-i.start:hover, .oe-i.start:focus, .oe-i.start:active, .oe-i.stop:hover, .oe-i.stop:focus, .oe-i.stop:active, .oe-i.change:hover, .oe-i.change:focus, .oe-i.change:active, .oe-i.d-slash:hover, .oe-i.d-slash:focus, .oe-i.d-slash:active, .oe-i.no-click:hover, .oe-i.no-click:focus, .oe-i.no-click:active {
   opacity: 0.5;
+}
+
+.oe-i.no-link {
+  cursor: help;
 }
 
 .oe-i.disabled {
@@ -2539,6 +2545,14 @@ select.fixed-width {
 
 .oe-i.no-permissions.pro-theme {
   background-image: url("../svg/in-css/icons/no-permissions.svg");
+}
+
+.oe-i.waiting {
+  background-image: url("../svg/in-css/icons/waiting.svg");
+}
+
+.oe-i.waiting.pro-theme {
+  background-image: url("../svg/in-css/icons/waiting.svg");
 }
 
 .oe-i.trials {
@@ -3263,10 +3277,6 @@ select.fixed-width {
   grid-area: 1 / 2 / 2 / 3;
 }
 
-.oe-full-content .oe-full-main {
-  color: #d6d6d6;
-}
-
 .oe-full-content .oe-full-side-panel {
   color: #d6d6d6;
   font-size: 0.75rem;
@@ -3308,6 +3318,16 @@ select.fixed-width {
 .oe-full-content .oe-full-side-panel ul li .count {
   font-size: 0.75rem;
   padding: 0 0 0 5px;
+}
+
+.oe-full-content .oe-full-side-panel table.label-value tr td:first-child {
+  opacity: 0.6;
+  font-size: 0.625rem;
+  font-weight: 400;
+}
+
+.oe-full-content .oe-full-main {
+  color: #d6d6d6;
 }
 
 /* Components */
@@ -4212,7 +4232,7 @@ select.fixed-width {
 }
 
 .oe-popup-content.popup-add-psd .psd-build table.psd-build-list tr {
-  border-bottom: 1px solid #26303d;
+  border-bottom: 2px solid #26303d;
 }
 
 .oe-popup-content.popup-add-psd .psd-build table.psd-build-list tr:last-child {
@@ -4220,13 +4240,26 @@ select.fixed-width {
 }
 
 .oe-popup-content.popup-add-psd .psd-build table.psd-build-list td {
-  padding: 4px 8px 4px 0;
+  padding: 6px 8px 6px 0;
   font-size: 0.75rem;
 }
 
 .oe-popup-content.popup-add-psd .psd-build table.psd-build-list td:last-child {
   text-align: right;
   padding-right: 0;
+}
+
+.oe-popup-content.popup-add-psd .psd-build table.psd-build-list td .drug {
+  font-size: 0.875rem;
+  margin: 0 0 5px 0;
+}
+
+.oe-popup-content.popup-add-psd .psd-build table.psd-build-list td .administration {
+  text-align: right;
+}
+
+.oe-popup-content.popup-add-psd .psd-build table.psd-build-list td .administration select {
+  margin: 0 0 0 5px;
 }
 
 .oe-patient-popup table.patient-appointments td {

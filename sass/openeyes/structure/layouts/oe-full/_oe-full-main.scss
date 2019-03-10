@@ -1,0 +1,15 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-full-content {
+
+	.oe-full-main {
+		// this area normally has an extra CSS hook. e.g. "oe-worklists".
+		// and this handles all the styling. This approach is favoured
+		// as we are not sure what changes may occur in the future.
+		// The only thing know is ...
+		
+		color:$oe-text; // make sure text is themable
+	}
+}

@@ -8,7 +8,7 @@ idg.pathSteps = {
 	content and position is then modified for each step	
 	*/
 	popup:null,
-	quickview:null,
+	//quickview:null,
 	steps:[],
 		
 	/*
@@ -20,10 +20,14 @@ idg.pathSteps = {
 		*/
 		if( $('.oe-pathstep-btn').length){
 			
+			this.popup = new this.LoadPhpDemoDOM();
+						
+/*
 			this.popup = new this.CreatePopup();
 			this.popup.init(true);
 			this.quickview = new this.CreatePopup();
 			this.quickview.init(false);
+*/
 			/*
 			Use $ for DOM work
 			*/
@@ -37,13 +41,13 @@ idg.pathSteps = {
 	setup Btns
 	*/ 
 	setupSteps:function( $stepBtn ){
-		this.steps.push( new this.StepBtn( $stepBtn, this.popup, this.quickview ) );	
+		this.steps.push( new this.StepBtn( $stepBtn, this.popup ) );	
 	},
 	
 	/*
 	build Step Btn	
 	*/
-	StepBtn:function( $btn, popup, quickview ){
+	StepBtn:function( $btn, popup ){
 		const elem = $btn[ 0 ];
 		const data = $btn.data("step");
 
@@ -53,21 +57,17 @@ idg.pathSteps = {
 		this.click = function(){
 			let btnPos = elem.getBoundingClientRect();
 			let w = document.documentElement.clientWidth;
-			quickview.close();
-			popup.show( data, btnPos.top, w - btnPos.right  );
+			popup.show( data, btnPos.top, w - btnPos.right, true  );
 		}
 		
 		this.enter = function(){
 			let btnPos = elem.getBoundingClientRect();
 			let w = document.documentElement.clientWidth;
-			popup.close();
-			quickview.show( data, btnPos.top + btnPos.height, w - btnPos.right );
-			
-			
+			popup.show( data, btnPos.top + btnPos.height, w - btnPos.right, false );
 		}
 		
 		this.leave = function(){
-			quickview.close();
+			popup.out();
 		}
 		
 		/*
@@ -76,6 +76,87 @@ idg.pathSteps = {
 		elem.addEventListener( "click", this.click.bind( this ) );	
 		elem.addEventListener( "mouseenter", this.enter.bind( this ) );
 		elem.addEventListener( "mouseleave", this.leave.bind( this ) );
+	},
+	
+	/*
+	JS DOM construction was getting too complex. Decided to just 
+	loaded in some demo PHP to showcase the UI (this allows easier
+	and faster adjustments to the layouts) ... JS stuff was fun tho ;)	
+	*/
+	LoadPhpDemoDOM:function(){
+		/*
+		2 views Quick / Full
+		Pull in the PHP for the different data
+		Other DOM elements setup and control here	
+		*/
+		
+		const $div 		= $('<div class="oe-pathstep-popup"></div>');
+		const $close 	= $('<div class="close-icon-btn"><i class="oe-i remove-circle medium"></i></div>');	
+		const $status 	= $('<div class="step-status"></div>');
+		const $title 	= $('<h3 class="title"></h3>');
+		const $dataGroup = $('<div class="data-group"></div>');
+		const $edit 	= $('<div class="step-actions"><button class="blue hint">Edit PSD</button></div>');
+		
+		
+		
+		// build DOM element, and hide it
+		$div.append(	$close, 
+						$status,
+						$title, 
+						$dataGroup,
+						$edit );
+		
+		// attach to DOM
+		$div.hide();
+		$('body').append( $div );
+		
+		
+		let clickLockOpen = false;
+		
+		this.show = function( data, top, right, lock){
+			clickLockOpen = lock;
+			
+			// position
+			$div.css({ 	top : top,
+					 	right: right });	 	
+			
+			/* 
+			locked mean's clicked: show full	
+			*/		
+			
+			if( lock ){
+				$title.text(data.title).show();
+				
+				
+				$close.show();
+				$status.show();
+				$edit.show();
+				$close[0].addEventListener( "click", this.close.bind( this ) );
+			
+			} else {
+				
+				$close.hide();
+				$status.hide();
+				$title.hide();
+				$edit.hide();
+			
+			}	 	
+			// now show it
+			$div.show();
+			
+			$dataGroup.load('/idg-php/v3.0/_load/' + data.php,function(){});
+		}
+		
+		this.out = function(){
+			if(clickLockOpen) return;
+			$div.hide();
+		}
+		
+		this.close = function(){
+			clickLockOpen = false;
+			$div.hide();
+		}
+
 	},
 
 	/*

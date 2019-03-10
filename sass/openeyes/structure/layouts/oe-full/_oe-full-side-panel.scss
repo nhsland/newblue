@@ -2,24 +2,20 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// generic layout...
 .oe-full-content {
-	
-	// make sure the text is the right theme color.
-	.oe-full-main {
-		color:$oe-text;
-	}
 	
 	.oe-full-side-panel {
 		// standard  styles for the side-panel
-		// should help with consist layouts...
-		// but hard to know how far to standardise this... 
-		
+		// side-panel layouts started being used more 
+		// and required standardising... althoug hard to 
+		// know how far to take it here....
+		 
 		color:$oe-text;
 		
 		// set a default text size 
 		// this will cover <a> 
 		@include font-size(12);
+		
 		
 		p {
 			margin:5px 0 10px 0;
@@ -59,6 +55,23 @@
 				.count {
 					@include font-size(12);
 					padding:0 0 0 5px;
+				}
+			}
+		}
+		
+		// tables use 'standard' class
+		// extend it with the following:
+		table {
+			// based on VIEW mode (same class)
+			&.label-value {
+				tr {
+					td {
+						&:first-child{
+							opacity:0.6; // this works for both themes
+							@include font-size(10);
+							font-weight:$oe-font-medium;
+						}
+					}
 				}
 			}
 		}

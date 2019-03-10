@@ -1107,6 +1107,40 @@ clinic.updateTasks = function( ){
 	
 	$('#filter-tasks .current').text( clinic.data['tasks'].length );
 }
+/**
+Homepage Message expand / contract 	
+**/
+idg.homeMessageExpand = function(){
+	
+	if( $('.home-messages').length == 0 ) return;
+	
+	$('.js-expand-message').each(function(){
+		
+		var message = $(this).parent().parent().find('.message');
+		var expander = new Expander( $(this),
+									 message );
+	});
+	
+	function Expander( $icon, $message){
+		var expanded = false; 
+		
+		$icon.click( change );
+		
+		function change(){
+			
+			$icon.toggleClass('expand collapse');
+			
+			if(expanded){
+				$message.removeClass('expand');
+			} else {
+				$message.addClass('expand');
+			}
+			
+			expanded = !expanded;
+		}
+	}
+}
+
 /*
 Lightning
 */
@@ -2388,6 +2422,56 @@ idg.tileDataOverflow = function(){
 	
 }
 /**
+VC Draggable Floating inputs
+**/
+idg.vcDraggable = function(){
+	
+	var id = 'oe-vc-scratchpad';
+
+	if( $('#'+id).length == 0 ) return;
+	
+	/* 	
+	Drag...
+	*/	
+	var relativeX, relativeY;
+		
+	document.addEventListener("dragstart", getMouseOffset, false);
+	document.addEventListener("dragend", reposFloat, false);
+		
+	
+	function getMouseOffset( e ){
+		e.dataTransfer.dropEffect = "move";
+		
+		// need to work out mouse offset in <div> before dragging
+		var offset = $('#'+id).offset();
+		relativeX = (e.clientX - offset.left);
+		relativeY = (e.clientY - offset.top);		
+	}
+	
+	function reposFloat( e ) {
+		// Update the panel position
+		var left = e.clientX - relativeX;
+		var top = e.clientY - relativeY;
+		
+		// stop it being dragged off screen
+		top = top < 1 ? 1 : top;
+		left = left < 1 ? 1 : left;
+		
+		$('#'+id).css({"top":top+"px","left":left+"px"});
+	}
+	
+	
+	/*
+	Touch version? ... 
+	Not sure if this works, not tested... but anyway:	
+	*/
+	var el = document.getElementById(id);
+	el.addEventListener("touchstart", getMouseOffset, false);
+	el.addEventListener("touchend", reposFloat, false);
+		
+	
+}
+/**
 Create 'buttons' for nav menus, 3 different flavours: standard, wrapped and fixed
 - standard: $btn open/closes the popup $content (seperate DOM element). MouseEnter/Leave provides increased functionality for non-touch users
 - wrapped: 'btn' & popup $content wrapped by shared DOM (shortcuts menu), wrapper is used for the $eventObj
@@ -3283,7 +3367,7 @@ idg.pathSteps = {
 	content and position is then modified for each step	
 	*/
 	popup:null,
-	quickview:null,
+	//quickview:null,
 	steps:[],
 		
 	/*
@@ -3295,10 +3379,14 @@ idg.pathSteps = {
 		*/
 		if( $('.oe-pathstep-btn').length){
 			
+			this.popup = new this.LoadPhpDemoDOM();
+						
+/*
 			this.popup = new this.CreatePopup();
 			this.popup.init(true);
 			this.quickview = new this.CreatePopup();
 			this.quickview.init(false);
+*/
 			/*
 			Use $ for DOM work
 			*/
@@ -3312,13 +3400,13 @@ idg.pathSteps = {
 	setup Btns
 	*/ 
 	setupSteps:function( $stepBtn ){
-		this.steps.push( new this.StepBtn( $stepBtn, this.popup, this.quickview ) );	
+		this.steps.push( new this.StepBtn( $stepBtn, this.popup ) );	
 	},
 	
 	/*
 	build Step Btn	
 	*/
-	StepBtn:function( $btn, popup, quickview ){
+	StepBtn:function( $btn, popup ){
 		const elem = $btn[ 0 ];
 		const data = $btn.data("step");
 
@@ -3328,21 +3416,17 @@ idg.pathSteps = {
 		this.click = function(){
 			let btnPos = elem.getBoundingClientRect();
 			let w = document.documentElement.clientWidth;
-			quickview.close();
-			popup.show( data, btnPos.top, w - btnPos.right  );
+			popup.show( data, btnPos.top, w - btnPos.right, true  );
 		}
 		
 		this.enter = function(){
 			let btnPos = elem.getBoundingClientRect();
 			let w = document.documentElement.clientWidth;
-			popup.close();
-			quickview.show( data, btnPos.top + btnPos.height, w - btnPos.right );
-			
-			
+			popup.show( data, btnPos.top + btnPos.height, w - btnPos.right, false );
 		}
 		
 		this.leave = function(){
-			quickview.close();
+			popup.out();
 		}
 		
 		/*
@@ -3351,6 +3435,87 @@ idg.pathSteps = {
 		elem.addEventListener( "click", this.click.bind( this ) );	
 		elem.addEventListener( "mouseenter", this.enter.bind( this ) );
 		elem.addEventListener( "mouseleave", this.leave.bind( this ) );
+	},
+	
+	/*
+	JS DOM construction was getting too complex. Decided to just 
+	loaded in some demo PHP to showcase the UI (this allows easier
+	and faster adjustments to the layouts) ... JS stuff was fun tho ;)	
+	*/
+	LoadPhpDemoDOM:function(){
+		/*
+		2 views Quick / Full
+		Pull in the PHP for the different data
+		Other DOM elements setup and control here	
+		*/
+		
+		const $div 		= $('<div class="oe-pathstep-popup"></div>');
+		const $close 	= $('<div class="close-icon-btn"><i class="oe-i remove-circle medium"></i></div>');	
+		const $status 	= $('<div class="step-status"></div>');
+		const $title 	= $('<h3 class="title"></h3>');
+		const $dataGroup = $('<div class="data-group"></div>');
+		const $edit 	= $('<div class="step-actions"><button class="blue hint">Edit PSD</button></div>');
+		
+		
+		
+		// build DOM element, and hide it
+		$div.append(	$close, 
+						$status,
+						$title, 
+						$dataGroup,
+						$edit );
+		
+		// attach to DOM
+		$div.hide();
+		$('body').append( $div );
+		
+		
+		let clickLockOpen = false;
+		
+		this.show = function( data, top, right, lock){
+			clickLockOpen = lock;
+			
+			// position
+			$div.css({ 	top : top,
+					 	right: right });	 	
+			
+			/* 
+			locked mean's clicked: show full	
+			*/		
+			
+			if( lock ){
+				$title.text(data.title).show();
+				
+				
+				$close.show();
+				$status.show();
+				$edit.show();
+				$close[0].addEventListener( "click", this.close.bind( this ) );
+			
+			} else {
+				
+				$close.hide();
+				$status.hide();
+				$title.hide();
+				$edit.hide();
+			
+			}	 	
+			// now show it
+			$div.show();
+			
+			$dataGroup.load('/idg-php/v3.0/_load/' + data.php,function(){});
+		}
+		
+		this.out = function(){
+			if(clickLockOpen) return;
+			$div.hide();
+		}
+		
+		this.close = function(){
+			clickLockOpen = false;
+			$div.hide();
+		}
+
 	},
 
 	/*
@@ -3739,56 +3904,6 @@ idg.tooltips = function(){
 	);	
 }
 /**
-VC Draggable Floating inputs
-**/
-idg.vcDraggable = function(){
-	
-	var id = 'oe-vc-scratchpad';
-
-	if( $('#'+id).length == 0 ) return;
-	
-	/* 	
-	Drag...
-	*/	
-	var relativeX, relativeY;
-		
-	document.addEventListener("dragstart", getMouseOffset, false);
-	document.addEventListener("dragend", reposFloat, false);
-		
-	
-	function getMouseOffset( e ){
-		e.dataTransfer.dropEffect = "move";
-		
-		// need to work out mouse offset in <div> before dragging
-		var offset = $('#'+id).offset();
-		relativeX = (e.clientX - offset.left);
-		relativeY = (e.clientY - offset.top);		
-	}
-	
-	function reposFloat( e ) {
-		// Update the panel position
-		var left = e.clientX - relativeX;
-		var top = e.clientY - relativeY;
-		
-		// stop it being dragged off screen
-		top = top < 1 ? 1 : top;
-		left = left < 1 ? 1 : left;
-		
-		$('#'+id).css({"top":top+"px","left":left+"px"});
-	}
-	
-	
-	/*
-	Touch version? ... 
-	Not sure if this works, not tested... but anyway:	
-	*/
-	var el = document.getElementById(id);
-	el.addEventListener("touchstart", getMouseOffset, false);
-	el.addEventListener("touchend", reposFloat, false);
-		
-	
-}
-/**
 Homepage Message expand / contract 	
 - used in WorkList and Trials
 **/
@@ -3823,38 +3938,172 @@ idg.WorkListFilter = function(){
 	
 }
 
-/**
-Homepage Message expand / contract 	
-**/
-idg.homeMessageExpand = function(){
+/*
+Dirty demo to show data insertion into IDG Elements where required
+*/
+idg.addSelectInsert.updateElement = {
+	test:function( arr ){
+		idgTest.report( 'test insert' );
+	}
+}
+/*
+Add Select Search insert  
+Popup Constructor
+*/
+
+idg.addSelectInsert.Popup = function ( $btn, popupID ){	
 	
-	if( $('.home-messages').length == 0 ) return;
+	let $popup = $('#'+popupID);
+	const reset = true;
+	const require = false; 
+	const callback = $popup.data('callback');  // optional
 	
-	$('.js-expand-message').each(function(){
+	/*
+	Using in analytics to build the data filters. Popup
+	needs to anchor left. Can not rely to x < n to do this.
+	Checking therefore the data- 
+	*/
+	
+	this.anchorLeft = $popup.data('anchor-left') ==! undefined ? true : false;
+	
+	/*
+	Props
+	*/ 
+	this.$btn = $btn;  
+	this.$popup = $popup;
+	
+	/*
+	Methods
+	*/
+	this.open = function(){
+		this.positionFixPopup();
+		this.onScrollClose();
+		idg.addSelectInsert.closeAll();
+		$popup.show();
+	}
+	
+	this.close = function(){
+		$popup.hide();		
+	}
+	
+	this.reset = function(){
+		// reset (to default state)
+	}
+	
+	this.insertData = function(){
+		/*
+		gather data and send to callback (if requested)
+		*/
+		let JSONdata = []
+		lists.forEach( list => {
+			JSONdata.push( list.gatherData() );
+		});
 		
-		var message = $(this).parent().parent().find('.message');
-		var expander = new Expander( $(this),
-									 message );
+		/*
+		callback handles Element insert demo
+		*/
+		if( callback != undefined){
+			idg.addSelectInsert.updateElement[callback]( JSONdata );
+		}
+		
+		this.close();
+	}
+	
+	/*
+	Store lists
+	*/
+	let lists = [];
+	
+	$('.add-options',$popup).each( function(){
+		lists.push( new idg.addSelectInsert.OptionsList( $(this) ) );
 	});
 	
-	function Expander( $icon, $message){
-		var expanded = false; 
-		
-		$icon.click( change );
-		
-		function change(){
-			
-			$icon.toggleClass('expand collapse');
-			
-			if(expanded){
-				$message.removeClass('expand');
-			} else {
-				$message.addClass('expand');
-			}
-			
-			expanded = !expanded;
+	/*
+	Setup Btn Events. 
+	*/
+	idg.addSelectInsert.btnEvent( this, $btn, this.open );
+	idg.addSelectInsert.btnEvent( this, $popup.children('.close-icon-btn'), this.close );
+	idg.addSelectInsert.btnEvent( this, $popup.find('.add-icon-btn'), this.insertData );
+	  					
+}
+
+/*
+Set up Btn click events
+*/
+idg.addSelectInsert.btnEvent = function ( popup, $btn, callback ){
+  	$btn.click(function(e) {
+  		e.stopPropagation();
+  		callback.call(popup);
+	});	  					
+}
+
+
+idg.addSelectInsert.Popup.prototype.onScrollClose = function(){
+	/*
+	Close popup on scroll.
+	note: scroll event fires on assignment.
+	so check against scroll position
+	*/	
+	let popup = this;	
+	let scrollPos = $(".main-event").scrollTop();
+	$(".main-event").on("scroll", function(){ 
+		if( scrollPos !=  $(this).scrollTop() ){
+			// Remove scroll event:	
+			$(".main-event").off("scroll");
+			popup.close();
 		}
+			
+	});
+
+}
+
+/*
+Set up Btn click events
+*/
+
+idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
+	/* 
+	Popup is FIXED positioned, work out offset position based on button
+	To do this proved easer with Vanilla JS
+	*/
+	let elem = this.$btn[ 0 ];
+	let btnPos = elem.getBoundingClientRect();		
+	let w = document.documentElement.clientWidth;
+	let h = document.documentElement.clientHeight;
+	
+	let posH = (h - btnPos.bottom);
+	
+	// check popup doesn't go off the top of the screen 
+	// and don't overlay Logo! or Patient Name
+	if(h - posH < 325){
+		posH = h - 325;
 	}
+	
+	/*
+	Popup can be 'requested' to anchor left.
+	Only used in Analytics (so far)	
+	*/
+	if( this.anchorLeft ){
+	
+		this.$popup.css(	{	"bottom": posH + 'px',
+								"left": btnPos.left + 'px' });
+		
+	} else {
+		// is popup pushing off the left
+		let leftSideEdge = btnPos.right - this.$popup.width();
+		let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
+	
+		this.$popup.css(	{	"bottom": posH + 'px',
+								"right": (w - btnPos.right) + adjustRight + 'px' });
+		
+	}
+	
+	
+	
+	
+	
+	
+
 }
 
 /*
@@ -4094,173 +4343,4 @@ idg.addSelectInsert.OptionsList = function ( $ul ){
 		return data.join(', ');
 	}
 			
-}
-
-/*
-Add Select Search insert  
-Popup Constructor
-*/
-
-idg.addSelectInsert.Popup = function ( $btn, popupID ){	
-	
-	let $popup = $('#'+popupID);
-	const reset = true;
-	const require = false; 
-	const callback = $popup.data('callback');  // optional
-	
-	/*
-	Using in analytics to build the data filters. Popup
-	needs to anchor left. Can not rely to x < n to do this.
-	Checking therefore the data- 
-	*/
-	
-	this.anchorLeft = $popup.data('anchor-left') ==! undefined ? true : false;
-	
-	/*
-	Props
-	*/ 
-	this.$btn = $btn;  
-	this.$popup = $popup;
-	
-	/*
-	Methods
-	*/
-	this.open = function(){
-		this.positionFixPopup();
-		this.onScrollClose();
-		idg.addSelectInsert.closeAll();
-		$popup.show();
-	}
-	
-	this.close = function(){
-		$popup.hide();		
-	}
-	
-	this.reset = function(){
-		// reset (to default state)
-	}
-	
-	this.insertData = function(){
-		/*
-		gather data and send to callback (if requested)
-		*/
-		let JSONdata = []
-		lists.forEach( list => {
-			JSONdata.push( list.gatherData() );
-		});
-		
-		/*
-		callback handles Element insert demo
-		*/
-		if( callback != undefined){
-			idg.addSelectInsert.updateElement[callback]( JSONdata );
-		}
-		
-		this.close();
-	}
-	
-	/*
-	Store lists
-	*/
-	let lists = [];
-	
-	$('.add-options',$popup).each( function(){
-		lists.push( new idg.addSelectInsert.OptionsList( $(this) ) );
-	});
-	
-	/*
-	Setup Btn Events. 
-	*/
-	idg.addSelectInsert.btnEvent( this, $btn, this.open );
-	idg.addSelectInsert.btnEvent( this, $popup.children('.close-icon-btn'), this.close );
-	idg.addSelectInsert.btnEvent( this, $popup.find('.add-icon-btn'), this.insertData );
-	  					
-}
-
-/*
-Set up Btn click events
-*/
-idg.addSelectInsert.btnEvent = function ( popup, $btn, callback ){
-  	$btn.click(function(e) {
-  		e.stopPropagation();
-  		callback.call(popup);
-	});	  					
-}
-
-
-idg.addSelectInsert.Popup.prototype.onScrollClose = function(){
-	/*
-	Close popup on scroll.
-	note: scroll event fires on assignment.
-	so check against scroll position
-	*/	
-	let popup = this;	
-	let scrollPos = $(".main-event").scrollTop();
-	$(".main-event").on("scroll", function(){ 
-		if( scrollPos !=  $(this).scrollTop() ){
-			// Remove scroll event:	
-			$(".main-event").off("scroll");
-			popup.close();
-		}
-			
-	});
-
-}
-
-/*
-Set up Btn click events
-*/
-
-idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
-	/* 
-	Popup is FIXED positioned, work out offset position based on button
-	To do this proved easer with Vanilla JS
-	*/
-	let elem = this.$btn[ 0 ];
-	let btnPos = elem.getBoundingClientRect();		
-	let w = document.documentElement.clientWidth;
-	let h = document.documentElement.clientHeight;
-	
-	let posH = (h - btnPos.bottom);
-	
-	// check popup doesn't go off the top of the screen 
-	// and don't overlay Logo! or Patient Name
-	if(h - posH < 325){
-		posH = h - 325;
-	}
-	
-	/*
-	Popup can be 'requested' to anchor left.
-	Only used in Analytics (so far)	
-	*/
-	if( this.anchorLeft ){
-	
-		this.$popup.css(	{	"bottom": posH + 'px',
-								"left": btnPos.left + 'px' });
-		
-	} else {
-		// is popup pushing off the left
-		let leftSideEdge = btnPos.right - this.$popup.width();
-		let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
-	
-		this.$popup.css(	{	"bottom": posH + 'px',
-								"right": (w - btnPos.right) + adjustRight + 'px' });
-		
-	}
-	
-	
-	
-	
-	
-	
-
-}
-
-/*
-Dirty demo to show data insertion into IDG Elements where required
-*/
-idg.addSelectInsert.updateElement = {
-	test:function( arr ){
-		idgTest.report( 'test insert' );
-	}
 }

@@ -82,7 +82,7 @@
 			
 				// add line to help with reading data
 				tr {
-					border-bottom:1px solid $oe-pro-line;				
+					border-bottom:2px solid $oe-pro-line;				
 					&:last-child { 
 						border-bottom: none;
 					}
@@ -90,13 +90,29 @@
 				
 				
 				td {
-					padding:4px 8px 4px 0;
+					padding:6px 8px 6px 0;
 					@include font-size(12);	
 					
 					// trash icon
 					&:last-child {
 						text-align: right;
 						padding-right:0;
+					}
+					
+					// Restricted width layout
+					// Grouped Drug Name with Drops / Interval settings
+					// Drug name:
+					.drug {
+						@include font-size(14);
+						margin:0 0 5px 0;
+					}
+					
+					// 3 Dropdowns: Drops No / xN / Interval in mins:
+					.administration {
+						text-align: right;
+						select {
+							margin:0 0 0 5px;
+						}
 					}				
 				}
 			}

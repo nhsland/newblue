@@ -68,6 +68,13 @@ strong, b {
 	
 }
 
+// No wrapping. 
+// Used sometimes on <td> 
+// but available to used everywhere 
+.nowrap {
+	white-space: nowrap;
+}
+
 
 // highlighter (like the pen)
 // applied to text with <span>

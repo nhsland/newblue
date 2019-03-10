@@ -28,17 +28,21 @@
 			// when a drug is completed a TR below with 
 			// who did it 
 			tr {
-				border-top:1px solid $oe-line;				
+				border-top:2px solid $oe-line;				
 				&:first-child { 
 					border-top: none;
 				}
 				
 				// Administer: who and when 
-				&.administer {
+				// this is hidden in 'quick' popup view
+				&.administer-details {
 					border-top: none; // visual merge rows
 					
+					
 					td {
-						padding-bottom:6px;
+						@include font-size(11);
+						font-weight:$oe-font-light;
+						padding-bottom:5px;
 					}
 				}
 			}
