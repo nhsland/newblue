@@ -1,0 +1,43 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Default setup for ALL DOM inputs: 
+input, textarea, select {
+	border:0;	
+	outline:none;
+
+	@include font-size(12);
+	color: $oe-user-input-text;
+	background-color: $oe-user-inputs;
+	
+	
+	// if used in a OE UI themed area use this class
+	// used in Allergies & Risk in the patient popup
+	&.pro-theme {
+		color: $oe-pro-user-input-text;
+		background-color: $oe-pro-user-inputs;
+	}	
+	
+	&.error {
+		color:rgb(255,255,255);
+		background-color: $oe-alert-red;
+	}
+	
+	// widths can be controlled with the cols-n
+	// but sometimes a fixed width is needed...
+	
+	&.fixed-width-small {
+		text-align: center;
+		width:45px; 		// allows for 0000
+		margin:0 5px 0 0; 	// guessing it will have a label after it
+	}
+	
+	&.fixed-width-medium {
+		text-align: center;
+		width:90px; 		// allows for 00000000
+		margin:0 5px 0 0;	// guessing it will have a label after it
+	}
+}
+
+

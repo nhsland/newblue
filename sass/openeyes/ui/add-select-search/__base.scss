@@ -1,0 +1,33 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Element - Add - Select or Search
+// Popup box showing the common options 
+// and an input to allow search with autocomplete
+
+.oe-add-select-search {	
+	position:fixed; 					// Fixed take it out of the Grid. 
+	bottom:0; 						// JS will override and position
+	z-index:$oe-z-add-insert; 			// z
+	background:$oe-popup-bg;
+	// allow for bottom 'btn' bar 
+	// (do not increase vertical padding because of Logo overlap issues)
+	padding:5px 10px 35px 10px; 		
+	min-height:$oe-add-insert-popup-height;	// set to allow 0-9 input WITHOUT scroll
+	@include font-size(11);			
+	font-weight:400;
+	
+	@include boxshadow();
+	
+	// popup widths
+	// history has 5 inputs lists, pro
+	width:290px; 						// need a fixed width for single column auto-width lists
+	min-width: 290px;					// default width (to fit in Analytics column)
+	
+	&.auto-width {
+		width:auto;						// php adds this class IF 1> options
+	}
+}
+
+

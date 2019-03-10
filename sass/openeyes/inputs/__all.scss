@@ -2,15 +2,11 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Oescape
-// 
-// Highcharts
-
-.analytics-charts {
-	margin:15px 20px 0 0; 
-	width: calc(100% - 400px);
-	
-}
-
-
+// OE Data Inputs
+// default setup for html inputs: 
+@import "_base";
+@import "label";
+@import "input";
+@import "textarea";
+@import "select";
 

@@ -1,0 +1,36 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Clinic
+// 
+// 
+// Clinic step colours 
+// must work across both themes
+
+.oe-clinic {
+	position:relative;
+	background:$oe-blue-dark;
+	
+	// show the current time in the clinic
+	// controlled and positioned by js
+	.clinic-time {
+		position:absolute;
+		top:100%;  // make sure it animates from the bottom up.
+		left:0;
+		z-index: $oe-z-tooltip;
+		background:$oe-text-highlight;
+		@include font-size(10);
+		font-weight:500;
+		color:$oe-blue-dark2;
+		padding:3px 23px 3px 23px;
+		
+		transition:top 0.3s ease-out; 
+	}
+	
+	// set up SVG circle defaults
+	// must work across both themes
+	svg.duration-graphic {
+		fill: rgba( 150,150,150,0.4 );
+	}	
+}

@@ -1,0 +1,18 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Patient Popups.
+// PRO theme
+// --- patient allergies & risks, quicklook, management and demographics
+//
+// (note: Clinic Quicklook is cut down verion of Quicklook for Clinic lists)
+
+@import "_base";
+@import "quicklook-data-groups";  
+@import "demographics"; 
+@import "allergies-risks"; 
+@import "situational-awareness"; 
+@import "patient-numbers"; 
+
+

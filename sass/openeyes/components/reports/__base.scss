@@ -1,0 +1,20 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Reports 
+// copied from Admin, for initial implementation
+// Admin and reports might be able to use the same styles
+// but until it's fully implemented keeping seperate.
+
+// layout using "oe-full-content" "subgrid" structure.
+// this allows the main and sidebar to scroll independently
+// Groups of <ul> nav links in sidebar 
+
+.oe-reports {
+	background:$oe-grey; // themed
+	
+	.reports-main {
+		padding-right:10px;
+	}
+}

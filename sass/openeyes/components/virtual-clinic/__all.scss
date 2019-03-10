@@ -1,0 +1,21 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Vitural Clinic (Patient Ticketing)
+// VC consists of:
+// patient selector page (IDG: Virtual Clinic page)
+// in VC mode (patient is selected)
+
+// Patient Selector page (not in VC mode)
+@import "_base";
+@import "vc-clinic-search";
+@import "table";
+
+
+// VC mode (Patient Constrained Mode)
+// --- Not Themed!!
+@import "vc/vc-mode"; 
+@import "vc/vc-content"; 
+@import "vc/vc-actions"; 
+@import "vc/floating-input"; 

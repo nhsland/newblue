@@ -1,0 +1,31 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Eyedraw APP
+// -----------------------------------
+// Eyedraw popup APP
+// note: expects to be loaded into oe-popup-wrap 
+
+@import "_base";
+@import "ed-app-title"; 
+@import "ed-app-inputs"; 
+@import "ed-app-save-cancel"; 
+@import "ed-app-draw";
+@import "ed-app-context";
+@import "ed-app-toolbox";
+@import "ed-app-data";
+@import "ed-app-element-options"; // extra element data
+@import "ed-surgeon-orientation"; // new CSS replacement for old canvas version
+
+// V2 CSS grab and modified because we are still using V2 EyeDraw DOM
+@import "v2/ed-widget-v2";
+
+
+
+
+ 
+
+
+
+

@@ -2,15 +2,9 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Oescape
-// 
-// Highcharts
+// OE Header area.
 
-.analytics-charts {
-	margin:15px 20px 0 0; 
-	width: calc(100% - 400px);
-	
+.oe-header {
+	background:$oe-pro-bg;
+	position:relative;
 }
-
-
-

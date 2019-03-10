@@ -1,0 +1,17 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE "Standard" Tables
+// Tables are used a lot across OE.
+// Here we establish a 'standard' table UI
+// note: we do NOT target the default table DOM because
+// of tables usage within Elements (SEM).
+// see: http://idg.knowego.com/v3.0-UI/ui-tables
+
+@import "standard";
+@import "clickable-rows";
+@import "highlight-rows";
+@import "pagination";
+
+// @import "sortable"; not used, but DOM has class if I need hook 

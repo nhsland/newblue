@@ -1,0 +1,37 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Eyedraw APP
+// -----------------------------------
+// Eyedraw popup APP
+// note: expects to be loaded into oe-popup-wrap 
+
+$ed-padding:7px;
+$ed-top-panel-height:32px;
+
+.oe-eyedraw-app {
+		
+	position: relative;
+	margin: auto; // flex magic (because of popup wrapper)
+	width: $oe-eyedraw-app-width;
+	min-height:200px;
+	// border-radius:$ed-padding; 
+	padding:$ed-padding; // allow for app buttons (save etc)
+	background:$oe-ed-bg;
+	@include font-size(12);
+
+	// main wrapper for Eyedraw App
+	.ed-editor {
+		display:flex;
+		justify-content:flex-start;
+		align-items:stretch;
+	}	
+}
+
+
+ 
+
+
+
+

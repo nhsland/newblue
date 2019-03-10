@@ -1,0 +1,31 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Lightning Viewer
+
+// z-index are important for interactions
+$lightning-z-timeline-options: 4;
+$lightning-z-meta: 3;
+$lightning-z-ui: 2;
+$lightning-z-stack: 1;
+
+
+@import 'timeline';
+@import 'timeline-lightning-btn';
+@import 'timeline-options';
+@import 'timeline-icons';
+
+// Lightning Viewer v1.0 
+@import '_lightning-1.0';  
+
+// v1.1
+@import 'lightning-view';
+@import 'lightning-ui';
+@import 'lightning-meta';
+@import 'lightning-stack';
+
+// also used in Correspondence VIEW
+@import 'multipage-scroll';
+
+
