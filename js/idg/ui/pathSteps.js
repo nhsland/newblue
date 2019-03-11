@@ -120,58 +120,76 @@ idg.pathSteps = {
 			$div.css({ 	top : top,
 					 	right: right });	 	
 			
+			// show status message all the time 
+			// (helpful UX to explain the colouring)
+			
+			switch( data.status ){
+				case "done":
+					$status
+						.text('Completed PSD at 11:12')
+						.removeClass()
+						.addClass('step-status green');
+				break;
+				case "todo":
+					$status
+						.text('Waiting to start')
+						.removeClass()
+						.addClass('step-status default');
+					
+				break;
+				case "progress":
+					$status
+						.text('In progress')
+						.removeClass()
+						.addClass('step-status orange');		
+				break;
+				case "problem":
+					$status
+						.text('Issue with this PSD')
+						.removeClass()
+						.addClass('step-status red');
+				break;
+				
+				default: $status.text('No status set!');
+			}
+			
+			
+			$dataGroup.load('/idg-php/v3.0/_load/' + data.php,function(){
+				
+				if( lock == false ){
+					// show extra details
+					$('.administer-details').hide();
+				}
+				
+				
+			});
+			
+			
 			/* 
 			locked mean's clicked: show full	
 			*/		
 			
 			if( lock ){
 				$title.text(data.title).show();
-
 				$close.show();
-				$status.removeClass().show();
 				
-				switch( data.status ){
-					case "done":
-						$status.text('Completed PSD at 11:12');
-						$status.addClass('step-status green');
-					break;
-					case "todo":
-						$status.text('Waiting to do');
-						$status.addClass('step-status');
-						$edit.show();
-						//$pin.show();
-					break;
-					case "progress":
-						$status.text('In progress');
-						$status.addClass('step-status orange');
-						$edit.show();
-						//$pin.show();
-					break;
-					case "problem":
-						$status.text('Problem! e.g. Patient has left');
-						$status.addClass('step-status red');
-						$edit.show();
-						//$pin.show();
-					break;
-					
-					default: $status.text('no status set');
+				if( data.status != "done"){
+					$edit.show();
 				}
-	
-				
+
 				$close[0].addEventListener( "click", this.close.bind( this ) );
 			
 			} else {
 				
 				$close.hide();
-				$status.hide();
 				$title.hide();
 				$edit.hide();
-			
+				
 			}	 	
 			// now show it
 			$div.show();
 			
-			$dataGroup.load('/idg-php/v3.0/_load/' + data.php,function(){});
+			
 		}
 		
 		this.out = function(){
