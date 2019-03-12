@@ -94,15 +94,17 @@ idg.pathSteps = {
 		const $close 	= $('<div class="close-icon-btn"><i class="oe-i remove-circle medium"></i></div>');	
 		const $status 	= $('<div class="step-status">Status</div>');
 		const $title 	= $('<h3 class="title"></h3>');
+		const $overflow = $('<div class="popup-overflow"></div>');
 		const $dataGroup = $('<div class="data-group"></div>');
 		const $edit 	= $('<div class="step-actions"><button class="blue hint">Edit PSD</button></div>');
 		
-		
+		// wrap the data with an overflow wrapper
+		$overflow.append( $dataGroup );
 		
 		// build DOM element, and hide it
 		$div.append(	$close, 
 						$title, 
-						$dataGroup,
+						$overflow,
 						$edit,
 						$status );
 		
@@ -126,7 +128,7 @@ idg.pathSteps = {
 			switch( data.status ){
 				case "done":
 					$status
-						.text('Completed PSD at 11:12')
+						.text('Completed PSD at 11:40')
 						.removeClass()
 						.addClass('step-status green');
 				break;
@@ -154,10 +156,10 @@ idg.pathSteps = {
 			}
 			
 			
-			$dataGroup.load('/idg-php/v3.0/_load/' + data.php,function(){
+			$dataGroup.load('/idg-php/v3.0/_load/' + data.php, function(){
 				
 				if( lock == false ){
-					// show extra details
+					// hide extra details on mouseover:
 					$('.administer-details').hide();
 				}
 				

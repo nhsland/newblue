@@ -30,13 +30,11 @@ input, textarea, select {
 	&.fixed-width-small {
 		text-align: center;
 		width:45px; 		// allows for 0000
-		margin:0 5px 0 0; 	// guessing it will have a label after it
 	}
 	
 	&.fixed-width-medium {
 		text-align: center;
 		width:90px; 		// allows for 00000000
-		margin:0 5px 0 0;	// guessing it will have a label after it
 	}
 }
 

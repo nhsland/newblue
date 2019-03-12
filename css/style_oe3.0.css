@@ -1408,13 +1408,11 @@ input.error, textarea.error, select.error {
 input.fixed-width-small, textarea.fixed-width-small, select.fixed-width-small {
   text-align: center;
   width: 45px;
-  margin: 0 5px 0 0;
 }
 
 input.fixed-width-medium, textarea.fixed-width-medium, select.fixed-width-medium {
   text-align: center;
   width: 90px;
-  margin: 0 5px 0 0;
 }
 
 label,
@@ -2034,9 +2032,7 @@ select.fixed-width {
 }
 
 .oe-pathstep-popup .data-group {
-  max-height: 180px;
-  overflow-y: auto;
-  padding: 0 5px 0 0;
+  margin: 0 0 5px 0;
 }
 
 .oe-pathstep-popup .data-group ul.data-list li {
@@ -2081,6 +2077,12 @@ select.fixed-width {
 .oe-pathstep-popup .data-group table.data-table td:last-child {
   text-align: right;
   padding-right: 0;
+}
+
+.oe-pathstep-popup .popup-overflow {
+  max-height: 180px;
+  overflow-y: auto;
+  padding: 0 5px 0 0;
 }
 
 .oe-pathstep-popup .pin-confirmation {
