@@ -1,0 +1,39 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Reduce Height of Element
+
+.main-event {
+	
+	.element {
+		
+		// listview expand / collapse
+		// this was previous handled with: flex-layout and flex-top
+		// but seems more ellegant to cover with a specific class
+		
+		.listview-expand-collapse {
+			display:flex;
+			align-items:flex-start;
+			justify-content:space-between;
+			
+			// does nothing, as positioned with flex (above)
+			// but a useful hook if we want to use absolute
+			// .expand-collapse-icon-btn {}
+			
+			// CSS hooks for the different views
+			// not using PRO but useful in PRINT!
+			// .listview-pro {}
+			// .listview-full {}
+			
+			// listview of data in FULL, tabular layout
+			ul.listview {
+				@include font-size(12);
+				li {
+					margin:0 0 3px 0;
+				}
+			}
+		}
+		
+	}
+}

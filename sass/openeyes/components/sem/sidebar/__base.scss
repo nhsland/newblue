@@ -19,24 +19,6 @@ $oe-sidebar-event-height:19px;
 	}
 }
 
-// VIEW states
-@import "sidebar/subgrid";
-@import "sidebar/view";
-@import "sidebar/events";
-@import "sidebar/quicklook";
-@import "sidebar/list-controls";
-@import "sidebar/grouping";
-@import "sidebar/current-edit-state";
-
-// new V3 filters to replace old dropdown
-@import "sidebar/filter/btn";	 		
-@import "sidebar/filter/options";	
-
-// EDIT 
-@import "sidebar/edit";
-
-
-
 
 
 

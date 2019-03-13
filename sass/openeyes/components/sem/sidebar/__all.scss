@@ -1,0 +1,31 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE SEM Events sidebar
+// 
+
+// VIEW states
+@import "_base";
+@import "subgrid";
+@import "view";
+@import "events";
+@import "quicklook";
+@import "list-controls";
+@import "grouping";
+@import "current-edit-state";
+
+// new V3 filters to replace old dropdown
+@import "filter/btn";	 		
+@import "filter/options";	
+
+// EDIT 
+@import "edit";
+
+
+
+
+
+
+
+

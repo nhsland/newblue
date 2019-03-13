@@ -1,0 +1,61 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Element - VIEW
+
+.main-event {
+	
+	.element {
+		
+		// element-data is ONLY used in VIEW mode (edit uses 'element-fields')
+		.element-data {
+			
+			// setting table width in VIEW !
+			// did this awhile ago... hmm:
+			table {
+				width:100%;
+			}
+			
+			// adjust the padding to match eye sides elements.
+			&.full-width {
+			 	padding-right:20px; // 20px matches the edit space (thinking of inline editing!)
+				padding-left:10px;
+			}
+			
+			
+			// keeping data-value as a useful hook
+			// but this could be easily de-coupled.
+			.data-value {
+				&.not-recorded {
+					margin:0 0 0 0;
+					text-align: center;
+					@include font-size(14);
+					font-weight:$oe-font-light;
+					opacity:0.6;
+					
+				}
+			}
+		}
+		
+		// Should only be used in VIEW ...
+		// Prioritise element data
+		&.priority {
+			background-color: $oe-bg-highlight;
+			
+			// if an element is priorities increase large text font-weight
+			.element-data {
+				.large-text, 
+				.priority-text {
+					font-weight:$oe-font-medium;
+				}	
+			}
+			
+			// if it has both sides in a split:
+			.element-both-eyes {
+				background-color: $oe-bg-highlight;
+			}	
+		}
+		
+	}
+}

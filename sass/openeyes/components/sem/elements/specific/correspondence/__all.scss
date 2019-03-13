@@ -6,7 +6,7 @@
 // Currently only used in the Correspondence Event
 
 
-@import "correspondence/tinyMCE";
-@import "correspondence/correspondence-letter";		// HTML fallback if no PNGs 
-@import "correspondence/correspondence-page-scroll";	// JS PNG page scroller
+@import "tinyMCE";
+@import "correspondence-letter";		// HTML fallback if no PNGs 
+@import "correspondence-page-scroll";	// JS PNG page scroller
 

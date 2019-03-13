@@ -4,22 +4,26 @@
 
 // OE SEM (Single Event Model)
 
-@import "sem-main"; 			// <main> wrapper for SEM
-@import "sem-event-header"; 	// Event Title, Event Extra info, Audit trail etc
+@import "main-event"; 			// <main> wrapper for SEM
+@import "event-header"; 		// Event Title, Event Extra info, Audit trail etc
+@import "oe-audit-trail-popup";	// User audit trail popup
 
-// SEM sidebar
-@import "sem-sidebar-header"; 	
-@import "sem-sidebar"; 			
-@import "sem-quickview-panel"; 			
 
-// All aspects of Elements
-@import "sem-elements"; 
+@import "sidebar-header"; 		// SEM sidebar
+@import "sidebar/_all";
+@import "oe-quickview-panel"; 	// sidebar Event popup quickview 		
 
-// No Events
-@import "sem-no-events";
+@import "elements/_all"; 		// All aspects of Elements
 
-// Overview 
-@import "sem-overview";
+@import "oe-sem-no-events";		// No SEM Events page
+@import "patient-overview";		// Patient Overview new V3 page
+
+// V2 CSS
+@import "v2/multi-select"; 			// pulled from v2 (still supported in the transition)			
+
+
+
+
 		
 
 

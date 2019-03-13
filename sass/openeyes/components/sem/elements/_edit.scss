@@ -3,8 +3,6 @@
 //
 
 // OE Element - EDIT
-//
-// Specific element view classes 
 
 .main-event {
 	.element {
@@ -24,20 +22,6 @@
 				color:$oe-text-light;
 			}
 			
-			// large text if needed, matches Element header size
-			// unlike VIEW there is no priority size text in Edit
-			.large-text {
-				@include font-size(14);
-				font-weight:inherit;	
-			}
-			
-			// only used rarely but an option to have a sub-header
-			// e.g. see http://idg.knowego.com/v3.0-SEM/_view-elements
-			h3 {
-				@include font-size(14); // match title
-				color:$oe-element-headers;
-				font-weight:$oe-font-light;
-			}
 			
 			// provides a hook
 			// extends the flex-item-bottom class
@@ -47,15 +31,6 @@
 				margin:8px 0 0 0;
 			}
 			
-		}
-		
-		// Within Elements there may be text that isn't
-		// data, an example of this is in VA: "Not recorded"
-		// note styles this text slightly different 
-		.note {
-			color:$oe-text-light;
-			font-weight:$oe-font-light;
-			margin:0 5px;
 		}
 		
 		

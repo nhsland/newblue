@@ -10,6 +10,10 @@
 	.element {
 		
 		// <table>
+		// raw DOM styling
+		// because tables are used so much in SEM
+		// thought it might be helpful this way 
+		
 		table {
 			
 			// left in BUT should use 'data-group' instead!
@@ -107,17 +111,18 @@
 					}
 				}
 			}
-			
-			
-			
+
 			// decided to add a more descriptive class "large-text"
-			&.large, &.large-text {
+			&.large, 
+			&.large-text {
 				td {
 					@include font-size(14);
 				}
 			}
 			
-			&.priority, &.priority-text {
+			&.priority, 
+			&.priority-text {
+				
 				td	{
 					@include font-size(16);
 					font-weight:$oe-font-medium;	
