@@ -14,20 +14,21 @@
 		font-weight: $oe-font-medium;
 		text-align: center;
 		
-		color:			rgb(240,240,240); 
-		background:		rgb(50,50,55);
-
-		// colours (same as step btn)
+		// default 'grey' to work across themes
+		color:			$oe-step-text; 
+		background:		$oe-step-grey;
+		
+		// colours
 		&.green { 
-			background: $oe-clinic-green; 
+			background: $oe-step-green; 
 		}
 		
 		&.orange { 
-			background: $oe-clinic-orange; 
+			background: $oe-step-orange; 
 		}
 	
 		&.red { 
-			background: $oe-clinic-red;
+			background:$oe-step-red; 
 		}
 	}
 	

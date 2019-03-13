@@ -968,6 +968,10 @@ strong, b {
   text-align: right;
 }
 
+.align-left {
+  text-align: left;
+}
+
 .collapse-group {
   position: relative;
   width: 100%;
@@ -1745,6 +1749,32 @@ select.fixed-width {
   font-weight: 700;
 }
 
+.oe-user-pin {
+  display: inline-block;
+  padding: 2px 4px 2px 27px;
+  border-radius: 3px;
+  background-image: url("../svg/in-css/icons/lat-R.svg");
+  background-position: left 5px center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-color: #464650;
+}
+
+.oe-user-pin.accepted-pin {
+  background-color: #146400;
+}
+
+.oe-user-pin.wrong-pin {
+  background-color: #a0280a;
+}
+
+.oe-user-pin input.user-pin-entry {
+  width: 50px;
+  padding: 2px 5px;
+  text-align: center;
+  font-weight: 400;
+}
+
 .oe-add-select-search {
   position: fixed;
   bottom: 0;
@@ -1937,7 +1967,7 @@ select.fixed-width {
   border-radius: 3px;
   cursor: pointer;
   color: #f0f0f0;
-  background: #323237;
+  background: #464650;
 }
 
 .oe-pathstep-btn:first-child {
@@ -2016,7 +2046,7 @@ select.fixed-width {
   font-weight: 400;
   text-align: center;
   color: #f0f0f0;
-  background: #323237;
+  background: #464650;
 }
 
 .oe-pathstep-popup .step-status.green {
@@ -2721,6 +2751,22 @@ select.fixed-width {
 
 .oe-i.waiting.pro-theme {
   background-image: url("../svg/in-css/icons/waiting.svg");
+}
+
+.oe-i.eyelat-L {
+  background-image: url("../svg/in-css/icons/lat-L.svg");
+}
+
+.oe-i.eyelat-L.pro-theme {
+  background-image: url("../svg/in-css/icons/lat-L.svg");
+}
+
+.oe-i.eyelat-R {
+  background-image: url("../svg/in-css/icons/lat-R.svg");
+}
+
+.oe-i.eyelat-R.pro-theme {
+  background-image: url("../svg/in-css/icons/lat-R.svg");
 }
 
 .oe-i.trials {
@@ -5999,6 +6045,34 @@ table.management-summaries tbody td:last-child {
 @media only screen and (min-width: 1440px) {
   .main-event .element.full .element-header .element-title {
     max-width: 115px;
+  }
+}
+
+.main-event .element-actions {
+  position: absolute;
+  top: 3px;
+  right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main-event .element-actions .oe-i {
+  margin: 0 0 5px 10px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .main-event .element-actions {
+    max-width: 30px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap-reverse;
+        flex-wrap: wrap-reverse;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 

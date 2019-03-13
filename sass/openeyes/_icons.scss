@@ -205,6 +205,8 @@
 	&.letter-GP			{ @include oe3-icons('letter-GP'); }
 	&.no-permissions	{ @include oe3-icons('no-permissions'); }
 	&.waiting			{ @include oe3-icons('waiting'); }
+	&.eyelat-L			{ @include oe3-icons('lat-L'); }
+	&.eyelat-R			{ @include oe3-icons('lat-R'); }
 	
 	// trials is nav icon 
 	// but may be required in the IU

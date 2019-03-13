@@ -1,0 +1,39 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE User PIN Entry
+.oe-user-pin {
+
+	display:inline-block;
+	
+	padding:2px 4px 2px 27px;
+	border-radius:3px;
+	
+	// default 'grey' to work across themes
+	
+	background-image: url( svg-path('icons/lat-R') );
+	background-position: left 5px center;
+	background-repeat: no-repeat;
+	background-size: 15px;
+	
+	background-color: $oe-step-grey;
+	
+	&.accepted-pin { 
+		background-color: $oe-step-green;
+	}
+
+	&.wrong-pin {
+		background-color:$oe-step-red;
+	}
+
+	// PIN input
+	input.user-pin-entry {
+		width:50px;
+		padding:2px 5px;
+		text-align: center;
+		font-weight:$oe-font-medium;
+	}
+	
+	
+}

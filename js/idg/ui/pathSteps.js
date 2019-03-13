@@ -96,7 +96,7 @@ idg.pathSteps = {
 		const $title 	= $('<h3 class="title"></h3>');
 		const $overflow = $('<div class="popup-overflow"></div>');
 		const $dataGroup = $('<div class="data-group"></div>');
-		const $edit 	= $('<div class="step-actions"><button class="blue hint">Edit PSD</button></div>');
+		const $edit 	= $('<div class="step-actions flex-layout"><button class="red hint">Remove PSD</button><button class="green hint">Administer</button></div>');
 		
 		// wrap the data with an overflow wrapper
 		$overflow.append( $dataGroup );
@@ -128,20 +128,20 @@ idg.pathSteps = {
 			switch( data.status ){
 				case "done":
 					$status
-						.text('Completed PSD at 11:40')
+						.text('PSD: Completed at 11:40')
 						.removeClass()
 						.addClass('step-status green');
 				break;
 				case "todo":
 					$status
-						.text('Waiting to start')
+						.text('PSD: Waiting to start')
 						.removeClass()
 						.addClass('step-status default');
 					
 				break;
 				case "progress":
 					$status
-						.text('In progress')
+						.text('PSD: In progress')
 						.removeClass()
 						.addClass('step-status orange');		
 				break;

@@ -28,7 +28,7 @@ idg.init = function(){
 	// set up 'hidden' for JS 
 	// hidden in the CSS is helpful in the DOM
 	// but it also stops the flickering! 
-	$('.hidden').removeClass('hidden').hide();
+	$('.hidden').hide().removeClass('hidden');
 
 	// Patient Banner
 	idg.patientPopups.init();
@@ -202,6 +202,9 @@ idg.init = function(){
 	
 	// Patient Step Info Popup
 	idg.pathSteps.init();
+	
+	// User PIN 
+	idg.userPIN.init();
 										
 };
 
