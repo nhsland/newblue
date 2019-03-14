@@ -1,0 +1,44 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+
+.oe-full-content {
+	
+	// A standard layout approach to 
+	// full pages with a sidepanel. 
+	// This generic layout style has emerged
+	// after the creation of Workslist, Trials, etc
+	// Providing a generic page styling for 'other'
+	// pages.
+	// note: should also have a specific page hook!
+	
+	&.full-standard-layout {
+		background:$oe-blue-dark2; // theme changable
+		
+		// extend 
+		.oe-full-side-panel {
+			padding:20px;
+		}
+		
+		.oe-full-main {
+			padding:20px;
+			
+			h2 {
+				@include font-size(19);
+				font-weight:$oe-font-light; 
+				color:$oe-text-highlight;
+				margin:0 0 10px 0;
+			}
+			
+			// extend standard default table
+			table.standard {
+				margin:0 0 40px 0;
+			}
+			
+			
+		}
+
+	}
+
+}

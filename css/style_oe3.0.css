@@ -474,6 +474,29 @@ html {
   grid-area: 1 / 2 / 2 / 3;
 }
 
+.oe-full-content.full-standard-layout {
+  background: #141e2b;
+}
+
+.oe-full-content.full-standard-layout .oe-full-side-panel {
+  padding: 20px;
+}
+
+.oe-full-content.full-standard-layout .oe-full-main {
+  padding: 20px;
+}
+
+.oe-full-content.full-standard-layout .oe-full-main h2 {
+  font-size: 1.1875rem;
+  font-weight: 300;
+  color: cyan;
+  margin: 0 0 10px 0;
+}
+
+.oe-full-content.full-standard-layout .oe-full-main table.standard {
+  margin: 0 0 40px 0;
+}
+
 .oe-full-content .oe-full-side-panel {
   color: #d6d6d6;
   font-size: 0.75rem;
