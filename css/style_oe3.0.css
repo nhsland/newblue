@@ -991,6 +991,7 @@ strong, b {
   text-align: right;
 }
 
+.comment-block,
 .align-left {
   text-align: left;
 }
