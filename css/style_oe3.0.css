@@ -1775,13 +1775,22 @@ select.fixed-width {
 
 .oe-user-pin {
   display: inline-block;
-  padding: 2px 4px 2px 27px;
+  padding: 2px 4px;
   border-radius: 3px;
-  background-image: url("../svg/in-css/icons/lat-R.svg");
   background-position: left 5px center;
   background-repeat: no-repeat;
   background-size: 15px;
   background-color: #464650;
+}
+
+.oe-user-pin.pin-right-eye {
+  padding-left: 27px;
+  background-image: url("../svg/in-css/icons/lat-R.svg");
+}
+
+.oe-user-pin.pin-left-eye {
+  padding-left: 27px;
+  background-image: url("../svg/in-css/icons/lat-L.svg");
 }
 
 .oe-user-pin.accepted-pin {

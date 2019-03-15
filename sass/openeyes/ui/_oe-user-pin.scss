@@ -7,15 +7,25 @@
 
 	display:inline-block;
 	
-	padding:2px 4px 2px 27px;
+	padding:2px 4px;
 	border-radius:3px;
 	
 	// default 'grey' to work across themes
-	
-	background-image: url( svg-path('icons/lat-R') );
 	background-position: left 5px center;
 	background-repeat: no-repeat;
 	background-size: 15px;
+	
+	// couldn't use "right-eye" class
+	// conflicts with the other class!
+	&.pin-right-eye {
+		padding-left:27px;
+		background-image: url( svg-path('icons/lat-R') );
+	}
+	
+	&.pin-left-eye {
+		padding-left:27px;
+		background-image: url( svg-path('icons/lat-L') );
+	}
 	
 	background-color: $oe-step-grey;
 	
