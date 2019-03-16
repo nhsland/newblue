@@ -2,7 +2,14 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Eyedraw APP
+// OE Eyedraw 3 
+
+// ED3 Element
+// moved from "sem" to here, seems tidier.
+@import "element-ed3/_all"; 	// updated ED element (VIEW + EDIT) v3
+
+
+// ED3 APP
 // -----------------------------------
 // Eyedraw popup APP
 // note: expects to be loaded into oe-popup-wrap 

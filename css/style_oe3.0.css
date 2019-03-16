@@ -5855,6 +5855,7 @@ table.management-summaries tbody td:last-child {
   position: absolute;
   top: -2px;
   right: -22px;
+  z-index: 1;
 }
 
 .main-event .element .inactive-form {
@@ -5883,12 +5884,12 @@ table.management-summaries tbody td:last-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .main-event .element .element-eyes .right-eye {
@@ -7099,6 +7100,92 @@ table.management-summaries tbody td:last-child {
 .oe-create-event-popup .new-added-subspecialty-service:hover .tag, .oe-create-event-popup .new-added-subspecialty-service:focus .tag {
   background: #06377a;
   color: cyan;
+}
+
+.element .element-eyes.element-ed3 {
+  margin-top: 15px;
+}
+
+.element .element-eyes.element-ed3 .right-eye {
+  padding-left: 0;
+  padding-right: 11px;
+}
+
+.element .element-eyes.element-ed3 .left-eye {
+  padding-left: 7px;
+  padding-right: 3px;
+}
+
+.element .element-eyes.element-ed3 .remove-side {
+  top: -23px;
+  right: 0;
+}
+
+.element .ed3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 3px 1px;
+  background: #dae6f1;
+  border-radius: 3px;
+}
+
+.element .ed3 .ed3-canvas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.element .ed3 .ed3-data-stack {
+  width: 180px;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: #323232;
+  padding: 2px 5px 15px 0;
+}
+
+.element .ed3 .ed3-data-stack .data-value {
+  font-weight: 500;
+  word-break: break-word;
+  padding: 0 0 10px 0;
+}
+
+.element .ed3 .ed3-data-stack .data-value .priority-text {
+  font-weight: 700;
+}
+
+.element .ed3 .ed3-data-stack .data-value.not-recorded {
+  text-align: left;
+  font-size: 0.75rem;
+}
+
+.element .ed3 .ed3-data-stack .data-label {
+  color: #78788c;
+}
+
+.element .ed3-data-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 10px 1px 0 3px;
 }
 
 .oe-eyedraw-app {

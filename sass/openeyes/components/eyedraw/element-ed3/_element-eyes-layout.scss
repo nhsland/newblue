@@ -1,0 +1,44 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// ED v3 Element
+// -------------
+
+.element {
+	// view and edit wrappers:
+	// .element-fields {} // .EDIT
+	// .element-data {}	 // .VIEW
+
+	// split element
+	.element-eyes {
+		// provide greater specificity
+		// modify defaults using new class hook: "element-ed3"
+		// defaults: 
+		// Right: 10px and 29px
+		// Left:  17px and 20px;
+		// Removed 10px & 17px = 27px extra width
+		 
+		&.element-ed3 {
+			
+			margin-top:15px; 
+			
+			.right-eye {
+				padding-left:0;
+				padding-right:11px; // balances up the imbalance
+			}
+			
+			.left-eye {
+				padding-left:7px;
+				padding-right:3px;
+			}
+			
+			// adjust this to match above changes
+			.remove-side {
+				top:-23px;
+				right:0;
+			}
+		}
+	}	
+}
+
