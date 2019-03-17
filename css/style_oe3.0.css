@@ -3570,6 +3570,10 @@ select.fixed-width {
   font-weight: 300;
 }
 
+.oe-patient .patient-name a:hover, .oe-patient .patient-name a:focus, .oe-patient .patient-name a:active {
+  color: #5ab4b4;
+}
+
 .oe-patient .patient-details {
   position: absolute;
   bottom: 0;
