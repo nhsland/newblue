@@ -7,8 +7,14 @@
 
 .element {
 	// view and edit wrappers:
-	// .element-fields {} // .EDIT
 	// .element-data {}	 // .VIEW
+	
+	.element-fields {  
+		// adjustment required in EDIT mode
+		&.element-ed3 {
+			margin-top:15px;
+		}
+	}
 
 	// split element
 	.element-eyes {
@@ -20,8 +26,6 @@
 		// Removed 10px & 17px = 27px extra width
 		 
 		&.element-ed3 {
-			
-			margin-top:15px; 
 			
 			.right-eye {
 				padding-left:0;

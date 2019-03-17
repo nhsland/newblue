@@ -4031,14 +4031,6 @@ idg.WorkListFilter = function(){
 }
 
 /*
-Dirty demo to show data insertion into IDG Elements where required
-*/
-idg.addSelectInsert.updateElement = {
-	test:function( arr ){
-		idgTest.report( 'test insert' );
-	}
-}
-/*
 Optional Lists based on List selection
 find group ID: 	"add-to-{uniqueID}-listgroup{n}";
 find list ID: 	"add-to-{uniqueID}-list{n}";
@@ -4277,6 +4269,14 @@ idg.addSelectInsert.OptionsList = function ( $ul ){
 			
 }
 
+/*
+Dirty demo to show data insertion into IDG Elements where required
+*/
+idg.addSelectInsert.updateElement = {
+	test:function( arr ){
+		idgTest.report( 'test insert' );
+	}
+}
 /*
 Add Select Search insert  
 Popup Constructor

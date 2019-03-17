@@ -3839,6 +3839,32 @@ select.fixed-width {
   height: 60px;
 }
 
+.oe-nav .oe-nav-shortcuts {
+  display: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  z-index: 99;
+  width: 230px;
+  background: #074598;
+  padding: 10px 0;
+}
+
+.oe-nav .oe-nav-shortcuts li > a {
+  display: block;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  padding: 6px 30px 6px 18px;
+  background: url("../svg/in-css/ui/shortcut-arrow.svg") right 8px top 6px no-repeat;
+  background-size: 10px 10px;
+}
+
+.oe-nav .oe-nav-shortcuts li > a:hover, .oe-nav .oe-nav-shortcuts li > a:focus, .oe-nav .oe-nav-shortcuts li > a:active {
+  color: #fff;
+  background-color: #06377a;
+}
+
 .oe-nav .oe-big-icons .oe-nav-btn {
   display: inline-block;
   position: relative;
@@ -3900,32 +3926,6 @@ select.fixed-width {
 .oe-nav .oe-big-icons .oe-nav-btn .icon.hotlist.vc {
   fill: #ffb400;
   opacity: 0.9;
-}
-
-.oe-nav .oe-nav-shortcuts {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 0;
-  z-index: 99;
-  width: 230px;
-  background: #074598;
-  padding: 10px 0;
-}
-
-.oe-nav .oe-nav-shortcuts li > a {
-  display: block;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.6875rem;
-  font-weight: 400;
-  padding: 6px 30px 6px 18px;
-  background: url("../svg/in-css/ui/shortcut-arrow.svg") right 8px top 6px no-repeat;
-  background-size: 10px 10px;
-}
-
-.oe-nav .oe-nav-shortcuts li > a:hover, .oe-nav .oe-nav-shortcuts li > a:focus, .oe-nav .oe-nav-shortcuts li > a:active {
-  color: #fff;
-  background-color: #06377a;
 }
 
 .oe-clinic-management {
@@ -7102,7 +7102,7 @@ table.management-summaries tbody td:last-child {
   color: cyan;
 }
 
-.element .element-eyes.element-ed3 {
+.element .element-fields.element-ed3 {
   margin-top: 15px;
 }
 
@@ -7186,6 +7186,10 @@ table.management-summaries tbody td:last-child {
       -ms-flex-align: start;
           align-items: flex-start;
   margin: 10px 1px 0 3px;
+}
+
+.element .ed3-comments {
+  margin: 10px 0 0 10px;
 }
 
 .oe-eyedraw-app {

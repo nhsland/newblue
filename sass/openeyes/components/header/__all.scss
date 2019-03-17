@@ -4,10 +4,15 @@
 
 // OE Header area.
 
-@import "_base";
-@import "patient"; 
-@import "user"; 
-@import "nav";
-@import "subnav-shortcuts";
-@import "clinic-management";
-@import "hd";
+@import "_base"; 
+
+@import "oe-patient/_all";
+@import "oe-user"; 
+@import "oe-nav/_all";
+
+// For new Clinic List
+@import "oe-clinic-management";
+
+// a basic header layout. created for Cataract Audit 
+// but made generic...
+@import "basic/_base";

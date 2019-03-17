@@ -2,9 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Header area.
-// 
-// 
+// OE Header - Patient
 
 .oe-patient {
 	position:absolute;
@@ -16,7 +14,4 @@
 	background:transparent url( svg-path('backgrounds/patient-watermark') ) top -4px right 10px no-repeat;
 	background-size:90px 90px;	
 }
-
-@import "patient/data"; 
-@import "patient/icons";
 

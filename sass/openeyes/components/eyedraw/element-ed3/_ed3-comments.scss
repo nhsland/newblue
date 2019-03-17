@@ -7,13 +7,11 @@
 
 .element {
 	
-	// EDIT mode
-	// handle comments and green btn
-	.ed3-data-actions {
+	// VIEW mode
+	
+	.ed3-comments {
 		
-		@include flex(space-between, flex-start);
-		
-		margin:10px 1px 0 3px;
+		margin:10px 0 0 10px;
 		
 	}
 
