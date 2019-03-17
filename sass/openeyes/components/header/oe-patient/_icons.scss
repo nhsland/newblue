@@ -9,12 +9,13 @@
 	// icons buttons for...
 	.patient-quicklook, 
 	.patient-demographics, 
-	.patient-management, 
-	.patient-allergies-risks,
+	.patient-management,
+	.patient-oescape,
 	.patient-local-edit,
+	.patient-oescape,
 	.patient-extra {
 		position:absolute;
-		padding:5px 12px 4px 8px; // increase icon hitarea
+		padding:5px 10px 4px 8px; // increase icon hitarea
 		cursor:pointer;
 		
 		// svg icon btn
@@ -23,56 +24,56 @@
 			fill:#fff;
 			opacity: 0.8;				
 		}	
-	}
-	
-	// to avoid a break in mouse over events
-	// (which causes a popup flicker)
-	// pad this to touch allergies and risks:
-	.patient-demographics {
-		padding-left:15px; 
-	}
-	
-	
-	// icon behaviour
-	.patient-quicklook, 
-	.patient-demographics,
-	.patient-management,
-	.patient-trials,
-	.patient-extra {
+		
 		// js controlled interaction... 
 		&.open, &.active {
 			.icon {
 				fill: $oe-pro-text-highlight;
 			}
 		}
-	}
-	
-	// Eye
-	.patient-quicklook {
-		bottom:0;
-		right:0;	
-		.icon {
-			width:15px;  
-			height:15px;
-		}
-	}
-	
-	// dude
-	.patient-management {
-		bottom:0;
-		right:30px;
-		padding-bottom:3px; // use pad to increase hitarea.
-		.icon {
-			width:18px;  
-			height:18px;
-		}
+		
 	}
 	
 	// info 
 	.patient-demographics {
 		bottom:0;
-		right:63px;
-		padding-bottom:4px; // use pad to increase hitarea.
+		right:123px;
+		.icon {
+			width:16px;  
+			height:16px;
+		}
+		
+		// to avoid a break in mouse over events
+		// (which causes a popup flicker)
+		// pad this to touch allergies and risks:
+		padding-left:18px; 
+	}
+	
+	// dude
+	.patient-management {
+		bottom:0;
+		right:91px;
+		padding-bottom:3px;
+		.icon {
+			width:18px;  
+			height:18px;
+		}
+	}
+
+	// Eye
+	.patient-quicklook {
+		bottom:0;
+		right:61px;	
+		.icon {
+			width:16px;  
+			height:16px;
+		}
+	}
+	
+	// OEscape 
+	.patient-oescape {
+		bottom:0;
+		right:32px;	
 		.icon {
 			width:16px;  
 			height:16px;
@@ -84,64 +85,10 @@
 	// but left as generic container for future use
 	.patient-extra {
 		bottom:0;
-		right:-30px;
-		padding-bottom:4px; // use pad to increase hitarea.
-		
-		// as this overlaps the user panel
-		// raise it above:
-		z-index:1;
-		
+		right:0;	
 		.icon {
 			width:16px;  
 			height:16px;
-		}
-	}
-
-	// Allergies and Risks has 3 states: 
-	// 1 allergy OR risk = 'risk-warning' (red)
-	// NO allergies and NO risks (confirmed) = 'no-risk' (green)
-	// No risk data collected = 'unknown' (text)
-	
-	.patient-allergies-risks {
-		bottom:0;
-		right:105px;
-		
-		// Allergies, Alerts text
-		// reduce this down to create a little
-		// bit more horizontal space
-		@include font-size(10);
-		font-weight:500;
-	
-		display:flex;
-		align-items:center;
-		height:23px;
-		padding:0 21px 0 4px; // padding matches the data padding to align text
-	
-		
-		background:transparent url( svg-path('icons/triangle') ) center right 4px no-repeat;
-		background-size:15px;	
-		
-		&.unknown {
-			background-color:$oe-pro-grey;
-		}
-		
-		&.risk-warning {
-			background-color:$oe-risks-warning;
-		}
-		
-		&.no-risk {
-			background-color:$oe-btn-green-hint;
-			background-image: url( svg-path('icons/tick') );
-		}
-		
-		
-		
-		
-		// js controlled interaction... 
-		&.open, &.active {
-			background-color: $oe-pro-text-highlight;
-			background-image: url( svg-path('icons/_classic/triangle') );
-			color:$oe-pro-bg;
 		}
 	}
 	

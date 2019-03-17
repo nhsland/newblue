@@ -7,21 +7,22 @@
 .oe-nav {
 	// nav is <ul> list
 	.oe-big-icons {		
-		// li's 
-		.oe-nav-btn {
+		
+		// <li> position horizontally
+		li.oe-nav-btn {
 			display:inline-block;
 			position: relative; // for submenu positioning
 			margin-left:1px;
 			
 			// menu NAV with SVG icons
-			// 2 different structures
-			// <a> - .icon-btn
-			// .nav-js-btn is for JS controlled popup menus
+			// 2 Different DOM structures
+			// <a> .icon-btn & .nav-js-btn is for JS controlled popups
+			
 			.icon-btn, 
 			.nav-js-btn	{
 				display: flex;
 				align-items: center;
-				height:$oe-header-height;
+				height: $oe-header-height;
 			}
 			
 			// <a>
@@ -34,15 +35,24 @@
 				}
 			}
 			
-			// js controlled btn, needs to look like <a> 
+			// JS controlled nav btn
+			// as these have extra functionality 
+			// e.g. nav-shortcuts and hotlist
 			.nav-js-btn {
-				padding:0 10px;
 				cursor: pointer;
+				
+				transition: padding 0.5s ease-out; // smooth it
+				// extra stuff - increase hit area for button
+				padding:0 2px;
+				@include media($oe-extended-browser-size){
+					padding:0 10px;
+				}
+				
+				
 				&.active {
 					background:$oe-btn-blue;
 					.icon {
 						opacity:1;
-						
 						// vc is orange
 						&.hotlist.vc {
 							fill:rgb(255,255,255);

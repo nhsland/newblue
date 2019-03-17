@@ -3552,8 +3552,8 @@ select.fixed-width {
   top: 0;
   left: 200px;
   height: 60px;
-  width: 545px;
-  background: transparent url("../svg/in-css/backgrounds/patient-watermark.svg") top -4px right 10px no-repeat;
+  width: 605px;
+  background: transparent url("../svg/in-css/backgrounds/patient-watermark.svg") top -4px right 18px no-repeat;
   background-size: 90px 90px;
 }
 
@@ -3642,91 +3642,11 @@ select.fixed-width {
   padding: 0 0 0 3px;
 }
 
-.oe-patient .patient-quicklook,
-.oe-patient .patient-demographics,
-.oe-patient .patient-management,
-.oe-patient .patient-allergies-risks,
-.oe-patient .patient-local-edit,
-.oe-patient .patient-extra {
-  position: absolute;
-  padding: 5px 12px 4px 8px;
-  cursor: pointer;
-}
-
-.oe-patient .patient-quicklook .icon,
-.oe-patient .patient-demographics .icon,
-.oe-patient .patient-management .icon,
-.oe-patient .patient-allergies-risks .icon,
-.oe-patient .patient-local-edit .icon,
-.oe-patient .patient-extra .icon {
-  display: inline-block;
-  fill: #fff;
-  opacity: 0.8;
-}
-
-.oe-patient .patient-demographics {
-  padding-left: 15px;
-}
-
-.oe-patient .patient-quicklook.open .icon, .oe-patient .patient-quicklook.active .icon,
-.oe-patient .patient-demographics.open .icon,
-.oe-patient .patient-demographics.active .icon,
-.oe-patient .patient-management.open .icon,
-.oe-patient .patient-management.active .icon,
-.oe-patient .patient-trials.open .icon,
-.oe-patient .patient-trials.active .icon,
-.oe-patient .patient-extra.open .icon,
-.oe-patient .patient-extra.active .icon {
-  fill: cyan;
-}
-
-.oe-patient .patient-quicklook {
-  bottom: 0;
-  right: 0;
-}
-
-.oe-patient .patient-quicklook .icon {
-  width: 15px;
-  height: 15px;
-}
-
-.oe-patient .patient-management {
-  bottom: 0;
-  right: 30px;
-  padding-bottom: 3px;
-}
-
-.oe-patient .patient-management .icon {
-  width: 18px;
-  height: 18px;
-}
-
-.oe-patient .patient-demographics {
-  bottom: 0;
-  right: 63px;
-  padding-bottom: 4px;
-}
-
-.oe-patient .patient-demographics .icon {
-  width: 16px;
-  height: 16px;
-}
-
-.oe-patient .patient-extra {
-  bottom: 0;
-  right: -30px;
-  padding-bottom: 4px;
-  z-index: 1;
-}
-
-.oe-patient .patient-extra .icon {
-  width: 16px;
-  height: 16px;
-}
-
 .oe-patient .patient-allergies-risks {
+  position: absolute;
   bottom: 0;
-  right: 105px;
+  right: 165px;
+  cursor: pointer;
   font-size: 0.625rem;
   font-weight: 500;
   display: -webkit-box;
@@ -3736,7 +3656,7 @@ select.fixed-width {
       -ms-flex-align: center;
           align-items: center;
   height: 23px;
-  padding: 0 21px 0 4px;
+  padding: 0 25px 0 5px;
   background: transparent url("../svg/in-css/icons/triangle.svg") center right 4px no-repeat;
   background-size: 15px;
 }
@@ -3760,6 +3680,98 @@ select.fixed-width {
   color: #141e2b;
 }
 
+.oe-patient .patient-quicklook,
+.oe-patient .patient-demographics,
+.oe-patient .patient-management,
+.oe-patient .patient-oescape,
+.oe-patient .patient-local-edit,
+.oe-patient .patient-oescape,
+.oe-patient .patient-extra {
+  position: absolute;
+  padding: 5px 10px 4px 8px;
+  cursor: pointer;
+}
+
+.oe-patient .patient-quicklook .icon,
+.oe-patient .patient-demographics .icon,
+.oe-patient .patient-management .icon,
+.oe-patient .patient-oescape .icon,
+.oe-patient .patient-local-edit .icon,
+.oe-patient .patient-oescape .icon,
+.oe-patient .patient-extra .icon {
+  display: inline-block;
+  fill: #fff;
+  opacity: 0.8;
+}
+
+.oe-patient .patient-quicklook.open .icon, .oe-patient .patient-quicklook.active .icon,
+.oe-patient .patient-demographics.open .icon,
+.oe-patient .patient-demographics.active .icon,
+.oe-patient .patient-management.open .icon,
+.oe-patient .patient-management.active .icon,
+.oe-patient .patient-oescape.open .icon,
+.oe-patient .patient-oescape.active .icon,
+.oe-patient .patient-local-edit.open .icon,
+.oe-patient .patient-local-edit.active .icon,
+.oe-patient .patient-oescape.open .icon,
+.oe-patient .patient-oescape.active .icon,
+.oe-patient .patient-extra.open .icon,
+.oe-patient .patient-extra.active .icon {
+  fill: cyan;
+}
+
+.oe-patient .patient-demographics {
+  bottom: 0;
+  right: 123px;
+  padding-left: 18px;
+}
+
+.oe-patient .patient-demographics .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.oe-patient .patient-management {
+  bottom: 0;
+  right: 91px;
+  padding-bottom: 3px;
+}
+
+.oe-patient .patient-management .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.oe-patient .patient-quicklook {
+  bottom: 0;
+  right: 61px;
+}
+
+.oe-patient .patient-quicklook .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.oe-patient .patient-oescape {
+  bottom: 0;
+  right: 32px;
+}
+
+.oe-patient .patient-oescape .icon {
+  width: 16px;
+  height: 16px;
+}
+
+.oe-patient .patient-extra {
+  bottom: 0;
+  right: 0;
+}
+
+.oe-patient .patient-extra .icon {
+  width: 16px;
+  height: 16px;
+}
+
 .oe-patient .patient-local-edit {
   top: 5px;
   right: 0;
@@ -3777,28 +3789,28 @@ select.fixed-width {
 .oe-user {
   position: absolute;
   top: 0;
-  right: 235px;
-  height: 60px;
+  right: 215px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: 60px;
 }
 
 @media only screen and (min-width: 1440px) {
   .oe-user {
-    right: 265px;
+    right: 245px;
   }
 }
 
 .oe-user .oe-user-profile-context {
   margin: auto 0;
-  width: 280px;
+  width: 250px;
   color: #d6d6d6;
 }
 
 @media only screen and (min-width: 1440px) {
   .oe-user .oe-user-profile-context {
-    width: 400px;
+    width: 350px;
   }
 }
 
@@ -3807,13 +3819,9 @@ select.fixed-width {
   font-size: 0.625rem;
   line-height: 1.4;
   opacity: 0.8;
-  padding-left: 40px;
 }
 
 .oe-user .oe-user-profile-context li em {
-  position: absolute;
-  left: 0;
-  top: 0;
   font-size: 0.5625rem;
   opacity: 0.5;
   font-style: normal;
@@ -3865,14 +3873,14 @@ select.fixed-width {
   background-color: #06377a;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn {
+.oe-nav .oe-big-icons li.oe-nav-btn {
   display: inline-block;
   position: relative;
   margin-left: 1px;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn .icon-btn,
-.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn {
+.oe-nav .oe-big-icons li.oe-nav-btn .icon-btn,
+.oe-nav .oe-big-icons li.oe-nav-btn .nav-js-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3882,36 +3890,44 @@ select.fixed-width {
   height: 60px;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn .icon-btn:hover, .oe-nav .oe-big-icons .oe-nav-btn .icon-btn:focus, .oe-nav .oe-big-icons .oe-nav-btn .icon-btn:active {
+.oe-nav .oe-big-icons li.oe-nav-btn .icon-btn:hover, .oe-nav .oe-big-icons li.oe-nav-btn .icon-btn:focus, .oe-nav .oe-big-icons li.oe-nav-btn .icon-btn:active {
   background: #074598;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn .icon-btn:hover .icon, .oe-nav .oe-big-icons .oe-nav-btn .icon-btn:focus .icon, .oe-nav .oe-big-icons .oe-nav-btn .icon-btn:active .icon {
+.oe-nav .oe-big-icons li.oe-nav-btn .icon-btn:hover .icon, .oe-nav .oe-big-icons li.oe-nav-btn .icon-btn:focus .icon, .oe-nav .oe-big-icons li.oe-nav-btn .icon-btn:active .icon {
   opacity: 1;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn {
-  padding: 0 10px;
+.oe-nav .oe-big-icons li.oe-nav-btn .nav-js-btn {
   cursor: pointer;
+  -webkit-transition: padding 0.5s ease-out;
+  transition: padding 0.5s ease-out;
+  padding: 0 2px;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn.active {
+@media only screen and (min-width: 1440px) {
+  .oe-nav .oe-big-icons li.oe-nav-btn .nav-js-btn {
+    padding: 0 10px;
+  }
+}
+
+.oe-nav .oe-big-icons li.oe-nav-btn .nav-js-btn.active {
   background: #074598;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn.active .icon {
+.oe-nav .oe-big-icons li.oe-nav-btn .nav-js-btn.active .icon {
   opacity: 1;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn.active .icon.hotlist.vc {
+.oe-nav .oe-big-icons li.oe-nav-btn .nav-js-btn.active .icon.hotlist.vc {
   fill: white;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn .nav-js-btn.open .icon {
+.oe-nav .oe-big-icons li.oe-nav-btn .nav-js-btn.open .icon {
   fill: #0ff;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn .icon {
+.oe-nav .oe-big-icons li.oe-nav-btn .icon {
   display: inline-block;
   width: 40px;
   height: 20px;
@@ -3919,11 +3935,11 @@ select.fixed-width {
   opacity: 0.5;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn .icon.open {
+.oe-nav .oe-big-icons li.oe-nav-btn .icon.open {
   fill: cyan;
 }
 
-.oe-nav .oe-big-icons .oe-nav-btn .icon.hotlist.vc {
+.oe-nav .oe-big-icons li.oe-nav-btn .icon.hotlist.vc {
   fill: #ffb400;
   opacity: 0.9;
 }

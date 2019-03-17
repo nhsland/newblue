@@ -1,0 +1,59 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Header - Patient
+
+.oe-patient {
+	
+	// Allergies and Risks has 3 states: 
+	// 1 allergy OR risk = 'risk-warning' (red)
+	// NO allergies and NO risks (confirmed) = 'no-risk' (green)
+	// No risk data collected = 'unknown' (text)
+	
+	.patient-allergies-risks {
+		position:absolute;
+		bottom:0;
+		right:165px;
+		
+		cursor:pointer;
+		
+		// Allergies, Alerts text
+		// reduce this down to create a little
+		// bit more horizontal space
+		@include font-size(10);
+		font-weight:500;
+	
+		display:flex;
+		align-items:center;
+		height:23px;
+		padding:0 25px 0 5px; // padding matches the data padding to align text
+	
+		background:transparent url( svg-path('icons/triangle') ) center right 4px no-repeat;
+		background-size:15px;	
+		
+		&.unknown {
+			background-color:$oe-pro-grey;
+		}
+		
+		&.risk-warning {
+			background-color:$oe-risks-warning;
+		}
+		
+		&.no-risk {
+			background-color:$oe-btn-green-hint;
+			background-image: url( svg-path('icons/tick') );
+		}
+		
+		
+		// js controlled interaction... 
+		&.open, &.active {
+			background-color: $oe-pro-text-highlight;
+			background-image: url( svg-path('icons/_classic/triangle') );
+			color:$oe-pro-bg;
+		}
+	}
+	
+
+}
+
