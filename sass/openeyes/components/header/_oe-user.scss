@@ -20,6 +20,8 @@
 	// use flex to position user-profile
 	display:flex;
 	height:$oe-header-height;
+	
+	
 
 	.oe-user-profile-context {
 		// uses flex to vertically center
@@ -34,6 +36,8 @@
 		}
 	
 		color:$oe-pro-text;
+		border-left:1px solid $oe-pro-line;
+		padding:0 0 0 8px;
 			
 		li {  
 			position: relative;
