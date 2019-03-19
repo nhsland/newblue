@@ -14,7 +14,7 @@
 	.patient-allergies-risks {
 		position:absolute;
 		bottom:0;
-		right:165px;
+		right:155px;
 		
 		cursor:pointer;
 		
@@ -27,7 +27,7 @@
 		display:flex;
 		align-items:center;
 		height:23px;
-		padding:0 25px 0 5px; // padding matches the data padding to align text
+		padding:0 23px 0 5px; // padding matches the data padding to align text
 	
 		background:transparent url( svg-path('icons/triangle') ) center right 4px no-repeat;
 		background-size:15px;	

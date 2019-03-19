@@ -2425,56 +2425,6 @@ idg.tileDataOverflow = function(){
 	
 }
 /**
-VC Draggable Floating inputs
-**/
-idg.vcDraggable = function(){
-	
-	var id = 'oe-vc-scratchpad';
-
-	if( $('#'+id).length == 0 ) return;
-	
-	/* 	
-	Drag...
-	*/	
-	var relativeX, relativeY;
-		
-	document.addEventListener("dragstart", getMouseOffset, false);
-	document.addEventListener("dragend", reposFloat, false);
-		
-	
-	function getMouseOffset( e ){
-		e.dataTransfer.dropEffect = "move";
-		
-		// need to work out mouse offset in <div> before dragging
-		var offset = $('#'+id).offset();
-		relativeX = (e.clientX - offset.left);
-		relativeY = (e.clientY - offset.top);		
-	}
-	
-	function reposFloat( e ) {
-		// Update the panel position
-		var left = e.clientX - relativeX;
-		var top = e.clientY - relativeY;
-		
-		// stop it being dragged off screen
-		top = top < 1 ? 1 : top;
-		left = left < 1 ? 1 : left;
-		
-		$('#'+id).css({"top":top+"px","left":left+"px"});
-	}
-	
-	
-	/*
-	Touch version? ... 
-	Not sure if this works, not tested... but anyway:	
-	*/
-	var el = document.getElementById(id);
-	el.addEventListener("touchstart", getMouseOffset, false);
-	el.addEventListener("touchend", reposFloat, false);
-		
-	
-}
-/**
 Create 'buttons' for nav menus, 3 different flavours: standard, wrapped and fixed
 - standard: $btn open/closes the popup $content (seperate DOM element). MouseEnter/Leave provides increased functionality for non-touch users
 - wrapped: 'btn' & popup $content wrapped by shared DOM (shortcuts menu), wrapper is used for the $eventObj
@@ -2701,6 +2651,8 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 	this.hide = reset;
 	this.show = showContent;
 	
+	let $eyeLatSwitcher =  $('.eye-side-switcher',$btn);
+	
 	/**
 	Events
 	**/
@@ -2722,6 +2674,9 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 				// user wants to lock it, switch to click events
 				useClick = true;
 				useMouse = false;
+				
+				eyeLatSwitch('hide');
+				
 			} else {
 				hideContent();
 			}
@@ -2734,6 +2689,8 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 		if(useClick == false){		
 			showContent();
 			useMouse = true;
+			
+			eyeLatSwitch('show');
 		}
 	}	
 	
@@ -2761,6 +2718,8 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 	  	$content.hide();
 	  	contentPopup = false;
 	  	$btn.removeClass( css.open );
+	  	
+	  	eyeLatSwitch('hide');
 	}
 	
 	// called by the groupController
@@ -2768,6 +2727,19 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 		hideContent();
 		useClick = false;
 		useMouse = false;
+	}
+	
+	function eyeLatSwitch(state){
+		if($eyeLatSwitcher.length != 0){
+			
+			if(state == "show"){
+				$eyeLatSwitcher.show();
+			} else {
+				$eyeLatSwitcher.hide();
+			}
+			
+			
+		}
 	}
 
 	/**
@@ -3993,6 +3965,56 @@ idg.userPIN = {
 		});
 		
 	}	
+	
+}
+/**
+VC Draggable Floating inputs
+**/
+idg.vcDraggable = function(){
+	
+	var id = 'oe-vc-scratchpad';
+
+	if( $('#'+id).length == 0 ) return;
+	
+	/* 	
+	Drag...
+	*/	
+	var relativeX, relativeY;
+		
+	document.addEventListener("dragstart", getMouseOffset, false);
+	document.addEventListener("dragend", reposFloat, false);
+		
+	
+	function getMouseOffset( e ){
+		e.dataTransfer.dropEffect = "move";
+		
+		// need to work out mouse offset in <div> before dragging
+		var offset = $('#'+id).offset();
+		relativeX = (e.clientX - offset.left);
+		relativeY = (e.clientY - offset.top);		
+	}
+	
+	function reposFloat( e ) {
+		// Update the panel position
+		var left = e.clientX - relativeX;
+		var top = e.clientY - relativeY;
+		
+		// stop it being dragged off screen
+		top = top < 1 ? 1 : top;
+		left = left < 1 ? 1 : left;
+		
+		$('#'+id).css({"top":top+"px","left":left+"px"});
+	}
+	
+	
+	/*
+	Touch version? ... 
+	Not sure if this works, not tested... but anyway:	
+	*/
+	var el = document.getElementById(id);
+	el.addEventListener("touchstart", getMouseOffset, false);
+	el.addEventListener("touchend", reposFloat, false);
+		
 	
 }
 /**

@@ -3477,6 +3477,8 @@ select.fixed-width {
   left: 25px;
   padding: 20px;
   cursor: pointer;
+  -webkit-transition: left 0.5s ease;
+  transition: left 0.5s ease;
 }
 
 .openeyes-brand .oe-logo .oe-openeyes {
@@ -3490,6 +3492,10 @@ select.fixed-width {
 .openeyes-brand .oe-logo.open .oe-openeyes, .openeyes-brand .oe-logo.active .oe-openeyes {
   fill: #0ff;
   opacity: 0.8;
+}
+
+.openeyes-brand .oe-logo.open {
+  left: 0;
 }
 
 .openeyes-brand .oe-product-info {
@@ -3649,7 +3655,7 @@ select.fixed-width {
 .oe-patient .patient-allergies-risks {
   position: absolute;
   bottom: 0;
-  right: 165px;
+  right: 155px;
   cursor: pointer;
   font-size: 0.625rem;
   font-weight: 500;
@@ -3660,7 +3666,7 @@ select.fixed-width {
       -ms-flex-align: center;
           align-items: center;
   height: 23px;
-  padding: 0 25px 0 5px;
+  padding: 0 23px 0 5px;
   background: transparent url("../svg/in-css/icons/triangle.svg") center right 4px no-repeat;
   background-size: 15px;
 }
@@ -3692,7 +3698,7 @@ select.fixed-width {
 .oe-patient .patient-oescape,
 .oe-patient .patient-extra {
   position: absolute;
-  padding: 5px 10px 4px 8px;
+  padding: 6px 8px 4px 8px;
   cursor: pointer;
 }
 
@@ -3726,8 +3732,8 @@ select.fixed-width {
 
 .oe-patient .patient-demographics {
   bottom: 0;
-  right: 123px;
-  padding-left: 18px;
+  right: 119px;
+  padding-left: 14px;
 }
 
 .oe-patient .patient-demographics .icon {
@@ -3737,7 +3743,7 @@ select.fixed-width {
 
 .oe-patient .patient-management {
   bottom: 0;
-  right: 91px;
+  right: 86px;
   padding-bottom: 3px;
 }
 
@@ -3748,7 +3754,7 @@ select.fixed-width {
 
 .oe-patient .patient-quicklook {
   bottom: 0;
-  right: 61px;
+  right: 56px;
 }
 
 .oe-patient .patient-quicklook .icon {
@@ -3758,7 +3764,7 @@ select.fixed-width {
 
 .oe-patient .patient-oescape {
   bottom: 0;
-  right: 32px;
+  right: 24px;
 }
 
 .oe-patient .patient-oescape .icon {
@@ -3768,7 +3774,7 @@ select.fixed-width {
 
 .oe-patient .patient-extra {
   bottom: 0;
-  right: 0;
+  right: -8px;
 }
 
 .oe-patient .patient-extra .icon {
@@ -3788,6 +3794,34 @@ select.fixed-width {
 
 .oe-patient .patient-local-edit .icon:hover, .oe-patient .patient-local-edit .icon:focus, .oe-patient .patient-local-edit .icon:active {
   opacity: 1;
+}
+
+.oe-patient .eye-side-switcher {
+  display: none;
+  position: absolute;
+  bottom: -30px;
+  left: -19px;
+  background: #141e2b;
+  border-bottom: 1px solid cyan;
+  z-index: 101;
+  white-space: nowrap;
+}
+
+.oe-patient .eye-side-switcher .eye-side-btn {
+  display: inline-block;
+  width: 35px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: 17px;
+  background-position: center center;
+}
+
+.oe-patient .eye-side-switcher .eye-side-btn.right {
+  background-image: url("../svg/in-css/icons/_laterality/lat-R.svg");
+}
+
+.oe-patient .eye-side-switcher .eye-side-btn.left {
+  background-image: url("../svg/in-css/icons/_laterality/lat-L.svg");
 }
 
 .oe-user {
@@ -8334,12 +8368,16 @@ span.squiggle {
   font-size: 1.5rem;
   font-weight: 100;
   margin: 0 25px 0 0;
+  width: 15vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .oescape-header button, .oescape-header .button, .oescape-header input[type="submit"] {
   vertical-align: top;
   height: 38px;
-  padding: 0 16px;
+  padding: 0 8px;
 }
 
 .oescape-header button.icon, .oescape-header .button.icon, .oescape-header input[type="submit"].icon {
@@ -8347,7 +8385,7 @@ span.squiggle {
 }
 
 .oescape-header button.icon .oe-i, .oescape-header .button.icon .oe-i, .oescape-header input[type="submit"].icon .oe-i {
-  padding: 0 20px;
+  padding: 0 3px;
 }
 
 .oescape-header .svg-size-icon {

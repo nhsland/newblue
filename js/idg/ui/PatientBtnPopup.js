@@ -29,6 +29,8 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 	this.hide = reset;
 	this.show = showContent;
 	
+	let $eyeLatSwitcher =  $('.eye-side-switcher',$btn);
+	
 	/**
 	Events
 	**/
@@ -50,6 +52,9 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 				// user wants to lock it, switch to click events
 				useClick = true;
 				useMouse = false;
+				
+				eyeLatSwitch('hide');
+				
 			} else {
 				hideContent();
 			}
@@ -62,6 +67,8 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 		if(useClick == false){		
 			showContent();
 			useMouse = true;
+			
+			eyeLatSwitch('show');
 		}
 	}	
 	
@@ -89,6 +96,8 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 	  	$content.hide();
 	  	contentPopup = false;
 	  	$btn.removeClass( css.open );
+	  	
+	  	eyeLatSwitch('hide');
 	}
 	
 	// called by the groupController
@@ -96,6 +105,19 @@ idg.PatientBtnPopup = function(id,$btn,$content){
 		hideContent();
 		useClick = false;
 		useMouse = false;
+	}
+	
+	function eyeLatSwitch(state){
+		if($eyeLatSwitcher.length != 0){
+			
+			if(state == "show"){
+				$eyeLatSwitcher.show();
+			} else {
+				$eyeLatSwitcher.hide();
+			}
+			
+			
+		}
 	}
 
 	/**

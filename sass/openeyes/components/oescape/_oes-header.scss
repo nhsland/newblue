@@ -19,6 +19,8 @@
 		
 		display:flex;
 		align-items: center;
+		
+
 	}
 
 	.title {
@@ -27,19 +29,25 @@
 		@include font-size(24);
 		font-weight:100;
 		margin:0 25px 0 0; 
+		
+		// Need to restrict Title length to make room 
+		width:15vw;
+		white-space: nowrap; 
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	
 	// create 'tab' buttons
 	@include buttons {
 		vertical-align: top; // overwrite default 'bottom' to fix alignment issues
 		height:$oe-event-header-height;
-		padding:0 16px;
+		padding:0 8px;
 		
 		// icon buttons in header
 		&.icon {
 			padding:0 0; // remove default padding
 			.oe-i {
-				padding:0 20px; // pad out icon instead (to make clickable)
+				padding:0 3px; // pad out icon instead (to make clickable)
 			}
 		}
 	}

@@ -15,7 +15,7 @@
 	.patient-oescape,
 	.patient-extra {
 		position:absolute;
-		padding:5px 10px 4px 8px; // increase icon hitarea
+		padding:6px 8px 4px 8px; // increase icon hitarea
 		cursor:pointer;
 		
 		// svg icon btn
@@ -37,22 +37,21 @@
 	// info 
 	.patient-demographics {
 		bottom:0;
-		right:123px;
+		right:119px;
 		.icon {
 			width:16px;  
 			height:16px;
-		}
+		} 
 		
-		// to avoid a break in mouse over events
-		// (which causes a popup flicker)
-		// pad this to touch allergies and risks:
-		padding-left:18px; 
+		// avoid a gap between 
+		// allergies and info icon hitarea
+		padding-left:14px; 
 	}
 	
 	// dude
 	.patient-management {
 		bottom:0;
-		right:91px;
+		right:86px;
 		padding-bottom:3px;
 		.icon {
 			width:18px;  
@@ -63,7 +62,7 @@
 	// Eye
 	.patient-quicklook {
 		bottom:0;
-		right:61px;	
+		right:56px;	
 		.icon {
 			width:16px;  
 			height:16px;
@@ -73,7 +72,7 @@
 	// OEscape 
 	.patient-oescape {
 		bottom:0;
-		right:32px;	
+		right:24px;	
 		.icon {
 			width:16px;  
 			height:16px;
@@ -85,7 +84,7 @@
 	// but left as generic container for future use
 	.patient-extra {
 		bottom:0;
-		right:0;	
+		right:-8px; // allows for the padding	
 		.icon {
 			width:16px;  
 			height:16px;
