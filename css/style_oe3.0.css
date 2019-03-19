@@ -8349,35 +8349,18 @@ span.squiggle {
   padding: 0 10px 0 0;
 }
 
-.oescape-header .nav-title {
-  position: absolute;
-  top: 0;
-  right: 60px;
-  height: 38px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.oescape-header .title {
-  color: #8c8c8c;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 100;
-  margin: 0 25px 0 0;
-  width: 15vw;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 .oescape-header button, .oescape-header .button, .oescape-header input[type="submit"] {
   vertical-align: top;
   height: 38px;
-  padding: 0 8px;
+  -webkit-transition: padding 0.5s ease-out;
+  transition: padding 0.5s ease-out;
+  padding: 0 10px;
+}
+
+@media only screen and (min-width: 1440px) {
+  .oescape-header button, .oescape-header .button, .oescape-header input[type="submit"] {
+    padding: 0 15px;
+  }
 }
 
 .oescape-header button.icon, .oescape-header .button.icon, .oescape-header input[type="submit"].icon {
@@ -8392,6 +8375,37 @@ span.squiggle {
   fill: none;
   stroke: #888;
   stroke-miterlimit: 10;
+}
+
+.oescape-header .nav-title {
+  position: absolute;
+  top: 0;
+  right: 60px;
+  height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.oescape-header .nav-title .title {
+  color: #8c8c8c;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin: 0 25px 0 0;
+  width: 15vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media only screen and (min-width: 1440px) {
+  .oescape-header .nav-title .title {
+    width: auto;
+  }
 }
 
 .oescape-header .data-awareness {
@@ -8411,8 +8425,9 @@ span.squiggle {
 }
 
 .oescape-header .data-awareness .group {
+  position: relative;
   border-right: 1px solid #26303d;
-  padding: 0 10px 0 0;
+  padding: 0 10px 12px 0;
   margin: 0 10px 0 0;
 }
 
@@ -8430,6 +8445,9 @@ span.squiggle {
 }
 
 .oescape-header .data-awareness .group .date {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   font-size: 0.625rem;
   opacity: 0.5;
   width: 65px;
