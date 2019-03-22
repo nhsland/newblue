@@ -39,7 +39,7 @@
 			
 			@include font-size(10);
 			font-weight:500;
-			color:rgb(50,50,50); 		// Always on the Eyedraw blue bg
+			color:$oe-ed3-text; 		// Always on the Eyedraw blue bg
 			padding:2px 5px 15px 0; 	// pad bottom for + icon button
 			
 			// make the weighting in eyedraw elements
@@ -60,7 +60,7 @@
 			}
 			
 			.data-label {
-				color:rgb(120,120,140);; // Always on the Eyedraw blue bg
+				color:$oe-ed3-text; // Always on the Eyedraw blue bg
 			}
 		}
 		

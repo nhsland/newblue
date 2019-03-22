@@ -6,6 +6,21 @@
 
 .ed3-footer {
 	@include flex(space-between, flex-start);
+	
+	padding:0 10px 0 0;
+	
+	// set a height to help with JS positioning
+	height:150px;
+	
+	overflow-y: auto;
+	
+	
+	.report-comments {
+		@include flex(space-between, flex-start);
+	}
+	
+	
+	
 }
 
 

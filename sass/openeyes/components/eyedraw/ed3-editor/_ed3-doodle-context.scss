@@ -65,11 +65,11 @@
 						@include font-size(11);
 					}
 					
-					select {
+					select,input,textarea {
 						// for the rest of OE this is set to 24px
 						// as it helps with align (buttons) but here:
 						height:auto;  
-						//padding:2px;
+						padding:2px;
 					}
 	
 				}

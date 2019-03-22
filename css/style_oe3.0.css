@@ -7200,7 +7200,7 @@ table.management-summaries tbody td:last-child {
   width: 180px;
   font-size: 0.625rem;
   font-weight: 500;
-  color: #323232;
+  color: #32323c;
   padding: 2px 5px 15px 0;
 }
 
@@ -7219,7 +7219,7 @@ table.management-summaries tbody td:last-child {
 }
 
 .element .ed3 .ed3-data-stack .data-label {
-  color: #78788c;
+  color: #32323c;
 }
 
 .element .ed3-data-actions {
@@ -7242,7 +7242,7 @@ table.management-summaries tbody td:last-child {
 .oe-eyedraw-app {
   position: fixed;
   left: 200px;
-  top: 120px;
+  top: 60px;
   z-index: 70;
   width: 1080px;
   min-height: 300px;
@@ -7251,6 +7251,12 @@ table.management-summaries tbody td:last-child {
   font-size: 0.75rem;
   -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (min-width: 1440px) {
+  .oe-eyedraw-app {
+    left: 322px;
+  }
 }
 
 .oe-eyedraw-app ::-webkit-scrollbar-track {
@@ -7406,8 +7412,9 @@ table.management-summaries tbody td:last-child {
   font-size: 0.6875rem;
 }
 
-.oe-eyedraw-app .ed3-doodle-context .ed3-doodle-controls .doodle-context-options .doodle-option select {
+.oe-eyedraw-app .ed3-doodle-context .ed3-doodle-controls .doodle-context-options .doodle-option select, .oe-eyedraw-app .ed3-doodle-context .ed3-doodle-controls .doodle-context-options .doodle-option input, .oe-eyedraw-app .ed3-doodle-context .ed3-doodle-controls .doodle-context-options .doodle-option textarea {
   height: auto;
+  padding: 2px;
 }
 
 .oe-eyedraw-app .ed3-doodle-selector {
@@ -7475,6 +7482,21 @@ table.management-summaries tbody td:last-child {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  padding: 0 10px 0 0;
+  height: 150px;
+  overflow-y: auto;
+}
+
+.ed3-footer .report-comments {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
 .oe-eyedraw-app .eyedraw-context-options {
@@ -7503,6 +7525,56 @@ table.management-summaries tbody td:last-child {
 
 .oe-eyedraw-app .eyedraw-context-options .eyedraw-option select {
   height: auto;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-report {
+  position: relative;
+  padding: 8px 0 8px 60px;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-report h3 {
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #777e85;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-data-stack {
+  width: 180px;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: #32323c;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-data-stack .data-value {
+  word-break: break-word;
+  padding: 0 0 10px 0;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-data-stack .data-value .priority-text {
+  font-weight: 700;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-data-stack .data-value.not-recorded {
+  text-align: left;
+  font-size: 0.75rem;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-data-stack .data-label {
+  color: #32323c;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-comments {
+  padding: 8px 0 8px 0;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-comments textarea {
+  width: 400px;
 }
 
 .ed-toolbar {

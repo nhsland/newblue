@@ -14,8 +14,17 @@ $ed3-top-panel-height:32px;
 
 .oe-eyedraw-app {
 	position: fixed;
+	
+	// this works nicely
 	left:$oe-event-sidebar-width; 
-	top:120px;
+	@include media($oe-extended-browser-size){	
+		// this however is a bit messy and requires
+		// some jiggling to get it in the right place	
+		left: #{$oe-event-sidebar-width + $oe-event-extension - 38px};			
+	}
+	
+	
+	top:$oe-header-height; // JS controlled
 	
 	z-index:$oe-z-add-insert;
 	
