@@ -17,18 +17,3 @@
 ::-webkit-scrollbar-thumb { 
 	background-color: $oe-pro-text-light;
 }
-
-// colours for scrollbars (chrome) in EyeDraw App
-.oe-eyedraw-app {
-
-	::-webkit-scrollbar-track {  
-		background: tint( $oe-ed-bg,10 );
-	}
-	::-webkit-scrollbar-track-piece { 
-		background: tint( $oe-ed-bg,30 );
-	}
-	::-webkit-scrollbar-thumb { 
-		background-color: shade( $oe-ed-bg,30 );;
-	}
-	
-}

@@ -19,7 +19,7 @@
 	.ed3 {
 		@include flex(space-between, flex-start);
 		padding:3px 1px;
-		background:$oe-ed-bg; // eyedraw blue
+		background:$oe-ed3-blue; // eyedraw blue
 		border-radius:3px;
 		
 		
@@ -30,7 +30,7 @@
 			// .ed3-side {}		// 134 x 200
 		}
 		
-		.ed3-data-stack {
+			.ed3-data-stack {
 			// 2 canvas elements = 334px
 			// when used on R / L sides the data needs to be restricted
 			// so that it anchors to the right (if there is only 1 canvas)
@@ -45,7 +45,6 @@
 			// make the weighting in eyedraw elements
 			// is consistent for both themes
 			.data-value {
-				font-weight:500; 
 				word-break: break-word; // to handle: "pneumonoultramicroscopicsilicovolcanoconiosis"
 				
 				padding:0 0 10px 0;

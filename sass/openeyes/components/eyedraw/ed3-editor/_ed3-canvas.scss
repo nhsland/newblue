@@ -1,0 +1,29 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Eyedraw APP
+// -----------------------------------
+// Eyedraw popup APP
+
+.oe-eyedraw-app {	
+	
+	.ed3-editor {
+		
+		// wrapper for both canvases
+		.ed3-canvas {
+			// front: 300 x 300
+			// side: 200 x 300
+			
+			.ed3-front,
+			.ed3-side {
+				display:inline-block;
+			}
+			
+		}
+		
+	}
+	
+
+	
+}

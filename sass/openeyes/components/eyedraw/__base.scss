@@ -4,29 +4,44 @@
 
 // OE Eyedraw APP
 // -----------------------------------
-// Eyedraw popup APP
-// note: expects to be loaded into oe-popup-wrap 
+// Conceptually like Add Insert Popup.
+// Locks to the left side of the SEM Event content
+// and positions vertically relative to the button 
 
-$ed-padding:7px;
-$ed-top-panel-height:32px;
+$ed3-border:3px;
+$ed3-padding:5px;
+$ed3-top-panel-height:32px;
 
 .oe-eyedraw-app {
-		
-	position: relative;
-	margin: auto; // flex magic (because of popup wrapper)
-	width: $oe-eyedraw-app-width;
-	min-height:200px;
-	// border-radius:$ed-padding; 
-	padding:$ed-padding; // allow for app buttons (save etc)
-	background:$oe-ed-bg;
+	position: fixed;
+	left:$oe-event-sidebar-width; 
+	top:120px;
+	
+	z-index:$oe-z-add-insert;
+	
+	width: $oe-event-main-default-width;
+	
+	min-height:300px;  	 // whilst loading placeholder
+	
+	padding:$ed3-padding; // allow for app buttons (save etc)
+	
+	background:$oe-ed3-blue;
+	
 	@include font-size(12);
-
-	// main wrapper for Eyedraw App
-	.ed-editor {
-		display:flex;
-		justify-content:flex-start;
-		align-items:stretch;
-	}	
+	
+	@include boxshadow();
+	
+	// colours for scrollbars (chrome) in EyeDraw App
+	::-webkit-scrollbar-track {  
+		background: tint( $oe-ed3-blue,10 );
+	}
+	::-webkit-scrollbar-track-piece { 
+		background: tint( $oe-ed3-blue,30 );
+	}
+	::-webkit-scrollbar-thumb { 
+		background-color: shade( $oe-ed3-blue,50 );
+	}
+	
 }
 
 

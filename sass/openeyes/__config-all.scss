@@ -46,13 +46,13 @@ $oe-js-browser-fix-size:				1890px;
 // z
 $oe-z-vc:				160; // VC ScratchPad
 $oe-z-logo:				150; 
-$oe-z-popup:			100;
-$oe-z-shortcuts:		99;
+$oe-z-popup:				100;
+$oe-z-shortcuts:			99;
 $oe-z-hotlist:			95; // hotlist (previously know as activity)
 $oe-z-tooltip:			90; // tooltips are used in quicklook popups
-$oe-z-quicklook:		80; // quicklook, demographics, allergies & risks
+$oe-z-quicklook:			80; // quicklook, demographics, allergies & risks
 $oe-z-add-insert: 		70; 
-$oe-z-element-search:	65; 
+$oe-z-element-search:		65; 
 $oe-z-ed-v2: 			20; // ED v2 DOM. ED v2 still in first V3			
 
 
@@ -62,15 +62,15 @@ $oe-z-ed-v2: 			20; // ED v2 DOM. ED v2 still in first V3
 $html-pro-bg: 			rgb(16,25,37);
 
 $oe-pro-text: 			rgb(214,214,214);
-$oe-pro-text-light: 	rgb(140,140,140);
-$oe-pro-text-highlight: rgb(0,255,255);
-$oe-pro-text-active: 	rgb(90,180,180);  // user over!
+$oe-pro-text-light: 		rgb(140,140,140);
+$oe-pro-text-highlight: 	rgb(0,255,255);
+$oe-pro-text-active: 		rgb(90,180,180);  // user over!
 
 $oe-pro-blue:			rgb(30,46,66);
 $oe-pro-blue-dark: 		shade( $oe-pro-blue, 20% );
-$oe-pro-blue-dark2: 	shade( $oe-pro-blue, 35% );
-$oe-pro-blue-dark3: 	shade( $oe-pro-blue, 25% );
-$oe-pro-blue-light: 	tint( $oe-pro-blue, 30% );
+$oe-pro-blue-dark2: 		shade( $oe-pro-blue, 35% );
+$oe-pro-blue-dark3: 		shade( $oe-pro-blue, 25% );
+$oe-pro-blue-light: 		tint( $oe-pro-blue, 30% );
 
 $oe-pro-bg-highlight: 	shade($oe-pro-blue-dark3,30); // used as hover highlight
 
@@ -85,10 +85,10 @@ $oe-pro-btn-blue:		rgb(7,69,152);
 $oe-vc-orange: 			rgb(255,180,0);
 
 // clinic ... (became Pathsteps)
-$oe-clinic-green: 	rgb(20,100,0);
-$oe-clinic-orange:	rgb(180,80,22);
-$oe-clinic-red:		rgb(160,40,10);
-$oe-clinic-grey:	rgb(50,50,55);
+$oe-clinic-green: 		rgb(20,100,0);
+$oe-clinic-orange:		rgb(180,80,22);
+$oe-clinic-red:			rgb(160,40,10);
+$oe-clinic-grey:			rgb(50,50,55);
 
 
 
@@ -98,9 +98,12 @@ $oe-pro-user-input-text: $oe-pro-text;
 
 $oe-pro-popup-bg:		rgb(55,71,85);
 
-// eyedraw
-$oe-ed-bg:				rgb(218,230,241); 
-$oe-ed-panels: 			shade( $oe-ed-bg,10 ); 
+// ED3 colours
+$oe-ed3-blue:				rgb(218,230,241); 
+$oe-ed3-text:				rgb(50,50,60); 	
+$oe-ed3-panels: 				shade( $oe-ed3-blue, 10 );
+$oe-ed3-inputs:				shade( $oe-ed3-blue, 40 );
+$oe-ed3-input-text:			rgb(240,240,240);	
 
 
 // SVG paths - general UI

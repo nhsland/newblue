@@ -1313,18 +1313,6 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   background-color: #8c8c8c;
 }
 
-.oe-eyedraw-app ::-webkit-scrollbar-track {
-  background: #dee9f2;
-}
-
-.oe-eyedraw-app ::-webkit-scrollbar-track-piece {
-  background: #e5eef5;
-}
-
-.oe-eyedraw-app ::-webkit-scrollbar-thumb {
-  background-color: #99a1a9;
-}
-
 @-webkit-keyframes spinner {
   to {
     -webkit-transform: rotate(360deg);
@@ -2832,6 +2820,10 @@ select.fixed-width {
 
 .oe-i.ed-move-forward {
   background-image: url("../svg/in-css/eyedraw/ed-forward.svg");
+}
+
+.oe-i.ed-info {
+  background-image: url("../svg/in-css/eyedraw/ed-info.svg");
 }
 
 .oe-i.circle-green {
@@ -7213,7 +7205,6 @@ table.management-summaries tbody td:last-child {
 }
 
 .element .ed3 .ed3-data-stack .data-value {
-  font-weight: 500;
   word-break: break-word;
   padding: 0 0 10px 0;
 }
@@ -7249,87 +7240,82 @@ table.management-summaries tbody td:last-child {
 }
 
 .oe-eyedraw-app {
-  position: relative;
-  margin: auto;
-  width: 1260px;
-  min-height: 200px;
-  padding: 7px;
+  position: fixed;
+  left: 200px;
+  top: 120px;
+  z-index: 70;
+  width: 1080px;
+  min-height: 300px;
+  padding: 5px;
   background: #dae6f1;
   font-size: 0.75rem;
+  -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
-.oe-eyedraw-app .ed-editor {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: stretch;
-      -ms-flex-align: stretch;
-          align-items: stretch;
+.oe-eyedraw-app ::-webkit-scrollbar-track {
+  background: #dee9f2;
 }
 
-.oe-eyedraw-app .ed-eye-side {
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  margin-right: -50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  font-size: 1.5rem;
-  font-weight: 300;
-  color: white;
+.oe-eyedraw-app ::-webkit-scrollbar-track-piece {
+  background: #e5eef5;
+}
+
+.oe-eyedraw-app ::-webkit-scrollbar-thumb {
+  background-color: #6d7379;
 }
 
 .oe-eyedraw-app button, .oe-eyedraw-app .button, .oe-eyedraw-app input[type="submit"] {
-  color: rgba(255, 255, 255, 0.8);
-  background: #9da6ae;
+  color: #f0f0f0;
+  background: #838a91;
 }
 
 .oe-eyedraw-app button.selected, .oe-eyedraw-app .button.selected, .oe-eyedraw-app input[type="submit"].selected {
-  background: #62686d;
-}
-
-.oe-eyedraw-app label, .oe-eyedraw-app .label {
-  color: #333;
-}
-
-.oe-eyedraw-app label.highlight, .oe-eyedraw-app .label.highlight {
-  background: #c4cfd9;
-}
-
-.oe-eyedraw-app label.highlight:hover, .oe-eyedraw-app label.highlight:focus, .oe-eyedraw-app label.highlight:active, .oe-eyedraw-app .label.highlight:hover, .oe-eyedraw-app .label.highlight:focus, .oe-eyedraw-app .label.highlight:active {
-  background: #dae6f1;
+  background: #5c6166;
 }
 
 .oe-eyedraw-app input, .oe-eyedraw-app textarea, .oe-eyedraw-app select {
-  color: white;
-  background: #939ba3;
+  color: #f0f0f0;
+  background: #838a91;
+  margin: 0 0;
 }
 
-.oe-eyedraw-app a {
-  color: #06f;
-  text-decoration: none;
+.oe-eyedraw-app .ed3-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 0 5px 0;
 }
 
-.oe-eyedraw-app a:hover {
-  color: #00a;
+.oe-eyedraw-app .ed3-header .title {
+  font-size: 1.5rem;
+  font-weight: 300;
 }
 
-.oe-eyedraw-app .ed-close-save {
-  position: absolute;
-  top: -25px;
-  right: 7px;
-  z-index: 1;
+.oe-eyedraw-app .ed3-editor {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.oe-eyedraw-app .ed-draw {
+.oe-eyedraw-app .ed3-editor .ed-draw {
   background: #c4cfd9;
   padding: 0 3px 3px 3px;
 }
 
-.oe-eyedraw-app .ed-draw .ed-draw-view {
+.oe-eyedraw-app .ed3-editor .ed-draw .ed-draw-view {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7343,61 +7329,19 @@ table.management-summaries tbody td:last-child {
   width: 300px;
 }
 
-.oe-eyedraw-app .ed-doodle-context {
+.oe-eyedraw-app .ed3-editor .ed3-canvas .ed3-front,
+.oe-eyedraw-app .ed3-editor .ed3-canvas .ed3-side {
+  display: inline-block;
+}
+
+.oe-eyedraw-app .ed3-doodle-context {
   background: #c4cfd9;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  width: 260px;
+  padding: 0 3px 3px 3px;
+  border-left: 1px solid #dae6f1;
 }
 
-.oe-eyedraw-app .ed-doodle-context .ed-doodle-active {
-  background: #dae6f1;
-  margin: 0 0 10px 0;
-}
-
-.oe-eyedraw-app .ed-doodle-context .ed-doodle-toolbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 32px;
-  padding: 0 0 0 7px;
-}
-
-.oe-eyedraw-app .ed-doodle-context .ed-doodle-controls {
-  padding: 0 7px 7px 7px;
-}
-
-.oe-eyedraw-app .ed-doodle-context .ed-doodle-controls .doodle-option {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 0 0 3px 0;
-  min-height: 25px;
-}
-
-.oe-eyedraw-app .ed-tools {
-  background: #c4cfd9;
-  padding: 0 3px 0 3px;
-  width: 400px;
-}
-
-.oe-eyedraw-app .ed-tools.single-column {
-  width: 200px;
-}
-
-.oe-eyedraw-app .ed-tools .ed-filter-tools {
+.oe-eyedraw-app .ed3-doodle-context .ed3-doodle-toolbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7410,181 +7354,146 @@ table.management-summaries tbody td:last-child {
   height: 32px;
 }
 
-.oe-eyedraw-app .ed-tools .ed-icon-toolbox .doodle-box {
+.oe-eyedraw-app .ed3-doodle-context .ed3-doodle-controls {
+  padding: 0 5px 5px 5px;
   height: 300px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-.oe-eyedraw-app .ed-tools .ed-icon-toolbox .doodle-box .doodle-selection {
+.oe-eyedraw-app .ed3-doodle-context .ed3-doodle-controls .doodle-active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 4px 0 8px 0;
+}
+
+.oe-eyedraw-app .ed3-doodle-context .ed3-doodle-controls .doodle-active .doodle-name {
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
+.oe-eyedraw-app .ed3-doodle-context .ed3-doodle-controls .doodle-context-options .doodle-option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 6px 0;
+  border-top: 1px dotted #dae6f1;
+}
+
+.oe-eyedraw-app .ed3-doodle-context .ed3-doodle-controls .doodle-context-options .doodle-option label {
+  font-size: 0.6875rem;
+}
+
+.oe-eyedraw-app .ed3-doodle-context .ed3-doodle-controls .doodle-context-options .doodle-option select {
+  height: auto;
+}
+
+.oe-eyedraw-app .ed3-doodle-selector {
+  width: 300px;
+  background: #c4cfd9;
+  padding: 0 3px 3px 3px;
+  border-left: 5px solid #dae6f1;
+}
+
+.oe-eyedraw-app .ed3-doodle-selector .ed-doodle-filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 32px;
+}
+
+.oe-eyedraw-app .ed3-doodle-selector .ed-doodle-toolbox .doodle-box {
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.oe-eyedraw-app .ed3-doodle-selector .ed-doodle-toolbox .doodle-box .doodle-selection {
   -webkit-column-count: 2;
           column-count: 2;
   -webkit-column-gap: 1px;
           column-gap: 1px;
 }
 
-.oe-eyedraw-app .ed-tools .ed-icon-toolbox .doodle-box .doodle-selection.single-column {
+.oe-eyedraw-app .ed3-doodle-selector .ed-doodle-toolbox .doodle-box .doodle-selection.single-column {
   -webkit-column-count: unset;
           column-count: unset;
 }
 
-.oe-eyedraw-app .ed-tools .ed-icon-toolbox .doodle-box .doodle-selection li {
+.oe-eyedraw-app .ed3-doodle-selector .ed-doodle-toolbox .doodle-box .doodle-selection li {
   font-size: 0.625rem;
   background: #dae6f1;
   margin: 0 0 1px 0;
   padding: 0;
   cursor: pointer;
+  color: #6e6e82;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.oe-eyedraw-app .ed-tools .ed-icon-toolbox .doodle-box .doodle-selection li:hover, .oe-eyedraw-app .ed-tools .ed-icon-toolbox .doodle-box .doodle-selection li:focus, .oe-eyedraw-app .ed-tools .ed-icon-toolbox .doodle-box .doodle-selection li:active {
+.oe-eyedraw-app .ed3-doodle-selector .ed-doodle-toolbox .doodle-box .doodle-selection li:hover, .oe-eyedraw-app .ed3-doodle-selector .ed-doodle-toolbox .doodle-box .doodle-selection li:focus, .oe-eyedraw-app .ed3-doodle-selector .ed-doodle-toolbox .doodle-box .doodle-selection li:active {
   background: #fff;
+  color: #1e1e1e;
 }
 
-.oe-eyedraw-app .ed-data-row {
+.ed3-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  margin: 10px 0 10px 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
 
-.oe-eyedraw-app .ed-data-row .ed-extra-options {
-  width: 230px;
+.oe-eyedraw-app .eyedraw-context-options {
+  background: #c4cfd9;
+  width: 305px;
+  padding: 3px;
 }
 
-.oe-eyedraw-app .ed-data-row .ed-extra-options label {
-  margin: 0 0 5px 0;
-}
-
-.oe-eyedraw-app .ed-data-row .ed-data {
-  font-size: 0.8125rem;
-  line-height: 1.4;
-  width: 300px;
-}
-
-.oe-eyedraw-app .ed-data-row .ed-data .data-label {
-  font-size: 0.9375rem;
-}
-
-.oe-eyedraw-app .ed-data-row .ed-data .data-value {
-  max-height: 100px;
-  overflow-y: auto;
-}
-
-.oe-eyedraw-app .ed-data-row .ed-comments {
-  margin: 3px 20px;
-  width: 275px;
-}
-
-.oe-eyedraw-app .ed-data-row .ed-comments textarea {
-  background: #edf3f8;
-  color: #333;
-}
-
-.oe-eyedraw-app .ed-element-options {
-  padding: 7px 7px 7px 14px;
-  border-left: 7px solid #dae6f1;
-}
-
-.oe-eyedraw-app .ed-element-options table {
-  width: 100%;
-}
-
-.oe-eyedraw-app .ed-element-options table tr {
-  border-bottom: 1px solid #c4cfd9;
-}
-
-.oe-eyedraw-app .ed-element-options table tr:last-child {
-  border-bottom: none;
-}
-
-.oe-eyedraw-app .ed-element-options table td {
-  min-height: 28px;
-  padding: 1px 0;
-  font-size: 0.75rem;
-  vertical-align: middle;
-}
-
-.oe-eyedraw-app .ed-element-options table td textarea {
-  vertical-align: middle;
-}
-
-.oe-eyedraw-app .ed-element-options table td.right {
-  text-align: right;
-}
-
-.ed-surgeon-orientation {
-  position: relative;
-  width: 180px;
-  height: 120px;
-  margin: 5px;
+.oe-eyedraw-app .eyedraw-context-options .eyedraw-option {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-position: center bottom 20px;
-  background-repeat: no-repeat;
-  background-size: 75px;
-  background-image: url("../svg/in-css/eyedraw/op-patient.svg");
+  padding: 6px 0;
+  border-top: 1px dotted #dae6f1;
 }
 
-.ed-surgeon-orientation .title {
-  font-size: 0.75rem;
-  color: #828282;
+.oe-eyedraw-app .eyedraw-context-options .eyedraw-option label {
+  font-size: 0.6875rem;
 }
 
-.ed-surgeon-orientation .ed-surgeon-angle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 60px;
-  background-position: top left;
-  background-repeat: no-repeat;
-  background-size: 60px;
-  background-image: url("../svg/in-css/eyedraw/op-surgeon.svg");
-}
-
-.ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-right {
-  top: 35px;
-  left: 8px;
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-}
-
-.ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-right-top {
-  top: 5px;
-  left: 25px;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-}
-
-.ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-top {
-  top: -5px;
-  left: 60px;
-}
-
-.ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-left-top {
-  top: 5px;
-  left: 95px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.ed-surgeon-orientation .ed-surgeon-angle.surgeon-pos-left {
-  top: 35px;
-  left: 112px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+.oe-eyedraw-app .eyedraw-context-options .eyedraw-option select {
+  height: auto;
 }
 
 .ed-toolbar {

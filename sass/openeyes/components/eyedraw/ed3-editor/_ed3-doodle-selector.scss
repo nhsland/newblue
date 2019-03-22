@@ -8,23 +8,23 @@
 
 .oe-eyedraw-app {	
 
-	// Tools to select a Doodle
-	.ed-tools {
-		background: $oe-ed-panels;
-		padding:0 3px 0 3px;
-		width:400px;
+	// Select a Doodle...
+	.ed3-doodle-selector {
+		width:300px;
+		background: $oe-ed3-panels;
+		// create a border
+		padding:0 $ed3-border $ed3-border $ed3-border; 
 		
-		&.single-column {
-			width:200px;
+		// can't use margin because of flex
+		// but this will work:
+		border-left:5px solid $oe-ed3-blue;
+		
+		.ed-doodle-filters {
+			@include flex(center, center);
+			height:$ed3-top-panel-height;
 		}
 		
-		.ed-filter-tools {
-			// Flex: justify-content (h), align-items (v)
-			@include flex(space-between, center);
-			height:$ed-top-panel-height;
-		}
-		
-		.ed-icon-toolbox {			
+		.ed-doodle-toolbox {			
 			.doodle-box {
 				height:300px; // matches canvas height (but could be more)
 				overflow-y: auto;
@@ -41,16 +41,21 @@
 					
 					li {
 						@include font-size(10);
-						background: $oe-ed-bg;
+						background: $oe-ed3-blue;
 						margin:0 0 1px 0;
 						padding:0;
 						cursor: pointer;
+						
+						color:rgb(110,110,130);
+						
 						// handle very long names
 						white-space: nowrap; 
 						overflow: hidden;
+						text-overflow: ellipsis;
 						
 						&:hover, &:focus, &:active {
 							background:#fff;
+							color:rgb(30,30,30);
 						}
 						
 					}

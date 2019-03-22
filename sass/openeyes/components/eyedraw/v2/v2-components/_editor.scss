@@ -50,8 +50,8 @@
 canvas, img {
 	// Canvas element in edit mode
 	&.ed-canvas-edit {
-		background: $oe-ed-bg;
-		border:1px solid shade($oe-ed-bg,20);
+		background: $oe-ed3-blue;
+		border:1px solid shade($oe-ed3-blue,20);
 		cursor: pointer;
 		position: relative;
 		z-index: $oe-z-ed-v2;

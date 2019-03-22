@@ -7,21 +7,18 @@
 // Eyedraw popup APP
 
 .oe-eyedraw-app {	
-
-	// Draw area - JS Canvas
 	
-	.ed-draw {
-		background: $oe-ed-panels;
-		padding:0 3px 3px 3px;
+	// title: 'Right Eye', 'Left Eye', etc
+	// positioned above the popup box
+	.ed3-header {
 		
-		// Reset and Zoom
-		// Doodle selection dropdown
-		.ed-draw-view {
-			// Flex: justify-content (h), align-items (v)
-			@include flex(space-between, center);
-			
-			height:$ed-top-panel-height;
-			width:300px;
+		@include flex( space-between, center );
+		
+		padding:0 0 $ed3-padding 0;
+
+		.title {
+			@include font-size(24);
+			font-weight:300;
 		}
 		
 	}

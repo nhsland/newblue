@@ -1,0 +1,83 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Eyedraw APP
+// -----------------------------------
+// Eyedraw popup APP
+
+.oe-eyedraw-app {	
+
+	// Context sensitive 
+	.ed3-doodle-context {
+		background: $oe-ed3-panels;
+		
+		// fix width.
+		// if only front view canvas, this will shift over
+		width: 260px;
+		
+		// create a border
+		padding:0 $ed3-border $ed3-border $ed3-border; 
+		
+		// can't use margin because of flex
+		// but this will work:
+		border-left:1px solid $oe-ed3-blue;
+		
+		// z-order / trash
+		.ed3-doodle-toolbar {
+			@include flex( space-between, center);
+			height:$ed3-top-panel-height;
+		}
+		
+		
+		.ed3-doodle-controls {
+			
+			padding:0 $ed3-padding $ed3-padding $ed3-padding;
+			
+			height:300px; // matches canvas height (but could be more)
+			overflow-y: auto;
+			overflow-x: hidden;
+			
+			
+			// icon and text showing selected Doodle
+			.doodle-active {
+				@include flex( space-between, center);
+				margin:4px 0 8px 0;
+				
+				.doodle-name {
+					@include font-size(13);
+					font-weight: 400;
+				}
+				
+			}
+			
+			
+			.doodle-context-options {
+				
+				.doodle-option {
+					@include flex( space-between, center);
+				
+					padding:6px 0;
+					
+					border-top:1px dotted $oe-ed3-blue;
+					
+					label {
+						@include font-size(11);
+					}
+					
+					select {
+						// for the rest of OE this is set to 24px
+						// as it helps with align (buttons) but here:
+						height:auto;  
+						//padding:2px;
+					}
+	
+				}
+				
+			}
+	
+		}
+	}
+
+	
+}

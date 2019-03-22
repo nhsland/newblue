@@ -8,18 +8,12 @@
 
 .oe-eyedraw-app {	
 	
-	// title: 'Right Eye', 'Left Eye', etc
-	// positioned above the popup box
-	.ed-eye-side {
-		position:absolute;
-		top:-20px;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-		@include font-size(24);
-		font-weight:300;
-		color:rgb(255,255,255);
+	.ed3-editor {
+		
+		@include flex(space-between, flex-start);
+		
 	}
+	
 
 	
 }
