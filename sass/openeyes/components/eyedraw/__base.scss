@@ -25,7 +25,7 @@ $ed3-top-panel-height:32px;
 	
 	padding:$ed3-padding; // allow for app buttons (save etc)
 	
-	background:$oe-ed3-blue;
+	background:$oe-ed3-app-blue;
 	
 	@include font-size(12);
 	
@@ -33,13 +33,13 @@ $ed3-top-panel-height:32px;
 	
 	// colours for scrollbars (chrome) in EyeDraw App
 	::-webkit-scrollbar-track {  
-		background: tint( $oe-ed3-blue,10 );
+		background: tint( $oe-ed3-app-blue,10 );
 	}
 	::-webkit-scrollbar-track-piece { 
-		background: tint( $oe-ed3-blue,30 );
+		background: tint( $oe-ed3-app-blue,30 );
 	}
 	::-webkit-scrollbar-thumb { 
-		background-color: shade( $oe-ed3-blue,50 );
+		background-color: shade( $oe-ed3-app-blue,50 );
 	}
 	
 }

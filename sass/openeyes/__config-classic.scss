@@ -15,16 +15,16 @@ $html-bg:				$html-pro-bg; // frames classic with surround.
 $oe-text: 				rgb(10,10,10);
 $oe-text-light:			rgb(80,80,100);
 $oe-text-highlight:		rgb(0,0,255); 		// selected
-$oe-text-active:		rgb(0,0,180);		// hover, hint 
+$oe-text-active:			rgb(0,0,180);		// hover, hint 
 
 
 // classic, light background / dark text
 // called 'blue' as they overwrite the default PRO theme vars
 $oe-blue:				rgb(240,240,240); 
 $oe-blue-dark: 			rgb(180,180,180);
-$oe-blue-dark2: 		rgb(215,215,215);  
+$oe-blue-dark2: 			rgb(215,215,215);  
 $oe-blue-dark3:			rgb(115,120,132); // - exception dark3 is not 'inverted' in classic
-$oe-blue-light: 		shade( $oe-blue-dark,30);
+$oe-blue-light: 			shade( $oe-blue-dark,30);
 
 // because I keep using 'dark1' instead of 'dark'
 $oe-blue-dark1: $oe-blue-dark; 
@@ -35,28 +35,28 @@ $oe-line:				rgb(160,160,200); // don't use alphas! - tables with td colspan 2 o
 // the PRO theme has white text on a dark background
 // it visually bleeds. When it's reversed to black on white
 // the reverse is true... so: 
-$oe-font-light: 400; 	// push 300 weights to 400 in Classic
+$oe-font-light: 	400; 	// push 300 weights to 400 in Classic
 $oe-font-medium: 500;   // push 400 weights to 500
-$oe-font-bold: 700;  	// push 500 weights to 700 (no 600!)
+$oe-font-bold: 	700;  	// push 500 weights to 700 (no 600!)
 
 // buttons
-$oe-btn-default:		rgb(235,235,240);
+$oe-btn-default:			rgb(235,235,240);
 $oe-btn-selected:		rgb(220,220,230);
 $oe-btn-event-header: 	tint($oe-grey,10); // event header buttons need to work like tabs
 $oe-btn-blue:			rgb(40,110,224);
 $oe-btn-green:			rgb(14,154,51);
-$oe-btn-red:			rgb(225,57,57);
+$oe-btn-red:				rgb(225,57,57);
 // hints
 $oe-btn-blue-hint: 		tint( $oe-btn-blue,20% );
-$oe-btn-green-hint: 	shade( $oe-btn-green,10% );
+$oe-btn-green-hint: 		shade( $oe-btn-green,10% );
 $oe-btn-red-hint: 		shade( $oe-btn-red,10% );
 
 $oe-popup-bg:			rgb(245,245,245); // tool-tip, add-select-search, element-search-popup
 
 // input colours:
-$oe-user-inputs:		rgb(255,255,255);
+$oe-user-inputs:			rgb(255,255,255);
 $oe-user-inputs-hint: 	shade($oe-user-inputs,10); // label/input highlight
-$oe-user-input-text: 	rgb(0,0,0);
+$oe-user-input-text: 		rgb(0,0,0);
 $oe-input-placeholder: 	rgb(151,151,151);
 
 // flags
@@ -66,15 +66,15 @@ $oe-risks-warning:		rgb(117,30,0);
 $oe-alert-green: 		rgb(0,155,0);
 $oe-alert-red:			rgb(205,0,0);
 $oe-alert-orange: 		rgb(225,172,0);
-$oe-alert-grey: 		rgb(140,140,140); 
+$oe-alert-grey: 			rgb(140,140,140); 
 
 $oe-status-green:		rgb(0,190,0);
 $oe-status-red:			rgb(210,0,0);
 $oe-status-amber:		rgb(225,152,0);
 
 // Pathsteps 
-$oe-step-green: 		rgb(20,150,0);
-$oe-step-orange:		rgb(200,80,22);
+$oe-step-green: 			rgb(20,150,0);
+$oe-step-orange:			rgb(200,80,22);
 $oe-step-red:			rgb(200,40,10);
 $oe-step-grey:			rgb(100,100,100);
 $oe-step-text:			rgb(245,245,245);
@@ -82,13 +82,21 @@ $oe-step-text:			rgb(245,245,245);
 $oe-bg-highlight: 		rgba(230,230,230,0.7); // used as hover highlight 
 // colors 
 $oe-bg-hint-green:		rgb(180,200,180);
-$oe-bg-hint-red:		rgb(230,180,180);
+$oe-bg-hint-red:			rgb(230,180,180);
 
 // icon opacity (default)
 $oe-icon-opacity: 		0.6;
 
 // spinner color 
-$oe-spinner:			rgb(0,120,255);	
+$oe-spinner:				rgb(0,120,255);	
+
+// ED3 colours
+$oe-ed3-blue:			rgb(218,230,241); 
+$oe-ed3-app-blue:		$oe-ed3-blue;
+$oe-ed3-text:			rgb(50,50,60); 	
+$oe-ed3-panels: 			shade( $oe-ed3-app-blue, 10 );
+$oe-ed3-inputs:			shade( $oe-ed3-app-blue, 40 );
+$oe-ed3-input-text:		rgb(240,240,240);
 
 
 // specific customisation of elements

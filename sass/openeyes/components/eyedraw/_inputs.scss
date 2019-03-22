@@ -12,20 +12,25 @@
 	// but only for ED3 specific content
 	// i.e. Comments should be UI generic
 	
-	@include buttons {
-		color: $oe-ed3-input-text;
-		background: $oe-ed3-inputs;
-		&.selected {
-			background: shade( $oe-ed3-inputs, 30 );
+	.ed3-editor, 
+	.eyedraw-context-options {
+		@include buttons {
+			color: $oe-ed3-input-text;
+			background: $oe-ed3-inputs;
+			&.selected {
+				background: shade( $oe-ed3-inputs, 30 );
+			}
+		}
+		
+		
+		input, textarea, select {
+			color: $oe-ed3-input-text;
+			background: $oe-ed3-inputs;
+			margin:0 0; // override defaults
 		}
 	}
 	
 	
-	input, textarea, select {
-		color: $oe-ed3-input-text;
-		background: $oe-ed3-inputs;
-		margin:0 0; // override defaults
-	}
 	
 	
 }
