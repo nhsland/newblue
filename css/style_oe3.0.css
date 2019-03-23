@@ -7349,6 +7349,10 @@ table.management-summaries tbody td:last-child {
   display: inline-block;
 }
 
+.oe-eyedraw-app .ed3-editor .ed3-canvas .ed3-side {
+  min-width: 200px;
+}
+
 .oe-eyedraw-app .ed3-doodle-context {
   background: #b2bdc7;
   width: 260px;
@@ -7502,7 +7506,6 @@ table.management-summaries tbody td:last-child {
 .oe-eyedraw-app .eyedraw-context-options {
   background: #b2bdc7;
   width: 305px;
-  padding: 3px;
 }
 
 .oe-eyedraw-app .eyedraw-context-options .eyedraw-option {
@@ -7516,6 +7519,7 @@ table.management-summaries tbody td:last-child {
       -ms-flex-align: center;
           align-items: center;
   padding: 6px 0;
+  margin: 3px;
   border-top: 1px dotted #dae6f1;
 }
 

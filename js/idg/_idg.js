@@ -42,23 +42,7 @@ idg.init = function(){
 	// Tooltips on info icons
 	idg.tooltips();
 	
-	// full overlay popup content 
-	// Eyedraw App
-	idg.overlayPopup( 	'.js-demo-open-eyedraw-app',  	// 2x + icons in Examination Edit
-						'eyedraw-edit-app.php', 		// Demo content
-						'#js-demo-eyedraw-app-close' );	// Eyedraw App X icon
-						
-	// Eyedraw App
-	idg.overlayPopup( 	'.js-demo-open-eyedraw-app-v2',  	// 2x + icons in V2 demo
-						'eyedraw-edit-app-v2.php', 			// Demo content
-						'#js-demo-eyedraw-app-close' );	// Eyedraw App X icon					
-						
-	// Eyedraw App for Cataract in OpNote
-	idg.overlayPopup( 	'.js-demo-open-cataract',  	// 2x + icons in Examination Edit
-						'ed-opnote-cataract.php', 		// Demo content
-						'#js-demo-eyedraw-app-close' );	// Eyedraw App uses the 'canel' button to close				
-						
-	
+					
 	// change context (firm)					
 	idg.overlayPopup( 	'#js-change-context-btn',  		// "change" text in header
 						'change-context.php', 			// Demo content
@@ -205,6 +189,9 @@ idg.init = function(){
 	
 	// User PIN 
 	idg.userPIN.init();
+	
+	// ED3 App Demo
+	idg.ed3App.init();
 										
 };
 

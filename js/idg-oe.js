@@ -42,23 +42,7 @@ idg.init = function(){
 	// Tooltips on info icons
 	idg.tooltips();
 	
-	// full overlay popup content 
-	// Eyedraw App
-	idg.overlayPopup( 	'.js-demo-open-eyedraw-app',  	// 2x + icons in Examination Edit
-						'eyedraw-edit-app.php', 		// Demo content
-						'#js-demo-eyedraw-app-close' );	// Eyedraw App X icon
-						
-	// Eyedraw App
-	idg.overlayPopup( 	'.js-demo-open-eyedraw-app-v2',  	// 2x + icons in V2 demo
-						'eyedraw-edit-app-v2.php', 			// Demo content
-						'#js-demo-eyedraw-app-close' );	// Eyedraw App X icon					
-						
-	// Eyedraw App for Cataract in OpNote
-	idg.overlayPopup( 	'.js-demo-open-cataract',  	// 2x + icons in Examination Edit
-						'ed-opnote-cataract.php', 		// Demo content
-						'#js-demo-eyedraw-app-close' );	// Eyedraw App uses the 'canel' button to close				
-						
-	
+					
 	// change context (firm)					
 	idg.overlayPopup( 	'#js-change-context-btn',  		// "change" text in header
 						'change-context.php', 			// Demo content
@@ -205,6 +189,9 @@ idg.init = function(){
 	
 	// User PIN 
 	idg.userPIN.init();
+	
+	// ED3 App Demo
+	idg.ed3App.init();
 										
 };
 
@@ -2896,6 +2883,60 @@ idg.comments = function(){
 		});
 		
 	});
+}
+/*
+ED3 App ... loads in a PHP file
+*/
+idg.ed3App = {
+	
+	/*
+	init
+	*/	
+	init:function(){
+	
+		/*
+		do we have elems?
+		*/
+		if( $('.js-idg-ed3-app-btn').length){
+			
+			$('.js-idg-ed3-app-btn').click(function(){
+				// php content to load in...
+				let php = $(this).data('php');	
+			
+				// build DOM wrapper
+				let $ed3app = $('<div class="oe-eyedraw-app"></div>');
+				
+				
+				// position y (top), x (left) is handled by the CSS.
+				let elem = $(this)[ 0 ];
+				let btnPos = elem.getBoundingClientRect();	
+				
+				// ed3 App height = 532px;
+				// can not go above 60px
+				let posH = btnPos.bottom - 532;
+				if( posH < 60 ){
+					$ed3app.css(	{"top": '60px'});
+				} else {
+					$ed3app.css(	{"top": posH + 'px'});
+				}
+				
+				
+				$('body').append( $ed3app );
+				
+							
+				// demo ed3 content: 
+				$ed3app.load('/idg-php/v3.0/_load/ed3/'+php,function(){
+					
+					$('#js-idg-close-ed3-app').click(function(){
+						// close and tidy up:
+						$ed3app.html('').remove();				
+					})
+					
+				});
+			});			
+		}
+	}	
+	
 }
 /*
 Enhance Popup Fixed.

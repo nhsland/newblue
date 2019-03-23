@@ -16,9 +16,6 @@
 		// if only front view canvas, this will shift over
 		width: 305px;
 		
-		// create a border
-		padding:$ed3-border; 
-		
 		// can't use margin because of flex
 		// but this will work:
 		// border-top:1px solid $oe-ed3-blue;
@@ -27,6 +24,7 @@
 			@include flex( space-between, center);
 		
 			padding:6px 0;
+			margin:$ed3-border;
 			
 			border-top:1px dotted $oe-ed3-blue;
 			
