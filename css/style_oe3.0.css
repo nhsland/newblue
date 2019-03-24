@@ -7246,7 +7246,7 @@ table.management-summaries tbody td:last-child {
   z-index: 70;
   width: 1080px;
   min-height: 300px;
-  padding: 5px;
+  padding: 5px 5px 32px 5px;
   background: #c6d2dd;
   font-size: 0.75rem;
   -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
@@ -7299,9 +7299,9 @@ table.management-summaries tbody td:last-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -7311,6 +7311,47 @@ table.management-summaries tbody td:last-child {
 .oe-eyedraw-app .ed3-header .title {
   font-size: 1.5rem;
   font-weight: 300;
+  padding: 0 0 0 20px;
+}
+
+.oe-eyedraw-app .close-icon-btn,
+.oe-eyedraw-app .save-icon-btn {
+  position: absolute;
+  bottom: 0;
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.oe-eyedraw-app .close-icon-btn {
+  right: 0;
+  width: 40px;
+  background-color: #05306a;
+}
+
+.oe-eyedraw-app .close-icon-btn:hover, .oe-eyedraw-app .close-icon-btn:focus, .oe-eyedraw-app .close-icon-btn:active {
+  background-color: #074598;
+}
+
+.oe-eyedraw-app .save-icon-btn {
+  left: 0;
+  width: calc(100% - 40px);
+  font-size: 0.8125rem;
+  font-weight: 300;
+  color: white;
+  background-color: #0a6512;
+}
+
+.oe-eyedraw-app .save-icon-btn:hover, .oe-eyedraw-app .save-icon-btn:focus, .oe-eyedraw-app .save-icon-btn:active {
+  background-color: #0e9019;
 }
 
 .oe-eyedraw-app .ed3-editor {
@@ -7486,12 +7527,55 @@ table.management-summaries tbody td:last-child {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 0 10px 0 0;
-  height: 150px;
+  padding: 8px 5px 5px 5px;
+}
+
+.ed3-footer h3 {
+  display: inline-block;
+  padding: 0 8px 0 0;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #777e85;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-report {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  height: 120px;
   overflow-y: auto;
 }
 
-.ed3-footer .report-comments {
+.oe-eyedraw-app .ed3-footer .ed3-report .ed3-data-stack {
+  width: 180px;
+  font-size: 0.625rem;
+  font-weight: 500;
+  color: #32323c;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-report .ed3-data-stack .data-value {
+  word-break: break-word;
+  padding: 0 0 10px 0;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-report .ed3-data-stack .data-value .priority-text {
+  font-weight: 700;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-report .ed3-data-stack .data-value.not-recorded {
+  text-align: left;
+  font-size: 0.75rem;
+}
+
+.oe-eyedraw-app .ed3-footer .ed3-comments {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7503,82 +7587,10 @@ table.management-summaries tbody td:last-child {
           align-items: flex-start;
 }
 
-.oe-eyedraw-app .eyedraw-context-options {
-  background: #b2bdc7;
-  width: 305px;
-}
-
-.oe-eyedraw-app .eyedraw-context-options .eyedraw-option {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 6px 0;
-  margin: 3px;
-  border-top: 1px dotted #dae6f1;
-}
-
-.oe-eyedraw-app .eyedraw-context-options .eyedraw-option label {
-  font-size: 0.6875rem;
-}
-
-.oe-eyedraw-app .eyedraw-context-options .eyedraw-option select {
-  height: auto;
-}
-
-.oe-eyedraw-app .ed3-footer .ed3-report {
-  position: relative;
-  padding: 8px 0 8px 60px;
-}
-
-.oe-eyedraw-app .ed3-footer .ed3-report h3 {
-  display: block;
-  position: absolute;
-  top: 8px;
-  left: 0;
-  font-size: 0.875rem;
-  font-weight: 300;
-  color: #777e85;
-}
-
-.oe-eyedraw-app .ed3-footer .ed3-data-stack {
-  width: 180px;
-  font-size: 0.625rem;
-  font-weight: 500;
-  color: #32323c;
-  line-height: 1.5;
-  padding: 0;
-}
-
-.oe-eyedraw-app .ed3-footer .ed3-data-stack .data-value {
-  word-break: break-word;
-  padding: 0 0 10px 0;
-}
-
-.oe-eyedraw-app .ed3-footer .ed3-data-stack .data-value .priority-text {
-  font-weight: 700;
-}
-
-.oe-eyedraw-app .ed3-footer .ed3-data-stack .data-value.not-recorded {
-  text-align: left;
-  font-size: 0.75rem;
-}
-
-.oe-eyedraw-app .ed3-footer .ed3-data-stack .data-label {
-  color: #32323c;
-}
-
-.oe-eyedraw-app .ed3-footer .ed3-comments {
-  padding: 8px 0 8px 0;
-}
-
 .oe-eyedraw-app .ed3-footer .ed3-comments textarea {
   width: 400px;
+  color: #f0f0f0;
+  background: #777e85;
 }
 
 .ed-toolbar {

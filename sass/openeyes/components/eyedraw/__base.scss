@@ -32,7 +32,7 @@ $ed3-top-panel-height:32px;
 	
 	min-height:300px;  	 // whilst loading placeholder
 	
-	padding:$ed3-padding; // allow for app buttons (save etc)
+	padding:$ed3-padding $ed3-padding 32px $ed3-padding; // allow for positioned action bottom bar (save etc)
 	
 	background:$oe-ed3-app-blue;
 	

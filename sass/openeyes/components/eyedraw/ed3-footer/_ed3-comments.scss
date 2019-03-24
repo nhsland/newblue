@@ -9,18 +9,16 @@
 	.ed3-footer {
 		
 		.ed3-comments {
+			@include flex(space-between, flex-start);
 			
-			padding:8px 0 8px 0;
-					
 			textarea {
+				// match Element EDIT textarea width
 				width:400px;
+				// change colour to bring in line with ed3
+				color: $oe-ed3-input-text;
+				background: $oe-ed3-inputs;
 			}
 		
-		}
-				
-	
-		
+		}		
 	}
-
-	
 }

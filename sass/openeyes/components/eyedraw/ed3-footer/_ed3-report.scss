@@ -9,63 +9,43 @@
 	.ed3-footer {
 		
 		.ed3-report {
-			position: relative;
-			padding:8px 0 8px 60px;
+			@include flex(space-between, flex-start);
 			
-			// a little typography...
-			h3 {
-				display:block;
-				position:absolute;
-				top:8px;
-				left:0;
-				
-				@include font-size(14);
-				font-weight:300;
-				color:$oe-ed3-inputs;
-			}
+			// set a height to help with JS positioning
+	height:120px;
+	overflow-y: auto;
 			
-			
-		}
-				
-		// exactly same as ED3 element but I may need to change this
-		// also has with <h3> for Report
-	
-		.ed3-data-stack {
-			
-			width:180px; // fixed.
-			
-			@include font-size(10);
-			font-weight:500;
-			color:$oe-ed3-text; 		// Always on the Eyedraw blue bg
-			line-height: 1.5;
-			
-			
-			padding:0; 	// pad bottom for + icon button
-			
-			// make the weighting in eyedraw elements
-			// is consistent for both themes
-			.data-value {
-				word-break: break-word; // to handle: "pneumonoultramicroscopicsilicovolcanoconiosis"
-				
-				padding:0 0 10px 0;
-				
-				.priority-text {
-					font-weight:700;
-				}
-				
-				&.not-recorded {
-					text-align: left;
-					@include font-size(12);
-				}
-			}
-			
-			.data-label {
-				color:$oe-ed3-text; // Always on the Eyedraw blue bg
-			}
-			
-		}
+			// exactly same as ED3 element but I may need to change this
+			// also has with <h3> for Report
 		
+			.ed3-data-stack {
+				
+				width:180px; // fixed.
+				
+				@include font-size(10);
+				font-weight:500;
+				color:$oe-ed3-text; 		// Always on the Eyedraw blue bg
+				line-height: 1.5;
+				
+				
+				padding:0; 	// pad bottom for + icon button
+				
+				// make the weighting in eyedraw elements
+				// is consistent for both themes
+				.data-value {
+					word-break: break-word; // to handle: "pneumonoultramicroscopicsilicovolcanoconiosis"
+					padding:0 0 10px 0;
+					
+					.priority-text {
+						font-weight:700;
+					}
+					
+					&.not-recorded {
+						text-align: left;
+						@include font-size(12);
+					}
+				}
+			}		
+		}	
 	}
-
-	
 }

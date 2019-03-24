@@ -46,6 +46,12 @@ idg.ed3App = {
 						$ed3app.html('').remove();				
 					})
 					
+					// fake save and close:
+					$('#js-idg-save-ed3-app').click(function(){
+						// close and tidy up:
+						$ed3app.html('').remove();				
+					})
+					
 				});
 			});			
 		}
