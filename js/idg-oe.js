@@ -231,40 +231,6 @@ idg.addSelectInsert = {
 		});
 	}
 }
-/**
-Homepage Message expand / contract 	
-**/
-idg.homeMessageExpand = function(){
-	
-	if( $('.home-messages').length == 0 ) return;
-	
-	$('.js-expand-message').each(function(){
-		
-		var message = $(this).parent().parent().find('.message');
-		var expander = new Expander( $(this),
-									 message );
-	});
-	
-	function Expander( $icon, $message){
-		var expanded = false; 
-		
-		$icon.click( change );
-		
-		function change(){
-			
-			$icon.toggleClass('expand collapse');
-			
-			if(expanded){
-				$message.removeClass('expand');
-			} else {
-				$message.addClass('expand');
-			}
-			
-			expanded = !expanded;
-		}
-	}
-}
-
 /*
 Clinic JS
 
@@ -1131,6 +1097,40 @@ clinic.updateTasks = function( ){
 	
 	$('#filter-tasks .current').text( clinic.data['tasks'].length );
 }
+/**
+Homepage Message expand / contract 	
+**/
+idg.homeMessageExpand = function(){
+	
+	if( $('.home-messages').length == 0 ) return;
+	
+	$('.js-expand-message').each(function(){
+		
+		var message = $(this).parent().parent().find('.message');
+		var expander = new Expander( $(this),
+									 message );
+	});
+	
+	function Expander( $icon, $message){
+		var expanded = false; 
+		
+		$icon.click( change );
+		
+		function change(){
+			
+			$icon.toggleClass('expand collapse');
+			
+			if(expanded){
+				$message.removeClass('expand');
+			} else {
+				$message.addClass('expand');
+			}
+			
+			expanded = !expanded;
+		}
+	}
+}
+
 /*
 Lightning
 */
@@ -1658,6 +1658,759 @@ idg.problemsPlans = function(){
   		$(this).parent().remove(); 
   	});
 }
+/*
+Tile Element - watch for data overflow
+*/
+idg.auditTrail = function(){
+	
+	if( $('#js-event-audit-trail-btn').length == 0 ) return;
+		
+	var show = false	
+		
+	// loop through the view tiles and check the data height
+	$('#js-event-audit-trail-btn').click(function(){
+		$('#js-event-audit-trail').toggle();
+		$(this).toggleClass('active');
+	});
+	
+}
+/*
+SEM Element - Add or Search
+Popup to add selected list to element
+(optional - autocomplete field)
+No functionality, demoing basic UI & UX
+*/
+idg.elementAddSelectSearch = function(){
+	
+	var all = [];
+	
+	$('.js-add-select-search').each(function(){
+		var addBtn = new AddSelectSearch( 	$(this),
+											$(this).parent().children('.oe-add-select-search') );
+		all.push(addBtn);																
+	});
+	
+	function closeAll(){
+		for(var i=0; i < all.length; i++){
+			all[i].closePopup();
+		}
+	}
+
+	function AddSelectSearch( $btn, $popup ){
+		
+  		var select 		= $popup.find('.select-options'),
+  			closeBtn 	= $popup.find('.close-icon-btn'),
+  			addBtn 		= $popup.find('.add-icon-btn');
+  			
+  			
+  		var resetPopupData = true;
+  		
+  		// but for these popups remember the data added:
+  		switch( $popup.prop('id') ){
+	  		case "add-to-history":
+	  		case "add-to-risks":
+	  		case "add-to-follow-up":
+	  		resetPopupData = false;
+	  		break;
+  		}
+  			
+  		/*
+	  	All lists
+	  	store the list objects and then 
+	  	iterate over them to build the inputs
+	  	*/	
+  		var lists = [];
+
+  		/*
+	  	pubilc methods
+  		used to close all popups
+  		*/
+  		this.closePopup = closeCancel;
+  		this.openPopup = openAdd; // need this to demo all pop UIs
+
+  		/*
+	  	Events	
+	  	*/
+  		closeBtn.click(function(e){
+	  		e.stopPropagation();
+	  		closeCancel();
+  		});
+  		
+  		
+			
+			
+		// setup based on the DOM
+		if(addBtn.length){
+	  		addBtn.click(function(e){
+	  			e.stopPropagation();
+	  			closeAdd();
+	  			
+  			});
+  		}
+  		
+  		
+  	
+  		
+  		// list have 2 states multi or single 
+  		$('.add-options',$popup).each( function(){
+	  		var multi = $(this).data('multi');
+	  		
+	  		lists.push( new OptionsList( $(this), 
+	  									 $(this).data('multi'),
+	  									 $(this).data('clickadd') ) );
+  		});
+  		
+  		
+		function OptionsList( $ul, multi, clickAdd ){
+			var multi = multi;
+			var clickAdd = clickAdd; 
+			var $active = null; // if only single entry 
+			var selectedData = [];
+			
+			
+			if(multi){
+				$('li', $ul).click(function(e){
+		  			e.stopPropagation();
+		  			$(this).toggleClass('selected'); 
+		  			if($(this).hasClass('selected')){
+			  			addData($(this).data('str'));
+		  			} else {
+			  			removeData($(this).data('str'));
+		  			}
+	  			});
+			} else {
+				$('li', $ul).click(function(e){
+		  			e.stopPropagation();
+		  			updateListOptions( $(this) );
+		  			if(clickAdd) closeAdd();
+	  			});
+			}
+	
+			function updateListOptions( $new ){
+				if($active != null) {
+					$active.removeClass('selected');
+					removeData( $active.data('str') );
+				}
+				$new.addClass('selected');
+				addData( $new.data('str') );
+				$active = $new;
+			}
+			
+			function addData(data){
+				selectedData.push(data);
+			}
+			
+			function removeData(data){
+				var index = selectedData.indexOf(data);   
+				if (index !== -1) {
+				    selectedData.splice(index, 1);
+				}
+			}
+			
+			/*
+			Public methods	
+			*/
+			this.getData = function ( join ){
+				return selectedData.join(join);
+			}
+			
+			this.clearData = function(){
+				selectedData = [];
+			}
+		}  		
+
+  		
+/*
+  		// top element popup will disappear behind header, so adjust it's position:
+  		if($btn.offset().top < 250 && $btn.offset().top){
+	  		var vOffset = $btn.offset().top - 310;
+	  		$popup.css({bottom:vOffset});
+	  	}
+  		
+*/
+
+		$btn.click( function( e , demoAll = false ){
+			e.stopPropagation();
+			openAdd(!demoAll);
+		});
+		
+		
+		function positionFixedPopup( $btn ){
+			/* 
+			Popup is FIXED positioned
+			work out offset position 
+			setup events to close it on resize or scroll.
+			*/
+			
+			var elem = $btn[ 0 ];
+			
+			// js vanilla:
+			var btnPos = elem.getBoundingClientRect();		
+			var w = document.documentElement.clientWidth;
+			var h = document.documentElement.clientHeight;
+			
+			// check popup doesn't go off the top of the screen 
+			// and don't overlay Logo or Patient Name
+			var posH = (h - btnPos.bottom);
+			if(h - posH < 310){
+				posH = h - 315;
+			}
+			
+			// close to the left?
+			if( btnPos.left < 310 ){
+				// set CSS Fixed position
+				$popup.css(	{	"bottom": posH,
+								"right": "auto",
+								"left": (btnPos.left) });
+			} else {
+				// set CSS Fixed position
+				$popup.css(	{	"bottom": posH,
+								"right": (w - btnPos.right) });
+			}
+			
+			
+	  					
+			/*
+			Close popup on scroll.
+			note: scroll event fires on assignment.
+			so check against scroll position
+			*/		
+			var scrollPos = $(".main-event").scrollTop();
+			$(".main-event").on("scroll", function(){ 
+				if( scrollPos !=  $(this).scrollTop() ){
+					// Remove scroll event:	
+					$(".main-event").off("scroll");
+					closeCancel();
+				}
+					
+			});
+		}
+		
+		
+		function openAdd( closeOthers=true ){
+			if(closeOthers) closeAll();
+			positionFixedPopup( $btn );
+			$popup.show();	  				  		
+		}
+		
+
+		// Close and reset
+  		function closeCancel(){	  		
+	  		$popup.hide();
+	
+	  		if(resetPopupData){
+		  		$popup.find('.add-options li').removeClass('selected');
+		  		for(var i = 0; i<lists.length; i++){
+			  		lists[i].clearData();
+			  	}
+			}
+	  		
+  		}
+  		
+  		function closeAdd(){
+	  			
+	  		/*
+		  	IDG specific elements limited functionality demos
+		  	*/
+	
+		  	/*
+			Refraction	
+			*/
+			if($popup.prop('id') == 'add-to-refraction'){
+				
+				var sphere = "", 
+					cylinder = "", 
+					axis = "";
+					type = ""
+					
+				for(var i = 0; i<lists.length; i++){
+			  		var data = lists[i].getData('');
+			  		
+			  		switch(i){
+				  		case 0:
+				  		case 1:
+				  		case 2:
+				  		sphere += data;
+				  		break;
+				  		
+				  		case 3:
+				  		case 4:
+				  		case 5:
+				  		cylinder += data;
+				  		break;
+				  		
+				  		case 6: 
+				  		axis = data;
+				  		break;
+				  		
+				  		case 7:
+				  		type = data;
+				  		break;
+			  		}
+		  		}
+				
+				$('#js-refraction-input-sphere').val( sphere );
+				$('#js-refraction-input-cylinder').val( cylinder );
+				$('#js-refraction-input-axis').val( axis );
+				$('#js-refraction-input-type').val( type );
+			}
+			
+			if($popup.prop('id') == 'add-to-pupils-left'){
+				$('#js-pupil-left-text').text( lists[0].getData('') );
+			}
+			
+			if($popup.prop('id') == 'add-to-pupils-right'){
+				$('#js-pupil-right-text').text( lists[0].getData('') );
+			}
+			
+			if($popup.prop('id') == 'add-to-analytics-service'){
+				$('#js-service-selected').text( lists[0].getData('') );
+			}
+		
+		 
+		  	/*
+			Text inputs
+			*/
+		  	if($popup.prop('id') == 'add-to-history')		showInputString('history');
+		  	if($popup.prop('id') == 'add-to-risks')			showInputString('risks');
+		  	if($popup.prop('id') == 'add-to-follow-up')		showInputString('follow-up');
+	  		
+	
+	  		function showInputString(id){
+		  		var id = '#js-'+id+'-input-demo';
+		  		var inputs = [];
+		  		for(var i = 0; i<lists.length; i++){
+			  		var data = lists[i].getData(', ');
+			  		if(data != ""){
+				  		inputs.push(data);
+			  		}
+		  		}
+		  		
+		  		$(id).val( inputs.join(', ') );
+		  		autosize.update( $(id) );
+	  		}
+	  		
+	  		
+	  		/*
+		  	OpNote.
+		  	Procedures	
+		  		
+		  	*/
+	  		if($popup.prop('id') == 'add-to-procedures'){
+	  			// <tr> template
+			  	var rowTemplate = $("#js-procedures-template");
+			  	
+			  	// get Procedures...	
+			  	var procedures = lists[0].getData(',');
+			  	var proceduresArray = procedures.split(',')	
+			  		
+		  		for(var i = 0; i<proceduresArray.length; i++){
+			  		
+			  		var newRow = rowTemplate.clone();
+			  		newRow.removeAttr('style id');
+			  		newRow.find('.js-procedure-name').text(proceduresArray[i]);
+			  		
+			  		$("#js-show-procedures").append( newRow );
+			  		
+			  		// hack to demo functionality of elements
+			  		if(proceduresArray[i] == "Phacoemulsification and IOL"){
+				  		$('.edit-phaco--iol-right').show();
+				  		$('.edit-pcr-risk-right').show();
+				  		
+				  		newRow.find('.js-add-comments').hide();
+			  		}
+			  		
+			  	}
+	  		}
+	  		
+	  		
+	  		// clean up!
+	  		closeCancel();
+  		}
+  		
+  		
+	}
+}
+/*
+Subgroup Collapse/expand
+*/
+idg.elementSubgroup = function(){
+	
+	if( $('.js-element-subgroup-viewstate-btn').length == 0 ) return;
+	
+	$('.js-element-subgroup-viewstate-btn').each( function(){
+		var subgroup = new Viewstate( $(this) );
+	});
+	
+	function Viewstate( $icon ){
+		var me = this;
+		var $content = $('#' + $icon.data('subgroup') );
+
+		$icon.click( function( e ){
+			e.preventDefault();
+			me.changeState();
+		});
+		
+		this.changeState = function(){
+			$content.toggle();	
+			$icon.toggleClass('collapse expand');
+		}
+		
+	}
+
+}
+/*
+Event Filter Actions
+*/
+idg.eventFilterActions = function(){
+	
+	if( $('#js-sidebar-filter-btn').length == 0 ) return;
+	
+	/*
+  	Quick UX / UI JS demo	
+  	Setup for touch (click) and enhanced for mouseevents
+  	
+	@param $wrap
+	@param $btn
+	@param $popup	
+	*/
+	idg.enhancedTouch( 		$('#js-sidebar-filter'), 
+							$('#js-sidebar-filter-btn'), 
+							$('#js-sidebar-filter-options') );
+	
+}
+
+/*
+Right Left Element searching in Examination Edit mode
+All content in popup is static and the inputs only 
+show the popup behaviour
+*/
+idg.examElementSearchPopup = function(){
+	var el = document.getElementById('js-search-in-event-popup');
+	if(el === null) return; 
+	
+	
+	$('#js-search-in-event').click(function(){
+		showPopup();
+		$(this).addClass('selected');
+	})
+
+	
+	// popup
+	function showPopup(){
+		$('#js-search-in-event-popup').show();
+		
+		// modify the main area to allow for 
+		// compact search area:
+		$('.main-event').addClass('examination-search-active');
+		
+	
+		$('.close-icon-btn').click(function(){
+			$('#js-search-in-event-popup').hide();
+			$('#js-search-in-event').removeClass('selected');
+			$('#js-search-event-input-right').val('');
+			$('#js-search-event-results').hide();
+			
+			$('.main-event').removeClass('examination-search-active');
+		});
+		
+		$('#js-search-event-input-right').keyup(function(){
+			var val = $(this).val().toLowerCase();
+			
+			if(val == 'alph' || $(this).val() == 'alpha'){
+				$('#js-search-event-results').show();
+			} else {
+				$('#js-search-event-results').hide();
+			}
+		});
+		
+	}		
+}
+/*
+Element Expand (collapse) data list
+*/
+idg.expandElementList = function(){
+	
+	// check for view elementss
+	if( $('.element-data').length == 0 ) return;
+	
+	$('.js-listview-expand-btn').each(function(){	
+		/* 
+		Generally there is 1 list. But it could handle 2 (R/L Eye)	
+		DOM: id= js-listview-[data-list]-full | pro
+		*/
+		
+		var listId = $(this).data('list');
+		var listId2 = $(this).data('list2'); // (optional) R / L Eye control (see PCR Risks)
+		var listview = new ListView( $(this),listId,listId2);
+	});
+	
+	function ListView( $iconBtn, listId, listId2 ){
+		var proView = true;
+		var list = new List(listId);
+		var list2 = listId2 == undefined ? false : new List(listId2);	
+		
+		$iconBtn.click(function(){
+			$(this).toggleClass('collapse expand');
+			proView = !proView;
+			changeView(proView,list);
+			if(list2 != false) changeView( proView,list2);
+		});
+		
+		function changeView(proView,list){
+			if(proView){
+				list.$pro.show();
+				list.$full.hide();
+			} else {
+				list.$pro.hide();
+				list.$full.show();
+			}
+		}
+		
+		function List(id){
+			this.$pro = $('#js-listview-'+id+'-pro');
+			this.$full = $('#js-listview-'+id+'-full');
+		}
+		
+	}
+
+
+}
+/*
+Reduce Increase height
+*/
+idg.reduceElementHeight = function(){
+	// find and set up all
+	$('.js-reduce-element-height-btn').each(function(){
+		
+		var elementID = $(this).data('id');
+		var tiles = new ReduceElementHeight ( 	$(this), elementID );
+	});
+	
+	function ReduceElementHeight( $icon, elementID ){
+		
+		var reduced = false;
+		var $element = $('#'+elementID);
+		// var $header = $element.find('.element-title');
+		
+		$icon.click(function(){
+			changeHeight();
+		});		
+		
+		function changeHeight(){
+			if(reduced){
+				$element.removeClass('reduced-height');			
+			} else {
+				$element.addClass('reduced-height');
+			}
+			
+			$icon.toggleClass('increase-height-orange reduce-height');
+			reduced = !reduced;
+		}	
+	}	
+}
+/*
+Sidebar
+*/
+idg.sidebar = function(){
+	
+	/*
+	setup filter mechanisms for new UI.
+	- first check UI is available 
+	*/
+	var filter = document.getElementById('js-sidebar-filter');
+	if(filter == null) return;
+	
+	var lists = {
+		/* 
+		set date as UTC.
+		note: Edge may not handle this well.
+		But for IDG demo it's oK
+		*/
+		setUTC: function(listId){
+			$("li",listId).each(function(){
+				$(this).data( 'UTC',Date.parse($(this).data('created-date')) );
+			})	
+		},
+		
+		/* 
+		date sort on UTC
+		use jQuery to reorder DOM list 
+		*/
+		dateSort:function(listId,newold){		
+			$("li",listId)
+				.sort( function( a, b ) {
+					a = $( a ).data('UTC'); 
+					b = $( b ).data('UTC');
+					if(newold) 	return b - a;
+					else		return a - b;
+					})
+				.appendTo(listId);
+		}
+	}
+	
+	
+	
+	lists.setUTC("#js-events-by-date");
+	// lists.dateSort("#js-events-by-date",true);
+	
+	
+	
+	
+}
+
+/*
+Sidebar Events Quicklook & Quickview
+- Quicklook: Event Title and Message
+- Quickview: Popup with event Screenshot
+*/
+idg.sidebarQuickInfo = function(){
+	
+	if( $('.events').length == 0 ) return;
+	
+	$('.events .event').each(function(){	
+		var quicklook = new Quicklook( $('.event-type', this),
+									   $('.quicklook', this) );
+	});
+	
+	function Quicklook( $icon, $quicklook ){
+		
+		$icon.hover(function(){
+			$quicklook.removeClass('hidden').show();
+			showQuickView( $(this).data('id'), $(this).data('date') );
+		},function(){
+			$quicklook.hide();
+			hideQuickView();
+		});
+	}
+	
+	/**
+	Demo the Quick View for Events
+	Shows a scaled screen-shot of the event page
+	**/
+	
+	// hide all QuickView screen shots
+	$("[id^=quickview]").hide();
+
+	var prevID = null;
+	var $quickView = $('#js-event-quickview'); 
+	
+	function showQuickView( id, date ){
+		$quickView.stop().fadeIn(50);
+		$('#quickview-'+prevID).hide();
+		$('#quickview-'+id).show();
+		$('#js-quickview-date').text( date );
+		prevID = id;
+	}
+	
+	function hideQuickView(){
+		$quickView.stop().fadeOut(150);	// Using fadeOut to stop a flicking effect
+	}
+
+}
+/*
+Tile Collapse
+*/
+idg.collapseTiles = function(){
+	// find and set up all
+	$('.js-tiles-collapse-btn').each(function(){
+		
+		var groupID = $(this).data('group');
+		var $wrap = $('#'+groupID);
+		var initialState = $wrap.data('collapse');
+		
+		var tiles = new CollapseTiles( 	$(this), 
+										$wrap, 
+										initialState );
+	});
+	
+	function CollapseTiles( $icon, $wrap, initialState ){
+		/*
+		Find all tiles. 	
+		*/
+		
+		var $tiles = $wrap.children('.tile');
+		var expanded = initialState == 'expanded' ? true : false;
+		
+		$icon.click(function(){
+			change();
+		});		
+		
+		function change(){
+			if(expanded){
+				$tiles.find('.element-data').hide();
+				
+				// is there an overflow flag?
+				$tiles.find('.tile-more-data-flag').hide();
+				
+				/* 
+				show collapsed icon in replace 
+				of content (so user knows state...)
+				*/
+				var collapseIcon = $('<i class="oe-i expand small pad-right js-data-collapsed-icon"></i>');	
+				var dataState = $('<span class="element-data-count js-data-hidden-state"> [0]</span>');
+					
+				//$tiles.append( collapseIcon.click( change ) );
+				
+				$tiles.find('.element-title').append( dataState );
+				
+			} else {
+				// $tiles.find('.js-data-collapsed-icon').remove();
+				$tiles.find('.js-data-hidden-state').remove();
+				$tiles.find('.element-data').show();
+				// is there an overflow flag?
+				$tiles.find('.tile-more-data-flag').show();
+			}
+			
+			$icon.toggleClass('reduce-height increase-height');
+			expanded = !expanded;
+		}	
+	}	
+}
+/*
+Tile Element - watch for data overflow
+*/
+idg.tileDataOverflow = function(){
+	
+	if( $('.element.tile').length == 0 ) return;
+		
+	// loop through the view tiles and check the data height
+	$('.element.tile').each(function(){
+		var h = $(this).find('.data-value').height();
+
+		// CSS is set to max-height:180px;
+		if(h > 179){
+			// it's scrolling, so flag it
+			var flag = $('<div/>',{ class:"tile-more-data-flag"});
+			var icon = $('<i/>',{ class:"oe-i arrow-down-bold medium selected" });
+			flag.append(icon);
+			$(this).prepend(flag);
+			
+			var tileOverflow = $('.tile-data-overflow', this)
+			
+			flag.click(function(){
+				tileOverflow.animate({
+					scrollTop: tileOverflow.height()
+				}, 1000);
+			});	
+
+			tileOverflow.on('scroll',function(){
+				flag.fadeOut();
+			});
+			
+			// Assuming it's a table!...
+			var trCount = $(this).find('tbody').get(0).childElementCount;
+			// and then set the title to show total data count
+			
+			var title = $('.element-title',this);
+			title.html( title.text() + ' <small>('+trCount+')</small>' );			
+			
+		}	
+	});
+	
+	
+	
+}
 /**
 Create 'buttons' for nav menus, 3 different flavours: standard, wrapped and fixed
 - standard: $btn open/closes the popup $content (seperate DOM element). MouseEnter/Leave provides increased functionality for non-touch users
@@ -2151,7 +2904,7 @@ idg.ed3App = {
 				let php = $(this).data('php');	
 			
 				// build DOM wrapper
-				let $ed3app = $('<div class="oe-eyedraw-app"></div>');
+				let $ed3app = $('<div class="oe-eyedraw-app spinner-loader"></div>');
 				
 				
 				// position y (top), x (left) is handled by the CSS.
@@ -2170,6 +2923,8 @@ idg.ed3App = {
 				
 				$('body').append( $ed3app );
 				
+				let $spinner = $('<div class="spinner-center"><i class="spinner"></i></div>');
+				$ed3app.append( $spinner ); 
 							
 				// demo ed3 content: 
 				$ed3app.load('/idg-php/v3.0/_load/ed3/'+php,function(){
@@ -3347,758 +4102,173 @@ idg.WorkListFilter = function(){
 }
 
 /*
-Tile Element - watch for data overflow
+Dirty demo to show data insertion into IDG Elements where required
 */
-idg.auditTrail = function(){
-	
-	if( $('#js-event-audit-trail-btn').length == 0 ) return;
-		
-	var show = false	
-		
-	// loop through the view tiles and check the data height
-	$('#js-event-audit-trail-btn').click(function(){
-		$('#js-event-audit-trail').toggle();
-		$(this).toggleClass('active');
-	});
-	
-}
-/*
-SEM Element - Add or Search
-Popup to add selected list to element
-(optional - autocomplete field)
-No functionality, demoing basic UI & UX
-*/
-idg.elementAddSelectSearch = function(){
-	
-	var all = [];
-	
-	$('.js-add-select-search').each(function(){
-		var addBtn = new AddSelectSearch( 	$(this),
-											$(this).parent().children('.oe-add-select-search') );
-		all.push(addBtn);																
-	});
-	
-	function closeAll(){
-		for(var i=0; i < all.length; i++){
-			all[i].closePopup();
-		}
-	}
-
-	function AddSelectSearch( $btn, $popup ){
-		
-  		var select 		= $popup.find('.select-options'),
-  			closeBtn 	= $popup.find('.close-icon-btn'),
-  			addBtn 		= $popup.find('.add-icon-btn');
-  			
-  			
-  		var resetPopupData = true;
-  		
-  		// but for these popups remember the data added:
-  		switch( $popup.prop('id') ){
-	  		case "add-to-history":
-	  		case "add-to-risks":
-	  		case "add-to-follow-up":
-	  		resetPopupData = false;
-	  		break;
-  		}
-  			
-  		/*
-	  	All lists
-	  	store the list objects and then 
-	  	iterate over them to build the inputs
-	  	*/	
-  		var lists = [];
-
-  		/*
-	  	pubilc methods
-  		used to close all popups
-  		*/
-  		this.closePopup = closeCancel;
-  		this.openPopup = openAdd; // need this to demo all pop UIs
-
-  		/*
-	  	Events	
-	  	*/
-  		closeBtn.click(function(e){
-	  		e.stopPropagation();
-	  		closeCancel();
-  		});
-  		
-  		
-			
-			
-		// setup based on the DOM
-		if(addBtn.length){
-	  		addBtn.click(function(e){
-	  			e.stopPropagation();
-	  			closeAdd();
-	  			
-  			});
-  		}
-  		
-  		
-  	
-  		
-  		// list have 2 states multi or single 
-  		$('.add-options',$popup).each( function(){
-	  		var multi = $(this).data('multi');
-	  		
-	  		lists.push( new OptionsList( $(this), 
-	  									 $(this).data('multi'),
-	  									 $(this).data('clickadd') ) );
-  		});
-  		
-  		
-		function OptionsList( $ul, multi, clickAdd ){
-			var multi = multi;
-			var clickAdd = clickAdd; 
-			var $active = null; // if only single entry 
-			var selectedData = [];
-			
-			
-			if(multi){
-				$('li', $ul).click(function(e){
-		  			e.stopPropagation();
-		  			$(this).toggleClass('selected'); 
-		  			if($(this).hasClass('selected')){
-			  			addData($(this).data('str'));
-		  			} else {
-			  			removeData($(this).data('str'));
-		  			}
-	  			});
-			} else {
-				$('li', $ul).click(function(e){
-		  			e.stopPropagation();
-		  			updateListOptions( $(this) );
-		  			if(clickAdd) closeAdd();
-	  			});
-			}
-	
-			function updateListOptions( $new ){
-				if($active != null) {
-					$active.removeClass('selected');
-					removeData( $active.data('str') );
-				}
-				$new.addClass('selected');
-				addData( $new.data('str') );
-				$active = $new;
-			}
-			
-			function addData(data){
-				selectedData.push(data);
-			}
-			
-			function removeData(data){
-				var index = selectedData.indexOf(data);   
-				if (index !== -1) {
-				    selectedData.splice(index, 1);
-				}
-			}
-			
-			/*
-			Public methods	
-			*/
-			this.getData = function ( join ){
-				return selectedData.join(join);
-			}
-			
-			this.clearData = function(){
-				selectedData = [];
-			}
-		}  		
-
-  		
-/*
-  		// top element popup will disappear behind header, so adjust it's position:
-  		if($btn.offset().top < 250 && $btn.offset().top){
-	  		var vOffset = $btn.offset().top - 310;
-	  		$popup.css({bottom:vOffset});
-	  	}
-  		
-*/
-
-		$btn.click( function( e , demoAll = false ){
-			e.stopPropagation();
-			openAdd(!demoAll);
-		});
-		
-		
-		function positionFixedPopup( $btn ){
-			/* 
-			Popup is FIXED positioned
-			work out offset position 
-			setup events to close it on resize or scroll.
-			*/
-			
-			var elem = $btn[ 0 ];
-			
-			// js vanilla:
-			var btnPos = elem.getBoundingClientRect();		
-			var w = document.documentElement.clientWidth;
-			var h = document.documentElement.clientHeight;
-			
-			// check popup doesn't go off the top of the screen 
-			// and don't overlay Logo or Patient Name
-			var posH = (h - btnPos.bottom);
-			if(h - posH < 310){
-				posH = h - 315;
-			}
-			
-			// close to the left?
-			if( btnPos.left < 310 ){
-				// set CSS Fixed position
-				$popup.css(	{	"bottom": posH,
-								"right": "auto",
-								"left": (btnPos.left) });
-			} else {
-				// set CSS Fixed position
-				$popup.css(	{	"bottom": posH,
-								"right": (w - btnPos.right) });
-			}
-			
-			
-	  					
-			/*
-			Close popup on scroll.
-			note: scroll event fires on assignment.
-			so check against scroll position
-			*/		
-			var scrollPos = $(".main-event").scrollTop();
-			$(".main-event").on("scroll", function(){ 
-				if( scrollPos !=  $(this).scrollTop() ){
-					// Remove scroll event:	
-					$(".main-event").off("scroll");
-					closeCancel();
-				}
-					
-			});
-		}
-		
-		
-		function openAdd( closeOthers=true ){
-			if(closeOthers) closeAll();
-			positionFixedPopup( $btn );
-			$popup.show();	  				  		
-		}
-		
-
-		// Close and reset
-  		function closeCancel(){	  		
-	  		$popup.hide();
-	
-	  		if(resetPopupData){
-		  		$popup.find('.add-options li').removeClass('selected');
-		  		for(var i = 0; i<lists.length; i++){
-			  		lists[i].clearData();
-			  	}
-			}
-	  		
-  		}
-  		
-  		function closeAdd(){
-	  			
-	  		/*
-		  	IDG specific elements limited functionality demos
-		  	*/
-	
-		  	/*
-			Refraction	
-			*/
-			if($popup.prop('id') == 'add-to-refraction'){
-				
-				var sphere = "", 
-					cylinder = "", 
-					axis = "";
-					type = ""
-					
-				for(var i = 0; i<lists.length; i++){
-			  		var data = lists[i].getData('');
-			  		
-			  		switch(i){
-				  		case 0:
-				  		case 1:
-				  		case 2:
-				  		sphere += data;
-				  		break;
-				  		
-				  		case 3:
-				  		case 4:
-				  		case 5:
-				  		cylinder += data;
-				  		break;
-				  		
-				  		case 6: 
-				  		axis = data;
-				  		break;
-				  		
-				  		case 7:
-				  		type = data;
-				  		break;
-			  		}
-		  		}
-				
-				$('#js-refraction-input-sphere').val( sphere );
-				$('#js-refraction-input-cylinder').val( cylinder );
-				$('#js-refraction-input-axis').val( axis );
-				$('#js-refraction-input-type').val( type );
-			}
-			
-			if($popup.prop('id') == 'add-to-pupils-left'){
-				$('#js-pupil-left-text').text( lists[0].getData('') );
-			}
-			
-			if($popup.prop('id') == 'add-to-pupils-right'){
-				$('#js-pupil-right-text').text( lists[0].getData('') );
-			}
-			
-			if($popup.prop('id') == 'add-to-analytics-service'){
-				$('#js-service-selected').text( lists[0].getData('') );
-			}
-		
-		 
-		  	/*
-			Text inputs
-			*/
-		  	if($popup.prop('id') == 'add-to-history')		showInputString('history');
-		  	if($popup.prop('id') == 'add-to-risks')			showInputString('risks');
-		  	if($popup.prop('id') == 'add-to-follow-up')		showInputString('follow-up');
-	  		
-	
-	  		function showInputString(id){
-		  		var id = '#js-'+id+'-input-demo';
-		  		var inputs = [];
-		  		for(var i = 0; i<lists.length; i++){
-			  		var data = lists[i].getData(', ');
-			  		if(data != ""){
-				  		inputs.push(data);
-			  		}
-		  		}
-		  		
-		  		$(id).val( inputs.join(', ') );
-		  		autosize.update( $(id) );
-	  		}
-	  		
-	  		
-	  		/*
-		  	OpNote.
-		  	Procedures	
-		  		
-		  	*/
-	  		if($popup.prop('id') == 'add-to-procedures'){
-	  			// <tr> template
-			  	var rowTemplate = $("#js-procedures-template");
-			  	
-			  	// get Procedures...	
-			  	var procedures = lists[0].getData(',');
-			  	var proceduresArray = procedures.split(',')	
-			  		
-		  		for(var i = 0; i<proceduresArray.length; i++){
-			  		
-			  		var newRow = rowTemplate.clone();
-			  		newRow.removeAttr('style id');
-			  		newRow.find('.js-procedure-name').text(proceduresArray[i]);
-			  		
-			  		$("#js-show-procedures").append( newRow );
-			  		
-			  		// hack to demo functionality of elements
-			  		if(proceduresArray[i] == "Phacoemulsification and IOL"){
-				  		$('.edit-phaco--iol-right').show();
-				  		$('.edit-pcr-risk-right').show();
-				  		
-				  		newRow.find('.js-add-comments').hide();
-			  		}
-			  		
-			  	}
-	  		}
-	  		
-	  		
-	  		// clean up!
-	  		closeCancel();
-  		}
-  		
-  		
+idg.addSelectInsert.updateElement = {
+	test:function( arr ){
+		idgTest.report( 'test insert' );
 	}
 }
 /*
-Subgroup Collapse/expand
+Add Select Search insert  
+Popup Constructor
 */
-idg.elementSubgroup = function(){
-	
-	if( $('.js-element-subgroup-viewstate-btn').length == 0 ) return;
-	
-	$('.js-element-subgroup-viewstate-btn').each( function(){
-		var subgroup = new Viewstate( $(this) );
-	});
-	
-	function Viewstate( $icon ){
-		var me = this;
-		var $content = $('#' + $icon.data('subgroup') );
 
-		$icon.click( function( e ){
-			e.preventDefault();
-			me.changeState();
-		});
-		
-		this.changeState = function(){
-			$content.toggle();	
-			$icon.toggleClass('collapse expand');
-		}
-		
-	}
-
-}
-/*
-Event Filter Actions
-*/
-idg.eventFilterActions = function(){
+idg.addSelectInsert.Popup = function ( $btn, popupID ){	
 	
-	if( $('#js-sidebar-filter-btn').length == 0 ) return;
+	let $popup = $('#'+popupID);
+	const reset = true;
+	const require = false; 
+	const callback = $popup.data('callback');  // optional
 	
 	/*
-  	Quick UX / UI JS demo	
-  	Setup for touch (click) and enhanced for mouseevents
-  	
-	@param $wrap
-	@param $btn
-	@param $popup	
+	Using in analytics to build the data filters. Popup
+	needs to anchor left. Can not rely to x < n to do this.
+	Checking therefore the data- 
 	*/
-	idg.enhancedTouch( 		$('#js-sidebar-filter'), 
-							$('#js-sidebar-filter-btn'), 
-							$('#js-sidebar-filter-options') );
 	
-}
-
-/*
-Right Left Element searching in Examination Edit mode
-All content in popup is static and the inputs only 
-show the popup behaviour
-*/
-idg.examElementSearchPopup = function(){
-	var el = document.getElementById('js-search-in-event-popup');
-	if(el === null) return; 
-	
-	
-	$('#js-search-in-event').click(function(){
-		showPopup();
-		$(this).addClass('selected');
-	})
-
-	
-	// popup
-	function showPopup(){
-		$('#js-search-in-event-popup').show();
-		
-		// modify the main area to allow for 
-		// compact search area:
-		$('.main-event').addClass('examination-search-active');
-		
-	
-		$('.close-icon-btn').click(function(){
-			$('#js-search-in-event-popup').hide();
-			$('#js-search-in-event').removeClass('selected');
-			$('#js-search-event-input-right').val('');
-			$('#js-search-event-results').hide();
-			
-			$('.main-event').removeClass('examination-search-active');
-		});
-		
-		$('#js-search-event-input-right').keyup(function(){
-			var val = $(this).val().toLowerCase();
-			
-			if(val == 'alph' || $(this).val() == 'alpha'){
-				$('#js-search-event-results').show();
-			} else {
-				$('#js-search-event-results').hide();
-			}
-		});
-		
-	}		
-}
-/*
-Element Expand (collapse) data list
-*/
-idg.expandElementList = function(){
-	
-	// check for view elementss
-	if( $('.element-data').length == 0 ) return;
-	
-	$('.js-listview-expand-btn').each(function(){	
-		/* 
-		Generally there is 1 list. But it could handle 2 (R/L Eye)	
-		DOM: id= js-listview-[data-list]-full | pro
-		*/
-		
-		var listId = $(this).data('list');
-		var listId2 = $(this).data('list2'); // (optional) R / L Eye control (see PCR Risks)
-		var listview = new ListView( $(this),listId,listId2);
-	});
-	
-	function ListView( $iconBtn, listId, listId2 ){
-		var proView = true;
-		var list = new List(listId);
-		var list2 = listId2 == undefined ? false : new List(listId2);	
-		
-		$iconBtn.click(function(){
-			$(this).toggleClass('collapse expand');
-			proView = !proView;
-			changeView(proView,list);
-			if(list2 != false) changeView( proView,list2);
-		});
-		
-		function changeView(proView,list){
-			if(proView){
-				list.$pro.show();
-				list.$full.hide();
-			} else {
-				list.$pro.hide();
-				list.$full.show();
-			}
-		}
-		
-		function List(id){
-			this.$pro = $('#js-listview-'+id+'-pro');
-			this.$full = $('#js-listview-'+id+'-full');
-		}
-		
-	}
-
-
-}
-/*
-Reduce Increase height
-*/
-idg.reduceElementHeight = function(){
-	// find and set up all
-	$('.js-reduce-element-height-btn').each(function(){
-		
-		var elementID = $(this).data('id');
-		var tiles = new ReduceElementHeight ( 	$(this), elementID );
-	});
-	
-	function ReduceElementHeight( $icon, elementID ){
-		
-		var reduced = false;
-		var $element = $('#'+elementID);
-		// var $header = $element.find('.element-title');
-		
-		$icon.click(function(){
-			changeHeight();
-		});		
-		
-		function changeHeight(){
-			if(reduced){
-				$element.removeClass('reduced-height');			
-			} else {
-				$element.addClass('reduced-height');
-			}
-			
-			$icon.toggleClass('increase-height-orange reduce-height');
-			reduced = !reduced;
-		}	
-	}	
-}
-/*
-Sidebar
-*/
-idg.sidebar = function(){
+	this.anchorLeft = $popup.data('anchor-left') ==! undefined ? true : false;
 	
 	/*
-	setup filter mechanisms for new UI.
-	- first check UI is available 
+	Props
+	*/ 
+	this.$btn = $btn;  
+	this.$popup = $popup;
+	
+	/*
+	Methods
 	*/
-	var filter = document.getElementById('js-sidebar-filter');
-	if(filter == null) return;
-	
-	var lists = {
-		/* 
-		set date as UTC.
-		note: Edge may not handle this well.
-		But for IDG demo it's oK
-		*/
-		setUTC: function(listId){
-			$("li",listId).each(function(){
-				$(this).data( 'UTC',Date.parse($(this).data('created-date')) );
-			})	
-		},
-		
-		/* 
-		date sort on UTC
-		use jQuery to reorder DOM list 
-		*/
-		dateSort:function(listId,newold){		
-			$("li",listId)
-				.sort( function( a, b ) {
-					a = $( a ).data('UTC'); 
-					b = $( b ).data('UTC');
-					if(newold) 	return b - a;
-					else		return a - b;
-					})
-				.appendTo(listId);
-		}
+	this.open = function(){
+		this.positionFixPopup();
+		this.onScrollClose();
+		idg.addSelectInsert.closeAll();
+		$popup.show();
 	}
 	
-	
-	
-	lists.setUTC("#js-events-by-date");
-	// lists.dateSort("#js-events-by-date",true);
-	
-	
-	
-	
-}
-
-/*
-Sidebar Events Quicklook & Quickview
-- Quicklook: Event Title and Message
-- Quickview: Popup with event Screenshot
-*/
-idg.sidebarQuickInfo = function(){
-	
-	if( $('.events').length == 0 ) return;
-	
-	$('.events .event').each(function(){	
-		var quicklook = new Quicklook( $('.event-type', this),
-									   $('.quicklook', this) );
-	});
-	
-	function Quicklook( $icon, $quicklook ){
-		
-		$icon.hover(function(){
-			$quicklook.removeClass('hidden').show();
-			showQuickView( $(this).data('id'), $(this).data('date') );
-		},function(){
-			$quicklook.hide();
-			hideQuickView();
-		});
+	this.close = function(){
+		$popup.hide();		
 	}
 	
-	/**
-	Demo the Quick View for Events
-	Shows a scaled screen-shot of the event page
-	**/
-	
-	// hide all QuickView screen shots
-	$("[id^=quickview]").hide();
-
-	var prevID = null;
-	var $quickView = $('#js-event-quickview'); 
-	
-	function showQuickView( id, date ){
-		$quickView.stop().fadeIn(50);
-		$('#quickview-'+prevID).hide();
-		$('#quickview-'+id).show();
-		$('#js-quickview-date').text( date );
-		prevID = id;
+	this.reset = function(){
+		// reset (to default state)
 	}
 	
-	function hideQuickView(){
-		$quickView.stop().fadeOut(150);	// Using fadeOut to stop a flicking effect
-	}
-
-}
-/*
-Tile Collapse
-*/
-idg.collapseTiles = function(){
-	// find and set up all
-	$('.js-tiles-collapse-btn').each(function(){
-		
-		var groupID = $(this).data('group');
-		var $wrap = $('#'+groupID);
-		var initialState = $wrap.data('collapse');
-		
-		var tiles = new CollapseTiles( 	$(this), 
-										$wrap, 
-										initialState );
-	});
-	
-	function CollapseTiles( $icon, $wrap, initialState ){
+	this.insertData = function(){
 		/*
-		Find all tiles. 	
+		gather data and send to callback (if requested)
 		*/
+		let JSONdata = []
+		lists.forEach( list => {
+			JSONdata.push( list.gatherData() );
+		});
 		
-		var $tiles = $wrap.children('.tile');
-		var expanded = initialState == 'expanded' ? true : false;
+		/*
+		callback handles Element insert demo
+		*/
+		if( callback != undefined){
+			idg.addSelectInsert.updateElement[callback]( JSONdata );
+		}
 		
-		$icon.click(function(){
-			change();
-		});		
-		
-		function change(){
-			if(expanded){
-				$tiles.find('.element-data').hide();
-				
-				// is there an overflow flag?
-				$tiles.find('.tile-more-data-flag').hide();
-				
-				/* 
-				show collapsed icon in replace 
-				of content (so user knows state...)
-				*/
-				var collapseIcon = $('<i class="oe-i expand small pad-right js-data-collapsed-icon"></i>');	
-				var dataState = $('<span class="element-data-count js-data-hidden-state"> [0]</span>');
-					
-				//$tiles.append( collapseIcon.click( change ) );
-				
-				$tiles.find('.element-title').append( dataState );
-				
-			} else {
-				// $tiles.find('.js-data-collapsed-icon').remove();
-				$tiles.find('.js-data-hidden-state').remove();
-				$tiles.find('.element-data').show();
-				// is there an overflow flag?
-				$tiles.find('.tile-more-data-flag').show();
-			}
-			
-			$icon.toggleClass('reduce-height increase-height');
-			expanded = !expanded;
-		}	
-	}	
-}
-/*
-Tile Element - watch for data overflow
-*/
-idg.tileDataOverflow = function(){
+		this.close();
+	}
 	
-	if( $('.element.tile').length == 0 ) return;
-		
-	// loop through the view tiles and check the data height
-	$('.element.tile').each(function(){
-		var h = $(this).find('.data-value').height();
-
-		// CSS is set to max-height:180px;
-		if(h > 179){
-			// it's scrolling, so flag it
-			var flag = $('<div/>',{ class:"tile-more-data-flag"});
-			var icon = $('<i/>',{ class:"oe-i arrow-down-bold medium selected" });
-			flag.append(icon);
-			$(this).prepend(flag);
-			
-			var tileOverflow = $('.tile-data-overflow', this)
-			
-			flag.click(function(){
-				tileOverflow.animate({
-					scrollTop: tileOverflow.height()
-				}, 1000);
-			});	
-
-			tileOverflow.on('scroll',function(){
-				flag.fadeOut();
-			});
-			
-			// Assuming it's a table!...
-			var trCount = $(this).find('tbody').get(0).childElementCount;
-			// and then set the title to show total data count
-			
-			var title = $('.element-title',this);
-			title.html( title.text() + ' <small>('+trCount+')</small>' );			
-			
-		}	
+	/*
+	Store lists
+	*/
+	let lists = [];
+	
+	$('.add-options',$popup).each( function(){
+		lists.push( new idg.addSelectInsert.OptionsList( $(this) ) );
 	});
 	
-	
-	
+	/*
+	Setup Btn Events. 
+	*/
+	idg.addSelectInsert.btnEvent( this, $btn, this.open );
+	idg.addSelectInsert.btnEvent( this, $popup.children('.close-icon-btn'), this.close );
+	idg.addSelectInsert.btnEvent( this, $popup.find('.add-icon-btn'), this.insertData );
+	  					
 }
+
+/*
+Set up Btn click events
+*/
+idg.addSelectInsert.btnEvent = function ( popup, $btn, callback ){
+  	$btn.click(function(e) {
+  		e.stopPropagation();
+  		callback.call(popup);
+	});	  					
+}
+
+
+idg.addSelectInsert.Popup.prototype.onScrollClose = function(){
+	/*
+	Close popup on scroll.
+	note: scroll event fires on assignment.
+	so check against scroll position
+	*/	
+	let popup = this;	
+	let scrollPos = $(".main-event").scrollTop();
+	$(".main-event").on("scroll", function(){ 
+		if( scrollPos !=  $(this).scrollTop() ){
+			// Remove scroll event:	
+			$(".main-event").off("scroll");
+			popup.close();
+		}
+			
+	});
+
+}
+
+/*
+Set up Btn click events
+*/
+
+idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
+	/* 
+	Popup is FIXED positioned, work out offset position based on button
+	To do this proved easer with Vanilla JS
+	*/
+	let elem = this.$btn[ 0 ];
+	let btnPos = elem.getBoundingClientRect();		
+	let w = document.documentElement.clientWidth;
+	let h = document.documentElement.clientHeight;
+	
+	let posH = (h - btnPos.bottom);
+	
+	// check popup doesn't go off the top of the screen 
+	// and don't overlay Logo! or Patient Name
+	if(h - posH < 325){
+		posH = h - 325;
+	}
+	
+	/*
+	Popup can be 'requested' to anchor left.
+	Only used in Analytics (so far)	
+	*/
+	if( this.anchorLeft ){
+	
+		this.$popup.css(	{	"bottom": posH + 'px',
+								"left": btnPos.left + 'px' });
+		
+	} else {
+		// is popup pushing off the left
+		let leftSideEdge = btnPos.right - this.$popup.width();
+		let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
+	
+		this.$popup.css(	{	"bottom": posH + 'px',
+								"right": (w - btnPos.right) + adjustRight + 'px' });
+		
+	}
+	
+	
+	
+	
+	
+	
+
+}
+
 /*
 Optional Lists based on List selection
 find group ID: 	"add-to-{uniqueID}-listgroup{n}";
@@ -4336,173 +4506,4 @@ idg.addSelectInsert.OptionsList = function ( $ul ){
 		return data.join(', ');
 	}
 			
-}
-
-/*
-Add Select Search insert  
-Popup Constructor
-*/
-
-idg.addSelectInsert.Popup = function ( $btn, popupID ){	
-	
-	let $popup = $('#'+popupID);
-	const reset = true;
-	const require = false; 
-	const callback = $popup.data('callback');  // optional
-	
-	/*
-	Using in analytics to build the data filters. Popup
-	needs to anchor left. Can not rely to x < n to do this.
-	Checking therefore the data- 
-	*/
-	
-	this.anchorLeft = $popup.data('anchor-left') ==! undefined ? true : false;
-	
-	/*
-	Props
-	*/ 
-	this.$btn = $btn;  
-	this.$popup = $popup;
-	
-	/*
-	Methods
-	*/
-	this.open = function(){
-		this.positionFixPopup();
-		this.onScrollClose();
-		idg.addSelectInsert.closeAll();
-		$popup.show();
-	}
-	
-	this.close = function(){
-		$popup.hide();		
-	}
-	
-	this.reset = function(){
-		// reset (to default state)
-	}
-	
-	this.insertData = function(){
-		/*
-		gather data and send to callback (if requested)
-		*/
-		let JSONdata = []
-		lists.forEach( list => {
-			JSONdata.push( list.gatherData() );
-		});
-		
-		/*
-		callback handles Element insert demo
-		*/
-		if( callback != undefined){
-			idg.addSelectInsert.updateElement[callback]( JSONdata );
-		}
-		
-		this.close();
-	}
-	
-	/*
-	Store lists
-	*/
-	let lists = [];
-	
-	$('.add-options',$popup).each( function(){
-		lists.push( new idg.addSelectInsert.OptionsList( $(this) ) );
-	});
-	
-	/*
-	Setup Btn Events. 
-	*/
-	idg.addSelectInsert.btnEvent( this, $btn, this.open );
-	idg.addSelectInsert.btnEvent( this, $popup.children('.close-icon-btn'), this.close );
-	idg.addSelectInsert.btnEvent( this, $popup.find('.add-icon-btn'), this.insertData );
-	  					
-}
-
-/*
-Set up Btn click events
-*/
-idg.addSelectInsert.btnEvent = function ( popup, $btn, callback ){
-  	$btn.click(function(e) {
-  		e.stopPropagation();
-  		callback.call(popup);
-	});	  					
-}
-
-
-idg.addSelectInsert.Popup.prototype.onScrollClose = function(){
-	/*
-	Close popup on scroll.
-	note: scroll event fires on assignment.
-	so check against scroll position
-	*/	
-	let popup = this;	
-	let scrollPos = $(".main-event").scrollTop();
-	$(".main-event").on("scroll", function(){ 
-		if( scrollPos !=  $(this).scrollTop() ){
-			// Remove scroll event:	
-			$(".main-event").off("scroll");
-			popup.close();
-		}
-			
-	});
-
-}
-
-/*
-Set up Btn click events
-*/
-
-idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
-	/* 
-	Popup is FIXED positioned, work out offset position based on button
-	To do this proved easer with Vanilla JS
-	*/
-	let elem = this.$btn[ 0 ];
-	let btnPos = elem.getBoundingClientRect();		
-	let w = document.documentElement.clientWidth;
-	let h = document.documentElement.clientHeight;
-	
-	let posH = (h - btnPos.bottom);
-	
-	// check popup doesn't go off the top of the screen 
-	// and don't overlay Logo! or Patient Name
-	if(h - posH < 325){
-		posH = h - 325;
-	}
-	
-	/*
-	Popup can be 'requested' to anchor left.
-	Only used in Analytics (so far)	
-	*/
-	if( this.anchorLeft ){
-	
-		this.$popup.css(	{	"bottom": posH + 'px',
-								"left": btnPos.left + 'px' });
-		
-	} else {
-		// is popup pushing off the left
-		let leftSideEdge = btnPos.right - this.$popup.width();
-		let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
-	
-		this.$popup.css(	{	"bottom": posH + 'px',
-								"right": (w - btnPos.right) + adjustRight + 'px' });
-		
-	}
-	
-	
-	
-	
-	
-	
-
-}
-
-/*
-Dirty demo to show data insertion into IDG Elements where required
-*/
-idg.addSelectInsert.updateElement = {
-	test:function( arr ){
-		idgTest.report( 'test insert' );
-	}
 }

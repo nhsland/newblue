@@ -18,7 +18,7 @@ idg.ed3App = {
 				let php = $(this).data('php');	
 			
 				// build DOM wrapper
-				let $ed3app = $('<div class="oe-eyedraw-app"></div>');
+				let $ed3app = $('<div class="oe-eyedraw-app spinner-loader"></div>');
 				
 				
 				// position y (top), x (left) is handled by the CSS.
@@ -37,6 +37,8 @@ idg.ed3App = {
 				
 				$('body').append( $ed3app );
 				
+				let $spinner = $('<div class="spinner-center"><i class="spinner"></i></div>');
+				$ed3app.append( $spinner ); 
 							
 				// demo ed3 content: 
 				$ed3app.load('/idg-php/v3.0/_load/ed3/'+php,function(){

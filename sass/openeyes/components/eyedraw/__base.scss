@@ -14,7 +14,7 @@ $ed3-top-panel-height:32px;
 
 .oe-eyedraw-app {
 	position: fixed;
-	
+	top:$oe-header-height; // JS controlled to position near btn if possible
 	// this works nicely
 	left:$oe-event-sidebar-width; 
 	@include media($oe-extended-browser-size){	
@@ -23,14 +23,10 @@ $ed3-top-panel-height:32px;
 		left: #{$oe-event-sidebar-width + $oe-event-extension - 38px};			
 	}
 	
-	
-	top:$oe-header-height; // JS controlled
-	
 	z-index:$oe-z-add-insert;
 	
 	width: $oe-event-main-default-width;
-	
-	min-height:300px;  	 // whilst loading placeholder
+	min-height:530px;  	 // whilst loading placeholder
 	
 	padding:$ed3-padding $ed3-padding 32px $ed3-padding; // allow for positioned action bottom bar (save etc)
 	

@@ -1336,6 +1336,10 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   z-index: 1;
 }
 
+.spinner-loader {
+  position: relative;
+}
+
 .spinner:before {
   content: '';
   position: absolute;
@@ -7241,11 +7245,11 @@ table.management-summaries tbody td:last-child {
 
 .oe-eyedraw-app {
   position: fixed;
-  left: 200px;
   top: 60px;
+  left: 200px;
   z-index: 70;
   width: 1080px;
-  min-height: 300px;
+  min-height: 530px;
   padding: 5px 5px 32px 5px;
   background: #c6d2dd;
   font-size: 0.75rem;

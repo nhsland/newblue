@@ -16,6 +16,11 @@
 		z-index:1;
 	}
 } 
+
+// add class to the DOM container. 
+.spinner-loader {
+	position: relative;
+}
  
 .spinner {
 	$spinner-large:60px;
