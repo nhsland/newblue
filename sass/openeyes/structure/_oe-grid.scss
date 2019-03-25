@@ -17,15 +17,24 @@
 	// CSS3:
 	// Grid is setup for primary usage (SEM pages)
 	display: grid;
-	grid-template-columns: $oe-event-sidebar-width 1fr;
-	grid-template-rows: $oe-header-height $oe-event-header-height 1fr;	
+	
+	// switched to 'grid' shorthand: (instead of individual templates)
+	grid: #{$oe-header-height} #{$oe-event-header-height} 1fr / #{$oe-event-sidebar-width} 1fr;
+	
+	// keep for reference:
+	// grid-template-columns: $oe-event-sidebar-width 1fr;
+	// grid-template-rows: $oe-header-height $oe-event-header-height 1fr;	
+	
+	// Keeping this as areas because it's easier to understand ;)
 	grid-template-areas: 
-    	"header header"
+    		"header header"
 		"addevent eventheader"
 		"sidebar main";
 		
-	width:100vw;
-	height:100vh;
+		
+		
+	width:	100vw;
+	height:	100vh;
 	// max-height:100vh; // maybe required for Edge < 16. Needs testing!
 			
 	// grid items MUST be direct descendants
@@ -124,8 +133,9 @@
 		overflow-y:auto;
 	}
 	
-	// --------------------------------------- Home 
-	.oe-home {
+	// --------------------------------------- Home & Whiteboard
+	.oe-home,
+	.oe-whiteboard {
 		// for Edge < 16
 		-ms-grid-column: 1; 
 		-ms-grid-row: 1;

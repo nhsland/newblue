@@ -34,7 +34,6 @@ idg.ed3App = {
 					$ed3app.css(	{"top": posH + 'px'});
 				}
 				
-				
 				$('body').append( $ed3app );
 				
 				let $spinner = $('<div class="spinner-center"><i class="spinner"></i></div>');

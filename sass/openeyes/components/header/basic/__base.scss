@@ -23,7 +23,7 @@
 }
 
 // right container
-.oe-hd-right {
+.oe-hd-actions {
 	position:absolute;
 	top:0; 
 	right:10px; 
@@ -36,8 +36,15 @@
 	@include font-size(12);
 	color:$oe-pro-text-light; 	// not themed
 	
+	button {
+		margin:0 8px 0 0;
+		&:last-child {
+			margin-right:0;
+		}
+	}
+	
 	// provide a "grouping" mechanism
 	.group {
-		margin:0 15px 0 0;
+		margin:0 32px 0 0;
 	}
 }
