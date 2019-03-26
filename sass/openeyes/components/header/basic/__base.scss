@@ -20,6 +20,15 @@
 	@include font-size(16);
 	color:$oe-pro-text-light; 	// not themed
 	font-weight: 300;
+	
+	// in Whiteboard using dot-list.
+	// needs a slight tweak
+	ul.dot-list {
+		li {
+			margin-bottom:0;
+		}
+	}
+	
 }
 
 // right container
@@ -33,7 +42,7 @@
 	align-items:center;	
 	justify-content:flex-start;
 	
-	@include font-size(12);
+	@include font-size(16);
 	color:$oe-pro-text-light; 	// not themed
 	
 	button {

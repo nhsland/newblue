@@ -20,7 +20,7 @@
 		border-left:5px solid $oe-ed3-app-blue;
 		
 		.ed-doodle-filters {
-			@include flex(center, center);
+			@include flex(space-between, center);
 			height:$ed3-top-panel-height;
 		}
 		

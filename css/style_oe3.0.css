@@ -4036,6 +4036,10 @@ select.fixed-width {
   font-weight: 300;
 }
 
+.oe-hd-title ul.dot-list li {
+  margin-bottom: 0;
+}
+
 .oe-hd-actions {
   position: absolute;
   top: 0;
@@ -4050,7 +4054,7 @@ select.fixed-width {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
-  font-size: 0.75rem;
+  font-size: 1rem;
   color: #8c8c8c;
 }
 
@@ -7288,14 +7292,14 @@ table.management-summaries tbody td:last-child {
 .oe-eyedraw-app .eyedraw-context-options .button,
 .oe-eyedraw-app .eyedraw-context-options input[type="submit"] {
   color: #f0f0f0;
-  background: #777e85;
+  background-color: #777e85;
 }
 
 .oe-eyedraw-app .ed3-editor button.selected, .oe-eyedraw-app .ed3-editor .button.selected, .oe-eyedraw-app .ed3-editor input[type="submit"].selected,
 .oe-eyedraw-app .eyedraw-context-options button.selected,
 .oe-eyedraw-app .eyedraw-context-options .button.selected,
 .oe-eyedraw-app .eyedraw-context-options input[type="submit"].selected {
-  background: #53585d;
+  background-color: #53585d;
 }
 
 .oe-eyedraw-app .ed3-editor input, .oe-eyedraw-app .ed3-editor textarea, .oe-eyedraw-app .ed3-editor select,
@@ -7303,8 +7307,13 @@ table.management-summaries tbody td:last-child {
 .oe-eyedraw-app .eyedraw-context-options textarea,
 .oe-eyedraw-app .eyedraw-context-options select {
   color: #f0f0f0;
-  background: #777e85;
+  background-color: #777e85;
   margin: 0 0;
+}
+
+.oe-eyedraw-app .ed3-editor input.search,
+.oe-eyedraw-app .eyedraw-context-options input.search {
+  background-image: url("../svg/in-css/ui/search-white.svg");
 }
 
 .oe-eyedraw-app .ed3-header {
@@ -7485,9 +7494,9 @@ table.management-summaries tbody td:last-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -10224,9 +10233,20 @@ table.oe-clinic-list td.center {
 
 .oe-whiteboard .wb3 .oe-wb-widget h3,
 .oe-whiteboard .wb3 .oe-wb-special h3 {
-  font-size: 1.1vw;
-  font-weight: 300;
+  display: inline-block;
+  font-size: 1.15vw;
+  font-weight: 400;
   padding: 0 0 5px 0;
+  color: #5ab4b4;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget h3.priority,
+.oe-whiteboard .wb3 .oe-wb-special h3.priority {
+  padding-left: 16px;
+  background-position: left top 5px;
+  background-repeat: no-repeat;
+  background-size: 9px;
+  background-image: url("../svg/in-css/ui/circle-orange.svg");
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget .none {

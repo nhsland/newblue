@@ -53,9 +53,19 @@
 			border-radius:3px;  // take the edge off?
 			
 			h3 {
-				font-size: 1.1vw;
-				font-weight: 300;
+				display:inline-block;
+				font-size: 1.15vw;
+				font-weight: 400;
 				padding:0 0 5px 0;
+				color:$oe-text-active;
+				
+				&.priority {
+					padding-left:16px;
+					background-position: left top 5px;
+					background-repeat: no-repeat;
+					background-size: 9px;
+					background-image: url( svg-path('ui/circle-orange') );
+				}
 			}
 		}
 		
