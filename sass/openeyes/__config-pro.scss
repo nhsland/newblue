@@ -101,6 +101,13 @@ $oe-element-headers:   	rgb(105,147,158); // rgb(139,195,203); // element defaul
 $oe-home-search-bg: 		rgb(50,62,76);		// Home page Search area background
 $oe-tooltip-bg:			rgb(10,10,20);
 
+
+// Whiteboard
+$oe-wb-bg: 				$oe-blue-dark3;
+$oe-wb-widget-bg:		$oe-tooltip-bg;
+$oe-wb-data-text:		$oe-text;	
+$oe-wb-headers:			$oe-element-headers;
+
 // ... different SVGs for 'pro' & 'classic' theme
 @function svg-icon-path-theme($svg){
 	@return "../svg/in-css/icons/" + $svg + ".svg";

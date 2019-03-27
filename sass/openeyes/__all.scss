@@ -92,7 +92,7 @@
 @import "components/partial-waiting";			// Partial Booking Waiting List
 @import "components/nod-export";				// NOD export
 @import "components/new-patient";				// Add New Patient
-@import "components/whiteboard";				// Whiteboard
+@import "components/whiteboard/_all";				// Whiteboard
 
 /* HighCharts */
 @import "components/highcharts";				// used in OEscape and Analytics ( ...now redundant)

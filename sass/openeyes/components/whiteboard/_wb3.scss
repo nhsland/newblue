@@ -3,41 +3,17 @@
 //
 
 // OE Whiteboard
+// 2 Grid targest:
+// 1) minimum res. (with Portrait iPad in mind)
+// 2) landscape big touchscreen in Op. Room (main focus)
 
 .oe-whiteboard {
-	// set up footer area
-	// wall mounter monitor, make it easier
-	// to reach button
-	display: grid;
-	grid: 1fr 50px / 1fr;
-	
-	.oe-whiteboard-actions {
-		// have to center them because of
-		// the version 'tag' label:
-		@include flex(center, center);
-		
-		button {
-			@include font-size(16);
-			padding: 0px 16px; // tab is 16px  
-			height: 38px;    // tab is 38px
-			margin:0 32px 0 0;
-			&:last-child {
-				margin-right:0;
-			}
-		}
-	}
-	
-	
+
 	.wb3 {
-		// 2 Grid targest:
-		// 1) minimum res. (with Portrait iPad in mind)
-		// 2) landscape big touchscreen in Op. Room (main focus)
-		// However, just starting with 2):
-		
 		display: grid;
 		grid: repeat(4, 1fr) / repeat(5, 1fr);
 		// fill the COLUMNs automatically, 
-		// and place the special layouts: Risks / Eye Canvas on the right
+		// ... special layouts: Risks / Eye Canvas on the right
 		grid-auto-flow: column;
 		
 		// important!
@@ -46,8 +22,8 @@
 		// will go off the bottom!
 		height:calc(100vh - #{$oe-header-height} - 50px);
 		
-		background:$oe-blue-dark3; // theme changable
-		color:$oe-text;
+		background:$oe-wb-bg; // theme changable
+		color:$oe-wb-data-text;
 		
 		.oe-wb-widget,
 		.oe-wb-special {
@@ -55,20 +31,21 @@
 			margin:4px;
 			padding:8px;
 			//border:2px solid $oe-text-light;
-			background: $oe-tooltip-bg;
+			background: $oe-wb-widget-bg;
 			border-radius:3px;  // take the edge off?
 			
 			// if data overflows handle it
 			overflow-x: hidden;
 			overflow-y: auto; 
 			
+			// basic layout stuff:
 			h3 {
 				display:inline-block;
 				font-size: 1.15vw;
 				font-weight: $oe-font-medium;
 				padding:0 0 0 12px;
 				margin:0 0 5px 0;
-				color:$oe-element-headers;
+				color:$oe-wb-headers;
 				
 				$colour-flag-w: 5px; 
 				background-repeat: no-repeat;
@@ -115,84 +92,9 @@
 						}
 					}
 				}
-			}
-			
+			}			
 		}
-		
-		
-		// 2 Basic data types:
-		.oe-wb-widget {
-			
-			// N/A (none)
-			.none {
-				color:rgba($oe-text-light,0.5);
-				font-weight: 300
-			}
-			
-			// basic <br> list
-			&.data-list {
-				.wb-data {
-					font-size: 1.4vw;
-					line-height:1.3;	
-					font-weight: $oe-font-medium;
-				}
-			}
-			
-			// single value
-			&.data-single {
-				@include flex(center,center);
-				
-				.wb-data {
-					font-size: 3vw;
-					
-					// qualify data postfix
-					small {
-						font-size: 1.1vw;
-					}
-				}
-
-				h3 {
-					position: absolute;
-					top:10px;
-					left:10px;
-				}
-			}
-		}
-		
-		.oe-wb-special {
-			
-			font-size: 1.2vw;
-			font-weight: $oe-font-medium;
-			line-height:1.2;	
-			
-			hr.divider {
-				display:block;
-				border : 0;
-				margin:15px 0 15px 0;  // reduced was 20px 0 15px 0;
-				border-bottom:5px solid $oe-blue-dark3;
-			}
-			
-			.alert-box {
-				font-size: 1vw
-			}
-			
-			&.risks {
-				grid-area: 1 / 5 / 5 / 6 ;
-			}
-			
-			// positioned special
-			&.double-right-top {
-				grid-area: 1 / 4 / 3 / 5; 
-			}
-			
-			// positioned special
-			&.double-right-bottom {
-				grid-area: 3 / 4 / 5 / 5; 
-			}
-			
-		}
-		
-	}
+	}	
 }
 
 

@@ -231,472 +231,6 @@ idg.addSelectInsert = {
 		});
 	}
 }
-/**
-Homepage Message expand / contract 	
-**/
-idg.homeMessageExpand = function(){
-	
-	if( $('.home-messages').length == 0 ) return;
-	
-	$('.js-expand-message').each(function(){
-		
-		var message = $(this).parent().parent().find('.message');
-		var expander = new Expander( $(this),
-									 message );
-	});
-	
-	function Expander( $icon, $message){
-		var expanded = false; 
-		
-		$icon.click( change );
-		
-		function change(){
-			
-			$icon.toggleClass('expand collapse');
-			
-			if(expanded){
-				$message.removeClass('expand');
-			} else {
-				$message.addClass('expand');
-			}
-			
-			expanded = !expanded;
-		}
-	}
-}
-
-/*
-Lightning
-*/
-var lightning = lightning || {};
-
-lightning.init = function(){
-
-	/*
-	All IMGs are pre-loaded in DOM
-	Speed of interaction is PRIORITY!
-	*/
-	var me = this;
-	this.currentStack = 0;
-	this.iconPrefix = '#lqv_';
-	this.stackPrefix = '#lsg_';
-	this.totalStackNum = $('.stack-group').length;
-	this.xscrollWidth = $('.lightning-view').width();
-	this.locked = true;
-	
-	
-	this.updateView = function( id ){
-		this.updateStack( id );
-		this.updateMeta( $(this.iconPrefix + id).data('meta') );
-	}
-
-	this.updateMeta = function(meta){
-		var $div = $('.lightning-meta');
-		var d = meta.split(',');
-		$div.children('.type').text(d[0]);
-		$div.children('.date').text(d[1]);
-		$div.children('.who').text(d[2]);
-	}
-	
-	this.updateStack = function( stackID ){
-		$(this.stackPrefix + this.currentStack).hide();
-		$(this.stackPrefix + stackID).show();
-		this.currentStack = stackID; // track id
-		this.updateCounter();
-		this.timelineIcon();
-	}
-	
-	this.updateCounter = function(){
-		$('.lightning-ui .stack-position').text( this.currentStack+1 + '/' + this.totalStackNum);
-	}
-	
-	this.timelineIcon = function(){
-		$('.icon-event').removeClass('js-hover');
-		$(this.iconPrefix + this.currentStack).addClass('js-hover');	
-	}
-	
-	/*
-	xscroll using DOM overlay (rather than the image)
-	(note: the overlay has 2 possible widths depending on browser size)
-	*/
-	this.xscroll = function(xCoord,e){
-		var xpos = Math.floor(xCoord/(this.xscrollWidth / this.totalStackNum));
-		if(this.locked == false){
-			this.updateView( xpos );
-		} 
-	}
-	
-	this.swipeLock = function(){
-		this.locked = !this.locked;
-		if(this.locked){
-			$('.lightning-ui .user-help').text( 'Swipe is LOCKED | Click to unlock' );
-		} else {
-			$('.lightning-ui .user-help').text( 'Swipe to scan or use key RIGHT / LEFT | Click to LOCK swipe' );
-		}
-	}
-	
-	/*
-	Step through stack (arrows or KEYs)	
-	*/
-	this.stepThrough = function( dir ){
-		var next = this.currentStack + dir;
-		if( next >= 0 && next < this.totalStackNum){
-			this.updateView( next );
-		}
-	}
-	
-	/*
-	Events
-	*/
-	$('.icon-event')
-		.hover(
-			function(){
-				me.updateStack(	$(this).data('id') );
-				me.updateMeta( 	$(this).data('meta') );
-			}, function(){
-				// no out action
-			})
-		.click(function(){
-			me.swipeLock();
-		});
-		
-		
-	// mouse xscroll
-	$('.lightning-view').mousemove(function(e) {
-	  	var offset = $(this).offset();
-	  	me.xscroll(e.pageX - offset.left,e);
-	});		
-	
-	// Click to LOCK swiping
-	$('.lightning-view').click(function(e){
-		e.stopPropagation();
-		me.swipeLock();
-	});				
-
-	// step through
-	// use either the < > btn
-	$('#lightning-left-btn').click(function( e ){
-		e.stopPropagation();
-		me.stepThrough( -1 );
-	});
-	
-	$('#lightning-right-btn').click(function( e ){
-		e.stopPropagation();
-		me.stepThrough( 1 );
-	});
-	
-	// or LEFT - RIGHT Keys
-	$("body").keydown(function(e){
-	    if ((e.keyCode || e.which) == 37)	me.stepThrough( -1 );
-	    if ((e.keyCode || e.which) == 39)	me.stepThrough( 1 );
-	});
-		
-	// watch for resize (the view has 2 widths )
-	$( window ).resize(function() {
-		me.xscrollWidth = $('.lightning-view').width();
-	});
-	
-
-	/*
-	setup timeline
-	*/
-	this.filterOptions();
-	this.iconGroup();
-	/*
-	setup viewer	
-	*/
-	this.updateCounter();
-	this.swipeLock();
-
-	
-}
-/*
-Lightning
-*/
-
-lightning.filterOptions = function(){
-	
-	/*
-  	Quick UX / UI JS demo	
-  	Setup for touch (click) and enhanced for mouseevents
-  	*/
-  	var options = false;
-  	
-  	// handles touch
-  	$('.lightning-btn').click( changeOptions );
-  	
-  	// enchance with mouseevents through DOM wrapper
-  	$('.js-lightning-options')
-  		.mouseenter( showOptions )
-  		.mouseleave( hideOptions );
-  	
-  	// controller
-  	function changeOptions(){
-	  	if(!options){
-		  	showOptions()
-	  	} else {
-		  	hideOptions()
-	  	}		  	
-  	}
-  	
-  	function showOptions(){
-	  	$('.change-timeline').show();
-	  	$('.lightning-btn').addClass('active');
-	  	options = true;
-  	}
-  	
-  	function hideOptions(){
-	  	$('.change-timeline').hide();
-	  	$('.lightning-btn').removeClass('active');
-	  	options = false;
-  	}
-
-}
-/*
-Lightning
-*/
-
-lightning.iconGroup = function(){
-	
-	/*
-  	Quick UX / UI JS demo	
-  	Collapse and Expand the timeline
-  	*/
-  	$('.icon-group').each(function(){
-	  	var count = $(this)[0].childElementCount;
-		var $div = $('<div />').text('('+count+')').hide();
-		$(this).parent().append( $div );
-  	});
-  	
-  	$('.js-timeline-date').click(function( e ){
-	  	var iconGroup = $(this).data('icons');
-	  	
-	  	if($(this).hasClass('collapse')){
-		  	$('#js-icon-'+iconGroup).hide();
-		  	$('#js-icon-'+iconGroup).next().show();
-	  	} else {
-		  	$('#js-icon-'+iconGroup).show();
-		  	$('#js-icon-'+iconGroup).next().hide();
-	  	}
-	  
-	  	$(this).toggleClass('collapse expand');
-  	});
-}
-/*
-Mulit Page Scroll Widget. 
-Used in Correspondence VIEW and Lightning Viewer for Letters 
-... and maybe other places too.
-*/
-idg.multiPageScroll = function(){
-	/*
-	check DOM... 
-	*/
-	if( $('.lightning-multipage-scroll').length == 0 ) return;
-	
-	/*
-	Allowing for 'n' number of widgets
-	*/
-	$('.lightning-multipage-scroll').each( function(){
-		var mps = new MultiPage( $(this) );
-	});
-	
-	function MultiPage( $div ){
-		var me = this;
-		var $nav = $('.multipage-nav',$div);
-		var $stack = $('.multipage-stack',$div);
-		var numOfImgs = $('.multipage-stack > img',$div).length;
-		
-		/*
-		Get first IMG height Attribute 
-		to work out page scrolling.
-		Note: CSS adds 10px padding to the (bottom) of all images !
-		*/
-		var pageH = 10 + parseInt( $('.multipage-stack > img:first-child',$div).attr('height') );
-
-		/*
-		Build Page Nav Btns
-		loop through and create page buttons
-		e.g. <div class="page-num-btn">1/4</div>
-		*/	
-		for(var i=0;i<numOfImgs;i++){
-			var btn = $( "<div></div>", {
-							text: (i+1)+"/"+numOfImgs,
-							"class": "page-num-btn",
-							"data-page": i,
-							mouseenter: function( e ) {
-								me.animateScrolling( $(this).data('page') );
-							},
-							click: function( event ) {
-								me.animateScrolling( $(this).data('page') );
-							}
-						}).appendTo( $nav );
-		}
-		
-		/*
-		Animate the scrolling
-		*/	
-		this.animateScrolling = function( page ){
-			var scroll = pageH * page;	
-			$stack.animate({scrollTop: scroll+'px'},200,'swing');
-		}
-	}
-		
-	
-}
-
-/**
-OEscape 
-**/
-var oes = {
-	
-	init:function(){
-		// exit oescape and go back to last viewed (non-oes) page
-		$('#js-exit-oescape').click( function(){
-			window.location = localStorage.getItem("lastPage");
-		});
-	},
-	
-	
-	/*
-	keep track of the last non-oescape page
-	so that you can exit oescape mode and 
-	return to last page	
-	*/
-	oescapeExit:function(){
-		var href = window.location.href;
-		if(href.includes("oescape") == false ){
-			localStorage.setItem( "lastPage",href ); 
-		}
-	}
-}
-/**
-Image Stack animations in OEscape	
-pass in ID string for container and sting ID prefix for images
-returns method to directly update the stack and sets up the Events
-
-@method initStack
-@param 'container' (String) 	- id for container DOM 
-@param 'img_id' (String) 		- id prefix for <img>, assumes numbering 1 to n
-@param 'callBack' (function)  	- callback optional
-@return {object} with method to setImg()	
-**/
-oes.initStack = function(container,img_id_prefix,callBack){
-	var container = $(container);
-	var imgID = 1; 					// default image set in PHP, the rest are 'hidden'
-	var imgTotal = container.children().length;
-	
-	// Mouse & Touch image stack animation
-	$( container ).bind( "mousemove touchmove", function( e ) {
-		e.stopPropagation();
-		
-		var offset = $(this).offset();		// these will update everytime browser is resized
-		var xPos = e.pageX - offset.left;
-		var w = $(this).width();			
-		var num = Math.ceil( xPos / ( w / imgTotal ) );
-		
-		if(num === 0 || num > imgTotal) return; // out of range
-		
-		updateImageStack(num); 
-			
-		if(typeof callBack === "function") callBack(num);			
-	});
-	
-	// update images
-	function updateImageStack(n){
-		$( img_id_prefix + imgID ).hide();
-		$( img_id_prefix + n ).removeClass('hidden').show();
-		imgID = n;
-	}
-	
-	// provide access to update Image directly, e.g. from highCharts
-	return {
-		setImg:function(imgID){
-			updateImageStack(imgID);
-			imgID = imgID;
-		}
-	};
-}
-/**
-Tab buttons control what is shown on the right handside
-
-@param tabBtnInfo (Array) - Array of Objects: {btn:'btn_id',area:'area_id'}
-@param 'callBack' (function)  	- callback optional
-**/
-oes.setupAreaTabButtons = function( tabBtnInfo, callBack ){
-	
-	for( var i=0; i<tabBtnInfo.length; i++ ){
-		
-		var btn = tabBtnInfo[i].btn = $(tabBtnInfo[i].btn);  // turn into jQuery
-		var area = tabBtnInfo[i].content = $(tabBtnInfo[i].content);	
-		var tab = new TabContent( btn,area,i );
-
-	}
-	
-	// assuming first button is default
-	tabBtnInfo[0].btn.addClass('selected');
-	
-	function TabContent( btn, content, i){
-		var btn = btn;
-		var content = content;
-		var i = i;
-		
-		btn.click( function( e ){
-			e.stopPropagation();
-			resetStacks();
-			$(this).addClass('selected');
-			content.removeClass('hidden').show();
-			
-			if(typeof callBack === "function") callBack(i);
-		});		
-	}
-
-	function resetStacks(){
-		for(var i=0; i<tabBtnInfo.length; i++){
-			tabBtnInfo[i].btn.removeClass('selected');
-			tabBtnInfo[i].content.hide();
-		}
-	}
-	
-}
-/**
-OEscape offers 4 resize states for the left hand chart area	
-@param 'callBack' (function)  	- callback optional
-**/
-oes.setupResizeButtons = function( callBack ){
-	
-	var left = $('.oes-left-side'),
-		right = $('.oes-right-side'),
-		size;
-	
-	// setup resize buttons
-	// buttons have data-area attribute: small, medium, large and full
-	$('.js-oes-area-resize').click(function( e ){
-		e.stopPropagation();
-		
-		var str = $(this).data('area');
-		switch(str){
-			case 'small': 	size = 500;
-			break;
-			case 'medium': 	size = 700;
-			break;
-			case 'large': 	size = 900;
-			break;
-			case 'full': 	size = null;  // null, when passed to highcharts makes chart fill container
-			break;
-		}
-		
-		// fullsize requires some tweaking
-		if(size == null){
-			left.css({"min-width":"500px", "width":"100%"});
-			right.hide();
-		} else {
-			left.css({"min-width": size + "px", "width":""});
-			right.show();	
-		}
-		
-		if(typeof callBack === "function" ) callBack(size);	
-	});
-}
 /*
 Clinic JS
 
@@ -1563,6 +1097,567 @@ clinic.updateTasks = function( ){
 	
 	$('#filter-tasks .current').text( clinic.data['tasks'].length );
 }
+/**
+Homepage Message expand / contract 	
+**/
+idg.homeMessageExpand = function(){
+	
+	if( $('.home-messages').length == 0 ) return;
+	
+	$('.js-expand-message').each(function(){
+		
+		var message = $(this).parent().parent().find('.message');
+		var expander = new Expander( $(this),
+									 message );
+	});
+	
+	function Expander( $icon, $message){
+		var expanded = false; 
+		
+		$icon.click( change );
+		
+		function change(){
+			
+			$icon.toggleClass('expand collapse');
+			
+			if(expanded){
+				$message.removeClass('expand');
+			} else {
+				$message.addClass('expand');
+			}
+			
+			expanded = !expanded;
+		}
+	}
+}
+
+/*
+Lightning
+*/
+var lightning = lightning || {};
+
+lightning.init = function(){
+
+	/*
+	All IMGs are pre-loaded in DOM
+	Speed of interaction is PRIORITY!
+	*/
+	var me = this;
+	this.currentStack = 0;
+	this.iconPrefix = '#lqv_';
+	this.stackPrefix = '#lsg_';
+	this.totalStackNum = $('.stack-group').length;
+	this.xscrollWidth = $('.lightning-view').width();
+	this.locked = true;
+	
+	
+	this.updateView = function( id ){
+		this.updateStack( id );
+		this.updateMeta( $(this.iconPrefix + id).data('meta') );
+	}
+
+	this.updateMeta = function(meta){
+		var $div = $('.lightning-meta');
+		var d = meta.split(',');
+		$div.children('.type').text(d[0]);
+		$div.children('.date').text(d[1]);
+		$div.children('.who').text(d[2]);
+	}
+	
+	this.updateStack = function( stackID ){
+		$(this.stackPrefix + this.currentStack).hide();
+		$(this.stackPrefix + stackID).show();
+		this.currentStack = stackID; // track id
+		this.updateCounter();
+		this.timelineIcon();
+	}
+	
+	this.updateCounter = function(){
+		$('.lightning-ui .stack-position').text( this.currentStack+1 + '/' + this.totalStackNum);
+	}
+	
+	this.timelineIcon = function(){
+		$('.icon-event').removeClass('js-hover');
+		$(this.iconPrefix + this.currentStack).addClass('js-hover');	
+	}
+	
+	/*
+	xscroll using DOM overlay (rather than the image)
+	(note: the overlay has 2 possible widths depending on browser size)
+	*/
+	this.xscroll = function(xCoord,e){
+		var xpos = Math.floor(xCoord/(this.xscrollWidth / this.totalStackNum));
+		if(this.locked == false){
+			this.updateView( xpos );
+		} 
+	}
+	
+	this.swipeLock = function(){
+		this.locked = !this.locked;
+		if(this.locked){
+			$('.lightning-ui .user-help').text( 'Swipe is LOCKED | Click to unlock' );
+		} else {
+			$('.lightning-ui .user-help').text( 'Swipe to scan or use key RIGHT / LEFT | Click to LOCK swipe' );
+		}
+	}
+	
+	/*
+	Step through stack (arrows or KEYs)	
+	*/
+	this.stepThrough = function( dir ){
+		var next = this.currentStack + dir;
+		if( next >= 0 && next < this.totalStackNum){
+			this.updateView( next );
+		}
+	}
+	
+	/*
+	Events
+	*/
+	$('.icon-event')
+		.hover(
+			function(){
+				me.updateStack(	$(this).data('id') );
+				me.updateMeta( 	$(this).data('meta') );
+			}, function(){
+				// no out action
+			})
+		.click(function(){
+			me.swipeLock();
+		});
+		
+		
+	// mouse xscroll
+	$('.lightning-view').mousemove(function(e) {
+	  	var offset = $(this).offset();
+	  	me.xscroll(e.pageX - offset.left,e);
+	});		
+	
+	// Click to LOCK swiping
+	$('.lightning-view').click(function(e){
+		e.stopPropagation();
+		me.swipeLock();
+	});				
+
+	// step through
+	// use either the < > btn
+	$('#lightning-left-btn').click(function( e ){
+		e.stopPropagation();
+		me.stepThrough( -1 );
+	});
+	
+	$('#lightning-right-btn').click(function( e ){
+		e.stopPropagation();
+		me.stepThrough( 1 );
+	});
+	
+	// or LEFT - RIGHT Keys
+	$("body").keydown(function(e){
+	    if ((e.keyCode || e.which) == 37)	me.stepThrough( -1 );
+	    if ((e.keyCode || e.which) == 39)	me.stepThrough( 1 );
+	});
+		
+	// watch for resize (the view has 2 widths )
+	$( window ).resize(function() {
+		me.xscrollWidth = $('.lightning-view').width();
+	});
+	
+
+	/*
+	setup timeline
+	*/
+	this.filterOptions();
+	this.iconGroup();
+	/*
+	setup viewer	
+	*/
+	this.updateCounter();
+	this.swipeLock();
+
+	
+}
+/*
+Lightning
+*/
+
+lightning.filterOptions = function(){
+	
+	/*
+  	Quick UX / UI JS demo	
+  	Setup for touch (click) and enhanced for mouseevents
+  	*/
+  	var options = false;
+  	
+  	// handles touch
+  	$('.lightning-btn').click( changeOptions );
+  	
+  	// enchance with mouseevents through DOM wrapper
+  	$('.js-lightning-options')
+  		.mouseenter( showOptions )
+  		.mouseleave( hideOptions );
+  	
+  	// controller
+  	function changeOptions(){
+	  	if(!options){
+		  	showOptions()
+	  	} else {
+		  	hideOptions()
+	  	}		  	
+  	}
+  	
+  	function showOptions(){
+	  	$('.change-timeline').show();
+	  	$('.lightning-btn').addClass('active');
+	  	options = true;
+  	}
+  	
+  	function hideOptions(){
+	  	$('.change-timeline').hide();
+	  	$('.lightning-btn').removeClass('active');
+	  	options = false;
+  	}
+
+}
+/*
+Lightning
+*/
+
+lightning.iconGroup = function(){
+	
+	/*
+  	Quick UX / UI JS demo	
+  	Collapse and Expand the timeline
+  	*/
+  	$('.icon-group').each(function(){
+	  	var count = $(this)[0].childElementCount;
+		var $div = $('<div />').text('('+count+')').hide();
+		$(this).parent().append( $div );
+  	});
+  	
+  	$('.js-timeline-date').click(function( e ){
+	  	var iconGroup = $(this).data('icons');
+	  	
+	  	if($(this).hasClass('collapse')){
+		  	$('#js-icon-'+iconGroup).hide();
+		  	$('#js-icon-'+iconGroup).next().show();
+	  	} else {
+		  	$('#js-icon-'+iconGroup).show();
+		  	$('#js-icon-'+iconGroup).next().hide();
+	  	}
+	  
+	  	$(this).toggleClass('collapse expand');
+  	});
+}
+/*
+Mulit Page Scroll Widget. 
+Used in Correspondence VIEW and Lightning Viewer for Letters 
+... and maybe other places too.
+*/
+idg.multiPageScroll = function(){
+	/*
+	check DOM... 
+	*/
+	if( $('.lightning-multipage-scroll').length == 0 ) return;
+	
+	/*
+	Allowing for 'n' number of widgets
+	*/
+	$('.lightning-multipage-scroll').each( function(){
+		var mps = new MultiPage( $(this) );
+	});
+	
+	function MultiPage( $div ){
+		var me = this;
+		var $nav = $('.multipage-nav',$div);
+		var $stack = $('.multipage-stack',$div);
+		var numOfImgs = $('.multipage-stack > img',$div).length;
+		
+		/*
+		Get first IMG height Attribute 
+		to work out page scrolling.
+		Note: CSS adds 10px padding to the (bottom) of all images !
+		*/
+		var pageH = 10 + parseInt( $('.multipage-stack > img:first-child',$div).attr('height') );
+
+		/*
+		Build Page Nav Btns
+		loop through and create page buttons
+		e.g. <div class="page-num-btn">1/4</div>
+		*/	
+		for(var i=0;i<numOfImgs;i++){
+			var btn = $( "<div></div>", {
+							text: (i+1)+"/"+numOfImgs,
+							"class": "page-num-btn",
+							"data-page": i,
+							mouseenter: function( e ) {
+								me.animateScrolling( $(this).data('page') );
+							},
+							click: function( event ) {
+								me.animateScrolling( $(this).data('page') );
+							}
+						}).appendTo( $nav );
+		}
+		
+		/*
+		Animate the scrolling
+		*/	
+		this.animateScrolling = function( page ){
+			var scroll = pageH * page;	
+			$stack.animate({scrollTop: scroll+'px'},200,'swing');
+		}
+	}
+		
+	
+}
+
+/**
+OEscape 
+**/
+var oes = {
+	
+	init:function(){
+		// exit oescape and go back to last viewed (non-oes) page
+		$('#js-exit-oescape').click( function(){
+			window.location = localStorage.getItem("lastPage");
+		});
+	},
+	
+	
+	/*
+	keep track of the last non-oescape page
+	so that you can exit oescape mode and 
+	return to last page	
+	*/
+	oescapeExit:function(){
+		var href = window.location.href;
+		if(href.includes("oescape") == false ){
+			localStorage.setItem( "lastPage",href ); 
+		}
+	}
+}
+/**
+Image Stack animations in OEscape	
+pass in ID string for container and sting ID prefix for images
+returns method to directly update the stack and sets up the Events
+
+@method initStack
+@param 'container' (String) 	- id for container DOM 
+@param 'img_id' (String) 		- id prefix for <img>, assumes numbering 1 to n
+@param 'callBack' (function)  	- callback optional
+@return {object} with method to setImg()	
+**/
+oes.initStack = function(container,img_id_prefix,callBack){
+	var container = $(container);
+	var imgID = 1; 					// default image set in PHP, the rest are 'hidden'
+	var imgTotal = container.children().length;
+	
+	// Mouse & Touch image stack animation
+	$( container ).bind( "mousemove touchmove", function( e ) {
+		e.stopPropagation();
+		
+		var offset = $(this).offset();		// these will update everytime browser is resized
+		var xPos = e.pageX - offset.left;
+		var w = $(this).width();			
+		var num = Math.ceil( xPos / ( w / imgTotal ) );
+		
+		if(num === 0 || num > imgTotal) return; // out of range
+		
+		updateImageStack(num); 
+			
+		if(typeof callBack === "function") callBack(num);			
+	});
+	
+	// update images
+	function updateImageStack(n){
+		$( img_id_prefix + imgID ).hide();
+		$( img_id_prefix + n ).removeClass('hidden').show();
+		imgID = n;
+	}
+	
+	// provide access to update Image directly, e.g. from highCharts
+	return {
+		setImg:function(imgID){
+			updateImageStack(imgID);
+			imgID = imgID;
+		}
+	};
+}
+/**
+Tab buttons control what is shown on the right handside
+
+@param tabBtnInfo (Array) - Array of Objects: {btn:'btn_id',area:'area_id'}
+@param 'callBack' (function)  	- callback optional
+**/
+oes.setupAreaTabButtons = function( tabBtnInfo, callBack ){
+	
+	for( var i=0; i<tabBtnInfo.length; i++ ){
+		
+		var btn = tabBtnInfo[i].btn = $(tabBtnInfo[i].btn);  // turn into jQuery
+		var area = tabBtnInfo[i].content = $(tabBtnInfo[i].content);	
+		var tab = new TabContent( btn,area,i );
+
+	}
+	
+	// assuming first button is default
+	tabBtnInfo[0].btn.addClass('selected');
+	
+	function TabContent( btn, content, i){
+		var btn = btn;
+		var content = content;
+		var i = i;
+		
+		btn.click( function( e ){
+			e.stopPropagation();
+			resetStacks();
+			$(this).addClass('selected');
+			content.removeClass('hidden').show();
+			
+			if(typeof callBack === "function") callBack(i);
+		});		
+	}
+
+	function resetStacks(){
+		for(var i=0; i<tabBtnInfo.length; i++){
+			tabBtnInfo[i].btn.removeClass('selected');
+			tabBtnInfo[i].content.hide();
+		}
+	}
+	
+}
+/**
+OEscape offers 4 resize states for the left hand chart area	
+@param 'callBack' (function)  	- callback optional
+**/
+oes.setupResizeButtons = function( callBack ){
+	
+	var left = $('.oes-left-side'),
+		right = $('.oes-right-side'),
+		size;
+	
+	// setup resize buttons
+	// buttons have data-area attribute: small, medium, large and full
+	$('.js-oes-area-resize').click(function( e ){
+		e.stopPropagation();
+		
+		var str = $(this).data('area');
+		switch(str){
+			case 'small': 	size = 500;
+			break;
+			case 'medium': 	size = 700;
+			break;
+			case 'large': 	size = 900;
+			break;
+			case 'full': 	size = null;  // null, when passed to highcharts makes chart fill container
+			break;
+		}
+		
+		// fullsize requires some tweaking
+		if(size == null){
+			left.css({"min-width":"500px", "width":"100%"});
+			right.hide();
+		} else {
+			left.css({"min-width": size + "px", "width":""});
+			right.show();	
+		}
+		
+		if(typeof callBack === "function" ) callBack(size);	
+	});
+}
+/*
+Lightening Letter Viewer
+Icon in the Patient banner area links to the 
+Letter Viewer page for the patint
+*/
+idg.lightningViewer = function(){
+	
+	// if on the letter viewing page  
+	// set icon to active 
+	if(window.location.pathname == '/v3.0/lightning-letter-viewer'){
+		$('#js-lightning-viewer-btn').addClass('active');
+		return;	
+	};
+	
+	// Events
+	$('#js-lightning-viewer-btn').click(function( e ){
+		e.stopPropagation();
+		window.location = '/v3.0/lightning-letter-viewer';
+	})
+	.mouseenter(function(){
+		$(this).addClass( 'active' ); 
+	})
+	.mouseleave(function(){
+		$(this).removeClass( 'active' ); 
+	});	
+}
+/**
+All Patient Popups 
+Manage them to avoid any overlapping	
+**/
+idg.patientPopups = {
+	
+	init:function(){
+		
+		if( $('#oe-patient-details').length == 0 ) return;
+		
+		// patient popups
+		var quicklook 		= new idg.PatientBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
+		var demographics 	= new idg.PatientBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
+		var demographics2 	= new idg.PatientBtnPopup( 'management', $('#js-management-btn'), $('#patient-popup-management') );
+		var risks 			= new idg.PatientBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
+		var chart			= new idg.PatientBtnPopup( 'charts', $('#js-charts-btn'), $('#patient-popup-charts') );
+	
+	
+		var all = [ quicklook, demographics, demographics2, risks, chart ];
+		
+		for( pBtns in all ) {
+			all[pBtns].inGroup( this ); // register group with PopupBtn 
+		}
+		
+		this.popupBtns = all;
+		
+		/**
+		Problems and Plans
+		These are currently in quicklook popup
+		**/
+		if( $('#problems-plans-sortable').length ){
+			idg.problemsPlans();
+		}
+		
+	},
+
+	closeAll:function(){
+		for( pBtns in this.popupBtns ){
+			this.popupBtns[pBtns].hide();  // close all patient popups
+		}
+	}
+
+}
+
+/*
+Problems &  Plans sortable list 
+In patient quicklook 
+- requires Sortable.js
+*/
+idg.problemsPlans = function(){
+	// make Problems & Plans Sortable:
+	var el = document.getElementById( 'problems-plans-sortable' );
+	var sortable = Sortable.create( el );
+		
+	// Add New Plan / Problem	
+	$('#js-add-pp-btn').click(function(){
+		var input = $('#create-problem-plan');
+		var val = input.val();
+		if( val === '') return;				
+		var html = '<li><span class="drag-handle">&#9776;</span>'+ val +'<div class="remove"><i class="oe-i remove-circle small pro-theme pad"></i></div></li>';
+		$('#problems-plans-sortable').append( html );
+		input.val(''); // refresh input
+	}); 
+
+	// remove a Problem Plan
+	$('#problems-plans-sortable .remove').click(function(){ 
+  		$(this).parent().remove(); 
+  	});
+}
 /*
 Tile Element - watch for data overflow
 */
@@ -2315,101 +2410,6 @@ idg.tileDataOverflow = function(){
 	
 	
 	
-}
-/*
-Lightening Letter Viewer
-Icon in the Patient banner area links to the 
-Letter Viewer page for the patint
-*/
-idg.lightningViewer = function(){
-	
-	// if on the letter viewing page  
-	// set icon to active 
-	if(window.location.pathname == '/v3.0/lightning-letter-viewer'){
-		$('#js-lightning-viewer-btn').addClass('active');
-		return;	
-	};
-	
-	// Events
-	$('#js-lightning-viewer-btn').click(function( e ){
-		e.stopPropagation();
-		window.location = '/v3.0/lightning-letter-viewer';
-	})
-	.mouseenter(function(){
-		$(this).addClass( 'active' ); 
-	})
-	.mouseleave(function(){
-		$(this).removeClass( 'active' ); 
-	});	
-}
-/**
-All Patient Popups 
-Manage them to avoid any overlapping	
-**/
-idg.patientPopups = {
-	
-	init:function(){
-		
-		if( $('#oe-patient-details').length == 0 ) return;
-		
-		// patient popups
-		var quicklook 		= new idg.PatientBtnPopup( 'quicklook', $('#js-quicklook-btn'), $('#patient-summary-quicklook') );
-		var demographics 	= new idg.PatientBtnPopup( 'demographics', $('#js-demographics-btn'), $('#patient-popup-demographics') );
-		var demographics2 	= new idg.PatientBtnPopup( 'management', $('#js-management-btn'), $('#patient-popup-management') );
-		var risks 			= new idg.PatientBtnPopup( 'risks', $('#js-allergies-risks-btn'), $('#patient-popup-allergies-risks') );
-		var chart			= new idg.PatientBtnPopup( 'charts', $('#js-charts-btn'), $('#patient-popup-charts') );
-	
-	
-		var all = [ quicklook, demographics, demographics2, risks, chart ];
-		
-		for( pBtns in all ) {
-			all[pBtns].inGroup( this ); // register group with PopupBtn 
-		}
-		
-		this.popupBtns = all;
-		
-		/**
-		Problems and Plans
-		These are currently in quicklook popup
-		**/
-		if( $('#problems-plans-sortable').length ){
-			idg.problemsPlans();
-		}
-		
-	},
-
-	closeAll:function(){
-		for( pBtns in this.popupBtns ){
-			this.popupBtns[pBtns].hide();  // close all patient popups
-		}
-	}
-
-}
-
-/*
-Problems &  Plans sortable list 
-In patient quicklook 
-- requires Sortable.js
-*/
-idg.problemsPlans = function(){
-	// make Problems & Plans Sortable:
-	var el = document.getElementById( 'problems-plans-sortable' );
-	var sortable = Sortable.create( el );
-		
-	// Add New Plan / Problem	
-	$('#js-add-pp-btn').click(function(){
-		var input = $('#create-problem-plan');
-		var val = input.val();
-		if( val === '') return;				
-		var html = '<li><span class="drag-handle">&#9776;</span>'+ val +'<div class="remove"><i class="oe-i remove-circle small pro-theme pad"></i></div></li>';
-		$('#problems-plans-sortable').append( html );
-		input.val(''); // refresh input
-	}); 
-
-	// remove a Problem Plan
-	$('#problems-plans-sortable .remove').click(function(){ 
-  		$(this).parent().remove(); 
-  	});
 }
 /**
 Create 'buttons' for nav menus, 3 different flavours: standard, wrapped and fixed
