@@ -586,8 +586,8 @@ html {
   top: 50%;
   right: 0;
   z-index: 9999;
-  -webkit-transform: rotate(90deg) translateY(-69px);
-          transform: rotate(90deg) translateY(-69px);
+  -webkit-transform: rotate(90deg) translateY(-59px);
+          transform: rotate(90deg) translateY(-59px);
   background: #9b0000 url("../svg/in-css/icons/direction-up.svg") top 50% right 5px no-repeat;
   background-size: 15px;
   padding: 5px 30px 5px 10px;
@@ -10216,8 +10216,9 @@ table.oe-clinic-list td.center {
 
 .oe-whiteboard .wb3 {
   display: grid;
-  grid: repeat(4, 1fr)/repeat(5, minmax(200px, 1fr));
+  grid: repeat(4, 1fr)/repeat(5, 1fr);
   grid-auto-flow: column;
+  height: calc(100vh - 60px - 50px);
   background: #172332;
   color: #d6d6d6;
 }
@@ -10229,6 +10230,8 @@ table.oe-clinic-list td.center {
   padding: 8px;
   background: #0a0a14;
   border-radius: 3px;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget h3,
@@ -10236,17 +10239,57 @@ table.oe-clinic-list td.center {
   display: inline-block;
   font-size: 1.15vw;
   font-weight: 400;
-  padding: 0 0 5px 0;
-  color: #5ab4b4;
+  padding: 0 0 0 12px;
+  margin: 0 0 5px 0;
+  color: #69939e;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, #5ab4b4 5px, transparent 5px);
 }
 
-.oe-whiteboard .wb3 .oe-wb-widget h3.priority,
-.oe-whiteboard .wb3 .oe-wb-special h3.priority {
-  padding-left: 16px;
-  background-position: left top 5px;
-  background-repeat: no-repeat;
-  background-size: 9px;
-  background-image: url("../svg/in-css/ui/circle-orange.svg");
+.oe-whiteboard .wb3 .oe-wb-widget h3.green,
+.oe-whiteboard .wb3 .oe-wb-special h3.green {
+  background-image: linear-gradient(to right, #009600 5px, transparent 5px);
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget h3.orange,
+.oe-whiteboard .wb3 .oe-wb-special h3.orange {
+  background-image: linear-gradient(to right, #c86400 5px, transparent 5px);
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget h3.grey,
+.oe-whiteboard .wb3 .oe-wb-special h3.grey {
+  background-image: linear-gradient(to right, #505050 5px, transparent 5px);
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget ul li,
+.oe-whiteboard .wb3 .oe-wb-special ul li {
+  margin-bottom: 3px;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget table,
+.oe-whiteboard .wb3 .oe-wb-special table {
+  width: 100%;
+  margin: 4px 0;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget table tbody tr,
+.oe-whiteboard .wb3 .oe-wb-special table tbody tr {
+  border-bottom: 2px solid #26303d;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget table tbody tr:last-child,
+.oe-whiteboard .wb3 .oe-wb-special table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget table tbody td,
+.oe-whiteboard .wb3 .oe-wb-special table tbody td {
+  padding: 5px 5px 5px 0;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget table tbody td:first-child,
+.oe-whiteboard .wb3 .oe-wb-special table tbody td:first-child {
+  padding-left: 2px;
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget .none {
@@ -10257,6 +10300,7 @@ table.oe-clinic-list td.center {
 .oe-whiteboard .wb3 .oe-wb-widget.data-list .wb-data {
   font-size: 1.4vw;
   line-height: 1.3;
+  font-weight: 400;
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget.data-single {
@@ -10285,6 +10329,12 @@ table.oe-clinic-list td.center {
   left: 10px;
 }
 
+.oe-whiteboard .wb3 .oe-wb-special {
+  font-size: 1.2vw;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
 .oe-whiteboard .wb3 .oe-wb-special hr.divider {
   display: block;
   border: 0;
@@ -10297,7 +10347,15 @@ table.oe-clinic-list td.center {
 }
 
 .oe-whiteboard .wb3 .oe-wb-special.risks {
-  grid-area: 1 / 5 / 5 / 5;
+  grid-area: 1 / 5 / 5 / 6;
+}
+
+.oe-whiteboard .wb3 .oe-wb-special.double-right-top {
+  grid-area: 1 / 4 / 3 / 5;
+}
+
+.oe-whiteboard .wb3 .oe-wb-special.double-right-bottom {
+  grid-area: 3 / 4 / 5 / 5;
 }
 
 /* HighCharts */
