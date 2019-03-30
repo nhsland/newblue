@@ -8,20 +8,19 @@
 // this is content pulled from the pop
 
 .main-event {
-	
+	// used in flex wrapper
+	// left / right blocks
 	.patient-overview {
-		color:rgb(255,255,255);
-		background: transparent; // $oe-blue; // using the info alert
+
 		width:50%;
 		&:first-child {
 			width:47%;
 			padding-left:20px;
 		}
-		padding:10px;
-		// keep it tight.
-		margin:0 3px 3px 0;
-		&:last-child {
-			margin-right:0;
+		padding:0 10px;
+		
+		&:first-child {
+			margin-left:3px;
 		}
 	}
 	

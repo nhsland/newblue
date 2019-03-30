@@ -4460,6 +4460,10 @@ table.patient-appointments tbody tr {
   border-top: 1px dotted rgba(204, 204, 255, 0.2);
 }
 
+table.patient-appointments tbody tr:first-child {
+  border-top: none;
+}
+
 table.patient-appointments tbody td {
   padding: 6px 3px;
   font-size: 0.6875rem;
@@ -4482,6 +4486,10 @@ table.management-summaries {
 
 table.management-summaries tbody tr {
   border-top: 1px dotted rgba(204, 204, 255, 0.2);
+}
+
+table.management-summaries tbody tr:first-child {
+  border-top: none;
 }
 
 table.management-summaries tbody td {
@@ -4639,6 +4647,10 @@ table.management-summaries tbody td:last-child {
   line-height: 1.6;
 }
 
+.quicklook-data-groups .group .data .oe-date {
+  width: 75px;
+}
+
 .quicklook-data-groups table {
   margin: 0 0 10px 0;
   width: 100%;
@@ -4668,6 +4680,10 @@ table.management-summaries tbody td:last-child {
 .quicklook-data-groups table th:first-child, .quicklook-data-groups table td:first-child {
   text-align: left;
   padding-left: 0;
+}
+
+.quicklook-data-groups table.last-left th:last-child, .quicklook-data-groups table.last-left td:last-child {
+  text-align: left;
 }
 
 .quicklook-data-groups table strong {
@@ -6903,11 +6919,8 @@ table.management-summaries tbody td:last-child {
 }
 
 .main-event .patient-overview {
-  color: white;
-  background: transparent;
   width: 50%;
-  padding: 10px;
-  margin: 0 3px 3px 0;
+  padding: 0 10px;
 }
 
 .main-event .patient-overview:first-child {
@@ -6915,8 +6928,8 @@ table.management-summaries tbody td:last-child {
   padding-left: 20px;
 }
 
-.main-event .patient-overview:last-child {
-  margin-right: 0;
+.main-event .patient-overview:first-child {
+  margin-left: 3px;
 }
 
 .main-event table.situational-awareness .data {

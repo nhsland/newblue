@@ -1658,6 +1658,56 @@ idg.problemsPlans = function(){
   		$(this).parent().remove(); 
   	});
 }
+/**
+VC Draggable Floating inputs
+**/
+idg.vcDraggable = function(){
+	
+	var id = 'oe-vc-scratchpad';
+
+	if( $('#'+id).length == 0 ) return;
+	
+	/* 	
+	Drag...
+	*/	
+	var relativeX, relativeY;
+		
+	document.addEventListener("dragstart", getMouseOffset, false);
+	document.addEventListener("dragend", reposFloat, false);
+		
+	
+	function getMouseOffset( e ){
+		e.dataTransfer.dropEffect = "move";
+		
+		// need to work out mouse offset in <div> before dragging
+		var offset = $('#'+id).offset();
+		relativeX = (e.clientX - offset.left);
+		relativeY = (e.clientY - offset.top);		
+	}
+	
+	function reposFloat( e ) {
+		// Update the panel position
+		var left = e.clientX - relativeX;
+		var top = e.clientY - relativeY;
+		
+		// stop it being dragged off screen
+		top = top < 1 ? 1 : top;
+		left = left < 1 ? 1 : left;
+		
+		$('#'+id).css({"top":top+"px","left":left+"px"});
+	}
+	
+	
+	/*
+	Touch version? ... 
+	Not sure if this works, not tested... but anyway:	
+	*/
+	var el = document.getElementById(id);
+	el.addEventListener("touchstart", getMouseOffset, false);
+	el.addEventListener("touchend", reposFloat, false);
+		
+	
+}
 /*
 Tile Element - watch for data overflow
 */
@@ -4016,56 +4066,6 @@ idg.userPIN = {
 	
 }
 /**
-VC Draggable Floating inputs
-**/
-idg.vcDraggable = function(){
-	
-	var id = 'oe-vc-scratchpad';
-
-	if( $('#'+id).length == 0 ) return;
-	
-	/* 	
-	Drag...
-	*/	
-	var relativeX, relativeY;
-		
-	document.addEventListener("dragstart", getMouseOffset, false);
-	document.addEventListener("dragend", reposFloat, false);
-		
-	
-	function getMouseOffset( e ){
-		e.dataTransfer.dropEffect = "move";
-		
-		// need to work out mouse offset in <div> before dragging
-		var offset = $('#'+id).offset();
-		relativeX = (e.clientX - offset.left);
-		relativeY = (e.clientY - offset.top);		
-	}
-	
-	function reposFloat( e ) {
-		// Update the panel position
-		var left = e.clientX - relativeX;
-		var top = e.clientY - relativeY;
-		
-		// stop it being dragged off screen
-		top = top < 1 ? 1 : top;
-		left = left < 1 ? 1 : left;
-		
-		$('#'+id).css({"top":top+"px","left":left+"px"});
-	}
-	
-	
-	/*
-	Touch version? ... 
-	Not sure if this works, not tested... but anyway:	
-	*/
-	var el = document.getElementById(id);
-	el.addEventListener("touchstart", getMouseOffset, false);
-	el.addEventListener("touchend", reposFloat, false);
-		
-	
-}
-/**
 Homepage Message expand / contract 	
 - used in WorkList and Trials
 **/
@@ -4100,14 +4100,6 @@ idg.WorkListFilter = function(){
 	
 }
 
-/*
-Dirty demo to show data insertion into IDG Elements where required
-*/
-idg.addSelectInsert.updateElement = {
-	test:function( arr ){
-		idgTest.report( 'test insert' );
-	}
-}
 /*
 Optional Lists based on List selection
 find group ID: 	"add-to-{uniqueID}-listgroup{n}";
@@ -4347,6 +4339,14 @@ idg.addSelectInsert.OptionsList = function ( $ul ){
 			
 }
 
+/*
+Dirty demo to show data insertion into IDG Elements where required
+*/
+idg.addSelectInsert.updateElement = {
+	test:function( arr ){
+		idgTest.report( 'test insert' );
+	}
+}
 /*
 Add Select Search insert  
 Popup Constructor

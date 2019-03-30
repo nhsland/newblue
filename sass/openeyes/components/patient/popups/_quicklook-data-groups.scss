@@ -29,6 +29,10 @@
 		.data {
 			padding:0 10px 5px 10px;
 			line-height:1.6;
+			
+			.oe-date {
+				width:75px;
+			}
 		}
 	} 
 	
@@ -36,10 +40,6 @@
 	table {
 		margin:0 0 10px 0; 
 		width:100%;
-		
-		// not sure <tr> hover was a help. 
-		// turned it off
-		// tr:hover { background:$oe-pro-blue-dark; } 
 		
 		th { color:$oe-pro-text-light; }
 		td { color:$oe-pro-text; }
@@ -62,6 +62,16 @@
 			}
 			
 		}
+		
+		// matches the default align for tables in Elements
+		&.last-left {
+			th, td {
+				&:last-child {
+					text-align: left;
+				}
+			}
+		}
+		
 		
 		strong { font-weight: 400; }
 	}
