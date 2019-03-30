@@ -51,6 +51,16 @@
 	}
 	
 	
+	// Patient Overview needs the title moving into the event-header
+	.event-header-title {
+		position:absolute;
+		left:50px;
+		top:6px;
+		@include font-size(21);
+		font-weight:$oe-font-light;
+		color:$oe-element-headers;
+	}
+	
 	// group buttons right
 	.buttons-right {
 		position: absolute;

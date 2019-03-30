@@ -5297,6 +5297,15 @@ table.management-summaries tbody td:last-child {
   color: #8c8c8c;
 }
 
+.event-header .event-header-title {
+  position: absolute;
+  left: 50px;
+  top: 6px;
+  font-size: 1.3125rem;
+  font-weight: 300;
+  color: #69939e;
+}
+
 .event-header .buttons-right {
   position: absolute;
   top: 0;
