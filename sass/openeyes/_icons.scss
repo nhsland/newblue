@@ -253,7 +253,7 @@
 	&.warning 			{ background-image: url( svg-path('ui/warning') ); } 
 	
 	// Tick and Cross
-	&.tick-green 		{ background-image: url( svg-path('ui/tick-green') ); }
+	&.tick-green 		{ background-image: url( svg-path-theme('ui/tick-green') ); }
 	&.cross-red 			{ background-image: url( svg-path('ui/cross-red') ); } 	
 
 	// R = Green; L = Red; B = Green/Red 

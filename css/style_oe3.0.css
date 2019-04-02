@@ -2871,7 +2871,7 @@ select.fixed-width {
 }
 
 .oe-i.tick-green {
-  background-image: url("../svg/in-css/ui/tick-green.svg");
+  background-image: url("../svg/in-css/ui/tick-green.pro.svg");
 }
 
 .oe-i.cross-red {
