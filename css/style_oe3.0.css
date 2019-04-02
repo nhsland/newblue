@@ -9896,7 +9896,7 @@ table.oe-clinic-list td.center {
 
 .oe-admin .admin-main table.standard tbody td {
   vertical-align: top;
-  padding: 7px 10px 7px 0;
+  padding: 6px 10px 4px 0;
 }
 
 .oe-admin .admin-main table.standard tbody td:first-child {
@@ -9931,6 +9931,56 @@ table.oe-clinic-list td.center {
 
 .oe-admin .admin-main table.large tbody td:first-child {
   padding-left: 3px;
+}
+
+.oe-admin .admin-main .admin-data-set {
+  position: relative;
+  border: 4px solid #05306a;
+  padding: 20px 5px 10px 5px;
+  margin: 10px 0 20px 0;
+}
+
+.oe-admin .admin-main .admin-data-set .admin-data-set {
+  margin: 15px 10px;
+}
+
+.oe-admin .admin-main .admin-data-set .data-set-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25px;
+  padding: 0 10px 5px 10px;
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #d6d6d6;
+  background: #05306a;
+}
+
+.oe-admin .admin-main .admin-data-set .data-set-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 10px 0 0;
+}
+
+.oe-admin .admin-main .admin-data-set .data-set-actions button {
+  margin-left: 5px;
 }
 
 .oe-admin .admin-main .restrict-filename {
