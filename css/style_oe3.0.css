@@ -508,7 +508,7 @@ html {
 
 .oe-full-content .oe-full-side-panel h3 {
   margin: 20px 0 10px 0;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   font-weight: 300;
   color: #626d7b;
 }
@@ -2226,7 +2226,7 @@ select.fixed-width {
   margin: 0 0 0 8px;
 }
 
-.oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i.active, .oe-i.no-hover, .oe-i.circle-green, .oe-i.circle-amber, .oe-i.circle-red, .oe-i.triangle-green, .oe-i.triangle-amber, .oe-i.triangle-red, .oe-i.warning {
+.oe-i:hover, .oe-i:focus, .oe-i:active, .oe-i.active, .oe-i.no-hover, .oe-i.circle-green, .oe-i.circle-amber, .oe-i.circle-red, .oe-i.triangle-green, .oe-i.triangle-amber, .oe-i.triangle-red, .oe-i.exclamation-green, .oe-i.exclamation-amber, .oe-i.exclamation-red, .oe-i.tick-green, .oe-i.cross-red, .oe-i.warning {
   opacity: 1;
 }
 
@@ -2866,13 +2866,16 @@ select.fixed-width {
   background-image: url("../svg/in-css/ui/exclamation-red.svg");
 }
 
-.oe-i.exclamation-green, .oe-i.exclamation-amber, .oe-i.exclamation-red {
-  opacity: 1;
-  margin: 0 0 0 2px;
-}
-
 .oe-i.warning {
   background-image: url("../svg/in-css/ui/warning.svg");
+}
+
+.oe-i.tick-green {
+  background-image: url("../svg/in-css/ui/tick-green.svg");
+}
+
+.oe-i.cross-red {
+  background-image: url("../svg/in-css/ui/cross-red.svg");
 }
 
 .oe-i.laterality {
@@ -2881,11 +2884,11 @@ select.fixed-width {
 }
 
 .oe-i.laterality.R {
-  background-image: url("../svg/in-css/icons/_laterality/lat-R.svg");
+  background-image: url("../svg/in-css/icons/_laterality/lat-R.pro.svg");
 }
 
 .oe-i.laterality.L {
-  background-image: url("../svg/in-css/icons/_laterality/lat-L.svg");
+  background-image: url("../svg/in-css/icons/_laterality/lat-L.pro.svg");
 }
 
 .oe-i.laterality.NA {
@@ -3621,6 +3624,13 @@ select.fixed-width {
 .oe-patient .patient-died em,
 .oe-patient .warning em {
   font-size: 0.625rem;
+}
+
+.oe-patient .nhs-number .oe-i.small {
+  width: 11px;
+  height: 11px;
+  background-size: 11px;
+  vertical-align: top;
 }
 
 .oe-patient .hospital-number {
@@ -8475,7 +8485,7 @@ span.squiggle {
 
 .oescape-header .data-awareness .group {
   position: relative;
-  border-right: 1px solid #26303d;
+  border-right: 1px solid #8c8c8c;
   padding: 0 10px 12px 0;
   margin: 0 10px 0 0;
 }
@@ -8496,7 +8506,7 @@ span.squiggle {
 .oescape-header .data-awareness .group .date {
   position: absolute;
   bottom: 0;
-  right: 0;
+  left: 0;
   font-size: 0.625rem;
   opacity: 0.5;
   width: 65px;
@@ -9804,12 +9814,14 @@ table.oe-clinic-list td.center {
 }
 
 .oe-admin {
-  background: #283442;
+  background: #141e2b;
 }
 
 .oe-admin .admin-panels {
   padding: 5px 10px 20px 10px;
-  border-right: 1px solid #626d7b;
+  background: #283442;
+  border-top: 1px solid #141e2b;
+  border-right: 1px solid #26303d;
 }
 
 .oe-admin .admin-panels .collapse-group {
@@ -9846,6 +9858,8 @@ table.oe-clinic-list td.center {
 .oe-admin ul.admin-nav li a {
   display: block;
   padding: 3px 0 3px 3px;
+  color: rgba(214, 214, 214, 0.8);
+  font-weight: 400;
 }
 
 .oe-admin ul.admin-nav li a:hover, .oe-admin ul.admin-nav li a:active, .oe-admin ul.admin-nav li a:focus, .oe-admin ul.admin-nav li a.selected {
@@ -9854,13 +9868,26 @@ table.oe-clinic-list td.center {
 }
 
 .oe-admin .admin-main {
-  padding: 0 10px 20px 0;
+  padding: 10px 10px 20px 0;
 }
 
 .oe-admin .admin-main h2 {
   font-size: 1.125rem;
+  color: cyan;
+  font-weight: 400;
+  margin: 0 0 10px 0;
+}
+
+.oe-admin .admin-main h3 {
+  font-size: 1rem;
   color: #8c8c8c;
   font-weight: 300;
+  margin: 0 0 10px 0;
+}
+
+.oe-admin .admin-main p {
+  font-size: 0.875rem;
+  padding: 0 0 10px 0;
 }
 
 .oe-admin .admin-main table.standard th, .oe-admin .admin-main table.standard td {
@@ -9868,22 +9895,47 @@ table.oe-clinic-list td.center {
 }
 
 .oe-admin .admin-main table.standard tbody td {
-  padding: 8px 10px 8px 0;
   vertical-align: top;
+  padding: 7px 10px 7px 0;
 }
 
 .oe-admin .admin-main table.standard tbody td:first-child {
   padding-left: 3px;
 }
 
-.oe-admin .admin-main table.standard tbody td .restrict-filename {
-  word-wrap: break-word;
-  width: 200px;
-}
-
 .oe-admin .admin-main table.standard tfoot td {
   padding: 20px 0 0 0;
   margin: 20px 0 0 0;
+}
+
+.oe-admin .admin-main table.large {
+  width: 100%;
+}
+
+.oe-admin .admin-main table.large th, .oe-admin .admin-main table.large td {
+  font-size: 0.8125rem;
+}
+
+.oe-admin .admin-main table.large tbody tr {
+  border-bottom: 1px solid #26303d;
+}
+
+.oe-admin .admin-main table.large tbody tr:last-child {
+  border-bottom: none;
+}
+
+.oe-admin .admin-main table.large tbody td {
+  vertical-align: middle;
+  padding: 7px 10px 7px 0;
+}
+
+.oe-admin .admin-main table.large tbody td:first-child {
+  padding-left: 3px;
+}
+
+.oe-admin .admin-main .restrict-filename {
+  word-wrap: break-word;
+  width: 200px;
 }
 
 .oe-reports {

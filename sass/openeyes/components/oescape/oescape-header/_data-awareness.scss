@@ -22,7 +22,7 @@
 		.group {
 			position: relative;
 			
-			border-right:1px solid $oe-line;
+			border-right:1px solid $oe-text-light;
 			padding:0 10px 12px 0; // padding bottom to allow for date positioning
 			margin:0 10px 0 0;
 			
@@ -41,7 +41,7 @@
 			.date {
 				position:absolute;
 				bottom:0;
-				right:0;
+				left:0;
 				@include font-size(10);
 				opacity:0.5;
 				width:65px; // the default is 88px (see ui.scss for notes)

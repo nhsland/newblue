@@ -3,11 +3,21 @@
 //
 
 // OE Admin
-// layout using "oe-full-content" "subgrid" structure.
-// this allows the main and sidebar to scroll independently
-// Groups of <ul> nav links in sidebar 
 
-.oe-admin {
-	background:$oe-blue-dark2; // themed
+
+.oe-admin {	
+	
+	.admin-main {
+		
+		// filenames these need restricting and wrapping
+		// ...in DICOM logs there are very long 
+		.restrict-filename {
+			word-wrap:break-word;
+			width:200px;
+		}
+	
+	}
 	
 }
+
+

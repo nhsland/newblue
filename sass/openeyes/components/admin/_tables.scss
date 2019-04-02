@@ -8,38 +8,23 @@
 .oe-admin {	
 	
 	.admin-main {
-		padding:0 10px 20px 0;
-		
-		// title (if this can't moved out of page
-		// and into the header area)
-		h2 {
-			@include font-size(18);
-			color:$oe-text-light;
-			font-weight: $oe-font-light;
-		}
-		
-
+	
 		// extend 'standard'
+		// used for all data layouts in admin
+		// used all over the place
 		table.standard {
 			th, td {
+				// reduce the 'standard' font
 				@include font-size(12);		
 			}
 			
 			tbody {
 				td {
-					padding:8px 10px 8px 0; 
-					vertical-align: top;
+					vertical-align: top;			// make sure all data is:
+					padding:7px 10px 7px 0; 		// increase vertical padding slightly
 					
 					&:first-child {
 						padding-left:3px;
-					}
-					
-					// in DICOM logs there are very long 
-					// filenames these need restricting 
-					// and wrapping
-					.restrict-filename {
-						word-wrap:break-word;
-						width:200px;
 					}
 				}
 			}
@@ -48,6 +33,38 @@
 				td {
 					padding:20px 0 0 0;
 					margin:20px 0 0 0;
+				}
+			}
+		}
+		
+		
+		// 'large' 
+		//  vertically aligned and larger table option
+		//  this is for searches and for settings
+		
+		table.large {
+			width:100%;
+			
+			th, td {
+				// reduce the 'standard' font
+				@include font-size(13);		
+			}
+			
+			tbody {
+				tr {
+					border-bottom:1px solid $oe-line;
+					&:last-child { 
+						border-bottom: none;
+					}
+				}
+				
+				td {
+					vertical-align: middle;			// make sure all data is:
+					padding:7px 10px 7px 0; 		// increase vertical padding slightly
+					
+					&:first-child {
+						padding-left:3px;
+					}
 				}
 			}
 		}

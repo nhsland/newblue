@@ -49,8 +49,19 @@
 		span, em { opacity:0.5 }
 		em {
 			@include font-size(10);
+		}	
+	}
+	
+	// NHS Number Trace warning
+	// uses an orange exclamination mark
+	// small size (13px) is too big so tweak it
+	.nhs-number {
+		.oe-i.small {
+			width:11px;
+			height:11px;
+			background-size:11px;
+			vertical-align: top;
 		}
-		
 	}
 	
 	.hospital-number {

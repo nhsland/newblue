@@ -26,7 +26,9 @@
 			a {
 				display:block;
 				padding:3px 0 3px 3px;
-				
+				color:rgba($oe-text,0.8);
+				font-weight: $oe-font-medium;
+							
 				&:hover, &:active, &:focus,
 				&.selected {
 					color:rgb(255,255,255);

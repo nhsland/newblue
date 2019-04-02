@@ -85,6 +85,11 @@
 	&.triangle-green,
 	&.triangle-amber,
 	&.triangle-red,
+	&.exclamation-green,
+	&.exclamation-amber,
+	&.exclamation-red,
+	&.tick-green,
+	&.cross-red,
 	&.warning
 	{ 
 		opacity:1; 
@@ -220,7 +225,7 @@
 	&.ed-zoom			{ background-image: url( svg-path('eyedraw/ed-zoom') ); }
 	&.ed-lock			{ background-image: url( svg-path('eyedraw/ed-lock') ); }
 	&.ed-trash			{ background-image: url( svg-path('eyedraw/ed-trash') ); }
-	&.ed-move-back  	{ background-image: url( svg-path('eyedraw/ed-backward') ); }
+	&.ed-move-back  		{ background-image: url( svg-path('eyedraw/ed-backward') ); }
 	&.ed-move-forward 	{ background-image: url( svg-path('eyedraw/ed-forward') ); }
 	&.ed-info 			{ background-image: url( svg-path('eyedraw/ed-info') ); }
 	
@@ -230,29 +235,26 @@
 	// making these also available as icons
 	&.circle-green		{ background-image: url( svg-path('ui/circle-green') ); }
 	&.circle-amber		{ background-image: url( svg-path('ui/circle-orange') ); }
-	&.circle-red		{ background-image: url( svg-path('ui/circle-red') ); }
+	&.circle-red			{ background-image: url( svg-path('ui/circle-red') ); }
 	
 	// triangles G / A / R
 	// Patient Risk Status
 	&.triangle-green		{ background-image: url( svg-path('ui/triangle-green') ); }
 	&.triangle-amber		{ background-image: url( svg-path('ui/triangle-amber') ); }
-	&.triangle-red			{ background-image: url( svg-path('ui/triangle-red') ); }
+	&.triangle-red		{ background-image: url( svg-path('ui/triangle-red') ); }
 
 	// exclamation mark (amber, red)
 	// ONLY for NHS Number status
 	&.exclamation-green		{ background-image: url( svg-path('ui/exclamation-green') ); }
 	&.exclamation-amber		{ background-image: url( svg-path('ui/exclamation-orange') ); }
 	&.exclamation-red		{ background-image: url( svg-path('ui/exclamation-red') ); }
-
-	&.exclamation-green,
-	&.exclamation-amber,
-	&.exclamation-red {
-		opacity:1;
-		margin:0 0 0 2px;
-	}
 	
 	// RED warning triangle
 	&.warning 			{ background-image: url( svg-path('ui/warning') ); } 
+	
+	// Tick and Cross
+	&.tick-green 		{ background-image: url( svg-path('ui/tick-green') ); }
+	&.cross-red 			{ background-image: url( svg-path('ui/cross-red') ); } 	
 
 	// R = Green; L = Red; B = Green/Red 
 	// Eye icons are the same across both themes		
@@ -263,11 +265,11 @@
 		
 		// Right Eye
 		&.R {
-			background-image: url( svg-path('icons/_laterality/lat-R') );
+			background-image: url( svg-path-theme('icons/_laterality/lat-R') );
 		}
 		// Left Eye
 		&.L {
-			background-image: url( svg-path('icons/_laterality/lat-L') );
+			background-image: url( svg-path-theme('icons/_laterality/lat-L') );
 		}
 		
 		// N/A - grey dot 
