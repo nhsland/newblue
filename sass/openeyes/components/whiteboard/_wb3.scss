@@ -11,15 +11,18 @@
 
 	.wb3 {
 		display: grid;
-		grid: repeat(4, 1fr) / repeat(5, 1fr);
+		// create a 3 x 3 grid, this flows L to R
+		grid: repeat(3, 1fr) / repeat(3, 1fr);
 		// fill the COLUMNs automatically, 
 		// ... special layouts: Risks / Eye Canvas on the right
-		grid-auto-flow: column;
+		// outside of explict grid, make sure it's the same width:
+		grid-auto-flow: row;
+		grid-auto-columns: 1fr;
 		
 		// important!
 		// don't allow the grid to expand beyond viewport
 		// other wise whole grid scrolls and the footer buttons
-		// will go off the bottom!
+		// will go off the bottom- yikees!
 		height:calc(100vh - #{$oe-header-height} - 50px);
 		
 		background:$oe-wb-bg; // theme changable
@@ -29,42 +32,30 @@
 		.oe-wb-special {
 			position: relative;
 			margin:4px;
-			padding:8px;
+			padding:0 0 8px 0;
 			//border:2px solid $oe-text-light;
 			background: $oe-wb-widget-bg;
-			border-radius:3px;  // take the edge off?
+			// border-radius:3px;  // take the edge off?
 			
 			// if data overflows handle it
 			overflow-x: hidden;
 			overflow-y: auto; 
+	
+			word-break:break-word; // make sure words 
 			
 			// basic layout stuff:
 			h3 {
-				display:inline-block;
-				font-size: 1.15vw;
+				display:block;
+				font-size: 2vw;
 				font-weight: $oe-font-medium;
-				padding:0 0 0 12px;
+				padding:4px 2px 6px 6px;
 				margin:0 0 5px 0;
-				color:$oe-wb-headers;
-				
-				$colour-flag-w: 5px; 
-				background-repeat: no-repeat;
-				
-				// default colour" 
-				background-image: linear-gradient(to right,$oe-text-active $colour-flag-w, transparent $colour-flag-w);
-
-				&.green {
-					background-image: linear-gradient(to right,$oe-status-green $colour-flag-w, transparent $colour-flag-w);
-				}
-				
-				&.orange {
-					background-image: linear-gradient(to right,$oe-status-amber $colour-flag-w, transparent $colour-flag-w);
-				}
-				
-				&.grey {
-					background-image: linear-gradient(to right,$oe-alert-grey $colour-flag-w, transparent $colour-flag-w);
-				}
+				color:$oe-wb-widget-bg;
+				background:$oe-text;
 			}
+			
+			
+			
 			
 			ul {
 				li {
@@ -94,6 +85,18 @@
 				}
 			}			
 		}
+		
+		&.alt-headers {
+			.oe-wb-widget,
+			.oe-wb-special {
+				h3 {
+					color:$oe-text-active;
+					background:tint($oe-wb-widget-bg,20);
+				}
+				
+			}
+		}
+		
 	}	
 }
 

@@ -10,6 +10,19 @@
 		
 		.oe-wb-widget {
 			
+			&.green {
+				border-bottom: 10px solid $oe-alert-green;
+			}
+			
+			&.orange {
+				border-bottom: 10px solid $oe-alert-orange;
+			}
+			
+			&.red {
+				border-bottom: 10px solid $oe-alert-red;
+			}
+			
+			
 			// N/A (none)
 			.none {
 				color:rgba($oe-text-light,0.5);
@@ -19,31 +32,49 @@
 			// basic <br> list
 			&.data-list {
 				.wb-data {
-					font-size: 1.4vw;
+					padding:0 8px;
+					font-size: 2vw;
 					line-height:1.3;	
 					font-weight: $oe-font-medium;
 				}
 			}
 			
-			// single value
-			&.data-single {
+			// single value + extra
+			&.data-single,
+			&.data-single-extra {
+				padding-top:20px;
 				@include flex(center,center);
 				
 				.wb-data {
-					font-size: 3vw;
-					
+					font-size: 5.5vw;
+					text-align: center;
 					// qualify data postfix
 					small {
-						font-size: 1.1vw;
+						font-size: 2vw;
 					}
+				}
+				
+				.extra-data {
+/*
+					position: absolute;
+					bottom:5px;
+					left:0;
+					width:100%;
+*/
+					text-align: center;
+					font-size: 2.4vw;
+					line-height:1;
 				}
 	
 				h3 {
 					position: absolute;
-					top:10px;
-					left:10px;
+					top:0;
+					left:0;
+					width:100%;
 				}
 			}
+			
+			
 		}
 	}
 }

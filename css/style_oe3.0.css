@@ -1875,7 +1875,7 @@ select.fixed-width {
   font-size: 0.625rem;
   text-align: left;
   color: #8c8c8c;
-  font-weight: 300;
+  font-weight: 400;
   padding: 0 8px 3px 0;
 }
 
@@ -9970,9 +9970,9 @@ table.oe-clinic-list td.center {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -10340,8 +10340,9 @@ table.oe-clinic-list td.center {
 
 .oe-whiteboard .wb3 {
   display: grid;
-  grid: repeat(4, 1fr)/repeat(5, 1fr);
-  grid-auto-flow: column;
+  grid: repeat(3, 1fr)/repeat(3, 1fr);
+  grid-auto-flow: row;
+  grid-auto-columns: 1fr;
   height: calc(100vh - 60px - 50px);
   background: #172332;
   color: #d6d6d6;
@@ -10351,38 +10352,22 @@ table.oe-clinic-list td.center {
 .oe-whiteboard .wb3 .oe-wb-special {
   position: relative;
   margin: 4px;
-  padding: 8px;
+  padding: 0 0 8px 0;
   background: #0a0a14;
-  border-radius: 3px;
   overflow-x: hidden;
   overflow-y: auto;
+  word-break: break-word;
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget h3,
 .oe-whiteboard .wb3 .oe-wb-special h3 {
-  display: inline-block;
-  font-size: 1.15vw;
+  display: block;
+  font-size: 2vw;
   font-weight: 400;
-  padding: 0 0 0 12px;
+  padding: 4px 2px 6px 6px;
   margin: 0 0 5px 0;
-  color: #69939e;
-  background-repeat: no-repeat;
-  background-image: linear-gradient(to right, #5ab4b4 5px, transparent 5px);
-}
-
-.oe-whiteboard .wb3 .oe-wb-widget h3.green,
-.oe-whiteboard .wb3 .oe-wb-special h3.green {
-  background-image: linear-gradient(to right, #009600 5px, transparent 5px);
-}
-
-.oe-whiteboard .wb3 .oe-wb-widget h3.orange,
-.oe-whiteboard .wb3 .oe-wb-special h3.orange {
-  background-image: linear-gradient(to right, #c86400 5px, transparent 5px);
-}
-
-.oe-whiteboard .wb3 .oe-wb-widget h3.grey,
-.oe-whiteboard .wb3 .oe-wb-special h3.grey {
-  background-image: linear-gradient(to right, #505050 5px, transparent 5px);
+  color: #0a0a14;
+  background: #d6d6d6;
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget ul li,
@@ -10416,18 +10401,38 @@ table.oe-clinic-list td.center {
   padding-left: 2px;
 }
 
+.oe-whiteboard .wb3.alt-headers .oe-wb-widget h3,
+.oe-whiteboard .wb3.alt-headers .oe-wb-special h3 {
+  color: #5ab4b4;
+  background: #3b3b43;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget.green {
+  border-bottom: 10px solid #006900;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget.orange {
+  border-bottom: 10px solid #a04600;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget.red {
+  border-bottom: 10px solid #9b0000;
+}
+
 .oe-whiteboard .wb3 .oe-wb-widget .none {
   color: rgba(140, 140, 140, 0.5);
   font-weight: 300;
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget.data-list .wb-data {
-  font-size: 1.4vw;
+  padding: 0 8px;
+  font-size: 2vw;
   line-height: 1.3;
   font-weight: 400;
 }
 
-.oe-whiteboard .wb3 .oe-wb-widget.data-single {
+.oe-whiteboard .wb3 .oe-wb-widget.data-single, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra {
+  padding-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10439,22 +10444,36 @@ table.oe-clinic-list td.center {
           align-items: center;
 }
 
-.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data {
-  font-size: 3vw;
+.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data {
+  font-size: 5.5vw;
+  text-align: center;
 }
 
-.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data small {
-  font-size: 1.1vw;
+.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data small, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data small {
+  font-size: 2vw;
 }
 
-.oe-whiteboard .wb3 .oe-wb-widget.data-single h3 {
+.oe-whiteboard .wb3 .oe-wb-widget.data-single .extra-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .extra-data {
+  /*
+					position: absolute;
+					bottom:5px;
+					left:0;
+					width:100%;
+*/
+  text-align: center;
+  font-size: 2.4vw;
+  line-height: 1;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget.data-single h3, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra h3 {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .oe-whiteboard .wb3 .oe-wb-special {
-  font-size: 1.2vw;
+  font-size: 2vw;
   font-weight: 400;
   line-height: 1.2;
 }
@@ -10462,24 +10481,17 @@ table.oe-clinic-list td.center {
 .oe-whiteboard .wb3 .oe-wb-special hr.divider {
   display: block;
   border: 0;
-  margin: 15px 0 15px 0;
+  margin: 5px 0 5px 0;
   border-bottom: 5px solid #172332;
 }
 
 .oe-whiteboard .wb3 .oe-wb-special .alert-box {
-  font-size: 1vw;
+  font-size: 2vw;
+  padding: 1px 8px;
 }
 
 .oe-whiteboard .wb3 .oe-wb-special.risks {
-  grid-area: 1 / 5 / 5 / 6;
-}
-
-.oe-whiteboard .wb3 .oe-wb-special.double-right-top {
-  grid-area: 1 / 4 / 3 / 5;
-}
-
-.oe-whiteboard .wb3 .oe-wb-special.double-right-bottom {
-  grid-area: 3 / 4 / 5 / 5;
+  grid-area: 1 / 4 / 4 / 5;
 }
 
 /* HighCharts */

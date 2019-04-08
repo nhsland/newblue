@@ -5,8 +5,9 @@ it was popping up on rollover...
 **/
 idg.patientMiniOverview = function(){
 	
+	// is the popup DOM available?
 	if( $('.oe-patient-mini-overview').length == 0 ) return;
-
+	
 	/**
 	IDG is only using 1 DOM as a demo for all interactions
 	Martin Luther King

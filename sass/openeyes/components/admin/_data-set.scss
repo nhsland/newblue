@@ -37,11 +37,12 @@
 			}
 			
 			.data-set-actions {
-				@include flex(space-between,center);
+				@include flex(flex-end,center);
 				padding:0 10px 0 0;
 				button {
 					margin-left:5px;
 				}
+				
 			}
 		}
 	
