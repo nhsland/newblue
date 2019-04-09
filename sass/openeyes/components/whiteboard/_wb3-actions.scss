@@ -1,0 +1,70 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Whiteboard
+
+.oe-whiteboard {
+
+	// footer actions
+	// at the bottom so that they can be reached
+	// and you can still see the data
+	
+	.wb3-actions {
+		position:fixed;
+		left:0;
+		height:50px;
+		width:100%;
+		background:$oe-pro-bg;
+		
+		transition: bottom 0.2s ease-in-out;
+		
+		// hidden
+		&.down {
+			bottom:-50px;
+		}
+		
+		&.up {
+			bottom:0;
+		}
+		
+		// actions by default are hidden.
+		// JS controlled icon btn.
+		// CSS handles the animation
+		.openclose-icon-btn {
+			position:absolute;
+			bottom:100%; 
+			left:71vw;
+			
+			background:$oe-btn-blue url( svg-path('icons/direction-up-circle') ) center center no-repeat;
+			background-size:25px;
+			
+			width:50px;
+			height:45px;
+			border-radius:15px 15px 0 0;
+			cursor: pointer;
+			
+			&.close {
+				background-image: url( svg-path('icons/remove-circle') );
+			}
+		}
+		
+		// have to center them because of
+		// the version 'tag' label:
+		@include flex(center, center);
+		
+		button {
+			@include font-size(16);
+			padding: 0px 16px; // tab is 16px  
+			height: 38px;    // tab is 38px
+			margin:0 32px 0 0;
+			&:last-child {
+				margin-right:0;
+			}
+		}
+	}
+	
+}
+
+
+

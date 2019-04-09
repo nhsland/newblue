@@ -23,7 +23,7 @@
 		// don't allow the grid to expand beyond viewport
 		// other wise whole grid scrolls and the footer buttons
 		// will go off the bottom- yikees!
-		height:calc(100vh - #{$oe-header-height} - 50px);
+		height:calc(100vh - #{$oe-header-height});
 		
 		background:$oe-wb-bg; // theme changable
 		color:$oe-wb-data-text;
@@ -37,26 +37,21 @@
 			background: $oe-wb-widget-bg;
 			// border-radius:3px;  // take the edge off?
 			
-			// if data overflows handle it
-			overflow-x: hidden;
-			overflow-y: auto; 
+			overflow: hidden;		
 	
 			word-break:break-word; // make sure words 
 			
 			// basic layout stuff:
 			h3 {
 				display:block;
-				font-size: 2vw;
+				font-size: 1.9vw;
 				font-weight: $oe-font-medium;
-				padding:4px 2px 6px 6px;
+				padding:3px 2px 6px 8px;
 				margin:0 0 5px 0;
 				color:$oe-wb-widget-bg;
 				background:$oe-text;
 			}
-			
-			
-			
-			
+
 			ul {
 				li {
 					margin-bottom:3px;
