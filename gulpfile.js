@@ -15,9 +15,9 @@ JS files for IDG v3 demos
 var gulp 			= require('gulp');
 // sass
 var sass 			= require('gulp-sass');
-var autoprefixer	= require('gulp-autoprefixer');
+var autoprefixer		= require('gulp-autoprefixer');
 // sprites
-var spritesmith 	= require('gulp.spritesmith');
+var spritesmith 		= require('gulp.spritesmith');
 // js
 var concat       	= require('gulp-concat');
 var uglify       	= require('gulp-uglify'); 
@@ -36,11 +36,11 @@ Config
 **/ 
 var config = {
 	sass:			'./sass/style_oe3.0_pro.scss',					// scss for Pro (dark) OE v3.0  
-	classic:		'./sass/style_oe3.0_classic.scss', 				// scss for Classic (light) theme
+	classic:			'./sass/style_oe3.0_classic.scss', 				// scss for Classic (light) theme
 	print:			'./sass/style_oe3.0_print.scss',				// print
-	eyedrawSass:	'./sass/style_eyedraw-draw-icons.scss', 		// eyedraw draw doodle icons
-	cssFile:		'style_oe3.0',									// suffixed 
-	css:			'./css',
+	eyedrawSass:		'./sass/style_eyedraw-draw-icons.scss', 		// eyedraw draw doodle icons
+	cssFile:			'style_oe3.0',									// suffixed 
+	css:				'./css',
 	watchSass:		'./sass/**/*.scss',								// watch scss													
 	idgJS: 			'./js/idg/**/*.js',								// ---- watch IDG demo JS files
 }
