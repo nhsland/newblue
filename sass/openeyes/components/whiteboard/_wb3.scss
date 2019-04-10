@@ -44,7 +44,7 @@
 			// basic layout stuff:
 			h3 {
 				display:block;
-				font-size: 1.9vw;
+				font-size: $wb3-font-header;
 				font-weight: $oe-font-medium;
 				padding:3px 2px 6px 8px;
 				margin:0 0 5px 0;
@@ -56,42 +56,8 @@
 				li {
 					margin-bottom:3px;
 				}
-			}
-			
-			table {
-				width:100%;
-				margin:4px 0;
-				tbody {
-					tr {
-						border-bottom:2px solid $oe-line;
-						&:last-child { 
-							border-bottom: none;
-						}
-					}
-					
-					td {
-						padding:5px 5px 5px 0; 
-						
-						// improve visual layout of data
-						&:first-child {
-							padding-left:2px;
-						}
-					}
-				}
 			}			
 		}
-		
-		&.alt-headers {
-			.oe-wb-widget,
-			.oe-wb-special {
-				h3 {
-					color:$oe-text-active;
-					background:tint($oe-wb-widget-bg,20);
-				}
-				
-			}
-		}
-		
 	}	
 }
 

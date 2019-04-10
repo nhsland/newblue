@@ -10,40 +10,28 @@
 		
 		.oe-wb-widget {
 			
-			&.green {
-				border-bottom: 8px solid $oe-alert-green;
-			}
-			
-			&.orange {
-				border-bottom: 8px solid $oe-alert-orange;
-			}
-			
-			&.red {
-				border-bottom: 8px solid $oe-alert-red;
-			}
-			
-			
+			// color flags for complexity
+			&.green 		{ border-bottom: 8px solid $oe-alert-green; }
+			&.orange 	{ border-bottom: 8px solid $oe-alert-orange; }
+			&.red 		{ border-bottom: 8px solid $oe-alert-red; }
+
 			// N/A (none)
 			.none {
 				color:rgba($oe-text-light,0.5);
 				font-weight: 300
 			}
 			
-			.wb-data-overflow {
-				//height:100%;
-				// 
-			}
-			
-			// basic <br> list
+			// Widget TYPEs
+			// basic <ul> list in the data
 			&.data-list {
 				.wb-data {
 					padding:0 4px 20px 8px;
-					font-size: 2.1vw;
-					line-height:1.3;	
+					font-size: $wb3-font-base;
 					font-weight: $oe-font-medium;
-					
-					// for data-list, need to handle 
-					// the scrolling here (so header doesn't scroll)
+					line-height:1.3;	
+		
+					// for data-list, handle the scrolling here
+					// so that header does not scroll
 					height:85%;
 					overflow-y:auto;
 				}
@@ -51,27 +39,36 @@
 			
 			// single value + extra
 			&.data-single,
-			&.data-single-extra {
+			&.data-single-extra,
+			&.data-double-extra {
 				@include flex(center,center);
 				// as header is absolutely positioned
 				// we need to offset the center position
 				padding-top:35px;
 
 				.wb-data {
-					font-size: 4vw;
 					text-align: center;
-					// qualify data postfix
 					small {
-						font-size: 1.9vw;
+						display:inline-block;
+						font-size: $wb3-font-header; // qualify data postfix (e.g. mm / D)
+						padding:0 0 0 5px;
+					}
+					
+					.extra-data {
+						text-align: center;
+						font-size: $wb3-font-base;
+						line-height:1;
+					}
+					
+					.extra-small-data {
+						font-size: $wb3-font-header;
+						line-height:1;
+						margin-bottom:5px;
+						&:last-child {
+							margin-bottom: 0;
+						}				
 					}
 				}
-				
-				.extra-data {
-					text-align: center;
-					font-size: 2.2vw;
-					line-height:1;
-				}
-	
 				// using flex, but don't want the h3
 				// affected by the flex:
 				h3 {
@@ -82,7 +79,19 @@
 				}
 			}
 			
+			&.data-single,
+			&.data-single-extra {
+				.wb-data {
+					font-size: $wb3-font-large;
+				}
+			}
 			
+			&.data-double-extra {
+				padding-top:40px;
+				.wb-data {
+					font-size: $wb3-font-medium;
+				}
+			}	
 		}
 	}
 }

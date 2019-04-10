@@ -10346,38 +10346,6 @@ table.oe-clinic-list td.center {
   margin-bottom: 3px;
 }
 
-.oe-whiteboard .wb3 .oe-wb-widget table,
-.oe-whiteboard .wb3 .oe-wb-special table {
-  width: 100%;
-  margin: 4px 0;
-}
-
-.oe-whiteboard .wb3 .oe-wb-widget table tbody tr,
-.oe-whiteboard .wb3 .oe-wb-special table tbody tr {
-  border-bottom: 2px solid #26303d;
-}
-
-.oe-whiteboard .wb3 .oe-wb-widget table tbody tr:last-child,
-.oe-whiteboard .wb3 .oe-wb-special table tbody tr:last-child {
-  border-bottom: none;
-}
-
-.oe-whiteboard .wb3 .oe-wb-widget table tbody td,
-.oe-whiteboard .wb3 .oe-wb-special table tbody td {
-  padding: 5px 5px 5px 0;
-}
-
-.oe-whiteboard .wb3 .oe-wb-widget table tbody td:first-child,
-.oe-whiteboard .wb3 .oe-wb-special table tbody td:first-child {
-  padding-left: 2px;
-}
-
-.oe-whiteboard .wb3.alt-headers .oe-wb-widget h3,
-.oe-whiteboard .wb3.alt-headers .oe-wb-special h3 {
-  color: #5ab4b4;
-  background: #3b3b43;
-}
-
 .oe-whiteboard .wb3-actions {
   position: fixed;
   left: 0;
@@ -10451,14 +10419,14 @@ table.oe-clinic-list td.center {
 
 .oe-whiteboard .wb3 .oe-wb-widget.data-list .wb-data {
   padding: 0 4px 20px 8px;
-  font-size: 2.1vw;
-  line-height: 1.3;
+  font-size: 2vw;
   font-weight: 400;
+  line-height: 1.3;
   height: 85%;
   overflow-y: auto;
 }
 
-.oe-whiteboard .wb3 .oe-wb-widget.data-single, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra {
+.oe-whiteboard .wb3 .oe-wb-widget.data-single, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10471,26 +10439,49 @@ table.oe-clinic-list td.center {
   padding-top: 35px;
 }
 
-.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data {
-  font-size: 4vw;
+.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data {
   text-align: center;
 }
 
-.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data small, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data small {
+.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data small, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data small, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data small {
+  display: inline-block;
   font-size: 1.9vw;
+  padding: 0 0 0 5px;
 }
 
-.oe-whiteboard .wb3 .oe-wb-widget.data-single .extra-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .extra-data {
+.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data .extra-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data .extra-data, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data .extra-data {
   text-align: center;
-  font-size: 2.2vw;
+  font-size: 2vw;
   line-height: 1;
 }
 
-.oe-whiteboard .wb3 .oe-wb-widget.data-single h3, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra h3 {
+.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data .extra-small-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data .extra-small-data, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data .extra-small-data {
+  font-size: 1.9vw;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data .extra-small-data:last-child, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data .extra-small-data:last-child, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data .extra-small-data:last-child {
+  margin-bottom: 0;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget.data-single h3, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra h3, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra h3 {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data {
+  font-size: 4vw;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget.data-double-extra {
+  padding-top: 40px;
+}
+
+.oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data {
+  font-size: 3.1vw;
 }
 
 .oe-whiteboard .wb3 .oe-wb-special {
