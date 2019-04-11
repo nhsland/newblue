@@ -13,7 +13,7 @@
 
 	// Option <ul> select lists are laid out using <table>
 	// HOWEVER this can be an issue when inserted into another <table>
-	// THEREFORE ensure all UI aspects are set here, rather than relying on cascades
+	// THEREFORE ensure all styles are set here, rather than relying on cascades
 	
 	table.select-options {
 			
@@ -28,7 +28,7 @@
 				text-align: left;
 				color:$oe-text-light;
 				font-weight:$oe-font-medium;
-				padding:0 8px 3px 0;
+				padding:0 2px 3px 5px;
 				
 				&:last-child {
 					text-align: left;
@@ -43,25 +43,32 @@
 			}
 			
 			td {
-				// duplicated (and apparently unnecessary) declarations here to avoid cascade issues!!
-				// Note-to-self! DO NOT any declarations! ;)
-				@include font-size(12);
-				text-align: left;
-				padding:0 10px 0 0; // space the list groups 
+				// duplicated (and apparently unnecessary) declarations 
+				// are here to avoid cascade issues!!
+				// Note-to-self! DO NOT remove any declarations! ;)
 				
 				vertical-align: top;
+				
+				@include font-size(12);
+				text-align: left;
+				padding:0 5px 0 6px; // space the list groups 
+				
+				border-left:2px solid shade( $oe-popup-bg, 20 );
+				
+				
+				&:last-child {
+					@include font-size(12);
+					padding:0 0 0 6px;
+					text-align: left;
+				}
 				
 				  
 				&:first-child {
 					@include font-size(12);
-					padding:0 10px 0 0;
+					padding:0 5px 0 0;
+					border-left:none;
 				}
 				
-				&:last-child {
-					@include font-size(12);
-					padding:0 0 0 0;
-					text-align: left;
-				}
 				
 				// wrapper multiple group lists in the td 
 				// (but used all the time, even for single lists)
@@ -69,6 +76,7 @@
 					display:flex;
 					align-items:flex-start;
 					justify-content:flex-start;
+
 				}				
 			}
 		}		

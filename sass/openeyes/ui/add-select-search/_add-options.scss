@@ -33,16 +33,17 @@
 			// this assumes a text value:
 			.restrict-width {
 				display:inline-block;
-				min-width:125px;
-				max-width:130px;
+				width:130px; 
 				word-break: break-word;
-			}
-			
-			// this is for numerics (i.e. 1,2,3 and 0.35)
-			// this is <span>
-			.auto-width {
-				// white-space:nowrap; // this cause really look text to break the popup box
-				// max-width: 400px;
+				
+				// width was set as below - but no idea why!
+				// (so, kept in-case needs re-instating)			
+				// min-width:125px;
+				// max-width:130px;
+
+				&.extended {
+					width:250px;
+				}
 			}
 			
 			&:hover, &:focus, &:active, &.selected {
@@ -83,6 +84,7 @@
 				}
 			}
 		}
+		
 	}
 }
 
