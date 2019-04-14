@@ -6,6 +6,9 @@
 // Popup box showing the common options 
 // and an input to allow search with autocomplete
 
+$oe-ass-restricted-width: 130px;
+$oe-ass-restricted-width-extended: 250px;
+
 .oe-add-select-search {	
 	position:fixed; 					// Fixed take it out of the Grid. 
 	bottom:0; 						// JS will override and position
@@ -16,14 +19,19 @@
 	padding:5px 10px 35px 10px; 
 	
 	// min-width based on testing
-	// be careful:
+	// be careful if changing ;)
 	min-width: 290px;	
 	
 	// set to allow 0-9 input WITHOUT scroll	
 	// height is restricted but not here.
+	// min-height set to help with AJAX loading
 	// content lists restrist themselves
 	// height MAY push up if table headers wrap	
 	min-height:$oe-add-insert-popup-height;
+	// JS needs to control Ypos so that the popup 
+	// doesn't go above (over) the header
+	max-height:290px; 
+	
 		
 	@include font-size(11);			
 	font-weight:400;

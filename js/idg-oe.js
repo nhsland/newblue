@@ -544,6 +544,159 @@ idg.multiPageScroll = function(){
 	
 }
 
+/**
+OEscape 
+**/
+var oes = {
+	
+	init:function(){
+		// exit oescape and go back to last viewed (non-oes) page
+		$('#js-exit-oescape').click( function(){
+			window.location = localStorage.getItem("lastPage");
+		});
+	},
+	
+	
+	/*
+	keep track of the last non-oescape page
+	so that you can exit oescape mode and 
+	return to last page	
+	*/
+	oescapeExit:function(){
+		var href = window.location.href;
+		if(href.includes("oescape") == false ){
+			localStorage.setItem( "lastPage",href ); 
+		}
+	}
+}
+/**
+Image Stack animations in OEscape	
+pass in ID string for container and sting ID prefix for images
+returns method to directly update the stack and sets up the Events
+
+@method initStack
+@param 'container' (String) 	- id for container DOM 
+@param 'img_id' (String) 		- id prefix for <img>, assumes numbering 1 to n
+@param 'callBack' (function)  	- callback optional
+@return {object} with method to setImg()	
+**/
+oes.initStack = function(container,img_id_prefix,callBack){
+	var container = $(container);
+	var imgID = 1; 					// default image set in PHP, the rest are 'hidden'
+	var imgTotal = container.children().length;
+	
+	// Mouse & Touch image stack animation
+	$( container ).bind( "mousemove touchmove", function( e ) {
+		e.stopPropagation();
+		
+		var offset = $(this).offset();		// these will update everytime browser is resized
+		var xPos = e.pageX - offset.left;
+		var w = $(this).width();			
+		var num = Math.ceil( xPos / ( w / imgTotal ) );
+		
+		if(num === 0 || num > imgTotal) return; // out of range
+		
+		updateImageStack(num); 
+			
+		if(typeof callBack === "function") callBack(num);			
+	});
+	
+	// update images
+	function updateImageStack(n){
+		$( img_id_prefix + imgID ).hide();
+		$( img_id_prefix + n ).removeClass('hidden').show();
+		imgID = n;
+	}
+	
+	// provide access to update Image directly, e.g. from highCharts
+	return {
+		setImg:function(imgID){
+			updateImageStack(imgID);
+			imgID = imgID;
+		}
+	};
+}
+/**
+Tab buttons control what is shown on the right handside
+
+@param tabBtnInfo (Array) - Array of Objects: {btn:'btn_id',area:'area_id'}
+@param 'callBack' (function)  	- callback optional
+**/
+oes.setupAreaTabButtons = function( tabBtnInfo, callBack ){
+	
+	for( var i=0; i<tabBtnInfo.length; i++ ){
+		
+		var btn = tabBtnInfo[i].btn = $(tabBtnInfo[i].btn);  // turn into jQuery
+		var area = tabBtnInfo[i].content = $(tabBtnInfo[i].content);	
+		var tab = new TabContent( btn,area,i );
+
+	}
+	
+	// assuming first button is default
+	tabBtnInfo[0].btn.addClass('selected');
+	
+	function TabContent( btn, content, i){
+		var btn = btn;
+		var content = content;
+		var i = i;
+		
+		btn.click( function( e ){
+			e.stopPropagation();
+			resetStacks();
+			$(this).addClass('selected');
+			content.removeClass('hidden').show();
+			
+			if(typeof callBack === "function") callBack(i);
+		});		
+	}
+
+	function resetStacks(){
+		for(var i=0; i<tabBtnInfo.length; i++){
+			tabBtnInfo[i].btn.removeClass('selected');
+			tabBtnInfo[i].content.hide();
+		}
+	}
+	
+}
+/**
+OEscape offers 4 resize states for the left hand chart area	
+@param 'callBack' (function)  	- callback optional
+**/
+oes.setupResizeButtons = function( callBack ){
+	
+	var left = $('.oes-left-side'),
+		right = $('.oes-right-side'),
+		size;
+	
+	// setup resize buttons
+	// buttons have data-area attribute: small, medium, large and full
+	$('.js-oes-area-resize').click(function( e ){
+		e.stopPropagation();
+		
+		var str = $(this).data('area');
+		switch(str){
+			case 'small': 	size = 500;
+			break;
+			case 'medium': 	size = 700;
+			break;
+			case 'large': 	size = 900;
+			break;
+			case 'full': 	size = null;  // null, when passed to highcharts makes chart fill container
+			break;
+		}
+		
+		// fullsize requires some tweaking
+		if(size == null){
+			left.css({"min-width":"500px", "width":"100%"});
+			right.hide();
+		} else {
+			left.css({"min-width": size + "px", "width":""});
+			right.show();	
+		}
+		
+		if(typeof callBack === "function" ) callBack(size);	
+	});
+}
 /*
 Clinic JS
 
@@ -1409,159 +1562,6 @@ clinic.updateTasks = function( ){
 	});
 	
 	$('#filter-tasks .current').text( clinic.data['tasks'].length );
-}
-/**
-OEscape 
-**/
-var oes = {
-	
-	init:function(){
-		// exit oescape and go back to last viewed (non-oes) page
-		$('#js-exit-oescape').click( function(){
-			window.location = localStorage.getItem("lastPage");
-		});
-	},
-	
-	
-	/*
-	keep track of the last non-oescape page
-	so that you can exit oescape mode and 
-	return to last page	
-	*/
-	oescapeExit:function(){
-		var href = window.location.href;
-		if(href.includes("oescape") == false ){
-			localStorage.setItem( "lastPage",href ); 
-		}
-	}
-}
-/**
-Image Stack animations in OEscape	
-pass in ID string for container and sting ID prefix for images
-returns method to directly update the stack and sets up the Events
-
-@method initStack
-@param 'container' (String) 	- id for container DOM 
-@param 'img_id' (String) 		- id prefix for <img>, assumes numbering 1 to n
-@param 'callBack' (function)  	- callback optional
-@return {object} with method to setImg()	
-**/
-oes.initStack = function(container,img_id_prefix,callBack){
-	var container = $(container);
-	var imgID = 1; 					// default image set in PHP, the rest are 'hidden'
-	var imgTotal = container.children().length;
-	
-	// Mouse & Touch image stack animation
-	$( container ).bind( "mousemove touchmove", function( e ) {
-		e.stopPropagation();
-		
-		var offset = $(this).offset();		// these will update everytime browser is resized
-		var xPos = e.pageX - offset.left;
-		var w = $(this).width();			
-		var num = Math.ceil( xPos / ( w / imgTotal ) );
-		
-		if(num === 0 || num > imgTotal) return; // out of range
-		
-		updateImageStack(num); 
-			
-		if(typeof callBack === "function") callBack(num);			
-	});
-	
-	// update images
-	function updateImageStack(n){
-		$( img_id_prefix + imgID ).hide();
-		$( img_id_prefix + n ).removeClass('hidden').show();
-		imgID = n;
-	}
-	
-	// provide access to update Image directly, e.g. from highCharts
-	return {
-		setImg:function(imgID){
-			updateImageStack(imgID);
-			imgID = imgID;
-		}
-	};
-}
-/**
-Tab buttons control what is shown on the right handside
-
-@param tabBtnInfo (Array) - Array of Objects: {btn:'btn_id',area:'area_id'}
-@param 'callBack' (function)  	- callback optional
-**/
-oes.setupAreaTabButtons = function( tabBtnInfo, callBack ){
-	
-	for( var i=0; i<tabBtnInfo.length; i++ ){
-		
-		var btn = tabBtnInfo[i].btn = $(tabBtnInfo[i].btn);  // turn into jQuery
-		var area = tabBtnInfo[i].content = $(tabBtnInfo[i].content);	
-		var tab = new TabContent( btn,area,i );
-
-	}
-	
-	// assuming first button is default
-	tabBtnInfo[0].btn.addClass('selected');
-	
-	function TabContent( btn, content, i){
-		var btn = btn;
-		var content = content;
-		var i = i;
-		
-		btn.click( function( e ){
-			e.stopPropagation();
-			resetStacks();
-			$(this).addClass('selected');
-			content.removeClass('hidden').show();
-			
-			if(typeof callBack === "function") callBack(i);
-		});		
-	}
-
-	function resetStacks(){
-		for(var i=0; i<tabBtnInfo.length; i++){
-			tabBtnInfo[i].btn.removeClass('selected');
-			tabBtnInfo[i].content.hide();
-		}
-	}
-	
-}
-/**
-OEscape offers 4 resize states for the left hand chart area	
-@param 'callBack' (function)  	- callback optional
-**/
-oes.setupResizeButtons = function( callBack ){
-	
-	var left = $('.oes-left-side'),
-		right = $('.oes-right-side'),
-		size;
-	
-	// setup resize buttons
-	// buttons have data-area attribute: small, medium, large and full
-	$('.js-oes-area-resize').click(function( e ){
-		e.stopPropagation();
-		
-		var str = $(this).data('area');
-		switch(str){
-			case 'small': 	size = 500;
-			break;
-			case 'medium': 	size = 700;
-			break;
-			case 'large': 	size = 900;
-			break;
-			case 'full': 	size = null;  // null, when passed to highcharts makes chart fill container
-			break;
-		}
-		
-		// fullsize requires some tweaking
-		if(size == null){
-			left.css({"min-width":"500px", "width":"100%"});
-			right.hide();
-		} else {
-			left.css({"min-width": size + "px", "width":""});
-			right.show();	
-		}
-		
-		if(typeof callBack === "function" ) callBack(size);	
-	});
 }
 /*
 Lightening Letter Viewer
@@ -4102,6 +4102,174 @@ idg.WorkListFilter = function(){
 }
 
 /*
+Dirty demo to show data insertion into IDG Elements where required
+*/
+idg.addSelectInsert.updateElement = {
+	test:function( arr ){
+		idgTest.report( 'test insert' );
+	}
+}
+/*
+Add Select Search insert  
+Popup Constructor
+*/
+
+idg.addSelectInsert.Popup = function ( $btn, popupID ){	
+	
+	let $popup = $('#'+popupID);
+	const reset = true;
+	const require = false; 
+	const callback = $popup.data('callback');  // optional
+	
+	/*
+	Using in analytics to build the data filters. Popup
+	needs to anchor left. Can not rely to x < n to do this.
+	Checking therefore the data- 
+	*/
+	
+	this.anchorLeft = $popup.data('anchor-left') ==! undefined ? true : false;
+	
+	/*
+	Props
+	*/ 
+	this.$btn = $btn;  
+	this.$popup = $popup;
+	
+	/*
+	Methods
+	*/
+	this.open = function(){
+		this.positionFixPopup();
+		this.onScrollClose();
+		idg.addSelectInsert.closeAll();
+		$popup.show();
+	}
+	
+	this.close = function(){
+		$popup.hide();		
+	}
+	
+	this.reset = function(){
+		// reset (to default state)
+	}
+	
+	this.insertData = function(){
+		/*
+		gather data and send to callback (if requested)
+		*/
+		let JSONdata = []
+		lists.forEach( list => {
+			JSONdata.push( list.gatherData() );
+		});
+		
+		/*
+		callback handles Element insert demo
+		*/
+		if( callback != undefined){
+			idg.addSelectInsert.updateElement[callback]( JSONdata );
+		}
+		
+		this.close();
+	}
+	
+	/*
+	Store lists
+	*/
+	let lists = [];
+	
+	$('.add-options',$popup).each( function(){
+		lists.push( new idg.addSelectInsert.OptionsList( $(this) ) );
+	});
+	
+	/*
+	Setup Btn Events. 
+	*/
+	idg.addSelectInsert.btnEvent( this, $btn, this.open );
+	idg.addSelectInsert.btnEvent( this, $popup.children('.close-icon-btn'), this.close );
+	idg.addSelectInsert.btnEvent( this, $popup.find('.add-icon-btn'), this.insertData );
+	  					
+}
+
+/*
+Set up Btn click events
+*/
+idg.addSelectInsert.btnEvent = function ( popup, $btn, callback ){
+  	$btn.click(function(e) {
+  		e.stopPropagation();
+  		callback.call(popup);
+	});	  					
+}
+
+
+idg.addSelectInsert.Popup.prototype.onScrollClose = function(){
+	/*
+	Close popup on scroll.
+	note: scroll event fires on assignment.
+	so check against scroll position
+	*/	
+	let popup = this;	
+	let scrollPos = $(".main-event").scrollTop();
+	$(".main-event").on("scroll", function(){ 
+		if( scrollPos !=  $(this).scrollTop() ){
+			// Remove scroll event:	
+			$(".main-event").off("scroll");
+			popup.close();
+		}
+			
+	});
+
+}
+
+/*
+Set up Btn click events
+*/
+
+idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
+	/* 
+	Popup is FIXED positioned, work out offset position based on button
+	To do this proved easer with Vanilla JS
+	*/
+	let elem = this.$btn[ 0 ];
+	let btnPos = elem.getBoundingClientRect();		
+	let w = document.documentElement.clientWidth;
+	let h = document.documentElement.clientHeight;
+	
+	let posH = (h - btnPos.bottom);
+	
+	// check popup doesn't go off the top of the screen 
+	// and don't overlay Logo! or Patient Name
+	if(h - posH < 325){
+		posH = h - 325;
+	}
+	
+	/*
+	Popup can be 'requested' to anchor left.
+	Only used in Analytics (so far)	
+	*/
+	if( this.anchorLeft ){
+	
+		this.$popup.css(	{	"bottom": posH + 'px',
+								"left": btnPos.left + 'px' });
+		
+	} else {
+		// is popup pushing off the left
+		let leftSideEdge = btnPos.right - this.$popup.width();
+		let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
+	
+		this.$popup.css(	{	"bottom": posH + 'px',
+								"right": (w - btnPos.right) + adjustRight + 'px' });
+		
+	}
+	
+	
+	
+	
+	
+	
+
+}
+
+/*
 Optional Lists based on List selection
 find group ID: 	"add-to-{uniqueID}-listgroup{n}";
 find list ID: 	"add-to-{uniqueID}-list{n}";
@@ -4338,172 +4506,4 @@ idg.addSelectInsert.OptionsList = function ( $ul ){
 		return data.join(', ');
 	}
 			
-}
-
-/*
-Dirty demo to show data insertion into IDG Elements where required
-*/
-idg.addSelectInsert.updateElement = {
-	test:function( arr ){
-		idgTest.report( 'test insert' );
-	}
-}
-/*
-Add Select Search insert  
-Popup Constructor
-*/
-
-idg.addSelectInsert.Popup = function ( $btn, popupID ){	
-	
-	let $popup = $('#'+popupID);
-	const reset = true;
-	const require = false; 
-	const callback = $popup.data('callback');  // optional
-	
-	/*
-	Using in analytics to build the data filters. Popup
-	needs to anchor left. Can not rely to x < n to do this.
-	Checking therefore the data- 
-	*/
-	
-	this.anchorLeft = $popup.data('anchor-left') ==! undefined ? true : false;
-	
-	/*
-	Props
-	*/ 
-	this.$btn = $btn;  
-	this.$popup = $popup;
-	
-	/*
-	Methods
-	*/
-	this.open = function(){
-		this.positionFixPopup();
-		this.onScrollClose();
-		idg.addSelectInsert.closeAll();
-		$popup.show();
-	}
-	
-	this.close = function(){
-		$popup.hide();		
-	}
-	
-	this.reset = function(){
-		// reset (to default state)
-	}
-	
-	this.insertData = function(){
-		/*
-		gather data and send to callback (if requested)
-		*/
-		let JSONdata = []
-		lists.forEach( list => {
-			JSONdata.push( list.gatherData() );
-		});
-		
-		/*
-		callback handles Element insert demo
-		*/
-		if( callback != undefined){
-			idg.addSelectInsert.updateElement[callback]( JSONdata );
-		}
-		
-		this.close();
-	}
-	
-	/*
-	Store lists
-	*/
-	let lists = [];
-	
-	$('.add-options',$popup).each( function(){
-		lists.push( new idg.addSelectInsert.OptionsList( $(this) ) );
-	});
-	
-	/*
-	Setup Btn Events. 
-	*/
-	idg.addSelectInsert.btnEvent( this, $btn, this.open );
-	idg.addSelectInsert.btnEvent( this, $popup.children('.close-icon-btn'), this.close );
-	idg.addSelectInsert.btnEvent( this, $popup.find('.add-icon-btn'), this.insertData );
-	  					
-}
-
-/*
-Set up Btn click events
-*/
-idg.addSelectInsert.btnEvent = function ( popup, $btn, callback ){
-  	$btn.click(function(e) {
-  		e.stopPropagation();
-  		callback.call(popup);
-	});	  					
-}
-
-
-idg.addSelectInsert.Popup.prototype.onScrollClose = function(){
-	/*
-	Close popup on scroll.
-	note: scroll event fires on assignment.
-	so check against scroll position
-	*/	
-	let popup = this;	
-	let scrollPos = $(".main-event").scrollTop();
-	$(".main-event").on("scroll", function(){ 
-		if( scrollPos !=  $(this).scrollTop() ){
-			// Remove scroll event:	
-			$(".main-event").off("scroll");
-			popup.close();
-		}
-			
-	});
-
-}
-
-/*
-Set up Btn click events
-*/
-
-idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
-	/* 
-	Popup is FIXED positioned, work out offset position based on button
-	To do this proved easer with Vanilla JS
-	*/
-	let elem = this.$btn[ 0 ];
-	let btnPos = elem.getBoundingClientRect();		
-	let w = document.documentElement.clientWidth;
-	let h = document.documentElement.clientHeight;
-	
-	let posH = (h - btnPos.bottom);
-	
-	// check popup doesn't go off the top of the screen 
-	// and don't overlay Logo! or Patient Name
-	if(h - posH < 325){
-		posH = h - 325;
-	}
-	
-	/*
-	Popup can be 'requested' to anchor left.
-	Only used in Analytics (so far)	
-	*/
-	if( this.anchorLeft ){
-	
-		this.$popup.css(	{	"bottom": posH + 'px',
-								"left": btnPos.left + 'px' });
-		
-	} else {
-		// is popup pushing off the left
-		let leftSideEdge = btnPos.right - this.$popup.width();
-		let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
-	
-		this.$popup.css(	{	"bottom": posH + 'px',
-								"right": (w - btnPos.right) + adjustRight + 'px' });
-		
-	}
-	
-	
-	
-	
-	
-	
-
 }

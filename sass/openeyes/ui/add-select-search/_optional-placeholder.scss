@@ -8,10 +8,16 @@
 		
 	// default text for optional lists
 	.optional-placeholder {
-		margin:0 0 2px 0;
-		padding:3px 18px 3px 8px;
+		// match the <li> padding! 
+		margin:3px 10px 3px 8px;
 		word-break: break-word;		
 		font-style: italic;
+		
+		width:$oe-ass-restricted-width;
+		
+		&.extended {
+			width:$oe-ass-restricted-width-extended;
+		}
 	}
 }
 

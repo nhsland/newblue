@@ -1808,6 +1808,7 @@ select.fixed-width {
   padding: 5px 10px 35px 10px;
   min-width: 290px;
   min-height: 204px;
+  max-height: 290px;
   font-size: 0.6875rem;
   font-weight: 400;
   -webkit-box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.2);
@@ -1936,7 +1937,7 @@ select.fixed-width {
   padding: 3px 8px;
   margin: 0 0 2px 0;
   color: #d6d6d6;
-  background: #32404d;
+  background-color: #32404d;
   min-width: 30px;
 }
 
@@ -1964,23 +1965,43 @@ select.fixed-width {
   color: cyan !important;
 }
 
-.oe-add-select-search .add-options.single.required li, .oe-add-select-search .add-options.number.required li {
-  background: linear-gradient(to right, #a04600 3px, #32404d 3px);
+.oe-add-select-search .add-options.single.required li, .oe-add-select-search .add-options.multi.required li, .oe-add-select-search .add-options.number.required li {
+  background-image: linear-gradient(to right, #a04600 3px, #32404d 3px);
 }
 
 .oe-add-select-search .add-options.multi li {
-  background: linear-gradient(to right, #05306a 3px, #32404d 3px);
+  background-image: linear-gradient(to right, #05306a 3px, #32404d 3px);
 }
 
-.oe-add-select-search .add-options.multi.required li {
-  background: linear-gradient(to right, #05306a 3px, #a04600 6px, #32404d 6px);
+.oe-add-select-search .add-options.category-filter li {
+  background-image: url("../svg/in-css/ui/arrow-right-blue.svg");
+  background-position: right 2px center;
+  background-repeat: no-repeat;
+  background-size: 8px;
+  padding-right: 14px;
 }
 
 .oe-add-select-search .optional-placeholder {
+  margin: 3px 10px 3px 8px;
+  word-break: break-word;
+  font-style: italic;
+  width: 130px;
+}
+
+.oe-add-select-search .optional-placeholder.extended {
+  width: 250px;
+}
+
+.oe-add-select-search .search-database {
+  width: 260px;
+}
+
+.oe-add-select-search .search-database .search-placeholder {
   margin: 0 0 2px 0;
   padding: 3px 18px 3px 8px;
   word-break: break-word;
   font-style: italic;
+  color: #8c8c8c;
 }
 
 .oe-pathstep-btn {

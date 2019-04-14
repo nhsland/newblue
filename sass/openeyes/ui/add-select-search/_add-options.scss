@@ -25,7 +25,7 @@
 			margin:0 0 2px 0;
 			color:$oe-text;
 			// border-radius:3px;
-			background: $bg-default;
+			background-color: $bg-default;
 			min-width:30px;			// provide a minimal hit area for touch
 			
 			// data has a span wrapper to control the width
@@ -33,7 +33,7 @@
 			// this assumes a text value:
 			.restrict-width {
 				display:inline-block;
-				width:130px; 
+				width:$oe-ass-restricted-width; 
 				word-break: break-word;
 				
 				// width was set as below - but no idea why!
@@ -42,13 +42,13 @@
 				// max-width:130px;
 
 				&.extended {
-					width:250px;
+					width:$oe-ass-restricted-width-extended;
 				}
 			}
 			
 			&:hover, &:focus, &:active, &.selected {
 				color:#fff;
-				background: $bg-default-hover !important;  // must override the linear-gradient below
+				background: $bg-default-hover !important;  // must override any type styling
 			}
 			
 			&.selected {
@@ -64,24 +64,31 @@
 		// color hint functionality
 		$list-hint-w: 3px;
 		$list-hint-w2: 6px;
+		// required
 		&.single,
+		&.multi,
 		&.number {
 			&.required {
-				li {
-					background: linear-gradient(to right,$oe-alert-orange $list-hint-w, $bg-default $list-hint-w);
-				}
+				li { background-image: linear-gradient(to right,$oe-alert-orange $list-hint-w, $bg-default $list-hint-w); }
 			}
 		}
-		
+		// multi
 		&.multi {
+			li { background-image: linear-gradient(to right, $oe-btn-blue-hint $list-hint-w, $bg-default $list-hint-w); }
+		}
+		
+		// linked
+		// &.linked {
+			// li { background-image: linear-gradient(to right, $oe-text-light $list-hint-w, $bg-default $list-hint-w); }
+		// }
+		
+		&.category-filter{
 			li {
-				background: linear-gradient(to right, $oe-btn-blue-hint $list-hint-w, $bg-default $list-hint-w);
-			}
-			
-			&.required {
-				li {
-					background: linear-gradient(to right, $oe-btn-blue-hint $list-hint-w, $oe-alert-orange $list-hint-w2, $bg-default $list-hint-w2 );
-				}
+				background-image:url( svg-path( 'ui/arrow-right-blue' ) );
+				background-position:right 2px center;
+				background-repeat: no-repeat;
+				background-size:8px;
+				padding-right:14px;
 			}
 		}
 		
