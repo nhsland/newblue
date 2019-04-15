@@ -1970,7 +1970,7 @@ select.fixed-width {
 }
 
 .oe-add-select-search .add-options.multi li {
-  background-image: linear-gradient(to right, #05306a 3px, #32404d 3px);
+  background-image: linear-gradient(to right, #8c8c8c 3px, #32404d 3px);
 }
 
 .oe-add-select-search .add-options.category-filter li {

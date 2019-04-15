@@ -28,7 +28,7 @@ idg.addSelectInsert = {
 		*/
 		$('.js-add-select-btn').each(function(){
 			let newPopup = new idg.addSelectInsert.Popup( 	$(this),
-															$(this).data('popup') );
+														$(this).data('popup') );
 			all.push(newPopup);																
 		});
 	}

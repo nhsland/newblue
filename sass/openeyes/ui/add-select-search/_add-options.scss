@@ -74,12 +74,13 @@
 		}
 		// multi
 		&.multi {
-			li { background-image: linear-gradient(to right, $oe-btn-blue-hint $list-hint-w, $bg-default $list-hint-w); }
+			li { background-image: linear-gradient(to right, $oe-text-light $list-hint-w, $bg-default $list-hint-w); }
 		}
 		
 		// linked
+		// could flag this with a colour bar
 		// &.linked {
-			// li { background-image: linear-gradient(to right, $oe-text-light $list-hint-w, $bg-default $list-hint-w); }
+			// li { background-image: linear-gradient(to right, $oe-btn-blue-hint $list-hint-w, $bg-default $list-hint-w); }
 		// }
 		
 		&.category-filter{
