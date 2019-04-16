@@ -17,8 +17,9 @@
 	background: $oe-blue;
 	padding:0 10px 10px 11px;
 	
-	border-right: 2px solid $oe-text-light;
-	border-bottom: 2px solid $oe-text-light;
+	border-right: 6px solid $oe-blue-dark2;
+	border-bottom: 6px solid $oe-blue-dark2;
+
 
 	table {
 		width: 100%;		
@@ -44,6 +45,10 @@
 			
 			&:last-child {
 				text-align: right;
+			}
+			
+			&:first-child {
+				text-align: left;
 			}
 			
 		}
