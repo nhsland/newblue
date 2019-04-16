@@ -10451,6 +10451,14 @@ table.oe-clinic-list td.center {
   overflow-y: auto;
 }
 
+.oe-whiteboard .wb3 .oe-wb-widget.data-image .wb-data.image-fill {
+  background: transparent;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: calc(100% - 45px);
+}
+
 .oe-whiteboard .wb3 .oe-wb-widget.data-single, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra {
   display: -webkit-box;
   display: -ms-flexbox;

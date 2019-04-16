@@ -5,12 +5,50 @@ idg.auditTrail = function(){
 	
 	if( $('#js-event-audit-trail-btn').length == 0 ) return;
 		
-	var show = false	
+	let locked = false;
+	let open = false;	
+	let $btn = $('#js-event-audit-trail-btn');
 		
 	// loop through the view tiles and check the data height
-	$('#js-event-audit-trail-btn').click(function(){
-		$('#js-event-audit-trail').toggle();
-		$(this).toggleClass('active');
+	$btn.click(function(){
+		if(open){
+			if(locked){
+				locked = false;
+				open = false;
+				changeState();
+			} else {
+				locked = true;
+			}
+		} else {
+			open = true;
+			locked = true;
+			changeState();	
+		}	
 	});
+	
+	
+	$btn.mouseover(function(){
+		if(!locked){
+			open = true;
+			changeState();
+		}	
+	});
+	
+	$btn.mouseleave(function(){
+		if(open && !locked){
+			open = false;
+			changeState();
+		}
+	});
+	
+	function changeState(){
+		$('#js-event-audit-trail').toggle();
+		$btn.toggleClass('active');
+	}
+	
+	
+	
+	
+	
 	
 }
