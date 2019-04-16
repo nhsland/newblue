@@ -146,12 +146,14 @@
 	// icons
 	// SVGs containing styling: fill:#fff;
 	&.plus 				{ @include oe3-icons('plus'); }
+	&.plus-bold 			{ @include oe3-icons('plus-bold'); }
 	&.plus-circle 		{ @include oe3-icons('plus-circle'); }
-	&.minus 			{ @include oe3-icons('minus'); }
+	&.minus 				{ @include oe3-icons('minus'); }
+	&.minus-bold 		{ @include oe3-icons('minus-bold'); }
 	&.arrow-down 		{ @include oe3-icons('arrow-down'); }
 	&.arrow-up 			{ @include oe3-icons('arrow-up');}
 	&.arrow-down-bold 	{ @include oe3-icons('arrow-down-bold'); }
-	&.arrow-up-bold 	{ @include oe3-icons('arrow-up-bold'); }
+	&.arrow-up-bold 		{ @include oe3-icons('arrow-up-bold'); }
 	&.arrow-right-bold 	{ @include oe3-icons('arrow-right-bold'); }
 	&.arrow-left-bold 	{ @include oe3-icons('arrow-left-bold'); }
 	&.direction-right 	{ @include oe3-icons('direction-right'); }
@@ -166,14 +168,14 @@
 	&.move				{ @include oe3-icons('move'); }
 	&.child-arrow 		{ @include oe3-icons('child-arrow'); }
 	&.menu 				{ @include oe3-icons('menu'); }
-	&.trash 			{ @include oe3-icons('trash'); }
+	&.trash 				{ @include oe3-icons('trash'); }
 	&.trash-blue 		{ @include oe3-icons('trash-blue'); }
-	&.print 			{ @include oe3-icons('print'); }
+	&.print 				{ @include oe3-icons('print'); }
 	&.search 			{ @include oe3-icons('search'); }
 	&.filter 			{ @include oe3-icons('filter'); }
 	&.remove 			{ @include oe3-icons('remove'); }
-	&.remove-circle 	{ @include oe3-icons('remove-circle'); }
-	&.duplicate 		{ @include oe3-icons('duplicate'); }
+	&.remove-circle 		{ @include oe3-icons('remove-circle'); }
+	&.duplicate 			{ @include oe3-icons('duplicate'); }
 	&.info 				{ @include oe3-icons('info'); }
 	&.eye 				{ @include oe3-icons('eye'); }
 	&.eye-circle 		{ @include oe3-icons('eye-circle'); }

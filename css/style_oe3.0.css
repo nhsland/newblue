@@ -2287,6 +2287,14 @@ select.fixed-width {
   background-image: url("../svg/in-css/icons/plus.svg");
 }
 
+.oe-i.plus-bold {
+  background-image: url("../svg/in-css/icons/plus-bold.svg");
+}
+
+.oe-i.plus-bold.pro-theme {
+  background-image: url("../svg/in-css/icons/plus-bold.svg");
+}
+
 .oe-i.plus-circle {
   background-image: url("../svg/in-css/icons/plus-circle.svg");
 }
@@ -2301,6 +2309,14 @@ select.fixed-width {
 
 .oe-i.minus.pro-theme {
   background-image: url("../svg/in-css/icons/minus.svg");
+}
+
+.oe-i.minus-bold {
+  background-image: url("../svg/in-css/icons/minus-bold.svg");
+}
+
+.oe-i.minus-bold.pro-theme {
+  background-image: url("../svg/in-css/icons/minus-bold.svg");
 }
 
 .oe-i.arrow-down {
