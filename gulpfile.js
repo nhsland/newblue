@@ -37,12 +37,12 @@ Config
 var config = {
 	sass:			'./sass/style_oe3.0_pro.scss',					// scss for Pro (dark) OE v3.0  
 	classic:			'./sass/style_oe3.0_classic.scss', 				// scss for Classic (light) theme
-	print:			'./sass/style_oe3.0_print.scss',				// print
-	eyedrawSass:		'./sass/style_eyedraw-draw-icons.scss', 		// eyedraw draw doodle icons
+	print:			'./sass/style_oe3.0_print.scss',					// print
+	eyedrawSass:		'./sass/style_eyedraw-draw-icons.scss', 			// eyedraw draw doodle icons
 	cssFile:			'style_oe3.0',									// suffixed 
 	css:				'./css',
-	watchSass:		'./sass/**/*.scss',								// watch scss													
-	idgJS: 			'./js/idg/**/*.js',								// ---- watch IDG demo JS files
+	watchSass:		'./sass/**/*.scss',								// watch scss												
+	idgJS: 			'../idg-php/idgJS/idg/**/*.js',					// ---- watch IDG demo JS files
 }
 
 /**
@@ -259,7 +259,7 @@ This is NOT meant for production.
 gulp.task( 'readJS', function() {	
 	gulp.src( config.idgJS )
 	.pipe( concat( 'idg-oe.js' ) )
-	.pipe( gulp.dest( './js' ) );
+	.pipe( gulp.dest( '../idg-php/idgJS' ) );
 });
 
 /**
