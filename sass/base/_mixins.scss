@@ -27,6 +27,7 @@
 	}	
 }
 
+// rename to 'ipad' to use as ipad in emulator
 @mixin ipadtest() {
 	@media only screen 
 		and (min-device-width: 768px) 

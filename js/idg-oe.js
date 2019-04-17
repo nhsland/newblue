@@ -197,6 +197,75 @@ idg.init = function(){
 
 
 /*
+Add Select Search insert Popup (v2)
+*/
+idg.addSelectInsert = {
+
+	/*
+	keep a track of all popups	
+	*/
+	all:[],
+	
+	/*
+	Close all popups. Keep the interface tidy. 
+	Actually there should be a popup controller... but for now:
+	*/
+	closeAll:function(){
+		this.all.forEach(function( popup ){
+			popup.close();
+		});
+	},
+	
+	/*
+	initialise	
+	*/
+	init:function(){
+		let all = this.all;
+		/*
+		Find all the green + buttons
+		*/
+		$('.js-add-select-btn').each(function(){
+			let newPopup = new idg.addSelectInsert.Popup( 	$(this),
+														$(this).data('popup') );
+			all.push(newPopup);																
+		});
+	}
+}
+/**
+Homepage Message expand / contract 	
+**/
+idg.homeMessageExpand = function(){
+	
+	if( $('.home-messages').length == 0 ) return;
+	
+	$('.js-expand-message').each(function(){
+		
+		var message = $(this).parent().parent().find('.message');
+		var expander = new Expander( $(this),
+									 message );
+	});
+	
+	function Expander( $icon, $message){
+		var expanded = false; 
+		
+		$icon.click( change );
+		
+		function change(){
+			
+			$icon.toggleClass('expand collapse');
+			
+			if(expanded){
+				$message.removeClass('expand');
+			} else {
+				$message.addClass('expand');
+			}
+			
+			expanded = !expanded;
+		}
+	}
+}
+
+/*
 Clinic JS
 
 The logic for the pathway steps is:
@@ -1062,75 +1131,6 @@ clinic.updateTasks = function( ){
 	
 	$('#filter-tasks .current').text( clinic.data['tasks'].length );
 }
-/*
-Add Select Search insert Popup (v2)
-*/
-idg.addSelectInsert = {
-
-	/*
-	keep a track of all popups	
-	*/
-	all:[],
-	
-	/*
-	Close all popups. Keep the interface tidy. 
-	Actually there should be a popup controller... but for now:
-	*/
-	closeAll:function(){
-		this.all.forEach(function( popup ){
-			popup.close();
-		});
-	},
-	
-	/*
-	initialise	
-	*/
-	init:function(){
-		let all = this.all;
-		/*
-		Find all the green + buttons
-		*/
-		$('.js-add-select-btn').each(function(){
-			let newPopup = new idg.addSelectInsert.Popup( 	$(this),
-														$(this).data('popup') );
-			all.push(newPopup);																
-		});
-	}
-}
-/**
-Homepage Message expand / contract 	
-**/
-idg.homeMessageExpand = function(){
-	
-	if( $('.home-messages').length == 0 ) return;
-	
-	$('.js-expand-message').each(function(){
-		
-		var message = $(this).parent().parent().find('.message');
-		var expander = new Expander( $(this),
-									 message );
-	});
-	
-	function Expander( $icon, $message){
-		var expanded = false; 
-		
-		$icon.click( change );
-		
-		function change(){
-			
-			$icon.toggleClass('expand collapse');
-			
-			if(expanded){
-				$message.removeClass('expand');
-			} else {
-				$message.addClass('expand');
-			}
-			
-			expanded = !expanded;
-		}
-	}
-}
-
 /*
 Lightning
 */
@@ -4140,6 +4140,14 @@ idg.WorkListFilter = function(){
 }
 
 /*
+Dirty demo to show data insertion into IDG Elements where required
+*/
+idg.addSelectInsert.updateElement = {
+	test:function( arr ){
+		idgTest.report( 'test insert' );
+	}
+}
+/*
 Optional Lists based on List selection
 find group ID: 	"add-to-{uniqueID}-listgroup{n}";
 find list ID: 	"add-to-{uniqueID}-list{n}";
@@ -4536,13 +4544,4 @@ idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
 	
 	
 
-}
-
-/*
-Dirty demo to show data insertion into IDG Elements where required
-*/
-idg.addSelectInsert.updateElement = {
-	test:function( arr ){
-		idgTest.report( 'test insert' );
-	}
 }

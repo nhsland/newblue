@@ -2004,6 +2004,13 @@ select.fixed-width {
   color: #8c8c8c;
 }
 
+.oe-add-select-search .decimal-point {
+  width: 16px;
+  margin: 0 2px 0 0;
+  font-size: 120%;
+  text-align: center;
+}
+
 .oe-pathstep-btn {
   display: inline-block;
   margin: 1px 0 1px 3px;
@@ -10357,6 +10364,7 @@ table.oe-clinic-list td.center {
   grid-auto-flow: row;
   grid-auto-columns: 1fr;
   height: calc(100vh - 60px);
+  overflow-y: auto;
   background: #172332;
   color: #d6d6d6;
 }
@@ -10364,6 +10372,7 @@ table.oe-clinic-list td.center {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
   .oe-whiteboard .wb3 {
     grid: repeat(5, 1fr)/repeat(2, 1fr);
+    height: calc(100% - 60px);
   }
 }
 

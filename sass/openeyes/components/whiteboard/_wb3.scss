@@ -22,14 +22,14 @@
 		// iPad 3, 4 and Pro 9.7 - Portrait
 		@include ipad(){
 			grid: repeat(5, 1fr) / repeat(2, 1fr);
+			// note the height switch to 100% rather than 100vh!
+			height:calc(100% - #{$oe-header-height});
 		}
 		
 		
-		// important!
-		// don't allow the grid to expand beyond viewport
-		// other wise whole grid scrolls and the footer buttons
-		// will go off the bottom- yikees!
+		// set the height of the grid area
 		height:calc(100vh - #{$oe-header-height});
+		overflow-y: auto;
 		
 		background:$oe-wb-bg; // theme changable
 		color:$oe-wb-data-text;
