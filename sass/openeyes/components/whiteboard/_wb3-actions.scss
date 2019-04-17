@@ -28,6 +28,16 @@
 			bottom:0;
 		}
 		
+		
+		// iPad 3, 4 and Pro 9.7 - Portrait
+		@include ipad(){
+			// there are loads of ISSUEs
+			// with fixed positioning on iOS
+			// just don't go there... 
+			position:static !important;
+		}
+		
+		
 		// actions by default are hidden.
 		// JS controlled icon btn.
 		// CSS handles the animation
@@ -46,6 +56,10 @@
 			
 			&.close {
 				background-image: url( svg-path('icons/remove-circle') );
+			}
+			
+			@include ipad(){
+				display: none;
 			}
 		}
 		

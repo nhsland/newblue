@@ -4090,6 +4090,14 @@ select.fixed-width {
   font-weight: 300;
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-hd-title {
+    font-size: 0.75rem;
+    font-weight: 400;
+    width: 50%;
+  }
+}
+
 .oe-hd-title ul.dot-list li {
   margin-bottom: 0;
 }
@@ -10372,7 +10380,7 @@ table.oe-clinic-list td.center {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
   .oe-whiteboard .wb3 {
     grid: repeat(5, 1fr)/repeat(2, 1fr);
-    height: calc(100% - 60px);
+    height: 910px;
   }
 }
 
@@ -10436,6 +10444,12 @@ table.oe-clinic-list td.center {
   bottom: 0;
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3-actions {
+    position: static !important;
+  }
+}
+
 .oe-whiteboard .wb3-actions .openclose-icon-btn {
   position: absolute;
   bottom: 100%;
@@ -10450,6 +10464,12 @@ table.oe-clinic-list td.center {
 
 .oe-whiteboard .wb3-actions .openclose-icon-btn.close {
   background-image: url("../svg/in-css/icons/remove-circle.svg");
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3-actions .openclose-icon-btn {
+    display: none;
+  }
 }
 
 .oe-whiteboard .wb3-actions button {
@@ -10491,7 +10511,7 @@ table.oe-clinic-list td.center {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
   .oe-whiteboard .wb3 .oe-wb-widget.data-list .wb-data {
-    font-size: 2.5vw;
+    font-size: 2.7vw;
   }
 }
 
@@ -10519,7 +10539,7 @@ table.oe-clinic-list td.center {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 35px;
+  padding-top: 30px;
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data {
@@ -10540,7 +10560,7 @@ table.oe-clinic-list td.center {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
   .oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data .extra-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data .extra-data, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data .extra-data {
-    font-size: 3vw;
+    font-size: 2.8vw;
   }
 }
 
@@ -10607,8 +10627,14 @@ table.oe-clinic-list td.center {
 }
 
 .oe-whiteboard .wb3 .oe-wb-special .alert-box {
-  font-size: 2vw;
+  font-size: 1.7vw;
   padding: 1px 8px;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3 .oe-wb-special .alert-box {
+    font-size: 1.8vw;
+  }
 }
 
 .oe-whiteboard .wb3 .oe-wb-special.risks {
