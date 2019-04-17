@@ -285,7 +285,7 @@ html {
 
 .open-eyes {
   background: #101925;
-  min-width: 1250px;
+  min-width: 767px;
   padding: 0;
   margin: 0;
   font-family: "Roboto", "Helvetica", "Arial", sans-serif;
@@ -586,13 +586,13 @@ html {
   top: 50%;
   right: 0;
   z-index: 9999;
-  -webkit-transform: rotate(90deg) translateY(-59px);
-          transform: rotate(90deg) translateY(-59px);
+  -webkit-transform: rotate(90deg) translateY(-45px);
+          transform: rotate(90deg) translateY(-45px);
   background: #9b0000 url("../svg/in-css/icons/direction-up.svg") top 50% right 5px no-repeat;
   background-size: 15px;
   padding: 5px 30px 5px 10px;
   color: white;
-  font-size: 0.625rem;
+  font-size: 0.6875rem;
   font-weight: 400;
   display: none;
 }
@@ -1938,7 +1938,7 @@ select.fixed-width {
   margin: 0 0 2px 0;
   color: #d6d6d6;
   background-color: #32404d;
-  min-width: 30px;
+  min-width: 21px;
 }
 
 .oe-add-select-search .add-options li .restrict-width {
@@ -10361,6 +10361,12 @@ table.oe-clinic-list td.center {
   color: #d6d6d6;
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3 {
+    grid: repeat(5, 1fr)/repeat(2, 1fr);
+  }
+}
+
 .oe-whiteboard .wb3 .oe-wb-widget,
 .oe-whiteboard .wb3 .oe-wb-special {
   position: relative;
@@ -10373,11 +10379,18 @@ table.oe-clinic-list td.center {
 
 .oe-whiteboard .wb3 .oe-wb-widget h3,
 .oe-whiteboard .wb3 .oe-wb-special h3 {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 3px 0 4px 8px;
+  margin: 0 0 5px 0;
   font-size: 1.9vw;
   font-weight: 400;
-  padding: 3px 2px 6px 8px;
-  margin: 0 0 5px 0;
   color: #0a0a14;
   background: #d6d6d6;
 }
@@ -10467,12 +10480,24 @@ table.oe-clinic-list td.center {
   overflow-y: auto;
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3 .oe-wb-widget.data-list .wb-data {
+    font-size: 2.5vw;
+  }
+}
+
 .oe-whiteboard .wb3 .oe-wb-widget.data-image .wb-data.image-fill {
   background: transparent;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
   height: calc(100% - 45px);
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3 .oe-wb-widget.data-image .wb-data.image-fill {
+    height: calc(100% - 30px);
+  }
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget.data-single, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra {
@@ -10504,6 +10529,12 @@ table.oe-clinic-list td.center {
   line-height: 1;
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data .extra-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data .extra-data, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data .extra-data {
+    font-size: 3vw;
+  }
+}
+
 .oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data .extra-small-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data .extra-small-data, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data .extra-small-data {
   font-size: 1.9vw;
   line-height: 1;
@@ -10512,6 +10543,12 @@ table.oe-clinic-list td.center {
 
 .oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data .extra-small-data:last-child, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data .extra-small-data:last-child, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data .extra-small-data:last-child {
   margin-bottom: 0;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data .extra-small-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data .extra-small-data, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data .extra-small-data {
+    font-size: 2.9vw;
+  }
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget.data-single h3, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra h3, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra h3 {
@@ -10525,12 +10562,24 @@ table.oe-clinic-list td.center {
   font-size: 4vw;
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data {
+    font-size: 6vw;
+  }
+}
+
 .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra {
   padding-top: 40px;
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data {
   font-size: 3.1vw;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data {
+    font-size: 5.1vw;
+  }
 }
 
 .oe-whiteboard .wb3 .oe-wb-special {
@@ -10555,6 +10604,12 @@ table.oe-clinic-list td.center {
 
 .oe-whiteboard .wb3 .oe-wb-special.risks {
   grid-area: 1 / 4 / 4 / 5;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3 .oe-wb-special.risks {
+    grid-area: 1 / 3 / 6 / 4;
+  }
 }
 
 /* HighCharts */

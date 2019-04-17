@@ -12,7 +12,12 @@ html {
 // body
 .open-eyes {
 	background: $html-bg;
-	min-width: 1250px;
+	// min-width was set to 1250px; 
+	// this forced x-scrollbars 
+	// however, whiteboard needs to used on an iPad
+	// reduced to iPad:
+	min-width: 767px;
+	
 	padding:0;
 	margin:0;
 	

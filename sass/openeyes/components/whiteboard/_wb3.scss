@@ -19,6 +19,12 @@
 		grid-auto-flow: row;
 		grid-auto-columns: 1fr;
 		
+		// iPad 3, 4 and Pro 9.7 - Portrait
+		@include ipad(){
+			grid: repeat(5, 1fr) / repeat(2, 1fr);
+		}
+		
+		
 		// important!
 		// don't allow the grid to expand beyond viewport
 		// other wise whole grid scrolls and the footer buttons
@@ -43,11 +49,15 @@
 			
 			// basic layout stuff:
 			h3 {
-				display:block;
+				display:flex;
+				justify-content:flex-start;
+				align-content: center;
+				padding:3px 0 4px 8px;
+				margin:0 0 5px 0;
+				
 				font-size: $wb3-font-header;
 				font-weight: $oe-font-medium;
-				padding:3px 2px 6px 8px;
-				margin:0 0 5px 0;
+
 				color:$oe-wb-widget-bg;
 				background:$oe-text;
 			}

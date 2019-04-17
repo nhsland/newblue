@@ -197,75 +197,6 @@ idg.init = function(){
 
 
 /*
-Add Select Search insert Popup (v2)
-*/
-idg.addSelectInsert = {
-
-	/*
-	keep a track of all popups	
-	*/
-	all:[],
-	
-	/*
-	Close all popups. Keep the interface tidy. 
-	Actually there should be a popup controller... but for now:
-	*/
-	closeAll:function(){
-		this.all.forEach(function( popup ){
-			popup.close();
-		});
-	},
-	
-	/*
-	initialise	
-	*/
-	init:function(){
-		let all = this.all;
-		/*
-		Find all the green + buttons
-		*/
-		$('.js-add-select-btn').each(function(){
-			let newPopup = new idg.addSelectInsert.Popup( 	$(this),
-														$(this).data('popup') );
-			all.push(newPopup);																
-		});
-	}
-}
-/**
-Homepage Message expand / contract 	
-**/
-idg.homeMessageExpand = function(){
-	
-	if( $('.home-messages').length == 0 ) return;
-	
-	$('.js-expand-message').each(function(){
-		
-		var message = $(this).parent().parent().find('.message');
-		var expander = new Expander( $(this),
-									 message );
-	});
-	
-	function Expander( $icon, $message){
-		var expanded = false; 
-		
-		$icon.click( change );
-		
-		function change(){
-			
-			$icon.toggleClass('expand collapse');
-			
-			if(expanded){
-				$message.removeClass('expand');
-			} else {
-				$message.addClass('expand');
-			}
-			
-			expanded = !expanded;
-		}
-	}
-}
-
-/*
 Clinic JS
 
 The logic for the pathway steps is:
@@ -1131,6 +1062,75 @@ clinic.updateTasks = function( ){
 	
 	$('#filter-tasks .current').text( clinic.data['tasks'].length );
 }
+/*
+Add Select Search insert Popup (v2)
+*/
+idg.addSelectInsert = {
+
+	/*
+	keep a track of all popups	
+	*/
+	all:[],
+	
+	/*
+	Close all popups. Keep the interface tidy. 
+	Actually there should be a popup controller... but for now:
+	*/
+	closeAll:function(){
+		this.all.forEach(function( popup ){
+			popup.close();
+		});
+	},
+	
+	/*
+	initialise	
+	*/
+	init:function(){
+		let all = this.all;
+		/*
+		Find all the green + buttons
+		*/
+		$('.js-add-select-btn').each(function(){
+			let newPopup = new idg.addSelectInsert.Popup( 	$(this),
+														$(this).data('popup') );
+			all.push(newPopup);																
+		});
+	}
+}
+/**
+Homepage Message expand / contract 	
+**/
+idg.homeMessageExpand = function(){
+	
+	if( $('.home-messages').length == 0 ) return;
+	
+	$('.js-expand-message').each(function(){
+		
+		var message = $(this).parent().parent().find('.message');
+		var expander = new Expander( $(this),
+									 message );
+	});
+	
+	function Expander( $icon, $message){
+		var expanded = false; 
+		
+		$icon.click( change );
+		
+		function change(){
+			
+			$icon.toggleClass('expand collapse');
+			
+			if(expanded){
+				$message.removeClass('expand');
+			} else {
+				$message.addClass('expand');
+			}
+			
+			expanded = !expanded;
+		}
+	}
+}
+
 /*
 Lightning
 */
@@ -2447,56 +2447,6 @@ idg.tileDataOverflow = function(){
 	});
 	
 	
-	
-}
-/**
-VC Draggable Floating inputs
-**/
-idg.vcDraggable = function(){
-	
-	var id = 'oe-vc-scratchpad';
-
-	if( $('#'+id).length == 0 ) return;
-	
-	/* 	
-	Drag...
-	*/	
-	var relativeX, relativeY;
-		
-	document.addEventListener("dragstart", getMouseOffset, false);
-	document.addEventListener("dragend", reposFloat, false);
-		
-	
-	function getMouseOffset( e ){
-		e.dataTransfer.dropEffect = "move";
-		
-		// need to work out mouse offset in <div> before dragging
-		var offset = $('#'+id).offset();
-		relativeX = (e.clientX - offset.left);
-		relativeY = (e.clientY - offset.top);		
-	}
-	
-	function reposFloat( e ) {
-		// Update the panel position
-		var left = e.clientX - relativeX;
-		var top = e.clientY - relativeY;
-		
-		// stop it being dragged off screen
-		top = top < 1 ? 1 : top;
-		left = left < 1 ? 1 : left;
-		
-		$('#'+id).css({"top":top+"px","left":left+"px"});
-	}
-	
-	
-	/*
-	Touch version? ... 
-	Not sure if this works, not tested... but anyway:	
-	*/
-	var el = document.getElementById(id);
-	el.addEventListener("touchstart", getMouseOffset, false);
-	el.addEventListener("touchend", reposFloat, false);
-		
 	
 }
 /**
@@ -4105,6 +4055,56 @@ idg.userPIN = {
 	
 }
 /**
+VC Draggable Floating inputs
+**/
+idg.vcDraggable = function(){
+	
+	var id = 'oe-vc-scratchpad';
+
+	if( $('#'+id).length == 0 ) return;
+	
+	/* 	
+	Drag...
+	*/	
+	var relativeX, relativeY;
+		
+	document.addEventListener("dragstart", getMouseOffset, false);
+	document.addEventListener("dragend", reposFloat, false);
+		
+	
+	function getMouseOffset( e ){
+		e.dataTransfer.dropEffect = "move";
+		
+		// need to work out mouse offset in <div> before dragging
+		var offset = $('#'+id).offset();
+		relativeX = (e.clientX - offset.left);
+		relativeY = (e.clientY - offset.top);		
+	}
+	
+	function reposFloat( e ) {
+		// Update the panel position
+		var left = e.clientX - relativeX;
+		var top = e.clientY - relativeY;
+		
+		// stop it being dragged off screen
+		top = top < 1 ? 1 : top;
+		left = left < 1 ? 1 : left;
+		
+		$('#'+id).css({"top":top+"px","left":left+"px"});
+	}
+	
+	
+	/*
+	Touch version? ... 
+	Not sure if this works, not tested... but anyway:	
+	*/
+	var el = document.getElementById(id);
+	el.addEventListener("touchstart", getMouseOffset, false);
+	el.addEventListener("touchend", reposFloat, false);
+		
+	
+}
+/**
 Homepage Message expand / contract 	
 - used in WorkList and Trials
 **/
@@ -4139,174 +4139,6 @@ idg.WorkListFilter = function(){
 	
 }
 
-/*
-Add Select Search insert  
-Popup Constructor
-*/
-
-idg.addSelectInsert.Popup = function ( $btn, popupID ){	
-	
-	let $popup = $('#'+popupID);
-	const reset = true;
-	const require = false; 
-	const callback = $popup.data('callback');  // optional
-	
-	/*
-	Using in analytics to build the data filters. Popup
-	needs to anchor left. Can not rely to x < n to do this.
-	Checking therefore the data- 
-	*/
-	
-	this.anchorLeft = $popup.data('anchor-left') ==! undefined ? true : false;
-	
-	/*
-	Props
-	*/ 
-	this.$btn = $btn;  
-	this.$popup = $popup;
-	
-	/*
-	Methods
-	*/
-	this.open = function(){
-		this.positionFixPopup();
-		this.onScrollClose();
-		idg.addSelectInsert.closeAll();
-		$popup.show();
-	}
-	
-	this.close = function(){
-		$popup.hide();		
-	}
-	
-	this.reset = function(){
-		// reset (to default state)
-	}
-	
-	this.insertData = function(){
-		/*
-		gather data and send to callback (if requested)
-		*/
-		let JSONdata = []
-		lists.forEach( list => {
-			JSONdata.push( list.gatherData() );
-		});
-		
-		/*
-		callback handles Element insert demo
-		*/
-		if( callback != undefined){
-			idg.addSelectInsert.updateElement[callback]( JSONdata );
-		}
-		
-		this.close();
-	}
-	
-	/*
-	Store lists
-	*/
-	let lists = [];
-	
-	$('.add-options',$popup).each( function(){
-		lists.push( new idg.addSelectInsert.OptionsList( $(this) ) );
-	});
-	
-	/*
-	Setup Btn Events. 
-	*/
-	idg.addSelectInsert.btnEvent( this, $btn, this.open );
-	idg.addSelectInsert.btnEvent( this, $popup.children('.close-icon-btn'), this.close );
-	idg.addSelectInsert.btnEvent( this, $popup.find('.add-icon-btn'), this.insertData );
-	  					
-}
-
-/*
-Set up Btn click events
-*/
-idg.addSelectInsert.btnEvent = function ( popup, $btn, callback ){
-  	$btn.click(function(e) {
-  		e.stopPropagation();
-  		callback.call(popup);
-	});	  					
-}
-
-
-idg.addSelectInsert.Popup.prototype.onScrollClose = function(){
-	/*
-	Close popup on scroll.
-	note: scroll event fires on assignment.
-	so check against scroll position
-	*/	
-	let popup = this;	
-	let scrollPos = $(".main-event").scrollTop();
-	$(".main-event").on("scroll", function(){ 
-		if( scrollPos !=  $(this).scrollTop() ){
-			// Remove scroll event:	
-			$(".main-event").off("scroll");
-			popup.close();
-		}
-			
-	});
-
-}
-
-/*
-Set up Btn click events
-*/
-
-idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
-	/* 
-	Popup is FIXED positioned, work out offset position based on button
-	To do this proved easer with Vanilla JS
-	*/
-	let elem = this.$btn[ 0 ];
-	let btnPos = elem.getBoundingClientRect();		
-	let w = document.documentElement.clientWidth;
-	let h = document.documentElement.clientHeight;
-	
-	let posH = (h - btnPos.bottom);
-	
-	// check popup doesn't go off the top of the screen 
-	// and don't overlay Logo! or Patient Name
-	if(h - posH < 325){
-		posH = h - 325;
-	}
-	
-	/*
-	Popup can be 'requested' to anchor left.
-	Only used in Analytics (so far)	
-	*/
-	if( this.anchorLeft ){
-	
-		this.$popup.css(	{	"bottom": posH + 'px',
-								"left": btnPos.left + 'px' });
-		
-	} else {
-		// is popup pushing off the left
-		let leftSideEdge = btnPos.right - this.$popup.width();
-		let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
-	
-		this.$popup.css(	{	"bottom": posH + 'px',
-								"right": (w - btnPos.right) + adjustRight + 'px' });
-		
-	}
-	
-	
-	
-	
-	
-	
-
-}
-
-/*
-Dirty demo to show data insertion into IDG Elements where required
-*/
-idg.addSelectInsert.updateElement = {
-	test:function( arr ){
-		idgTest.report( 'test insert' );
-	}
-}
 /*
 Optional Lists based on List selection
 find group ID: 	"add-to-{uniqueID}-listgroup{n}";
@@ -4544,4 +4376,173 @@ idg.addSelectInsert.OptionsList = function ( $ul ){
 		return data.join(', ');
 	}
 			
+}
+
+/*
+Add Select Search insert  
+Popup Constructor
+*/
+
+idg.addSelectInsert.Popup = function ( $btn, popupID ){	
+	
+	let $popup = $('#'+popupID);
+	const reset = true;
+	const require = false; 
+	const callback = $popup.data('callback');  // optional
+	
+	/*
+	Using in analytics to build the data filters. Popup
+	needs to anchor left. Can not rely to x < n to do this.
+	Checking therefore the data- 
+	*/
+	
+	this.anchorLeft = $popup.data('anchor-left') ==! undefined ? true : false;
+	
+	/*
+	Props
+	*/ 
+	this.$btn = $btn;  
+	this.$popup = $popup;
+	
+	/*
+	Methods
+	*/
+	this.open = function(){
+		this.positionFixPopup();
+		this.onScrollClose();
+		idg.addSelectInsert.closeAll();
+		$popup.show();
+	}
+	
+	this.close = function(){
+		$popup.hide();		
+	}
+	
+	this.reset = function(){
+		// reset (to default state)
+	}
+	
+	this.insertData = function(){
+		/*
+		gather data and send to callback (if requested)
+		*/
+		let JSONdata = []
+		lists.forEach( list => {
+			JSONdata.push( list.gatherData() );
+		});
+		
+		/*
+		callback handles Element insert demo
+		*/
+		if( callback != undefined){
+			idg.addSelectInsert.updateElement[callback]( JSONdata );
+		}
+		
+		this.close();
+	}
+	
+	/*
+	Store lists
+	*/
+	let lists = [];
+	
+	$('.add-options',$popup).each( function(){
+		lists.push( new idg.addSelectInsert.OptionsList( $(this) ) );
+	});
+	
+	/*
+	Setup Btn Events. 
+	*/
+	idg.addSelectInsert.btnEvent( this, $btn, this.open );
+	idg.addSelectInsert.btnEvent( this, $popup.children('.close-icon-btn'), this.close );
+	idg.addSelectInsert.btnEvent( this, $popup.find('.add-icon-btn'), this.insertData );
+	  					
+}
+
+/*
+Set up Btn click events
+*/
+idg.addSelectInsert.btnEvent = function ( popup, $btn, callback ){
+  	$btn.click(function(e) {
+  		e.stopPropagation();
+  		callback.call(popup);
+	});	  					
+}
+
+
+idg.addSelectInsert.Popup.prototype.onScrollClose = function(){
+	/*
+	Close popup on scroll.
+	note: scroll event fires on assignment.
+	so check against scroll position
+	*/	
+	let popup = this;	
+	let scrollPos = $(".main-event").scrollTop();
+	$(".main-event").on("scroll", function(){ 
+		if( scrollPos !=  $(this).scrollTop() ){
+			// Remove scroll event:	
+			$(".main-event").off("scroll");
+			popup.close();
+		}
+			
+	});
+
+}
+
+/*
+Set up Btn click events
+*/
+
+idg.addSelectInsert.Popup.prototype.positionFixPopup = function(){
+	/* 
+	Popup is FIXED positioned, work out offset position based on button
+	To do this proved easer with Vanilla JS
+	*/
+	let elem = this.$btn[ 0 ];
+	let btnPos = elem.getBoundingClientRect();		
+	let w = document.documentElement.clientWidth;
+	let h = document.documentElement.clientHeight;
+	
+	let posH = (h - btnPos.bottom);
+	
+	// check popup doesn't go off the top of the screen 
+	// and don't overlay Logo! or Patient Name
+	if(h - posH < 325){
+		posH = h - 325;
+	}
+	
+	/*
+	Popup can be 'requested' to anchor left.
+	Only used in Analytics (so far)	
+	*/
+	if( this.anchorLeft ){
+	
+		this.$popup.css(	{	"bottom": posH + 'px',
+								"left": btnPos.left + 'px' });
+		
+	} else {
+		// is popup pushing off the left
+		let leftSideEdge = btnPos.right - this.$popup.width();
+		let adjustRight =  leftSideEdge < 0 ? leftSideEdge - 25 : 0;
+	
+		this.$popup.css(	{	"bottom": posH + 'px',
+								"right": (w - btnPos.right) + adjustRight + 'px' });
+		
+	}
+	
+	
+	
+	
+	
+	
+
+}
+
+/*
+Dirty demo to show data insertion into IDG Elements where required
+*/
+idg.addSelectInsert.updateElement = {
+	test:function( arr ){
+		idgTest.report( 'test insert' );
+	}
 }
