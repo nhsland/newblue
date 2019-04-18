@@ -10576,7 +10576,7 @@ table.oe-clinic-list td.center {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
   .oe-whiteboard .wb3 .oe-wb-widget.data-single .wb-data .extra-small-data, .oe-whiteboard .wb3 .oe-wb-widget.data-single-extra .wb-data .extra-small-data, .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data .extra-small-data {
-    font-size: 2.9vw;
+    font-size: 2.7vw;
   }
 }
 
@@ -10607,7 +10607,7 @@ table.oe-clinic-list td.center {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
   .oe-whiteboard .wb3 .oe-wb-widget.data-double-extra .wb-data {
-    font-size: 5.1vw;
+    font-size: 4.9vw;
   }
 }
 

@@ -100,7 +100,7 @@
 						}	
 						
 						@include ipad(){
-							font-size: $wb3-font-header + 1vw;
+							font-size: $wb3-font-header + 0.8vw;
 						}
 									
 					}
@@ -132,7 +132,7 @@
 					font-size: $wb3-font-medium;
 					
 					@include ipad(){
-						font-size: $wb3-font-medium + 2vw;
+						font-size: $wb3-font-medium + 1.8vw;
 					}
 					
 				}
