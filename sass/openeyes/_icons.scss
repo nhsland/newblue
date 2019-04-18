@@ -212,6 +212,8 @@
 	&.letter-GP			{ @include oe3-icons('letter-GP'); }
 	&.no-permissions	{ @include oe3-icons('no-permissions'); }
 	&.waiting			{ @include oe3-icons('waiting'); }
+	
+	// monochromatic Eye Lat icons:
 	&.eyelat-L			{ @include oe3-icons('lat-L'); }
 	&.eyelat-R			{ @include oe3-icons('lat-R'); }
 	
@@ -259,25 +261,17 @@
 	&.cross-red 			{ background-image: url( svg-path('ui/cross-red') ); } 	
 
 	// R = Green; L = Red; B = Green/Red 
-	// Eye icons are the same across both themes		
+	// Customised for both themes		
 	&.laterality {
 		// no interaction
 		opacity: 1;
 		cursor:auto; 
-		
 		// Right Eye
-		&.R {
-			background-image: url( svg-path-theme('icons/_laterality/lat-R') );
-		}
+		&.R { @include oe3-icons('lat-R-green'); }
 		// Left Eye
-		&.L {
-			background-image: url( svg-path-theme('icons/_laterality/lat-L') );
-		}
-		
+		&.L { @include oe3-icons('lat-L-red'); }
 		// N/A - grey dot 
-		&.NA {
-			background-image: url( svg-path('icons/_laterality/lat-NA') );
-		}
+		&.NA { @include oe3-icons('lat-NA'); }
 	}
 }
 

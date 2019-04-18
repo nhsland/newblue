@@ -57,6 +57,18 @@
 		}	
 		
 	}
+	
+	// overide theme laterality icons!
+	// originally these where NOT themed
+	// and displayed the same across both
+	// themes. rather than add "pro-theme"
+	// class, override here:
+	.oe-i.laterality {
+		&.R { 	background-image: url( svg-path('icons/lat-R-green') ); }
+		&.L { 	background-image: url( svg-path('icons/lat-L-red') ); }
+		&.NA {	background-image: url( svg-path('icons/lat-NA') ); }
+	}
+	
 }
 
 

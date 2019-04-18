@@ -2928,15 +2928,27 @@ select.fixed-width {
 }
 
 .oe-i.laterality.R {
-  background-image: url("../svg/in-css/icons/_laterality/lat-R.pro.svg");
+  background-image: url("../svg/in-css/icons/lat-R-green.svg");
+}
+
+.oe-i.laterality.R.pro-theme {
+  background-image: url("../svg/in-css/icons/lat-R-green.svg");
 }
 
 .oe-i.laterality.L {
-  background-image: url("../svg/in-css/icons/_laterality/lat-L.pro.svg");
+  background-image: url("../svg/in-css/icons/lat-L-red.svg");
+}
+
+.oe-i.laterality.L.pro-theme {
+  background-image: url("../svg/in-css/icons/lat-L-red.svg");
 }
 
 .oe-i.laterality.NA {
-  background-image: url("../svg/in-css/icons/_laterality/lat-NA.svg");
+  background-image: url("../svg/in-css/icons/lat-NA.svg");
+}
+
+.oe-i.laterality.NA.pro-theme {
+  background-image: url("../svg/in-css/icons/lat-NA.svg");
 }
 
 .oe-i-e {
@@ -4684,6 +4696,18 @@ table.management-summaries tbody td:last-child {
   right: 0;
 }
 
+.oe-patient-popup .oe-i.laterality.R {
+  background-image: url("../svg/in-css/icons/lat-R-green.svg");
+}
+
+.oe-patient-popup .oe-i.laterality.L {
+  background-image: url("../svg/in-css/icons/lat-L-red.svg");
+}
+
+.oe-patient-popup .oe-i.laterality.NA {
+  background-image: url("../svg/in-css/icons/lat-NA.svg");
+}
+
 .quicklook-data-groups {
   width: 33.333%;
   margin: 0 8px 0 0;
@@ -5582,6 +5606,18 @@ table.management-summaries tbody td:last-child {
 .sidebar .event .event-extra {
   display: inline-block;
   width: 32px;
+}
+
+.sidebar .event .event-extra .oe-i.laterality.R {
+  background-image: url("../svg/in-css/icons/lat-R-green.svg");
+}
+
+.sidebar .event .event-extra .oe-i.laterality.L {
+  background-image: url("../svg/in-css/icons/lat-L-red.svg");
+}
+
+.sidebar .event .event-extra .oe-i.laterality.NA {
+  background-image: url("../svg/in-css/icons/lat-NA.svg");
 }
 
 .sidebar .event .event-date {
