@@ -5,6 +5,10 @@
 // OE ED3 Footer
 
 .ed3-footer {
+	
+	// assign to CSS Grid area:
+	grid-area: footer;
+		
 	@include flex(space-between, flex-start);
 	
 	padding:8px 5px 5px 5px;

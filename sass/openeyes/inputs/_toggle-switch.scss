@@ -1,0 +1,62 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.toggle-switch {
+	// relates to icon height  
+	$toggle-height:18px;
+	$toggle-width:28px;
+	$toggle-padding:1px;
+	$toggle-btn:12px;
+	
+	width:$toggle-width;
+	height:$toggle-height;
+	position:relative;
+	display:inline-block;
+	line-height:0;
+	margin:0;
+	vertical-align: middle;
+	
+	input[type="checkbox"] {
+		display:none;
+		
+		// CSS magic '+' next sibling! 
+		&:checked + .toggle-btn {
+			background:$oe-btn-green;
+		}
+		
+		&:checked + .toggle-btn:before {
+			transform: translateX(9px);
+			background:rgb(255,255,255);
+		}
+	}
+
+	
+	.toggle-btn {
+		position:absolute;
+		top:0;
+		left:0;
+		bottom:0;
+		right:0;
+		cursor: pointer;
+		border:2px solid $oe-text-light;
+		border-radius:$toggle-height;
+		
+		&:before {
+			position: absolute;
+			left:$toggle-padding;
+			bottom:$toggle-padding;
+			content:"";
+			height:$toggle-btn;
+			width:$toggle-btn;
+			border-radius:50%;
+			background:$oe-text-light;
+			transition: transform  0.1s ease-out;
+		}
+		
+	}
+	
+	
+
+	
+}

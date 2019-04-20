@@ -15,18 +15,19 @@ $ed3-top-panel-height:32px;
 .oe-eyedraw-app {
 	position: fixed;
 	top:$oe-header-height; // JS controlled to position near btn if possible
-	// this works nicely
+	
+	// this works anchors nicely and looks good
 	left:$oe-event-sidebar-width; 
+	
 	@include media($oe-extended-browser-size){	
-		// this however is a bit messy and requires
+		// but this is a bit messy and requires
 		// some jiggling to get it in the right place	
 		left: #{$oe-event-sidebar-width + $oe-event-extension - 38px};			
 	}
 	
 	z-index:$oe-z-add-insert;
-	
 	width: $oe-event-main-default-width;
-	min-height:530px;  	 // whilst loading placeholder
+	min-height:530px;  								 // whilst loading placeholder
 	
 	padding:$ed3-padding $ed3-padding 32px $ed3-padding; // allow for positioned action bottom bar (save etc)
 	
@@ -35,6 +36,7 @@ $ed3-top-panel-height:32px;
 	@include font-size(12);
 	
 	@include boxshadow();
+	
 	
 	// colours for scrollbars (chrome) in EyeDraw App
 	::-webkit-scrollbar-track {  

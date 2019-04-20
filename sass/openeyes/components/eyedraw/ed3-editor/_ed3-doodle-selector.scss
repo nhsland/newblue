@@ -10,7 +10,10 @@
 
 	// Select a Doodle...
 	.ed3-doodle-selector {
-		width:300px;
+		
+		// assign to CSS Grid area:
+		grid-area: doodles;
+		
 		background: $oe-ed3-panels;
 		// create a border
 		padding:0 $ed3-border $ed3-border $ed3-border; 
@@ -26,7 +29,7 @@
 		
 		.ed-doodle-toolbox {			
 			.doodle-box {
-				height:300px; // matches canvas height (but could be more)
+				height:435px; // matches canvas height (but could be more)
 				overflow-y: auto;
 				overflow-x: hidden;
 				// <ul>

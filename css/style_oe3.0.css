@@ -1572,6 +1572,56 @@ select.fixed-width {
   }
 }
 
+.toggle-switch {
+  width: 28px;
+  height: 18px;
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.toggle-switch input[type="checkbox"] {
+  display: none;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-btn {
+  background: #0e9019;
+}
+
+.toggle-switch input[type="checkbox"]:checked + .toggle-btn:before {
+  -webkit-transform: translateX(9px);
+          transform: translateX(9px);
+  background: white;
+}
+
+.toggle-switch .toggle-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  border: 2px solid #8c8c8c;
+  border-radius: 18px;
+}
+
+.toggle-switch .toggle-btn:before {
+  position: absolute;
+  left: 1px;
+  bottom: 1px;
+  content: "";
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #8c8c8c;
+  -webkit-transition: -webkit-transform  0.1s ease-out;
+  transition: -webkit-transform  0.1s ease-out;
+  transition: transform  0.1s ease-out;
+  transition: transform  0.1s ease-out, -webkit-transform  0.1s ease-out;
+}
+
 /* UI classes */
 .oe-date {
   white-space: nowrap;
@@ -5999,6 +6049,13 @@ table.management-summaries tbody td:last-child {
   width: 100%;
 }
 
+.main-event .element .element-data table td {
+  height: 26px;
+  vertical-align: top;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
 .main-event .element .element-data.full-width {
   padding-right: 20px;
   padding-left: 10px;
@@ -7411,32 +7468,22 @@ table.management-summaries tbody td:last-child {
   background-color: #63696f;
 }
 
-.oe-eyedraw-app .ed3-editor button, .oe-eyedraw-app .ed3-editor .button, .oe-eyedraw-app .ed3-editor input[type="submit"],
-.oe-eyedraw-app .eyedraw-context-options button,
-.oe-eyedraw-app .eyedraw-context-options .button,
-.oe-eyedraw-app .eyedraw-context-options input[type="submit"] {
+.oe-eyedraw-app button, .oe-eyedraw-app .button, .oe-eyedraw-app input[type="submit"] {
   color: #f0f0f0;
   background-color: #777e85;
 }
 
-.oe-eyedraw-app .ed3-editor button.selected, .oe-eyedraw-app .ed3-editor .button.selected, .oe-eyedraw-app .ed3-editor input[type="submit"].selected,
-.oe-eyedraw-app .eyedraw-context-options button.selected,
-.oe-eyedraw-app .eyedraw-context-options .button.selected,
-.oe-eyedraw-app .eyedraw-context-options input[type="submit"].selected {
+.oe-eyedraw-app button.selected, .oe-eyedraw-app .button.selected, .oe-eyedraw-app input[type="submit"].selected {
   background-color: #53585d;
 }
 
-.oe-eyedraw-app .ed3-editor input, .oe-eyedraw-app .ed3-editor textarea, .oe-eyedraw-app .ed3-editor select,
-.oe-eyedraw-app .eyedraw-context-options input,
-.oe-eyedraw-app .eyedraw-context-options textarea,
-.oe-eyedraw-app .eyedraw-context-options select {
+.oe-eyedraw-app input, .oe-eyedraw-app textarea, .oe-eyedraw-app select {
   color: #f0f0f0;
   background-color: #777e85;
   margin: 0 0;
 }
 
-.oe-eyedraw-app .ed3-editor input.search,
-.oe-eyedraw-app .eyedraw-context-options input.search {
+.oe-eyedraw-app input.search {
   background-image: url("../svg/in-css/ui/search-white.svg");
 }
 
@@ -7499,7 +7546,13 @@ table.management-summaries tbody td:last-child {
   background-color: #0e9019;
 }
 
+.oe-eyedraw-app .ed3-grid {
+  display: grid;
+  grid: "editor doodles" 336px   "footer doodles" 140px / 769px 302px;
+}
+
 .oe-eyedraw-app .ed3-editor {
+  grid-area: editor;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7608,7 +7661,7 @@ table.management-summaries tbody td:last-child {
 }
 
 .oe-eyedraw-app .ed3-doodle-selector {
-  width: 300px;
+  grid-area: doodles;
   background: #b2bdc7;
   padding: 0 3px 3px 3px;
   border-left: 5px solid #c6d2dd;
@@ -7628,7 +7681,7 @@ table.management-summaries tbody td:last-child {
 }
 
 .oe-eyedraw-app .ed3-doodle-selector .ed-doodle-toolbox .doodle-box {
-  height: 300px;
+  height: 435px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -7663,6 +7716,7 @@ table.management-summaries tbody td:last-child {
 }
 
 .ed3-footer {
+  grid-area: footer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

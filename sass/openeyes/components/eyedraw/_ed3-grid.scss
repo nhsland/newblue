@@ -8,12 +8,13 @@
 
 .oe-eyedraw-app {	
 	
-	.ed3-editor {
+	// CSS grid to layout widgets
+	.ed3-grid {
 		
-		// assign to CSS Grid area:
-		grid-area: editor;
-		
-		// flex layout for ed-draw & ed3-doodle-context
-		@include flex(space-between, flex-start);
+		display:grid;
+		grid: 	"editor doodles" 336px  
+				"footer doodles" 140px
+				/ 769px 302px;
+			
 	}
 }
