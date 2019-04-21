@@ -5645,8 +5645,24 @@ table.management-summaries tbody td:last-child {
   background-image: url("../svg/in-css/sidebar/warning.svg");
 }
 
-.sidebar .event .event-type.ready {
+.sidebar .event .event-type.done, .sidebar .event .event-type.ready {
   background-image: url("../svg/in-css/sidebar/tick.svg");
+}
+
+.sidebar .event .event-type.cancelled {
+  background-image: url("../svg/in-css/sidebar/cross.svg");
+}
+
+.sidebar .event .event-type.pause {
+  background-image: url("../svg/in-css/sidebar/pause.svg");
+}
+
+.sidebar .event .event-type.flag {
+  background-image: url("../svg/in-css/sidebar/flag.svg");
+}
+
+.sidebar .event .event-type.clock, .sidebar .event .event-type.scheduled {
+  background-image: url("../svg/in-css/sidebar/time.svg");
 }
 
 .sidebar .event .event-type.virtual-clinic {
@@ -5725,28 +5741,22 @@ table.management-summaries tbody td:last-child {
   line-height: 1.3;
   color: #fff;
   margin: 2px 0 0 0;
-  padding: 5px 5px 5px 25px;
-  /*
-			default state is for warning!	
-			*/
-  background-position: left 5px top 4px;
-  background-repeat: no-repeat;
-  background-size: 13px;
-  background-color: #6b0a0a;
-  background-image: url("../svg/in-css/sidebar/warning.svg");
+  padding: 5px 5px 5px 9px;
+  background-color: #2f3c48;
 }
 
-.sidebar .tooltip.quicklook .event-issue.ready {
+.sidebar .tooltip.quicklook .event-issue.cancelled, .sidebar .tooltip.quicklook .event-issue.alert {
+  background-color: #6b0a0a;
+}
+
+.sidebar .tooltip.quicklook .event-issue.done, .sidebar .tooltip.quicklook .event-issue.ready {
   background-color: #0a6512;
-  background-image: url("../svg/in-css/sidebar/tick.svg");
 }
 
 .sidebar .tooltip.quicklook .event-issue.virtual-clinic {
   background-color: #ffb400;
-  background-image: none;
   color: #000;
   font-weight: 500;
-  padding-left: 10px;
 }
 
 .sidebar .list-controls {

@@ -29,8 +29,30 @@
 				background-image:url( svg-path('sidebar/warning') );
 			}
 			// tick
+			&.done, 
 			&.ready {
 				background-image:url( svg-path('sidebar/tick') );
+			}
+			
+			// cross
+			&.cancelled {
+				background-image:url( svg-path('sidebar/cross') );
+			}
+			
+			// pause 
+			&.pause {
+				background-image:url( svg-path('sidebar/pause') );
+			}
+			
+			// flag 
+			&.flag {
+				background-image:url( svg-path('sidebar/flag') );
+			}
+			
+			// scheduled
+			&.clock,
+			&.scheduled {
+				background-image:url( svg-path('sidebar/time') );
 			}
 			
 			// VC 
