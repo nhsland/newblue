@@ -8,6 +8,7 @@
 	$toggle-width:28px;
 	$toggle-padding:1px;
 	$toggle-btn:12px;
+	$toggle-shift:9px;
 	
 	width:$toggle-width;
 	height:$toggle-height;
@@ -26,11 +27,10 @@
 		}
 		
 		&:checked + .toggle-btn:before {
-			transform: translateX(9px);
+			transform: translateX($toggle-shift);
 			background:rgb(255,255,255);
 		}
 	}
-
 	
 	.toggle-btn {
 		position:absolute;
@@ -53,10 +53,31 @@
 			background:$oe-text-light;
 			transition: transform  0.1s ease-out;
 		}
-		
 	}
 	
+	// reverse switch (red)
+	&.reverse {
+		.toggle-btn:before {
+			left:$toggle-padding + $toggle-shift;
+		}
+		
+		input[type="checkbox"] {
+			// CSS magic '+' next sibling! 
+			&:checked + .toggle-btn {
+				background:$oe-btn-red;
+			}
+			
+			&:checked + .toggle-btn:before {
+				transform: translateX(-$toggle-shift);
+				background:rgb(255,255,255);
+			}
+		}
+	}
 	
-
+	// disable the toggle switch
+	&.disabled {
+		pointer-events: none;
+		opacity:0.5;
+	}
 	
 }

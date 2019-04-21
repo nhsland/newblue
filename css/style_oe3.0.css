@@ -1622,6 +1622,25 @@ select.fixed-width {
   transition: transform  0.1s ease-out, -webkit-transform  0.1s ease-out;
 }
 
+.toggle-switch.reverse .toggle-btn:before {
+  left: 10px;
+}
+
+.toggle-switch.reverse input[type="checkbox"]:checked + .toggle-btn {
+  background: #990e0e;
+}
+
+.toggle-switch.reverse input[type="checkbox"]:checked + .toggle-btn:before {
+  -webkit-transform: translateX(-9px);
+          transform: translateX(-9px);
+  background: white;
+}
+
+.toggle-switch.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 /* UI classes */
 .oe-date {
   white-space: nowrap;
