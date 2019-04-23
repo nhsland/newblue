@@ -53,6 +53,7 @@
 			
 			// basic layout stuff:
 			h3 {
+				position:relative;
 				display:flex;
 				justify-content:flex-start;
 				align-content: center;
@@ -64,6 +65,27 @@
 
 				color:$oe-wb-widget-bg;
 				background:$oe-text;
+				
+				// edit widget btn:
+				// switch to show textarea to edit a widget
+				.edit-widget-btn {
+					position:absolute;
+					top:4px;
+					right:4px;
+					bottom:4px;
+					background:$oe-btn-blue;
+					padding:0 6px;
+					border-radius:3px;
+					
+					display:flex;
+					
+					.oe-i {
+						margin: auto;
+					}
+					
+				
+				}
+				
 			}
 
 			ul {
