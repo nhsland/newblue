@@ -3577,7 +3577,7 @@ select.fixed-width {
 /* Components */
 .oe-logo-flag-help {
   z-index: 149;
-  position: fixed;
+  position: absolute;
   top: 22px;
   left: 200px;
   color: #8c8c8c;
@@ -3587,7 +3587,7 @@ select.fixed-width {
 
 .openeyes-brand {
   z-index: 150;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 280px;

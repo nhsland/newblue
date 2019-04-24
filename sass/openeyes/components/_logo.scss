@@ -10,8 +10,8 @@
 // popup functionality (HOME page ONLY) 
 .oe-logo-flag-help {
 	z-index:$oe-z-logo - 1;
-	position:fixed;
-	top:22px; 		// positioned by eye
+	position:absolute;
+	top:22px; 			// positioned by eye
 	left:200px;
 	color:$oe-pro-text-light;
 	@include font-size(14);
@@ -22,7 +22,7 @@
 // Help, themes, etc:
 .openeyes-brand {
 	z-index:$oe-z-logo;
-	position:fixed;
+	position:absolute;
 	top:0; 
 	left:0;
 	width:280px;
