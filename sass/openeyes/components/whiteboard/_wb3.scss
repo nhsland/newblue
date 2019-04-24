@@ -22,6 +22,7 @@
 		// iPad 3, 4 and Pro 9.7 - Portrait
 		@include ipad(){
 			grid: repeat(5, 1fr) / repeat(2, 1fr);
+			grid-auto-flow: column;
 			// ...so on iOS there is an issue with
 			// viewport height (to do with the way
 			// iOS UI slides in and out, or something)

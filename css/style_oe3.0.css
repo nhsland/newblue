@@ -10516,6 +10516,7 @@ table.oe-clinic-list td.center {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
   .oe-whiteboard .wb3 {
     grid: repeat(5, 1fr)/repeat(2, 1fr);
+    grid-auto-flow: column;
     height: 890px;
   }
 }
