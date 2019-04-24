@@ -42,5 +42,12 @@
 			padding-top: 12px;
 		}
 		
+		// comments looked weird as right-aligned in tables
+		// added a wrapper to sort this
+		.comments-block {
+			text-align: left;
+			word-break: break-word;
+		}
+		
 	}
 }

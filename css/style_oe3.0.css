@@ -6552,6 +6552,11 @@ table.management-summaries tbody td:last-child {
   padding-top: 12px;
 }
 
+.main-event .element .comments-block {
+  text-align: left;
+  word-break: break-word;
+}
+
 .main-event .element .large-text {
   font-size: 0.875rem;
   font-weight: inherit;
