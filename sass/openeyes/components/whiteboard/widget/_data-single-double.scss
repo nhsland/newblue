@@ -9,66 +9,8 @@
 	.wb3 {
 		
 		.oe-wb-widget {
-			
-			// color flags for complexity
-			&.green 		{ border-bottom: 8px solid $oe-alert-green; }
-			&.orange 	{ border-bottom: 8px solid $oe-alert-orange; }
-			&.red 		{ border-bottom: 8px solid $oe-alert-red; }
-
-			// N/A (none)
-			.none {
-				color:rgba($oe-text-light,0.5);
-				font-weight: 300
-			}
-			
-			// Widget TYPEs
-			// basic <ul> list in the data
-			&.data-list {
-				.wb-data {
-					padding:0 4px 10px 8px;
-					font-size: $wb3-font-base;
-					font-weight: $oe-font-medium;
-					line-height:1.3;
-					
-					ul {
-						padding-bottom:10px;
-					}	
-					
-					@include ipad(){
-						font-size: $wb3-font-base + 0.7vw;
-					}
 		
-					// for data-list, handle the scrolling here
-					// so that header does not scroll
-					height:85%;
-					overflow-y:auto;
-				}
-			}
-			
-			&.data-image {
-				.wb-data {
-					&.image-fill {
-						background:transparent; 
-						background-position: center center;
-						background-repeat: no-repeat; 
-						background-size:contain; 
-						// 45px is a bit of guess
-						// need to allow for the header 
-						// but it's height is unknown
-						height:calc(100% - 45px);
-						
-						@include ipad(){
-							height:calc(100% - 30px);
-						}
-						
-					}
-				}
-			}
-			
-			
-			
-			
-			// single value + extra
+			// large data + extra
 			&.data-single,
 			&.data-single-extra,
 			&.data-double-extra {

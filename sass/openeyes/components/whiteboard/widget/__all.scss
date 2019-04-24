@@ -2,13 +2,13 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Whiteboard v3
-
 @import "_base";
 
-@import "wb3";
-@import "wb3-actions";
+@import "data-list";
+@import "data-single-double";
+@import "data-image";
 
-@import "widget/_all";
-@import "oe-wb-special";
-@import "oe-wb-empty-widget";
+@import "edit-widget";
+
+
+

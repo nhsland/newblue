@@ -1,0 +1,40 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Whiteboard
+
+.oe-whiteboard {
+	
+	.wb3 {
+		
+		.oe-wb-widget {
+		
+			// basic <ul> list in the data
+			&.data-list {
+				.wb-data {
+					padding:0 4px 10px 8px;
+					font-size: $wb3-font-base;
+					font-weight: $oe-font-medium;
+					line-height:1.3;
+					
+					ul {
+						padding-bottom:10px;
+					}	
+					
+					@include ipad(){
+						font-size: $wb3-font-base + 0.7vw;
+					}
+		
+					// for data-list, handle the scrolling here
+					// so that header does not scroll
+					height:85%;
+					overflow-y:auto;
+				}
+			}
+		}
+	}
+}
+
+
+

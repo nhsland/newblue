@@ -1,0 +1,28 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Whiteboard
+
+.oe-whiteboard {
+	
+	.wb3 {
+		
+		.oe-wb-widget {
+			
+			// color flags for complexity
+			&.green 	{ border-bottom: 8px solid $oe-alert-green; }
+			&.orange 	{ border-bottom: 8px solid $oe-alert-orange; }
+			&.red 		{ border-bottom: 8px solid $oe-alert-red; }
+
+			// N/A (none)
+			.none {
+				color:rgba($oe-text-light,0.5);
+				font-weight: 300
+			}	
+		}
+	}
+}
+
+
+

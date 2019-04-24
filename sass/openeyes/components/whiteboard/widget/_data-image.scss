@@ -1,0 +1,37 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Whiteboard
+
+.oe-whiteboard {
+	
+	.wb3 {
+		
+		.oe-wb-widget {
+			
+			&.data-image {
+				.wb-data {
+					&.image-fill {
+						background:transparent; 
+						background-position: center center;
+						background-repeat: no-repeat; 
+						background-size:contain; 
+						// 45px is a bit of guess
+						// need to allow for the header 
+						// but it's height is unknown
+						height:calc(100% - 45px);
+						
+						@include ipad(){
+							height:calc(100% - 30px);
+						}
+						
+					}
+				}
+			}
+		}
+	}
+}
+
+
+

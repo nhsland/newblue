@@ -15,6 +15,11 @@
 			display: inline-block;
 			height:$oe-sidebar-event-height;
 			width:50px;
+			
+			.oe-i-e {
+				// fix y-offset position issue
+				vertical-align: top;
+			}
 				
 			// background SVG icons		
 			background-position:right 10px center;
@@ -74,6 +79,9 @@
 			// themes. rather than add "pro-theme"
 			// class, override here:
 			.oe-i.laterality {
+				// the vertical-align middle isn't quite middle. 
+				position:relative;
+				top:-1px;
 				&.R { 	background-image: url( svg-path('icons/lat-R-green') ); }
 				&.L { 	background-image: url( svg-path('icons/lat-L-red') ); }
 				&.NA {	background-image: url( svg-path('icons/lat-NA') ); }

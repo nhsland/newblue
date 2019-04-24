@@ -2,8 +2,6 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Whiteboard
-
 .oe-whiteboard {
 
 	// footer actions
@@ -19,7 +17,7 @@
 		
 		transition: bottom 0.2s ease-in-out;
 		
-		// hidden
+		// shift position
 		&.down {
 			bottom:-50px;
 		}
@@ -31,9 +29,9 @@
 		
 		// iPad 3, 4 and Pro 9.7 - Portrait
 		@include ipad(){
-			// there are loads of ISSUEs
+			// there are ISSUEs
 			// with fixed positioning on iOS
-			// just don't go there... 
+			// avoiding them ... 
 			position:static !important;
 		}
 		
@@ -59,12 +57,12 @@
 			}
 			
 			@include ipad(){
-				display: none;
+				display: none; // not needed. actions not hidden.
 			}
 		}
 		
-		// have to center them because of
-		// the version 'tag' label:
+		// center buttons because of
+		// the version 'tag' label (bottom, right):
 		@include flex(center, center);
 		
 		button {
