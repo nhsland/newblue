@@ -1,0 +1,85 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Whiteboard
+
+.oe-whiteboard {
+	
+	.multipage-nav {
+		position: absolute;
+		right:10px;
+		top:40%;
+		width:25vw;
+		
+		h3 {
+			font-size: $wb3-font-header;
+			color: $oe-text;
+		}
+		
+		.page-jump {
+			padding:20px 0;
+			.page-num-btn {
+				background:$oe-btn-blue;			
+				display:inline-flex;
+				align-items: center;
+				justify-content: center;
+				width:35px;
+				height:35px;
+				margin:0 5px 5px 0;
+				border-radius:50%;
+				cursor: pointer;
+				color:white;
+				font-weight:400px
+			}	
+		}
+		
+		.page-scroll {
+			.page-scroll-btn {
+				display:inline-block;
+				background:$oe-btn-blue url( svg-path('icons/direction-up-circle') ) center center no-repeat;
+				background-size:25px;			
+				width:35px;
+				height:35px;
+				margin:0 5px 0 0;
+				border-radius:50%;
+				cursor: pointer;
+				
+				&.down {
+					background-image: url( svg-path('icons/direction-down-circle') );
+				}
+				
+			}
+		}
+		
+		
+		
+	}
+	
+	.multipage-stack {
+		
+		width:70vw;
+		// set the height of page wrap
+		height:calc(100vh - #{$oe-header-height});
+		
+		// iPad 3, 4 and Pro 9.7 - Portrait
+		@include ipad(){
+			// ...so on iOS there is an issue with
+			// viewport height... so best guess
+			height:$wb-ipad-height-guess;
+		}
+		
+		overflow-y:auto;
+		
+		background:$oe-blue-dark3;
+		// assumes <img> stack
+		img {
+			display:block; 
+			margin:20px auto;
+			width:90%;
+		}
+	}
+}
+
+
+

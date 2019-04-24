@@ -6,7 +6,7 @@
 
 	// footer actions
 	// at the bottom so that they can be reached
-	// and you can still see the data
+	// and hidden so you can still see the data
 	
 	.wb3-actions {
 		position:fixed;
@@ -65,13 +65,31 @@
 		// the version 'tag' label (bottom, right):
 		@include flex(center, center);
 		
+		@include ipad(){
+			height:auto;
+			flex-wrap:wrap;
+			padding:10px 0 5px 0;
+		}
+		
+		
 		button {
 			@include font-size(16);
-			padding: 0px 16px; // tab is 16px  
+			padding: 0 16px; // tab is 16px  
 			height: 38px;    // tab is 38px
 			margin:0 32px 0 0;
 			&:last-child {
 				margin-right:0;
+			}
+			
+			// iPad 3, 4 and Pro 9.7 - Portrait
+			@include ipad(){
+				padding:0 10px; 
+				margin:0 15px 10px 0;
+				
+				// refresh & exit
+				.icon-text {
+					display: none;
+				}
 			}
 		}
 	}

@@ -10498,6 +10498,12 @@ table.oe-clinic-list td.center {
   text-align: center;
 }
 
+.oe-whiteboard {
+  position: relative;
+  background: #172332;
+  color: #d6d6d6;
+}
+
 .oe-whiteboard .wb3 {
   display: grid;
   grid: repeat(3, 1fr)/repeat(3, 1fr);
@@ -10505,8 +10511,6 @@ table.oe-clinic-list td.center {
   grid-auto-columns: 1fr;
   height: calc(100vh - 60px);
   overflow-y: auto;
-  background: #172332;
-  color: #d6d6d6;
 }
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
@@ -10548,9 +10552,9 @@ table.oe-clinic-list td.center {
 .oe-whiteboard .wb3 .oe-wb-widget h3 .edit-widget-btn,
 .oe-whiteboard .wb3 .oe-wb-special h3 .edit-widget-btn {
   position: absolute;
-  top: 4px;
-  right: 4px;
-  bottom: 4px;
+  top: 3px;
+  right: 3px;
+  bottom: 3px;
   background: #074598;
   padding: 0 6px;
   border-radius: 3px;
@@ -10624,15 +10628,34 @@ table.oe-clinic-list td.center {
   }
 }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3-actions {
+    height: auto;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 10px 0 5px 0;
+  }
+}
+
 .oe-whiteboard .wb3-actions button {
   font-size: 1rem;
-  padding: 0px 16px;
+  padding: 0 16px;
   height: 38px;
   margin: 0 32px 0 0;
 }
 
 .oe-whiteboard .wb3-actions button:last-child {
   margin-right: 0;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .wb3-actions button {
+    padding: 0 10px;
+    margin: 0 15px 10px 0;
+  }
+  .oe-whiteboard .wb3-actions button .icon-text {
+    display: none;
+  }
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget.green {
@@ -10811,6 +10834,76 @@ table.oe-clinic-list td.center {
 .oe-whiteboard .wb3 .oe-wb-empty-widget {
   margin: 4px;
   background: rgba(214, 214, 214, 0.1);
+}
+
+.oe-whiteboard .multipage-nav {
+  position: absolute;
+  right: 10px;
+  top: 40%;
+  width: 25vw;
+}
+
+.oe-whiteboard .multipage-nav h3 {
+  font-size: 1.9vw;
+  color: #d6d6d6;
+}
+
+.oe-whiteboard .multipage-nav .page-jump {
+  padding: 20px 0;
+}
+
+.oe-whiteboard .multipage-nav .page-jump .page-num-btn {
+  background: #074598;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 35px;
+  height: 35px;
+  margin: 0 5px 5px 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: white;
+  font-weight: 400px;
+}
+
+.oe-whiteboard .multipage-nav .page-scroll .page-scroll-btn {
+  display: inline-block;
+  background: #074598 url("../svg/in-css/icons/direction-up-circle.svg") center center no-repeat;
+  background-size: 25px;
+  width: 35px;
+  height: 35px;
+  margin: 0 5px 0 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.oe-whiteboard .multipage-nav .page-scroll .page-scroll-btn.down {
+  background-image: url("../svg/in-css/icons/direction-down-circle.svg");
+}
+
+.oe-whiteboard .multipage-stack {
+  width: 70vw;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  background: #172332;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
+  .oe-whiteboard .multipage-stack {
+    height: 890px;
+  }
+}
+
+.oe-whiteboard .multipage-stack img {
+  display: block;
+  margin: 20px auto;
+  width: 90%;
 }
 
 /* HighCharts */

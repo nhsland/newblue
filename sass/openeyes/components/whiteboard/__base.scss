@@ -9,14 +9,15 @@ $wb3-font-base:2vw;
 $wb3-font-medium:3.1vw;
 $wb3-font-large:4vw;
 
+$wb-ipad-height-guess:890px;
 
 
 .oe-whiteboard {
-	// set up footer area
-	// wall mounter monitor, make it easier
-	// to reach button
-	// display: grid;
-	// grid: 1fr 50px / 1fr;
+	// required for multipage layout
+	position: relative;
+	
+	background:$oe-wb-bg; // theme changable
+	color:$oe-wb-data-text;
 	
 }
 

@@ -27,16 +27,16 @@
 			// iOS UI slides in and out, or something)
 			// so this is a guess, it allows for the header
 			// and for 44px of iOS bits... 
-			height:890px;
+			height:$wb-ipad-height-guess;
 		}
 		
 		
 		// set the height of the grid area
 		height:calc(100vh - #{$oe-header-height});
-		overflow-y: auto;
 		
-		background:$oe-wb-bg; // theme changable
-		color:$oe-wb-data-text;
+		// shouldn't happen on desktop but may do 
+		// on mobile devices
+		overflow-y: auto;
 		
 		.oe-wb-widget,
 		.oe-wb-special {
@@ -70,9 +70,9 @@
 				// switch to show textarea to edit a widget
 				.edit-widget-btn {
 					position:absolute;
-					top:4px;
-					right:4px;
-					bottom:4px;
+					top:3px;
+					right:3px;
+					bottom:3px;
 					background:$oe-btn-blue;
 					padding:0 6px;
 					border-radius:3px;
