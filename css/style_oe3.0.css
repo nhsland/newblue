@@ -5466,6 +5466,38 @@ table.management-summaries tbody td:last-child {
   right: 0;
 }
 
+.event-footer-actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #283442;
+  margin: 4px 0;
+}
+
+.event-footer-actions .event-title {
+  padding-bottom: 0;
+}
+
+.event-footer-actions button, .event-footer-actions .button, .event-footer-actions input[type="submit"] {
+  vertical-align: top;
+  height: 38px;
+  padding: 0 16px;
+}
+
+.event-footer-actions button.icon, .event-footer-actions .button.icon, .event-footer-actions input[type="submit"].icon {
+  padding: 0 0;
+}
+
+.event-footer-actions button.icon .oe-i, .event-footer-actions .button.icon .oe-i, .event-footer-actions input[type="submit"].icon .oe-i {
+  padding: 0 20px;
+}
+
 .oe-popup-event-audit-trail {
   z-index: 79;
   position: absolute;
@@ -6165,6 +6197,24 @@ table.management-summaries tbody td:last-child {
   color: cyan;
 }
 
+@media only screen and (min-width: 1440px) {
+  .main-event .element.full {
+    padding: 10px 30px 10px 135px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .main-event .element.full .element-header {
+    width: 160px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .main-event .element.full .element-header .element-title {
+    max-width: 115px;
+  }
+}
+
 .main-event .element .element-eyes {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6337,34 +6387,16 @@ table.management-summaries tbody td:last-child {
   padding: 0 0 0 10px;
 }
 
-.main-event .element-header .element-title.error {
-  border-left: 5px solid #9b0000;
-  padding: 0 0 0 5px;
-}
-
 @media only screen and (min-width: 1440px) {
-  .main-event .element .element-title {
+  .main-event .element-header .element-title {
     font-size: 0.875rem;
     line-height: 1.2;
   }
 }
 
-@media only screen and (min-width: 1440px) {
-  .main-event .element.full {
-    padding: 10px 30px 10px 135px;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .main-event .element.full .element-header {
-    width: 160px;
-  }
-}
-
-@media only screen and (min-width: 1440px) {
-  .main-event .element.full .element-header .element-title {
-    max-width: 115px;
-  }
+.main-event .element-header .element-title.error {
+  border-left: 5px solid #9b0000;
+  padding: 0 0 0 5px;
 }
 
 .main-event .element-actions {

@@ -10,15 +10,16 @@
 @import "view"; 
 @import "edit";			
 
-@import "element-right-left";
-@import "element-tiles";
-@import "element-both-eyes";
-@import "element-subgroup";
+@import "full";
+@import "eyes-right-left";
+@import "tiles";
+@import "both-eyes";
+@import "subgroup";
 
 @import "header";
 @import "actions";
 @import "tables";
-@import "data-group";					// replaces 'data-row', 'field-row' AND adds <hr> divider
+@import "data-grouping";				// replaces 'data-row', 'field-row' AND adds <hr> divider
 @import "typography";					// None, Note, Large-text, etc
 @import "listview-expand-collapse";		// View mode only 
 @import "reduce-height";

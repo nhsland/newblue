@@ -1,0 +1,34 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Element
+// 
+
+.main-event {
+
+	// All Elements are 'full' EXCEPT for 'tile' elements
+	//
+	// 'full' elements have an extended layout, when the 
+	// browser is wide enough the header moves over to 
+	// reduce the vertical height of the data layout
+	// 'tile' elements don't do this.
+	
+	.element.full {
+		@include media($oe-extended-browser-size){
+			padding:10px 30px 10px $oe-event-extension - 25px; 	// provide left space for header and right space for actions
+		}
+		
+		.element-header {
+			@include media($oe-extended-browser-size){
+				width:$oe-event-extension; 						// make sure header isn't covering elements
+			}
+			
+			.element-title {
+				@include media($oe-extended-browser-size){
+					max-width:$oe-event-extension - 45px;		// force long names to wrap	
+				}
+			}
+		}
+	}
+}

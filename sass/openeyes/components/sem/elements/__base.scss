@@ -4,8 +4,8 @@
 
 // OE Element
 // Elements can be:
-// - Full width
-// - Split (R / L)
+// - Full (width)
+// OR:
 // - Tile (1 of 3 in a horizontal layout) - this is ONLY used in VIEW
 
 // View & Edit have some specific styling.
@@ -21,7 +21,7 @@
 		color:$oe-text;
 		font-weight: $oe-font-medium;
 			
-		// line to divide R & L
+		// adds a line to divide R & L Eye data
 		&.eye-divider {
 			background-image: url( svg-path-theme('ui/element-divider') );
 			background-position: 50.4% 0;

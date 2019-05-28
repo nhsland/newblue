@@ -21,43 +21,21 @@
 			font-weight:$oe-font-light;
 			padding:0 0 0 10px;
 			
-			// this hasn't been implemented but keep
+			// on extended browser width tweak the font-size:
+			@include media($oe-extended-browser-size){
+				@include font-size(14); 					// reduce font size slightly
+				line-height:1.2;
+			}
+			
+			
+			// this hasn't been implemented but kept
 			// as a reference. it is demo'd on IDG
 			&.error {
 				border-left: 5px solid $oe-alert-red;
 				padding:0 0 0 5px;
 			}
-		}
-	}
-	
-	// on extended browser width make the following adjustments
-	// this covers 'full' and elements in 'tile-group'
-	.element {
-		.element-title {
-			@include media($oe-extended-browser-size){
-				@include font-size(14); 					// reduce font size slightly
-				line-height:1.2;
-			}
+			
 		}
 	}
 
-	// for 'full' elements adjust the padding because the header moves.
-	// tiles don't do this.
-	.element.full {
-		@include media($oe-extended-browser-size){
-			padding:10px 30px 10px $oe-event-extension - 25px; 	// provide left space for header and right space for actions
-		}
-		
-		.element-header {
-			@include media($oe-extended-browser-size){
-				width:$oe-event-extension; 						// make sure header isn't covering elements
-			}
-			
-			.element-title {
-				@include media($oe-extended-browser-size){
-					max-width:$oe-event-extension - 45px;		// force long names to wrap	
-				}
-			}
-		}
-	}
 }
