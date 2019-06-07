@@ -5769,6 +5769,14 @@ table.management-summaries tbody td:last-child {
   width: 23px;
 }
 
+.sidebar .event .event-date.backdated {
+  padding-right: 21px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 13px;
+  background-image: url("../svg/in-css/sidebar/rotate-left.svg");
+}
+
 .sidebar .tooltip.quicklook {
   position: absolute;
   left: 0;

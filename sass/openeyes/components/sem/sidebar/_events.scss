@@ -93,7 +93,7 @@
 		// event date layout
 		.event-date {
 			display: inline-block;
-			padding:0; // allow for .ev_date
+			padding:0;
 				  
 			.day, .mth, .yr {
 			  display: inline-block;
@@ -112,6 +112,18 @@
 			
 			.yr {
 				width: 23px; 
+			}
+			
+			// Event has been backdated:
+			// highlights when entries are made to the record with the date intentionally backdated.
+			// highlights where retrospective entries were make to the notes.
+			// It's a governance requirement:
+			&.backdated {
+				padding-right:21px; 
+				background-position:right center;
+				background-repeat: no-repeat;
+				background-size:$oe-sidebar-event-height - 6px;
+				background-image: url( svg-path('sidebar/rotate-left') );	
 			}
 		}
 	}
