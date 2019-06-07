@@ -14,7 +14,7 @@
 		.event-type {
 			display: inline-block;
 			height:$oe-sidebar-event-height;
-			width:50px;
+			width:48px;
 			
 			.oe-i-e {
 				// fix y-offset position issue
@@ -71,7 +71,7 @@
 		// (altho not much)... created to add Eye laterality info 
 		.event-extra {
 			display: inline-block;
-			width: 32px; // 32 will allow for 2 medium icons to be dropped in
+			width: 30px; // allow 2 medium icons to be dropped in
 			
 			// overide theme laterality icons!
 			// originally these where NOT themed
@@ -101,25 +101,23 @@
 			}
 			
 			.day {
-				width: 22px;
+				width: 20px;
 				text-align: right;
-				padding-right: 5px; 
 			}
 			
 			.mth {
 				width: 30px;
+				padding-left:4px 
 			}
 			
-			.yr {
-				width: 23px; 
-			}
+			.yr { }
 			
 			// Event has been backdated:
 			// highlights when entries are made to the record with the date intentionally backdated.
 			// highlights where retrospective entries were make to the notes.
 			// It's a governance requirement:
 			&.backdated {
-				padding-right:21px; 
+				padding-right:16px; 
 				background-position:right center;
 				background-repeat: no-repeat;
 				background-size:$oe-sidebar-event-height - 6px;

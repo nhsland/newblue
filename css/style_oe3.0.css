@@ -5684,7 +5684,7 @@ table.management-summaries tbody td:last-child {
 .sidebar .event .event-type {
   display: inline-block;
   height: 19px;
-  width: 50px;
+  width: 48px;
   background-position: right 10px center;
   background-repeat: no-repeat;
   background-size: 13px;
@@ -5725,7 +5725,7 @@ table.management-summaries tbody td:last-child {
 
 .sidebar .event .event-extra {
   display: inline-block;
-  width: 32px;
+  width: 30px;
 }
 
 .sidebar .event .event-extra .oe-i.laterality {
@@ -5756,21 +5756,17 @@ table.management-summaries tbody td:last-child {
 }
 
 .sidebar .event .event-date .day {
-  width: 22px;
+  width: 20px;
   text-align: right;
-  padding-right: 5px;
 }
 
 .sidebar .event .event-date .mth {
   width: 30px;
-}
-
-.sidebar .event .event-date .yr {
-  width: 23px;
+  padding-left: 4px;
 }
 
 .sidebar .event .event-date.backdated {
-  padding-right: 21px;
+  padding-right: 16px;
   background-position: right center;
   background-repeat: no-repeat;
   background-size: 13px;
