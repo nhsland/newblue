@@ -19,7 +19,9 @@
 	// duplicate the Event header
 	// as this scrolls out of sight
 	.event-title {
+		display:inline-block;
 		padding-bottom:0;
+		vertical-align: middle;
 	}
 	
 	// create 'tab' buttons

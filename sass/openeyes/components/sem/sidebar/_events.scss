@@ -54,6 +54,11 @@
 				background-image:url( svg-path('sidebar/flag') );
 			}
 			
+			// draft (Correspondence)
+			&.draft {
+				background-image:url( svg-path('sidebar/draft') );
+			}
+			
 			// scheduled
 			&.clock,
 			&.scheduled {

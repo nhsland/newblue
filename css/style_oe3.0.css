@@ -5481,7 +5481,9 @@ table.management-summaries tbody td:last-child {
 }
 
 .event-footer-actions .event-title {
+  display: inline-block;
   padding-bottom: 0;
+  vertical-align: middle;
 }
 
 .event-footer-actions button, .event-footer-actions .button, .event-footer-actions input[type="submit"] {
@@ -5713,6 +5715,10 @@ table.management-summaries tbody td:last-child {
 
 .sidebar .event .event-type.flag {
   background-image: url("../svg/in-css/sidebar/flag.svg");
+}
+
+.sidebar .event .event-type.draft {
+  background-image: url("../svg/in-css/sidebar/draft.svg");
 }
 
 .sidebar .event .event-type.clock, .sidebar .event .event-type.scheduled {
