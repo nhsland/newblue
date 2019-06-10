@@ -5785,6 +5785,7 @@ table.management-summaries tbody td:last-child {
   top: 19px;
   z-index: 1;
   width: 100%;
+  pointer-events: none;
   font-size: 0.75rem;
   color: #d6d6d6;
   background: #374755;
@@ -6818,6 +6819,13 @@ table.management-summaries tbody td:last-child {
 .correspondence-page-scroll .page-images img {
   display: block;
   padding: 0 0 10px 0;
+}
+
+.main-event .element .correspondence-print-iframe {
+  height: 63vh;
+  border: none;
+  background: white;
+  padding: 20px;
 }
 
 .main-event .element table.calendar {

@@ -4,21 +4,19 @@
 
 // this was [ x ] but made it into a proper box
 .checkbox {
-	display:inline-flex;
-	align-items: center;
-	justify-content:center;
-		
-	vertical-align:baseline;
+	display:inline-block;
+	vertical-align: bottom;
+	
 	border:2px solid black;
-	height:$fontsize-base + 2;
-	width:$fontsize-base + 2;
+	height:1.2em;
+	width:1.2em;
 	margin:0 0.5em;
 
 	&.checked {
-		&:after {
-			content:'x';
-			font-size:$fontsize-base + 1;
-			font-weight:600;
-		}
+		background-image:url('../svg/in-css/print/checkbox-cross.svg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size:83%;
+		
 	}
 }
