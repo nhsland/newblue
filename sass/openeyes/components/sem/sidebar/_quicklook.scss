@@ -15,7 +15,10 @@
 	  z-index:1;
 	  width:100%;
 	  
-	  pointer-events: none; // add this to stop a flicker issue (needs more research)
+	  // there was a flickering issue,
+	  // unable to recreate locally
+	  // but this solves it (and should be here anyway)
+	  pointer-events: none; 
 	  
 	  @include font-size(12);
 	  color:$oe-pro-text;
