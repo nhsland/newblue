@@ -87,7 +87,7 @@
 			// using vw:
 			width:17vw; // tested this with a long patient and long user name  
 			
-			// when we have a bit more space bum it up:
+			// when we have a bit more space bump it up:
 			@include media($oe-extended-browser-size){
 				width:21vw;
 			}

@@ -14,6 +14,12 @@ table {
     // try to avoid breaking up tabular data
     page-break-inside:avoid !important;
     
+    // Worklist tables could be long 
+    // add option to break on page
+    &.allow-page-break {
+	    page-break-inside: auto !important;
+    }
+    
     // setup defaults
     td, th {
 	    padding: 4px;
