@@ -9519,6 +9519,30 @@ table.oe-clinic-list td.center {
   font-size: 0.875rem;
 }
 
+.oe-analytics table.analytics-pro tbody tr {
+  border-bottom: 1px solid #26303d;
+}
+
+.oe-analytics table.analytics-pro tbody tr:last-child {
+  border-bottom: none;
+}
+
+.oe-analytics table.analytics-pro tbody tr:hover {
+  background-color: #172332;
+}
+
+.oe-analytics table.analytics-pro tbody tr:hover td {
+  color: #d6d6d6;
+}
+
+.oe-analytics table.analytics-pro th {
+  color: #8c8c8c;
+}
+
+.oe-analytics table.analytics-pro td {
+  color: #8c8c8c;
+}
+
 .oe-theatre-diaries {
   background: #141e2b;
 }

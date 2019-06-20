@@ -1,0 +1,38 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Analytics - is lockec in PRO theme
+.oe-analytics {
+	// <table>
+	table.analytics-pro {
+		
+		// add line to help with reading data
+		tbody {
+			tr {
+				border-bottom:1px solid $oe-pro-line;
+				&:last-child { 
+					border-bottom: none;
+				}
+				
+				&:hover {
+					background-color: $oe-pro-blue-dark3;
+					td {
+						color:$oe-pro-text;
+					}
+					
+				}
+			}
+		}
+
+		// <th>
+		th { 	color:$oe-pro-text-light;	}
+		
+		// <td>
+		td {	color:$oe-pro-text-light;	}
+	}		
+}
+
+
+
+
