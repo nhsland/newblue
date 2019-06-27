@@ -1,0 +1,58 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.main-event {
+	
+	.element {
+		
+		.restrict-data-shown {			
+			position:relative;
+			// interest CSS trick
+			// make some space for scrollbars
+			// try to maintain layout alignment
+			//width:calc(100% + 10px);
+			
+			// wrap content
+			.restrict-data-content {
+				height:270px;		// default to rows-10
+				overflow-y:auto;
+				padding:0 3px 0 0;	// visual breathing space for scrollbar
+				
+				
+				// allow different heights 
+				// num of rows based on standard 
+				// table row height (approx)
+				&.rows-5 {
+					height:160px;
+				}
+				
+				&.rows-10 {
+					height:290px;
+				}				
+			}
+			
+			
+			
+
+			// IF data is hidden by the scroll
+			// this needs flagging
+			.restrict-data-shown-flag {
+				position:absolute; 
+				z-index:1;
+				bottom:0;
+				left:0;
+				right:0;
+				height:30px;
+				
+				background-color:rgba($oe-blue,0.8);
+				background-position:center center;
+				background-size:15px;
+				background-repeat: no-repeat;
+				background-image: url( svg-icon-path-theme('arrow-down-bold') );	
+			}
+						
+		}
+		
+	}
+}

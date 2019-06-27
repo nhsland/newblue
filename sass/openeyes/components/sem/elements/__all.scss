@@ -21,7 +21,9 @@
 @import "tables";
 @import "data-grouping";				// replaces 'data-row', 'field-row' AND adds <hr> divider
 @import "typography";					// None, Note, Large-text, etc
-@import "listview-expand-collapse";		// View mode only 
+@import "listview-expand-collapse";		// pro/full view
+@import "collapse-data";	
+@import "restrict-data-shown";
 @import "reduce-height";
 
 

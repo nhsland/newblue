@@ -17,26 +17,17 @@
 	// CSS3:
 	// Grid is setup for primary usage (SEM pages)
 	display: grid;
-	
-	// switched to 'grid' shorthand: (instead of individual templates)
-	grid: #{$oe-header-height} #{$oe-event-header-height} 1fr / #{$oe-event-sidebar-width} 1fr;
-	
-	// keep for reference:
-	// grid-template-columns: $oe-event-sidebar-width 1fr;
-	// grid-template-rows: $oe-header-height $oe-event-header-height 1fr;	
-	
-	// Keeping this as areas because it's easier to understand ;)
-	grid-template-areas: 
-    		"header header"
-		"addevent eventheader"
-		"sidebar main";
-		
-		
-		
 	width:	100vw;
 	height:	100vh;
-	// max-height:100vh; // maybe required for Edge < 16. Needs testing!
-			
+	// max-height:100vh; // maybe required for Edge < 16?
+	
+	// switched to 'grid' shorthand: (instead of individual templates)
+	grid: 	"header header" #{$oe-header-height} 
+			"addevent eventheader" #{$oe-event-header-height} 
+			"sidebar main" 1fr 
+			/ #{$oe-event-sidebar-width} 1fr;
+		
+	
 	// grid items MUST be direct descendants
 	// Logo, Patient, User:
 	.oe-header {
@@ -46,7 +37,7 @@
 		-ms-grid-column-span: 2; 
 		height:$oe-header-height; 	
 		
-		// Everyone else:	
+		// CSS3	
 		grid-area: header;
 	}
 	
@@ -128,7 +119,7 @@
 		-ms-grid-row: 2;
 		-ms-grid-row-span: 2;
 		// CSS3
-		grid-area: 2 / 2 / 4 / 3 ; // can't use the areas (areas are named for SEM layout)
+		grid-area: 2 / 2 / 4 / 3 ; 	// can't use the areas (areas are setup for SEM layout)
 		overflow-y:auto;
 	}
 	

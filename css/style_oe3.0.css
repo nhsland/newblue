@@ -298,10 +298,9 @@ html {
   -ms-grid-columns: 200px 1fr;
   -ms-grid-rows: 60px 38px 1fr;
   display: grid;
-  grid: 60px 38px 1fr / 200px 1fr;
-  grid-template-areas: "header header" "addevent eventheader" "sidebar main";
   width: 100vw;
   height: 100vh;
+  grid: "header header" 60px "addevent eventheader" 38px "sidebar main" 1fr / 200px 1fr;
 }
 
 .oe-grid .oe-header {
@@ -1035,6 +1034,47 @@ strong, b {
 
 .collapse-group.highlight .collapse-group-icon {
   right: 5px;
+}
+
+.collapse-data {
+  margin: 5px 0 10px 0;
+}
+
+.collapse-data .collapse-data-content {
+  display: none;
+}
+
+.collapse-data .collapse-data-header-icon {
+  position: relative;
+  cursor: pointer;
+  padding: 5px 0;
+  color: #69939e;
+}
+
+.collapse-data .collapse-data-header-icon:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 2px;
+  width: 15px;
+  background-position: right center;
+  background-repeat: no-repeat;
+  background-size: 13px;
+  background-image: url("../svg/in-css/icons/expand.svg");
+  opacity: 0.5;
+}
+
+.collapse-data .collapse-data-header-icon.collapse:after {
+  background-image: url("../svg/in-css/icons/collapse.svg");
+}
+
+.collapse-data .collapse-data-header-icon:hover, .collapse-data .collapse-data-header-icon:active {
+  color: cyan;
+}
+
+.collapse-data .collapse-data-header-icon:hover:after, .collapse-data .collapse-data-header-icon:active:after {
+  opacity: 1;
 }
 
 button, .button, input[type="submit"] {
@@ -4980,6 +5020,28 @@ table.management-summaries tbody td:last-child {
   background: #1e2e42;
 }
 
+.oe-patient-popup .collapse-data {
+  margin: 5px 0 20px 0;
+}
+
+.oe-patient-popup .collapse-data .collapse-data-header-icon {
+  color: #8c8c8c;
+  font-size: 0.75rem;
+}
+
+.oe-patient-popup .collapse-data .collapse-data-header-icon:after {
+  background-size: 12px;
+  background-image: url("../svg/in-css/icons/expand.svg");
+}
+
+.oe-patient-popup .collapse-data .collapse-data-header-icon.collapse:after {
+  background-image: url("../svg/in-css/icons/collapse.svg");
+}
+
+.oe-patient-popup .collapse-data .collapse-data-header-icon:hover, .oe-patient-popup .collapse-data .collapse-data-header-icon:active {
+  color: cyan;
+}
+
 .oe-patient-mini-overview {
   position: fixed;
   z-index: 80;
@@ -6169,7 +6231,7 @@ table.management-summaries tbody td:last-child {
 .main-event .element .element-data .data-value.not-recorded {
   margin: 0 0 0 0;
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   font-weight: 300;
   opacity: 0.6;
 }
@@ -6671,6 +6733,46 @@ table.management-summaries tbody td:last-child {
 
 .main-event .element .listview-expand-collapse ul.listview li {
   margin: 0 0 3px 0;
+}
+
+.main-event .element .collapse-data {
+  margin: 5px 0;
+}
+
+.main-event .element .collapse-data .collapse-data-header-icon {
+  color: #69939e;
+}
+
+.main-event .element .restrict-data-shown {
+  position: relative;
+}
+
+.main-event .element .restrict-data-shown .restrict-data-content {
+  height: 270px;
+  overflow-y: auto;
+  padding: 0 3px 0 0;
+}
+
+.main-event .element .restrict-data-shown .restrict-data-content.rows-5 {
+  height: 160px;
+}
+
+.main-event .element .restrict-data-shown .restrict-data-content.rows-10 {
+  height: 290px;
+}
+
+.main-event .element .restrict-data-shown .restrict-data-shown-flag {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background-color: rgba(30, 46, 66, 0.8);
+  background-position: center center;
+  background-size: 15px;
+  background-repeat: no-repeat;
+  background-image: url("../svg/in-css/icons/arrow-down-bold.svg");
 }
 
 .main-event .element.reduced-height {
