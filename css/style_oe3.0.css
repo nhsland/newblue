@@ -5658,6 +5658,7 @@ table.management-summaries tbody td:last-child {
   font-weight: 300;
   color: #8c8c8c;
   margin: auto;
+  padding: 0 8px;
 }
 
 .sidebar-header input, .sidebar-header textarea, .sidebar-header select {
