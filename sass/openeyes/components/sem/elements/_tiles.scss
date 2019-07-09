@@ -36,12 +36,17 @@
 			// breaking the UI...			
 			.tile-data-overflow {
 				position:relative;
-				max-height:180px;
+				max-height:160px;
 				overflow-y: auto;
-				padding:0 5px 10px 0;
+				padding:0 5px 5px 0;
 			}
 			
-			// but make sure hidden data is flagged to users
+			// make sure hidden data is flagged to users in the UI
+			
+			
+			// this old <div> class "tile-more-data-flag" also expects
+			// the icon to be added e.g: "oe-i arrow-down-bold medium selected"
+			// by the JS that checks for the overflow.
 			.tile-more-data-flag {
 				position:absolute; 
 				z-index:1;
@@ -58,7 +63,7 @@
 			// adjust padding for 'tile' elements
 			.element-data {
 				&.full-width {
-			 		padding-right:10px; 
+			 		padding-right:0; 
 			 		padding-left:0;
 				}
 			}

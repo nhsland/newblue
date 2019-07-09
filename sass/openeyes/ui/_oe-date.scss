@@ -6,7 +6,7 @@
 // to align the column layout of dd MMM YYYY
 // Dates are wrapped with spans
 .oe-date {
-	white-space: nowrap;
+	white-space: nowrap; // dates must not wrap.
 	
 	// this is tricky. the problem here occurred in Meds
 	// an icon is used to show start / stop dates.
@@ -14,14 +14,34 @@
 	// flex also didn't work. decided to go with a 
 	// fixed width approach... 
 	display:inline-block;
-	width:88px;
-	text-align: right; // then align right within wrapper
+	text-align: right; 		// then align right within wrapper
 	
-	.day {}
-	.mth {
-		padding:0 0 0 5px;
+	// MUST! have a minwidth.
+	// this ensures data widths are consistent for:
+	// for: dd Mth YYYY 
+	// and: Mth YYY 
+	// and: YYYY  		
+	min-width:82px;	 // reduced from 88px		
+	
+	.day {
+		// not really needed but kept in case font-size is increased.
+		padding: 0 0 0 8px;  
 	}
+	.mth, 
 	.yr {
-		padding:0 0 0 5px;
+		padding: 0 0 0 4px;
+	}
+}
+
+
+// date layout in patient popups needs squeezing to maximise space.
+.quicklook-data-groups {
+	.oe-date {
+		min-width:70px;
+		.day,
+		.mth, 
+		.yr {
+			padding: 0 0 0 2px;
+		}
 	}
 }
