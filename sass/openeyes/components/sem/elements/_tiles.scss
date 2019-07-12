@@ -42,6 +42,24 @@
 			}
 			
 			// make sure hidden data is flagged to users in the UI
+			// based on the new generic Class for data overflow: restrict-data-shown
+			// the new generic UI widget was added later. Did NOT update Tile DOM to 
+			// use it because it would require DOM changes. 
+			.tile-data-overflow-flag {
+				position:absolute; 
+				z-index:1;
+				bottom:0;
+				left:0;
+				right:0;
+				height:30px;
+				
+				background-color:rgba($oe-blue,0.8);
+				background-position:center center;
+				background-size:15px;
+				background-repeat: no-repeat;
+				background-image: url( svg-icon-path-theme('arrow-down-bold') );	
+			}
+			
 			
 			
 			// this old <div> class "tile-more-data-flag" also expects
