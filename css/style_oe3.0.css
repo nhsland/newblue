@@ -349,6 +349,14 @@ html {
   }
 }
 
+@media only screen and (min-width: 2048px) {
+  .oe-grid .oe-full-header,
+  .oe-grid .oe-full-content,
+  .oe-grid .oe-allow-for-fixing-hotlist {
+    width: calc(100% - 600px);
+  }
+}
+
 .oe-grid .event-header {
   z-index: 1;
   height: 38px;

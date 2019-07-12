@@ -21,7 +21,7 @@
 		// as we are going up to 1920px we have an extra 30px... use them
 		width: calc(100vw - #{$oe-js-browser-fix-size - $oe-hotlist-panel-width}); 
 		// for those with crazy big monitors restrict it
-		max-width: 600px !important;			
+		max-width: $oe-hotlist-panel-max !important;			
 	}
 	
 	

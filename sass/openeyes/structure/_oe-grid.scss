@@ -76,6 +76,13 @@
 		@include media($oe-extended-browser-size){	  // 1440px
 			width:$oe-event-main-extended-width;      // 1240px (not including sidebar: 200px = 1440px )
 		}
+		
+		// stretch to fill for events will need some tweaking in other areas
+		// e.g. position of face and split elements background divider line
+		//@include media($oe-super-wide-display){	  	 		// 2048px+
+		//	width: calc(100% - #{$oe-hotlist-panel-max});      
+		//}
+		
 	}
 	// full width header and content allows for the 
 	// hotlist panel which is fixed at large resolutions. 
@@ -87,6 +94,13 @@
 			// content using these widths stretch to fill width until 
 			// they are restricted and hotlist pops in
 			width: $oe-extended-browser-size; 				// 1440px;
+		}
+		
+		
+		// stretch to fill on super wide displays
+		// works for most standard page layouts
+		@include media($oe-super-wide-display){	  	 		// 2048px+
+			width: calc(100% - #{$oe-hotlist-panel-max});      
 		}
 	}
 	

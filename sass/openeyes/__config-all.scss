@@ -15,12 +15,18 @@ $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 // Minimum supported screen width: 1280px.
 $oe-minimum-supported-width: 1280px;
 
+// OE was built to only support upto 1920px, however users 
+// are now using it on super-wide screens e.g. 2560x1440
+// going to target screens above supported 1920px to add enhancements
+$oe-super-wide-display: 2048px;  // And above
+
 // grid px
 $oe-header-height:					60px; 	// top UI bar
 $oe-event-header-height:				38px; 	// SEM header
 $oe-event-sidebar-width:				200px;	// SEM sidebar
 $oe-event-main-default-width:			1080px; // SEM for minimum support monitors (+ sidebar is 1280px)
-$oe-hotlist-panel-width:				450px; 	// hotlist list panel
+$oe-hotlist-panel-width:				450px; 	// hotlist list panel - MIN
+$oe-hotlist-panel-max:					600px; 	// hotlist list panel - MAX
 $oe-eyedraw-app-width:				($oe-minimum-supported-width - 20px);  // eyedraw popup app
 $oe-add-insert-popup-height:			204px; 	// Adder Popup
 
