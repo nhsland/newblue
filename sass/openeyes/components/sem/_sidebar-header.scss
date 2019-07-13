@@ -14,8 +14,8 @@
 	.add-event {
 		height:$oe-event-header-height;
 		width:100%;
-		color: $oe-pro-user-input-text; 		// UI theme
-		background: $oe-pro-user-inputs; 	    // UI theme
+		color: $oe-pro-user-input-text; 		// Pro-theme
+		background: $oe-pro-user-inputs; 	    // Pro-theme
 		border-radius:0;
 		
 		// when disable make 'pro-themed'
@@ -32,9 +32,46 @@
 	.title {
 		@include font-size(13);
 		font-weight:300;
-		color:$oe-pro-text-light;			// UI theme
+		color:$oe-pro-text-light;				// Pro-theme
 		margin:auto;
 		padding:0 8px;
+	}
+	
+	.icon-button {
+		display:inline-block;
+		width:48px;  
+		height:$oe-event-header-height;
+		
+		// lock in pro-theme
+		// (rather than adding "pro-theme" class)
+		color: $oe-pro-text;
+		background-color: $oe-pro-user-inputs;
+		
+		&.active,
+		&.selected {
+			background-color: $oe-pro-btn-blue;
+		}
+		
+		&:hover, &:focus, &:active {
+			color: rgb(255,255,255);
+			background-color: $oe-btn-blue;
+		}
+		
+		// setup icon buttons
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size:20px 25px;
+		
+		&.switch-elements {
+			background-image:url( svg-path( 'ui/sidebar-switcher-elements' ) );
+		}
+		
+		&.switch-events {
+			background-image:url( svg-path( 'ui/sidebar-switcher-events' ) );
+		}
+		
+		
+		
 	}
 	
 	// anything in here should be Pro themed 
@@ -44,24 +81,7 @@
 		border-radius:0;
 	}
 	
-	&.switcher {
-		// create 'tab' buttons
-		@include buttons {
-			vertical-align: top; // overwrite default 'bottom' to fix alignment issues
-			height:$oe-event-header-height;
-			// padding:0 16px;
-		}
-		
-		// svg icon
-		.icon {
-			display:inline-block;
-			width:20px;  
-			height:25px;
-			fill:rgb(255,255,255);
-			opacity: 0.5;	
-		}
-		
-	}
+	
 	
 	
 }

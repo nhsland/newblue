@@ -13,21 +13,21 @@ $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 
 // note: CSS3 grid is used for main layouts, see in 'structure'
 // Minimum supported screen width: 1280px.
-$oe-minimum-supported-width: 1280px;
+$oe-minimum-supported-width: 	1280px;
 
 // OE was built to only support upto 1920px, however users 
 // are now using it on super-wide screens e.g. 2560x1440
 // going to target screens above supported 1920px to add enhancements
-$oe-super-wide-display: 2048px;  // And above
+$oe-super-wide-display: 		2048px;  // And above
 
 // grid px
-$oe-header-height:					60px; 	// top UI bar
+$oe-header-height:						60px; 	// top UI bar
 $oe-event-header-height:				38px; 	// SEM header
 $oe-event-sidebar-width:				200px;	// SEM sidebar
 $oe-event-main-default-width:			1080px; // SEM for minimum support monitors (+ sidebar is 1280px)
 $oe-hotlist-panel-width:				450px; 	// hotlist list panel - MIN
 $oe-hotlist-panel-max:					600px; 	// hotlist list panel - MAX
-$oe-eyedraw-app-width:				($oe-minimum-supported-width - 20px);  // eyedraw popup app
+$oe-eyedraw-app-width:					($oe-minimum-supported-width - 20px);  // eyedraw popup app
 $oe-add-insert-popup-height:			204px; 	// Adder Popup
 
 
@@ -45,64 +45,64 @@ $oe-extended-browser-size: 				($oe-minimum-supported-width + $oe-event-extensio
 
 // hotlist fixed.
 // the next enhancement is to fix hotlist when there is enough width. 
-$oe-browser-size-hotlist-fixed:		1800px; // JS is setting the fixing the hotlist panel at 1890px;
+$oe-browser-size-hotlist-fixed:			1800px; // JS is setting the fixing the hotlist panel at 1890px;
 $oe-js-browser-fix-size:				1890px; 
 
 
 // z
 $oe-z-vc:				160; // VC ScratchPad
 $oe-z-logo:				150; 
-$oe-z-popup:				100;
-$oe-z-shortcuts:			99;
+$oe-z-popup:			100;
+$oe-z-shortcuts:		99;
 $oe-z-hotlist:			95; // hotlist (previously know as activity)
 $oe-z-tooltip:			90; // tooltips are used in quicklook popups
-$oe-z-quicklook:			80; // quicklook, demographics, allergies & risks
+$oe-z-quicklook:		80; // quicklook, demographics, allergies & risks
 $oe-z-add-insert: 		70; 
-$oe-z-element-search:		65; 
+$oe-z-element-search:	65; 
 $oe-z-ed-v2: 			20; // ED v2 DOM. ED v2 still in first V3			
 
 
 // UI colors 
 // PRO Theme. Here because some Pro Theme elements are needed in Classsic
 
-$html-pro-bg: 			rgb(16,25,37);
+$html-pro-bg: 				rgb(16,25,37);
 
-$oe-pro-text: 			rgb(214,214,214);
+$oe-pro-text: 				rgb(214,214,214);
 $oe-pro-text-light: 		rgb(140,140,140);
 $oe-pro-text-highlight: 	rgb(0,255,255);
 $oe-pro-text-active: 		rgb(90,180,180);  // user over!
 
-$oe-pro-blue:			rgb(30,46,66);
-$oe-pro-blue-dark: 		shade( $oe-pro-blue, 20% );
+$oe-pro-blue:				rgb(30,46,66);
+$oe-pro-blue-dark: 			shade( $oe-pro-blue, 20% );
 $oe-pro-blue-dark2: 		shade( $oe-pro-blue, 35% );
 $oe-pro-blue-dark3: 		shade( $oe-pro-blue, 25% );
 $oe-pro-blue-light: 		tint( $oe-pro-blue, 30% );
 
-$oe-pro-bg-highlight: 	shade($oe-pro-blue-dark3,30); // used as hover highlight
+$oe-pro-bg-highlight: 		shade($oe-pro-blue-dark3,30); // used as hover highlight
 
-$oe-pro-grey:			rgb(40,52,66);
+$oe-pro-grey:				rgb(40,52,66);
 
-$oe-pro-bg:				$oe-pro-blue-dark2; // top header strip
-$oe-pro-line: 			rgb(38,48,61);
+$oe-pro-bg:					$oe-pro-blue-dark2; // top header strip
+$oe-pro-line: 				rgb(38,48,61);
 
-$oe-pro-btn-blue:		rgb(7,69,152);
+$oe-pro-btn-blue:			rgb(7,69,152);
 
 // Virtual Clinic
-$oe-vc-orange: 			rgb(255,180,0);
+$oe-vc-orange: 				rgb(255,180,0);
 
 // clinic ... (became Pathsteps)
-$oe-clinic-green: 		rgb(20,100,0);
-$oe-clinic-orange:		rgb(180,80,22);
-$oe-clinic-red:			rgb(160,40,10);
+$oe-clinic-green: 			rgb(20,100,0);
+$oe-clinic-orange:			rgb(180,80,22);
+$oe-clinic-red:				rgb(160,40,10);
 $oe-clinic-grey:			rgb(50,50,55);
 
 
 
 // input colours:
-$oe-pro-user-inputs: 	$oe-pro-blue;
-$oe-pro-user-input-text: $oe-pro-text;
+$oe-pro-user-inputs: 		$oe-pro-blue;
+$oe-pro-user-input-text: 	$oe-pro-text;
 
-$oe-pro-popup-bg:		rgb(55,71,85);
+$oe-pro-popup-bg:			rgb(55,71,85);
 
 	
 
