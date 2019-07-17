@@ -10,7 +10,7 @@
 		// Element that requires data to SPAN BOTH Eyes, then split back to R / L
 		// requires a slightly different DOM because of the Flex layout used in 'element-eyes'
 		.element-both-eyes {
-			background-color: $oe-blue-dark2;  	// hides the background divider line
+			background-color: $oe-sem-element-bg;  	// hides the background divider line
 			margin:0 20px 10px 0; 				// 20px matches the full-width class
  			padding:10px 0 10px 10px; 			// the right 0px padding means that collapse icons line up!
 			border-bottom: 2px dotted $oe-line;

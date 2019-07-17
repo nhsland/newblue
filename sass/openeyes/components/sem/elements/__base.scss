@@ -15,7 +15,7 @@
 	.element {
 		position:relative;
 		min-height:50px; // ensure element actions and header can always be seen	
-		background: $oe-blue-dark2;
+		background-color: $oe-sem-element-bg;
 		padding:32px 5px 10px 10px; // provide top space for header/actions
 		margin:0 0 3px 0;
 		color:$oe-text;

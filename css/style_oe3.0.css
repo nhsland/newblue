@@ -5704,6 +5704,11 @@ table.management-summaries tbody td:last-child {
   background-image: url("../svg/in-css/ui/sidebar-switcher-events.svg");
 }
 
+.sidebar-header .icon-button.events-user-trail {
+  background-size: 13px;
+  background-image: url("../svg/in-css/ui/sidebar-audit-trail.svg");
+}
+
 .sidebar-header input, .sidebar-header textarea, .sidebar-header select {
   color: #d6d6d6;
   background-color: #1e2e42;
@@ -6005,6 +6010,84 @@ table.management-summaries tbody td:last-child {
   color: #8c8c8c;
 }
 
+.oe-events-user-trail {
+  min-width: 1000px;
+  min-height: 300px;
+}
+
+.oe-events-user-trail .event-user-grid table {
+  width: 100%;
+  color: #8c8c8c;
+  margin: 10px 0 0 0;
+}
+
+.oe-events-user-trail .event-user-grid table th, .oe-events-user-trail .event-user-grid table td {
+  width: 230px;
+  vertical-align: top;
+  text-align: left;
+  padding: 2px 0 2px 2px;
+  border: 1px solid #26303d;
+  border-left-width: 2px;
+  font-size: 0.75rem;
+}
+
+.oe-events-user-trail .event-user-grid table th .oe-i-e, .oe-events-user-trail .event-user-grid table td .oe-i-e {
+  margin-right: 6px;
+}
+
+.oe-events-user-trail .event-user-grid table thead th {
+  font-weight: 400;
+  color: #d6d6d6;
+  font-size: 0.9375rem;
+  border-top: none;
+  padding: 0 0 8px 6px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #374755;
+}
+
+.oe-events-user-trail .event-user-grid table thead th:first-child {
+  border-left: none;
+  width: auto;
+}
+
+.oe-events-user-trail .event-user-grid table tbody th {
+  text-align: right;
+  vertical-align: middle;
+  padding-right: 8px;
+  width: 80px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-left: none;
+}
+
+.oe-events-user-trail .event-user-grid table tbody td.event {
+  background-color: #26303d;
+}
+
+.oe-events-user-trail .event-user-grid td > .event-audit-trail {
+  display: none;
+  padding: 0 5px 5px 0;
+}
+
+.oe-events-user-trail .event-user-grid td > .event-audit-trail table td {
+  font-size: 0.625rem;
+}
+
+.oe-events-user-trail .event-user-grid td > .event-audit-trail table td:last-child {
+  text-align: right;
+}
+
+.oe-events-user-trail .event-user-grid td > .event-audit-trail table td:first-child {
+  text-align: left;
+}
+
+.oe-events-user-trail .event-user-grid td > .event-audit-trail table td .oe-date {
+  min-width: 72px;
+}
+
 .sidebar .sidebar-filter-btn {
   position: relative;
   display: -webkit-box;
@@ -6210,7 +6293,7 @@ table.management-summaries tbody td:last-child {
 .main-event .element {
   position: relative;
   min-height: 50px;
-  background: #141e2b;
+  background-color: #121c23;
   padding: 32px 5px 10px 10px;
   margin: 0 0 3px 0;
   color: #d6d6d6;
@@ -6265,19 +6348,6 @@ table.management-summaries tbody td:last-child {
   font-size: 0.8125rem;
   font-weight: 300;
   opacity: 0.6;
-}
-
-.main-event .element.priority {
-  background-color: #101923;
-}
-
-.main-event .element.priority .element-data .large-text,
-.main-event .element.priority .element-data .priority-text {
-  font-weight: 400;
-}
-
-.main-event .element.priority .element-both-eyes {
-  background-color: #101923;
 }
 
 .main-event .element .element-fields.full-width {
@@ -6473,7 +6543,7 @@ table.management-summaries tbody td:last-child {
 }
 
 .main-event .element .element-both-eyes {
-  background-color: #141e2b;
+  background-color: #121c23;
   margin: 0 20px 10px 0;
   padding: 10px 0 10px 10px;
   border-bottom: 2px dotted #26303d;

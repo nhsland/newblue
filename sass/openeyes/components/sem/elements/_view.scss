@@ -51,20 +51,8 @@
 		// Should only be used in VIEW ...
 		// Prioritise element data
 		&.priority {
-			background-color: $oe-bg-highlight;
-			
-			// if an element is priorities increase large text font-weight
-			.element-data {
-				.large-text, 
-				.priority-text {
-					font-weight:$oe-font-medium;
-				}	
-			}
-			
-			// if it has both sides in a split:
-			.element-both-eyes {
-				background-color: $oe-bg-highlight;
-			}	
+			// removed priority colouring
+			// all elements now the same!
 		}
 		
 	}
