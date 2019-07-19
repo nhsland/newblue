@@ -44,8 +44,10 @@ input {
 		background-image:url( svg-path('ui/filter') );
 	}
 	
+	// date should match oe-date: dd Mth YYYY
 	&.date {
-		//text-align: center;
+		text-align: center;
+		width: $oe-date-width;
 	}
 }
 

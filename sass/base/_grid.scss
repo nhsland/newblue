@@ -26,6 +26,13 @@
 	margin:0 auto; 
 }
 
+// where a table column just has an icon, 
+// use this (only used in <colgroup>)
+.cols-icon {
+	width:40px;
+	white-space: nowrap;
+}
+
 .cols-1 {
 width: 8.33333%;
 }

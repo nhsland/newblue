@@ -201,6 +201,11 @@ textarea {
   margin: 0 auto;
 }
 
+.cols-icon {
+  width: 40px;
+  white-space: nowrap;
+}
+
 .cols-1 {
   width: 8.33333%;
 }
@@ -1581,6 +1586,11 @@ input.filter {
   background-image: url("../svg/in-css/ui/filter.svg");
 }
 
+input.date {
+  text-align: center;
+  width: 82px;
+}
+
 input[type="range"] {
   width: 100%;
 }
@@ -1698,7 +1708,7 @@ select.fixed-width {
   white-space: nowrap;
   display: inline-block;
   text-align: right;
-  min-width: 82px;
+  width: 82px;
 }
 
 .oe-date .day {
@@ -2053,7 +2063,7 @@ select.fixed-width {
 }
 
 .oe-add-select-search .has-filter .add-options {
-  max-height: 204px;
+  max-height: 194px;
 }
 
 .oe-add-select-search .add-options {
@@ -6491,6 +6501,7 @@ table.management-summaries tbody td:last-child {
 .main-event .element.tile {
   width: 33.33333%;
   margin: 0 3px 3px 0;
+  background-color: #0d171e;
 }
 
 .main-event .element.tile:last-child {

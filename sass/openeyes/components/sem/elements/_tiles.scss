@@ -27,6 +27,7 @@
 		&.tile {
 			width: 33.33333%;
 			margin:0 3px 3px 0;
+			background-color: $oe-sem-tile-element-bg;
 			&:last-child {
 				margin-right:0;
 			}

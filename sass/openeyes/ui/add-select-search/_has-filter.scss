@@ -15,7 +15,7 @@
 		}
 		
 		.add-options {
-			max-height:$oe-add-insert-popup-height;	// limit the displayed results - input 
+			max-height:$oe-add-insert-popup-height - 10px;	// limit the displayed results - input 
 		}
 	}
 }

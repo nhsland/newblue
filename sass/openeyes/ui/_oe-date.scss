@@ -16,12 +16,12 @@
 	display:inline-block;
 	text-align: right; 		// then align right within wrapper
 	
-	// MUST! have a minwidth.
+	// MUST! have a width.
 	// this ensures data widths are consistent for:
 	// for: dd Mth YYYY 
 	// and: Mth YYY 
 	// and: YYYY  		
-	min-width:82px;	 // reduced from 88px		
+	width:$oe-date-width;	 		
 	
 	.day {
 		// not really needed but kept in case font-size is increased.

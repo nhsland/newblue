@@ -26,7 +26,8 @@ $oe-blue-dark2: 		rgb(215,215,215);
 $oe-blue-dark3:			rgb(115,120,132); // - exception dark3 is not 'inverted' in classic
 $oe-blue-light: 		shade( $oe-blue-dark,30);
 
-$oe-sem-element-bg: 	rgb(220,220,220);	// removed 2 colour scheme (priority/normal) made bg 1 colour
+$oe-sem-element-bg: 		rgb(220,220,220);	// removed 2 colour scheme (priority/normal) made bg 1 colour
+$oe-sem-tile-element-bg: 	rgb(225,225,225);
 
 // because I keep using 'dark1' instead of 'dark'
 $oe-blue-dark1: 		$oe-blue-dark; 
