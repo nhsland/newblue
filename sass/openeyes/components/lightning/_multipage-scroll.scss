@@ -48,13 +48,19 @@
 		// allow content area to grow in relation to display
 		height: 50vh;  // set a default
 		
-		
+		// in Correspondence VIEW mode
+		// make it fill the height
 		&.correspondence {
-			height: 63vh; // in an element, this is something of a guess	
+			// 100px is a bit of guess. 
+			// It allows for the Event Title and 50px gap at the bottom
+			height: calc(100vh - #{$oe-header-height + $oe-event-header-height} - 100px); 	
 		}	
 		
 		&.lightning {
-			height: calc(100vh - 200px);
+			// 180px is a bit of guess too.
+			// the timeline height in lightning
+			// viewer can change
+			height: calc(100vh - 180px);
 		}	
 		
 		overflow-y: auto;

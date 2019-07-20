@@ -7075,7 +7075,7 @@ table.management-summaries tbody td:last-child {
 }
 
 .main-event .element .correspondence-print-iframe {
-  height: 63vh;
+  height: calc(100vh - 98px - 100px);
   border: none;
   background: white;
   padding: 20px;
@@ -8881,11 +8881,11 @@ span.squiggle {
 }
 
 .lightning-multipage-scroll .multipage-stack.correspondence {
-  height: 63vh;
+  height: calc(100vh - 98px - 100px);
 }
 
 .lightning-multipage-scroll .multipage-stack.lightning {
-  height: calc(100vh - 200px);
+  height: calc(100vh - 180px);
 }
 
 .lightning-multipage-scroll .multipage-stack img {

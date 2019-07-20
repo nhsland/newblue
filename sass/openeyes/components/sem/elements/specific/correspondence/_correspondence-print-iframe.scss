@@ -9,7 +9,9 @@
 	
 		// iFrame - load in the Print DOM
 		.correspondence-print-iframe {
-			height: 63vh;
+			// fill available height, 100px is a bit of guess. 
+			// It allows for the Event Title and 50px gap at the bottom
+			height: calc(100vh - #{$oe-header-height + $oe-event-header-height} - 100px); 
 			border: none;
 			background:rgb(255,255,255);
 			padding:20px;
