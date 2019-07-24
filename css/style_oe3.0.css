@@ -6865,7 +6865,7 @@ table.management-summaries tbody td:last-child {
   margin: 0 5px;
 }
 
-.main-event .element .oe-pro-data-view,
+.main-event .element .pro-data-view,
 .main-event .element .listview-expand-collapse {
   display: -webkit-box;
   display: -ms-flexbox;
