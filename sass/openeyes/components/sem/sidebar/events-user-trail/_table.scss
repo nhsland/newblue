@@ -12,7 +12,6 @@
 			margin:10px 0 0 0;  // overwrite oe-popup default
 			
 			th, td {
-				width: 230px;
 				vertical-align: top;
 				text-align: left;
 				padding:2px 0 2px 2px;
@@ -21,7 +20,8 @@
 				@include font-size(12);	
 				
 				.oe-i-e {
-					margin-right:6px;		
+					margin-right:6px;	
+					vertical-align: text-top;	
 				}
 			}
 			
@@ -52,19 +52,20 @@
 				
 				th {
 					text-align: right;
-					vertical-align: middle;
-					padding-right:8px;
-					width:80px;
+					padding: 5px 8px 0 0;
+					width:90px;
 					@include font-size(12);
 					font-weight:700;
 					border-left:none;
 				}
 				
 				td {
-					&.event {
-						background-color:$oe-pro-line;
-					}
+					// need to set a width
+					// to stop the columns distorting
+					// when the audit trail is shown
+					width:360px;
 				}
+				
 			}	
 			
 				

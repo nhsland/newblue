@@ -7,8 +7,9 @@
 .element {
 		
 	// listview expand / collapse
-	// this was previous handled with: flex-layout and flex-top
-	// but seems more ellegant to cover with a specific class
+	// "oe-pro-data-view," updated class name for wrapper
+	// still support old class
+	.oe-pro-data-view,
 	.listview-expand-collapse {
 		
 		// hide this icon
@@ -18,12 +19,14 @@
 		
 		// wrappers and CSS hooks for the different views
 		// not used in UI but v.useful in PRINT!
+		.data-pro-view,
 		.listview-pro { 
 			display: none;
 		}
 		
 		// I use 'hidden' in IDG
 		// (OE may be different.)
+		.data-standard-view,
 		.listview-full,
 		.hidden {
 			display:block;

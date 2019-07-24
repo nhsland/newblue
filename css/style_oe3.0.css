@@ -6021,7 +6021,7 @@ table.management-summaries tbody td:last-child {
 }
 
 .oe-events-user-trail {
-  min-width: 1000px;
+  min-width: 900px;
   min-height: 300px;
 }
 
@@ -6032,7 +6032,6 @@ table.management-summaries tbody td:last-child {
 }
 
 .oe-events-user-trail .event-user-grid table th, .oe-events-user-trail .event-user-grid table td {
-  width: 230px;
   vertical-align: top;
   text-align: left;
   padding: 2px 0 2px 2px;
@@ -6043,6 +6042,7 @@ table.management-summaries tbody td:last-child {
 
 .oe-events-user-trail .event-user-grid table th .oe-i-e, .oe-events-user-trail .event-user-grid table td .oe-i-e {
   margin-right: 6px;
+  vertical-align: text-top;
 }
 
 .oe-events-user-trail .event-user-grid table thead th {
@@ -6065,21 +6065,45 @@ table.management-summaries tbody td:last-child {
 
 .oe-events-user-trail .event-user-grid table tbody th {
   text-align: right;
-  vertical-align: middle;
-  padding-right: 8px;
-  width: 80px;
+  padding: 5px 8px 0 0;
+  width: 90px;
   font-size: 0.75rem;
   font-weight: 700;
   border-left: none;
 }
 
-.oe-events-user-trail .event-user-grid table tbody td.event {
+.oe-events-user-trail .event-user-grid table tbody td {
+  width: 360px;
+}
+
+.oe-events-user-trail .event-user-grid td.event {
   background-color: #26303d;
+}
+
+.oe-events-user-trail .event-user-grid td.event .event-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 5px 0 0;
+}
+
+.oe-events-user-trail .event-user-grid td.event .event-details .other-user {
+  color: #d6d6d6;
 }
 
 .oe-events-user-trail .event-user-grid td > .event-audit-trail {
   display: none;
   padding: 0 5px 5px 0;
+}
+
+.oe-events-user-trail .event-user-grid td > .event-audit-trail table {
+  width: 100%;
 }
 
 .oe-events-user-trail .event-user-grid td > .event-audit-trail table td {
@@ -6841,6 +6865,7 @@ table.management-summaries tbody td:last-child {
   margin: 0 5px;
 }
 
+.main-event .element .oe-pro-data-view,
 .main-event .element .listview-expand-collapse {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6851,14 +6876,6 @@ table.management-summaries tbody td:last-child {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-.main-event .element .listview-expand-collapse ul.listview {
-  font-size: 0.75rem;
-}
-
-.main-event .element .listview-expand-collapse ul.listview li {
-  margin: 0 0 3px 0;
 }
 
 .main-event .element .collapse-data {

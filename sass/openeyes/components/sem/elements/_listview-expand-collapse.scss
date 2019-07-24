@@ -8,31 +8,39 @@
 	
 	.element {
 		
-		// listview expand / collapse
-		// this was previous handled with: flex-layout and flex-top
-		// but seems more ellegant to cover with a specific class
-		
+		// when first introduced this was called "listview-expand-collapse"
+		// now it's "oe-pro-data-view" (as this is more descriptive)
+		// still supporting the old class. 
+	
+		.oe-pro-data-view,	
 		.listview-expand-collapse {
 			display:flex;
 			align-items:flex-start;
 			justify-content:space-between;
 			
-			// does nothing, as positioned with flex (above)
-			// but a useful hook if we want to use absolute
-			// .expand-collapse-icon-btn {}
+			
 			
 			// CSS hooks for the different views
-			// not using PRO but useful in PRINT!
-			// .listview-pro {}
-			// .listview-full {}
+			// not actually using them, JS is tho.
+			// but CSS may need them
+			// check PRINT CSS, if you make changes here!!
 			
-			// listview of data in FULL, tabular layout
-			ul.listview {
-				@include font-size(12);
-				li {
-					margin:0 0 3px 0;
-				}
-			}
+			// .listview-pro {} 		// old class
+			// .data-pro-view {}		// new class (JS hook)
+			
+			// .listview-full {}		// old
+			// .data-standard-view {}	// new
+			
+			// wrapper for expand/collapse icon btn
+			// .expand-collapse-icon-btn {}
+			
+			// Do not think this is used any more:
+			//	ul.listview {
+			//	 @include font-size(12);
+			//	 li {
+			//		 margin:0 0 3px 0;
+			//	 }
+			// }
 		}
 		
 	}
