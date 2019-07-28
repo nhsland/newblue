@@ -280,6 +280,56 @@ textarea {
   padding-right: 0 !important;
 }
 
+@-webkit-keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
 /* OpenEyes UI v3.0 */
 /* ------ PRO theme ------- */
 /* OpenEyes CSS */
@@ -1369,20 +1419,6 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 
 ::-webkit-scrollbar-thumb {
   background-color: #8c8c8c;
-}
-
-@-webkit-keyframes spinner {
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
-@keyframes spinner {
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
 }
 
 .spinner-overlay {
@@ -5913,6 +5949,7 @@ table.management-summaries tbody td:last-child {
 }
 
 .sidebar .tooltip.quicklook {
+  display: none;
   position: absolute;
   left: 0;
   top: 19px;
@@ -5925,8 +5962,14 @@ table.management-summaries tbody td:last-child {
   padding: 8px 0;
 }
 
-.sidebar .tooltip.quicklook.makestatic {
-  position: static;
+.sidebar .tooltip.quicklook.fade-in {
+  display: block;
+  -webkit-animation: 0.1s ease-out forwards fadein;
+          animation: 0.1s ease-out forwards fadein;
+}
+
+.sidebar .tooltip.quicklook.fade-out {
+  display: none;
 }
 
 .sidebar .tooltip.quicklook .event-name {
@@ -5960,6 +6003,10 @@ table.management-summaries tbody td:last-child {
   background-color: #ffb400;
   color: #000;
   font-weight: 500;
+}
+
+.sidebar .tooltip.quicklook.makestatic {
+  position: static;
 }
 
 .sidebar .list-controls {
@@ -6018,6 +6065,112 @@ table.management-summaries tbody td:last-child {
   padding: 0 4px 0 30px;
   font-size: 0.6875rem;
   color: #8c8c8c;
+}
+
+.oe-event-quick-view {
+  display: none;
+  z-index: 95;
+  position: fixed;
+  top: 60px;
+  left: 200px;
+  height: calc(100vh - 60px);
+  width: 800px;
+  overflow: hidden;
+  background: #374755;
+}
+
+.oe-event-quick-view.fade-in {
+  display: block;
+}
+
+.oe-event-quick-view.fade-out {
+  display: block;
+  -webkit-animation: 0.2s ease-in forwards fadeout;
+          animation: 0.2s ease-in forwards fadeout;
+}
+
+.oe-event-quick-view .title-date {
+  position: absolute;
+  top: 9px;
+  left: 55px;
+  font-size: 1.125rem;
+  color: #d6d6d6;
+  font-weight: 300;
+}
+
+.oe-event-quick-view .close-icon-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.oe-event-quick-view .next-prev-btn {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+}
+
+.oe-event-quick-view .next-prev-btn .oe-i {
+  display: block;
+  margin: 0 0 20px 0;
+}
+
+.oe-event-quickview {
+  display: none;
+  z-index: 95;
+  position: fixed;
+  top: 60px;
+  left: 200px;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  background: #374755;
+  width: 582px;
+}
+
+.oe-event-quickview .event-quickview {
+  position: relative;
+}
+
+.oe-event-quickview .event-quickview .quickview-details {
+  height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.oe-event-quickview .event-quickview .quickview-details .event-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.oe-event-quickview .event-quickview .quickview-details .event-date {
+  margin: auto;
+  /* flex */
+  font-size: 0.875rem;
+  color: #d6d6d6;
+  font-weight: 300;
+}
+
+.oe-event-quickview .event-quickview .quickview-details .step-through-arrows {
+  position: absolute;
+  top: 38px;
+  right: 5px;
+  padding: 5px;
+}
+
+.oe-event-quickview .event-quickview .quickview-details .step-through-arrows .oe-i {
+  display: block;
+  margin: 0 0 10px 0;
+}
+
+.oe-event-quickview .event-quickview .quickview-screenshots {
+  padding: 5px 0 0 5px;
+}
+
+.oe-event-quickview .event-quickview .quickview-screenshots img {
+  width: 537px;
+  height: auto;
 }
 
 .oe-events-user-trail {
@@ -6264,64 +6417,6 @@ table.management-summaries tbody td:last-child {
 .sidebar .oe-element-list a.error {
   color: white;
   background-color: #9b0000;
-}
-
-.oe-event-quickview {
-  display: none;
-  z-index: 95;
-  position: fixed;
-  top: 60px;
-  left: 200px;
-  height: calc(100vh - 60px);
-  overflow: hidden;
-  background: #374755;
-  width: 582px;
-}
-
-.oe-event-quickview .event-quickview {
-  position: relative;
-}
-
-.oe-event-quickview .event-quickview .quickview-details {
-  height: 38px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.oe-event-quickview .event-quickview .quickview-details .event-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.oe-event-quickview .event-quickview .quickview-details .event-date {
-  margin: auto;
-  /* flex */
-  font-size: 0.875rem;
-  color: #d6d6d6;
-  font-weight: 300;
-}
-
-.oe-event-quickview .event-quickview .quickview-details .step-through-arrows {
-  position: absolute;
-  top: 38px;
-  right: 5px;
-  padding: 5px;
-}
-
-.oe-event-quickview .event-quickview .quickview-details .step-through-arrows .oe-i {
-  display: block;
-  margin: 0 0 10px 0;
-}
-
-.oe-event-quickview .event-quickview .quickview-screenshots {
-  padding: 5px 0 0 5px;
-}
-
-.oe-event-quickview .event-quickview .quickview-screenshots img {
-  width: 537px;
-  height: auto;
 }
 
 .main-event .element {
