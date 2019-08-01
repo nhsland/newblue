@@ -13,7 +13,9 @@
 	}
 } 
 
-// add class to the DOM container. 
+// add class to the DOM container.
+// but if the DOM height isn't controlled 
+// it won't vertically center... 
 .spinner-loader {
 	position: relative;
 }

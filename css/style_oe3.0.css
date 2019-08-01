@@ -798,8 +798,8 @@ ul.inline-list li {
 
 ul.dot-list li, ul.dslash-list li {
   display: inline-block;
-  margin: 0 5px 5px 0;
-  padding: 0 0 0 14px;
+  margin: 0 5px 5px 2px;
+  padding: 0 0 0 12px;
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 6px;
@@ -6074,7 +6074,7 @@ table.management-summaries tbody td:last-child {
   top: 60px;
   left: 200px;
   height: calc(100vh - 60px);
-  width: 800px;
+  width: 1080px;
   overflow: hidden;
   background: #374755;
 }
@@ -6098,6 +6098,21 @@ table.management-summaries tbody td:last-child {
   font-weight: 300;
 }
 
+.oe-event-quick-view .audit-trail {
+  position: absolute;
+  top: 13px;
+  right: 65px;
+  font-size: 0.75rem;
+  color: #d6d6d6;
+  font-weight: 300;
+  padding: 0 0 0 22px;
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-size: 11px;
+  background-image: url("../svg/in-css/ui/sidebar-audit-trail.svg");
+  opacity: 0.6;
+}
+
 .oe-event-quick-view .close-icon-btn {
   position: absolute;
   top: 10px;
@@ -6108,10 +6123,144 @@ table.management-summaries tbody td:last-child {
   position: absolute;
   top: 60px;
   right: 20px;
+  z-index: 1;
 }
 
 .oe-event-quick-view .next-prev-btn .oe-i {
   display: block;
+  margin: 0 0 20px 0;
+}
+
+.oe-event-quick-view .quick-view-content {
+  position: relative;
+  height: 100%;
+}
+
+.oe-event-quick-view .quick-view-content .event-preview-image {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  bottom: 0;
+  width: 300px;
+}
+
+.oe-event-quick-view .quick-view-content .event-preview-image img {
+  width: 100%;
+  height: auto;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data {
+  position: absolute;
+  top: 10px;
+  left: 330px;
+  right: 60px;
+  bottom: 0;
+  color: #d6d6d6;
+  font-size: 0.6875rem;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table {
+  width: 100%;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody th, .oe-event-quick-view .quick-view-content .event-quick-data table tbody td {
+  vertical-align: top;
+  text-align: left;
+  padding: 6px 0;
+  line-height: 1.2;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody th {
+  font-weight: 400;
+  white-space: nowrap;
+  color: #69939e;
+  padding-right: 20px;
+  width: 140px;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody td.eyes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody td.eyes .right-eye,
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody td.eyes .left-eye {
+  width: 50%;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody td.eyes .right-eye {
+  border-right: 2px solid #26303d;
+  padding-right: 10px;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody td.eyes .left-eye {
+  border-left: 2px solid #26303d;
+  padding-left: 10px;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody td .eyedraw, .oe-event-quick-view .quick-view-content .event-quick-data table tbody td.eyedraw {
+  text-align: center;
+  background: #dae6f1;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody td.large-text {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody td .oe-eye-lat-icons {
+  margin: 0 3px;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody td .oe-eye-lat-icons .oe-i.small {
+  width: 11px;
+  height: 11px;
+  background-size: 11px;
+  vertical-align: bottom;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody td .none {
+  opacity: 0.6;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody tr {
+  border-bottom: 1px solid #26303d;
+}
+
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.oe-event-quick-view .quick-view-content .event-letter-pages {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 10px 60px 10px 10px;
+}
+
+.oe-event-quick-view .quick-view-content .event-letter-pages img {
+  display: inline-block;
+  width: 48%;
+  height: auto;
   margin: 0 0 20px 0;
 }
 

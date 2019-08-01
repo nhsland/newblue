@@ -14,6 +14,7 @@
 		position: absolute;
 		top:60px;
 		right:20px;
+		z-index:1; // ensure above content
 		
 		.oe-i {
 			// stack the icons
