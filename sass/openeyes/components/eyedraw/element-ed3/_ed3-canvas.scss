@@ -15,18 +15,31 @@
 	// ---- element - VIEW & EDIT
 	// right-eye / left-left wrapper imposes the padding
 	// due to various reasons these are different!
+	
 	&.full {
+		// if ED3 is full width element slightly
+		// change the ed3 canvas layout
 		.ed3 {
-			@include flex(flex-start, flex-start);
+			.ed3-canvas {
+				@include flex(center, flex-start);
+			}
 		}
 	}
-	
 
 	.ed3 {
-		@include flex(space-between, flex-start);
-		padding:3px 1px;
-		background:$oe-ed3-blue; // eyedraw blue
-		border-radius:3px;
+		// wrapper for both canvases
+		.ed3-canvas {
+			// canvas area for front and side
+			// should always occupy same area
+			// even if no side view:
+			width:335px; 
+			
+			@include flex(space-between, flex-start);	
+			// .ed3-front {} 	// 200 x 200
+			// .ed3-side {}		// 134 x 200
+			
+			align-self: center; // center the canvases in relation to container
+		}
 	}
 	
 }

@@ -84,6 +84,18 @@
 							font-weight: $oe-font-light;
 						}
 						
+						.more-data {
+							display:inline-block;
+							width:13px;
+							height:9px;
+							
+							background-position:top center;
+							background-repeat: no-repeat;
+							background-size:13px;
+							background-image:url( svg-path( 'ui/more-h.pro' ) );
+							
+						}
+						
 						
 					}
 					

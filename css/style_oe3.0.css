@@ -6234,6 +6234,16 @@ table.management-summaries tbody td:last-child {
   font-weight: 300;
 }
 
+.oe-event-quick-view .quick-view-content .event-quick-data table tbody td .more-data {
+  display: inline-block;
+  width: 13px;
+  height: 9px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 13px;
+  background-image: url("../svg/in-css/ui/more-h.pro.svg");
+}
+
 .oe-event-quick-view .quick-view-content .event-quick-data table tbody tr {
   border-bottom: 1px solid #26303d;
 }
@@ -7972,6 +7982,18 @@ table.management-summaries tbody td:last-child {
   right: 0;
 }
 
+.element.full .ed3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .element .ed3 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7987,7 +8009,20 @@ table.management-summaries tbody td:last-child {
   border-radius: 3px;
 }
 
+.element.full .ed3 .ed3-canvas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
 .element .ed3 .ed3-canvas {
+  width: 335px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7997,6 +8032,13 @@ table.management-summaries tbody td:last-child {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+
+.element.full .ed3 .ed3-data-stack {
+  width: 440px;
+  margin: 0 0 0 15px;
 }
 
 .element .ed3 .ed3-data-stack {
@@ -8004,7 +8046,7 @@ table.management-summaries tbody td:last-child {
   font-size: 0.625rem;
   font-weight: 500;
   color: #32323c;
-  padding: 2px 5px 15px 0;
+  padding: 4px 5px 15px 0;
 }
 
 .element .ed3 .ed3-data-stack .data-value {
@@ -8012,17 +8054,29 @@ table.management-summaries tbody td:last-child {
   padding: 0 0 10px 0;
 }
 
-.element .ed3 .ed3-data-stack .data-value .priority-text {
-  font-weight: 700;
-}
-
-.element .ed3 .ed3-data-stack .data-value.not-recorded {
-  text-align: left;
-  font-size: 0.75rem;
-}
-
 .element .ed3 .ed3-data-stack .data-label {
   color: #32323c;
+}
+
+.element .ed3 .ed3-data-stack table tr {
+  border-bottom: none;
+}
+
+.element .ed3 .ed3-data-stack table th, .element .ed3 .ed3-data-stack table td {
+  vertical-align: top;
+  text-align: left;
+  color: #32323c;
+  padding: 2px 4px;
+  height: auto;
+}
+
+.element .ed3 .ed3-data-stack table th {
+  white-space: nowrap;
+  font-size: 0.625rem;
+  font-weight: 400;
+  opacity: 0.5;
+  padding-top: 4px;
+  padding-right: 10px;
 }
 
 .element .ed3-data-actions {
@@ -8040,6 +8094,77 @@ table.management-summaries tbody td:last-child {
 
 .element .ed3-comments {
   margin: 10px 0 0 10px;
+}
+
+.ed3-surgeon-orientation {
+  position: relative;
+  width: 180px;
+  height: 100px;
+  margin: 0 30px;
+  border-bottom: 1px solid #b2bdc7;
+  -ms-flex-item-align: center;
+      align-self: center;
+  background-position: center bottom 5px;
+  background-repeat: no-repeat;
+  background-size: 60px;
+  background-image: url("../svg/in-css/eyedraw/op-patient.svg");
+}
+
+.ed3-surgeon-orientation .title {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  font-size: 0.625rem;
+  color: #32323c;
+  opacity: 0.5;
+  text-align: center;
+}
+
+.ed3-surgeon-orientation:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  content: "";
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-image: url("../svg/in-css/eyedraw/op-surgeon.svg");
+}
+
+.ed3-surgeon-orientation.pos-top:after {
+  top: 0;
+  left: calc(50% - 25px);
+}
+
+.ed3-surgeon-orientation.pos-top-right:after {
+  top: 10px;
+  left: calc(30% - 25px);
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.ed3-surgeon-orientation.pos-top-left:after {
+  top: 10px;
+  left: calc(70% - 25px);
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.ed3-surgeon-orientation.pos-right:after {
+  top: 40px;
+  left: calc(20% - 25px);
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.ed3-surgeon-orientation.pos-left:after {
+  top: 40px;
+  left: calc(80% - 25px);
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 
 .oe-eyedraw-app {

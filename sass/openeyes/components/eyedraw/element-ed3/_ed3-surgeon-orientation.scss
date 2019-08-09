@@ -1,0 +1,104 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Element - Eyedraw - Surgeon Orientation 
+// Show the angle of Surgeon Orientaion to patient
+// DE-coupled for use in VIEW & EDIT elements AND ED3 App
+
+.ed3-surgeon-orientation {
+	$ed-surgeon-orientation-w:180px;
+	$ed-surgeon-size:50px;
+	
+	position:relative;
+	width:$ed-surgeon-orientation-w; 
+	height:100px;
+	margin:0 30px;
+	
+	border-bottom: 1px solid $oe-ed3-panels;
+	
+	align-self: center;
+	
+	// patient on op bed svg
+	background-position:center bottom 5px; // allow for the title
+	background-repeat: no-repeat;
+	background-size:60px;
+	background-image:url( svg-path('eyedraw/op-patient') );
+	
+	.title {
+		position:absolute;
+		bottom:-20px;
+		left:0;
+		right:0;
+		@include font-size(10);
+		color:$oe-ed3-text;
+		opacity:0.5;
+		text-align: center;
+	}
+	
+	
+	// surgeon icon
+	&:after  {
+		position:absolute;
+		top:0;
+		left:0;
+		width:$ed-surgeon-size; 
+		height:$ed-surgeon-size;
+		content:"";
+		
+		// svg surgeon icon
+		background-position:top left;
+		background-repeat: no-repeat;
+		background-size:$ed-surgeon-size;
+		background-image:url( svg-path('eyedraw/op-surgeon') );
+	}
+
+	// position name relates to the patients eyes. 
+	// e.g. right eye is on the left (face up)
+	
+	&.pos-top {
+		&:after {
+			top:0;
+			left: calc(50% - #{$ed-surgeon-size/2});
+		}
+	}
+	
+	
+	&.pos-top-right {
+		&:after {
+			top:10px;
+			left: calc(30% - #{$ed-surgeon-size/2};
+			transform: rotate(-45deg);
+		}
+	}
+
+	
+	&.pos-top-left {
+		&:after {
+			top:10px;
+			left: calc(70% - #{$ed-surgeon-size/2};
+			transform: rotate(45deg);
+		}		
+	}
+	
+	
+	&.pos-right {
+		&:after {
+			top:40px;
+			left: calc(20% - #{$ed-surgeon-size/2};
+			transform: rotate(-90deg);
+		}
+	}
+	
+	&.pos-left {
+		&:after {
+			top:40px;
+			left: calc(80% - #{$ed-surgeon-size/2};
+			transform: rotate(90deg);
+		}
+	}
+
+	
+	
+}		
+
