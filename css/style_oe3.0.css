@@ -1298,6 +1298,10 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   background: #6b1400;
 }
 
+.alert-box a {
+  text-decoration: underline;
+}
+
 .alert-box ul {
   list-style: disc;
   list-style-position: inside;
@@ -1310,6 +1314,18 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 
 .alert-box ul li:last-child {
   margin-bottom: 0;
+}
+
+.alert-box.has-actions {
+  position: relative;
+  padding-right: 200px;
+  min-height: 33px;
+}
+
+.alert-box.has-actions .alert-actions {
+  position: absolute;
+  right: 8px;
+  top: 5px;
 }
 
 .oe-popup .status-box {
