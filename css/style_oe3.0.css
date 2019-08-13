@@ -518,7 +518,13 @@ html {
   grid-column-gap: 30px;
 }
 
+.oe-full-content.subgrid.wide-side-panel {
+  -ms-grid-columns: 400px 1fr;
+  grid: 1fr / 400px 1fr;
+}
+
 .oe-full-content.subgrid .oe-full-side-panel {
+  width: auto !important;
   height: calc(100vh - 98px);
   overflow-y: auto;
   margin: 0 0 0 0 !important;
@@ -1259,6 +1265,21 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   background: #990e0e;
 }
 
+.button-stack button {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.button-stack button:last-child {
+  margin-bottom: 0;
+}
+
+.button-stack.divider {
+  border-bottom: 2px solid #26303d;
+  padding: 0 0 15px 0;
+}
+
 .alert-box {
   padding: 4px 10px;
   margin: 3px 2px;
@@ -1267,10 +1288,6 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   font-size: 0.8125rem;
   line-height: 1.4;
   border-radius: 3px;
-}
-
-.alert-box strong {
-  font-weight: 500;
 }
 
 .alert-box.info {
@@ -1319,13 +1336,13 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 .alert-box.has-actions {
   position: relative;
   padding-right: 200px;
-  min-height: 33px;
+  min-height: 32px;
 }
 
 .alert-box.has-actions .alert-actions {
   position: absolute;
   right: 8px;
-  top: 5px;
+  top: 4px;
 }
 
 .oe-popup .status-box {
@@ -3030,6 +3047,14 @@ select.fixed-width {
 
 .oe-i.eyelat-R.pro-theme {
   background-image: url("../svg/in-css/icons/lat-R.svg");
+}
+
+.oe-i.patient {
+  background-image: url("../svg/in-css/icons/patient.svg");
+}
+
+.oe-i.patient.pro-theme {
+  background-image: url("../svg/in-css/icons/patient.svg");
 }
 
 .oe-i.trials {
@@ -11634,6 +11659,12 @@ table.oe-clinic-list td.center {
   display: block;
   margin: 20px auto;
   width: 90%;
+}
+
+.oe-advanced-search {
+  background: #141e2b;
+  color: #d6d6d6;
+  padding: 0 20px;
 }
 
 /* HighCharts */

@@ -39,7 +39,15 @@
 		grid-column-gap: 30px;  // may not work on Edge < 16
 		
 		
+		// increase the side panel area
+		&.wide-side-panel {
+			-ms-grid-columns: 400px 1fr;
+			grid: 1fr / 400px 1fr;
+		}
+		
+		
 		.oe-full-side-panel {
+			width: auto !important; // override defaults
 			height: calc(100vh - #{$oe-header-height + $oe-event-header-height}); 
 			overflow-y:auto;	
 			
@@ -52,7 +60,7 @@
 		}
 		
 		.oe-full-main {
-			width: auto !important;
+			width: auto !important; // override defaults
 			height: calc(100vh - #{$oe-header-height + $oe-event-header-height}); 
 			overflow-y:auto;
 			

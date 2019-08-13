@@ -28,7 +28,7 @@
 }
 
 // ------------------------------ Patterns
-/// Flex
+// Flex
 @mixin flex($horizontal,$vertical){
 	display:flex;
 	justify-content: $horizontal;

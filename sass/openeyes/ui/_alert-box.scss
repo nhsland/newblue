@@ -20,11 +20,6 @@
 	
 	border-radius:3px;
 	
-	strong {
-		font-weight:500;
-	}
-	
-	
 	// types of alerts
 	// added opacity to allow colour bg tinting
 	$alert-text-color: rgba(250,250,250,0.9);
@@ -80,12 +75,12 @@
 	&.has-actions {
 		position:relative;
 		padding-right:200px; 	// allow space for a long named button 
-		min-height: 33px;  		// otherwise button overlaps button background
+		min-height: 32px;  		// otherwise button overlaps button background
 		
 		.alert-actions {
 			position: absolute;
 			right:8px;
-			top:5px;
+			top:4px;
 		}
 	}
 	

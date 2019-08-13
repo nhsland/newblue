@@ -219,8 +219,8 @@
 	&.eyelat-L			{ @include oe3-icons('lat-L'); }
 	&.eyelat-R			{ @include oe3-icons('lat-R'); }
 	
-	// trials is nav icon 
-	// but may be required in the IU
+	// nav icons  may be required in the IU
+	&.patient			{ @include oe3-icons('patient'); }
 	&.trials			{ @include oe3-icons('trials'); }
 
 	
