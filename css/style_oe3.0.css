@@ -583,10 +583,6 @@ html {
   padding: 0 0 0 5px;
 }
 
-.oe-full-content .oe-full-side-panel table.standard tbody th {
-  text-align: left;
-}
-
 .oe-full-content .oe-full-main {
   padding: 20px;
 }
@@ -8144,6 +8140,20 @@ table.management-summaries tbody td:last-child {
   left: calc(80% - 25px);
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
+}
+
+.ed3-surgeon-orientation.pos-bottom-right:after {
+  top: 63px;
+  left: calc(28% - 25px);
+  -webkit-transform: rotate(-130deg);
+          transform: rotate(-130deg);
+}
+
+.ed3-surgeon-orientation.pos-bottom-left:after {
+  top: 63px;
+  left: calc(72% - 25px);
+  -webkit-transform: rotate(130deg);
+          transform: rotate(130deg);
 }
 
 .oe-eyedraw-app {

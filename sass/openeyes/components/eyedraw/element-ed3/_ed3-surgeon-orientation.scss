@@ -97,6 +97,23 @@
 			transform: rotate(90deg);
 		}
 	}
+	
+	&.pos-bottom-right {
+		&:after {
+			top:63px;
+			left: calc(28% - #{$ed-surgeon-size/2};
+			transform: rotate(-130deg);
+		}
+	}
+
+	
+	&.pos-bottom-left {
+		&:after {
+			top:63px;
+			left: calc(72% - #{$ed-surgeon-size/2};
+			transform: rotate(130deg);
+		}		
+	}
 
 	
 	
