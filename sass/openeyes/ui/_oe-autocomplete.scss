@@ -19,6 +19,10 @@
 	background: $oe-popup-bg;
 	color: $oe-text;
 	
+	max-width:350px; // restrict long stuff.
+	
+	@include boxshadow();
+	
 	li {
 		border-bottom:1px dotted $oe-line;
 		&:last-child {

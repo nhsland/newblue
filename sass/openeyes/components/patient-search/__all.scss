@@ -2,7 +2,14 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Advanced Search
+// OE Patient & Advanced Search
 @import "_base";
+
+
+
+// original patient search
+@import "patient-search-results/subgrid";
+@import "patient-search-results/search-details";
+@import "patient-search-results/search-results";
 
 

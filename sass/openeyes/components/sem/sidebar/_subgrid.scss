@@ -7,9 +7,8 @@
 // to create a fixed area for OEscape and filter UI
 
 .sidebar {
-
-	&.subgrid {
-		
+	
+	&.subgrid {	
 		// for Edge < 16
 		display: -ms-grid;
 		-ms-grid-columns: 1fr;

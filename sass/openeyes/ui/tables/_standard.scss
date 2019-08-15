@@ -8,8 +8,7 @@
 table {
 	&.standard {
 		width:100%;
-		@include font-size(14);
-		
+	
 		// this may need putting in a class
 		margin:20px 0 10px 0;
 		
@@ -66,7 +65,9 @@ table {
 				}
 			}
 			
+			th,
 			td {
+				@include font-size(14);
 				color:$oe-text; 
 				font-weight: $oe-font-medium;
 				padding:5px $tableStandardPadding 5px 0; 
@@ -80,12 +81,18 @@ table {
 					vertical-align: top;
 				}
 			}
+			
+			th { 
+				color:$oe-text-light;		// use th like a label for a row
+				font-weight: $oe-font-light;
+			}
 		}
 		
 		tfoot {
 			tr {
 				border-top:3px solid $oe-line;
 				td {
+					@include font-size(14);
 					padding:5px $tableStandardPadding 5px 0; 
 				}
 			}

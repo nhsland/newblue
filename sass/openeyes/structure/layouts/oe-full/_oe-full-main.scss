@@ -5,11 +5,18 @@
 .oe-full-content {
 
 	.oe-full-main {
-		// this area normally has an extra CSS hook. e.g. "oe-worklists".
-		// and this handles all the styling. This approach is favoured
-		// as we are not sure what changes may occur in the future.
-		// The only thing know is ...
 		
-		color:$oe-text; // make sure text is themable
+		padding:20px;
+		
+		h2 {
+			@include font-size(19);
+			font-weight:$oe-font-light; 
+			color:$oe-text-highlight;
+			margin:10px 0 15px 0;
+			
+			&:first-child {
+				margin-top:0;
+			}
+		}	
 	}
 }

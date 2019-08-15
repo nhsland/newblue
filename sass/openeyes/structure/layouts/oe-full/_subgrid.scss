@@ -1,0 +1,72 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// note: sizing controlled by oe-grid.scss
+.oe-full-content {
+	
+	// if the full-content area is going to be divided
+	// it MUST have the "subgrid" class added.
+	
+	&.subgrid {
+		// create a sub Grid content
+		// make areas independently scrollable
+		
+		// for Edge < 16
+		display: -ms-grid;
+		-ms-grid-columns: 300px 1fr;
+		-ms-grid-rows: 1fr;		
+		
+		// CSS3: Grid 
+		display: grid;
+		grid: 1fr / 300px 1fr;
+		grid-column-gap: 20px;  // may not work on Edge < 16
+		
+		
+		// wider side panel area
+		&.wide-side-panel {
+			-ms-grid-columns: 400px 1fr;
+			grid: 1fr / 400px 1fr;
+		}
+		
+		.oe-full-side-panel,
+		.oe-full-main {
+			width: auto !important; // override defaults
+			height: calc(100vh - #{$oe-header-height + $oe-event-header-height}); 
+			overflow-y:auto;
+		}
+		
+		.oe-full-side-panel {
+			-ms-grid-column: 1; 
+			-ms-grid-row: 1; 
+			grid-area: 1 / 1 / 2 / 2 ; 	
+			
+			// margin:0 0 0 0 !important; // not needed because of below 			
+		}
+		
+		.oe-full-main {
+			-ms-grid-column: 2; 
+			-ms-grid-row: 1; 
+			grid-area: 1 / 2 / 2 / 3 ; 
+		}	
+	}
+	
+	
+	// If full-content IS going to be divided
+	// it needs a subgrid to support individual 
+	// area scrolling. During the first run at the UI 
+	// the seperate areas did NOT use this but now
+	// all do (hindsight huh!!)
+	
+	// these classes are now NOT used withOUT subgrid
+	// but retaining in SASS in case i've missed something.
+	//.oe-full-side-panel {
+	//	width: 300px;
+	//	margin:10px 30px 20px 20px;
+	//}
+
+	//.oe-full-main {
+	//	width: calc(100% - 350px); // aligns to the right because of grid
+	//}
+	
+}

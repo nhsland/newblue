@@ -3,21 +3,9 @@
 //
 
 // OE Worklist
-// extends the basic:
-// layout oe-full
-// table standard layout
+// extends standard oe-full-layout
 
 .oe-worklists {
-	background:$oe-blue-dark2; // theme changable
-	
-	// extend 
-	.oe-full-side-panel {
-		padding:20px;
-	}
-	
-	// exact copy of Trials
-	// but kept seperate to allow future 
-	// development of Worklists (if needed)
 	
 	.worklist-group {
 		padding:0 20px 0 0;

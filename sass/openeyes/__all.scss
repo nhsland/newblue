@@ -71,31 +71,31 @@
 @import "components/header/_all";    			// site wide header bar: Logo, Patient & User Nav
 @import "components/hotlist/_all";    			// Hotlist: Open and Closed Patients
 @import "components/popups/_all";    			// Popups: GUI for popups
-@import "components/patient/_all";			// Patient Data: Popups, overview, mini-overview
-@import "components/login";					// Login
-@import "components/error-message";			// Message
-@import "components/home/_all";				// Homepage
-@import "components/sem/_all";    			// all SEM sass
-@import "components/add-new-event/_all";   	// add new event popup
+@import "components/patient/_all";				// Patient Data: Popups, overview, mini-overview
+@import "components/login";						// Login
+@import "components/error-message";				// Message
+@import "components/home/_all";					// Homepage
+@import "components/sem/_all";    				// all SEM sass
+@import "components/add-new-event/_all";   		// add new event popup
 @import "components/eyedraw/_all";    			// eyedraw app (popup)
 @import "components/lightning/_all";			// lightning viewer
-@import "components/oescape/_all";			// OEscape (oes)
+@import "components/oescape/_all";				// OEscape (oes)
 @import "components/clinic/_all";				// OE clinic (oec)
 @import "components/analytics/_all";			// Analytics
 @import "components/theatre-diaries/_all";		// Theatre Diaries
-@import "components/worklists";				// Worklist
+@import "components/worklists";					// Worklist
 @import "components/trials";					// Trials
 @import "components/virtual-clinic/_all";		// Virtual Clinic
-@import "components/protocol-manager/_all";	// Protocol Manager
-@import "components/user-profile";			// User Profile
+@import "components/protocol-manager/_all";		// Protocol Manager
+@import "components/user-profile";				// User Profile
 @import "components/admin/_all";				// Admin
-@import "components/reports/_all";			// Reports (based on Admin, maybe could be combined)
-@import "components/audit";					// Audit
+@import "components/reports/_all";				// Reports (based on Admin, maybe could be combined)
+@import "components/audit";						// Audit
 @import "components/partial-waiting";			// Partial Booking Waiting List
 @import "components/nod-export";				// NOD export
 @import "components/new-patient";				// Add New Patient
-@import "components/whiteboard/_all";				// Whiteboard
-@import "components/advanced-search/_all";				// Advanced Search
+@import "components/whiteboard/_all";			// Whiteboard
+@import "components/patient-search/_all";		// Patient & Advanced Search
 
 /* HighCharts */
 @import "components/highcharts";				// used in OEscape and Analytics ( ...now redundant)

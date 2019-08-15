@@ -5,43 +5,38 @@
 .oe-full-content {
 	
 	.oe-full-side-panel {
-		// standard  styles for the side-panel
-		// side-panel layouts started being used more 
-		// and required standardising... althoug hard to 
-		// know how far to take it here....
-		 
-		color:$oe-text;
+		
+		// standardised styles for the side-panel
+		padding:20px;
 		
 		// set a default text size 
 		// this will cover <a> 
 		@include font-size(12);
-		
-		
-		p {
-			margin:5px 0 10px 0;
-		}
 	
 		h3 {
 			margin:20px 0 10px 0;
 			@include font-size(16);
 			font-weight: 300;
 			color:$oe-blue-light;
-			
-			// when used as the top most DOM
-			// element in the sidepanel, it has 
-			// unnecessary extra padding. Can not use
-			// :first-child... so:
-			&.no-pad-top {
-				margin-top:0;
-			}
+		}
+		
+		// if first element in the sidepanel move to top
+		> h3:first-child {
+			margin-top:0;
 		}
 		
 		h4 {
-			margin:12px 0 6px 0;
 			@include font-size(12);
+			margin:12px 0 6px 0;
 			font-weight: 400;
 			color:$oe-blue-light;
 			line-height:1.4;
+		}
+		
+		p {
+			@include font-size(12);
+			margin:6px 0;
+			line-height:1.4; 
 		}
 	
 		// lists
@@ -60,20 +55,14 @@
 		}
 		
 		// tables use 'standard' class
-		// extend it with the following:
-		table {
-			// based on VIEW mode (same class)
-			&.label-value {
-				tr {
-					td {
-						&:first-child{
-							opacity:0.6; // this works for both themes
-							@include font-size(10);
-							font-weight:$oe-font-medium;
-						}
-					}
+		// extend this to allow label value 
+		table.standard {
+			tbody {
+				th {
+					text-align: left;
 				}
 			}
+			
 		}
 		
 	}

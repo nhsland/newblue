@@ -6,15 +6,14 @@
 // Messages layout
 
 .home-messages {
-	// Initially laid out with Flex
-	// Now changing to sub-grid to anchor actions
-	// Messages layout is a bit different to the standard
-	// sub-grid layout and we need to allow for the Patient Search
+	
+	// Sub-grid layout can not use the the standard
+	// oe-full-content layout because 
+	// 1) it's narrower
+	// 2) it needs to allow for the top Patient Search area
 		
 	&.subgrid {
-		// ! HOME sub-Grid 
-		// Creates 2 independently scrollable columns
-		
+	
 		// for Edge < 16
 		display: -ms-grid;
 		-ms-grid-columns: 250px 1fr;

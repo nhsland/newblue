@@ -2,71 +2,13 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// note: sizing controlled by oe-grid.scss
+// DOM example
+// <div class="oe-full-content subgrid {page-specific}">
+
 .oe-full-content {
 	
-	// full width under header.
-	// full-width is used by Clinic list
-	
-	// it can be sub-divided into: left side panel / right main area
-	// (default is the whole area scrolls.)
-	// this is set in structure/oe-grid.scss.
-	
-	.oe-full-side-panel {
-		width: 300px;
-		margin:10px 30px 20px 20px;
-	}
-
-	.oe-full-main {
-		width: calc(100% - 350px); // aligns to the right because of grid
-	}
-	
-	
-	// or if we want to added independent scrolling to 
-	// side-panel and main area we can 'subgrid' it.
-	&.subgrid {
-		// ! Sub-Grid content
-		// These allows for the sidebar to be fixed and independently scrollable
-		
-		// for Edge < 16
-		display: -ms-grid;
-		-ms-grid-columns: 300px 1fr;
-		-ms-grid-rows: 1fr;		
-		
-		// CSS3: Grid 
-		display: grid;
-		grid: 1fr / 300px 1fr;
-		grid-column-gap: 30px;  // may not work on Edge < 16
-		
-		
-		// increase the side panel area
-		&.wide-side-panel {
-			-ms-grid-columns: 400px 1fr;
-			grid: 1fr / 400px 1fr;
-		}
-		
-		
-		.oe-full-side-panel {
-			width: auto !important; // override defaults
-			height: calc(100vh - #{$oe-header-height + $oe-event-header-height}); 
-			overflow-y:auto;	
-			
-			// this must now be done with padding locally, column-gap is added above tho.
-			margin:0 0 0 0 !important; 
-
-			-ms-grid-column: 1; 
-			-ms-grid-row: 1; 
-			grid-area: 1 / 1 / 2 / 2 ; 		
-		}
-		
-		.oe-full-main {
-			width: auto !important; // override defaults
-			height: calc(100vh - #{$oe-header-height + $oe-event-header-height}); 
-			overflow-y:auto;
-			
-			-ms-grid-column: 2; 
-			-ms-grid-row: 1; 
-			grid-area: 1 / 2 / 2 / 3 ; 
-		}	
-	}
+	// Default to be all themeable
+	// Can be overridden by {page-specific} CSS
+	color:$oe-text; 				
+	background:$oe-blue-dark2;		
 }

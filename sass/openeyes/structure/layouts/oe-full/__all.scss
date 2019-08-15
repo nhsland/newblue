@@ -12,12 +12,9 @@
 // Title, and actions (buttons) ... like Print
 @import "oe-full-header";
 
-// oe-full-content
-// structural setup
-// can be sub-divided into: left side panel / right main area
 @import "oe-full-content";
-@import "full-standard-layout";
 
-// styling for the 2 areas... 
+// oe-full-content
+@import "subgrid";
 @import "oe-full-side-panel";
 @import "oe-full-main";

@@ -13,12 +13,6 @@
 @import "home-widget";     
 
 
-// Search results
-@import "patient-search-results/subgrid"; 			// sub-grid layout (retro added to layout, hence this approach)
-@import "patient-search-results/search-details";
-@import "patient-search-results/search-results";
-
-
 // Messages (Full)
 // currently only linked to through the Home Widget
 @import "messages/subgrid"; 				// sub-grid layout (retro added to layout, hence this approach)

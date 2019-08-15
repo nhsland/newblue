@@ -64,11 +64,15 @@
 					height: auto;
 				}
 				
+				
+				
 				th {
-					white-space: nowrap;
+					// used as labels 
+					// width required to be fixed to line up all data
+					width:110px;	
 					@include font-size(10);
 					font-weight:400;
-					opacity:0.5;
+					opacity:0.4;
 					padding-top:4px;
 					padding-right:10px;
 				}
