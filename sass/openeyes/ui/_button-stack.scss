@@ -11,7 +11,7 @@
 	
 	button {
 		display:block;
-		width:100%;
+		width:100%;				// assume that buttons should fill area width, kinda standard design
 		margin-bottom: 15px;
 		&:last-child { 
 			margin-bottom:0; 

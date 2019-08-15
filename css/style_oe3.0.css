@@ -1518,6 +1518,13 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
   padding: 0 0 15px 0;
 }
 
+hr.divider {
+  display: block;
+  border: 0;
+  margin: 15px 0;
+  border-bottom: 2px solid #26303d;
+}
+
 .highlighted-error {
   border: 1px solid #9b0000;
 }
