@@ -550,16 +550,17 @@ html {
   color: #626d7b;
 }
 
-.oe-full-content .oe-full-side-panel > h3:first-child {
-  margin-top: 0;
-}
-
 .oe-full-content .oe-full-side-panel h4 {
   font-size: 0.75rem;
   margin: 12px 0 6px 0;
   font-weight: 400;
   color: #626d7b;
   line-height: 1.4;
+}
+
+.oe-full-content .oe-full-side-panel h3:first-child,
+.oe-full-content .oe-full-side-panel h4:first-child {
+  margin-top: 0;
 }
 
 .oe-full-content .oe-full-side-panel p {
@@ -581,6 +582,15 @@ html {
 .oe-full-content .oe-full-side-panel ul li .count {
   font-size: 0.75rem;
   padding: 0 0 0 5px;
+}
+
+.oe-full-content .oe-full-side-panel table.standard {
+  margin: 0 0;
+}
+
+.oe-full-content .oe-full-side-panel table.standard.normal-text tbody th,
+.oe-full-content .oe-full-side-panel table.standard.normal-text tbody td {
+  font-size: 0.75rem;
 }
 
 .oe-full-content .oe-full-main {

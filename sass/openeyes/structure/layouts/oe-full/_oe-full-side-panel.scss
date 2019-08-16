@@ -16,21 +16,24 @@
 		h3 {
 			margin:20px 0 10px 0;
 			@include font-size(16);
-			font-weight: 300;
+			font-weight: $oe-font-light;
 			color:$oe-blue-light;
 		}
 		
-		// if first element in the sidepanel move to top
-		> h3:first-child {
-			margin-top:0;
-		}
 		
 		h4 {
 			@include font-size(12);
 			margin:12px 0 6px 0;
-			font-weight: 400;
+			font-weight: $oe-font-medium;
 			color:$oe-blue-light;
 			line-height:1.4;
+		}
+		
+		// if first element in the sidepanel move to top
+		// might be in a group, ignore these for now (i think)
+		h3:first-child,
+		h4:first-child {
+			margin-top:0;
 		}
 		
 		p {
@@ -52,6 +55,22 @@
 					padding:0 0 0 5px;
 				}
 			}
+		}
+		
+		table.standard {
+			margin:0 0;
+			
+			// for filters
+			&.normal-text {
+				tbody {
+					th,
+					td {
+						@include font-size(12);
+					}
+				}
+			}
+			
+			
 		}	
 	}
 
