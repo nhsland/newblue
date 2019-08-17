@@ -33,6 +33,14 @@
 	}
 }
 
+// date in table standard needs to be wider 
+//because of the larger of font-size(14)
+table.standard {
+	.oe-date {
+		width:$oe-date-width + 12px; 
+	}
+}
+
 
 // date layout in patient popups needs squeezing to maximise space.
 .quicklook-data-groups {

@@ -1795,6 +1795,10 @@ select.fixed-width {
   padding: 0 0 0 4px;
 }
 
+table.standard .oe-date {
+  width: 94px;
+}
+
 .quicklook-data-groups .oe-date {
   min-width: 70px;
 }
@@ -5257,6 +5261,45 @@ table.management-summaries tbody td:last-child {
 
 .oe-patient-mini-overview .data-group.split-data > .quicklook-data-groups {
   width: 50%;
+}
+
+.oe-patient-meta {
+  margin: 5px 0;
+}
+
+.oe-patient-meta .patient-name {
+  font-size: 0.75rem;
+  margin: 0 0 4px 0;
+}
+
+.oe-patient-meta .patient-details {
+  line-height: 1;
+}
+
+.oe-patient-meta .hospital-number,
+.oe-patient-meta .nhs-number,
+.oe-patient-meta .patient-gender,
+.oe-patient-meta .patient-age,
+.oe-patient-meta .patient-died,
+.oe-patient-meta .warning {
+  display: inline-block;
+  font-size: 0.625rem;
+  padding: 2px 5px 2px 0;
+}
+
+.oe-patient-meta .hospital-number span, .oe-patient-meta .hospital-number em,
+.oe-patient-meta .nhs-number span,
+.oe-patient-meta .nhs-number em,
+.oe-patient-meta .patient-gender span,
+.oe-patient-meta .patient-gender em,
+.oe-patient-meta .patient-age span,
+.oe-patient-meta .patient-age em,
+.oe-patient-meta .patient-died span,
+.oe-patient-meta .patient-died em,
+.oe-patient-meta .warning span,
+.oe-patient-meta .warning em {
+  opacity: 0.5;
+  padding: 0 2px 0 0;
 }
 
 .oe-login {
