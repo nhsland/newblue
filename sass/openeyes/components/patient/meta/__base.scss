@@ -11,8 +11,9 @@
 	margin:5px 0;
 	
 	.patient-name {
-		@include font-size(12);
-		margin:0 0 4px 0;
+		@include font-size(14);
+		font-weight: $oe-font-medium;
+		margin:0 0 2px 0;
 	}
 	
 	.patient-details {
@@ -28,6 +29,7 @@
 		
 		display:inline-block;
 		@include font-size(10);
+		font-weight: $oe-font-medium;
 		padding:2px 5px 2px 0;
 		// border-left:1px solid $oe-pro-line;	
 		

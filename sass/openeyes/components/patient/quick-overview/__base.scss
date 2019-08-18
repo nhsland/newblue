@@ -1,0 +1,51 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Patient Quick Overview
+// Used in two possible states
+// 1) floating popup (linked to overview icon)
+// 2) rhs full height panel (advanced search)
+
+.oe-patient-quick-overview {
+	position:fixed; // must be FIXED or may be cropped by Grid
+	z-index:$oe-z-quicklook;
+	padding:5px 10px;
+	width:500px;
+	
+	// themed
+	border:1px solid rgba($oe-text,0.5);
+	background:$oe-popup-bg;
+	color:$oe-text;
+	
+	@include boxshadow();
+	
+	// wrap all the data content
+	// to handle overflow
+	.quick-overview-content {
+		max-height: 300px;
+		overflow-y: auto;
+		padding:0 5px 0 0; // for scroll bars
+	}
+	
+	// quick view can be views as a side-panel
+	// like hotlist. this allows much more data 
+	// to be shown but it takes space. It's used
+	// in advanced searching and trials
+	&.side-panel {
+		top: $oe-header-height;
+		right: 0;
+		height: calc( 100vh - #{$oe-header-height});
+		
+		@include media($oe-browser-size-hotlist-fixed){		// 1800px
+			right: auto;
+			left: #{$oe-extended-browser-size - 500px}
+		}
+		
+	}
+}
+
+
+
+
+
