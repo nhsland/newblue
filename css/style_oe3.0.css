@@ -2165,12 +2165,14 @@ table.standard .oe-date {
   min-width: 21px;
 }
 
+.oe-add-select-search .add-options li .fixed-width,
 .oe-add-select-search .add-options li .restrict-width {
   display: inline-block;
   width: 130px;
   word-break: break-word;
 }
 
+.oe-add-select-search .add-options li .fixed-width.extended,
 .oe-add-select-search .add-options li .restrict-width.extended {
   width: 250px;
 }

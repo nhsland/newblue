@@ -31,16 +31,16 @@
 			// data has a span wrapper to control the width
 			// not possible through the li css
 			// this assumes a text value:
+			
+			// for some reason this was originally called: "restrict-"
+			// (I guess because originally it restricted the width)
+			// but now  "fixed-" makes more sense. Allowing both:
+			.fixed-width,
 			.restrict-width {
 				display:inline-block;
 				width:$oe-ass-restricted-width; 
 				word-break: break-word;
-				
-				// width was set as below - but no idea why!
-				// (so, kept in-case needs re-instating)			
-				// min-width:125px;
-				// max-width:130px;
-
+			
 				&.extended {
 					width:$oe-ass-restricted-width-extended;
 				}
