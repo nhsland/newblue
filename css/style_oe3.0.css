@@ -2152,7 +2152,7 @@ table.standard .oe-date {
   height: 224px;
   overflow-y: auto;
   margin: 0 2px 0 0;
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .oe-add-select-search .add-options li {
@@ -5179,6 +5179,7 @@ table.management-summaries tbody td:last-child {
   top: 60px;
   right: 0;
   height: calc( 100vh - 60px);
+  border: none;
 }
 
 @media only screen and (min-width: 1800px) {
@@ -5186,6 +5187,12 @@ table.management-summaries tbody td:last-child {
     right: auto;
     left: 940px;
   }
+}
+
+.oe-patient-quick-overview.side-panel .quick-overview-content {
+  max-height: none;
+  height: 90%;
+  padding-bottom: 20px;
 }
 
 .oe-patient-quick-overview .close-icon-btn {
@@ -5197,13 +5204,13 @@ table.management-summaries tbody td:last-child {
 .oe-patient-quick-overview .situational-awareness {
   font-size: 0.6875rem;
   font-weight: 400;
-  margin: 8px 0 4px 0;
+  margin: 8px 6px;
 }
 
 .oe-patient-quick-overview .situational-awareness .group {
   border-bottom: 1px dotted #26303d;
-  padding: 0 0 3px 0;
-  margin: 0 0 3px 0;
+  padding: 0 0 4px 0;
+  margin: 0 0 4px 0;
 }
 
 .oe-patient-quick-overview .situational-awareness .group:last-child {

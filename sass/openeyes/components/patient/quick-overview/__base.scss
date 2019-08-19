@@ -37,9 +37,19 @@
 		right: 0;
 		height: calc( 100vh - #{$oe-header-height});
 		
+		border: none;
+		
+		// when hotlist locks in need to change the right
+		// anchor position of the side-panel
 		@include media($oe-browser-size-hotlist-fixed){		// 1800px
 			right: auto;
 			left: #{$oe-extended-browser-size - 500px}
+		}
+		
+		.quick-overview-content {
+			max-height: none;
+			height: 90%; // calc( 100vh - #{$oe-header-height + 60px}); 
+			padding-bottom: 20px; // allow for tag
 		}
 		
 	}
