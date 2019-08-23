@@ -644,11 +644,11 @@ html {
   top: 50%;
   right: 0;
   z-index: 9999;
-  -webkit-transform: rotate(90deg) translateY(-45px);
-          transform: rotate(90deg) translateY(-45px);
+  -webkit-transform: rotate(90deg) translateY(-78px);
+          transform: rotate(90deg) translateY(-78px);
   background: #9b0000 url("../svg/in-css/icons/direction-up.svg") top 50% right 5px no-repeat;
   background-size: 15px;
-  padding: 5px 30px 5px 10px;
+  padding: 8px 30px 5px 10px;
   color: white;
   font-size: 0.6875rem;
   font-weight: 400;
@@ -11045,12 +11045,24 @@ table.oe-clinic-list td.center {
   padding-left: 3px;
 }
 
-.oe-audit .audit-main table.standard tbody tr.green {
+.oe-audit .audit-main table.standard tbody tr.success, .oe-audit .audit-main table.standard tbody tr.green {
   background: #123c1f;
 }
 
-.oe-audit .audit-main table.standard tbody tr.red {
-  background: #561313;
+.oe-audit .audit-main table.standard tbody tr.warn, .oe-audit .audit-main table.standard tbody tr.orange {
+  background: #a04600;
+}
+
+.oe-audit .audit-main table.standard tbody tr.fail, .oe-audit .audit-main table.standard tbody tr.red {
+  background: #9b0000;
+}
+
+.oe-audit .audit-main table.standard tbody tr.fail th, .oe-audit .audit-main table.standard tbody tr.fail td, .oe-audit .audit-main table.standard tbody tr.red th, .oe-audit .audit-main table.standard tbody tr.red td {
+  color: white;
+}
+
+.oe-audit .audit-main table.standard tbody tr.fail tr, .oe-audit .audit-main table.standard tbody tr.red tr {
+  border-bottom-color: rgba(200, 200, 200, 0.5);
 }
 
 .oe-audit .audit-main .logs {

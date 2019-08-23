@@ -28,14 +28,29 @@
 						padding-left:3px;
 					}
 				}
+		
 				
 				tr {
-					&.green {
-						background: $oe-bg-hint-green; 
-					}
+					&.success,
+					&.green { 	background: $oe-bg-hint-green; }
 					
-					&.red {
-						background: $oe-bg-hint-red;					}
+					&.warn,
+					&.orange {	background: $oe-alert-orange; }
+					
+					&.fail,
+					&.red {		
+						background: $oe-alert-red;
+						
+						
+						th, td {
+							color:rgb(255,255,255);
+						} 
+						
+						tr {
+							border-bottom-color: rgba(200,200,200,0.5);
+						}
+						
+					}
 				}
 			}
 		}
