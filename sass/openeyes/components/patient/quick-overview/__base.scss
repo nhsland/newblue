@@ -12,6 +12,7 @@
 	z-index:$oe-z-quicklook;
 	padding:5px 10px;
 	width:500px;
+	min-height:100px; // provide a min-heigh for my load spinner thing
 	
 	// themed
 	border:1px solid rgba($oe-text,0.5);
@@ -23,6 +24,7 @@
 	// wrap all the data content
 	// to handle overflow
 	.quick-overview-content {
+		
 		max-height: 300px;
 		overflow-y: auto;
 		padding:0 5px 0 0; // for scroll bars

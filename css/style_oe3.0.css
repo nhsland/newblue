@@ -5164,6 +5164,7 @@ table.management-summaries tbody td:last-child {
   z-index: 80;
   padding: 5px 10px;
   width: 500px;
+  min-height: 100px;
   border: 1px solid rgba(214, 214, 214, 0.5);
   background: #374755;
   color: #d6d6d6;
