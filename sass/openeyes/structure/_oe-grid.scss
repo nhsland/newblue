@@ -26,6 +26,14 @@
 			"addevent eventheader" #{$oe-event-header-height} 
 			"sidebar main" 1fr 
 			/ #{$oe-event-sidebar-width} 1fr;
+			
+
+	// when browser/device is below minimum supported width
+	// turn off overflow because scrollbars appear and ruin layout.
+	// leaving it on by default as it flags DOM errors.
+	@media only screen and (max-width: $oe-minimum-supported-width - 1) {
+		overflow:hidden;
+  	}		
 		
 	
 	// grid items MUST be direct descendants

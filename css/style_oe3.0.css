@@ -358,6 +358,12 @@ html {
   grid: "header header" 60px "addevent eventheader" 38px "sidebar main" 1fr / 200px 1fr;
 }
 
+@media only screen and (max-width: 1279px) {
+  .oe-grid {
+    overflow: hidden;
+  }
+}
+
 .oe-grid .oe-header {
   -ms-grid-column: 1;
   -ms-grid-row: 1;
@@ -5224,6 +5230,14 @@ table.management-summaries tbody td:last-child {
   font-size: 0.6875rem;
   float: right;
   opacity: 0.5;
+}
+
+.oe-patient-quick-overview.side-panel .data-group {
+  margin-bottom: 6px;
+}
+
+.oe-patient-quick-overview.side-panel .data-group:last-child {
+  margin-bottom: 6px;
 }
 
 .oe-patient-quick-overview .data-group h3 {

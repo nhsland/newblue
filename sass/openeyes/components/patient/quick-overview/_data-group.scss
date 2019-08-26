@@ -4,9 +4,18 @@
 
 // OE Patient Mini Overview
 .oe-patient-quick-overview {
+	
+	// space out a bit sidepanel view
+	&.side-panel {
+		.data-group {
+			margin-bottom:6px;
+			&:last-child {
+				margin-bottom:6px;
+			}
+		}
+	}
 
 	.data-group {
-		
 		// sub-headers 
 		h3 {
 			@include font-size(13);
