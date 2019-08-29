@@ -3,7 +3,7 @@
 //
 
 // OE Popup - Quicklook Data Groups
-// De-coupled for use in Patient Popups and Patient Mini Overview
+// De-coupled for use in Patient Popups and Quick Overview
 // Note: all set to pro-theme, Mini Overview has to overide this
 
 .quicklook-data-groups {
@@ -29,6 +29,12 @@
 		.data {
 			padding:0 10px 5px 10px;
 			line-height:1.6;
+			
+			.not-recorded {
+				opacity:0.4;
+				text-align: center;
+			}
+			
 		}
 	} 
 	

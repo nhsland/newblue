@@ -4993,6 +4993,11 @@ table.management-summaries tbody td:last-child {
   line-height: 1.6;
 }
 
+.quicklook-data-groups .group .data .not-recorded {
+  opacity: 0.4;
+  text-align: center;
+}
+
 .quicklook-data-groups table {
   margin: 0 0 10px 0;
   width: 100%;
@@ -5068,7 +5073,7 @@ table.management-summaries tbody td:last-child {
 }
 
 .oe-patient-popup table.risks tr {
-  border-bottom: 1px dotted #26303d;
+  border-bottom: 1px solid #26303d;
 }
 
 .oe-patient-popup table.risks tr:last-child {
@@ -5259,6 +5264,10 @@ table.management-summaries tbody td:last-child {
   font-size: 0.75rem;
   padding: 5px 9px;
   color: #8c8c8c;
+}
+
+.oe-patient-quick-overview .data-group .quicklook-data-groups .group .data.not-recorded {
+  opacity: 0.6;
 }
 
 .oe-patient-quick-overview .data-group .quicklook-data-groups table th {

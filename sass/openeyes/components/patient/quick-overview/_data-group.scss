@@ -28,7 +28,7 @@
 		// for use here it needs to change with the theme
 		.quicklook-data-groups {
 			color:$oe-text;
-			width:100%; 				// in popup this is set to 33.3% to create the 3 columns
+			width:100%; // override: popup is set to 33.3% to create the 3 columns
 			
 			// set up colours to be Theme-able:
 			.group {
@@ -37,6 +37,12 @@
 					@include font-size(12);
 					padding:5px 9px;						
 			 		color: $oe-text-light; 	 
+				}
+				
+				.data {
+					&.not-recorded {
+						opacity: 0.6; 
+					}
 				}
 			} 
 			
