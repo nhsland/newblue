@@ -1,0 +1,29 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Wrapper for Pagination and/or Sorting.
+// Design to sit above table if there is no 
+// table thead available or no space
+
+.table-sort-order {
+	
+	@include flex( space-between , center);
+	
+	// put this in here for now, limited usage
+	// and is only currenly used in this wrapper
+	// may have to review this again.
+	.sort-by {
+		color:$oe-text-light;
+		@include font-size(14);
+		font-weight: $oe-font-medium;
+		
+		select,
+		.direction {
+			margin:0 10px;
+		}
+	}
+	
+}
+
+

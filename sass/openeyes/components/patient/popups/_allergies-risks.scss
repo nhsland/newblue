@@ -2,38 +2,62 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Popup - Allergies & Risks
-//  
+// Patient Allergies & Risks
+// table list of risk data
+// shown in the popup and then
+// also used in the quick overview
 
-.oe-patient-popup {
-	// <table>
+// decoupled from wrappers for areas
+// .oe-patient-popup,
+// .quick-overview-content {
+
 	
-	table.risks {
-		width:100%;
-		margin:15px 0 0 0;
+table.risks {
+	width:100%;
+	margin:15px 0 0 0;
+		
+	tr {
+		border-bottom: 1px solid $oe-pro-line;
+		&:last-child { 
+			border-bottom: none;
+		}
+	}
+	
+	td {
+		@include font-size(12);
+		padding:1px 0 1px 4px;
+		vertical-align: middle;
+		height:28px; 				// to match the comment button
+		color:$oe-pro-text;			// theme pro locked
+					
+		&:last-child {
+			text-align: right;		// trash icon
+		}	
 			
+		textarea {
+			vertical-align: middle; // ensure correct vertical alignment in <td>
+		}
+
+	}
+}
+
+.quick-overview-content {
+	table.risks {
+		margin:5px 0 10px 0;
+		
 		tr {
-			border-bottom: 1px solid $oe-pro-line;
-			&:last-child { 
-				border-bottom: none;
-			}
+			border-bottom-color: $oe-line;
 		}
 		
 		td {
-			@include font-size(12);
-			padding:1px 0 1px 4px;
-			vertical-align: middle;
-			height:28px; 
-			color:$oe-pro-text;
-			
-			&:last-child {
-				text-align: right;
-			}	
-				
-			textarea {
-				vertical-align: middle; // ensure correct vertical alignment in <td>
+		 	height: auto;
+		 	padding:4px 0 4px 4px;
+		 	color:$oe-text;				// themed!
+		 	
+		 	&:last-child {
+				text-align: left;		// trash icon
 			}
-	
 		}
 	}
 }
+

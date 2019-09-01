@@ -2,28 +2,35 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE tables
 // Pagination
-// Can be used in <thead> and/or <tfoot>
-// DOM: 
+// used in <tfoot> and either in <thead> or above table
+// - decoupled because it can also be used outside a table
+// in table-sort-order wrapper above table
 
-table.standard {
+.pagination {
+	// sort out vertical alignment with icons
+	// Flex: justify-content (h), align-items (v)
+	@include flex(flex-end, center);
 	
-	.pagination {
-		// sort out vertical alignment with icons
-		// Flex: justify-content (h), align-items (v)
-		@include flex(flex-end, center);
-		
-		// style consistently 			
-		color:$oe-text-light;
-		@include font-size(12);
-		font-weight: $oe-font-medium;
-		
-		.pagination-pages {
-			a {
-				margin:0 4px;
-			}
+	// style consistently
+	
+	color:$oe-text-light;
+	@include font-size(14);
+	font-weight: $oe-font-medium;
+	
+	.pagination-pages {
+		font-weight: $oe-font-bold;
+		a {
+			margin:0 4px;
 		}
 	}
-	
 }
+
+
+table {
+	.pagination {
+		@include font-size(12);
+	}
+}
+	
+

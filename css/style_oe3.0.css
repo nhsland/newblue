@@ -947,7 +947,7 @@ table.standard.highlight-rows tbody tr:hover {
   background: #101923;
 }
 
-table.standard .pagination {
+.pagination {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -958,12 +958,43 @@ table.standard .pagination {
       -ms-flex-align: center;
           align-items: center;
   color: #8c8c8c;
-  font-size: 0.75rem;
+  font-size: 0.875rem;
   font-weight: 400;
 }
 
-table.standard .pagination .pagination-pages a {
+.pagination .pagination-pages {
+  font-weight: 500;
+}
+
+.pagination .pagination-pages a {
   margin: 0 4px;
+}
+
+table .pagination {
+  font-size: 0.75rem;
+}
+
+.table-sort-order {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.table-sort-order .sort-by {
+  color: #8c8c8c;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.table-sort-order .sort-by select,
+.table-sort-order .sort-by .direction {
+  margin: 0 10px;
 }
 
 html {
@@ -3054,6 +3085,14 @@ table.standard .oe-date {
   background-image: url("../svg/in-css/icons/waiting.svg");
 }
 
+.oe-i.more-h {
+  background-image: url("../svg/in-css/icons/more-h.svg");
+}
+
+.oe-i.more-h.pro-theme {
+  background-image: url("../svg/in-css/icons/more-h.svg");
+}
+
 .oe-i.eyelat-L {
   background-image: url("../svg/in-css/icons/lat-L.svg");
 }
@@ -5037,50 +5076,59 @@ table.management-summaries tbody td:last-child {
   font-weight: 400;
 }
 
-.oe-patient-popup table.patient-demographics {
+table.patient-demographics {
   width: 100%;
 }
 
-.oe-patient-popup table.patient-demographics tr {
+table.patient-demographics tr {
   border-bottom: 1px dotted #26303d;
 }
 
-.oe-patient-popup table.patient-demographics tr:first-child {
+table.patient-demographics tr:first-child {
   border-top: 1px dotted #26303d;
 }
 
-.oe-patient-popup table.patient-demographics tr td {
+table.patient-demographics td {
   margin: 0;
-  padding: 8px 0;
+  padding: 6px 0;
   font-size: 0.75rem;
   color: #d6d6d6;
   line-height: 1.5;
 }
 
-.oe-patient-popup table.patient-demographics tr td:first-child {
+table.patient-demographics td:first-child {
   width: 30%;
   font-style: italic;
-  color: #8c8c8c;
+  opacity: 0.6;
 }
 
-.oe-patient-popup table.patient-demographics tr td b {
+table.patient-demographics td b {
   font-weight: 400;
 }
 
-.oe-patient-popup table.risks {
+.quick-overview-content table.patient-demographics tr {
+  border-bottom-color: #26303d;
+}
+
+.quick-overview-content table.patient-demographics td {
+  padding: 4px 0;
+  color: #d6d6d6;
+}
+
+table.risks {
   width: 100%;
   margin: 15px 0 0 0;
 }
 
-.oe-patient-popup table.risks tr {
+table.risks tr {
   border-bottom: 1px solid #26303d;
 }
 
-.oe-patient-popup table.risks tr:last-child {
+table.risks tr:last-child {
   border-bottom: none;
 }
 
-.oe-patient-popup table.risks td {
+table.risks td {
   font-size: 0.75rem;
   padding: 1px 0 1px 4px;
   vertical-align: middle;
@@ -5088,12 +5136,30 @@ table.management-summaries tbody td:last-child {
   color: #d6d6d6;
 }
 
-.oe-patient-popup table.risks td:last-child {
+table.risks td:last-child {
   text-align: right;
 }
 
-.oe-patient-popup table.risks td textarea {
+table.risks td textarea {
   vertical-align: middle;
+}
+
+.quick-overview-content table.risks {
+  margin: 5px 0 10px 0;
+}
+
+.quick-overview-content table.risks tr {
+  border-bottom-color: #26303d;
+}
+
+.quick-overview-content table.risks td {
+  height: auto;
+  padding: 4px 0 4px 4px;
+  color: #d6d6d6;
+}
+
+.quick-overview-content table.risks td:last-child {
+  text-align: left;
 }
 
 .oe-patient-popup .situational-awareness {
