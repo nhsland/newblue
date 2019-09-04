@@ -550,8 +550,8 @@ html {
 }
 
 .oe-full-content .oe-full-side-panel h3 {
-  margin: 20px 0 10px 0;
-  font-size: 1rem;
+  margin: 16px 0 8px 0;
+  font-size: 0.9375rem;
   font-weight: 300;
   color: #626d7b;
 }
@@ -600,7 +600,7 @@ html {
 }
 
 .oe-full-content .oe-full-main {
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
 }
 
 .oe-full-content .oe-full-main h2 {
@@ -943,7 +943,7 @@ table.standard tbody tr.clickable:hover td, table.standard.clickable-rows tbody 
   color: white;
 }
 
-table.standard.highlight-rows tbody tr:hover {
+table.standard.highlight-rows tbody tr:hover, table.standard.highlight-rows tbody tr:focus {
   background: #101923;
 }
 
@@ -995,6 +995,40 @@ table .pagination {
 .table-sort-order .sort-by select,
 .table-sort-order .sort-by .direction {
   margin: 0 10px;
+}
+
+table thead th a.column-sort {
+  display: inline-block;
+  font-weight: 500;
+  color: #d6d6d6;
+  opacity: 0.6;
+  padding: 0 16px 0 0;
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: 13px;
+}
+
+table thead th a.column-sort:hover, table thead th a.column-sort:focus {
+  opacity: 1;
+}
+
+table thead th a.column-sort.ascend {
+  background-image: url("../svg/in-css/icons/direction-up.svg");
+}
+
+table thead th a.column-sort.descend {
+  background-image: url("../svg/in-css/icons/direction-down.svg");
+}
+
+table thead th a.column-sort.active {
+  color: #d6d6d6;
+  opacity: 1;
+}
+
+table.standard th.required, table.standard td.required {
+  background: transparent url("../svg/in-css/icons/asterisk.svg") center right 8px no-repeat;
+  background-size: 13px;
+  padding-right: 30px;
 }
 
 html {
@@ -4042,7 +4076,6 @@ table.standard .oe-date {
 
 .oe-patient .patient-allergies-risks.no-risk {
   background-color: #0a6512;
-  background-image: url("../svg/in-css/icons/tick.svg");
 }
 
 .oe-patient .patient-allergies-risks.open, .oe-patient .patient-allergies-risks.active {
@@ -5562,12 +5595,15 @@ table.risks td textarea {
   color: #8c8c8c;
   padding: 10px 6px;
   font-size: 0.75rem;
-  line-height: 1.4;
 }
 
 .home-messages .messages th:last-child, .home-messages .messages td:last-child {
   text-align: right;
   padding-right: 0;
+}
+
+.home-messages .messages td {
+  line-height: 1.4;
 }
 
 .home-messages .messages tbody tr.unread td {
@@ -11320,12 +11356,6 @@ table.oe-clinic-list td.center {
 
 .oe-new-patient table.standard tbody td {
   font-size: 0.8125rem;
-}
-
-.oe-new-patient table.standard tbody td.required {
-  background: transparent url("../svg/in-css/icons/asterisk.svg") center right 8px no-repeat;
-  background-size: 13px;
-  padding-right: 30px;
 }
 
 .oe-new-patient table.standard tbody td:first-child {

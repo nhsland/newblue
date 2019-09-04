@@ -3,16 +3,15 @@
 //
 
 // OE tables
-// Sortable columns
-// <th> <a href="#" class="sortable">Title <i class="oe-i arrow-down-bold small pad"></i></a></th>
+// Required input
 
 table.standard {
-	thead {
-		th {
-			// <a>
-			a.sortable {
-				// no styling 
-			}
+	
+	th, td {
+		&.required {
+			background:transparent url( svg-icon-path-theme( 'asterisk' ) ) center right 8px no-repeat;
+			background-size:13px;
+			padding-right:30px;
 		}
 	}
 }

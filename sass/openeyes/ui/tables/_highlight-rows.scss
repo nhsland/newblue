@@ -11,7 +11,8 @@ table.standard {
 	&.highlight-rows {
 		tbody {
 			tr {
-				&:hover {
+				&:hover, 
+				&:focus {
 					background:$oe-bg-highlight;
 				}
 			}

@@ -1,0 +1,56 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE tables
+// if a table column can be sorted show it's state
+
+table {
+	thead {
+		th {
+			// <a>
+			a.column-sort {
+				// handle icons for states
+				// assuming these won't need to wrap
+				display:inline-block;
+				
+				font-weight: $oe-font-bold;
+				color:$oe-text;
+				opacity:0.6;
+				
+				&:hover, &:focus {
+					opacity:1; 
+				}
+
+				padding:0 16px 0 0;
+				
+				background-position: right top;
+				background-repeat: no-repeat;
+				background-size: 13px;
+				
+				// A - Z  sorting
+				&.ascend {
+					background-image: url( svg-icon-path-theme('direction-up') );
+				}
+				
+				// Z - A  sorting
+				&.descend {
+					background-image: url( svg-icon-path-theme('direction-down') );
+				}
+				
+				
+				&.active {
+					color: $oe-text;
+					opacity:1;
+					// did have this with text and icon blue on active but it was a bit much... 
+					//&.ascend {	background-image: url( svg-icon-path-theme('direction-up-blue') ); }
+					//&.descend { background-image: url( svg-icon-path-theme('direction-down-blue') ); }
+				}
+				
+				
+				
+				
+			}
+		}
+	}
+}
