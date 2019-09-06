@@ -11,15 +11,21 @@
 // .oe-patient-popup,
 // .quick-overview-content {
 		
-// <table>	
+// <table>
+table.patient-trials,	
 table.patient-demographics {
 	width:100%;
 	
 	tr {
-		border-bottom:1px dotted $oe-pro-line;
-		&:first-child {
+		border-top:1px dotted $oe-pro-line;
+		&:last-child {
 			border-top:1px dotted $oe-pro-line; // overide default
 		}
+		
+		&.divider {
+			border-top: 2px solid $oe-pro-line;
+		}
+		
 	} 
 		
 	td {
@@ -29,8 +35,12 @@ table.patient-demographics {
 		color:$oe-pro-text; 	// theme pro locked
 		line-height:1.5;
 		
+		// this is f-k up. I should have made this 
+		// handled by <th> but anyway... 
 		&:first-child {
-			width:30%;
+			vertical-align: top;
+			padding-top:7px;
+			width:25%;
 			font-style: italic; 
 			opacity:0.6;
 		}
@@ -42,9 +52,10 @@ table.patient-demographics {
 }
 
 .quick-overview-content {
+	table.patient-trials,
 	table.patient-demographics {
 		tr {
-			border-bottom-color: $oe-line;
+			border-top-color: $oe-line;
 		}
 		
 		td {

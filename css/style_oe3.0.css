@@ -4858,6 +4858,10 @@ table.standard .oe-date {
   margin: 0 0 0 5px;
 }
 
+.oe-patient-popup table.patient-appointments tr {
+  border-top-color: #26303d;
+}
+
 .oe-patient-popup table.patient-appointments td {
   color: #d6d6d6;
 }
@@ -4868,7 +4872,7 @@ table.patient-appointments {
 }
 
 table.patient-appointments tbody tr {
-  border-top: 1px dotted rgba(204, 204, 255, 0.2);
+  border-top: 1px dotted #26303d;
 }
 
 table.patient-appointments tbody tr:first-child {
@@ -4886,6 +4890,10 @@ table.patient-appointments tbody td:last-child {
   text-align: right;
 }
 
+.oe-patient-popup table.management-summaries tr {
+  border-top-color: #26303d;
+}
+
 .oe-patient-popup table.management-summaries td {
   color: #d6d6d6;
 }
@@ -4896,7 +4904,7 @@ table.management-summaries {
 }
 
 table.management-summaries tbody tr {
-  border-top: 1px dotted rgba(204, 204, 255, 0.2);
+  border-top: 1px dotted #26303d;
 }
 
 table.management-summaries tbody tr:first-child {
@@ -5114,18 +5122,27 @@ table.management-summaries tbody td:last-child {
   font-weight: 400;
 }
 
+table.patient-trials,
 table.patient-demographics {
   width: 100%;
 }
 
+table.patient-trials tr,
 table.patient-demographics tr {
-  border-bottom: 1px dotted #26303d;
-}
-
-table.patient-demographics tr:first-child {
   border-top: 1px dotted #26303d;
 }
 
+table.patient-trials tr:last-child,
+table.patient-demographics tr:last-child {
+  border-top: 1px dotted #26303d;
+}
+
+table.patient-trials tr.divider,
+table.patient-demographics tr.divider {
+  border-top: 2px solid #26303d;
+}
+
+table.patient-trials td,
 table.patient-demographics td {
   margin: 0;
   padding: 6px 0;
@@ -5134,20 +5151,26 @@ table.patient-demographics td {
   line-height: 1.5;
 }
 
+table.patient-trials td:first-child,
 table.patient-demographics td:first-child {
-  width: 30%;
+  vertical-align: top;
+  padding-top: 7px;
+  width: 25%;
   font-style: italic;
   opacity: 0.6;
 }
 
+table.patient-trials td b,
 table.patient-demographics td b {
   font-weight: 400;
 }
 
+.quick-overview-content table.patient-trials tr,
 .quick-overview-content table.patient-demographics tr {
-  border-bottom-color: #26303d;
+  border-top-color: #26303d;
 }
 
+.quick-overview-content table.patient-trials td,
 .quick-overview-content table.patient-demographics td {
   padding: 4px 0;
   color: #d6d6d6;
