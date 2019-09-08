@@ -19,11 +19,19 @@
 	height:30px;
 	padding:0 15px;
 	
+	// fixed color!!
 	background:rgb(30,30,30);
 	color:rgb(255,255,255);
 	
 	@include font-size(12);
 	font-weight:400;
+	
+	a {
+		color:rgb(255,255,255);
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 	
 	#notification-short {
 		opacity:0.6;

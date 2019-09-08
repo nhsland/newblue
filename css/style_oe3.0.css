@@ -728,6 +728,14 @@ html {
   font-weight: 400;
 }
 
+#oe-admin-notifcation a {
+  color: white;
+}
+
+#oe-admin-notifcation a:hover {
+  text-decoration: underline;
+}
+
 #oe-admin-notifcation #notification-short {
   opacity: 0.6;
 }
