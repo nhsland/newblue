@@ -4032,7 +4032,8 @@ table.standard .oe-date {
   width: 11px;
   height: 11px;
   background-size: 11px;
-  vertical-align: top;
+  position: relative;
+  top: -1px;
 }
 
 .oe-patient .hospital-number {
@@ -5427,10 +5428,6 @@ table.risks td textarea {
 
 .oe-patient-quick-overview .data-group.split-data > .quicklook-data-groups {
   width: 50%;
-}
-
-.oe-patient-meta {
-  margin: 5px 0;
 }
 
 .oe-patient-meta .patient-name {
