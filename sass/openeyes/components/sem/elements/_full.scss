@@ -26,7 +26,7 @@
 			
 			.element-title {
 				@include media($oe-extended-browser-size){
-					max-width:$oe-event-extension - 45px;		// force long names to wrap	
+					max-width:$oe-event-extension - 35px;		// force long names to wrap	
 				}
 			}
 		}

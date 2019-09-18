@@ -13,7 +13,7 @@
 		top:5px;
 		left:0;
 		width:100%; // full width to position actions
-	
+
 		// <h3>
 		.element-title {
 			@include font-size(15);
@@ -23,8 +23,10 @@
 			
 			// on extended browser width tweak the font-size:
 			@include media($oe-extended-browser-size){
-				@include font-size(14); 					// reduce font size slightly
-				line-height:1.2;
+				@include font-size(13); 					// reduce font size slightly, need to fit in 3 line header
+				font-weight:$oe-font-medium;
+				line-height:1.1;
+				overflow-wrap: break-word;					// do not allow overflow into the element data
 			}
 			
 			

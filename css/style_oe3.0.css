@@ -6901,7 +6901,7 @@ table.risks td textarea {
 
 @media only screen and (min-width: 1440px) {
   .main-event .element.full .element-header .element-title {
-    max-width: 115px;
+    max-width: 125px;
   }
 }
 
@@ -7094,8 +7094,10 @@ table.risks td textarea {
 
 @media only screen and (min-width: 1440px) {
   .main-event .element-header .element-title {
-    font-size: 0.875rem;
-    line-height: 1.2;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.1;
+    overflow-wrap: break-word;
   }
 }
 
