@@ -7189,11 +7189,11 @@ table.risks td textarea {
 }
 
 .main-event .element table tr {
-  border-bottom: 1px solid #26303d;
+  border-top: 1px solid #26303d;
 }
 
-.main-event .element table tr:last-child {
-  border-bottom: none;
+.main-event .element table tr.no-line, .main-event .element table tr:first-child {
+  border-top: none;
 }
 
 .main-event .element table tr.valign-top td {
@@ -7201,7 +7201,7 @@ table.risks td textarea {
 }
 
 .main-event .element table tr.divider {
-  border-bottom-width: 6px;
+  border-top-width: 3px;
 }
 
 .main-event .element table tr.selected-row {
