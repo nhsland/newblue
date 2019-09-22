@@ -1,0 +1,49 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Medications History / Management
+
+// <table>
+.main-event {
+	.element {
+
+		// Meds are data complex. 
+		// added a specific class 
+		table.medications {
+			width:100%;
+			
+			
+			td {
+				// rather than using 'flex-layout'
+				// use a custom class to layout all the
+				// different input methods
+				.flex-meds-inputs {
+					@include flex(flex-start,center);
+					margin-bottom:2px;
+					
+					input,
+					select,
+					> span {
+						margin:0 3px;
+						&:first-child {
+							margin-left:0;
+						}
+					}
+					
+					.oe-date {
+						width:70px;
+						.day,
+						.mth, 
+						.yr {
+							padding: 0 0 0 3px;
+						}
+					}
+				}
+			}
+			
+		}
+
+	}
+}
+
