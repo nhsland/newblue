@@ -1716,19 +1716,19 @@ input, textarea {
 }
 
 input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #ababab;
+  color: #656f65;
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #ababab;
+  color: #656f65;
 }
 
 input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-  color: #ababab;
+  color: #656f65;
 }
 
 input::placeholder, textarea::placeholder {
-  color: #ababab;
+  color: #656f65;
 }
 
 input.search {
@@ -2573,12 +2573,12 @@ table.standard .oe-date {
   cursor: default;
 }
 
-.oe-i.start, .oe-i.stop, .oe-i.change, .oe-i.d-slash, .oe-i.no-click {
+.oe-i.start, .oe-i.stop, .oe-i.d-slash, .oe-i.no-click {
   cursor: default;
   pointer-events: none;
 }
 
-.oe-i.start:hover, .oe-i.start:focus, .oe-i.start:active, .oe-i.stop:hover, .oe-i.stop:focus, .oe-i.stop:active, .oe-i.change:hover, .oe-i.change:focus, .oe-i.change:active, .oe-i.d-slash:hover, .oe-i.d-slash:focus, .oe-i.d-slash:active, .oe-i.no-click:hover, .oe-i.no-click:focus, .oe-i.no-click:active {
+.oe-i.start:hover, .oe-i.start:focus, .oe-i.start:active, .oe-i.stop:hover, .oe-i.stop:focus, .oe-i.stop:active, .oe-i.d-slash:hover, .oe-i.d-slash:focus, .oe-i.d-slash:active, .oe-i.no-click:hover, .oe-i.no-click:focus, .oe-i.no-click:active {
   opacity: 0.5;
 }
 
@@ -7201,7 +7201,11 @@ table.risks td textarea {
 }
 
 .main-event .element table tr.divider {
-  border-top-width: 3px;
+  border-top-width: 2px;
+}
+
+.main-event .element table tr.divider td {
+  padding-top: 3px;
 }
 
 .main-event .element table tr.selected-row {
@@ -7626,6 +7630,45 @@ table.risks td textarea {
   height: 14px;
   font-size: 0.6875rem;
   border-width: 1px;
+}
+
+.main-event .element table.medications {
+  width: 100%;
+}
+
+.main-event .element table.medications td .flex-meds-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2px;
+}
+
+.main-event .element table.medications td .flex-meds-inputs input,
+.main-event .element table.medications td .flex-meds-inputs select,
+.main-event .element table.medications td .flex-meds-inputs > span {
+  margin: 0 3px;
+}
+
+.main-event .element table.medications td .flex-meds-inputs input:first-child,
+.main-event .element table.medications td .flex-meds-inputs select:first-child,
+.main-event .element table.medications td .flex-meds-inputs > span:first-child {
+  margin-left: 0;
+}
+
+.main-event .element table.medications td .flex-meds-inputs .oe-date {
+  width: 70px;
+}
+
+.main-event .element table.medications td .flex-meds-inputs .oe-date .day,
+.main-event .element table.medications td .flex-meds-inputs .oe-date .mth,
+.main-event .element table.medications td .flex-meds-inputs .oe-date .yr {
+  padding: 0 0 0 3px;
 }
 
 .search-in-event {

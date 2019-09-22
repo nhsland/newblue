@@ -107,8 +107,7 @@
 	// sometimes however they are only used for graphical purposes
 	// use 'no-click' to turn off interaction behaviour
 	&.start, 
-	&.stop, 
-	&.change, 
+	&.stop,  
 	&.d-slash, // graphic icons only	
 	&.no-click {
 		cursor:default;

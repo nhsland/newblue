@@ -55,8 +55,8 @@ $oe-popup-bg:			$oe-pro-popup-bg; // tool-tip, add-select-search, element-search
 // input colours:
 $oe-user-inputs: 		$oe-blue;
 $oe-user-inputs-hint: 	rgba($oe-user-inputs,0.1);
-$oe-user-input-text: 		$oe-text;
-$oe-input-placeholder: 	shade( $oe-user-input-text,20 );
+$oe-user-input-text: 	$oe-text;
+$oe-input-placeholder: 	rgb(101,111,101);
 
 // flags
 $oe-highlighter: 		rgba(255,230,172,0.7);
