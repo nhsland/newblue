@@ -7636,6 +7636,10 @@ table.risks td textarea {
   width: 100%;
 }
 
+.main-event .element table.medications td {
+  height: auto;
+}
+
 .main-event .element table.medications td .flex-meds-inputs {
   display: -webkit-box;
   display: -ms-flexbox;
