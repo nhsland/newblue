@@ -7636,6 +7636,14 @@ table.risks td textarea {
   width: 100%;
 }
 
+.main-event .element table.medications tr.meds-taper {
+  border-top: 1px dotted #26303d;
+}
+
+.main-event .element table.medications tr.meds-taper td {
+  padding-top: 3px;
+}
+
 .main-event .element table.medications td {
   height: auto;
 }

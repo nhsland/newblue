@@ -13,6 +13,15 @@
 		table.medications {
 			width:100%;
 			
+			tr {
+				// specific UI for tapering Meds
+				&.meds-taper {
+					border-top: 1px dotted $oe-line;
+					td {
+						padding-top:3px;
+					}
+				}
+			}
 			
 			td {
 				height: auto;
