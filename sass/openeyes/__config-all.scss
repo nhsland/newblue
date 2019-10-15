@@ -14,6 +14,11 @@ $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 // note: CSS3 grid is used for main layouts, see in 'structure'
 // Minimum supported screen width: 1280px.
 $oe-minimum-supported-width: 	1280px;
+// However! with windows borders this pushes the viewport size down.
+// - it becomes: 1264px
+// My adopted approach is to squeeze what i can below the minimum 
+// supported screen width to fit 1264px.
+$oe-minimum-viewport-width: 1264px;
 
 // OE was built to only support upto 1920px, however users 
 // are now using it on super-wide screens e.g. 2560x1440

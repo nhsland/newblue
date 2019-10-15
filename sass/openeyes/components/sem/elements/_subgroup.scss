@@ -37,15 +37,15 @@
 			// line to divide R & L
 			&.eye-divider {
 				background-image: url( svg-path-theme('ui/element-divider') );
-				background-position: 50.7% 0;
+				background-position: 50.4% 0;
 				background-repeat: repeat-y;
 				background-size:19px;
 			}
 			
 			.left-eye {
-				// 17px in element pushed +4px in subgroup
+				// 14px in element pushed +4px in subgroup
 				// to align with other element data
-				padding-left: 21px; 	 
+				padding-left: 18px; 	 
 			}
 		}				
 	}

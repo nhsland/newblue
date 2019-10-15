@@ -91,7 +91,15 @@
 		//	width: calc(100% - #{$oe-hotlist-panel-max});      
 		//}
 		
+		
+		// handle 1280px  viewports with window borders
+		// trim a total of 20px
+		@include below-minimum(){
+			width: calc(100vw - #{$oe-event-sidebar-width}); 
+		}
 	}
+	
+	
 	// full width header and content allows for the 
 	// hotlist panel which is fixed at large resolutions. 
 	// JS controls the fixing: fixed at 1800px;

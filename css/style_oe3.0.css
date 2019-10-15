@@ -402,6 +402,14 @@ html {
   }
 }
 
+@media only screen and (max-width: 1279px) {
+  .oe-grid .event-header,
+  .oe-grid .oe-lightning-viewer,
+  .oe-grid .main-event {
+    width: calc(100vw - 200px);
+  }
+}
+
 @media only screen and (min-width: 1800px) {
   .oe-grid .oe-full-header,
   .oe-grid .oe-full-content,
@@ -666,7 +674,7 @@ html {
   display: none;
 }
 
-@media only screen and (max-width: 1279px) {
+@media only screen and (max-width: 1263px) {
   #oe-minimum-width-warning {
     display: block;
   }
@@ -6796,7 +6804,7 @@ table.risks td textarea {
 
 .main-event .element.eye-divider {
   background-image: url("../svg/in-css/ui/element-divider.pro.svg");
-  background-position: 50.4% 0;
+  background-position: 50% 0;
   background-repeat: repeat-y;
   background-size: 19px;
 }
@@ -6842,8 +6850,8 @@ table.risks td textarea {
 }
 
 .main-event .element .element-fields.full-width {
-  padding-right: 20px;
-  padding-left: 10px;
+  padding-right: 12px;
+  padding-left: 6px;
 }
 
 .main-event .element .element-fields .data-label {
@@ -6861,8 +6869,21 @@ table.risks td textarea {
 .main-event .element .active-form .remove-side {
   position: absolute;
   top: -2px;
-  right: -22px;
+  right: -10px;
   z-index: 1;
+}
+
+@media only screen and (min-width: 1440px) {
+  .main-event .element .active-form .remove-side {
+    top: -6px;
+    right: -15px;
+  }
+}
+
+@media only screen and (max-width: 1279px) {
+  .main-event .element .active-form .remove-side {
+    right: -5px;
+  }
 }
 
 .main-event .element .inactive-form {
@@ -6919,14 +6940,28 @@ table.risks td textarea {
 
 .main-event .element .element-eyes .right-eye {
   width: 50%;
-  padding-left: 10px;
-  padding-right: 29px;
+  padding-left: 6px;
+  padding-right: 23px;
+}
+
+@media only screen and (max-width: 1279px) {
+  .main-event .element .element-eyes .right-eye {
+    padding-left: 4px;
+    padding-right: 19px;
+  }
 }
 
 .main-event .element .element-eyes .left-eye {
   width: 50%;
-  padding-left: 17px;
-  padding-right: 20px;
+  padding-left: 14px;
+  padding-right: 15px;
+}
+
+@media only screen and (max-width: 1279px) {
+  .main-event .element .element-eyes .left-eye {
+    padding-left: 12px;
+    padding-right: 11px;
+  }
 }
 
 .main-event .element .element-eyes .right-eye.deactivate,
@@ -7069,13 +7104,13 @@ table.risks td textarea {
 
 .main-event .element .element-subgroup.eye-divider {
   background-image: url("../svg/in-css/ui/element-divider.pro.svg");
-  background-position: 50.7% 0;
+  background-position: 50.4% 0;
   background-repeat: repeat-y;
   background-size: 19px;
 }
 
 .main-event .element .element-subgroup .left-eye {
-  padding-left: 21px;
+  padding-left: 18px;
 }
 
 .main-event .element-header {

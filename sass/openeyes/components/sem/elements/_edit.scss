@@ -14,8 +14,8 @@
 			// for all Elements that aren't split into
 			// R L Eye sides we need to adjust the padding
 			&.full-width {
-			 	padding-right:20px; // 20px matches the left-eye padding indent to align "+" buttons
-				padding-left:10px;
+			 	padding-right:12px; // matches the left-eye padding indent to align "+" buttons
+				padding-left:6px;	// matches the right-eye padding
 			}
 			
 			.data-label {
@@ -43,8 +43,21 @@
 			.remove-side {
 				position:absolute;
 				top:-2px;
-				right:-22px; // move outside into padding space
+				right:-10px; // move outside into padding space
 				z-index: 1;  // make sure this above anything.
+				
+				// adjust position to not overlap "Adder" button in extended layout
+				@include media($oe-extended-browser-size){	  // 1440px
+					top:-6px;	 
+					right:-15px; 
+				}
+				
+				// handle 1280px  viewports with window borders
+				// trim a total of 20px
+				@include below-minimum(){
+					right:-5px;
+				};
+				
 			}
 		}
 		

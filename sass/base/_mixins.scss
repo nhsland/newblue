@@ -16,6 +16,13 @@
   }
 }
 
+// Below minimum support
+@mixin below-minimum(){
+	@media only screen and (max-width: 1279px){
+		@content;
+	}
+}
+
 // IPad 3+, portrait
 @mixin ipad() {
 	@media only screen 
