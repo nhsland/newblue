@@ -1160,6 +1160,13 @@ strong, b {
   text-align: left;
 }
 
+.user-comment {
+  font-family: Georgia, serif;
+  font-size: 110%;
+  font-weight: normal;
+  font-style: italic;
+}
+
 .collapse-group {
   position: relative;
   width: 100%;
@@ -2890,6 +2897,14 @@ table.standard .oe-date {
 
 .oe-i.comments-added.pro-theme {
   background-image: url("../svg/in-css/icons/comments-added.svg");
+}
+
+.oe-i.comments-who {
+  background-image: url("../svg/in-css/icons/comments-who.svg");
+}
+
+.oe-i.comments-who.pro-theme {
+  background-image: url("../svg/in-css/icons/comments-who.svg");
 }
 
 .oe-i.start {
