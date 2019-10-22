@@ -39,6 +39,13 @@ table.standard {
 	.oe-date {
 		width:$oe-date-width + 12px; 
 	}
+	
+	&.messages {
+		.oe-date {
+			width:$oe-date-width; 
+		}
+	}
+	
 }
 
 

@@ -23,7 +23,8 @@
 	@include buttons {
 		vertical-align: top; // overwrite default 'bottom' to fix alignment issues
 		height:$oe-event-header-height;
-		padding:0 16px;		
+		min-width:40px; // for icon only buttons
+		padding:0 14px;		
 		
 		// icon buttons in header
 		&.icon {

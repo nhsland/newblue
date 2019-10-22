@@ -76,14 +76,35 @@
 		&.selected {
 			cursor:default;
 			color:$oe-text-highlight;
-			background: $oe-blue; 	// match the Event background 
+			background-color: $oe-sem-main-event-bg; 	// match the Event background 
 		}	
 		
 		&.disabled,
 		&.inactive {
-			background: none;
+			background-color: none;
 			border:none !important;
 		}
+		
+		// in some scenarios there are a lot of header buttons
+		// these overlap the VIEW / EDIT / Change context buttons
+		// icon-bg buttons help with reducing widths by replacing
+		// text: "Print" , "Display" or "Go to" or "View" with an icon background.
+		&.icon-bg {
+			background-size: 42px;
+			background-position: center right -3px;
+			background-repeat: no-repeat;
+			&.goto {
+				background-image: url( svg-path-theme( 'ui/direction-right-circle-btn-watermark' ) );
+				background-position-x: 95%;
+			}
+			
+			&.print {
+				background-image: url( svg-path-theme( 'ui/print-btn-watermark' ) ); 
+			}
+			
+			
+		}
+		
 		
 	}
 	

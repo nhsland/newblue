@@ -1304,12 +1304,27 @@ button.header-tab:hover, button.header-tab:focus, button.header-tab:active, .but
 button.header-tab.selected, .button.header-tab.selected, input[type="submit"].header-tab.selected {
   cursor: default;
   color: cyan;
-  background: #1e2e42;
+  background-color: #1e2e42;
 }
 
 button.header-tab.disabled, button.header-tab.inactive, .button.header-tab.disabled, .button.header-tab.inactive, input[type="submit"].header-tab.disabled, input[type="submit"].header-tab.inactive {
-  background: none;
+  background-color: none;
   border: none !important;
+}
+
+button.header-tab.icon-bg, .button.header-tab.icon-bg, input[type="submit"].header-tab.icon-bg {
+  background-size: 42px;
+  background-position: center right -3px;
+  background-repeat: no-repeat;
+}
+
+button.header-tab.icon-bg.goto, .button.header-tab.icon-bg.goto, input[type="submit"].header-tab.icon-bg.goto {
+  background-image: url("../svg/in-css/ui/direction-right-circle-btn-watermark.pro.svg");
+  background-position-x: 95%;
+}
+
+button.header-tab.icon-bg.print, .button.header-tab.icon-bg.print, input[type="submit"].header-tab.icon-bg.print {
+  background-image: url("../svg/in-css/ui/print-btn-watermark.pro.svg");
 }
 
 button.disabled, button.inactive, .button.disabled, .button.inactive, input[type="submit"].disabled, input[type="submit"].inactive {
@@ -1896,6 +1911,10 @@ select.fixed-width {
 
 table.standard .oe-date {
   width: 94px;
+}
+
+table.standard.messages .oe-date {
+  width: 82px;
 }
 
 .quicklook-data-groups .oe-date {
@@ -5643,68 +5662,63 @@ table.risks td textarea {
   padding: 10px 10px 20px 0;
 }
 
-.home-messages .messages {
+.home-messages table.messages {
   width: 100%;
 }
 
-.home-messages .messages th, .home-messages .messages td {
+.home-messages table.messages th, .home-messages table.messages td {
   color: #8c8c8c;
   padding: 10px 6px;
   font-size: 0.75rem;
 }
 
-.home-messages .messages th:last-child, .home-messages .messages td:last-child {
+.home-messages table.messages th:last-child, .home-messages table.messages td:last-child {
   text-align: right;
   padding-right: 0;
 }
 
-.home-messages .messages td {
+.home-messages table.messages td {
   line-height: 1.4;
 }
 
-.home-messages .messages tbody tr.unread td {
+.home-messages table.messages tbody tr.unread td {
   color: #d6d6d6;
   font-size: 0.75rem;
   font-weight: 500;
 }
 
 @media only screen and (min-width: 1440px) {
-  .home-messages .messages tbody tr.unread td {
+  .home-messages table.messages tbody tr.unread td {
     font-size: 0.875rem;
     font-weight: 400;
   }
 }
 
-.home-messages .messages tbody td.patient {
+.home-messages table.messages tbody td.patient {
   border-right: 2px solid #26303d;
   padding-right: 12px;
 }
 
-.home-messages .messages tbody td .urgent-message {
+.home-messages table.messages tbody td .urgent-message {
   fill: #ca7932;
   margin: 0 3px 0 0;
 }
 
-.home-messages .messages tbody td .reply-message {
+.home-messages table.messages tbody td .reply-message {
   fill: #5ab4b4;
 }
 
-.home-messages .messages .message {
-  width: 17vw;
+.home-messages table.messages .message {
+  width: 18vw;
   height: 1.2rem;
-  overflow: hidden;
   color: inherit;
+  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
-@media only screen and (min-width: 1440px) {
-  .home-messages .messages .message {
-    width: 21vw;
-  }
-}
-
-.home-messages .messages .message.expand {
+.home-messages table.messages .message.expand {
+  width: 90%;
   height: auto;
   text-overflow: none;
   white-space: normal;
@@ -5797,7 +5811,8 @@ table.risks td textarea {
 .event-header button, .event-header .button, .event-header input[type="submit"] {
   vertical-align: top;
   height: 38px;
-  padding: 0 16px;
+  min-width: 40px;
+  padding: 0 14px;
 }
 
 .event-header button.icon, .event-header .button.icon, .event-header input[type="submit"].icon {

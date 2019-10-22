@@ -17,7 +17,7 @@
 	
 	// <table>
 	// extends 'standard' table and uses highlight-rows
-	.messages {
+	table.messages {
 		width: 100%; 
 		
 		// set last <td> to the right	
@@ -81,30 +81,24 @@
 		}
 			
 
-		// handle the actual messages
-		// within the <td>
+		// handle the actual messages within the <td>
 		// DOM: <div class="message">Message</div> 
-		// strucutre to make use of truncated text
 		.message {
-			// push out the containing <td>
-			// using vw:
-			width:17vw; // tested this with a long patient and long user name  
-			
-			// when we have a bit more space bump it up:
-			@include media($oe-extended-browser-size){
-				width:21vw;
-			}
-			
-			height:1.2rem;
-			overflow: hidden;
+			// message has 2 states: collapsed (single line with ellipsis) and expanded (multi-line)
+			// in order to get the single line overflow working the container
+			// needs to be width restricted (could NOT get it to be the <td>!) 			
+			width:18vw; 		// tested with long patient and sender names (all width layouts)
+			height:1.2rem;		// not sure what this does.
 			color: inherit;
 			
 			// truncate text
+			overflow: hidden;
 			white-space: nowrap;
 			text-overflow: ellipsis;
 			
 			// expand and read full message (if truncated)		
 			&.expand {
+				width:90%;		// allow text to push out <td>
 				height: auto;
 				text-overflow: none;
 				white-space: normal;
