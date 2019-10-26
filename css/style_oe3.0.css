@@ -1161,9 +1161,7 @@ strong, b {
 }
 
 .user-comment {
-  font-family: Georgia, serif;
-  font-size: 110%;
-  font-weight: normal;
+  font-weight: 500;
   font-style: italic;
 }
 
@@ -1313,17 +1311,18 @@ button.header-tab.disabled, button.header-tab.inactive, .button.header-tab.disab
 }
 
 button.header-tab.icon-bg, .button.header-tab.icon-bg, input[type="submit"].header-tab.icon-bg {
-  background-size: 42px;
-  background-position: center right -3px;
   background-repeat: no-repeat;
 }
 
 button.header-tab.icon-bg.goto, .button.header-tab.icon-bg.goto, input[type="submit"].header-tab.icon-bg.goto {
+  background-size: 21px;
   background-image: url("../svg/in-css/ui/direction-right-circle-btn-watermark.pro.svg");
-  background-position-x: 95%;
+  background-position: center right;
 }
 
 button.header-tab.icon-bg.print, .button.header-tab.icon-bg.print, input[type="submit"].header-tab.icon-bg.print {
+  background-size: 40px;
+  background-position: center right -3px;
   background-image: url("../svg/in-css/ui/print-btn-watermark.pro.svg");
 }
 

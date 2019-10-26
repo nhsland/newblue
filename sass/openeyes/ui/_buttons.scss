@@ -90,15 +90,16 @@
 		// icon-bg buttons help with reducing widths by replacing
 		// text: "Print" , "Display" or "Go to" or "View" with an icon background.
 		&.icon-bg {
-			background-size: 42px;
-			background-position: center right -3px;
 			background-repeat: no-repeat;
 			&.goto {
+				background-size: 21px;
 				background-image: url( svg-path-theme( 'ui/direction-right-circle-btn-watermark' ) );
-				background-position-x: 95%;
+				background-position: center right;
 			}
 			
 			&.print {
+				background-size: 40px;
+				background-position: center right -3px;
 				background-image: url( svg-path-theme( 'ui/print-btn-watermark' ) ); 
 			}
 			
