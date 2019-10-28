@@ -112,6 +112,8 @@ $oe-wb-widget-bg:		$oe-tooltip-bg;
 $oe-wb-data-text:		$oe-text;	
 $oe-wb-headers:			$oe-element-headers;
 
+$oe-pagination-blue: 	$oe-text-highlight;
+
 // ... different SVGs for 'pro' & 'classic' theme
 @function svg-icon-path-theme($svg){
 	@return "../svg/in-css/icons/" + $svg + ".svg";

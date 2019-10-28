@@ -116,6 +116,8 @@ $oe-wb-widget-bg:		rgb(205,195,195);
 $oe-wb-data-text:		rgb(60,50,50);	
 $oe-wb-headers:			rgb(60,60,140);	
 
+$oe-pagination-blue: 	rgb(140,140,255);
+
 // ... different SVGs for 'pro' & 'classic' theme
 @function svg-icon-path-theme($svg){
 	@return "../svg/in-css/icons/_classic/" + $svg + ".svg";

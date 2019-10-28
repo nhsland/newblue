@@ -991,6 +991,10 @@ table.standard.highlight-rows tbody tr:hover, table.standard.highlight-rows tbod
   margin: 0 4px;
 }
 
+.pagination .pagination-pages a.selected {
+  color: cyan;
+}
+
 table .pagination {
   font-size: 0.75rem;
 }
