@@ -39,6 +39,10 @@
 					// make sure icons (in,1,2,GP) don't wrap
 					&.letter-status {
 						white-space: nowrap;
+						// space out the icons
+						i {
+							margin-right: 1px;
+						}
 					}
 				}
 			}

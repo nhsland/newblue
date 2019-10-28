@@ -11404,6 +11404,10 @@ table.oe-clinic-list td.center {
   white-space: nowrap;
 }
 
+.oe-partial-waiting .partial-waiting-main table.standard tbody td.letter-status i {
+  margin-right: 1px;
+}
+
 .oe-partial-waiting .waiting-list-key {
   display: -webkit-box;
   display: -ms-flexbox;
