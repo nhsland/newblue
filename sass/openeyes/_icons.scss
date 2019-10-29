@@ -215,6 +215,8 @@
 	&.no-permissions	{ @include oe3-icons('no-permissions'); }
 	&.waiting			{ @include oe3-icons('waiting'); }
 	&.more-h			{ @include oe3-icons('more-h'); }
+	&.status-urgent		{ @include oe3-icons('status-urgent'); }
+	&.status-query		{ @include oe3-icons('status-query'); }
 	
 	// monochromatic Eye Lat icons:
 	&.eyelat-L			{ @include oe3-icons('lat-L'); }

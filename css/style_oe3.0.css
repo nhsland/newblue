@@ -3185,6 +3185,22 @@ table.standard.messages .oe-date {
   background-image: url("../svg/in-css/icons/more-h.svg");
 }
 
+.oe-i.status-urgent {
+  background-image: url("../svg/in-css/icons/status-urgent.svg");
+}
+
+.oe-i.status-urgent.pro-theme {
+  background-image: url("../svg/in-css/icons/status-urgent.svg");
+}
+
+.oe-i.status-query {
+  background-image: url("../svg/in-css/icons/status-query.svg");
+}
+
+.oe-i.status-query.pro-theme {
+  background-image: url("../svg/in-css/icons/status-query.svg");
+}
+
 .oe-i.eyelat-L {
   background-image: url("../svg/in-css/icons/lat-L.svg");
 }
