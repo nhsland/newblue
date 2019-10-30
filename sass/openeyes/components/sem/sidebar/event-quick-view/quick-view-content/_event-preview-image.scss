@@ -13,6 +13,10 @@
 			bottom:0;
 			width:300px;
 			
+			// if preview is too tall for viewport
+			// allow user to scroll it
+			overflow-y: auto;
+			
 			img {
 				width:100%;
 				height: auto;

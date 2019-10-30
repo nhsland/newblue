@@ -8,7 +8,8 @@
 	// JS drops a spinner in here
 	.quick-view-content {
 		position:relative;
-		height: 100%; // need this to center the spinner.
+		// need a height setting to center the spinner
+		height: 90%; 
 	}
 }
 

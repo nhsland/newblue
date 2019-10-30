@@ -6333,7 +6333,7 @@ table.risks td textarea {
   position: fixed;
   top: 60px;
   left: 200px;
-  height: calc(100vh - 60px);
+  bottom: 0;
   width: 1080px;
   overflow: hidden;
   background: #374755;
@@ -6393,7 +6393,7 @@ table.risks td textarea {
 
 .oe-event-quick-view .quick-view-content {
   position: relative;
-  height: 100%;
+  height: 90%;
 }
 
 .oe-event-quick-view .quick-view-content .event-preview-image {
@@ -6402,6 +6402,7 @@ table.risks td textarea {
   left: 10px;
   bottom: 0;
   width: 300px;
+  overflow-y: auto;
 }
 
 .oe-event-quick-view .quick-view-content .event-preview-image img {
@@ -6513,6 +6514,11 @@ table.risks td textarea {
 }
 
 .oe-event-quick-view .quick-view-content .event-letter-pages {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 60px;
+  bottom: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6524,7 +6530,7 @@ table.risks td textarea {
           align-items: flex-start;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 10px 60px 10px 10px;
+  overflow-y: auto;
 }
 
 .oe-event-quick-view .quick-view-content .event-letter-pages img {

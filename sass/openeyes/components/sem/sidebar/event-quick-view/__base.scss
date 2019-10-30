@@ -12,7 +12,8 @@
 	position:fixed;
 	top: $oe-header-height;
 	left:$oe-event-sidebar-width;
-	height: calc(100vh - #{$oe-header-height} ); // this can't be SASS variable has to be written (must match $oe-header-height) 
+	bottom:0;
+ 
 	width: $oe-event-main-default-width;
 
 	overflow:hidden;
