@@ -28,9 +28,9 @@
 		// <ul> filters (unread etc)
 		.filter-messages {	
 			li {
-				@include font-size(14);
+				@include font-size(13);
 				color:$oe-text-light;
-				padding:0 0 12px 0;
+				padding:0 0 10px 0;
 				
 				// overwrite defaults
 				a {
@@ -46,7 +46,7 @@
 		.search-messages {
 			
 			h3 {
-				margin:20px 0 10px 0;
+				margin:16px 0 8px 0;
 				@include font-size(15);
 				font-weight: 300;
 				color:$oe-blue-light;

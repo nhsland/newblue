@@ -4021,7 +4021,7 @@ table.standard.messages .oe-date {
   left: 200px;
   height: 60px;
   width: 605px;
-  background: transparent url("../svg/in-css/backgrounds/patient-watermark.svg") top -4px right 18px no-repeat;
+  background: transparent url("../svg/in-css/backgrounds/patient-watermark.pro.svg") top -4px right 18px no-repeat;
   background-size: 90px 90px;
 }
 
@@ -5762,9 +5762,9 @@ table.risks td textarea {
 }
 
 .home-messages .message-actions .filter-messages li {
-  font-size: 0.875rem;
+  font-size: 0.8125rem;
   color: #8c8c8c;
-  padding: 0 0 12px 0;
+  padding: 0 0 10px 0;
 }
 
 .home-messages .message-actions .filter-messages li a .count {
@@ -5773,7 +5773,7 @@ table.risks td textarea {
 }
 
 .home-messages .message-actions .search-messages h3 {
-  margin: 20px 0 10px 0;
+  margin: 16px 0 8px 0;
   font-size: 0.9375rem;
   font-weight: 300;
   color: #626d7b;
