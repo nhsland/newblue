@@ -406,7 +406,7 @@ html {
   .oe-grid .event-header,
   .oe-grid .oe-lightning-viewer,
   .oe-grid .main-event {
-    width: calc(100vw - 200px);
+    width: 100%;
   }
 }
 

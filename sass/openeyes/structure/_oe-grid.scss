@@ -92,10 +92,11 @@
 		//}
 		
 		
-		// handle 1280px  viewports with window borders
+		// handle 1280px viewports with window borders
 		// trim a total of 20px
 		@include below-minimum(){
-			width: calc(100vw - #{$oe-event-sidebar-width}); 
+			width: 100%; 
+			// calc(100vw - #{$oe-event-sidebar-width});  // - this worked on inital testing but failed on tablets
 		}
 	}
 	

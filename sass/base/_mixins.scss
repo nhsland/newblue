@@ -18,7 +18,7 @@
 
 // Below minimum support
 @mixin below-minimum(){
-	@media only screen and (max-width: 1279px){
+	@media only screen and (max-width: #{$oe-minimum-supported-width - 1px}){
 		@content;
 	}
 }
