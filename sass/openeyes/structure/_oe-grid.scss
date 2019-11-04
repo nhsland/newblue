@@ -92,11 +92,19 @@
 		//}
 		
 		
-		// handle 1280px viewports with window borders
-		// trim a total of 20px
+		// introduced to handle 1280px viewports with window borders
 		@include below-minimum(){
 			width: 100%; 
-			// calc(100vw - #{$oe-event-sidebar-width});  // - this worked on inital testing but failed on tablets
+			min-width: 824px; 
+			// this is to keep David H happy. 
+			// if i don't add this OE collapses down to fit his tablets
+			// if i force a minimum width it will "work" for him 
+			// altho, he has to pinch zoom to fit it in ;) 
+			
+			// calc(100vw - #{$oe-event-sidebar-width});  --- replaced
+			// calc worked on initally testing but failed on tablets
+			// (even tho we're not yet supporting them ;)
+			// 100% seems to work across all devices.
 		}
 	}
 	

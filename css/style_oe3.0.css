@@ -407,6 +407,7 @@ html {
   .oe-grid .oe-lightning-viewer,
   .oe-grid .main-event {
     width: 100%;
+    min-width: 824px;
   }
 }
 
@@ -4309,6 +4310,13 @@ table.standard.messages .oe-date {
   }
 }
 
+@media only screen and (max-width: 1279px) {
+  .oe-user {
+    display: block;
+    top: 5px;
+  }
+}
+
 .oe-user .oe-user-profile-context {
   margin: auto 0;
   width: 250px;
@@ -4347,6 +4355,15 @@ table.standard.messages .oe-date {
 .oe-user .oe-user-profile-context li a:hover, .oe-user .oe-user-profile-context li a:focus, .oe-user .oe-user-profile-context li a:active {
   opacity: 1;
   color: cyan;
+}
+
+@media only screen and (max-width: 1279px) {
+  .oe-user .oe-user-profile-context li {
+    display: none;
+  }
+  .oe-user .oe-user-profile-context li:first-child, .oe-user .oe-user-profile-context li:last-child {
+    display: block;
+  }
 }
 
 .oe-nav {

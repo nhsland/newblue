@@ -21,6 +21,14 @@
 	display:flex;
 	height:$oe-header-height;
 	
+	// introduced to handle 1280px viewports with window borders
+	// this is a hack to support tablets a bit better 
+	// OE is not optimsied for this, but anyway:
+	@include below-minimum(){
+		display:block;
+		top:5px;
+	}
+	
 	
 
 	.oe-user-profile-context {
@@ -66,6 +74,20 @@
 					color:$oe-pro-text-highlight;
 				}
 				
+			}
+			
+		}
+		
+		// introduced to handle 1280px viewports with window borders
+		// this is a hack to support tablets a bit better 
+		// OE is not optimsied for this, but anyway:
+		@include below-minimum(){
+			li {
+				display:none;
+				&:first-child,
+				&:last-child {
+					display:block;
+				}
 			}
 			
 		}
