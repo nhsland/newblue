@@ -4067,17 +4067,12 @@ table.standard.messages .oe-date {
   border-left: 1px solid #26303d;
 }
 
-.oe-patient .hospital-number span, .oe-patient .hospital-number em,
+.oe-patient .hospital-number span,
 .oe-patient .nhs-number span,
-.oe-patient .nhs-number em,
 .oe-patient .patient-gender span,
-.oe-patient .patient-gender em,
 .oe-patient .patient-age span,
-.oe-patient .patient-age em,
 .oe-patient .patient-died span,
-.oe-patient .patient-died em,
-.oe-patient .warning span,
-.oe-patient .warning em {
+.oe-patient .warning span {
   opacity: 0.5;
 }
 
@@ -4087,6 +4082,7 @@ table.standard.messages .oe-date {
 .oe-patient .patient-age em,
 .oe-patient .patient-died em,
 .oe-patient .warning em {
+  opacity: 0.5;
   font-size: 0.625rem;
 }
 
@@ -5028,6 +5024,14 @@ table.management-summaries tbody td:last-child {
   background: #182535;
 }
 
+.oe-patient-popup table.past-problems-plans tr {
+  border-top-color: #26303d;
+}
+
+.oe-patient-popup table.past-problems-plans td {
+  color: #d6d6d6;
+}
+
 .problems-plans {
   padding: 0;
   margin: 0;
@@ -5080,6 +5084,26 @@ table.management-summaries tbody td:last-child {
   padding: 5px;
   border-radius: 3px;
   width: calc(100% - 38px);
+}
+
+table.past-problems-plans {
+  width: 100%;
+  margin: 0 0 10px 0;
+}
+
+table.past-problems-plans tbody tr {
+  border-top: 1px dotted #26303d;
+}
+
+table.past-problems-plans tbody tr:first-child {
+  border-top: none;
+}
+
+table.past-problems-plans tbody td {
+  padding: 6px 3px;
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  color: #d6d6d6;
 }
 
 .oe-patient-popup {
