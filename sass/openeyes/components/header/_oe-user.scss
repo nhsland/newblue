@@ -21,14 +21,17 @@
 	display:flex;
 	height:$oe-header-height;
 	
-	// introduced to handle 1280px viewports with window borders
-	// this is a hack to support tablets a bit better 
-	// OE is not optimsied for this, but anyway:
+	// introduced to handle 1280px viewports with window border
 	@include below-minimum(){
+		right:195px;
+	}
+	
+	// and this is a hack to support tablets a bit better 
+	// OE is not optimsied for this, but anyway:
+	@media only screen and (max-width: 1260px){
 		display:block;
 		top:5px;
 	}
-	
 	
 
 	.oe-user-profile-context {
@@ -78,10 +81,9 @@
 			
 		}
 		
-		// introduced to handle 1280px viewports with window borders
 		// this is a hack to support tablets a bit better 
 		// OE is not optimsied for this, but anyway:
-		@include below-minimum(){
+		@media only screen and (max-width: 1260px){
 			li {
 				display:none;
 				&:first-child,
@@ -89,7 +91,6 @@
 					display:block;
 				}
 			}
-			
 		}
 								
 	}

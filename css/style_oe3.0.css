@@ -4308,6 +4308,12 @@ table.standard.messages .oe-date {
 
 @media only screen and (max-width: 1279px) {
   .oe-user {
+    right: 195px;
+  }
+}
+
+@media only screen and (max-width: 1260px) {
+  .oe-user {
     display: block;
     top: 5px;
   }
@@ -4353,7 +4359,7 @@ table.standard.messages .oe-date {
   color: cyan;
 }
 
-@media only screen and (max-width: 1279px) {
+@media only screen and (max-width: 1260px) {
   .oe-user .oe-user-profile-context li {
     display: none;
   }
