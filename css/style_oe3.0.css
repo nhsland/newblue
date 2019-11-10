@@ -2152,7 +2152,7 @@ table.standard.messages .oe-date {
   z-index: 70;
   background: #374755;
   padding: 5px 10px 35px 10px;
-  min-width: 290px;
+  min-width: 190px;
   min-height: 204px;
   max-height: 290px;
   font-size: 0.6875rem;
