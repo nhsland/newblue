@@ -5864,29 +5864,23 @@ table.risks td textarea {
   background: #283442 url("../svg/in-css/ui/face.pro.svg") 50.2% 0 no-repeat;
 }
 
-.event-header.no-face {
-  background: #283442;
-}
-
 @media only screen and (min-width: 1440px) {
   .event-header {
     background-position-x: 54.8%;
   }
 }
 
-.event-header button, .event-header .button, .event-header input[type="submit"] {
-  vertical-align: top;
-  height: 38px;
-  min-width: 40px;
-  padding: 0 14px;
+.event-header.no-face {
+  background: #283442;
 }
 
-.event-header button.icon, .event-header .button.icon, .event-header input[type="submit"].icon {
-  padding: 0 0;
-}
-
-.event-header button.icon .oe-i, .event-header .button.icon .oe-i, .event-header input[type="submit"].icon .oe-i {
-  padding: 0 20px;
+.event-header .event-header-title {
+  position: absolute;
+  left: 50px;
+  top: 6px;
+  font-size: 1.3125rem;
+  font-weight: 300;
+  color: #69939e;
 }
 
 .event-header .event-action-options {
@@ -5906,19 +5900,25 @@ table.risks td textarea {
   color: #8c8c8c;
 }
 
-.event-header .event-header-title {
-  position: absolute;
-  left: 50px;
-  top: 6px;
-  font-size: 1.3125rem;
-  font-weight: 300;
-  color: #69939e;
-}
-
 .event-header .buttons-right {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.event-header button, .event-header .button, .event-header input[type="submit"] {
+  vertical-align: top;
+  height: 38px;
+  min-width: 40px;
+  padding: 0 14px;
+}
+
+.event-header button.icon, .event-header .button.icon, .event-header input[type="submit"].icon {
+  padding: 0 0;
+}
+
+.event-header button.icon .oe-i, .event-header .button.icon .oe-i, .event-header input[type="submit"].icon .oe-i {
+  padding: 0 20px;
 }
 
 .event-footer-actions {
@@ -6961,7 +6961,13 @@ table.risks td textarea {
 }
 
 .main-event .element .element-fields .add-data-actions {
-  margin: 8px 0 0 0;
+  margin: 8px 3px 0 0;
+}
+
+@media only screen and (max-width: 1279px) {
+  .main-event .element .element-fields .add-data-actions {
+    margin-right: 5px;
+  }
 }
 
 .main-event .element .active-form {
@@ -6970,20 +6976,14 @@ table.risks td textarea {
 
 .main-event .element .active-form .remove-side {
   position: absolute;
-  top: -2px;
-  right: -15px;
+  top: -6px;
+  right: -16px;
   z-index: 1;
-}
-
-@media only screen and (min-width: 1440px) {
-  .main-event .element .active-form .remove-side {
-    top: -6px;
-  }
 }
 
 @media only screen and (max-width: 1279px) {
   .main-event .element .active-form .remove-side {
-    right: -5px;
+    right: -12px;
   }
 }
 

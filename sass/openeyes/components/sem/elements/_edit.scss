@@ -26,9 +26,15 @@
 			// provides a hook
 			// extends the flex-item-bottom class
 			// creates a margin space for the + and commment buttons
-			// a squashed without it
+			// a squashed without it.
+			// 3px gives the remove-side cross space!  
 			.add-data-actions {
-				margin:8px 0 0 0;
+				margin:8px 3px 0 0; 
+				
+				@include below-minimum(){
+					margin-right:5px;
+				}
+				 
 			}
 			
 		}
@@ -42,19 +48,19 @@
 			// small cross icon to remove eye side
 			.remove-side {
 				position:absolute;
-				top:-2px;
-				right:-15px; // move outside into padding space
+				top:-6px;
+				right:-16px; // move outside into padding space
 				z-index: 1;  // make sure this above anything.
 				
 				// adjust position to not overlap "Adder" button in extended layout
 				@include media($oe-extended-browser-size){	  // 1440px
-					top:-6px;
+					//top:-6px;
 				}
 				
 				// handle 1280px  viewports with window borders
 				// trim a total of 20px
 				@include below-minimum(){
-					right:-5px;
+					right:-12px;
 				};
 				
 			}
