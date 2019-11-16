@@ -1132,7 +1132,7 @@ strong, b {
 }
 
 .highlighter.issue, .highlighter.orange {
-  background: #a04600;
+  background: #a05500;
   color: #d6d6d6;
 }
 
@@ -1419,7 +1419,7 @@ button.red:hover, button.red:focus, button.red:active, .button.red:hover, .butto
 
 .alert-box.alert, .alert-box.issue {
   color: #d6d6d6;
-  background: #a04600;
+  background: #a05500;
 }
 
 .alert-box.warning, .alert-box.error, .alert-box.injection-warning {
@@ -2203,7 +2203,7 @@ table.standard.messages .oe-date {
 }
 
 .oe-add-select-search .add-icon-btn.required {
-  background-color: #a04600;
+  background-color: #a05500;
   cursor: not-allowed;
   color: white;
 }
@@ -2284,7 +2284,7 @@ table.standard.messages .oe-date {
   margin: 0 0 2px 0;
   color: #d6d6d6;
   background-color: #32404d;
-  min-width: 21px;
+  min-width: 60px;
 }
 
 .oe-add-select-search .add-options li .fixed-width,
@@ -2313,8 +2313,12 @@ table.standard.messages .oe-date {
   color: cyan !important;
 }
 
+.oe-add-select-search .add-options.number li {
+  min-width: 21px;
+}
+
 .oe-add-select-search .add-options.single.required li, .oe-add-select-search .add-options.multi.required li, .oe-add-select-search .add-options.number.required li {
-  background-image: linear-gradient(to right, #a04600 3px, #32404d 3px);
+  background-image: linear-gradient(to right, #a05500 3px, #32404d 3px);
 }
 
 .oe-add-select-search .add-options.multi li {
@@ -11402,7 +11406,7 @@ table.oe-clinic-list td.center {
 }
 
 .oe-audit .audit-main table.standard tbody tr.warn, .oe-audit .audit-main table.standard tbody tr.orange {
-  background: #a04600;
+  background: #a05500;
 }
 
 .oe-audit .audit-main table.standard tbody tr.fail, .oe-audit .audit-main table.standard tbody tr.red {
@@ -11525,7 +11529,7 @@ table.oe-clinic-list td.center {
 }
 
 .oe-partial-waiting .send-gp-removal-letter {
-  background: linear-gradient(to right, #a04600 7px, transparent 7px);
+  background: linear-gradient(to right, #a05500 7px, transparent 7px);
   padding-left: 12px !important;
 }
 
@@ -11781,7 +11785,7 @@ table.oe-clinic-list td.center {
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget.orange {
-  border-bottom: 8px solid #a04600;
+  border-bottom: 8px solid #a05500;
 }
 
 .oe-whiteboard .wb3 .oe-wb-widget.red {

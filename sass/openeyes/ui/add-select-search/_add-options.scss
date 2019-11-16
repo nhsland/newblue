@@ -26,7 +26,7 @@
 			color:$oe-text;
 			// border-radius:3px;
 			background-color: $bg-default;
-			min-width:21px;		// provide a minimal hit area for touch
+			min-width:60px;		// provide a minimum for things like "No DR"
 			
 			// data has a span wrapper to control the width
 			// not possible through the li css
@@ -61,6 +61,15 @@
 			}
 		
 		}
+		
+		// Numbers:
+		&.number {
+			li {
+				min-width:21px;		// provide a minimal hit area for touch
+			}
+			
+		}
+		
 		
 		// color hint functionality
 		$list-hint-w: 3px;
