@@ -4,23 +4,11 @@
 
 .event-header {
 	
-	.header-dropdown
-	
-	position:relative;
-	
-	// add in the R L face
-	background:$oe-grey url( svg-path-theme('ui/face') ) 50.2% 0 no-repeat;
-	
-	// face needs offseting because headers have dropped left
-	@include media($oe-extended-browser-size){
-		background-position-x: 54.8%; 
+	.header-dropdown {
+		display:inline-block;
+		position:relative;
 	}
-	
-	// remove the face!
-	&.no-face {
-		background:$oe-grey; 	
-	}
-	
+
 }
 
 

@@ -85,24 +85,15 @@
 			border:none !important;
 		}
 		
-		// in some scenarios there are a lot of header buttons
-		// these overlap the VIEW / EDIT / Change context buttons
-		// icon-bg buttons help with reducing widths by replacing
-		// text: "Print" , "Display" or "Go to" or "View" with an icon background.
+		// icon-bg buttons may help with reducing widths by replacing
+		// text: "Display" or "Go to" with an icon background
 		&.icon-bg {
 			background-repeat: no-repeat;
 			&.goto {
-				background-size: 21px;
-				background-image: url( svg-path-theme( 'ui/direction-right-circle-btn-watermark' ) );
-				background-position: center right;
-			}
-			
-			&.print {
-				background-size: 40px;
-				background-position: center right -3px;
-				background-image: url( svg-path-theme( 'ui/print-btn-watermark' ) ); 
-			}
-			
+				background-size: 12px; // in SVG rotate is linked to this!!!
+				background-image: url( svg-path-theme( 'ui/btn-goto' ) );
+				background-position: top 1px right -1px;
+			}	
 			
 		}
 		
