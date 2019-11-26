@@ -1,12 +1,12 @@
 {
 	"name": "openeyes-newblue",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"description": "OpenEyes UI",
 	"author": {
 		"name": "Toby Fisher (knowego)",
 		"url": "http://knowego.com"
 	},
-	"license": "GNU Affero General Public License V3.0",
+	"license": "GAGPL-3.0-only",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/openeyes/newblue"
@@ -29,9 +29,11 @@
 		"gulp-rename": "1.4.0",
 		"gulp-sass": "4.0.2",
 		"gulp-svgmin": "2.1.0",
-		"gulp.spritesmith": "6.4.1",
+		"gulp.spritesmith": "6.11.0",
 		"lazypipe": "1.0.1",
 		"node-sass": "4.13.0",
-		"through2": "3.0.1"
+		"through2": "3.0.1",
+		"vinyl-buffer": "1.0.1",
+		"gulp-imagemin":"6.2.0"
 	}
 }
