@@ -10,7 +10,7 @@ OE UI - Gulp generates:
  */
 
 const config = {
-	version: '3.0',
+	version: '4.0',
 	css: 'style_oe',
 	reload: false,
 }
@@ -22,9 +22,7 @@ const paths = {
 		classic: 	'./src/sass/style_oe_classic.scss',
 		print: 		'./src/sass/style_oe_print.scss',
 		eyedraw:	'./src/sass/style_eyedraw-draw-icons.scss',
-		watch: 		'./src/sass/**/*.{scss,sass}',
-		
-				
+		watch: 		'./src/sass/**/*.{scss,sass}',		
 	},
 	dist: {
 		css: 		'./css/',
@@ -62,6 +60,7 @@ const through2 = require('through2');
 - Legal header for CSS files
 */
 let headerDateStamp = () => '/* ' + new Date( Date.now() ) + ' */';
+
 const headerLegals = [	'/**',
 					'*  (C) OpenEyes Foundation, 2018 ',
 					'*  This file is part of OpenEyes. ',
@@ -78,133 +77,74 @@ const headerLegals = [	'/**',
 					'*',
 					'*/',
 					'',''].join('\n');
-
+					
 /*
 -----------------------------
 Process and minify SASS files
 -----------------------------
+Build compressed CSS file for deployment
 */
-
-/*
-PRO (dark) theme
-- Expanded CSS file for Debug / Development
-- Compressed CSS file for deployment
-*/
-var proCSS = function (done) {
+var minifyCSS = function(scss, cssFileName){
 	// return stream (async task)
-	// so task manager knows it's done 
-	return src(paths.src.pro)
+	return src(scss)
 		.pipe(sass({
 			outputStyle: 'expanded',
-			sourceComments: false,		// add sass line and file reference for debug?
-			errLogToConsole:true,
-		}).on( 'error', sass.logError ))
+		}))
 		.pipe(postcss([
-			prefix({					// autoprefix CSS
+			prefix({					
 				cascade: true,
 				remove: true
+			}),
+			minify({
+				discardComments: { removeAll: true },
+				normalizeWhitespace:true,
+				cssDeclarationSorter:true,
+				uniqueSelectors:true,
+				orderedValues:true,
+				discardEmpty:true,
 			})
 		]))
-		.pipe(header( '\n/* Expanded CSS for debugging and development purposes only - use minified version for live site */\n' ))
-		.pipe(header( headerDateStamp() ))
-		.pipe(rename( config.css + config.version + '.css'))
 		.pipe( through2.obj( function( file, enc, cb ) {
-			// fixes a 'feature' in Gulp 4 that stops
+			// fixes a 'feature' in Gulp that stops
 			// the file modified date from updating correctly...
 			var date = new Date();
 			file.stat.atime = date;
 			file.stat.mtime = date;
 			cb( null, file );
-		}) )
-		.pipe(dest(paths.dist.css))
-		.pipe(postcss([
-			minify({
-				discardComments: { removeAll: true },
-				normalizeWhitespace:true,
-				cssDeclarationSorter:true,
-				uniqueSelectors:true,
-				orderedValues:true,
-				discardEmpty:true,
-			})
-		]))
+		}))
 		.pipe(header( headerDateStamp() ))
 		.pipe(header( headerLegals ))
-		.pipe(rename({suffix: '.min'}))
+		.pipe(rename( cssFileName ))
 		.pipe(dest(paths.dist.css));
+}
+
+/*
+PRO (dark) theme
+*/
+var proCSS = function (done) {
+	
+	return minifyCSS(	paths.src.pro, 
+						config.css + config.version + '.min.css');
 };
 
 /*
 CLASSIC (light) theme
-- Compressed CSS file for deployment
 */
 var classicCSS = function (done) {
-	return src(paths.src.classic)
-		.pipe(sass({
-			outputStyle: 'expanded',
-		}))
-		.pipe(postcss([
-			prefix({					
-				cascade: true,
-				remove: true
-			})
-		]))
-		.pipe( through2.obj( function( file, enc, cb ) {
-			var date = new Date();
-			file.stat.atime = date;
-			file.stat.mtime = date;
-			cb( null, file );
-		}) )
-		.pipe(postcss([
-			minify({
-				discardComments: { removeAll: true },
-				normalizeWhitespace:true,
-				cssDeclarationSorter:true,
-				uniqueSelectors:true,
-				orderedValues:true,
-				discardEmpty:true,
-			})
-		]))
-		.pipe(header( headerDateStamp() ))
-		.pipe(header( headerLegals ))
-		.pipe(rename( config.css + config.version + '_classic.min.css'))
-		.pipe(dest(paths.dist.css));
+	
+	return minifyCSS(	paths.src.classic, 
+						config.css + config.version + '_classic.min.css');
+						
 };
 
 /*
-PRINT
-- Compressed CSS file for deployment 
+PRINT 
 */
 var printCSS = function (done) {
-	return src(paths.src.print)
-		.pipe(sass({
-			outputStyle: 'expanded',
-		}))
-		.pipe(postcss([
-			prefix({					
-				cascade: true,
-				remove: true
-			})
-		]))
-		.pipe( through2.obj( function( file, enc, cb ) {
-			var date = new Date();
-			file.stat.atime = date;
-			file.stat.mtime = date;
-			cb( null, file );
-		}) )
-		.pipe(postcss([
-			minify({
-				discardComments: { removeAll: true },
-				normalizeWhitespace:true,
-				cssDeclarationSorter:true,
-				uniqueSelectors:true,
-				orderedValues:true,
-				discardEmpty:true,
-			})
-		]))
-		.pipe(header( headerDateStamp() ))
-		.pipe(header( headerLegals ))
-		.pipe(rename( config.css + config.version + '_print.css'))
-		.pipe(dest(paths.dist.css));
+	
+	return minifyCSS(	paths.src.print, 
+						config.css + config.version + '_print.css');
+						
 };
 
 /*
@@ -260,35 +200,8 @@ var buildEyedrawIcons = function (done) {
 
 var eyedrawCSS = function(done){
 	
-	return src(paths.src.eyedraw)
-		.pipe(sass({
-			outputStyle: 'expanded',
-		}))
-		.pipe(postcss([
-			prefix({					
-				cascade: true,
-				remove: true
-			})
-		]))
-		.pipe( through2.obj( function( file, enc, cb ) {
-			var date = new Date();
-			file.stat.atime = date;
-			file.stat.mtime = date;
-			cb( null, file );
-		}) )
-		.pipe(postcss([
-			minify({
-				discardComments: { removeAll: true },
-				normalizeWhitespace:true,
-				cssDeclarationSorter:true,
-				uniqueSelectors:true,
-				orderedValues:true,
-				discardEmpty:true,
-			})
-		]))
-		.pipe(header( headerDateStamp() ))
-		.pipe(rename( 'eyedraw_draw_icons.min.css' ))
-		.pipe(dest(paths.dist.css));
+	return minifyCSS(	paths.src.eyedraw, 
+						'eyedraw_draw_icons.min.css');
 };
 
 
