@@ -10,7 +10,7 @@ OE UI - Gulp generates:
  */
 
 const config = {
-	version: '4.0',
+	version: '3',
 	css: 'style_oe',
 	reload: false,
 }
