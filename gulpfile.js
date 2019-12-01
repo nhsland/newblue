@@ -124,7 +124,7 @@ PRO (dark) theme
 var proCSS = function (done) {
 	
 	return minifyCSS(	paths.src.pro, 
-						config.css + config.version + '.min.css');
+						config.css + config.version + '_dark.min.css');
 };
 
 /*
@@ -133,7 +133,7 @@ CLASSIC (light) theme
 var classicCSS = function (done) {
 	
 	return minifyCSS(	paths.src.classic, 
-						config.css + config.version + '_classic.min.css');
+						config.css + config.version + '_light.min.css');
 						
 };
 
@@ -143,7 +143,7 @@ PRINT
 var printCSS = function (done) {
 	
 	return minifyCSS(	paths.src.print, 
-						config.css + config.version + '_print.css');
+						config.css + config.version + '_print.min.css');
 						
 };
 
