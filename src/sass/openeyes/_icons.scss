@@ -217,6 +217,7 @@
 	&.more-h			{ @include oe3-icons('more-h'); }
 	&.status-urgent		{ @include oe3-icons('status-urgent'); }
 	&.status-query		{ @include oe3-icons('status-query'); }
+	&.whiteboard		{ @include oe3-icons('whiteboard'); }
 	
 	// monochromatic Eye Lat icons:
 	&.eyelat-L			{ @include oe3-icons('lat-L'); }
@@ -225,6 +226,7 @@
 	// nav icons  may be required in the IU
 	&.patient			{ @include oe3-icons('patient'); }
 	&.trials			{ @include oe3-icons('trials'); }
+	
 
 	
 	// Eyedraw icons 
