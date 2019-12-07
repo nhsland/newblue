@@ -27,6 +27,18 @@
 			}
 		}
 		
+		&.whiteboard {
+			background-size: 17px; // match large icon size
+			background-image: url(svg-path-theme( 'ui/whiteboard' )); 	// default state is themed icon
+			&.active,
+			&:hover, 
+			&:focus, 
+			&:active {
+				background-image: url(svg-path('icons/whiteboard'));		// always use the PRO icon (white)
+				background-color: $oe-btn-blue;
+			}
+		}
+		
 		// overflow for "more" buttons
 		&.more {
 			background-image: url(svg-path-theme( 'ui/more-h' )); 	// default state is themed icon
@@ -38,6 +50,8 @@
 				background-color: $oe-btn-blue;
 			}
 		}
+		
+		
 		
 		// currently always a button
 		&.trash {
