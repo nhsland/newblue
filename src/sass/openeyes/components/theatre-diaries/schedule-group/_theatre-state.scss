@@ -1,0 +1,46 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.theatre-diary-list {
+	.schedule-group {
+		
+		.theatre-overview {
+			.theatre-state {
+				
+				margin:10px 0 0 0;
+				padding:10px;
+				
+				
+				// colors, grabbed from OE2
+				&.available {
+					background: $oe-bg-hint-green; // mostly this color
+				}
+				
+				// "session-unavailable" was the old class
+				// keeping it here in case the JS is hooked in (although it shouldn't be)
+				&.unavailable, 
+				&.session-unavailable {
+					background: $oe-bg-hint-red;
+				}
+				
+				 
+				.session-time-left {
+					@include font-size(14);
+					margin:0 0 10px 0;
+					
+					.minutes {
+						font-weight: $oe-font-bold;
+					}
+					
+					.procedure-count,
+					.overbooked,
+					.session-unavailable {
+						margin:2px 0 0 0;
+					}
+					
+				}
+			}
+		}
+	}
+}

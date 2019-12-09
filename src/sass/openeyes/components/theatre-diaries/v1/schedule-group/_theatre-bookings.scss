@@ -1,0 +1,86 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Theatre Diaries
+// Theatre sessions is de-coupled to allow 
+// it's use in "Schedule Operation"
+
+.theatre-sessions {
+	
+	table.theatre-bookings {
+		width:100%;
+		color:$oe-text;
+		@include font-size(12);	
+		margin:0 0 10px 0;
+		
+		// add line to help with reading data
+		tr {
+			border-bottom:1px solid $oe-line;
+			&:last-child { 
+				border-bottom: none;
+			}
+		}
+	
+
+		th {
+			text-align: left;
+			color:$oe-text-light;
+			font-weight:$oe-font-light;
+			padding:10px 5px 10px 0;
+		}
+		
+		tbody {
+			td {
+				@include font-size(13);	
+				font-weight:$oe-font-medium;
+				padding:10px 5px 10px 0;
+				
+				&.confirm {
+					text-align: center; // check box
+				}
+				
+				// hack to deal with the input being too small
+				// when you switch to edit mode (time)
+				input[type=text]{
+					width:90%;  
+				}
+			}
+		}
+		
+		
+		tfoot {
+					
+			td {
+				@include font-size(15);
+				font-weight:$oe-font-light;
+				padding:8px;
+				background:none;
+
+				.session_timeleft {
+					float:left;
+				}
+				
+				.specialists {
+					float:right;
+					@include font-size(12);
+					padding:0 20px 0 0 ;
+					div {
+						margin:0 0 2px 0;
+					}
+				}
+				
+				// colors, grabbed from OE2
+				&.available {
+					background: $oe-bg-hint-green; // mostly this color
+				}
+				
+				&.session-unavailable {
+					background: $oe-bg-hint-red;
+				}
+			}	
+		}
+	}	
+}	
+
+

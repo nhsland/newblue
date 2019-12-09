@@ -1,0 +1,24 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-theatre-diaries {
+	
+	// in v1 this was "theatre-list"
+	// still supporting old V1 DOM: see v1 folder
+	// this is a new wrapper class for the updated UI design
+	
+	.theatre-diary-list {
+		
+		// Header for schedule groups
+		// e.g "Theatre One (Kings Hospital)"
+		h2 {
+			@include font-size(18);
+			font-weight:$oe-font-medium; 
+			margin:20px 0 15px 0;
+			color:$oe-text-light;
+		}
+	}
+}
+
+

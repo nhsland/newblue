@@ -1,0 +1,30 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.theatre-diary-list {
+	.schedule-group {	
+		.theatre-overview {
+			// e.g
+			// Mon, 18th Nov 2013
+			// 13:00 - 17:00
+			// Medical Retinal Service for (Medical Retina)
+			// Theatre One (Kings Hospital)
+			
+			.theatre-details {
+				padding:10px;
+				// <ul>	<li> items:
+				.date,
+				.time {
+					@include font-size(14);
+					font-weight: $oe-font-bold;
+				}
+		
+				.context,
+				.theatre {
+					margin:5px 0 0 0;
+				}
+			}
+		}
+	}
+}

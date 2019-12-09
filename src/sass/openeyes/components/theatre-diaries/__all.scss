@@ -3,8 +3,17 @@
 //
 
 // OE Theatre Diaries
-@import "_base";
-@import "diaries-search";
-@import "theatres-list";
 
+@import "_base";
+
+// V1 UI, this was basically a skin
+// job on the existing UI
+@import "v1/_all";
+
+// v2... a bit of re-think
+// although trying to keep as
+// much of the existing DOM
+
+@import "theatres-diary-list";
+@import "schedule-group/_all";
 

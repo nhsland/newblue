@@ -3,11 +3,11 @@
 //
 
 // OE Theatre Diaries
-// 
-// uses the full width of the screen
-// 2 areas: Search Filters and results
+// page class wrapper hook here
+// <div class="oe-full-content subgrid oe-theatre-diaries">
 
 .oe-theatre-diaries {
+	// set the full content background colour
 	background:$oe-blue-dark2; // theme changable
 }
 

@@ -11,8 +11,7 @@ OE UI - Gulp generates:
 
 const config = {
 	version: '3',
-	css: 'style_oe',
-	reload: false,
+	css: 'style_oe'
 }
 
 const paths = {
@@ -260,15 +259,8 @@ Task helpers
 -----------------------------
 */
 
-// Reload the browser when files change
-var reloadBrowser = function (done) {
-	if (!config.reload) return done();
-	browserSync.reload();
-	done();
-};
-
 var watchCSS = function(done){
-	watch(paths.src.watch, series(exports.buildCSS,reloadBrowser));
+	watch(paths.src.watch, series(exports.buildCSS));
 	done();
 }
 
