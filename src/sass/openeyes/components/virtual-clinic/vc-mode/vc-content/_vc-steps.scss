@@ -1,0 +1,25 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-vc-mode {
+	.vc-content {
+		
+		// <ul>
+		// show place in process.
+		.vc-steps {
+			li {
+				font-weight:500;
+				padding:2px 0 2px 18px;
+				&.selected {
+					background:transparent url( svg-path('icons/_classic/direction-right') ) left center no-repeat;
+					background-size:13px; // small icon size
+				}
+				
+			}
+		}
+		
+	}
+}
+
+

@@ -10,21 +10,7 @@
 				
 				margin:10px 0 0 0;
 				padding:10px;
-				
-				
-				// colors, grabbed from OE2
-				&.available {
-					background: $oe-bg-hint-green; // mostly this color
-				}
-				
-				// "session-unavailable" was the old class
-				// keeping it here in case the JS is hooked in (although it shouldn't be)
-				&.unavailable, 
-				&.session-unavailable {
-					background: $oe-bg-hint-red;
-				}
-				
-				 
+	 
 				.session-time-left {
 					@include font-size(14);
 					margin:0 0 10px 0;

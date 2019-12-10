@@ -2,15 +2,11 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE VC actions
+// OE VC mode
+// Not Themed!!
+// used in Hotlist
 
 .oe-vc-mode {
-	.vc-actions {
-		padding:4px 8px;
-		background: shade($oe-vc-orange,20);
-		
-		button {
-			margin:0 0 0 10px;
-		}
-	}
+	background-color: $oe-vc-orange;
+	color:rgb(10,10,10);
 }

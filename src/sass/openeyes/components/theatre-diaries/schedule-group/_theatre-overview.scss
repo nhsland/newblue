@@ -9,6 +9,23 @@
 			@include font-size(12);	
 			max-width:20%;
 			border-right:4px solid $oe-blue-dark2;
+			
+			// stretch content to ensure that colour
+			// indicators are the same height as table of bookings
+			align-self:stretch;
+			
+			// colors to show that minutes are available
+			&.available {
+				background-color: $oe-bg-hint-green; // mostly this color
+			}
+			
+			// "session-unavailable" was the old class
+			// keeping it here in case the JS is hooked in (although it shouldn't be)
+			&.unavailable, 
+			&.session-unavailable {
+				background-color: $oe-bg-hint-red;
+			}
+			
 		}
 		
 	}

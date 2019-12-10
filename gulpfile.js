@@ -97,7 +97,6 @@ var minifyCSS = function(scss, cssFileName){
 			minify({
 				discardComments: { removeAll: true },
 				normalizeWhitespace:true,
-				cssDeclarationSorter:true,
 				uniqueSelectors:true,
 				orderedValues:true,
 				discardEmpty:true,

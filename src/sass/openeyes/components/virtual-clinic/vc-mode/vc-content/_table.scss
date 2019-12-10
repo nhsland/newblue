@@ -1,0 +1,28 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE VC content
+
+.oe-vc-mode {
+	
+	.vc-content {
+		// tables 
+		table {
+			margin:6px 0;
+			width:100%;
+			
+			&.borders {
+				border: 3px solid shade($oe-vc-orange,20);
+				th,td {
+					border: 1px solid shade($oe-vc-orange,30);
+					border-bottom: none;
+					padding:1px 2px;
+				}
+			}
+			
+		}
+	}
+}
+
+

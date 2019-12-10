@@ -2,11 +2,8 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Vitural Clinic (Patient Ticketing)
-// VC consists of:
-// 1) Patient selector (search) page (IDG: Virtual Clinic page)
-@import "virtual-clinic/_all";
-
 // 2) OE in VC mode (patient is selected, hotlist changes states with a scratchpad)
-@import "vc-mode/_all";
-
+@import "_base"; 
+@import "vc-content/_all"; 
+@import "vc-actions"; 
+@import "vc-floating-input"; 
