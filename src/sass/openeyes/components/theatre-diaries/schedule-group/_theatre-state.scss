@@ -7,23 +7,42 @@
 		
 		.theatre-overview {
 			.theatre-state {
-				
-				margin:10px 0 0 0;
 				padding:10px;
 	 
 				.session-time-left {
 					@include font-size(14);
 					margin:0 0 10px 0;
 					
+					.max-patients,
 					.minutes {
 						font-weight: $oe-font-bold;
 					}
 					
 					.procedure-count,
 					.overbooked,
-					.session-unavailable {
-						margin:2px 0 0 0;
+					.session-unavailable,
+					.max-patients {
+						margin:3px 0 0 0;
 					}
+					
+					// generic UI for Patients, Complexities & Procedures
+					.session-max {
+						margin:4px 0;
+						padding:4px 0;
+						@include font-size(12);
+						border-bottom:1px dotted $oe-blue-dark2;
+						
+						.max-limit {
+							font-weight: $oe-font-bold;
+						}	
+						
+						.overbooked {
+							text-align: right;
+							@include font-size(12);
+						}
+						
+						
+					} 
 					
 				}
 			}

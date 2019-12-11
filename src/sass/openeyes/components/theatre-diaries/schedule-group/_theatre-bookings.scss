@@ -12,14 +12,15 @@
 			@include font-size(13);	
 			
 			// add line to help with reading data
-			tr {
-				border-bottom:1px solid $oe-line;
-				&:last-child { 
-					border-bottom: none;
-				}
-			}
+			
 			
 			tbody {
+				tr {
+					border-bottom:2px solid $oe-blue-dark2;
+					&:last-child{
+						border-bottom: none;
+					}
+				}
 				td {
 					@include font-size(13);	
 					font-weight:$oe-font-medium;
@@ -34,7 +35,6 @@
 					}
 					
 					&:first-child{
-						
 						text-align: center;
 						
 						label {
@@ -45,6 +45,12 @@
 							@include font-size(18);
 							font-weight:$oe-font-bold;
 							margin:0 0 5px 0;
+						}
+						
+						.op-duration {
+							@include font-size(12);
+							font-weight:$oe-font-bold;
+							margin:5px 0 0 0;
 						}
 					}
 					
@@ -57,13 +63,17 @@
 						margin:5px 0 0 0;
 					}
 					
+					&.edit-order-icon {
+						vertical-align: middle;
+					}
+					
 				}
 			}
 			
 			// use for comments
 			tfoot {
 				.session-comments {
-					border-top:2px solid $oe-blue-dark2;
+					border-top:4px solid $oe-blue-dark2;
 					padding:15px 10px 10px 10px; 
 					
 				}

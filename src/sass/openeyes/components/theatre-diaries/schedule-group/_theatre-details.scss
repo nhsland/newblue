@@ -13,10 +13,11 @@
 			
 			.theatre-details {
 				background:$oe-theatre-bookings-bg;
+				padding:10px;
 				// <ul>	<li> items:
 				.date,
 				.time {
-					@include font-size(14);
+					@include font-size(15);
 					font-weight: $oe-font-bold;
 				}
 		
