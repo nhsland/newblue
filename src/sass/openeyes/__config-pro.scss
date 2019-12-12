@@ -34,7 +34,7 @@ $oe-blue-dark1: $oe-blue-dark;
 $oe-grey:				rgb(40,52,66);
 $oe-line:				rgb(38,48,61); // don't use alphas, tables with td colspan 2 overlap
 
-$oe-font-light: 			300; 	// 400 in Classic
+$oe-font-light: 		300; 	// 400 in Classic
 $oe-font-medium: 		400;   	// 500 in Classic
 $oe-font-bold: 			500;  	// 600 in Classic
 
@@ -81,7 +81,7 @@ $oe-step-text:			rgb(240,240,240);
 $oe-bg-highlight: 		$oe-pro-bg-highlight; // used as hover highlight
 // colors 
 $oe-bg-hint-green:		rgb(18,60,31);
-$oe-bg-hint-red:			rgb(86,19,19);
+$oe-bg-hint-red:		rgb(86,19,19);
 
 // spinner color 
 $oe-spinner:				rgb(0,255,255);
@@ -106,7 +106,9 @@ $oe-home-search-bg: 	rgb(50,62,76);		// Home page Search area background
 $oe-tooltip-bg:			rgb(10,10,20);
 
 // Theatre Diaries
-$oe-theatre-bookings-bg: rgb(54,70,84);
+$oe-theatre-bookings-bg: 	$oe-grey; // match header (flatten palette)
+$oe-theatre-available: 		rgb(18,60,31);
+$oe-theatre-unavailable:	rgb(45,10,10);
 
 // Whiteboard
 $oe-wb-bg: 				$oe-blue-dark3;

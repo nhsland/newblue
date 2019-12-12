@@ -16,14 +16,14 @@
 			
 			// colors to show that minutes are available
 			&.available {
-				background-color: $oe-bg-hint-green; // mostly this color
+				background-color: $oe-theatre-available; // mostly this color
 			}
 			
 			// "session-unavailable" was the old class
 			// keeping it here in case the JS is hooked in (although it shouldn't be)
 			&.unavailable, 
 			&.session-unavailable {
-				background-color: $oe-bg-hint-red;
+				background-color: $oe-theatre-unavailable;
 			}
 			
 		}
