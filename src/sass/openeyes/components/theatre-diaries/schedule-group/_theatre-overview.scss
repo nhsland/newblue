@@ -19,12 +19,18 @@
 				background-color: $oe-theatre-available; // mostly this color
 			}
 			
+			&.near-full {
+				background-color: $oe-theatre-nearfull; // only so-many minutes left
+			}
+			
 			// "session-unavailable" was the old class
 			// keeping it here in case the JS is hooked in (although it shouldn't be)
-			&.unavailable, 
+			&.full, 
 			&.session-unavailable {
 				background-color: $oe-theatre-unavailable;
 			}
+			
+			
 			
 		}
 		
