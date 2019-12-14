@@ -248,7 +248,8 @@ var buildEventIcons = function(done){
 		.pipe( header( sassComments) )
 		.pipe(dest( paths.src.sass + 'openeyes/' ));
 	
-	done();
+	console.log('...wait a bit for Imagemin to finish');
+	setTimeout(done, 10000);
 };
 
 
