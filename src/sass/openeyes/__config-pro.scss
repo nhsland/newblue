@@ -108,7 +108,7 @@ $oe-tooltip-bg:			rgb(10,10,20);
 // Theatre Diaries
 $oe-theatre-bookings-bg: 	$oe-grey; // match header (flatten palette)
 $oe-theatre-available: 		rgb(18,60,31);
-$oe-theatre-nearfull:		rgb(160,90,0);
+$oe-theatre-nearfull:		$oe-grey; // rgb(160,90,0); was orange
 $oe-theatre-unavailable:	rgb(45,10,10);
 
 // Whiteboard
