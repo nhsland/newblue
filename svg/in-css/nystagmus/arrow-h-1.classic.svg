@@ -1,1 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 12"><style>*{fill:#003}</style><title>Nystagmus</title><rect x="3.33" y="5" width="47.17" height="2"/><polygon class="a" points="58.41 6 54.24 8.41 50.07 10.81 50.07 6 50.07 1.19 54.24 3.59 58.41 6"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 12"><style>*{fill:#003}</style><path d="M3.33 5H50.5v2H3.33z"/><path class="a" d="M58.41 6l-4.17 2.41-4.17 2.4V1.19l4.17 2.4L58.41 6z"/></svg>

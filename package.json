@@ -25,6 +25,7 @@
 		"gulp": "4.0.2",
 		"gulp-flatmap": "1.0.2",
 		"gulp-header": "2.0.5",
+		"gulp-imagemin": "6.2.0",
 		"gulp-postcss": "8.0.0",
 		"gulp-rename": "1.4.0",
 		"gulp-sass": "4.0.2",
@@ -33,7 +34,6 @@
 		"lazypipe": "1.0.1",
 		"node-sass": "4.13.0",
 		"through2": "3.0.1",
-		"vinyl-buffer": "1.0.1",
-		"gulp-imagemin":"6.2.0"
+		"vinyl-buffer": "1.0.1"
 	}
 }

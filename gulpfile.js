@@ -21,11 +21,13 @@ const paths = {
 		classic: 	'./src/sass/style_oe_classic.scss',
 		print: 		'./src/sass/style_oe_print.scss',
 		eyedraw:	'./src/sass/style_eyedraw-draw-icons.scss',
+		svg:		'./src/svg/**/*.svg',
 		watch: 		'./src/sass/**/*.{scss,sass}',		
 	},
 	dist: {
 		css: 		'./css/',
 		img:		'./img/',
+		svg:		'./svg/',
 	},
 };
 
@@ -250,20 +252,34 @@ var buildEventIcons = function(done){
 
 /*
 -----------------------------
+SVGs
+-----------------------------
+*/
+var optimiseSVG = (done) => {
+	return src(paths.src.svg,{base: './src/svg/'})
+			.pipe(svgmin())
+			.pipe( dest(paths.dist.svg) );
+}
+
+
+/*
+-----------------------------
 Task helpers
 -----------------------------
 */
-
 var watchCSS = function(done){
 	watch(paths.src.watch, series(exports.buildCSS));
 	done();
 }
+
+
 
 /*
 -----------------------------
 Export Tasks
 -----------------------------
 */
+exports.svg = series(optimiseSVG);
 
 // Build all OE CSS files: "gulp buildCSS"
 exports.buildCSS = parallel( proCSS, classicCSS, printCSS );
