@@ -30,54 +30,55 @@
 @import "admin-notification";					// OE Admin Notifications
 
 /* GUI */
-@import "ui/flex"; 							// flex layout
-@import "ui/lists"; 							// ul and ol defaults.
+@import "ui/flex";							// flex layout
+@import "ui/lists";							// ul and ol defaults.
 @import "ui/tables/_all"; 					// standard table class.
-@import "ui/typography"; 						// defaults and general typographics.
-@import "ui/collapse-group"; 					// collapse and expand groups
-@import "ui/collapse-data"; 					// collapse and expand data
+@import "ui/typography"; 					// defaults and general typographics.
+@import "ui/collapse-group";				// collapse and expand groups
+@import "ui/collapse-data";					// collapse and expand data
 @import "ui/buttons"; 						// button and .button
 @import "ui/button-stack";					// button stack
-@import "ui/alert-box"; 						// alerts
-@import "ui/status-box"; 						// status
+@import "ui/alert-box";						// alerts
+@import "ui/status-box";					// status
 @import "ui/tool-tip"; 						// tool tip (js generated)
-@import "ui/scrollbars"; 						// appy some feel
+@import "ui/scrollbars";					// appy some feel
 @import "ui/spinner"; 						// load spinner
-@import "ui/inline"; 							// helpers
+@import "ui/inline";						// helpers
 @import "ui/row"; 							// basic layout
-@import "ui/highlighted-error"; 				// error, red border
+@import "ui/highlighted-error";				// error, red border
 
 /* inputs */
-@import "inputs/_all"; 						// labels, inputs, selects and textares
+@import "inputs/_all";						// labels, inputs, selects and textares
 
 /* UI classes */
-@import "ui/oe-date"; 						// OE date
+@import "ui/oe-date";						// OE date
 @import	"ui/oe-eye-lat-icons";				// OE Eye Lat (r/l) icons
-@import "ui/oe-search-patient"; 				// Search Patient
-@import "ui/oe-multi-select"; 				// multi-select list
-@import "ui/oe-filter-options"; 				// filter-options
-@import "ui/oe-popup-wrap"; 					// covers and acts as container for ajax loads 
+@import "ui/oe-search-patient";				// Search Patient
+@import "ui/oe-multi-select";				// multi-select list
+@import "ui/oe-filter-options";				// filter-options
+@import "ui/oe-popup-wrap";					// covers and acts as container for ajax loads
+@import "ui/oe-js-img-popup";				// popup a thumbnail img to fullsize
 @import "ui/oe-autocomplete"; 				// input autocomplete
 @import "ui/oe-user-pin"; 					// user PIN
-@import "ui/add-select-search/_all";			// add insert data popup (into elements)
+@import "ui/add-select-search/_all";		// add insert data popup (into elements)
 @import "ui/pathstep/_all";					// pathstep (clinic, worklist, examination)
 
 /*  iconography */
-@import "icons"; 							// oe icons 
-@import "icons-events"; 						// oe icons (Events only) 
+@import "icons";							// oe icons 
+@import "icons-events";						// oe icons (Events only) 
 
 /* Components */
-@import "components/logo";    				// OE logo and Version info
-@import "components/header/_all";    			// site wide header bar: Logo, Patient & User Nav
-@import "components/hotlist/_all";    			// Hotlist: Open and Closed Patients
-@import "components/popups/_all";    			// Popups: GUI for popups
+@import "components/logo";						// OE logo and Version info
+@import "components/header/_all";				// site wide header bar: Logo, Patient & User Nav
+@import "components/hotlist/_all";				// Hotlist: Open and Closed Patients
+@import "components/popups/_all";				// Popups: GUI for popups
 @import "components/patient/_all";				// Patient Data: Popups, overview, mini-overview
 @import "components/login";						// Login
 @import "components/error-message";				// Message
 @import "components/home/_all";					// Homepage
-@import "components/sem/_all";    				// all SEM sass
-@import "components/add-new-event/_all";   		// add new event popup
-@import "components/eyedraw/_all";    			// eyedraw app (popup)
+@import "components/sem/_all";					// all SEM sass
+@import "components/add-new-event/_all";		// add new event popup
+@import "components/eyedraw/_all";				// eyedraw app (popup)
 @import "components/lightning/_all";			// lightning viewer
 @import "components/oescape/_all";				// OEscape (oes)
 @import "components/clinic/_all";				// OE clinic (oec)

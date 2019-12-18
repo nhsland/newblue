@@ -1,6 +1,6 @@
 /*
 OE UI - Gulp generates:
-- style_oe3.0.css  					// Pro/Dark (expanded)
+- style_oe3.0.css					// Pro/Dark (expanded)
 - style_oe3.0.min.css				// Pro/Dark (minified) 
 - style_oe3.0_classic.min.css		// Classic/Light (minified)
 - style_oe3,0_print.css				// Print (minified)
@@ -90,7 +90,7 @@ var minifyCSS = function(scss, cssFileName){
 			outputStyle: 'expanded',
 		}))
 		.pipe(postcss([
-			prefix({					
+			prefix({
 				cascade: true,
 				remove: true
 			}),
@@ -120,7 +120,6 @@ var minifyCSS = function(scss, cssFileName){
 PRO (dark) theme
 */
 var proCSS = function (done) {
-	
 	return minifyCSS(	paths.src.pro, 
 						config.css + config.version + '_dark.min.css');
 };
@@ -129,20 +128,16 @@ var proCSS = function (done) {
 CLASSIC (light) theme
 */
 var classicCSS = function (done) {
-	
 	return minifyCSS(	paths.src.classic, 
 						config.css + config.version + '_light.min.css');
-						
 };
 
 /*
 PRINT 
 */
 var printCSS = function (done) {
-	
 	return minifyCSS(	paths.src.print, 
 						config.css + config.version + '_print.min.css');
-						
 };
 
 /*
@@ -224,7 +219,7 @@ var buildEventIcons = function(done){
 								cssName: 		'_icons-events-sprites.scss',							// create SCSS sprite sheet 
 								cssTemplate: 	'./src/sass/_handlebars/eventSprite.scss.handlebars', 	// SCSS template file
 								cssHandlebarsHelpers: { 	half: function (num) { return num/2; },
-															quarter: function (num) { return num/4; }  }		
+															quarter: function (num) { return num/4; }  }
 					}));
 	
 	// Pipe image stream through image optimizer

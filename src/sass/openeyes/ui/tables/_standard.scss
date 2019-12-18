@@ -8,20 +8,19 @@
 table {
 	&.standard {
 		width:100%;
-	
-		// this may need putting in a class
+		
+		// 'standard' table was added to provide 
+		// a consistent layout outside SEM Events (there
+		// they are style specifically).
+		
+		// provide vertical spacing around table by default
+		// seems to work well...
 		margin:20px 0 10px 0;
-		
-		// first-child isn't working not sure why
-		&:first-child {	
-			margin:0 0 10px 0; 
-		}
-		
 		&.no-padding {
 			margin:0 0 0 0;
 		}
 
-		// matches the default align for tables in Elements
+		// set table up like SEM edit state (assume icons is last <td>)
 		&.last-right {
 			th, td {
 				&:last-child {
@@ -41,6 +40,11 @@ table {
 				text-align: right;
 				padding-right:$tableStandardPadding;
 			}
+			
+			// improve visual layout of data
+			&:first-child {
+				padding-left:2px;
+			}
 		}
 		
 		thead {
@@ -49,20 +53,21 @@ table {
 				@include font-size(12);
 				font-weight: $oe-font-light;
 				padding:0 $tableStandardPadding $tableStandardPadding 0;
-				
-				// improve visual layout of data
-				&:first-child {
-					padding-left:2px;
-				}
 			}
 		}
 		
 		tbody {
 			tr {
-				border-bottom:1px solid $oe-line;
-				&:last-child { 
-					border-bottom: none;
+				border-top:1px solid $oe-line;
+				&.no-line,
+				&:first-child { 
+					border-top: none;
 				}
+				
+				// follows element table styling approach
+				&.divider {
+					border-top-width: 2px;
+				}	
 			}
 			
 			th,
@@ -72,14 +77,11 @@ table {
 				font-weight: $oe-font-medium;
 				padding:5px $tableStandardPadding 5px 0; 
 				
-				// improve visual layout of data
-				&:first-child {
-					padding-left:2px;
-				}
-				
+				// default: valign-align: middle
 				&.valign-top {
 					vertical-align: top;
 				}
+				
 			}
 			
 			th { 

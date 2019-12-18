@@ -34,29 +34,29 @@ $oe-blue-dark1: $oe-blue-dark;
 $oe-grey:				rgb(40,52,66);
 $oe-line:				rgb(38,48,61); // don't use alphas, tables with td colspan 2 overlap
 
-$oe-font-light: 		300; 	// 400 in Classic
-$oe-font-medium: 		400;   	// 500 in Classic
-$oe-font-bold: 			500;  	// 600 in Classic
+$oe-font-light:			300;	// 400 in Classic
+$oe-font-medium:		400;	// 500 in Classic
+$oe-font-bold: 			500;	// 600 in Classic
 
 // buttons
-$oe-btn-default:			$oe-blue;
+$oe-btn-default:		$oe-blue;
 $oe-btn-selected:		$oe-pro-blue-dark3;
-$oe-btn-event-header: 	shade($oe-grey,10); // event header buttons need to work like tabs
+$oe-btn-event-header:	shade($oe-grey,10); // event header buttons need to work like tabs
 $oe-btn-blue:			rgb(7,69,152);
 $oe-btn-green:			rgb(14,144,25);
-$oe-btn-red:				rgb(153,14,14);
+$oe-btn-red:			rgb(153,14,14);
 // hints
-$oe-btn-blue-hint: 		shade( $oe-btn-blue,30 );
-$oe-btn-green-hint: 		shade( $oe-btn-green,30 );
-$oe-btn-red-hint: 		shade( $oe-btn-red,30 );;
+$oe-btn-blue-hint:		shade( $oe-btn-blue,30 );
+$oe-btn-green-hint:		shade( $oe-btn-green,30 );
+$oe-btn-red-hint:		shade( $oe-btn-red,30 );;
 
 $oe-popup-bg:			$oe-pro-popup-bg; // tool-tip, add-select-search, element-search-popup	 
 
 // input colours:
-$oe-user-inputs: 		$oe-blue;
-$oe-user-inputs-hint: 	rgba($oe-user-inputs,0.1);
-$oe-user-input-text: 	$oe-text;
-$oe-input-placeholder: 	rgb(101,111,101);
+$oe-user-inputs:		$oe-blue;
+$oe-user-inputs-hint:	rgba($oe-user-inputs,0.1);
+$oe-user-input-text:	$oe-text;
+$oe-input-placeholder:	rgb(101,111,101);
 
 // flags
 $oe-highlighter: 		rgba(255,230,172,0.7);

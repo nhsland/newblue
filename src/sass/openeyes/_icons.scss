@@ -227,6 +227,9 @@
 	&.patient			{ @include oe3-icons('patient'); }
 	&.trials			{ @include oe3-icons('trials'); }
 	
+	// save and cancel icons
+	&.save				{ @include oe3-icons('save'); }
+	&.cancel 			{ @include oe3-icons('cancel'); }
 
 	
 	// Eyedraw icons 

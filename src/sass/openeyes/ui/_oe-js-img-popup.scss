@@ -1,0 +1,41 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-js-img-popup {
+	// wrapper for an img that needs "popping" up full-screen
+	// js will hook into this and build the popup 
+	// assumes a <img>
+	display:inline-block;
+	position: relative;
+	cursor: zoom-in;
+
+	img {
+		width:100%;
+		height:auto;
+	}
+	
+	// provide a visual hint of functionality
+	// e.g. add a search icon...
+	&:after {
+		content:"";
+		position:absolute;
+		top:3px;
+		right:3px;
+		z-index:1;
+
+		height:25px;
+		width:25px;
+		
+		background:$oe-btn-blue url( svg-path('icons/search') ) center center no-repeat;
+		background-size:19px;
+	}
+	
+		
+}
+
+
+
+		
+		
+		

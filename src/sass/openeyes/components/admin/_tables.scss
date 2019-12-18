@@ -18,6 +18,15 @@
 				@include font-size(12);		
 			}
 			
+			&.valign-middle {
+				tbody {
+					td {
+						vertical-align: middle;
+					}
+				}
+			}
+			
+			
 			tbody {
 				td {
 					vertical-align: top;			// make sure all data is:
@@ -52,9 +61,9 @@
 			
 			tbody {
 				tr {
-					border-bottom:1px solid $oe-line;
-					&:last-child { 
-						border-bottom: none;
+					border-top:1px solid $oe-line;
+					&:first-child { 
+						border-top: none;
 					}
 				}
 				
