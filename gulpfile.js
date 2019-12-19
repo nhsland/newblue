@@ -35,9 +35,9 @@ const paths = {
 Packages
 */
 const {gulp, src, dest, watch, series, parallel} = require('gulp');
-const del = require('del');
-const flatmap = require('gulp-flatmap');
-const lazypipe = require('lazypipe');
+//const del = require('del');
+//const flatmap = require('gulp-flatmap');
+//const lazypipe = require('lazypipe');
 const rename = require('gulp-rename');
 const header = require('gulp-header');
 // styles
@@ -121,7 +121,7 @@ var minifyCSS = function(scss, cssFileName){
 /*
 PRO (dark) theme
 */
-var proCSS = function (done) {
+var proCSS = function () {
 	return minifyCSS(	paths.src.pro, 
 						config.css + config.version + '_dark.min.css');
 };
@@ -129,7 +129,7 @@ var proCSS = function (done) {
 /*
 CLASSIC (light) theme
 */
-var classicCSS = function (done) {
+var classicCSS = function () {
 	return minifyCSS(	paths.src.classic, 
 						config.css + config.version + '_light.min.css');
 };
@@ -137,7 +137,7 @@ var classicCSS = function (done) {
 /*
 PRINT 
 */
-var printCSS = function (done) {
+var printCSS = function () {
 	return minifyCSS(	paths.src.print, 
 						config.css + config.version + '_print.min.css');
 };
@@ -193,8 +193,7 @@ var buildEyedrawIcons = function (done) {
 	done();
 };
 
-var eyedrawCSS = function(done){
-	
+var eyedrawCSS = function(){
 	return minifyCSS(	paths.src.eyedraw, 
 						'eyedraw_draw_icons.min.css');
 };
@@ -255,7 +254,7 @@ var buildEventIcons = function(done){
 SVGs
 -----------------------------
 */
-var optimiseSVG = (done) => {
+var optimiseSVG = () => {
 	return src(paths.src.svg,{base: './src/svg/'})
 			.pipe(svgmin())
 			.pipe( dest(paths.dist.svg) );
