@@ -38,15 +38,21 @@
 		top: $oe-header-height;
 		right: 0;
 		height: calc( 100vh - #{$oe-header-height});
-		
 		border: none;
 		
 		// when hotlist locks in need to change the right
-		// anchor position of the side-panel
+		// need to allow for it...
 		@include media($oe-browser-size-hotlist-fixed){		// 1800px
 			right: auto;
-			left: #{$oe-extended-browser-size - 500px}
+			left: #{$oe-extended-browser-size - 500px};
 		}
+		
+		// when super wide!... hotlist extends to maximum width
+		@include media($oe-super-wide-display){
+			left:auto;
+			right: $oe-hotlist-panel-max;
+		}
+		
 		
 		.quick-overview-content {
 			max-height: none;
