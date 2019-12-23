@@ -15,6 +15,11 @@
 		height:auto;
 	}
 	
+	// in DICOM the layout needs some padding
+	&.pad-v {
+		margin:10px 0;
+	}
+	
 	// provide a visual hint of functionality
 	// e.g. add a search icon...
 	&:after {
@@ -24,11 +29,11 @@
 		right:3px;
 		z-index:1;
 
-		height:25px;
-		width:25px;
+		height:30px;
+		width:30px;
 		
-		background:$oe-btn-blue url( svg-path('icons/search') ) center center no-repeat;
-		background-size:19px;
+		background:#00d url( svg-path('icons/search') ) center center no-repeat;
+		background-size:23px;
 	}
 	
 		

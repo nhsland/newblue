@@ -1,5 +1,5 @@
 /*
-OE UI - Gulp generates:
+Newblue OE UI (CSS & SVG) - Gulp generates:
 - style_oe3.0.css					// Pro/Dark (expanded)
 - style_oe3.0.min.css				// Pro/Dark (minified) 
 - style_oe3.0_classic.min.css		// Classic/Light (minified)
@@ -7,6 +7,7 @@ OE UI - Gulp generates:
 - eyedraw_draw_icons.min.css		// Eyedraw doodle icons (minified)
 - eyedraw_draw_icons-32x32.png		// Eyedraw icon spritesheet
 - event-icons-76x76.png				// Event icons spritesheet
+- Optimised SVG files (these ara an exact copy of src SVG files but optimised)
  */
 
 const config = {
@@ -20,7 +21,7 @@ const paths = {
 		pro: 		'./src/sass/style_oe_pro.scss',
 		classic: 	'./src/sass/style_oe_classic.scss',
 		print: 		'./src/sass/style_oe_print.scss',
-		eyedraw:	'./src/sass/style_eyedraw-draw-icons.scss',
+		eyedraw:	'./src/sass/eyedraw-icons/style_ed-icons.scss',
 		svg:		'./src/svg/**/*.svg',
 		watch: 		'./src/sass/**/*.{scss,sass}',		
 	},
@@ -30,7 +31,6 @@ const paths = {
 		svg:		'./svg/',
 	},
 };
-
 /*
 Packages
 */
@@ -119,27 +119,30 @@ var minifyCSS = function(scss, cssFileName){
 }
 
 /*
-PRO (dark) theme
+CSS
+- Pro (Dark)
+- Classic (Light)
+- Print (PHP PDF creator)
+- EyeDraw (icons for ED3)
 */
 var proCSS = function () {
 	return minifyCSS(	paths.src.pro, 
 						config.css + config.version + '_dark.min.css');
 };
 
-/*
-CLASSIC (light) theme
-*/
 var classicCSS = function () {
 	return minifyCSS(	paths.src.classic, 
 						config.css + config.version + '_light.min.css');
 };
 
-/*
-PRINT 
-*/
 var printCSS = function () {
 	return minifyCSS(	paths.src.print, 
 						config.css + config.version + '_print.min.css');
+};
+
+var eyedrawCSS = function(){
+	return minifyCSS(	paths.src.eyedraw, 
+						'eyedraw_draw_icons.min.css');
 };
 
 /*
@@ -188,16 +191,11 @@ var buildEyedrawIcons = function (done) {
 	
 	spriteData.css
 		.pipe( header( sassComments) )
-		.pipe(dest( paths.src.sass + 'openeyes/' ));
-		
-	done();
+		.pipe(dest( paths.src.sass + 'eyedraw-icons/' ));
+	
+	console.log('...wait a bit for Imagemin to finish');
+	setTimeout(done, 10000);	
 };
-
-var eyedrawCSS = function(){
-	return minifyCSS(	paths.src.eyedraw, 
-						'eyedraw_draw_icons.min.css');
-};
-
 
 /*
 -----------------------------
@@ -287,7 +285,7 @@ exports.buildCSS = parallel( proCSS, classicCSS, printCSS );
 exports.eventIcons = series( buildEventIcons, exports.buildCSS );
 
 // Build Eyedraw sprite sheet and CSS
-exports.eyedrawIcons = series( buildEyedrawIcons, eyedrawCSS );
+exports.eyedrawIcons = series( buildEyedrawIcons, eyedrawCSS, exports.buildCSS);
 
 // Default task: "gulp"
 exports.default = series( exports.buildCSS, watchCSS );
