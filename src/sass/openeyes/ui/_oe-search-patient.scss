@@ -14,7 +14,7 @@
 	.search-patient {
 		width:600px;
 		padding:14px 0 0 0;
-		background:transparent url( svg-path('backgrounds/patient-watermark') ) top -4px right 10px no-repeat;
+		background:transparent url( svg-path-theme('backgrounds/patient-watermark') ) top -4px right 10px no-repeat;
 		background-size:120px 120px;
 		
 		// increase the defaults for input
