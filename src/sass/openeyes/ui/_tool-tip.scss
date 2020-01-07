@@ -19,7 +19,7 @@
 	
 	@include boxshadow();
 	
-	// arrow down
+	// arrow 
 	&:after {
 		top: 100%;
 		left: 50%;
@@ -35,13 +35,32 @@
 		margin-left: -5px;
 	}
 	
-	// offset left 
-	// if too close to the right side or the window
-	// JS will shift it over, need to update the arrow 
+	// JS adds the following classes
+	// arrow default is center
+	// but could be left or right	
+	// or, rarely, inverted (below icon)
+
 	&.offset-left {
 		&:after {
 			left: 180px;
 		}
 	}
+	
+	&.offset-right {
+		&:after {
+			left: 20px;
+		}
+	}
+	
+	// this is going to be rare
+	&.inverted {
+		border-bottom:none;
+		border-top:1px solid $oe-text-highlight;
+		&:after {
+			display:none;
+		}
+	}
+	
+
 	
 }
