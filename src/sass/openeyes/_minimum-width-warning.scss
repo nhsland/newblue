@@ -13,7 +13,8 @@
 	right:0;
 	z-index:9999;
 	
-	transform: rotate(90deg) translateY(-78px);
+	transform: rotate(90deg) translateY(10px) translateX(10px);
+	transform-origin: right;
 	
 	background:$oe-alert-red url( svg-path('icons/direction-up') ) top 50% right 5px no-repeat;
 	background-size:15px;

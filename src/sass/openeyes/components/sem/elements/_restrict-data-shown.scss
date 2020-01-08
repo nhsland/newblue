@@ -8,10 +8,10 @@
 		
 		.restrict-data-shown {			
 			position:relative;
-			// interest CSS trick
+			// interesting CSS trick
 			// make some space for scrollbars
 			// try to maintain layout alignment
-			//width:calc(100% + 10px);
+			// width:calc(100% + 10px);
 			
 			// wrap content
 			.restrict-data-content {
@@ -31,9 +31,6 @@
 					height:290px;
 				}				
 			}
-			
-			
-			
 
 			// IF data is hidden by the scroll
 			// this needs flagging
@@ -49,7 +46,13 @@
 				background-position:center center;
 				background-size:15px;
 				background-repeat: no-repeat;
-				background-image: url( svg-icon-path-theme('arrow-down-bold') );	
+				background-image: url( svg-icon-path-theme('arrow-down-bold') );
+				
+				&.fade-out {
+					animation: 0.2s ease-in forwards fadeout; // note: JS needs to remove class after 300 microseconds
+				}
+				
+					
 			}
 						
 		}
