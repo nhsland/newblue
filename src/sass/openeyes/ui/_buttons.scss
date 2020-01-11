@@ -33,10 +33,11 @@
 	padding:0 8px;	// increase hit area
 	height:24px; 	// matches inputs heights
 	
-	&.large {
-		padding: 0 12px; // tab is 16px  
-		height: 32px;    // tab is 38px
-	}
+	// - removed as hardly ever used.
+	//&.large {
+	//	padding: 0 12px; // tab is 16px  
+	//	height: 32px;    // tab is 38px
+	//}
 	
 	// add primarily for + buttons
 	// in 9 positions as I need a more "square" button
