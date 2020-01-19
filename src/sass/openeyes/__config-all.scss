@@ -56,8 +56,8 @@ $oe-js-browser-fix-size:				1890px;
 
 // z
 $oe-z-vc:				160; // VC ScratchPad
-$oe-z-logo:				150; 
-$oe-z-popup:			100;
+$oe-z-popup:			150; // was 100, switched to above logo because of attachments
+$oe-z-logo:				100; // was 150
 $oe-z-shortcuts:		99;
 $oe-z-patient-quick:	96; // Patient Quick View (side or float)
 $oe-z-hotlist:			95; // hotlist

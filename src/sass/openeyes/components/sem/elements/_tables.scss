@@ -166,7 +166,7 @@
 				
 				&.center {
 					text-align: center;
-					padding:0 10px;
+					padding:0 4px; // was 10px, but can't remember why? 
 				}
 				
 				&.align-left {

@@ -24,6 +24,13 @@
 		padding:5px 0;
 		color:$oe-element-headers;
 		
+		// used for the count.
+		// JS will consider this an event target
+		// and will break the open/closing behaviour
+		small {
+			pointer-events: none;
+		}
+		
 		// no background-opacity in CSS (... why not huh?!)
 		// need to match icon opacity (when not
 		// being hovered over...) which can be done like this:
