@@ -44,6 +44,8 @@
 			}
 			
 			// in View mode for simple label > value lists
+			// **** note: the label-value approach was pre v3
+			// in V3 simply use a <th> for first column! 
 			&.label-value {
 				.data-label {
 					opacity:0.7; // this works for both themes
@@ -183,6 +185,12 @@
 				text-align: left;  // overide default 'middle'
 				font-weight: $oe-font-light;
 				color:$oe-text-light;
+			}
+			// can be used in <tbody> as a ROW header: 
+			tbody {
+				th {
+					font-weight:$oe-font-medium;
+				}
 			}
 			
 			// <td>
