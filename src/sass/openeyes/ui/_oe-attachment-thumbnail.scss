@@ -21,13 +21,13 @@
 		margin:10px 0;
 	}
 	
-	// attachment maybe part of a group or 'timeline'
-	// it has other previous versions
-	.attachment-timeline{
+	// attachment maybe part of an image stack i.g it has previous versions
+	.attachment-img-stack{
 		position:absolute;
 		top:3px;
 		left:3px;
 		z-index:1;	
+		padding:0 5px;
 		
 		height:25px;
 		line-height:25px;
@@ -35,11 +35,19 @@
 		background-color:#00d;
 		color:#fff;
 		
-		@include font-size(15);
+		@include font-size(16);
 		font-weight:500;
-		
-		padding:0 5px;
-
+	}
+	
+	.attachment-meta-data {
+		margin:8px 0 5px 0;
+		@include font-size(10);
+		opacity:0.5; 
+		ul.dot-list {
+			li {
+				margin-bottom: 1px;
+			}
+		}
 	}
 	
 	// add a visual hint of functionality

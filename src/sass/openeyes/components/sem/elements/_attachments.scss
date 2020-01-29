@@ -17,20 +17,12 @@
 		// has a thumbnail, header and associated data
 		// vs a basic attachment element
 		
-		.element-attachment-datagroup {
+		.attachment-group {
 			@include flex(space-between,flex-start);
 			
 			// small PNG of fullsize PNG (or PDF page 1)
 			.attachment-thumbnail {
 				width: 25%;			// cols-3
-				
-				.attachment-metadata {
-					margin:5px 0 0 0;
-					@include font-size(10);
-					opacity:0.5; 
-					
-				}
-				
 			}
 			
 			.attachment-eyelat {
@@ -51,11 +43,12 @@
 						border-bottom:none;
 						margin:0;
 					}
-				}
-				
-				
+				}	
 			}
+		}
 		
+		.restrict-attachment {
+			max-height: 50vh;
 		}				
 	}
 }

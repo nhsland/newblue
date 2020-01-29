@@ -2,11 +2,14 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Patient Meta
-// used in Advanced Search, Trials and Theatre Diaries
+// OE Patient Meta Icon
+// basic wrapper for associated icons
+// not always required but is used when icons 
+// are groupded under oe-patient-meta 
 
-@import "_base";
-@import "icons";
+.oe-patient-meta-icons {
+	margin:5px 0 0 0;
+}
 
 
 
