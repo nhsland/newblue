@@ -14,49 +14,65 @@
 	// flex also didn't work. decided to go with a 
 	// fixed width approach... 
 	display:inline-block;
-	text-align: right; 		// then align right within wrapper
-	
+		
 	// MUST! have a width.
 	// this ensures data widths are consistent for:
 	// for: dd Mth YYYY 
 	// and: Mth YYY 
 	// and: YYYY  		
-	width:$oe-date-width;	 		
+	width:$oe-date-width; // 80px; - using this on .date inputs	  		
 	
 	.day {
-		// not really needed but kept in case font-size is increased.
-		padding: 0 0 0 8px;  
+		display:inline-block;
+		text-align: right;
+		// because of being right aligned this needs to fit '00' as tightly as possible
+		// this is so that single digits "1" lines up with "11" correctly
+		width:17px; 			// will need increasing to allow for font-size		
+		margin:0 5px 0 0;		// this provides 'padding' between Mth (do NOT use padding tho ;)
 	}
-	.mth, 
+	.mth{
+		display:inline-block;
+		text-align: left;		// if used in table in the last column it will be aligned to the right! 
+		width:25px;
+	} 
 	.yr {
-		padding: 0 0 0 4px;
+		display:inline-block;
+		text-align: right;
+		width:31px;
 	}
+
 }
 
-// date in table standard needs to be wider 
-// because of the larger of font-size(14)
+// font is larger in standard table
 table.standard {
-	.oe-date {
-		width:$oe-date-width + 12px; 
-	}
-	
-	&.messages {
-		.oe-date {
-			width:$oe-date-width; 
+	.oe-date { 
+		width:89px;  // 3px extra each! 
+		.day {
+			width:20px;
+		}
+		.mth {
+			width:28px;
+		} 
+		.yr {
+			width:34px;
 		}
 	}
-	
 }
-
 
 // date layout in patient popups needs squeezing to maximise space.
 .quicklook-data-groups {
 	.oe-date {
-		min-width:70px;
-		.day,
-		.mth, 
+		width:66px;
+		margin:0 0 0 2px; 	// in popups it's used next to eye-lat
+		.day {
+			width:15px;
+			margin:0 3px 0 0;
+		}
+		.mth {
+			width:22px;
+		} 
 		.yr {
-			padding: 0 0 0 2px;
+			width:26px;
 		}
 	}
 }
