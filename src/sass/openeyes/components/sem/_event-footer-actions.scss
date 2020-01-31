@@ -8,13 +8,10 @@
 
 .event-footer-actions {
 	
-	@include flex(space-between,center);
-	
-	// match event-header style
-	background:$oe-grey; 
+	@include flex(center,center);
 	
 	// Element spacing
-	margin:4px 0;
+	margin:15px 0;
 	
 	// duplicate the Event header
 	// as this scrolls out of sight
