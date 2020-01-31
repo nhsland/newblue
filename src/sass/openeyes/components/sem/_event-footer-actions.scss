@@ -8,18 +8,9 @@
 
 .event-footer-actions {
 	
-	@include flex(center,center);
+	@include flex(flex-end,center);
 	
-	// Element spacing
-	margin:15px 0;
-	
-	// duplicate the Event header
-	// as this scrolls out of sight
-	.event-title {
-		display:inline-block;
-		padding-bottom:0;
-		vertical-align: middle;
-	}
+	margin:15px 8px;
 	
 	// create 'tab' buttons
 	@include buttons {
