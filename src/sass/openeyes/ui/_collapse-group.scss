@@ -2,9 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-
-
-// Collapse GROUP
+// Collapse GROUP (themed)
 // Provides a DOM structure to show/hide
 // grouped content in UI. 
 // based on a DOM pattern of:
@@ -13,19 +11,60 @@
 .collapse-group {
 	position:relative;
 	width:100%;
+
+	// combines: 
+	// "collapse-group-icon" + "collapse-group-header"
+	// icon is then controlled through CSS classes
+	.header-icon {
+		position:relative;
+		@include font-size(15);
+		font-weight:$oe-font-medium;
+		color: $oe-text-light;
+		padding:0 30px 0 0;    // allow for icon background
+		margin:5px 0;
+		cursor:pointer;  
+			
+		// no background-opacity in CSS ... 
+		// using collapse-data approach
+		&:after {
+			content: "";
+			position: absolute;
+			top:0;
+			bottom:0;
+			right:2px; 	// visual alignment tweak
+			width:15px;
+			
+			// put the expand collapse icon into the background
+			background: url( svg-icon-path-theme('plus-bold') ) right top no-repeat;
+			background-size: 15px;
+			
+			opacity:$oe-icon-opacity; //  now i can use opacity
+		}
 	
-	// container for plus/minus icon
-	// the vertical position of the icon may need local tweaking depending
-	// on the size of the collapse-group-header...
-	.collapse-group-icon {
-		display:block; 
-		position:absolute; 
-		top:5px; 					
-		right:3px;
-		cursor: pointer;
+		// '.expand' is the default icon state, as content should be hidden
+		// no need to explictly state the 'expand class', JS will add this.
+		&.collapse {
+			&:after {
+				background-image: url( svg-icon-path-theme('arrow-up-bold') );	
+			}
+		}
+		
+		// show user interaction
+		&:hover, &:active {
+			color:$oe-text-highlight;
+			&:after {
+				opacity: 1;
+			}	
+		}
 	}
+
 	
-	.collapse-group-header {		// header is clickable, style relatively
+	// **** Replaced by above class: header-icon
+	.collapse-group-icon {
+		display:block; position:absolute; top:5px; right:3px; cursor: pointer;
+	}	
+	// **** Replaced by above class: header-icon
+	.collapse-group-header {	
 		cursor: pointer;
 	} 		
 	
@@ -55,7 +94,63 @@
 		}
 		
 	}
-	
-	
-	
 }
+
+// Collapse GROUP 
+// Usage variations... 
+
+.sidebar {
+	// PRO-theme!
+	//
+	.header-icon {
+		@include font-size(12);
+		padding-left:8px;
+		margin:12px 0 5px 0; 
+		color: $oe-pro-text-light;
+		font-weight: $oe-font-light;
+		
+		&:after {
+			background-image: url( svg-path('icons/plus') );	
+		}
+		
+		&.collapse {
+			&:after {
+				background-image: url( svg-path('icons/arrow-up') );	
+			}
+		}
+
+		&:hover, &:focus {
+			color: $oe-pro-text;
+		}
+	}
+
+	// **** Replaced by above class: header-icon
+	h3.collapse-group-header {
+		@include font-size(13); font-weight:300; color: $oe-pro-text-light; padding:10px 25px 5px 5px;   
+		&:hover, &:focus {
+			color: $oe-pro-text;
+		}
+	}	
+}
+
+
+.oe-admin,
+.oe-reports {
+	.collapse-group {
+		margin:10px 0 10px 0;
+		
+		.header-icon {}
+		
+		// **** Replaced by above class: header-icon
+		.collapse-group-icon {
+			top:-1px; // position by eye to align well with header
+		}
+	
+		// **** Replaced by above class: header-icon
+		h3.collapse-group-header {
+			padding:0 30px 0 0; margin:0; color:$oe-text; font-weight: $oe-font-light;
+		}
+	}
+}
+
+
