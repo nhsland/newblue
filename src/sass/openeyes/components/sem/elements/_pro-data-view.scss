@@ -17,8 +17,16 @@
 			display:flex;
 			align-items:flex-start;
 			justify-content:space-between;
-			
-			
+
+			.pro-view-btn {
+				// JS will consider the icon an event target
+				// need it to work on the wrapper div
+				.oe-i {
+					pointer-events: none;
+				}
+				
+				cursor: pointer;
+			}
 			
 			// CSS hooks for the different views
 			// not actually using them, JS is tho.

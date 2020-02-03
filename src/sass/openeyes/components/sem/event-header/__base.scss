@@ -7,7 +7,7 @@
 	position:relative;
 	
 	// add in the R L face
-	background:$oe-grey url( svg-path-theme('ui/face') ) 50.2% 0 no-repeat;
+	background:$oe-grey url( svg-path-theme('ui/face') ) 49.9% 0 no-repeat;
 	
 	// face needs offseting because headers have dropped left
 	@include media($oe-extended-browser-size){

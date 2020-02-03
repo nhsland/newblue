@@ -8,23 +8,6 @@
 
 .sidebar {
 	
-	// order Events by...
-	// v2: when new Event Filter v3 is implemented
-	// this class can be removed.
-	.sidebar-grouping {
-		width:100%;	
-		padding-left:5px;
-		margin:4px 0 4px 0;
-
-		// <select> dropdown
-		.grouping-picker {
-			width:99%;
-			color:$oe-pro-user-input-text;
-			background:$oe-pro-popup-bg;
-		}
-
-	}
-	
 	// container for Event Element Groups
 	.groupings {
 		padding-bottom:30px;
