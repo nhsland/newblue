@@ -56,6 +56,10 @@
 				opacity: 1;
 			}	
 		}
+		
+		.count {
+			font-size:80%;
+		}
 	}
 
 	
@@ -105,7 +109,7 @@
 	.header-icon {
 		@include font-size(12);
 		padding-left:8px;
-		margin:12px 0 5px 0; 
+		margin:12px 0 6px 0; 
 		color: $oe-pro-text-light;
 		font-weight: $oe-font-light;
 		

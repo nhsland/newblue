@@ -24,12 +24,6 @@
 					margin:0 0 0 0;
 				}
 			}
-			
-			.oe-date {
-				@include font-size(11);
-				opacity:0.5;
-				width:78px; // the default is 88px (see ui.scss for notes)
-			}
 		}
 	}
 }

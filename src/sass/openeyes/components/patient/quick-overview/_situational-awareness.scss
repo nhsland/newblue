@@ -20,13 +20,6 @@
 			&:last-child {
 				border-bottom: none;
 			}
-
-			.oe-date {
-				@include font-size(11);
-				float: right;
-				opacity:0.5;
-			}
-			
 		}
 	}
 }
