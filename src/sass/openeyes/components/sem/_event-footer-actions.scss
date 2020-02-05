@@ -7,25 +7,7 @@
 // Add Event Button to the end of the Elements
 
 .event-footer-actions {
-	
 	@include flex(flex-end,center);
-	
-	margin:15px 8px;
-	
-	// create 'tab' buttons
-	@include buttons {
-		vertical-align: top; // overwrite default 'bottom' to fix alignment issues
-		height:$oe-event-header-height;
-		padding:0 16px;		
-		
-		// icon buttons in header
-		&.icon {
-			padding:0 0; // remove default padding
-			.oe-i {
-				padding:0 20px; // pad out icon instead (to make clickable)
-			}
-		}
-	}
-	
+	margin:15px 0;
 }
 
