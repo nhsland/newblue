@@ -29,13 +29,18 @@
 					
 					&.added {
 						color: rgb(255,255,255);
-						background-color:$oe-btn-green-hint;
+						background-color:$oe-pro-btn-green-hint;
 						
 						// if added it can be removed
 						&:hover, &:focus, &:active {
-							background-color:$oe-btn-red-hint;
-						}
-						
+							background-color:$oe-pro-btn-red-hint;
+						}	
+					}
+					
+					&.mandatory {
+						color: rgb(255,255,255);
+						border:2px solid $oe-btn-green;
+						pointer-events: none;
 					}
 				}		
 			}

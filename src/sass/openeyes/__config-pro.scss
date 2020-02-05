@@ -42,13 +42,13 @@ $oe-font-bold: 			500;	// 600 in Classic
 $oe-btn-default:		$oe-blue;
 $oe-btn-selected:		$oe-pro-blue-dark3;
 $oe-btn-event-header:	shade($oe-grey,10); // event header buttons need to work like tabs
-$oe-btn-blue:			rgb(7,69,152);
-$oe-btn-green:			rgb(14,144,25);
-$oe-btn-red:			rgb(153,14,14);
+$oe-btn-blue:			$oe-pro-btn-blue;
+$oe-btn-green:			$oe-pro-btn-green;
+$oe-btn-red:			$oe-pro-btn-red;
 // hints
-$oe-btn-blue-hint:		shade( $oe-btn-blue,30 );
-$oe-btn-green-hint:		shade( $oe-btn-green,30 );
-$oe-btn-red-hint:		shade( $oe-btn-red,30 );;
+$oe-btn-blue-hint:		$oe-pro-btn-blue-hint;
+$oe-btn-green-hint:		$oe-pro-btn-green-hint;
+$oe-btn-red-hint:		$oe-pro-btn-red-hint;
 
 $oe-popup-bg:			$oe-pro-popup-bg; // tool-tip, add-select-search, element-search-popup	 
 
