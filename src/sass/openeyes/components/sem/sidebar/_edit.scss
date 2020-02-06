@@ -42,13 +42,29 @@
 			
 			
 			&:hover, &:focus {
-				color: $oe-pro-text-highlight;
-				background-color:$oe-pro-popup-bg;
+				color: rgb(255,255,255);
+				background-color:$oe-btn-blue;
 			}
 			
+			// added matches new Element Selector
+			&.added, 
 			&.selected {
-				color: $oe-pro-text; // electric blue was too much for select state
+				color: $oe-pro-text;
+				background-color:$oe-pro-btn-green-hint;
 				// background-color:$oe-pro-popup-bg; // background colour removed
+			}
+			
+			&.added {				
+				// if added it can be removed
+				&:hover, &:focus, &:active {
+					background-color:$oe-pro-btn-red-hint;
+				}
+			}
+			
+			&.mandatory {
+				color:  $oe-pro-text;
+				border:2px solid $oe-btn-green;
+				pointer-events: none;
 			}
 			
 			&.error {

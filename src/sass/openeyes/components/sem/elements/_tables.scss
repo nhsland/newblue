@@ -16,6 +16,7 @@
 		// thought it might be more helpful this way ...
 		
 		table {
+			width:100%; // VIEW and EDIT default!
 			
 			// left in BUT should use 'data-group' instead!
 			&.pad-top { 		margin-top:20px; }
