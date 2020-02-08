@@ -1,0 +1,34 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+ul {
+	
+	// changed from a double slash icon to a dot
+	// old class "dslahs-list" removed from OE 3.0
+	// but keeping a not of it just in case ;) 
+	// &.dslash-list,
+	
+	&.dot-list {
+		li {
+			display:inline-block;
+			margin:0 5px 5px 2px;
+			padding:0 0 0 12px;
+			
+			
+			// double-slash icon
+			// must work across both themes
+			background-position:left center;
+			background-repeat: no-repeat;
+			background-size:6px;
+			background-image:url( svg-path( 'ui/list-dot' ) );
+			
+			&:first-child {
+				padding:0 0 0 0;
+				background-image: none;
+			}
+		}
+	}
+	
+}
+

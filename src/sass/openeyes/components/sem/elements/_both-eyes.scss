@@ -11,8 +11,8 @@
 		// requires a slightly different DOM because of the Flex layout used in 'element-eyes'
 		.element-both-eyes {
 			background-color: $oe-sem-element-bg;  	// hides the background divider line
-			margin:0 20px 10px 0; 				// 20px matches the full-width class
- 			padding:10px 0 10px 10px; 			// the right 0px padding means that collapse icons line up!
+			margin:0 0 10px 0; 				// 20px matches the full-width class
+ 			padding:10px 0; 			// the right 0px padding means that collapse icons line up!
 			border-bottom: 2px dotted $oe-line;
 		}				
 	}

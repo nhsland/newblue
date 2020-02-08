@@ -70,7 +70,9 @@ $oe-z-ed-v2: 			20; // ED v2 DOM. ED v2 still in first V3
 
 
 // UI colors 
-// PRO Theme. Here because some Pro Theme elements are needed in Classsic
+// PRO Theme colors are also 
+// here because some PRO Theme elements 
+// are required in Classsic theme
 
 $html-pro-bg: 				rgb(16,25,37);
 
@@ -87,6 +89,9 @@ $oe-pro-blue-dark2: 		shade( $oe-pro-blue, 35% );
 $oe-pro-blue-dark3: 		shade( $oe-pro-blue, 25% );
 $oe-pro-blue-light: 		tint( $oe-pro-blue, 30% );
 
+
+$oe-pro-popup-bg:			rgb(55,71,85);
+
 $oe-pro-bg-highlight: 		shade($oe-pro-blue-dark3,30); // used as hover highlight
 
 $oe-pro-grey:				rgb(40,52,66);
@@ -101,6 +106,8 @@ $oe-pro-btn-red:			rgb(153,14,14);
 $oe-pro-btn-blue-hint:		shade( $oe-pro-btn-blue,30 );
 $oe-pro-btn-green-hint:		shade( $oe-pro-btn-green,30 );
 $oe-pro-btn-red-hint:		shade( $oe-pro-btn-red,30 );
+// for btn-lists
+$oe-pro-popup-btn-hint: 	shade( $oe-pro-popup-bg,20% );
 
 
 // Virtual Clinic
@@ -119,9 +126,7 @@ $oe-pro-element-headers:   	rgb(105,147,158);
 $oe-pro-user-inputs: 		$oe-pro-blue;
 $oe-pro-user-input-text: 	$oe-pro-text;
 
-$oe-pro-popup-bg:			rgb(55,71,85);
 
-	
 
 
 // SVG paths - general UI

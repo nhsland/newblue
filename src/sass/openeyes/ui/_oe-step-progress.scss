@@ -1,0 +1,74 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+
+// should be <ul>
+.oe-step-progress {
+	display:inline-block;
+	
+	li {
+		position: relative;
+		display:inline-block;
+		padding:3px 9px;
+		margin:0;
+		border: 2px solid $oe-text-light;
+		border-right: none;
+		&:last-child {
+			border-right: 2px solid $oe-text-light;
+			border-radius: 0 3px 3px 0;
+		}
+		&:first-child {
+			border-radius: 3px 0 0 3px;
+		}
+		
+		
+		text-align: center;
+		@include font-size(13);
+		color:$oe-text-light;
+		
+		&.completed {
+			z-index:1;
+			background-color:$oe-text-light;
+			color:$oe-text-inverted;
+			font-weight:$oe-font-bold;
+			
+			// no arrow on the last one!
+			&:last-child {
+				&:after {
+					display:none;
+				}
+			}
+		
+			// progress arrow 
+			&:after {
+				top: 50%;
+				left: 100%;
+				margin-top: -13px;
+				content: " ";
+				position: absolute;
+				pointer-events: none;
+				
+				height: 0;
+				width: 0;
+				border: solid transparent;
+				border-top-width: 13px;
+				border-bottom-width: 13px;
+				border-left: 13px solid $oe-text-light;
+				
+				transform: scale(0.5, 1);
+				transform-origin: left;
+			}
+		}
+		
+		&.cancelled {
+			color:rgba($oe-text-light,0.5);
+			background: linear-gradient(45deg, 
+				rgba(0,0,0,0) calc(50% - 5px), 
+				$oe-btn-red calc(50%), 
+				rgba(0,0,0,0) calc(50% + 5px)
+			);
+		}
+	}
+}	
+

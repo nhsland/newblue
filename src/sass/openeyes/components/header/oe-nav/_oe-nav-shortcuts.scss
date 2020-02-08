@@ -27,7 +27,7 @@
 			
 			&:hover, &:focus, &:active {
 				color:#fff;
-				background-color: shade( $oe-btn-blue, 20 );
+				background-color: $oe-btn-blue-dark;
 			}
 		}
 	}

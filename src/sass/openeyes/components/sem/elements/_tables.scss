@@ -16,7 +16,11 @@
 		// thought it might be more helpful this way ...
 		
 		table {
-			width:100%; // VIEW and EDIT default!
+			
+			// width:100%;  
+			// I really want to do this for VIEW and EDIT as default
+			// but it's now a hassle, because so many elements have 
+			// tables using "cols-10", this would override them
 			
 			// left in BUT should use 'data-group' instead!
 			&.pad-top { 		margin-top:20px; }

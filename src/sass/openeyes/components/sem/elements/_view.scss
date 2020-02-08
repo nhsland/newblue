@@ -12,6 +12,9 @@
 		.element-data {
 			
 			table {
+				
+				width:100%;
+				
 				// in VIEW mode change the layout
 				// of <td> to v-align top. This 
 				// is the preferred layout for data
@@ -26,8 +29,8 @@
 			
 			// adjust the padding to match eye sides elements.
 			&.full-width {
-			 	padding-right:20px; // 20px matches the edit space (thinking of inline editing!)
-				padding-left:10px;
+			 	padding-right:15px; // Padding matches "right-eye" and "left-eye"
+				padding-left:6px;
 			}
 			
 			

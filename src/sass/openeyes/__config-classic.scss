@@ -7,54 +7,51 @@
 
 
 // -------------------------------------------
-// CLASSIC theme colors (inverted - sort of...)
+// CLASSIC theme colors (LIGHT)
 // -------------------------------------------
 
-$html-bg:				$html-pro-bg; // frames classic with surround.
+$html-bg:				rgb(30,35,40); // tone down the blueishness
 
+// Text
 $oe-text: 				rgb(10,10,10);
 $oe-text-light:			rgb(80,80,100);
 $oe-text-highlight:		rgb(0,0,255); 		// selected
 $oe-text-active:		rgb(0,0,180);		// hover, hint 
 $oe-text-inverted: 		rgb(240,240,240);	// inverted!
 
+// PRO theme white text on a dark background visually bleeds. 
+// in Classic the reverse is true: 
+$oe-font-light: 	400; // push 300 weights to 400 in Classic
+$oe-font-medium: 	500; // push 400 weights to 500
+$oe-font-bold: 		700; // push 500 weights to 700 (no 600)
 
-// classic, light background / dark text
+// BLUEs
 // called 'blue' as they overwrite the default PRO theme vars
 $oe-blue:				rgb(240,240,240); 
 $oe-blue-dark: 			rgb(180,180,180);
+$oe-blue-dark1: 		$oe-blue-dark; // because I keep using 'dark1' instead of 'dark'
 $oe-blue-dark2: 		rgb(215,215,215);  
 $oe-blue-dark3:			rgb(115,120,132); // - exception dark3 is not 'inverted' in classic
 $oe-blue-light: 		shade( $oe-blue-dark,30);
 
-$oe-sem-main-event-bg: 		rgb(245,245,245);   // was oe-blue but needed to tweak the colour balance
-$oe-sem-element-bg: 		rgb(220,220,220);	// removed 2 colour scheme (priority/normal) made bg 1 colour
-$oe-sem-tile-element-bg: 	rgb(230,230,230);
-
-// because I keep using 'dark1' instead of 'dark'
-$oe-blue-dark1: 		$oe-blue-dark; 
-
+// 
 $oe-grey:				rgb(220,220,220); // 'grey' because PRO is default scheme
 $oe-line:				rgb(160,160,200); // don't use alphas! - tables with td colspan 2 overlap
 
-// the PRO theme has white text on a dark background
-// it visually bleeds. When it's reversed to black on white
-// the reverse is true... so: 
-$oe-font-light: 	400; 	// push 300 weights to 400 in Classic
-$oe-font-medium: 	500;   // push 400 weights to 500
-$oe-font-bold: 		700;  	// push 500 weights to 700 (no 600!)
 
-// buttons
+// Buttons
 $oe-btn-default:		rgb(235,235,240);
 $oe-btn-selected:		rgb(220,220,230);
 $oe-btn-event-header: 	tint($oe-grey,10); // event header buttons need to work like tabs
 $oe-btn-blue:			rgb(40,110,224);
 $oe-btn-green:			rgb(14,154,51);
 $oe-btn-red:			rgb(225,57,57);
-// hints
+// button hints
 $oe-btn-blue-hint: 		tint( $oe-btn-blue,20% );
 $oe-btn-green-hint: 	shade( $oe-btn-green,10% );
 $oe-btn-red-hint: 		shade( $oe-btn-red,10% );
+// button shades
+$oe-btn-blue-dark: 		shade( $oe-btn-blue, 25% );
 
 $oe-popup-bg:			rgb(245,245,245); // tool-tip, add-select-search, element-search-popup
 
@@ -104,9 +101,11 @@ $oe-ed3-inputs:			shade( $oe-ed3-app-blue, 40 );
 $oe-ed3-input-text:		rgb(240,240,240);
 
 
-// specific customisation of elements
-// impossible to always find a clever colour
-// solution for both themes so... 
+// SPECIFIC colours for areas
+$oe-sem-main-event-bg: 		rgb(245,245,245);   // was oe-blue but needed to tweak the colour balance
+$oe-sem-element-bg: 		rgb(220,220,220);	// removed 2 colour scheme (priority/normal) made bg 1 colour
+$oe-sem-tile-element-bg: 	rgb(230,230,230);
+
 $oe-element-headers:   	rgb(20,20,150); 	// element default header colour
 $oe-home-search-bg:   	rgb(80,92,106);		// Home page Search area background
 $oe-tooltip-bg:			rgb(250,250,250);

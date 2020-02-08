@@ -22,7 +22,7 @@
 		@include font-size(12);
 		font-weight:400;
 		color: $oe-pro-text-light; 
-		background: shade( $oe-pro-popup-bg,11% ); // required something different here 
+		background: $oe-pro-popup-btn-hint; 
 		
 		cursor: pointer;
 		
@@ -44,6 +44,7 @@
 			// event icon <i>
 			.oe-i-e { 
 				margin-right:10px; 
+				vertical-align: top;
 			}
 			
 			&.add_event_disabled {

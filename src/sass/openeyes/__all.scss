@@ -31,7 +31,7 @@
 
 /* GUI */
 @import "ui/flex";							// flex layout
-@import "ui/lists";							// ul and ol defaults.
+@import "ui/lists/_all";					// ul and ol defaults.
 @import "ui/tables/_all"; 					// standard table class.
 @import "ui/typography"; 					// defaults and general typographics.
 @import "ui/collapse-group";				// collapse and expand groups

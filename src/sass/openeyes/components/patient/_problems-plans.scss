@@ -85,9 +85,9 @@
 			@include font-size(13);
 			font-weight: 400;
 			// this colour set up works across both themes
-			// check Overview, Patient Popup, Mini-overview?
-			color:$oe-pro-text;						// fixed across themes
-			background: shade($oe-blue-dark3,20);
+			// be sure to check Overview, Patient Popup, Mini-overview?
+			color:$oe-pro-text;						
+			background: $oe-pro-user-inputs;
 			padding:5px;
 			border-radius:3px;
 			width: calc(100% - 38px);
