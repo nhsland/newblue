@@ -27,7 +27,9 @@
 		// JS will consider this an event target
 		// and will break the open/closing behaviour
 		// if user clicks on it...
+		h3,
 		small {
+			color: inherit;
 			pointer-events: none;
 		}
 		
@@ -62,7 +64,10 @@
 			color:$oe-text-highlight;
 			&:after {
 				opacity: 1;
-			}	
+			}
+			
+			// covers small and h3 
+			* { color: inherit; }	
 		}
 	}	
 }

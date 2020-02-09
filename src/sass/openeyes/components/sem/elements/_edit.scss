@@ -50,13 +50,8 @@
 			.remove-side {
 				position:absolute;
 				top:-6px;
-				right:-16px; // move outside into padding space
+				right:-17px; // move outside into padding space
 				z-index: 1;  // make sure this above anything.
-				
-				// adjust position to not overlap "Adder" button in extended layout
-				@include media($oe-extended-browser-size){	  // 1440px
-					//top:-6px;
-				}
 				
 				// handle 1280px  viewports with window borders
 				// trim a total of 20px
