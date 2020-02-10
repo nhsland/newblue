@@ -13,20 +13,20 @@
 	.problems-plans {
 		.problems-plans-sortable {
 			li {
-				background: $oe-pro-blue-dark;
+				background: $oe-rim-blue-dark;
 			}
 		}
 		.create-new-problem-plan {
-			background: $oe-pro-blue-dark; 	
+			background: $oe-rim-blue-dark; 	
 		}
 	}
 	
 	table.past-problems-plans {
 		tr {
-			border-top-color:$oe-pro-line;
+			border-top-color:$oe-rim-line;
 		}
 		td {
-			color:$oe-pro-text;
+			color:$oe-rim-text;
 		}
 	}
 }
@@ -49,7 +49,7 @@
 			margin:0 0 1px 0;
 			
 			@include font-size(12);
-			color:$oe-pro-text;			// fixed across themes
+			color:$oe-rim-text;			// fixed across themes
 			background: $oe-blue-dark3; // not inverted in classic
 
 			.drag-handle {
@@ -86,8 +86,8 @@
 			font-weight: 400;
 			// this colour set up works across both themes
 			// be sure to check Overview, Patient Popup, Mini-overview?
-			color:$oe-pro-text;						
-			background: $oe-pro-user-inputs;
+			color:$oe-rim-text;						
+			background: $oe-rim-user-inputs;
 			padding:5px;
 			border-radius:3px;
 			width: calc(100% - 38px);

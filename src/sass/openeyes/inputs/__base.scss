@@ -15,8 +15,8 @@ input, textarea, select {
 	// if used in a OE UI themed area use this class
 	// used in Allergies & Risk in the patient popup
 	&.pro-theme {
-		color: $oe-pro-user-input-text;
-		background-color: $oe-pro-user-inputs;
+		color: $oe-rim-user-input-text;
+		background-color: $oe-rim-user-inputs;
 	}	
 	
 	&.error {

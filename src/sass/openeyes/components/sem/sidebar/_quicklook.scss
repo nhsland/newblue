@@ -20,8 +20,8 @@
 	  pointer-events: none; 
 	  
 	  @include font-size(12);
-	  color:$oe-pro-text;
-	  background:$oe-pro-popup-bg;
+	  color:$oe-rim-text;
+	  background:$oe-rim-popup-bg;
 	  padding:8px 0;
 	  
 	  // animation were previously in JS (jQuery)
@@ -55,7 +55,7 @@
 		margin:2px 0 0 0;
 		padding: 5px 5px 5px 9px;
 		
-		background-color: shade($oe-pro-popup-bg,15);
+		background-color: shade($oe-rim-popup-bg,15);
 		
 		&.cancelled,
 		&.alert {

@@ -17,13 +17,13 @@ table.patient-demographics {
 	width:100%;
 	
 	tr {
-		border-top:1px dotted $oe-pro-line;
+		border-top:1px dotted $oe-rim-line;
 		&:last-child {
-			border-top:1px dotted $oe-pro-line; // overide default
+			border-top:1px dotted $oe-rim-line; // overide default
 		}
 		
 		&.divider {
-			border-top: 2px solid $oe-pro-line;
+			border-top: 2px solid $oe-rim-line;
 		}
 		
 	} 
@@ -32,7 +32,7 @@ table.patient-demographics {
 		margin:0;
 		padding:6px 0;
 		@include font-size(12);
-		color:$oe-pro-text; 	// theme pro locked
+		color:$oe-rim-text; 	// theme pro locked
 		line-height:1.5;
 		
 		// this is f-k up. I should have made this 

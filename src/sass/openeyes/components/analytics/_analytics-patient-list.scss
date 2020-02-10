@@ -16,7 +16,7 @@
 		margin:20px 0 20px 0;
 		@include font-size(20);
 		font-weight: 300;
-		color:$oe-pro-blue-light;
+		color:$oe-rim-blue-light;
 	}
 	
 	// <table>
@@ -33,15 +33,15 @@
 		// add line to help with reading data
 		tbody {
 			tr {
-				border-bottom:1px solid $oe-pro-line;
+				border-bottom:1px solid $oe-rim-line;
 				&:last-child { 
 					border-bottom: none;
 				}
 				
 				&:hover {
-					background-color: $oe-pro-blue-dark3;
+					background-color: $oe-rim-blue-dark3;
 					td {
-						color:$oe-pro-text;
+						color:$oe-rim-text;
 					}
 					
 				}
@@ -53,7 +53,7 @@
 		th {
 			text-align: left;  // overide default 'middle'
 			font-weight: 300;
-			color:$oe-pro-text-light;
+			color:$oe-rim-text-light;
 			@include font-size(11);
 		}
 		
@@ -61,7 +61,7 @@
 		td {
 			vertical-align: middle;
 			padding:8px 2px;
-			color:$oe-pro-text-light;
+			color:$oe-rim-text-light;
 			@include font-size(14);
 		}
 	}	

@@ -21,8 +21,8 @@
 		
 		@include font-size(12);
 		font-weight:400;
-		color: $oe-pro-text-light; 
-		background: $oe-pro-popup-btn-hint; 
+		color: $oe-rim-text-light; 
+		background: $oe-rim-popup-btn-hint; 
 		
 		cursor: pointer;
 		
@@ -33,7 +33,7 @@
 			
 			.tag { 
 				background:shade($oe-btn-blue, 20%);
-				color:$oe-pro-text-highlight; 
+				color:$oe-rim-text-highlight; 
 			}
 		}
 		

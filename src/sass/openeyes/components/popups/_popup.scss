@@ -8,16 +8,16 @@
 .oe-popup {
 	margin:auto; /* flex (wrapper) */ 
 	position:relative;
-	background: $oe-pro-popup-bg;
+	background: $oe-rim-popup-bg;
 	min-width: 600px;
 	max-width: $oe-eyedraw-app-width; 
 	padding: 20px;
-	color:$oe-pro-text;
+	color:$oe-rim-text;
 
 	.title {
 		@include font-size(18);
 		font-weight:300;
-		color:$oe-pro-text;
+		color:$oe-rim-text;
 		padding:0 0 10px 0;
 	}
 	

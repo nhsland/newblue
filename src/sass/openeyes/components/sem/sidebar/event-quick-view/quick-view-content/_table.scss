@@ -29,7 +29,7 @@
 					th {
 						font-weight:400;
 						white-space: nowrap;
-						color:$oe-pro-element-headers;
+						color:$oe-rim-element-headers;
 						padding-right:20px;
 						width: 140px;
 					}
@@ -45,12 +45,12 @@
 							}
 							
 							.right-eye {
-								border-right:2px solid $oe-pro-line;
+								border-right:2px solid $oe-rim-line;
 								padding-right:10px; 
 							}
 							
 							.left-eye {
-								border-left:2px solid $oe-pro-line;
+								border-left:2px solid $oe-rim-line;
 								padding-left:10px;
 							}
 							
@@ -100,7 +100,7 @@
 					}
 					
 					tr {
-						border-bottom:1px solid $oe-pro-line;
+						border-bottom:1px solid $oe-rim-line;
 						&:last-child { 
 							border-bottom: none;
 						}

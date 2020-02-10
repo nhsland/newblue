@@ -17,7 +17,7 @@ table.risks {
 	margin:15px 0 0 0;
 		
 	tr {
-		border-bottom: 1px solid $oe-pro-line;
+		border-bottom: 1px solid $oe-rim-line;
 		&:last-child { 
 			border-bottom: none;
 		}
@@ -28,7 +28,7 @@ table.risks {
 		padding:1px 0 1px 4px;
 		vertical-align: middle;
 		height:28px; 				// to match the comment button
-		color:$oe-pro-text;			// theme pro locked
+		color:$oe-rim-text;			// theme pro locked
 					
 		&:last-child {
 			text-align: right;		// trash icon

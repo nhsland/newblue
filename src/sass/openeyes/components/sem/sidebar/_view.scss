@@ -31,8 +31,8 @@
 	
 			@include font-size(12);
 			font-weight:400;
-			color: $oe-pro-text-light; 
-			background:$oe-pro-blue;
+			color: $oe-rim-text-light; 
+			background:$oe-rim-blue;
 			
 			.tag {
 				position: absolute;
@@ -62,16 +62,16 @@
 			@include font-size(10);
 			font-weight:400;
 			
-			color: $oe-pro-text-light;
-			background:$oe-pro-blue-dark;
+			color: $oe-rim-text-light;
+			background:$oe-rim-blue-dark;
 		}
 		  
 		&.selected {
 			a {
-				color:$oe-pro-text-highlight;
-				background: $oe-pro-popup-bg;
+				color:$oe-rim-text-highlight;
+				background: $oe-rim-popup-bg;
 				.tag {
-					color:$oe-pro-text-highlight;
+					color:$oe-rim-text-highlight;
 					background:transparent;
 				}
 			}	

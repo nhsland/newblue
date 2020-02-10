@@ -27,7 +27,7 @@
 		left:0;
 		@include font-size(23);
 		font-weight:100;
-		color:$oe-pro-text-light;
+		color:$oe-rim-text-light;
 	}
 	
 	.change-clinic {
@@ -40,7 +40,7 @@
 			opacity:0.5;
 			&:hover, &:focus, &:active {
 				opacity:1;
-				color:$oe-pro-text-highlight;
+				color:$oe-rim-text-highlight;
 			}	
 		}
 	}

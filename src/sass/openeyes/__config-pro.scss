@@ -7,59 +7,82 @@
 
 // ----------------------
 // PRO theme colors (DARK)
+// $oe-rim- prefixed colours are for Light Text on Dark Background
 // ----------------------
 
-$html-bg:				$html-pro-bg;
+$html-bg:				rgb(16,25,37);;
 
 // Text 
-$oe-pro-text: 				rgb(214,214,214);
-$oe-pro-text-light: 		rgb(140,140,140);
-$oe-pro-text-highlight: 	rgb(0,255,255);
-$oe-pro-text-active: 		rgb(90,180,180); 
-$oe-pro-text-inverted: 		rgb(13,13,13);
+$oe-rim-text: 				rgb(214,214,214);
+$oe-rim-text-light: 		rgb(140,140,140);
+$oe-rim-text-highlight: 	rgb(0,255,255);
+$oe-rim-text-active: 		rgb(90,180,180); 
+$oe-rim-text-inverted: 		rgb(13,13,13);
 
-$oe-text: 				$oe-pro-text;
-$oe-text-light: 		$oe-pro-text-light;
-$oe-text-highlight:		$oe-pro-text-highlight; // also for selected
-$oe-text-active:		$oe-pro-text-active; 
-$oe-text-inverted: 		$oe-pro-text-inverted; // inverted! 
+$oe-text: 				$oe-rim-text;
+$oe-text-light: 		$oe-rim-text-light;
+$oe-text-highlight:		$oe-rim-text-highlight; // also for selected
+$oe-text-active:		$oe-rim-text-active; 
+$oe-text-inverted: 		$oe-rim-text-inverted; // inverted! 
 
 $oe-font-light:			300;	// 400 in Classic
 $oe-font-medium:		400;	// 500 in Classic
 $oe-font-bold: 			500;	// 600 in Classic
 
 // BLUEs
-$oe-blue:				$oe-pro-blue;
-$oe-blue-dark: 			$oe-pro-blue-dark;
+$oe-rim-blue:				rgb(30,46,66);
+$oe-rim-blue-dark: 			shade( $oe-rim-blue, 20% );
+$oe-rim-blue-dark2: 		shade( $oe-rim-blue, 35% );
+$oe-rim-blue-dark3: 		shade( $oe-rim-blue, 25% );
+$oe-rim-blue-light: 		tint( $oe-rim-blue, 30% );
+
+$oe-blue:				$oe-rim-blue;
+$oe-blue-dark: 			$oe-rim-blue-dark;
 $oe-blue-dark1: 		$oe-blue-dark;	// because I keep using 'dark1' instead of 'dark':
-$oe-blue-dark2: 		$oe-pro-blue-dark2;
-$oe-blue-dark3:			$oe-pro-blue-dark3;
-$oe-blue-light: 		$oe-pro-blue-light;
+$oe-blue-dark2: 		$oe-rim-blue-dark2;
+$oe-blue-dark3:			$oe-rim-blue-dark3;
+$oe-blue-light: 		$oe-rim-blue-light;
 
-$oe-grey:				rgb(40,52,66);
-$oe-line:				rgb(38,48,61); // don't use alphas, tables with td colspan 2 overlap
+$oe-rim-grey:			rgb(40,52,66);
+$oe-grey:				$oe-rim-grey;
 
+$oe-rim-line: 			rgb(38,48,61);
+$oe-line:				$oe-rim-line; // don't use alphas, tables with td colspan 2 overlap
 
 
 // Buttons
+$oe-rim-btn-blue:			rgb(7,69,152);
+$oe-rim-btn-green:			rgb(14,144,25);
+$oe-rim-btn-red:			rgb(153,14,14);
+// hints
+$oe-rim-btn-blue-hint:		shade( $oe-rim-btn-blue,30 );
+$oe-rim-btn-green-hint:		shade( $oe-rim-btn-green,30 );
+$oe-rim-btn-red-hint:		shade( $oe-rim-btn-red,30 );
+
 $oe-btn-default:		$oe-blue;
-$oe-btn-selected:		$oe-pro-blue-dark3;
+$oe-btn-selected:		$oe-rim-blue-dark3;
 $oe-btn-event-header:	shade($oe-grey,10); // event header buttons need to work like tabs
-$oe-btn-blue:			$oe-pro-btn-blue;
-$oe-btn-green:			$oe-pro-btn-green;
-$oe-btn-red:			$oe-pro-btn-red;
+$oe-btn-blue:			$oe-rim-btn-blue;
+$oe-btn-green:			$oe-rim-btn-green;
+$oe-btn-red:			$oe-rim-btn-red;
 // button hints
-$oe-btn-blue-hint:		$oe-pro-btn-blue-hint;
-$oe-btn-green-hint:		$oe-pro-btn-green-hint;
-$oe-btn-red-hint:		$oe-pro-btn-red-hint;
+$oe-btn-blue-hint:		$oe-rim-btn-blue-hint;
+$oe-btn-green-hint:		$oe-rim-btn-green-hint;
+$oe-btn-red-hint:		$oe-rim-btn-red-hint;
 // button shades
 $oe-btn-blue-dark: 		shade( $oe-btn-blue, 25% );
 
 
+$oe-rim-popup-bg:		rgb(55,71,85);
+$oe-popup-bg:			$oe-rim-popup-bg; // tool-tip, add-select-search, element-search-popup	 
 
-$oe-popup-bg:			$oe-pro-popup-bg; // tool-tip, add-select-search, element-search-popup	 
+// for btn-lists
+$oe-rim-popup-btn-hint: 	shade( $oe-rim-popup-bg,20% );
 
 // input colours:
+$oe-rim-user-inputs: 		$oe-rim-blue;
+$oe-rim-user-input-text: 	$oe-rim-text;
+
 $oe-user-inputs:		$oe-blue;
 $oe-user-inputs-hint:	rgba($oe-user-inputs,0.1);
 $oe-user-input-text:	$oe-text;
@@ -85,7 +108,8 @@ $oe-step-red:			rgb(160,40,10);
 $oe-step-grey:			rgb(70,70,80);
 $oe-step-text:			rgb(240,240,240);
 
-$oe-bg-highlight: 		$oe-pro-bg-highlight; // used as hover highlight
+$oe-rim-bg-highlight: 	shade($oe-rim-blue-dark3,30); // used as hover highlight
+$oe-bg-highlight: 		$oe-rim-bg-highlight; // used as hover highlight
 // colors 
 $oe-bg-hint-green:		rgb(18,60,31);
 $oe-bg-hint-red:		rgb(86,19,19);
@@ -106,14 +130,28 @@ $oe-ed3-input-text:		rgb(240,240,240);
 
 
 // SPECIFIC colours for areas
+$oe-rim-bg:					$oe-rim-blue-dark2; // top header strip
+
+
 $oe-sem-main-event-bg: 		$oe-blue;   	// ok in Pro theme
 $oe-sem-element-bg: 		rgb(18,28,35);	// removed 2 colour scheme (priority/normal) made bg 1 colour
 $oe-sem-tile-element-bg: 	rgb(13,23,30);
 
 
-$oe-element-headers:   	rgb(105,147,158); 	// rgb(139,195,203); // element default header colour
+$oe-rim-element-headers:   	rgb(105,147,158);
+$oe-element-headers:   	$oe-rim-element-headers; 	// rgb(139,195,203); // element default header colour
+
 $oe-home-search-bg: 	rgb(50,62,76);		// Home page Search area background
 $oe-tooltip-bg:			rgb(10,10,20);
+
+// clinic ... (became Pathsteps)
+$oe-clinic-green: 			rgb(20,100,0);
+$oe-clinic-orange:			rgb(180,80,22);
+$oe-clinic-red:				rgb(160,40,10);
+$oe-clinic-grey:			rgb(50,50,55);
+
+// Virtual Clinic
+$oe-vc-orange: 				rgb(255,180,0);
 
 // Theatre Diaries
 $oe-theatre-bookings-bg: 	$oe-grey; // match header (flatten palette)
@@ -126,6 +164,7 @@ $oe-wb-bg: 				$oe-blue-dark3;
 $oe-wb-widget-bg:		$oe-tooltip-bg;
 $oe-wb-data-text:		$oe-text;	
 $oe-wb-headers:			$oe-element-headers;
+
 
 $oe-pagination-blue: 	$oe-text-highlight;
 

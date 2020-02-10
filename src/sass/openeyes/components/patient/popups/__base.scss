@@ -17,8 +17,9 @@
 	width:$oe-event-main-default-width;
 	// height: 435px;  // height is controlled by the overflow (i.e. its flexible)
 	
-	background:$oe-pro-bg;
-	border:1px solid $oe-pro-text-highlight;
+	background:$oe-rim-bg;
+	border-top:1px solid $oe-rim-text-highlight;
+	border-bottom:2px solid $oe-rim-text-highlight;
 	padding:15px 15px 20px 15px;
 	
 	// stretch popup to match width of extended Event area
@@ -48,7 +49,7 @@
 		
 		@include font-size(18);
 		font-weight:300; 
-		color:$oe-pro-text-light; 
+		color:$oe-rim-text-light; 
 		
 		.extra-actions {
 			position:absolute;

@@ -12,11 +12,11 @@
 			
 	@include font-size(11);
 	font-weight:400;
-	color:$oe-pro-text; 
+	color:$oe-rim-text; 
 	
 	.group {
 		margin:0 0 3px 0;
-		background:$oe-pro-blue;
+		background:$oe-rim-blue;
 		
 		.label { 
 			padding:8px 9px;
@@ -43,8 +43,8 @@
 		margin:0 0 10px 0; 
 		width:100%;
 		
-		th { color:$oe-pro-text-light; }
-		td { color:$oe-pro-text; }
+		th { color:$oe-rim-text-light; }
+		td { color:$oe-rim-text; }
 		
 		th, td {
 			vertical-align: middle;

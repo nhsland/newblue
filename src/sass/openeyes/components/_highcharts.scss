@@ -17,7 +17,7 @@ $oe-hs-eye-right:	rgb(159,236,109);			// green
 $oe-hs-eye-left-dull:	shade( $oe-hs-eye-left,40 ); 		
 $oe-hs-eye-right-dull:	shade( $oe-hs-eye-right,40 );			
 $oe-hs-axes: 		rgb(150,150,150);
-$oe-hs-bg: 			$oe-pro-blue-dark2;
+$oe-hs-bg: 			$oe-rim-blue-dark2;
 $oe-hs-blue:		rgb(61,176,251);  			// highlight blue
 $oe-hs-anal-blue:	rgb(54,155,215); 			// Analytics blue
 $oe-hs-anal-orange:	rgb(230,115,0);				// Analytics orange
@@ -43,7 +43,7 @@ $oe-hs-anal-orange:	rgb(230,115,0);				// Analytics orange
 	// SVG <text>
 	// default styling for all SVG text
 	text {
-		fill:$oe-pro-text-light;
+		fill:$oe-rim-text-light;
 		stroke-width: 0;
 	}
 }
@@ -223,9 +223,9 @@ $oe-hs-anal-orange:	rgb(230,115,0);				// Analytics orange
 	
 	.oes-banner-title {
 		@include font-size(12);
-		fill:$oe-pro-text;
+		fill:$oe-rim-text;
 		* {
-			fill:$oe-pro-text; // sometimes text is wrapped in <tspan>
+			fill:$oe-rim-text; // sometimes text is wrapped in <tspan>
 		}
 	}
 	
@@ -234,7 +234,7 @@ $oe-hs-anal-orange:	rgb(230,115,0);				// Analytics orange
 		@include font-size(11);
 		
 		text {
-			fill: $oe-pro-text;
+			fill: $oe-rim-text;
 		}
 		
 		.highcharts-data-label-box {
@@ -295,14 +295,14 @@ $oe-hs-anal-orange:	rgb(230,115,0);				// Analytics orange
 	  cursor: pointer;
 	  @include font-size(11);
 	  &:hover {
-		  fill: $oe-pro-text;	
+		  fill: $oe-rim-text;	
 	  }
 	}
 	
 	// clicking on the legend item deactivates the series
 	&.highcharts-legend-item-hidden {
 		text {
-			fill: shade( $oe-pro-text-light,15 );
+			fill: shade( $oe-rim-text-light,15 );
 		}
 	}
 }
@@ -342,7 +342,7 @@ $oe-hs-anal-orange:	rgb(230,115,0);				// Analytics orange
 	transition: stroke 150ms;
 	
 	text {
-		fill: $oe-pro-text;
+		fill: $oe-rim-text;
 	}
 }
 .highcharts-tooltip-box {
@@ -372,7 +372,7 @@ $oe-hs-anal-orange:	rgb(230,115,0);				// Analytics orange
 // ------------- buttons
 .highcharts-button {
 	cursor: pointer;
-	fill: $oe-pro-blue;
+	fill: $oe-rim-blue;
 	&:hover {
 		text {
 			fill:$oe-text;

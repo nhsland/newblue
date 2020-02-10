@@ -18,7 +18,7 @@
 	@include flex(flex-start, center);
 	
 	@include font-size(16);
-	color:$oe-pro-text-light; 	// not themed
+	color:$oe-rim-text-light; 	// not themed
 	font-weight: 300;
 	
 	
@@ -52,7 +52,7 @@
 	justify-content:flex-start;
 	
 	@include font-size(16);
-	color:$oe-pro-text-light; 	// not themed
+	color:$oe-rim-text-light; 	// not themed
 	
 	button {
 		margin:0 8px 0 0;

@@ -49,19 +49,19 @@
 	// PRO theme 
 	// For individual styling of butons when in Classic theme	
 	&.pro-theme {
-		color: $oe-pro-text;
-		background: $oe-pro-user-inputs;
+		color: $oe-rim-text;
+		background: $oe-rim-user-inputs;
 		
 		&.active,
 		&.selected {
-			background: $oe-pro-btn-blue;
+			background: $oe-rim-btn-blue;
 		}
 		
 		&.disabled,
 		&.inactive {
-			color: rgba($oe-pro-text-light,0.6) !important;
-			background: rgba($oe-pro-grey,0.8) !important;
-			border:1px solid rgba($oe-pro-text-light,0.1);
+			color: rgba($oe-rim-text-light,0.6) !important;
+			background: rgba($oe-rim-grey,0.8) !important;
+			border:1px solid rgba($oe-rim-text-light,0.1);
 		}
 		
 	}

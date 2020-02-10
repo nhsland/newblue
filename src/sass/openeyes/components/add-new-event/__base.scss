@@ -9,14 +9,14 @@
 .oe-create-event-popup {
 	margin:auto; /* flex (wrapper) */ 
 	position:relative;
-	background: $oe-pro-popup-bg;
+	background: $oe-rim-popup-bg;
 	width: 1000px; 
 	padding:20px;
 
 	.title {
 		@include font-size(18);
 		font-weight:300;
-		color:$oe-pro-text;
+		color:$oe-rim-text;
 		padding:0 0 10px 0;
 	}
 	
@@ -30,7 +30,7 @@
 	// step sub-titles
 	h3 {
 		@include font-size(12);
-		color:$oe-pro-text-light;
+		color:$oe-rim-text-light;
 		margin:0 0 10px 0;
 	}
 }

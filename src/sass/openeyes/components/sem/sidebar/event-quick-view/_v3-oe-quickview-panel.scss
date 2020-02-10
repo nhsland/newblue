@@ -17,7 +17,7 @@
 	height: calc(100vh - #{$oe-header-height} ); // this can't be SASS variable has to be written (must match $oe-header-height) 
 	overflow:hidden;
 	
-	background: $oe-pro-popup-bg; // colour to match sidebar quicklook	
+	background: $oe-rim-popup-bg; // colour to match sidebar quicklook	
 	
 	// IDG demo PNGs are 520px wide
 	$png-width:537px; 
@@ -43,7 +43,7 @@
 			.event-date {
 				margin:auto; /* flex */
 				@include font-size(14);
-				color:$oe-pro-text;
+				color:$oe-rim-text;
 				font-weight:$oe-font-light;
 			}
 			

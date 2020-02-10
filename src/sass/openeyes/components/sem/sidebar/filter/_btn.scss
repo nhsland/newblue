@@ -20,13 +20,13 @@
 		margin:4px 0;
 		padding:0 0 0 28px; // space for background icon
 
-		background: $oe-pro-user-inputs url( svg-path('ui/sidebar') ) left 5px center no-repeat;
+		background: $oe-rim-user-inputs url( svg-path('ui/sidebar') ) left 5px center no-repeat;
 		background-size:15px;
 		
 		// 'button' look
 		@include font-size(12);
 		font-weight:300;
-		color:$oe-pro-text-light;
+		color:$oe-rim-text-light;
 		cursor: pointer;
 		
 		// Events by [Date, Types, etc]

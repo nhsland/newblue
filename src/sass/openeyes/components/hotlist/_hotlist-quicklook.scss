@@ -19,8 +19,8 @@
 		
 		@include font-size(12);
 		font-style: italic;
-		color:$oe-pro-text; 
-		background:$oe-pro-popup-bg;
+		color:$oe-rim-text; 
+		background:$oe-rim-popup-bg;
 		
 		// UX helper.
 		&:after {

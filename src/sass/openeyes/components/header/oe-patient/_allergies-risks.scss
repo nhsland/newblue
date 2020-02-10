@@ -33,7 +33,7 @@
 		background-size:15px;	
 		
 		&.unknown {
-			background-color:$oe-pro-grey;
+			background-color:$oe-rim-grey;
 		}
 		
 		&.risk-warning {
@@ -47,9 +47,9 @@
 		
 		// js controlled interaction... 
 		&.open, &.active {
-			background-color: $oe-pro-text-highlight;
+			background-color: $oe-rim-text-highlight;
 			background-image: url( svg-path('icons/_classic/triangle') );
-			color:$oe-pro-bg;
+			color:$oe-rim-bg;
 		}
 	}
 	

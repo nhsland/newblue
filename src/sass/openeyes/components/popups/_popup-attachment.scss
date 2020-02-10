@@ -18,7 +18,7 @@
 		left:20px;
 		@include font-size(16);
 		font-weight:400;
-		color:$oe-pro-text;
+		color:$oe-rim-text;
 	}
 	
 	// wraps the remove icon
@@ -34,7 +34,7 @@
 		position:absolute;
 		top:12px;
 		right:55px;
-		color:$oe-pro-text-highlight;
+		color:$oe-rim-text-highlight;
 		@include font-size(13);
 		font-weight:500;
 		

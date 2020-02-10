@@ -8,14 +8,14 @@
 		
 		table {
 			width:100%;	
-			color:$oe-pro-text-light;
+			color:$oe-rim-text-light;
 			margin:10px 0 0 0;  // overwrite oe-popup default
 			
 			th, td {
 				vertical-align: top;
 				text-align: left;
 				padding:2px 0 2px 2px;
-				border:1px solid $oe-pro-line;
+				border:1px solid $oe-rim-line;
 				border-left-width:2px;
 				@include font-size(12);	
 				
@@ -28,7 +28,7 @@
 			thead {
 				th {
 					font-weight:400;
-					color:$oe-pro-text;
+					color:$oe-rim-text;
 					@include font-size(15);
 					border-top:none;
 					padding:0 0 8px 6px;
@@ -43,7 +43,7 @@
 					position: sticky;
 					top: 0;
 					z-index: 10;
-					background:$oe-pro-popup-bg;
+					background:$oe-rim-popup-bg;
 				}
 				
 			}
