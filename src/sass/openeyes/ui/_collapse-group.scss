@@ -85,6 +85,12 @@
 		padding:2px 5px 8px 5px;
 		margin:0 0 4px 0;
 		
+		.header-icon {
+			&:after {
+				right:5px; // icon needs moving in a bit
+			}
+		}
+		
 		&:hover, &:focus {
 			.collapse-group-header {
 				color:$oe-text-highlight;
