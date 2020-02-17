@@ -109,7 +109,7 @@
 		@include font-size(12);
 		padding-left:8px;
 		margin:12px 0 6px 0; 
-		color: $oe-rim-text-light;
+		color: $oe-dark-text-light;
 		font-weight: $oe-font-light;
 		
 		&:after {
@@ -123,15 +123,15 @@
 		}
 
 		&:hover, &:focus {
-			color: $oe-rim-text;
+			color: $oe-dark-text;
 		}
 	}
 
 	// **** Replaced by above class: header-icon
 	h3.collapse-group-header {
-		@include font-size(13); font-weight:300; color: $oe-rim-text-light; padding:10px 25px 5px 5px;   
+		@include font-size(13); font-weight:300; color: $oe-dark-text-light; padding:10px 25px 5px 5px;   
 		&:hover, &:focus {
-			color: $oe-rim-text;
+			color: $oe-dark-text;
 		}
 	}	
 }

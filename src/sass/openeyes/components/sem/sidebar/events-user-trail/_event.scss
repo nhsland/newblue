@@ -7,14 +7,14 @@
 	.event-user-grid {
 		
 		td.event {
-			background-color:$oe-rim-line;
+			background-color:$oe-dark-line;
 			
 			.event-details {
 				@include flex(space-between,center);
 				padding:0 5px 0 0;
 				
 				.other-user {
-					color:$oe-rim-text;
+					color:$oe-dark-text;
 				}
 			}
 			

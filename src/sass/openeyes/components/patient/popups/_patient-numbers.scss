@@ -9,12 +9,12 @@
 	
 	.patient-numbers {
 		@include font-size(13);
-		color:$oe-rim-text-light; // NOT themed
+		color:$oe-dark-text-light; // NOT themed
 		padding:5px 10px 6px 5px;	
 		margin:0 0 10px 0;	
-		background: $oe-rim-blue-dark;
+		background: $oe-dark-blue-dark;
 		
-		border-bottom:1px solid $oe-rim-blue-dark3; // NOT themed
+		border-bottom:1px solid $oe-dark-blue-dark3; // NOT themed
 		
 		// <div> wrapper for:
 		// No: [input radion] 0000000
@@ -22,16 +22,16 @@
 			display:inline-block;
 			padding:0 20px 0 0;
 			margin:0 20px 0 0;
-			border-right:1px solid $oe-rim-line;
+			border-right:1px solid $oe-dark-line;
 		}
 		
 		// label highlight. over-ride default theme'd settings:
 		label.highlight {
-			color:$oe-rim-text;
-			background:$oe-rim-blue-dark;
+			color:$oe-dark-text;
+			background:$oe-dark-blue-dark;
 			
 			&:hover, &:focus, &:active {
-				background:$oe-rim-user-inputs;
+				background:$oe-dark-user-inputs;
 			}
 		}
 		

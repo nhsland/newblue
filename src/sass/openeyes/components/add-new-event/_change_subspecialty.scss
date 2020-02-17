@@ -11,14 +11,14 @@
 	
 	.change-subspecialty {
 		position:relative;
-		background: shade( $oe-rim-popup-bg,15% ); // required something different here 
+		background: shade( $oe-dark-popup-bg,15% ); // required something different here 
 		border:1px solid $oe-btn-green;
 		padding:8px;
 		margin:10px 0 0 0;
 	
 		h6 {
 			@include font-size(12);
-			color:$oe-rim-text-light;
+			color:$oe-dark-text-light;
 			padding:0 0 0 2px; 
 			margin:0 0 5px 0;
 		}
@@ -28,7 +28,7 @@
 		.fixed-service {
 			margin:10px 0 0 8px;
 			@include font-size(12);
-			color:$oe-rim-text; 
+			color:$oe-dark-text; 
 		}
 		
 		// ... or there is a choice in the service 

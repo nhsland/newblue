@@ -18,7 +18,7 @@
 				padding:4px 5px; 
 				@include font-size(12);
 				font-weight:400;
-				color:$oe-rim-text-light; 
+				color:$oe-dark-text-light; 
 				line-height:1.4;
 				
 				// icons 
@@ -53,7 +53,7 @@
 			
 			// show <tr> as a clickable row
 			tr {
-				background:tint( $oe-rim-bg,5 );	
+				background:tint( $oe-dark-bg,5 );	
 				&:hover, &:active, &:focus {
 					cursor: pointer;
 					background:$oe-btn-blue; // row is a big button
@@ -67,7 +67,7 @@
 				&.hotlist-comment {
 					&:hover, &:active, &:focus {
 						cursor: auto;
-						background:tint( $oe-rim-bg,5 );
+						background:tint( $oe-dark-bg,5 );
 					}
 				}
 			}

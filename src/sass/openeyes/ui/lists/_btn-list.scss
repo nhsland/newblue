@@ -21,8 +21,8 @@ ul {
 			font-weight:400;
 			
 			// assumes the button list will be used in PRO blue background colour
-			color: $oe-rim-text-light; 
-			background:$oe-rim-popup-btn-hint; 
+			color: $oe-dark-text-light; 
+			background:$oe-dark-popup-btn-hint; 
 		
 			&:hover, &:focus, &:active, 
 			&.selected {

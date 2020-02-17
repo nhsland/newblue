@@ -18,8 +18,8 @@
 											
 					@include font-size(12); 
 					font-weight:500;
-					color:$oe-rim-text-light;
-					background:shade( $oe-rim-popup-bg,11% ); 
+					color:$oe-dark-text-light;
+					background:shade( $oe-dark-popup-bg,11% ); 
 					
 					
 					&:hover, &:focus, &:active {
@@ -29,11 +29,11 @@
 					
 					&.added {
 						color: rgb(255,255,255);
-						background-color:$oe-rim-btn-green-hint;
+						background-color:$oe-dark-btn-green-hint;
 						
 						// if added it can be removed
 						&:hover, &:focus, &:active {
-							background-color:$oe-rim-btn-red-hint;
+							background-color:$oe-dark-btn-red-hint;
 						}	
 					}
 					

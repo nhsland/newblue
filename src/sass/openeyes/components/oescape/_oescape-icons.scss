@@ -26,8 +26,8 @@
 			
 			@include font-size(14);
 			font-weight: 300;
-			color:$oe-rim-text;
-			background:$oe-rim-blue-dark; 
+			color:$oe-dark-text;
+			background:$oe-dark-blue-dark; 
 			
 			// lightning viewer icon added to oescape group
 			// Patient Overview icons added too.
@@ -42,9 +42,9 @@
 			}
 		
 			&.selected {
-				color:$oe-rim-text-highlight;
+				color:$oe-dark-text-highlight;
 				svg {
-					fill:$oe-rim-text-highlight;
+					fill:$oe-dark-text-highlight;
 				}
 			}
 			

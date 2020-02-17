@@ -8,24 +8,24 @@
 .sidebar-header {
 	
 	display:flex;
-	background:$oe-rim-grey;
+	background:$oe-dark-grey;
 	
 	// button
 	.manage-elements, 
 	.add-event {
 		height:$oe-event-header-height;
 		width:100%;
-		color: $oe-rim-user-input-text; 		// Pro-theme
-		background: $oe-rim-user-inputs; 	    // Pro-theme
+		color: $oe-dark-user-input-text; 		// Pro-theme
+		background: $oe-dark-user-inputs; 	    // Pro-theme
 		border-radius:0;
 		
 		// when disable make 'pro-themed'
 		// disable is designed to overwrite 
 		// other styles.
 		&.disabled {
-			color: rgba($oe-rim-text-light,0.6) !important;
-			background: rgba($oe-rim-grey,0.8) !important;
-			border:1px solid rgba($oe-rim-text-light,0.1);
+			color: rgba($oe-dark-text-light,0.6) !important;
+			background: rgba($oe-dark-grey,0.8) !important;
+			border:1px solid rgba($oe-dark-text-light,0.1);
 		}
 		
 		&.selected {
@@ -38,7 +38,7 @@
 	.title {
 		@include font-size(13);
 		font-weight:300;
-		color:$oe-rim-text-light;				// Pro-theme
+		color:$oe-dark-text-light;				// Pro-theme
 		margin:auto;
 		padding:0 8px;
 	}
@@ -51,13 +51,13 @@
 		
 		// lock in pro-theme
 		// (rather than adding "pro-theme" class)
-		color: $oe-rim-text;
-		background-color: $oe-rim-user-inputs;
+		color: $oe-dark-text;
+		background-color: $oe-dark-user-inputs;
 		
 		&.active,
 		&.selected {
 			color: rgb(255,255,255);
-			background-color: $oe-rim-btn-blue;
+			background-color: $oe-dark-btn-blue;
 		}
 		
 		&:hover, &:focus, &:active {
@@ -90,8 +90,8 @@
 	
 	// anything in here should be Pro themed 
 	input, textarea, select {
-		color: $oe-rim-user-input-text;
-		background-color: $oe-rim-user-inputs;
+		color: $oe-dark-user-input-text;
+		background-color: $oe-dark-user-inputs;
 		border-radius:0;
 	}
 	

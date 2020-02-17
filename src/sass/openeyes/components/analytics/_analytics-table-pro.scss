@@ -10,15 +10,15 @@
 		// add line to help with reading data
 		tbody {
 			tr {
-				border-bottom:1px solid $oe-rim-line;
+				border-bottom:1px solid $oe-dark-line;
 				&:last-child { 
 					border-bottom: none;
 				}
 				
 				&:hover {
-					background-color: $oe-rim-blue-dark3;
+					background-color: $oe-dark-blue-dark3;
 					td {
-						color:$oe-rim-text;
+						color:$oe-dark-text;
 					}
 					
 				}
@@ -26,10 +26,10 @@
 		}
 
 		// <th>
-		th { 	color:$oe-rim-text-light;	}
+		th { 	color:$oe-dark-text-light;	}
 		
 		// <td>
-		td {	color:$oe-rim-text-light;	}
+		td {	color:$oe-dark-text-light;	}
 	}		
 }
 

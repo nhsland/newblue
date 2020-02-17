@@ -12,11 +12,11 @@
 		color:inherit;
 		text-decoration: none;
 		&:hover, &:focus, &:active {
-			color:$oe-rim-text-active;
+			color:$oe-dark-text-active;
 		}
 		
 		&.selected {
-			color:$oe-rim-text-highlight;
+			color:$oe-dark-text-highlight;
 		}
 	}
 }

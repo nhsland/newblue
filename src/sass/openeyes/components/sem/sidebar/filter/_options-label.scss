@@ -9,11 +9,11 @@
 	// Pro-theme label highlights
 	label {
 		&.highlight {
-			color:$oe-rim-user-input-text;
-			background:rgba($oe-rim-user-inputs,0.6);
+			color:$oe-dark-user-input-text;
+			background:rgba($oe-dark-user-inputs,0.6);
 			
 			&:hover, &:focus, &:active {
-				background:rgba($oe-rim-user-inputs,0.8);
+				background:rgba($oe-dark-user-inputs,0.8);
 			}
 			
 			// due to the styling the white (not checked)

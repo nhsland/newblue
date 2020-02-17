@@ -46,8 +46,8 @@
 			width:350px; 
 		}
 	
-		color:$oe-rim-text;
-		border-left:1px solid $oe-rim-line;
+		color:$oe-dark-text;
+		border-left:1px solid $oe-dark-line;
 		padding:0 0 0 8px;
 			
 		li {  
@@ -74,7 +74,7 @@
 				
 				&:hover, &:focus, &:active {
 					opacity:1;
-					color:$oe-rim-text-highlight;
+					color:$oe-dark-text-highlight;
 				}
 				
 			}

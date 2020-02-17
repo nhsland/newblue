@@ -7,8 +7,8 @@
 // is displayed. Basic HTML layout
 
 .browser-not-supported {
-	background:$oe-rim-blue;
-	color:$oe-rim-text;
+	background:$oe-dark-blue;
+	color:$oe-dark-text;
 	margin:20px;
 	padding:20px;
 	
@@ -21,7 +21,7 @@
 	h4 {
 		@include font-size(18);
 		font-weight:300;
-		color:$oe-rim-text-light;
+		color:$oe-dark-text-light;
 		margin:20px 0 15px 0;
 	}
 	
@@ -34,6 +34,6 @@
 	}
 	
 	a {
-		color:$oe-rim-text-highlight;
+		color:$oe-dark-text-highlight;
 	}
 }

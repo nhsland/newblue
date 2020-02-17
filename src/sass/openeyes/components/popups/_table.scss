@@ -12,15 +12,20 @@
 	table {
 		margin:20px auto 0 auto;
 		width:90%;
-		td {
-			vertical-align: middle;
-			padding:8px 0;  
-			@include font-size(13);
-			
-			&.align-right {
-				text-align: right;
+		tbody {
+			th, td {
+				vertical-align: top;
+				text-align: left;
+				padding:8px 0;  
+				@include font-size(13);
+				font-weight: 500;
+				
+				&.align-right {
+					text-align: right;
+				}
 			}
 		}
+		
 	} 
 	
 }

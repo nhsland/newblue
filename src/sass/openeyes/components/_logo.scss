@@ -13,7 +13,7 @@
 	position:absolute;
 	top:22px; 			// positioned by eye
 	left:200px;
-	color:$oe-rim-text-light;
+	color:$oe-dark-text-light;
 	@include font-size(14);
 	font-weight:300;	
 }
@@ -26,7 +26,7 @@
 	top:0; 
 	left:0;
 	width:280px;
-	background: tint( $oe-rim-bg,10 );
+	background: tint( $oe-dark-bg,10 );
 	
 	.oe-logo {
 		position:absolute;
@@ -82,7 +82,7 @@
 		
 		p {
 			@include font-size(11);
-			color:$oe-rim-text;
+			color:$oe-dark-text;
 			font-weight:300;
 			line-height:1.4;
 			margin:0 0 5px 0;
@@ -103,14 +103,14 @@
 		h3 {
 			@include font-size(23);
 			font-weight:100;
-			color:$oe-rim-text;
+			color:$oe-dark-text;
 			margin:0 0 10px 0;
 		}
 		
 		h4 {
 			@include font-size(10);
 			font-weight:300;
-			color:$oe-rim-text-light;
+			color:$oe-dark-text-light;
 			margin:0 0 5px 0;
 		}
 

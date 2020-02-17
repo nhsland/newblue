@@ -91,7 +91,7 @@
 		// pro-theme 
 		//
 		.collapse-data-header-icon {
-			color:$oe-rim-text-light;
+			color:$oe-dark-text-light;
 			@include font-size(12);
 			
 			
@@ -108,7 +108,7 @@
 			}
 			
 			&:hover, &:active {
-				color:$oe-rim-text-highlight;	
+				color:$oe-dark-text-highlight;	
 			}
 		}
 	}
