@@ -18,6 +18,10 @@
 		padding:6px 8px 4px 8px; // increase icon hitarea
 		cursor:pointer;
 		
+		svg {
+			pointer-events: none; // allow JS delegation
+		}
+		
 		// svg icon btn
 		.icon {
 			display:inline-block;

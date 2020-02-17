@@ -37,6 +37,7 @@
 		
 		// SVG logo
 		.oe-openeyes {
+			pointer-events: none; // otherwise it will block JS event delegation
 			display:inline-block;
 			// SVG logo maintain aspect ratio
 			$svg-width:100px;
