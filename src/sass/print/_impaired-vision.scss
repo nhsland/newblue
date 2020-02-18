@@ -7,63 +7,62 @@
 // here is "large-font" - corrspondence (assumes poor vision)
 // there is also "impaired-vision" - very poor eye sight 
 
-body {
-	&.impaired-vision {
+.impaired-vision {
 		
-		$impaired-vision-increase: 4;
-		
+	$impaired-vision-increase: 4;
+	
+	font-size: $fontsize-base + $impaired-vision-increase;
+	
+	// typography.
+	// h1,h2 are big enough (i think?)
+	h3 {
+		font-size: $fontsize-h3 + $impaired-vision-increase;
+	}
+	h4 {
 		font-size: $fontsize-base + $impaired-vision-increase;
-		
-		// typography.
-		// h1,h2 are big enough (i think?)
-		h3 {
-			font-size: $fontsize-h3 + $impaired-vision-increase;
-		}
-		h4 {
-			font-size: $fontsize-base + $impaired-vision-increase;
-		}
-		p {
-			font-size: $fontsize-base + $impaired-vision-increase;
-		}
-		// small text 
-		h5 {
-			font-size: $fontsize-base + $impaired-vision-increase;
-		}
-		
-		// lists
-		ul, ol {
+	}
+	p {
+		font-size: $fontsize-base + $impaired-vision-increase;
+	}
+	// small text 
+	h5 {
+		font-size: $fontsize-base + $impaired-vision-increase;
+	}
+	
+	// lists
+	ul, ol {
+		li {
+			font-size: $fontsize-small + $impaired-vision-increase;
+			font-weight:500;
+ 		}
+ 		&.normal {
+ 			li {
+ 				font-size: $fontsize-base + $impaired-vision-increase; 
+			}
+		} 
+		&.large {
 			li {
-				font-size: $fontsize-small + $impaired-vision-increase;
-				font-weight:500;
-	 		}
-	 		&.normal {
-	 			li {
-	 				font-size: $fontsize-base + $impaired-vision-increase; 
-				}
-			} 
-			&.large {
-				li {
-					font-size: $fontsize-h3 + $impaired-vision-increase; 
-				}
-			} 
-		}
-		
-		
-		// tables
-		table {
-	    	td, th {
-		    	font-size: $fontsize-small + $impaired-vision-increase;
-		    }
-		    
-		    &.label-item,
-		    &.label-r-l {
-				td, th {
-					font-size: $fontsize-base + $impaired-vision-increase; 
-				}
+				font-size: $fontsize-h3 + $impaired-vision-increase; 
+			}
+		} 
+	}
+	
+	
+	// tables
+	table {
+    	td, th {
+	    	font-size: $fontsize-small + $impaired-vision-increase;
+	    }
+	    
+	    &.label-item,
+	    &.label-r-l {
+			td, th {
+				font-size: $fontsize-base + $impaired-vision-increase; 
 			}
 		}
-		
 	}
+	
 }
+
 
 
