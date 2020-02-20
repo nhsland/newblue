@@ -5,8 +5,6 @@
 .oe-pathstep-popup {
 	position:absolute;
 	// JS positioned
-	top:0;
-	right:0;
 	z-index:$oe-z-tooltip;
 	background:$oe-tooltip-bg;
 	border:1px solid $oe-text-highlight;
