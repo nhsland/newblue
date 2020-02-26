@@ -24,10 +24,15 @@
 	// wrap all the data content
 	// to handle overflow
 	.quick-overview-content {
-		
 		max-height: 300px;
 		overflow-y: auto;
 		padding:0 5px 0 0; // for scroll bars
+		
+		.subtitle {
+			@include font-size(13);
+			font-weight:$oe-font-medium;
+			margin:10px 0;
+		}
 	}
 	
 	// quick view can be views as a side-panel
