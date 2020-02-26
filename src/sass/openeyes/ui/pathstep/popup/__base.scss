@@ -3,7 +3,7 @@
 //
 
 .oe-pathstep-popup {
-	position:absolute;
+	position:fixed;
 	// JS positioned
 	z-index:$oe-z-tooltip;
 	background:$oe-tooltip-bg;
