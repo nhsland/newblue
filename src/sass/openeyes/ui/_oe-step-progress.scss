@@ -6,11 +6,20 @@
 // should be <ul>
 .oe-step-progress {
 	display:inline-block;
+	text-align: center;
+	
+	&.pad {
+		margin:0 15px;
+	}
 	
 	li {
-		position: relative;
-		display:inline-block;
-		padding:3px 9px;
+		position:relative;
+		display:inline-flex;
+		align-items: center;
+		vertical-align: top;
+		line-height:normal; // watch out for this, it can mess up vertical layouts
+		height:30px;
+		padding:0 12px 1px 12px; // flex layout 'looks' slightly below center the 2px padding visually corrects this
 		margin:0;
 		border: 2px solid $oe-text-light;
 		border-right: none;
@@ -22,6 +31,10 @@
 			border-radius: 3px 0 0 3px;
 		}
 		
+		.oe-i-e {
+			cursor: pointer;
+			box-shadow: 0 0 3px 1px rgba($oe-text,0.4);
+		}
 		
 		text-align: center;
 		@include font-size(13);
@@ -44,7 +57,7 @@
 			&:after {
 				top: 50%;
 				left: 100%;
-				margin-top: -13px;
+				margin-top: -15px;
 				content: " ";
 				position: absolute;
 				pointer-events: none;
@@ -52,12 +65,13 @@
 				height: 0;
 				width: 0;
 				border: solid transparent;
-				border-top-width: 13px;
-				border-bottom-width: 13px;
-				border-left: 13px solid $oe-text-light;
+				border-top-width: 15px;
+				border-bottom-width: 15px;
+				border-left: 15px solid $oe-text-light;
 				
 				transform: scale(0.5, 1);
 				transform-origin: left;
+				
 			}
 		}
 		
