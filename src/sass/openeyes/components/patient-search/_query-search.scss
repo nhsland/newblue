@@ -1,0 +1,16 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+
+.oe-query-search {
+	// new Query search to replace the Advanced Search
+	// uses the new default "oe-full-content subgrid" layout
+	// with the following tweaks
+	.oe-full-main {
+		.plot-options {
+			@include font-size(12);
+			color:$oe-text-light;
+		}
+	}
+}

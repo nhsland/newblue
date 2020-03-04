@@ -6,8 +6,7 @@
 // should be <ul>
 .oe-step-progress {
 	display:inline-block;
-	text-align: center;
-	
+
 	&.pad {
 		margin:0 15px;
 	}
@@ -16,7 +15,7 @@
 		position:relative;
 		display:inline-flex;
 		align-items: center;
-		vertical-align: top;
+		vertical-align: top; // this sorts the vertical layout
 		line-height:normal; // watch out for this, it can mess up vertical layouts
 		height:30px;
 		padding:0 12px 1px 12px; // flex layout 'looks' slightly below center the 2px padding visually corrects this
@@ -31,6 +30,7 @@
 			border-radius: 3px 0 0 3px;
 		}
 		
+		// highlight the icon in a step
 		.oe-i-e {
 			cursor: pointer;
 			box-shadow: 0 0 3px 1px rgba($oe-text,0.4);
