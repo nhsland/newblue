@@ -29,13 +29,18 @@
 		}
 		
 		// control width of sections
-		.search-query {			
-			width:350px;
+		.all-searches {
+			width:420px;
 			margin:0 30px 0 0;
 		}
 		
-		.save-query {
-			width:350px;
+		.search-queries {			
+			width:360px;
+			margin:0 30px 0 0;
+		}
+		
+		.show-query {
+			width:360px;
 		}
 		
 		table {
@@ -51,8 +56,11 @@
 					}
 				}
 				td {
-					padding:4px 8px 4px 0;
+					vertical-align: middle;
+					padding:6px 8px 6px 0;
 					@include font-size(12);	
+					line-height: 1.4;
+					
 				}
 			}
 		}
