@@ -8,7 +8,7 @@
 	// uses the new default "oe-full-content subgrid" layout
 	// with the following tweaks
 	.oe-full-main {
-		.plot-options {
+		.results-options {
 			@include font-size(12);
 			color:$oe-text-light;
 		}

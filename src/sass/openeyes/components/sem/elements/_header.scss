@@ -40,19 +40,22 @@
 		
 		// a new feature to change an Element (show more features)
 		// default "simple" / "complex"... make this a toggle button?
-		// set up as <div> to avoid <button> cascades
-		.complexity-btn {
+		// use on a <button> to be semantically correct
+		.change-complexity {
 			cursor: pointer;
 			display:inline-block;
 			@include font-size(11);
+			font-weight: $oe-font-medium;
 			color:$oe-element-headers;
 			background: $oe-btn-default;
-			padding:2px 6px;
+			height:auto; // override button 
+			vertical-align: text-top;
+			padding:2px 6px 3px 6px;
 			margin:0 0 0 10px; 
-			border-radius:3px;
+			border-radius:3px !important;
 			
 			@include media($oe-extended-browser-size){
-				margin-top:5px;
+				margin-top:8px;
 			}
 			
 			// .active class allows JS control
