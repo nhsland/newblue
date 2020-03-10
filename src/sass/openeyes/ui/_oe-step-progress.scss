@@ -77,12 +77,23 @@
 		
 		&.cancelled {
 			color:rgba($oe-text-light,0.5);
-			background: linear-gradient(45deg, 
-				rgba(0,0,0,0) calc(50% - 5px), 
-				$oe-btn-red calc(50%), 
-				rgba(0,0,0,0) calc(50% + 5px)
-			);
+			background: 
+				linear-gradient(
+					135deg, 
+					rgba(0,0,0,0) calc(50% - 5px), 
+					$oe-btn-red calc(50%), 
+					rgba(0,0,0,0) calc(50% + 5px)
+				);
 		}
+		
+		&.redated {
+			background: radial-gradient( circle at center, 
+					rgba(0,0,0,0) 40%,
+					$oe-alert-orange 70%, 
+					rgba(0,0,0,0) 90%
+				)
+		}
+		
 	}
 }	
 

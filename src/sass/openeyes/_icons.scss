@@ -173,16 +173,17 @@
 	&.move				{ @include oe3-icons('move'); }
 	&.child-arrow 		{ @include oe3-icons('child-arrow'); }
 	&.menu 				{ @include oe3-icons('menu'); }
-	&.trash 				{ @include oe3-icons('trash'); }
+	&.trash 			{ @include oe3-icons('trash'); }
 	&.trash-blue 		{ @include oe3-icons('trash-blue'); }
-	&.print 				{ @include oe3-icons('print'); }
+	&.print 			{ @include oe3-icons('print'); }
 	&.search 			{ @include oe3-icons('search'); }
 	&.zoom-in 			{ @include oe3-icons('zoom-in'); }
 	&.filter 			{ @include oe3-icons('filter'); }
 	&.remove 			{ @include oe3-icons('remove'); }
-	&.remove-circle 		{ @include oe3-icons('remove-circle'); }
-	&.duplicate 			{ @include oe3-icons('duplicate'); }
+	&.remove-circle 	{ @include oe3-icons('remove-circle'); }
+	&.duplicate 		{ @include oe3-icons('duplicate'); }
 	&.info 				{ @include oe3-icons('info'); }
+	&.info-blue 		{ @include oe3-icons('info-blue'); }
 	&.eye 				{ @include oe3-icons('eye'); }
 	&.eye-circle 		{ @include oe3-icons('eye-circle'); }
 	&.comments 			{ @include oe3-icons('comments'); }
@@ -207,6 +208,7 @@
 	&.audit-trail 		{ @include oe3-icons('audit-trail'); }
 	&.download 			{ @include oe3-icons('download'); }
 	&.asterisk			{ @include oe3-icons('asterisk'); }
+	&.asterisk-blue		{ @include oe3-icons('asterisk-blue'); }
 	&.pencil			{ @include oe3-icons('pencil'); }
 	&.exclamation		{ @include oe3-icons('exclamation'); }
 	&.male				{ @include oe3-icons('male'); }

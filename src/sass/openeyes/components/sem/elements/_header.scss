@@ -48,8 +48,8 @@
 			font-weight: $oe-font-medium;
 			color:$oe-element-headers;
 			background: $oe-btn-default;
-			height:auto; // override button 
-			vertical-align: text-top;
+			height:auto; // override button defaults
+			vertical-align: text-top; // override button defaults
 			padding:2px 6px 3px 6px;
 			margin:0 0 0 10px; 
 			border-radius:3px !important;

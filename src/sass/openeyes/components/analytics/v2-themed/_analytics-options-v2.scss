@@ -1,0 +1,76 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Analytics v2
+// v2 layout is THEMED
+
+.analytics-options-v2 {
+	
+	
+	.specialty {
+		@include font-size(20);
+		font-weight:$oe-font-light;
+		margin:10px 0 10px 0;
+	}
+	
+	.service {
+		position:relative;
+		margin:10px 0 20px 0;
+		
+		.service-selected {
+			@include font-size(16);
+			font-weight:300;
+		}
+	}
+	
+	// <ul> nested lists
+	.charts {			
+		margin:15px 0 0 0;
+		
+		li {
+			@include font-size(13);
+			color:$oe-dark-text-light;
+			padding:0 0 8px 0;
+			
+			&:last-child {
+				padding-bottom:0;
+			}
+			
+			// nested 
+			ul {
+				margin:8px 0 0 4px;
+			}
+		}	
+	}
+	
+	// 
+	table.custom-filters {
+		width:100%;
+		margin:10px 0;
+		
+		tbody {
+			tr {
+				border-bottom:1px solid $oe-line;
+				td {
+					padding:5px 0;
+					&:first-child {
+						@include font-size(10);
+						color:$oe-text-light;
+						padding-right:5px;
+					}
+					
+					&:last-child {
+						text-align: right;
+					}
+				}				
+			}
+		}
+		
+		
+	}
+	
+}
+
+
+

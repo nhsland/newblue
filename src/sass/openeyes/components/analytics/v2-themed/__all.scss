@@ -2,21 +2,12 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Analytics
-
-@import "_base";
-@import "analytics-header";
-@import "analytics-options";
-@import "analytics-charts";
-@import "analytics-patient-list";
-@import "analytics-table-pro";
-
 // Analyitcs themed
 // Orginally Analyitcs was locked in 'pro-theme'
 // as part of introducing Plot.ly to IDG theme-ing was
-// added but still providing support for the old analyics
-@import "v2-themed/_all";
+// added ... it also uses the the standard layout classes
+@import "analytics-options-v2";
+@import "analytics-plot-overview";
 
-
-
-
+// over ride plotly styles!
+@import "plotly-notification";
