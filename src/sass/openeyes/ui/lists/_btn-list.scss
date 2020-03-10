@@ -51,17 +51,20 @@ ul {
 }
 
 // Although nicely standardised, the problem occured with it's use
-// in the new Event Type filter pop out, which needs to be on button blue! 
-
+// in the new Event Type filter pop out & the old filter both of which 
+// needs to be on a blue
+ 
+.filter-options-popup,
 .sidebar-filter-options {
 	ul.btn-list {
 		li {
-			color:#fff;
-			background:$oe-btn-blue-hint; 
+			color:rgba(255,255,255,0.5);
+			background:rgba(0,0,0,0.2); 
 			
 			&:hover, &:focus, &:active, 
 			&.selected {
-				background:$oe-btn-blue-dark;
+				color:rgb(255,255,255);
+				background:rgba(0,0,0,0.7); 
 			}
 			
 		}
