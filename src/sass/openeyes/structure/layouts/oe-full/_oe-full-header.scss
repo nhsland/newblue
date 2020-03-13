@@ -9,8 +9,11 @@
 .oe-full-header {
 	position:relative;
 	background:$oe-grey;
-	padding:0 0 0 20px;
+	padding:0 20px;
+	
+	@include flex(space-between, center);
 
+	// left hand side
 	.title {
 		color:$oe-text-light;
 		text-transform: uppercase;
@@ -22,11 +25,18 @@
 			text-transform: capitalize;
 		}
 		
+		&.allcaps {
+			text-transform: uppercase;
+		}
+
 		b, strong {
 			font-weight:400;
 		}
 	}
 	
+	// right hand options/actions/extras
+	// .options-right { Nothing needed as yet }
+
 	// create 'tab' buttons (like Event Header)
 	@include buttons {
 		vertical-align: top; // overwrite default 'bottom' to fix alignment issues

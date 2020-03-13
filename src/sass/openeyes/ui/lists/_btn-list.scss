@@ -58,13 +58,14 @@ ul {
 .sidebar-filter-options {
 	ul.btn-list {
 		li {
+			padding:0 10px;
 			color:rgba(255,255,255,0.5);
 			background:rgba(0,0,0,0.2); 
 			
 			&:hover, &:focus, &:active, 
 			&.selected {
 				color:rgb(255,255,255);
-				background:rgba(0,0,0,0.7); 
+				background:rgba(0,0,100,0.7); 
 			}
 			
 		}

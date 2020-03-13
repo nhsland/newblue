@@ -6,8 +6,7 @@
 // v2 layout is THEMED
 
 .analytics-options-v2 {
-	
-	
+
 	.specialty {
 		@include font-size(20);
 		font-weight:$oe-font-light;
@@ -20,7 +19,7 @@
 		
 		.service-selected {
 			@include font-size(16);
-			font-weight:300;
+			font-weight:$oe-font-light;
 		}
 	}
 	

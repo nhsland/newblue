@@ -7,7 +7,7 @@
 // in a container
 .spinner-overlay {
 	position: relative;
-	display:inline-block;  // make container wrap exactly it's contents
+	display:inline-block;  // make container fill exactly it's contents
 	.spinner {
 		z-index:1;
 	}
@@ -60,8 +60,16 @@
 		border: 2px solid $oe-spinner;
 		border-top-color: rgba($oe-spinner,0);
 		animation: spinner .8s linear infinite;
-  	}
-  	
-  }
-  
+  	}	
+  } 
+}
+
+// only use in oe-popup-wrap, can then use flex to position itself
+.spinner-message {
+	margin:auto; /* flex (magic) */ 
+	@include font-size(14);
+	font-weight:400;
+	color:$oe-spinner;
+	position: relative;
+	top: 60px;
 }
