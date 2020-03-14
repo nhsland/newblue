@@ -47,5 +47,12 @@
 	&.examination-search-active {
 		padding-top:70px;
 	}
+
+	// Enable smooth scrolling on Events for 
+	// anchor links to elements, a nice enhancement
+	scroll-behavior: smooth;
+	@media screen and (prefers-reduced-motion: reduce) {
+		scroll-behavior: auto;
+	} 
 	
 } 

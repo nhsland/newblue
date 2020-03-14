@@ -10,6 +10,7 @@
 
 // <ul>
 .oescape-icon-btns {
+	display: inline-block;
 	// <li>
 	.icon-btn {
 		display: inline-block;
@@ -25,7 +26,7 @@
 			@include flex(center, center);
 			
 			@include font-size(14);
-			font-weight: 300;
+			font-weight: $oe-font-light;
 			color:$oe-dark-text;
 			background:$oe-dark-blue-dark; 
 			
@@ -67,11 +68,9 @@
 					}
 				}
 			}
-			
-			
-			
 		}
 	}
 }
+
 	
 

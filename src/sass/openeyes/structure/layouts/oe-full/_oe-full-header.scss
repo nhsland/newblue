@@ -18,7 +18,7 @@
 		color:$oe-text-light;
 		text-transform: uppercase;
 		@include font-size(24);
-		font-weight:300;
+		font-weight:$oe-font-light;
 		line-height:$oe-event-header-height;
 		
 		&.wordcaps {
@@ -30,8 +30,17 @@
 		}
 
 		b, strong {
-			font-weight:400;
+			font-weight:$oe-font-medium;
 		}
+		
+		// Analytics
+		&.lightcaps {			
+			font-weight:100;
+			b, strong {
+				font-weight:300;
+			}
+		}
+		
 	}
 	
 	// right hand options/actions/extras
@@ -51,4 +60,17 @@
 			}
 		}
 	}
+	
+	// ul
+	// increase the buttons when used in the header
+	.oescape-icon-btns {
+		margin:0 10px;
+		.icon-btn a {
+			height: $oe-event-header-height;
+			width: $oe-event-header-height;
+			@include font-size(15);
+			font-weight: $oe-font-medium;
+		}
+	}
+	
 }

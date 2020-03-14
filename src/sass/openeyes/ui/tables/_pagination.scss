@@ -12,6 +12,8 @@
 	// Flex: justify-content (h), align-items (v)
 	@include flex(flex-end, center);
 	
+	white-space: nowrap;
+	
 	// style consistently
 	
 	color:$oe-text-light;
