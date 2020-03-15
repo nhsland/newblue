@@ -16,6 +16,8 @@ table {
 		// provide vertical spacing around table by default
 		// seems to work well...
 		margin:20px 0 10px 0;
+		
+		&.no-pad,
 		&.no-padding {
 			margin:0 0 0 0;
 		}

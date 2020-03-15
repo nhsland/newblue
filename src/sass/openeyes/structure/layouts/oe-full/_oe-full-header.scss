@@ -65,6 +65,7 @@
 	// increase the buttons when used in the header
 	.oescape-icon-btns {
 		margin:0 10px;
+		vertical-align: middle;
 		.icon-btn a {
 			height: $oe-event-header-height;
 			width: $oe-event-header-height;
