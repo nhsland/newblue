@@ -1,5 +1,16 @@
+/**
+OE Layout helper for Plot.ly JS
+*/
 // https://plot.ly/javascript/reference/
 const oePlotly = {
+	/**
+	* Some elements require colour setting to be made
+	* in the data (trace) objects. This provides a way to 
+	* theme and standardise 
+	* @param {String} plotlyElement, ref for plotly colour object e.g. "error_y"  for: error_y.color 
+	* @param {String} theme - OE Theme setting "dark" || "light"?
+	* @returns {String} colour for request element (or "pink" if fails)
+	*/
 	getColorFor: function(plotlyElement, theme){
 		// create a way to consistently style the Plot.ly elements
 		// based on theme: "dark" or "light"
@@ -13,27 +24,46 @@ const oePlotly = {
 		}
 		
 	},
-	
+	/**
+	* Build Plotly layout: colours and layout based on theme and simplified settings
+	* @param {Object} options - quick reminder of 'options':
+	{
+		theme: "dark" || "light",  OE Theme  
+		colors: 'varied', // Optional - colour settings for traces, currenly only "varied"
+		plotTitle: false, // false || String
+		legend: true, // Optional
+		titleX: 'Weeks', // Optional
+		titleY: 'VA (change) from baseline', // Optional
+		numTicksX: 20, // Required
+		numTicksY: 20, // Required
+		rangeX: [-20, 220], // Optional
+		rangeY: [70, 110], // Optional
+		y2: {title:'IOP (mm Hg)'}, // Optional
+		rangeslider: true, // Optional 
+		zoom: false, // Optional 
+	}
+	* @returns {Object} layout themed for Plot.ly
+	*/
 	getLayout: function(options){
-		// set up layout colours based on theme: "dark" or "light"
+		// set up layout colours based on OE theme settings: "dark" or "light"
 		const dark = options.theme === "dark" ? true : false;
 		
-		// build a layout obj
+		// build the Plotly layout obj
 		let layout = {
 			hovermode:'closest', // get single point rather than all of them
 			autosize:true, // onResize change chart size
 			margin: {
 				l:60, // 80 default, if Y axis has a title this will need more
-				r:60,
+				r:60, // change if y2 axis is added
 				t:30, // if there is a title will need upping to 60
 				b:80, // allow for xaxis title
 				pad:2, // px between plotting area and the axis lines
-				autoexpand:true, // turn off auto margin expansion computations
+				autoexpand:true, // auto margin expansion computations
 			},
-			// this is the chart area. 
-			// had this set at opacity 0.5 for both, to hide the 'paper' set to: 0
+			// Paper = chart area. Set at opacity 0.5 for both, to hide the 'paper' set to: 0
 			paper_bgcolor: dark ? 'rgba(30,46,66,0.5)' : 'rgba(255,255,255,0.5)',
-			// plot area
+			
+			// actual plot area
 			plot_bgcolor: dark ? 'rgb(10,10,30)' : '#fff',
 			
 			// base font settings
@@ -43,9 +73,9 @@ const oePlotly = {
 				color: dark ? '#aaa' : '#333',
 			},
 			
-			// needs setting up to layout legend better but for now...
+			// legend?
 			showlegend: options.legend,
-			
+			// if so, it will be like this:
 			legend: {
 				font: {
 					size: 10
@@ -55,27 +85,33 @@ const oePlotly = {
 				yanchor:'top',
 				x:1,
 				y:1,
-				
 			}, 
 			
-			
+			// default set up for hoverlabels
 			hoverlabel: {
 				bgcolor: dark ? "#003" : '#fff',
 				bordercolor: dark ? '#003' : '#00f',
 				font: {
-					size:15, // override base font
+					size:13, // override base font
 					color: dark ? '#63d7d6' : '#00f',
 				}
 			},
+			
 		};
 		
 		/*
-		Colours
+		Colour theme for Plotly?
 		*/
 		if(options.colors){
 			switch(options.colors){
 				case "varied":
 					layout.colorway = dark ? ['#0a83ea', '#18949f', '#0a0a1e','#3f0aea'] : ['#0a2aea', '#ea0a8e', '#00b827','#890aea'];
+					// override default settings and let Plotly use trace colours
+					layout.hoverlabel = {
+						font: {
+							size:13,
+						}
+					};
 				break;	
 			}
 			
@@ -88,10 +124,9 @@ const oePlotly = {
 		Plot title?	
 		*/
 		if(options.plotTitle){
-			
 			layout.title = {
 				text: options.plotTitle,
-				xref: 'paper', //  "container" | "paper"
+				xref: 'paper', //  "container" | "paper" (as in, align too)
 				yref: 'container', 
 				x: 0, // 0 - 1
 				y: 0.96,
@@ -100,7 +135,7 @@ const oePlotly = {
 					// color:'#f00' - can override base font
 				}, 		
 			};
-			
+			// adjust the margin area
 			layout.margin.t = 60;
 		}
 
@@ -137,6 +172,7 @@ const oePlotly = {
 			layout.yaxis.fixedrange = true;
 		}
 		
+		// manually set axes data range
 		if(options.rangeX){
 			layout.xaxis.range = options.rangeX;
 		}
@@ -144,7 +180,6 @@ const oePlotly = {
 		if(options.rangeY){
 			layout.yaxis.range = options.rangeY;
 		}
-		
 		
 		// add titles?
 		if(options.titleX){
@@ -169,32 +204,45 @@ const oePlotly = {
 			layout.margin.l = 80;
 		}
 		
-		// different Y axis? 
+		// two Y axes? 
 		if(options.y2){
 			layout.yaxis2 = Object.assign({},axis);
 			layout.yaxis2.nticks = options.numTicksY;
 			layout.yaxis2.overlaying = 'y';
 			layout.yaxis2.side = 'right';
 			
+			// and need a title as well??
 			if(options.y2.title){
-			layout.yaxis2.title = {
-				text: options.y2.title,
-				standoff: 15, // px offset 
-				font: {
-					size:dark ? 12 : 13,
+				layout.yaxis2.title = {
+					text: options.y2.title,
+					standoff: 15, // px offset 
+					font: {
+						size:dark ? 12 : 13,
+					}
 				}
+				// make space for Y title
+				layout.margin.r = 80;
 			}
-			// make space for Y title
-			layout.margin.r = 80;
-		}
-			
-			
 		}
 		
+		// add range slider
+		if(options.rangeslider){
+			layout.xaxis.rangeslider = {
+				thickness: 0.1, // 0 - 1, default 0.15 (height or area)
+			}
+			// adjust the margin because it looks better:
+			layout.margin.b = 40;
+		}
 		
+		// ok, all done
 		return layout;
 	}, 
-	
+	/**
+	* Build Regression lines for scatter data
+	* @param {Array} values_x 
+	* @param {Array} values_y
+	* @returns {Object} - {[x],[y]}
+	*/
 	findRegression: function(values_x, values_y) {
 		// Find Line By Least Squares
 	    let sum_x = 0,
