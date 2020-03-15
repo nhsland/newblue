@@ -227,9 +227,24 @@ const oePlotly = {
 		
 		// add range slider
 		if(options.rangeslider){
-			layout.xaxis.rangeslider = {
-				thickness: 0.1, // 0 - 1, default 0.15 (height or area)
+			if(dark){
+				// this is a pain.
+				// can't find a setting to change the slide cover color!
+				// it's set at a black opacity, so to make this usable:
+				layout.xaxis.rangeslider = {
+					bgcolor: layout.paper_bgcolor,
+					borderwidth: 1,
+					bordercolor: layout.plot_bgcolor,
+					thickness: 0.1, // 0 - 1, default 0.15 (height of area)
+				}
+			} else {
+				// Plot.ly handles this well in 'light' theme mode
+				layout.xaxis.rangeslider = {
+					thickness: 0.1, // 0 - 1, default 0.15 (height of area)
+				}
 			}
+			
+			
 			// adjust the margin because it looks better:
 			layout.margin.b = 40;
 		}
