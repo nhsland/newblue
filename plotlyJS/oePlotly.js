@@ -44,12 +44,20 @@ const oePlotly = {
 			},
 			
 			// needs setting up to layout legend better but for now...
-			showlegend: false,
-			/*
+			showlegend: options.legend,
+			
 			legend: {
-				bgcolor: '#cff',
+				font: {
+					size: 10
+				},
+				orientation: 'h', // 'v' || 'h'				
+				xanchor:'right',
+				yanchor:'top',
+				x:1,
+				y:1,
+				
 			}, 
-			*/
+			
 			
 			hoverlabel: {
 				bgcolor: dark ? "#003" : '#fff',
