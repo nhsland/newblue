@@ -20,7 +20,7 @@ const oePlotly = {
 				return dark ? 'rgb(70,70,80)' : 'rgb(120,120,130)';
 			
 			default: 
-				return 'pink'; // no match, flag as pink!
+				return 'pink'; // no match, flag failure to match as pink!
 		}
 		
 	},
@@ -34,7 +34,7 @@ const oePlotly = {
 		legend: true, // Optional
 		titleX: 'Weeks', // Optional
 		titleY: 'VA (change) from baseline', // Optional
-		numTicksX: 20, // Required
+		numTicksX: 20, // Required (unless someone suggests a better way)
 		numTicksY: 20, // Required
 		rangeX: [-20, 220], // Optional
 		rangeY: [70, 110], // Optional
@@ -181,7 +181,7 @@ const oePlotly = {
 			layout.yaxis.range = options.rangeY;
 		}
 		
-		// add titles?
+		// add titles to Axes?
 		if(options.titleX){
 			layout.xaxis.title = {
 				text: options.titleX,
@@ -243,8 +243,6 @@ const oePlotly = {
 					thickness: 0.1, // 0 - 1, default 0.15 (height of area)
 				}
 			}
-			
-			
 			// adjust the margin because it looks better:
 			layout.margin.b = 40;
 		}
