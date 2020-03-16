@@ -13,6 +13,8 @@
 		margin:10px 0 10px 0;
 	}
 	
+	// replaced by 'top-filter'
+	// but kept to support it
 	.service {
 		position:relative;
 		margin:10px 0 20px 0;
@@ -22,6 +24,21 @@
 			font-weight:$oe-font-light;
 		}
 	}
+	
+	// identical to serivce, but renamed because it's
+	// use may become more generic
+	.top-filter {
+		position:relative;
+		margin:10px 0 20px 0;
+		
+		// don't use just 'selected' (or it gets picked up by filter options!)
+		.selected-filter {
+			@include font-size(16);
+			font-weight:$oe-font-light;
+		}
+	}
+	
+	
 	
 	// <ul> nested lists
 	.charts {			

@@ -17,7 +17,7 @@ const oePlotly = {
 		const dark = theme === "dark" ? true : false;
 		switch(plotlyElement){
 			case 'error_y': 
-				return dark ? 'rgb(70,70,80)' : 'rgb(120,120,130)';
+				return dark ? '#5b6c77' : '#7da7cb';
 			
 			default: 
 				return 'pink'; // no match, flag failure to match as pink!
@@ -27,21 +27,21 @@ const oePlotly = {
 	/**
 	* Build Plotly layout: colours and layout based on theme and simplified settings
 	* @param {Object} options - quick reminder of 'options':
-	{
-		theme: "dark" || "light",  OE Theme  
-		colors: 'varied', // Optional - colour settings for traces, currenly only "varied"
-		plotTitle: false, // false || String
-		legend: true, // Optional
-		titleX: 'Weeks', // Optional
-		titleY: 'VA (change) from baseline', // Optional
-		numTicksX: 20, // Required (unless someone suggests a better way)
-		numTicksY: 20, // Required
-		rangeX: [-20, 220], // Optional
-		rangeY: [70, 110], // Optional
-		y2: {title:'IOP (mm Hg)'}, // Optional
-		rangeslider: true, // Optional 
-		zoom: false, // Optional 
-	}
+{
+	theme: "dark" || "light",  // OE Theme  
+	colors: 'varied', // Optional - colour settings for traces, currenly only "varied"
+	plotTitle: false, // false || String
+	legend: true, // Optional
+	titleX: 'Weeks', // Optional
+	titleY: 'VA (change) from baseline', // Optional
+	numTicksX: 20, // Required (unless someone suggests a better way)
+	numTicksY: 20, // Required
+	rangeX: [-20, 220], // Optional
+	rangeY: [70, 110], // Optional
+	y2: {title:'IOP (mm Hg)'}, // Optional
+	rangeslider: true, // Optional 
+	zoom: false, // Optional 
+}
 	* @returns {Object} layout themed for Plot.ly
 	*/
 	getLayout: function(options){
@@ -210,6 +210,7 @@ const oePlotly = {
 			layout.yaxis2.nticks = options.numTicksY;
 			layout.yaxis2.overlaying = 'y';
 			layout.yaxis2.side = 'right';
+			layout.yaxis2.showgrid = false;
 			
 			// and need a title as well??
 			if(options.y2.title){
