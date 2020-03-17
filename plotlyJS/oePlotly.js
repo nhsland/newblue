@@ -7,7 +7,7 @@ const oePlotly = {
 	* Some elements require colour setting to be made
 	* in the data (trace) objects. This provides a way to 
 	* theme and standardise 
-	* @param {String} plotlyElement, ref for plotly colour object e.g. "error_y"  for: error_y.color 
+	* @param {String} colour type e.g. "error_y"  for: error_y.color 
 	* @param {String} theme - OE Theme setting "dark" || "light"?
 	* @returns {String} colour for request element (or "pink" if fails)
 	*/
@@ -16,8 +16,9 @@ const oePlotly = {
 		// based on theme: "dark" or "light"
 		const dark = theme === "dark" ? true : false;
 		switch(plotlyElement){
-			case 'error_y': 
-				return dark ? '#5b6c77' : '#7da7cb';
+			case 'rightEye': return dark ? '#65d235' : '#418c20';
+			case 'leftEye': return dark ? '#ea2b34' : '#da3e43';	
+			case 'error_y': return dark ? '#5b6c77' : '#7da7cb';
 			
 			default: 
 				return 'pink'; // no match, flag failure to match as pink!
@@ -101,7 +102,10 @@ const oePlotly = {
 		
 		/*
 		Colour theme for Plotly?
+		set up as subtle blues
 		*/
+		layout.colorway = dark ? ['#1451b3', '#175ece', '#1a69e5'] : ['#0a4198', '#1451b3', '#175ece'];
+		
 		if(options.colors){
 			switch(options.colors){
 				case "varied":
@@ -115,9 +119,6 @@ const oePlotly = {
 				break;	
 			}
 			
-		} else {
-			// default blues 
-			layout.colorway = ['#0a4198', '#1451b3', '#175ece'];
 		}
 		
 		/*
@@ -298,12 +299,12 @@ const oePlotly = {
 	     */
 	    let result_values_x = [];
 	    let result_values_y = [];
-	
+	    
 	    for (let v = 0; v < values_length; v++) {
 	        x = values_x[v];
 	        y = x * m + b;
-	        result_values_x.push(x);
-	        result_values_y.push(y);
+	        result_values_x.push(parseFloat(Number.parseFloat(x).toFixed(2)));
+	        result_values_y.push(parseFloat(Number.parseFloat(y).toFixed(2)));
 	    }
 	
 	    return {x: result_values_x, y: result_values_y};

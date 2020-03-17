@@ -71,5 +71,10 @@
 	font-weight:400;
 	color:$oe-spinner;
 	position: relative;
-	top: 60px;
+	top: 80px;
+	// make it readable
+	background: rgba($html-bg, 0.5);
+	padding: 10px 12px;
+	border-radius: 5px; 
+	
 }
