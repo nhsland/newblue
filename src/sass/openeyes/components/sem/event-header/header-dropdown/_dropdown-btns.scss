@@ -13,7 +13,7 @@
 			top:$oe-event-header-height;; 
 			right:0;
 			z-index:$oe-z-shortcuts;
-			background:$oe-grey; 
+			background:$oe-btn-blue; 
 			border-top:2px solid $oe-btn-blue;
 		
 			// buttons in the dropdown list
@@ -22,7 +22,13 @@
 			li > .button { 
 				display: inline-block;
 				width: 100%;
+				color:#fff;
 				text-align: left;
+				
+				&:hover, &:focus, &:active {
+					color:#fff;
+					background-color: $oe-btn-blue-dark;
+				}
 			}
 	
 		}
