@@ -71,6 +71,7 @@
 				
 				td {
 					padding:5px 0;
+					font-weight: $oe-font-medium;
 					
 					&:first-child {
 						@include font-size(11);
