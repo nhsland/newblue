@@ -34,8 +34,13 @@
 				 
 				@include below-minimum(){
 					margin-right:5px;
-				}
-				 
+				} 
+			}
+			// if an adder button is flexed next to it's edit content 
+			// the top margin will mess up the layout IF there is only
+			// 1 row of data (i.e 1 table row):
+			.flex-layout > .add-data-actions {
+				margin-top:0;
 			}
 			
 		}
