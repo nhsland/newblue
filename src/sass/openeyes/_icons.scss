@@ -86,13 +86,16 @@
 	&.active,
 	&.no-hover,
 	&.circle-green,	// no hover for coloured graphics	
-	&.circle-amber,			
+	&.circle-amber,
+	&.circle-orange,			
 	&.circle-red,
 	&.triangle-green,
 	&.triangle-amber,
+	&.triangle-orange,
 	&.triangle-red,
 	&.exclamation-green,
 	&.exclamation-amber,
+	&.exclamation-orange,
 	&.exclamation-red,
 	&.tick-green,
 	&.cross-red,
@@ -255,19 +258,22 @@
 	// used in more and more places, therefore
 	// making these also available as icons
 	&.circle-green		{ background-image: url( svg-path('ui/circle-green') ); }
-	&.circle-amber		{ background-image: url( svg-path('ui/circle-orange') ); }
-	&.circle-red			{ background-image: url( svg-path('ui/circle-red') ); }
+	&.circle-amber, 
+	&.circle-orange		{ background-image: url( svg-path('ui/circle-orange') ); }
+	&.circle-red		{ background-image: url( svg-path('ui/circle-red') ); }
 	
 	// triangles G / A / R
 	// Patient Risk Status
 	&.triangle-green		{ background-image: url( svg-path('ui/triangle-green') ); }
-	&.triangle-amber		{ background-image: url( svg-path('ui/triangle-amber') ); }
+	&.triangle-amber, 
+	&.triangle-orange	{ background-image: url( svg-path('ui/triangle-amber') ); }
 	&.triangle-red		{ background-image: url( svg-path('ui/triangle-red') ); }
 
 	// exclamation mark (amber, red)
 	// ONLY for NHS Number status
 	&.exclamation-green		{ background-image: url( svg-path('ui/exclamation-green') ); }
-	&.exclamation-amber		{ background-image: url( svg-path('ui/exclamation-orange') ); }
+	&.exclamation-amber,
+	&.exclamation-orange	{ background-image: url( svg-path('ui/exclamation-orange') ); }
 	&.exclamation-red		{ background-image: url( svg-path('ui/exclamation-red') ); }
 	
 	// RED warning triangle
