@@ -11,5 +11,21 @@
 	.groupings {
 		padding-bottom:30px;
 	}
+	
+	// v2 filter drop down
+	.sidebar-grouping {
+		padding:5px 0 3px 0;
+		// <select>
+		.grouping-picker {
+			@include font-size(12);
+			color: $oe-dark-user-input-text;
+			background-color: $oe-dark-user-inputs;
+			width:96%;
+			height:26px;
+			margin:0 2%;
+		}
+	}
+	
+	
 }
 
