@@ -11,25 +11,22 @@
 	// Select a Doodle...
 	.ed3-doodle-selector {
 		
-		// assign to CSS Grid area:
-		grid-area: doodles;
 		
 		background: $oe-ed3-panels;
 		// create a border
-		padding:0 $ed3-border $ed3-border $ed3-border; 
+		//padding:0 $ed3-border $ed3-border $ed3-border; 
 		
-		// can't use margin because of flex
-		// but this will work:
-		border-left:5px solid $oe-ed3-app-blue;
+		
 		
 		.ed-doodle-filters {
-			@include flex(space-between, center);
-			height:$ed3-top-panel-height;
+			@include flex(center, space-between);
+			height:$ed3-button-height;
+			padding:0 $ed3-padding;
 		}
 		
 		.ed-doodle-toolbox {			
 			.doodle-box {
-				height:435px; // matches canvas height (but could be more)
+				height:#{480px - $ed3-button-height};  // 480px? see ed3-grid!
 				overflow-y: auto;
 				overflow-x: hidden;
 				// <ul>
@@ -40,7 +37,6 @@
 					&.single-column {
 						column-count:unset;
 					}
-					
 					
 					li {
 						@include font-size(10);
@@ -57,8 +53,8 @@
 						text-overflow: ellipsis;
 						
 						&:hover, &:focus, &:active {
-							background:#fff;
-							color:rgb(30,30,30);
+							background:#118afb; // v2 button color! ;)
+							color:#fff;
 						}
 						
 					}

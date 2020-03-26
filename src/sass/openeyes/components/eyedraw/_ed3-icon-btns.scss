@@ -13,14 +13,12 @@
 	// <div>
 	.close-icon-btn,
 	.save-icon-btn {
-		position: absolute;
+		position:absolute;
 		bottom:0;
-		height:32px; // large button height		
-		
-		// Flex: justify-content (h), align-items (v)
-		@include flex(center, center);
-		
+		height: $ed3-button-height;
 		cursor: pointer;
+		
+		@include flex(center, center);
 	}
 	
 	.close-icon-btn {
@@ -31,13 +29,13 @@
 			background-color:$oe-btn-blue;
 		}
 	}
-	
+
 	// <div>
 	// icon + text message
 	.save-icon-btn {
-		left:0;
+		left: 0;
 		width: calc(100% - 40px);
-		
+	
 		@include font-size(13);
 		font-weight:300;
 		color:rgb(255,255,255);
@@ -47,5 +45,6 @@
 			background-color:$oe-btn-green;
 		}
 	}
+	
 	
 }

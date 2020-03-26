@@ -10,7 +10,7 @@
 			background-color:$oe-dark-line;
 			
 			.event-details {
-				@include flex(space-between,center);
+				@include flex(center, space-between);
 				padding:0 5px 0 0;
 				
 				.other-user {

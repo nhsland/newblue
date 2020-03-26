@@ -14,8 +14,7 @@
 	left:180px; 
 	height:$oe-header-height;
 	
-	// Flex: justify-content (h), align-items (v)
-	@include flex(flex-start, center);
+	@include flex(center, flex-start);
 	
 	@include font-size(16);
 	color:$oe-dark-text-light; 	// not themed

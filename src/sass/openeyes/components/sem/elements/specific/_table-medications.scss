@@ -30,7 +30,7 @@
 				// use a custom class to layout all the
 				// different input methods
 				.flex-meds-inputs {
-					@include flex(flex-start,center);
+					@include flex(center, flex-start);
 					margin-bottom:2px;
 					
 					input,

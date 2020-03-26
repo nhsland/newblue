@@ -11,7 +11,7 @@
 		
 		// layout the 2 main columns:
 		// "theatre-overview" & table.theatre-bookings
-		@include flex(space-between,flex-start);
+		@include flex(flex-start, space-between);
 		
 		// highlighter used to flag data
 		// such as Overbooked number & Urgent Op

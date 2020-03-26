@@ -36,10 +36,11 @@
 
 // ------------------------------ Patterns
 // Flex
-@mixin flex($horizontal,$vertical){
+// vertical | horizontal
+@mixin flex($v,$h){
 	display:flex;
-	justify-content: $horizontal;
-	align-items: $vertical;	
+	justify-content: $h;
+	align-items: $v;	
 }
 
 // standardise box-shadows for popups

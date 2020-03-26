@@ -21,7 +21,7 @@
 		// change the ed3 canvas layout
 		.ed3 {
 			.ed3-canvas {
-				@include flex(center, flex-start);
+				@include flex(flex-start, center);
 			}
 		}
 	}
@@ -34,7 +34,7 @@
 			// even if no side view:
 			width:335px; 
 			
-			@include flex(space-between, flex-start);	
+			@include flex(flex-start, space-between);	
 			// .ed3-front {} 	// 200 x 200
 			// .ed3-side {}		// 134 x 200
 			

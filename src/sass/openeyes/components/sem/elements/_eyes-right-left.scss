@@ -17,7 +17,7 @@
 		.element-eyes {
 			
 			// handle the split layour with flex
-			@include flex(space-between, flex-start);
+			@include flex(flex-start, space-between);
 			padding-left: 6px; 	// indent data
 			padding-right: 15px; 	// L / R width 502px
 

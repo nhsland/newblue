@@ -11,15 +11,16 @@
 	// title: 'Right Eye', 'Left Eye', etc
 	// positioned above the popup box
 	.ed3-header {
+		// flex layout for ed-draw & ed3-doodle-context
+		@include flex(center, flex-start);
 		
-		@include flex( flex-start, center );
+		.eye {
+			margin:0 10px 0 0;
+		}
 		
-		padding:0 0 $ed3-padding 0;
-
 		.title {
-			@include font-size(24);
-			font-weight:300;
-			padding:0 0 0 20px;
+			@include font-size(18);
+			font-weight:400;
 		}	
 	}
 }

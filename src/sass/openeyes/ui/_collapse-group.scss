@@ -31,9 +31,10 @@
 			content: "";
 			position: absolute;
 			top:1px;
-			bottom:0;
+			bottom:0;  // fill vertical area
 			right:2px; 	// visual alignment tweak
-			width:15px;
+			width:19px; // allow for bigger icons (if needed)
+			
 			
 			// put the expand collapse icon into the background
 			background: url( svg-icon-path-theme('plus-bold') ) right top no-repeat;

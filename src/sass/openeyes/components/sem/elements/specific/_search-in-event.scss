@@ -105,8 +105,7 @@
 		}
 		
 		.row {
-			// Flex: justify-content (h), align-items (v)
-			@include flex(space-between, flex-start);
+			@include flex(flex-start, space-between);
 		}
 		
 		.index_col_left_lvl1 {

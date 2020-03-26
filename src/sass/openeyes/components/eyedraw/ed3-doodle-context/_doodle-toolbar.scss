@@ -2,21 +2,15 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// ED v3 Element
-// -------------
-
-.element {
+.ed3-doodle-context {
 	
-	// EDIT mode
-	// handle comments and green btn
-	.ed3-data-actions {
+	.active-doodles {
 		
-		@include flex(flex-start, space-between);
-		
-		margin:10px 1px 0 3px;
-		
-	}
-
-	
+		// move forward, back, lock? |  info trash 
+		.doodle-toolbar {
+			@include flex(center, space-between);
+			padding:0 $ed3-padding; 
+			
+		}
+	}	
 }
-

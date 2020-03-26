@@ -2,12 +2,17 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Event
-//
-// Add Event Button to the end of the Elements
+@import "_base";
+@import "ed3-draw";
+@import "doodle-option";
+@import "doodle-group";
+@import "doodle-toolbar";
 
-.event-footer-actions {
-	@include flex(center, flex-end);
-	margin:15px 0;
-}
+
+
+
+ 
+
+
+
 

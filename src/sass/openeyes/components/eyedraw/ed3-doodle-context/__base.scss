@@ -2,21 +2,15 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// ED v3 Element
-// -------------
+.oe-eyedraw-app {	
 
-.element {
-	
-	// EDIT mode
-	// handle comments and green btn
-	.ed3-data-actions {
+	// Context sensitive 
+	.ed3-doodle-context {
+		background: $oe-ed3-panels;
+		margin:0 $ed3-padding;
 		
-		@include flex(flex-start, space-between);
-		
-		margin:10px 1px 0 3px;
-		
+		overflow-y: auto;
 	}
-
-	
 }
-
+		
+		

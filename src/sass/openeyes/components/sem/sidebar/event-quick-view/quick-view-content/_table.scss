@@ -37,7 +37,7 @@
 					td {
 						
 						&.eyes {
-							@include flex(space-between,flex-start);
+							@include flex(flex-start, space-between);
 							.right-eye,
 							.left-eye {
 								width:50%;

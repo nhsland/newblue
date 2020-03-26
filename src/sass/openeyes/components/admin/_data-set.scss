@@ -21,7 +21,7 @@
 			
 			
 			.data-set-header {
-				@include flex(space-between,center);
+				@include flex(center, space-between);
 				
 				position: absolute;
 				top:0;
@@ -37,7 +37,7 @@
 			}
 			
 			.data-set-actions {
-				@include flex(flex-end,center);
+				@include flex(center, flex-end);
 				padding:0 10px 0 0;
 				button {
 					margin-left:5px;

@@ -18,7 +18,7 @@
 		// vs a basic attachment element
 		
 		.attachment-group {
-			@include flex(space-between,flex-start);
+			@include flex(flex-start, space-between);
 			
 			// small PNG of fullsize PNG (or PDF page 1)
 			.attachment-thumbnail {

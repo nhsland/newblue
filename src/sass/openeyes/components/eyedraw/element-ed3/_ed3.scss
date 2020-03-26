@@ -23,7 +23,7 @@
 	
 
 	.ed3 {
-		@include flex(space-between, flex-start);
+		@include flex(flex-start, space-between);
 		padding:3px 1px;
 		background:$oe-ed3-blue; // eyedraw blue
 		border-radius:3px;

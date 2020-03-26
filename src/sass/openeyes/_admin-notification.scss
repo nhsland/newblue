@@ -13,8 +13,7 @@
 	right:0;
 	z-index:999;
 	
-	// Flex: justify-content (h), align-items (v)
-	@include flex(flex-start, center);
+	@include flex(center, flex-start);
 	
 	height:30px;
 	padding:0 15px;

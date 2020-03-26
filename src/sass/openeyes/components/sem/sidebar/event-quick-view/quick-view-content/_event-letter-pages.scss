@@ -14,7 +14,7 @@
 			bottom:10px;
 			
 			
-			@include flex(space-between, flex-start);
+			@include flex(flex-start, space-between);
 			flex-wrap:wrap;
 			
 			overflow-y: auto;

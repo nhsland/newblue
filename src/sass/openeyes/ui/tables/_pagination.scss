@@ -10,7 +10,7 @@
 .pagination {
 	// sort out vertical alignment with icons
 	// Flex: justify-content (h), align-items (v)
-	@include flex(flex-end, center);
+	@include flex(center, flex-end);
 	
 	white-space: nowrap;
 	

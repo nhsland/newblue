@@ -10,10 +10,11 @@
 
 $ed3-border:3px;
 $ed3-padding:5px;
-$ed3-top-panel-height:32px;
+$ed3-button-height:32px;
 
 .oe-eyedraw-app {
 	position: fixed;
+	z-index:$oe-z-add-insert;
 	top:$oe-header-height; // JS controlled to position near btn if possible
 	
 	// this works anchors nicely and looks good
@@ -25,19 +26,16 @@ $ed3-top-panel-height:32px;
 		left: #{$oe-event-sidebar-width + $oe-event-extension - 38px};			
 	}
 	
-	z-index:$oe-z-add-insert;
-	width: $oe-event-main-default-width;
-	min-height:530px;  								 // whilst loading placeholder
+	width: $oe-event-main-default-width; // 1080px
+	min-height:530px;  // whilst loading placeholder
 	
-	padding:$ed3-padding $ed3-padding 32px $ed3-padding; // allow for positioned action bottom bar (save etc)
-	
+	// need to allow for the action buttons which are absolutely positioned
+	padding:0 0 $ed3-button-height 0;
 	background:$oe-ed3-app-blue;
 	
 	@include font-size(12);
-	
 	@include boxshadow();
-	
-	
+
 	// colours for scrollbars (chrome) in EyeDraw App
 	::-webkit-scrollbar-track {  
 		background: tint( $oe-ed3-app-blue,10 );

@@ -8,7 +8,7 @@
 
 .table-sort-order {
 	
-	@include flex( space-between , center);
+	@include flex(center, space-between);
 	
 	// put this in here for now, limited usage
 	// and is only currenly used in this wrapper
