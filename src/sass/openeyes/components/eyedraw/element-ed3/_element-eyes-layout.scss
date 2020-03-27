@@ -29,12 +29,22 @@
 			
 			.right-eye {
 				padding-left:0;
-				padding-right:11px; // balances up the imbalance
+				padding-right:9px; // balances up the imbalance
+				
+				@include media($oe-extended-browser-size){		
+					padding-right:13px;		
+				}
+				
 			}
 			
 			.left-eye {
-				padding-left:7px;
-				padding-right:3px;
+				padding-left:9px;
+				padding-right:0;
+				
+				@include media($oe-extended-browser-size){		
+					padding-left:13px;		
+				}
+				
 			}
 			
 			// adjust this to match above changes
