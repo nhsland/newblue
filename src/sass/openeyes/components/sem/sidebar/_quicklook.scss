@@ -61,7 +61,8 @@
 		&.alert {
 			background-color:$oe-btn-red-hint;
 		}
-
+		
+		&.confirmed,
 		&.done,
 		&.ready {
 			background-color:$oe-btn-green-hint;
