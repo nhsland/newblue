@@ -39,6 +39,10 @@
 				background-image:url( svg-path('sidebar/tick') );
 			}
 			
+			&.confirmed {
+				background-image:url( svg-path('sidebar/tick-double') );
+			}
+			
 			// cross
 			&.cancelled {
 				background-image:url( svg-path('sidebar/cross') );
