@@ -21,12 +21,15 @@
 		
 		.element-header {
 			@include media($oe-extended-browser-size){
-				width:$oe-event-extension; 						// make sure header isn't covering elements
+				pointer-events: none; // don't think point events are needed on this element?
+				// reduced by 22px because DOM was overlapping in extended view
+				// and stopping user clicking on a checkbox that was right by the title: 
+				width:$oe-event-extension - 22px; // make sure header isn't covering elements
 			}
 			
 			.element-title {
 				@include media($oe-extended-browser-size){
-					max-width:$oe-event-extension - 35px;		// force long names to wrap	
+					max-width:$oe-event-extension - 25px; // force long names to wrap	
 				}
 			}
 		}
