@@ -8,7 +8,7 @@
 	.wb3 {
 		.oe-wb-empty-widget {
 			margin:4px;
-			background: rgba($oe-text,0.1);
+			background: shade($oe-wb-bg, 5);
 			
 		}
 	}
