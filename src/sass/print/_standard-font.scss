@@ -7,11 +7,9 @@
 // here is "large-font" - corrspondence (assumes poor vision)
 // there is also "impaired-vision" - very poor eye sight 
 
-.change-font.large-font,
-.large-font {
-	// this was 2, but reduce to 1 to match "standard-font"
-	// because this is used currently instead as a 'standard' !
-	$large-font-increase: 1; 
+.change-font.standard-font,
+.standard-font {
+	$large-font-increase: 1;
 	
 	font-size: $fontsize-base + $large-font-increase;
 	

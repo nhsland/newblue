@@ -19,6 +19,33 @@
 	
 	@include boxshadow();
 	
+	// extend and make Bilateral
+	&.bilateral {
+		width:400px;
+		padding:0;
+		// contains a "right" and "left" content
+		@include flex(flex-start, space-between);
+		
+		.right, 
+		.left {
+			width: 200px;
+			padding:22px 10px 8px 10px;
+		}
+		
+		.right {
+			background:transparent url( svg-path-theme( 'ui/lat-R' ) ) top 5px center no-repeat;
+			background-size: 13px;
+		}
+		
+		.left {
+			background:transparent url( svg-path-theme( 'ui/lat-L' ) ) top 5px center no-repeat;
+			background-size: 13px;
+		}
+		
+	}
+	
+	
+	
 	// arrow 
 	&:after {
 		top: 100%;
