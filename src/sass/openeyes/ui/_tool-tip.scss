@@ -41,15 +41,13 @@
 			background:transparent url( svg-path-theme( 'ui/lat-L' ) ) top 5px center no-repeat;
 			background-size: 13px;
 		}
-		
 	}
-	
-	
 	
 	// arrow 
 	&:after {
 		top: 100%;
 		left: 50%;
+		right: auto;
 		border: solid transparent;
 		content: " ";
 		height: 0;
@@ -69,13 +67,15 @@
 
 	&.offset-left {
 		&:after {
-			left: 180px;
+			left: auto;
+			right: 20px;
 		}
 	}
 	
 	&.offset-right {
 		&:after {
 			left: 20px;
+			right: auto;
 		}
 	}
 	
