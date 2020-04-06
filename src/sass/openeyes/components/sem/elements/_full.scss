@@ -21,7 +21,6 @@
 		
 		.element-header {
 			@include media($oe-extended-browser-size){
-				pointer-events: none; // don't think point events are needed on this element?
 				// reduced by 22px because DOM was overlapping in extended view
 				// and stopping user clicking on a checkbox that was right by the title: 
 				width:$oe-event-extension - 22px; // make sure header isn't covering elements
