@@ -41,6 +41,16 @@
 			background:transparent url( svg-path-theme( 'ui/lat-L' ) ) top 5px center no-repeat;
 			background-size: 13px;
 		}
+		
+		// hide eye icons from sides
+		&.no-icons {
+			.right, 
+			.left {
+				padding-top:8px;
+				background: none;
+			}
+		}
+		
 	}
 	
 	// arrow 
@@ -68,7 +78,7 @@
 	&.offset-left {
 		&:after {
 			left: auto;
-			right: 20px;
+			right: 15px; // allow for the negative margin
 		}
 	}
 	
