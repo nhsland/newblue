@@ -8,5 +8,24 @@
 .oe-eye-lat-icons {
 	display:inline-block;
 	white-space: nowrap;
-		
+	
+	// eye lat icons can contain a single icon.
+	// 
+	// originally, the spacing of the icons was controlled
+	// by the default icon 'pad' class. However, because of the need to 
+	// to squeeze the icons in different places, the 'pad' spacing 
+	// is now controlled here.
+	// note: icons could be 'greyed' out eye icon (i.e. not 'laterality')
+	
+	// provide greater specificity to override the 'pad' class in icons
+	.oe-i.pad {
+		margin:0 3px; // .pad is set to 4px either side for normal icons
+	}
+	
+	// no 'pad' class
+	.oe-i {
+		margin:0 1px;
+	}
+	
+
 }
