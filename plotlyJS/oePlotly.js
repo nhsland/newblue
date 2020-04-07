@@ -109,7 +109,7 @@ const oePlotly = {
 		if(options.colors){
 			switch(options.colors){
 				case "varied":
-					layout.colorway = dark ? ['#0a83ea', '#18949f', '#0a0a1e','#3f0aea'] : ['#0a2aea', '#ea0a8e', '#00b827','#890aea'];
+					layout.colorway = dark ? ['#0a83ea', '#18949f', '#781cea','#3f0aea'] : ['#0a2aea', '#ea0a8e', '#00b827','#890aea'];
 					// override default settings and let Plotly use trace colours
 					layout.hoverlabel = {
 						font: {
@@ -117,6 +117,11 @@ const oePlotly = {
 						}
 					};
 				break;	
+				
+				case "twoPosNeg":
+					// assumes Postive trace is first! 
+					layout.colorway = dark ? ['#3f0aea','#7b3131'] : ['#0a4198','#874e4e'];
+				break;
 			}
 			
 		}

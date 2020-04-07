@@ -8,6 +8,8 @@
 
 .event-footer-actions {
 	@include flex(center, flex-end);
-	margin:15px 0;
+	margin:3px 0 15px 0;
+	
+	background:$oe-grey;
 }
 
