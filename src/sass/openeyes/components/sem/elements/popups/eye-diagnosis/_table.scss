@@ -1,0 +1,48 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-popup.eye-diagnosis-history {
+	
+	table {
+		width:100%;	
+		color:$oe-dark-text;
+		margin:10px 0 0 0;  // overwrite oe-popup default
+			
+		th {
+			@include font-size(11);
+			text-align: center;
+			padding:5px 0;
+			color:$oe-dark-text-light;
+		}
+		
+		tbody {
+			tr {
+				border-top:2px solid $oe-dark-line;
+				&.no-line { 
+					border-top: none;
+				}
+			}
+			
+			td {
+				@include font-size(12);
+				width: 20%;
+				
+				padding:8px 0 8px 20px;
+				&:first-child {
+					padding-left:0;
+				}
+				
+				
+				&.date {
+					text-align: right;
+				}
+				
+			}
+			
+		}
+			
+	}
+
+}
+

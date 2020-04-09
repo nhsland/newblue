@@ -10,6 +10,12 @@
 			@include font-size(20);
 			font-weight: $oe-font-light;
 			color:$oe-text-light;
+			
+			&.subheader {
+				margin:15px 0 8px 0;
+				@include font-size(18);
+			}
+			
 		}
 	}
 	
