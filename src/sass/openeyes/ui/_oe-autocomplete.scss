@@ -20,7 +20,9 @@
 	color: $oe-text;
 	
 	max-width:350px; // restrict long stuff.
-	
+	max-height: 300px; // needs restricting and scrolling if too many results
+	overflow-y: auto;
+
 	@include boxshadow();
 	
 	li {

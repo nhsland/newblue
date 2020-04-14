@@ -24,9 +24,11 @@
 @import "ed3-doodle-selector/_all"; // Doodle Selector
 @import "ed3-report-comments/_all";	// Reports and Comments
 
-// V2 CSS grab and modified because we are still using V2 EyeDraw DOM
-@import "v2/ed-widget-v2";
+// v2.5 ED DOM update: 
+@import "v2.5/_all";
 
+// v2 (old DOM support)
+// @import 'v2_old/ed-widget-v2';
 
 
 

@@ -47,6 +47,8 @@
 				// are here to avoid cascade issues!!
 				// Note-to-self! DO NOT remove any declarations! ;)
 				
+				white-space: normal; // if used in <td> with 'nowrap' this needs overwriting
+				
 				vertical-align: top;
 				
 				@include font-size(12);

@@ -124,7 +124,10 @@ $oe-icon-opacity: 		0.6;
 // spinner color 
 $oe-spinner:			rgb(0,180,255);	
 
-// ED3 colours
+// ED colours
+// 2.5
+$oe-ed2-panel: 			tint(rgb(218,230,241),30);
+// 3
 $oe-ed3-blue:			rgb(218,230,241); 
 $oe-ed3-app-blue:		$oe-ed3-blue;
 $oe-ed3-text:			rgb(50,50,60); 	

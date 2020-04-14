@@ -120,7 +120,10 @@ $oe-spinner:			rgb(0,255,255);
 // icon opacity (default)
 $oe-icon-opacity: 		0.5;	
 
-// ED3 colours
+// ED colours
+// 2.5
+$oe-ed2-panel: 			shade(rgb(218,230,241),25);
+// 3
 $oe-ed3-blue:			rgb(218,230,241); 		// note: used in Elements too!
 $oe-ed3-app-blue:		rgb(198,210,221);
 $oe-ed3-text:			rgb(50,50,60); 	

@@ -1,0 +1,13 @@
+// * OpenEyes
+// *
+
+// Panels group icon buttons and other controls.
+// <ul> 
+.ed-toolbar-panel {
+	display:block; 
+	
+	li {
+		display:inline-block;
+		margin: 0 3px 3px 0;
+	}
+}

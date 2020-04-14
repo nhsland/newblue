@@ -1,0 +1,38 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// * OpenEyes
+// *
+
+.ed-drawing-controls {
+	position: relative;
+	z-index: $oe-z-ed-v2 + 1;
+	height: 36px;
+	
+	margin:1px 0;
+	padding: 6px 3px;
+	background: $oe-ed2-panel;
+	
+	.ed-selected-doodle {
+		margin: 0 4px;
+		width: 175px;
+	}
+	
+	.ed-search {
+		// search field
+		position:relative;
+		width: 220px;
+		
+		input.search {
+			width:100%;
+		}
+		
+		.oe-autocomplete {
+			position: absolute; // override 'fixed'
+			right: 0;
+			top: 30px;
+		}
+		
+	}
+}

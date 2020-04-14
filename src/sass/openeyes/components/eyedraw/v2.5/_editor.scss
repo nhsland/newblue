@@ -2,15 +2,12 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// * OpenEyes
-// *
-
-// Main toolbar container.
-.ed-toolbar {
-	padding:3px 0 0 3px;
-	background: rgba(255,255,255,0.2);
+// wrap the ed-editor for front / side
+.ed-editor-wrap {
+	@include flex(flex-start, space-between);
 }
 
-@import "toolbar/panels";
-@import "toolbar/button";
-@import "toolbar/label";
+.ed-editor  {
+	position: relative;
+}
+

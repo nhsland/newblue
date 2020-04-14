@@ -1,0 +1,72 @@
+// * OpenEyes
+// *
+
+// Toolbar button.
+.ed-button {
+	position:relative;
+	display: block;
+	height: 32px;
+	width: 32px;
+	margin: 0;
+	padding: 0;
+	
+	background: #ddd;
+	
+	// darken the select doodles slightly
+	.ed-main-toolbar & {
+		background: #ccc;
+	}
+	
+	// Reset and Zoom in and out
+	.ed-drawing-controls & {
+		background-color:transparent;
+	}
+	
+	
+	&:hover, 
+	&.hover {
+		background: #118afb;
+	}
+
+	&.disabled {
+		cursor: default;
+		background: #ddd;
+		opacity: 0.5;
+	}
+	
+	.label {
+		display:none;
+		position: absolute;
+		top: 32px;
+		left: 0;
+		z-index: $oe-z-ed-v2 + 3;
+		white-space: nowrap;
+		box-shadow: 1px 3px 8px 1px rgba(0, 0, 0, 0.3);
+		color:$oe-text;
+		background: $oe-tooltip-bg;
+		padding: 4px 6px;
+	}
+
+	&:hover {
+		.label {
+			display:block;
+		}
+	}
+	
+	&:active, 
+	.ed-drawer-open > & {
+		.label {
+			display:none;
+		}
+	}
+	
+	&.disabled {
+		&:hover {
+			.label {
+				display:none;
+			}
+		}
+	}
+	
+	
+}
