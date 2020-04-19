@@ -41,7 +41,12 @@
 					// others need to be locked once they have 
 					// been interacted with... use must delete via Element trash icon
 					
-					&.locked,
+					&.locked {
+						color: rgb(255,255,255);
+						border:2px solid $oe-alert-orange;
+						pointer-events: none;
+					}
+					
 					&.mandatory {
 						color: rgb(255,255,255);
 						border:2px solid $oe-btn-green;
