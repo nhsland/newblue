@@ -7,9 +7,16 @@
 // <table>
 .main-event {
 	.element {
+		
+		// Buttons column in Edit (only) Comment Taper (edit only)
+		.element-fields {
+			 td:nth-child(5){
+			 	width:122px;
+			 }
+		}
 
 		// Meds are data complex. 
-		// added a specific class 
+		// added a specific class to help with layout
 		table.medications {
 			width:100%;
 			
@@ -27,9 +34,26 @@
 				vertical-align: top;
 				height: auto;
 				
-				// rather than using 'flex-layout'
-				// use a custom class to layout all the
-				// different input methods
+				// control the column widths because UI elements toggle on and off 
+				// any changes be sure to check in VIEW and EDIT...
+				// Drug name:
+				&:nth-child(1){
+					width:260px;
+				}
+				
+				&:nth-child(2){
+					width:160px;
+				}
+				
+				&:nth-child(3){
+					width:230px;
+				}
+			
+				&:last-child{
+					width: 40px;
+				}
+				
+				// this is was used in the OLD Meds v1: 
 				.flex-meds-inputs {
 					@include flex(center, flex-start);
 					margin-bottom:2px;
@@ -43,10 +67,8 @@
 						}
 					}
 				}
-			}
-			
+			}	
 		}
-
 	}
 }
 

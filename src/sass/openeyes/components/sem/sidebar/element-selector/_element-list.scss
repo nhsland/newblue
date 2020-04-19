@@ -36,7 +36,12 @@
 							background-color:$oe-dark-btn-red-hint;
 						}	
 					}
+					 
+					// Some elements are mandatory, 
+					// others need to be locked once they have 
+					// been interacted with... use must delete via Element trash icon
 					
+					&.locked,
 					&.mandatory {
 						color: rgb(255,255,255);
 						border:2px solid $oe-btn-green;
