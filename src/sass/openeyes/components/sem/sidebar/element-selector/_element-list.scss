@@ -28,8 +28,8 @@
 					}
 					
 					&.added {
-						color: rgb(255,255,255);
-						background-color:$oe-dark-btn-green-hint;
+						color: rgb(220,220,220);
+						background-color:$oe-element-selector-green;
 						
 						// if added it can be removed
 						&:hover, &:focus, &:active {
@@ -42,13 +42,13 @@
 					// been interacted with... use must delete via Element trash icon
 					
 					&.locked {
-						color: rgb(255,255,255);
+						color: rgb(210,210,210);
 						border:2px solid $oe-alert-orange;
 						pointer-events: none;
 					}
 					
 					&.mandatory {
-						color: rgb(255,255,255);
+						color: rgb(210,210,210);
 						border:2px solid $oe-btn-green;
 						pointer-events: none;
 					}

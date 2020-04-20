@@ -50,7 +50,7 @@
 			&.added, 
 			&.selected {
 				color: $oe-dark-text;
-				background-color:$oe-dark-btn-green-hint;
+				background-color:$oe-element-selector-green;
 				// background-color:$oe-dark-popup-bg; // background colour removed
 			}
 			
@@ -59,6 +59,12 @@
 				&:hover, &:focus, &:active {
 					background-color:$oe-dark-btn-red-hint;
 				}
+			}
+			
+			&.locked {
+				color: $oe-dark-text;
+				border:2px solid $oe-alert-orange;
+				pointer-events: none;
 			}
 			
 			&.mandatory {

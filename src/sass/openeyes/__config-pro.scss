@@ -13,28 +13,28 @@
 $html-bg:				rgb(16,25,37);
 
 // Text 
-$oe-dark-text: 				rgb(214,214,214);
-$oe-dark-text-light: 		rgb(140,140,140);
-$oe-dark-text-highlight: 	rgb(0,255,255);
-$oe-dark-text-active: 		rgb(90,180,180); 
-$oe-dark-text-inverted: 		rgb(13,13,13);
+$oe-dark-text:				rgb(214,214,214);
+$oe-dark-text-light:		rgb(140,140,140);
+$oe-dark-text-highlight:	rgb(0,255,255);
+$oe-dark-text-active:		rgb(90,180,180); 
+$oe-dark-text-inverted:		rgb(13,13,13);
 
-$oe-text: 				$oe-dark-text;
-$oe-text-light: 		$oe-dark-text-light;
+$oe-text:				$oe-dark-text;
+$oe-text-light:			$oe-dark-text-light;
 $oe-text-highlight:		$oe-dark-text-highlight; // also for selected
 $oe-text-active:		$oe-dark-text-active; 
-$oe-text-inverted: 		$oe-dark-text-inverted; // inverted! 
+$oe-text-inverted:		$oe-dark-text-inverted; // inverted! 
 
-$oe-font-light:			300;	// 400 in Classic
-$oe-font-medium:		400;	// 500 in Classic
-$oe-font-bold: 			500;	// 600 in Classic
+$oe-font-light:		300;	// 400 in Classic
+$oe-font-medium:	400;	// 500 in Classic
+$oe-font-bold: 		500;	// 600 in Classic
 
 // BLUEs
-$oe-dark-blue:				rgb(30,46,66);
-$oe-dark-blue-dark: 		shade( $oe-dark-blue, 20% );
-$oe-dark-blue-dark2: 		shade( $oe-dark-blue, 35% );
-$oe-dark-blue-dark3: 		shade( $oe-dark-blue, 25% );
-$oe-dark-blue-light: 		tint( $oe-dark-blue, 30% );
+$oe-dark-blue:			rgb(30,46,66);
+$oe-dark-blue-dark:		shade( $oe-dark-blue, 20% );
+$oe-dark-blue-dark2:	shade( $oe-dark-blue, 35% );
+$oe-dark-blue-dark3:	shade( $oe-dark-blue, 25% );
+$oe-dark-blue-light:	tint( $oe-dark-blue, 30% );
 
 $oe-blue:				$oe-dark-blue;
 $oe-blue-dark: 			$oe-dark-blue-dark;
@@ -135,6 +135,7 @@ $oe-ed3-input-text:		rgb(240,240,240);
 // SPECIFIC colours for areas
 $oe-dark-bg:					$oe-dark-blue-dark2; // top header strip
 
+$oe-element-selector-green:		rgb(10,85,10);
 
 $oe-sem-main-event-bg: 		$oe-blue;   	// ok in Pro theme
 $oe-sem-element-bg: 		rgb(18,28,35);	// removed 2 colour scheme (priority/normal) made bg 1 colour
