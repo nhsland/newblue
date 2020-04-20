@@ -63,13 +63,19 @@
 			
 			&.locked {
 				color: $oe-dark-text;
-				border:2px solid $oe-alert-orange;
+				border:2px solid $oe-btn-green;
+				background:transparent url( svg-path( 'ui/no-permissions-white' ) ) center right 2px no-repeat;
+				background-size:9px;
 				pointer-events: none;
 			}
+			
+			
 			
 			&.mandatory {
 				color:  $oe-dark-text;
 				border:2px solid $oe-btn-green;
+				background:transparent url( svg-path( 'ui/asterisk-white' ) ) center right 2px no-repeat;
+				background-size:9px;
 				pointer-events: none;
 			}
 			

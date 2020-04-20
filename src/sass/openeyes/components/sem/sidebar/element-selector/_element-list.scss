@@ -43,13 +43,17 @@
 					
 					&.locked {
 						color: rgb(210,210,210);
-						border:2px solid $oe-alert-orange;
+						border:2px solid $oe-btn-green;
+						background:transparent url( svg-path( 'ui/no-permissions-white' ) ) center right 3px no-repeat;
+						background-size:11px;
 						pointer-events: none;
 					}
 					
 					&.mandatory {
 						color: rgb(210,210,210);
 						border:2px solid $oe-btn-green;
+						background:transparent url( svg-path( 'ui/asterisk-white' ) ) center right 3px no-repeat;
+						background-size:11px;
 						pointer-events: none;
 					}
 				}		
