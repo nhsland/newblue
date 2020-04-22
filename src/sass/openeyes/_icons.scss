@@ -99,7 +99,8 @@
 	&.exclamation-red,
 	&.tick-green,
 	&.cross-red,
-	&.warning
+	&.warning,
+	&.doubt,
 	{ 
 		opacity:1; 
 	}
@@ -229,6 +230,7 @@
 	&.status-urgent		{ @include oe3-icons('status-urgent'); }
 	&.status-query		{ @include oe3-icons('status-query'); }
 	&.whiteboard		{ @include oe3-icons('whiteboard'); }
+	&.doubt				{ @include oe3-icons('doubt'); }
 	
 	// monochromatic Eye Lat icons:
 	&.eyelat-L			{ @include oe3-icons('lat-L'); }
