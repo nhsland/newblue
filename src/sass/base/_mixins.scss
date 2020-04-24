@@ -9,6 +9,7 @@
   font-size: ($sizePixel / 16) + rem;
 }
 
+
 // Media query wrapper
 @mixin media($width) {
   @media only screen and (min-width: $width) {

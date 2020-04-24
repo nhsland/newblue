@@ -1,0 +1,38 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE users can use TinyMCE editor to 
+// produce some content. It *must* be wrapped:
+
+// Be sure to override any other sizes
+@mixin font-size-important($sizePixel) {
+  font-size: ($sizePixel / 16) + rem !important;
+}
+
+.user-tinymce-content {
+	@include font-size-important(12);
+	p { @include font-size-important(12); }
+	pre { font-family: $font-stack; }
+	
+	h1,
+	h2 { @include font-size-important(18); }
+	h3 { @include font-size-important(15); }	
+	h4 { @include font-size-important(13); }	
+	h5,
+	h6 { @include font-size-important(10); }
+	
+	h1, h2, h3 { 
+		margin:2px 0 4px 0;
+	}
+	
+	h4, h5, h6, p, pre, blockquote {
+		margin:2px 0;
+	}
+	
+	blockquote {
+		font-style: italic;
+	}
+	
+	
+}
