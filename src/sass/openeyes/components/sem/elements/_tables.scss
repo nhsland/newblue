@@ -163,7 +163,7 @@
 				}
 				
 				&.nowrap {
-					width:1%; // width required to make this work
+					min-width:40px; // this was width:1%; // width required to make this work
 					white-space: nowrap;	
 					padding-right:10px; // because it's nowrap content must give the <td> padding  
 					
@@ -183,6 +183,10 @@
 				
 				&.align-right {
 					text-align: right;
+				}
+				
+				&.valign-top {
+					vertical-align: top;
 				}
 			}
 			

@@ -56,7 +56,14 @@ textarea {
 }
 
 // helpers 
-
 .hidden {
     display: none;
+}
+
+// use visibilty to 'hide' a <tr>
+// hidden & space occupied is removed (as if display: none). 
+// BUT: rows and columns are still calculated as though the cells 
+// in the collapsed row(s) or column(s) are present. 
+.tr-collapse {
+	visibility: collapse;
 }
