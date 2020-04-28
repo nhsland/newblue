@@ -51,6 +51,11 @@ input {
 	}
 }
 
+input[type="checkbox"],
+input[type="radio"]{
+	vertical-align: baseline;
+}
+
 // Normalize for range
 input[type="range"] {
 	width: 100%;
