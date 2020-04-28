@@ -53,7 +53,8 @@ input {
 
 input[type="checkbox"],
 input[type="radio"]{
-	vertical-align: baseline;
+	vertical-align: middle; 
+	// middle looks great on Win Chrome, but is dropped slight on Mac Chrome, go figure!
 }
 
 // Normalize for range

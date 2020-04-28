@@ -8,11 +8,20 @@
 .main-event {
 	.element {
 		
-		// Buttons column in Edit (only) Comment Taper (edit only)
+		// Layout in EDIT mode needs some help
 		.element-fields {
-			 td:nth-child(5){
-			 	width:122px;
-			 }
+			table.medications {
+				td {
+					&:nth-child(5){
+						width:122px;
+					}
+					
+					&:nth-child(4){
+						width:20%; // push this out
+					}
+					
+				}
+			}
 		}
 
 		// Meds are data complex. 
@@ -48,12 +57,19 @@
 				&:nth-child(3){
 					width:230px;
 				}
+				
+				&:nth-child(4){
+					width:28%; // Note in VIEW needs to push further than EDIT
+				}
+				
+				
 			
 				&:last-child{
 					width: 40px;
 				}
 				
 				// this is was used in the OLD Meds v1: 
+				// keeping for support whilst updated to v2
 				.flex-meds-inputs {
 					@include flex(center, flex-start);
 					margin-bottom:2px;
