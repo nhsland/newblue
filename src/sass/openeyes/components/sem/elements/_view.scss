@@ -18,12 +18,16 @@
 				// in VIEW mode change the layout
 				// of <td> to v-align top. This 
 				// is the preferred layout for data
-				td {
-					height:26px; 			// reduce slightly
-					vertical-align: top;	// top!
-					padding-top:4px;		// adjust the padding
-					padding-bottom:4px;
+				tbody {
+					th,
+					td {
+						height:26px; 			// reduce slightly
+						vertical-align: top;	// top!
+						padding-top:4px;		// adjust the padding
+						padding-bottom:4px;
+					}
 				}
+				
 				
 			}
 			

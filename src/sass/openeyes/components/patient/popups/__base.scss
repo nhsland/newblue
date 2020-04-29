@@ -42,13 +42,13 @@
 		display:block;
 		
 		padding:0 0 0 0;
-		margin:10px 0 10px 0;
+		margin:8px 0;
 		&:first-child {
 			margin-top:0;
 		}
 		
-		@include font-size(18);
-		font-weight:300; 
+		@include font-size(14);
+		font-weight:400; 
 		color:$oe-dark-text-light; 
 		
 		.extra-actions {
