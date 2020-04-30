@@ -11,6 +11,14 @@
 		li {
 			font-weight:500;
 			padding:2px 0 2px 18px;
+			
+			&.completed {
+				// if a user name then wrap with <em>
+				em {
+					opacity:0.5;
+					font-style: italic;
+				}
+			}
 			&.selected {
 				background:transparent url( svg-path('icons/_classic/direction-right') ) left center no-repeat;
 				background-size:13px; // small icon size
