@@ -22,10 +22,21 @@
 			} 
 		}
 		
+		&.selected {
+			a {
+				color:$sidebar-event-selected-text;
+				background: $sidebar-event-selected;
+				.tag {
+					color:$sidebar-event-selected-text;
+					background:transparent;
+				}
+			}	
+		}
+		
+		
 		a {
 			display:block;
 			position:relative;
-			
 			height:$oe-sidebar-event-height;
 			line-height:$oe-sidebar-event-height;
 	
@@ -66,16 +77,7 @@
 			background:$oe-dark-blue-dark;
 		}
 		  
-		&.selected {
-			a {
-				color:$oe-dark-text-highlight;
-				background: $oe-dark-popup-bg;
-				.tag {
-					color:$oe-dark-text-highlight;
-					background:transparent;
-				}
-			}	
-		}
+		
 	}
 
 	
