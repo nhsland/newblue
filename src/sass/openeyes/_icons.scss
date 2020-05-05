@@ -231,6 +231,8 @@
 	&.status-query		{ @include oe3-icons('status-query'); }
 	&.whiteboard		{ @include oe3-icons('whiteboard'); }
 	&.doubt				{ @include oe3-icons('doubt'); }
+	&.person			{ @include oe3-icons('person'); }
+	&.person-split		{ @include oe3-icons('person-split'); }
 	
 	// monochromatic Eye Lat icons:
 	&.eyelat-L			{ @include oe3-icons('lat-L'); }
