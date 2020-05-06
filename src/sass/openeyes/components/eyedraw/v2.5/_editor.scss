@@ -3,11 +3,11 @@
 //
 
 // wrap the ed-editor for front / side
-.ed-editor-wrap {
+.ed2-editor-wrap {
 	@include flex(flex-start, space-between);
 }
 
-.ed-editor  {
+.ed2-editor  {
 	position: relative;
 }
 

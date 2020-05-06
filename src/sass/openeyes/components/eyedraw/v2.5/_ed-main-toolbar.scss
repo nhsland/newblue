@@ -1,22 +1,22 @@
 // * OpenEyes
 // *
 
-.ed-widget {	
+.ed2-widget {	
 	// Select Doodles
-	.ed-toolbar {
+	.ed2-toolbar {
 		padding:3px 0 0 3px;
 		background: $oe-ed2-panel;
 
 		// <ul>
-		.ed-toolbar-panel {
-			&.ed-main-toolbar {
+		.ed2-toolbar-panel {
+			&.ed2-main-toolbar {
 				
 				li {
-					&.ed-drawer-open, // this seems to be the approach, but keeping active incase! 				
+					&.ed2-drawer-open, // this seems to be the approach, but keeping active incase! 				
 					&.active { 
 						position: relative;
 						// show the extra doodle panel		
-						.ed-toolbar-panel-drawer {
+						.ed2-toolbar-panel-drawer {
 							display: block;
 						}
 					}
@@ -24,7 +24,7 @@
 				
 				// inside ul > ul (+)
 				// is another <ul>
-				.ed-toolbar-panel-drawer {
+				.ed2-toolbar-panel-drawer {
 					display: none;  // JS opens this up
 					position: absolute;
 					top: 22px;

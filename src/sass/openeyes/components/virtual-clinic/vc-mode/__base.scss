@@ -13,10 +13,14 @@
 	// some data is also pulled into Elements
 	// e.g. Follow up, where it's wrapped with this class
 	// but needs a bit mode help
-	
 	&.in-element {
 		padding:8px 4px;
 		border-radius: 3px;
+		
+		// when used in Follow Up Element tile:
+		.tile & {
+			padding:3px 6px
+		}
 	}
 	
 }

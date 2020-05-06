@@ -2,7 +2,7 @@
 // *
 
 // Toolbar button.
-.ed-button {
+.ed2-button {
 	position:relative;
 	display: block;
 	height: 32px;
@@ -13,12 +13,12 @@
 	background: #ddd;
 	
 	// darken the select doodles slightly
-	.ed-main-toolbar & {
+	.ed2-main-toolbar & {
 		background: #ccc;
 	}
 	
 	// Reset and Zoom in and out
-	.ed-drawing-controls & {
+	.ed2-drawing-controls & {
 		background-color:transparent;
 	}
 	
@@ -54,7 +54,7 @@
 	}
 	
 	&:active, 
-	.ed-drawer-open > & {
+	.ed2-drawer-open > & {
 		.label {
 			display:none;
 		}

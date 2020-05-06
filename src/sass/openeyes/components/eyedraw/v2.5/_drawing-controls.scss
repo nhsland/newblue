@@ -5,7 +5,7 @@
 // * OpenEyes
 // *
 
-.ed-drawing-controls {
+.ed2-drawing-controls {
 	position: relative;
 	z-index: $oe-z-ed-v2 + 1;
 	height: 36px;
@@ -14,12 +14,12 @@
 	padding: 6px 3px;
 	background: $oe-ed2-panel;
 	
-	.ed-selected-doodle {
+	.ed2-selected-doodle {
 		margin: 0 4px;
 		width: 175px;
 	}
 	
-	.ed-search {
+	.ed2-search {
 		// search field
 		position:relative;
 		width: 220px;
