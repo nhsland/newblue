@@ -5,6 +5,7 @@
 // OE EYE icon
 // these should ALWAYs be on the same line 
 // have therefore wrapped like with OE date approach
+.oe-systemic-icons,
 .oe-eye-lat-icons {
 	display:inline-block;
 	white-space: nowrap;
@@ -25,7 +26,30 @@
 	// no 'pad' class
 	.oe-i {
 		margin:0 1px;
+		// turn off interaction UI
+		cursor:auto;
+		pointer-events: none;
+		
+		&.circle-grey,
+		&.eyelat-R,
+		&.eyelat-L {
+			opacity: 0.35; 
+		} 
+		
 	}
 	
-
+	
+	// ***** context changes
+	
+	// Event sidebar popup up quickview
+	.event-quick-data & {
+		// shrink the eyelat icons down		
+		margin:0 3px;
+		.oe-i.small {
+			width:11px; 
+			height:11px;
+			background-size:11px;
+			vertical-align:bottom; 
+		}
+	}
 }

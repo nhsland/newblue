@@ -89,6 +89,7 @@
 	&.circle-amber,
 	&.circle-orange,			
 	&.circle-red,
+	&.circle-grey,
 	&.triangle-green,
 	&.triangle-amber,
 	&.triangle-orange,
@@ -266,6 +267,7 @@
 	&.circle-amber, 
 	&.circle-orange		{ background-image: url( svg-path('ui/circle-orange') ); }
 	&.circle-red		{ background-image: url( svg-path('ui/circle-red') ); }
+	&.circle-grey		{ background-image: url( svg-path('ui/circle-grey') ); }
 	
 	// triangles G / A / R
 	// Patient Risk Status
@@ -301,5 +303,13 @@
 		// N/A - grey dot 
 		&.NA { @include oe3-icons('lat-NA'); }
 	}
+	
+	// NA for Systemic (but might useful elsewhere)
+	&.NA {
+		opacity: 1;
+		cursor:auto;
+		@include oe3-icons('lat-NA');
+	}
+	
 }
 

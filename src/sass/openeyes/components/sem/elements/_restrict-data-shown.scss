@@ -15,7 +15,7 @@
 			
 			// wrap content
 			.restrict-data-content {
-				max-height:270px;	// default to approx rows-10 max
+				max-height:270px;	// default to approx rows-10 max height
 				overflow-y:auto;
 				padding:0 3px 0 0;	// visual breathing space for scrollbar
 				
@@ -28,7 +28,7 @@
 				}
 				
 				&.rows-10 {
-					height:270px;
+					height:270px; // fixes the height
 				}				
 			}
 
