@@ -28,18 +28,22 @@
 		
 		.right, 
 		.left {
-			width: 200px;
-			padding:22px 10px 8px 10px;
+			padding:8px 4px 8px 25px;
+			min-height: 28px; // to stop the background icon getting cropped when there is no 'tip'
 		}
 		
 		.right {
-			background:transparent url( svg-path-theme( 'ui/lat-R' ) ) top 5px center no-repeat;
-			background-size: 13px;
+			width: 199px;
+			background:transparent url( svg-path-theme( 'ui/lat-R' ) ) top 10px left 5px  no-repeat;
+			background-size: 11px;
 		}
 		
 		.left {
-			background:transparent url( svg-path-theme( 'ui/lat-L' ) ) top 5px center no-repeat;
-			background-size: 13px;
+			width: 201px;
+			border-left:1px dotted rgba($oe-text-light, 0.3);
+			background:transparent url( svg-path-theme( 'ui/lat-L' ) ) top 10px left 5px no-repeat;
+			background-size: 11px;
+			
 		}
 		
 		// hide eye icons from sides
