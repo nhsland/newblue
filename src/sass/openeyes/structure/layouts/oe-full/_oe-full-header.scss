@@ -15,12 +15,13 @@
 
 	// left hand side
 	.title {
-		color:$oe-text-light;
-		text-transform: uppercase;
+		@include flex(center, flex-start);
 		@include font-size(24);
+		text-transform: uppercase;
 		font-weight:$oe-font-light;
-		line-height:$oe-event-header-height;
+		color:$oe-text-light;
 		
+		// basic styling for title area
 		&.wordcaps {
 			text-transform: capitalize;
 		}
@@ -33,14 +34,12 @@
 			font-weight:$oe-font-medium;
 		}
 		
-		// Analytics
-		&.lightcaps {			
+		// Analytics and OEscape fix the styling
+		// wrapped this in case i need to make smaller:
+		.oe-area {
 			font-weight:100;
-			b, strong {
-				font-weight:300;
-			}
-		}
-		
+			@include font-size(24);
+		}	
 	}
 	
 	// right hand options/actions/extras
@@ -61,17 +60,6 @@
 		}
 	}
 	
-	// ul
-	// increase the buttons when used in the header
-	.oescape-icon-btns {
-		margin:0 10px;
-		vertical-align: middle;
-		.icon-btn a {
-			height: $oe-event-header-height;
-			width: $oe-event-header-height;
-			@include font-size(15);
-			font-weight: $oe-font-medium;
-		}
-	}
+	
 	
 }

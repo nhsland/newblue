@@ -169,8 +169,6 @@
 		&.info 				{ @include oe3-icon-dark-area('info'); }
 	} 
 	
-	
-	
 	// icons
 	// SVGs containing styling: fill:#fff;
 	&.plus 				{ @include oe3-icons('plus'); }
@@ -321,6 +319,13 @@
 		&.L { @include oe3-icons('lat-L-red'); }
 		// N/A - grey dot 
 		&.NA { @include oe3-icons('lat-NA'); }
+	}
+	
+	// BEO (Both Eyes Open)
+	&.beo { 
+		opacity: 1;
+		cursor:auto;
+		@include oe3-icons('beo'); 
 	}
 	
 	// NA for Systemic (but might useful elsewhere)
