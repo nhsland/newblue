@@ -30,9 +30,8 @@
 		cursor:auto;
 		pointer-events: none;
 		
-		&.circle-grey,
-		&.eyelat-R,
-		&.eyelat-L {
+		// inactive systemic
+		&.circle-grey {
 			opacity: 0.35; 
 		} 
 		

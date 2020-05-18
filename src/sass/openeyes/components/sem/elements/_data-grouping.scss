@@ -40,6 +40,7 @@
 		// Comments require the same spacing as data-group
 		// but because of the DOM structure, can not use this class
 		// (:first-child) so... 
+		.comment-row,
 		.comment-group {
 			padding-top: 12px;
 		}

@@ -158,8 +158,8 @@
 	// this correctly. Therefore, taking over control of icons used in the
 	// 'dark' areas:
 	.oe-patient-popup & {
-		&.eyelat-L			{ @include oe3-icon-dark-area('lat-L'); }
-		&.eyelat-R			{ @include oe3-icon-dark-area('lat-R'); }
+		&.laterality.Ri { @include oe3-icon-dark-area('lat-R-inactive'); }
+		&.laterality.Li { @include oe3-icon-dark-area('lat-L-inactive'); }
 		&.d-slash 					{ @include oe3-icon-dark-area('double-slash'); }
 		&.direction-right-circle 	{ @include oe3-icon-dark-area('direction-right-circle'); }
 		&.person					{ @include oe3-icon-dark-area('person'); }
@@ -319,6 +319,11 @@
 		&.L { @include oe3-icons('lat-L-red'); }
 		// N/A - grey dot 
 		&.NA { @include oe3-icons('lat-NA'); }
+		// 'inactive' versions ONLY for use 
+		// in oe-eye-lat-icons as has opacity set in SVG
+		// (basically eyelat-* but with opacity and following laterality naming)
+		&.Ri { @include oe3-icons('lat-R-inactive'); }
+		&.Li { @include oe3-icons('lat-L-inactive'); }
 	}
 	
 	// BEO (Both Eyes Open)

@@ -10,7 +10,7 @@
 	
 	.patient-name {
 		@include font-size(14);
-		font-weight: $oe-font-medium;
+		font-weight: 500; // same for both themes
 		margin:0 0 2px 0;
 	}
 	
