@@ -8,16 +8,23 @@
 .main-event {
 	.element {
 		
+		// Before messing with these Table column widths check: 
+		// Meds Mx and Hx in View and Edit mode! 
+		
 		// Layout in EDIT mode needs some help
 		.element-fields {
 			table.medications {
 				td {
+					&:nth-child(1){
+						width:270px;
+					}
+					
 					&:nth-child(5){
 						width:122px;
 					}
 					
 					&:nth-child(4){
-						width:20%; // push this out
+						width:210px;
 					}
 					
 				}
@@ -60,7 +67,7 @@
 				}
 				
 				&:nth-child(4){
-					width:28%; // Note in VIEW needs to push further than EDIT
+					width:310px; // Note in VIEW needs to push further than EDIT
 				}
 				
 				
