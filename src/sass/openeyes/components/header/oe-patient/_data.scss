@@ -14,7 +14,7 @@
 		top:12px; 
 		left:0;
 		@include font-size(17);
-		font-weight:$oe-font-light;
+		font-weight:400;
 		
 		a {
 			&:hover, &:focus, &:active {
