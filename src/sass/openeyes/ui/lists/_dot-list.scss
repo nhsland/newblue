@@ -24,7 +24,8 @@ ul {
 			background-image:url( svg-path( 'ui/list-dot' ) );
 			
 			&:first-child {
-				padding:0 0 0 0;
+				margin-left:0;
+				padding-left:0;
 				background-image: none;
 			}
 		}

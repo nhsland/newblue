@@ -53,9 +53,7 @@
 		// from elements (because it brings to much baggage)
 		// therefore added the flex classes here.
 		.element-eyes {
-			display:flex;
-			align-items:flex-start;			
-			justify-content:space-between;
+			@include flex(flex-start, space-between);
 			
 			.right-eye {
 				width:490px;

@@ -158,8 +158,11 @@
 	// this correctly. Therefore, taking over control of icons used in the
 	// 'dark' areas:
 	.oe-patient-popup & {
-		&.laterality.Ri { @include oe3-icon-dark-area('lat-R-inactive'); }
-		&.laterality.Li { @include oe3-icon-dark-area('lat-L-inactive'); }
+		&.laterality.R { 	@include oe3-icon-dark-area('icons/lat-R-green'); }
+		&.laterality.L { 	@include oe3-icon-dark-area('icons/lat-L-red'); }
+		&.laterality.NA {	@include oe3-icon-dark-area('icons/lat-NA'); }
+		&.laterality.Ri { 	@include oe3-icon-dark-area('lat-R-inactive'); }
+		&.laterality.Li { 	@include oe3-icon-dark-area('lat-L-inactive'); }
 		&.d-slash 					{ @include oe3-icon-dark-area('double-slash'); }
 		&.direction-right-circle 	{ @include oe3-icon-dark-area('direction-right-circle'); }
 		&.person					{ @include oe3-icon-dark-area('person'); }

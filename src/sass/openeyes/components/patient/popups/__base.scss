@@ -27,7 +27,8 @@
 		width:$oe-event-main-extended-width; 
 	}
 	
-	// overflow wrappers alerts and summary-data
+	// overflow wrappers for all data in Patient Popups
+	// only used in Patient Popups; in generic (centered!) popups 'oe-popup-content' handles this	
 	.oe-popup-overflow, 
 	.popup-overflow {	
 		max-height: 415px; // this restricts the popup's vertical hieight (for lowest res monitors)
@@ -59,16 +60,7 @@
 		
 	}
 	
-	// overide theme laterality icons!
-	// originally these where NOT themed
-	// and displayed the same across both
-	// themes. rather than add "pro-theme"
-	// class, override here:
-	.oe-i.laterality {
-		&.R { 	background-image: url( svg-path('icons/lat-R-green') ); }
-		&.L { 	background-image: url( svg-path('icons/lat-L-red') ); }
-		&.NA {	background-image: url( svg-path('icons/lat-NA') ); }
-	}
+	
 	
 }
 

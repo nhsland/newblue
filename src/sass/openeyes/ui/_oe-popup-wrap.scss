@@ -2,10 +2,10 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Popup wrapper
-// 
-// generic background cover and container for popup boxes
-// <div> wrapper class applied with JS. 
+// OE Popup wrapper (overlay)
+// A generic full content cover and container for popup boxes
+// also provides Flex to center content.
+// used by JS.
 .oe-popup-wrap {
 	position:fixed;
 	top:0;
@@ -14,8 +14,6 @@
 	bottom:0;
 	
 	display:flex; // Flex - used for centering popups
-	
 	z-index:$oe-z-popup;
-
-	background: rgba( $html-bg, 0.5 ); 
+	background:rgba($html-bg, 0.5); 
 }

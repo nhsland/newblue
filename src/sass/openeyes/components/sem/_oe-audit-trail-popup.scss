@@ -2,12 +2,8 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Patient Popups.
-// PRO theme
-// --- patient allergies & risks, quicklook, management and demographics
-//
-// (note: Clinic Quicklook is cut down verion of Quicklook for Clinic lists)
-
+// Specific mini popup for Events audit trails
+// Used by icon next to Event title
 .oe-popup-event-audit-trail {
 	z-index:$oe-z-quicklook - 1; // make sure it's under the Patient popups
 	position: absolute;
@@ -19,7 +15,6 @@
 	
 	border-right: 6px solid $oe-blue-dark2;
 	border-bottom: 6px solid $oe-blue-dark2;
-
 
 	table {
 		width: 100%;		
