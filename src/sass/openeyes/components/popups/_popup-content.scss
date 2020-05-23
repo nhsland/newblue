@@ -9,16 +9,10 @@
 	// wrapper for content.
 	// handles overflow.
 	.oe-popup-content {
-		max-height: 500px;  // must allow for the minimum spec res. displays
+		max-height: calc(100vh - 300px); // allow content to expand if needed
 		overflow-y: auto;	// scroll overflow
 		overflow-x: hidden; // otherwise breaks out of popup.
 		
-		padding:0 5px 0 0;  // don't allow data to push up to scrollbar
-		
-		// create a visual breathing space between elements
-		.spacer {
-			height:40px;	
-		}
-		
+		padding:0 5px 0 0;  // don't allow content to push right up to scrollbar
 	}	
 }

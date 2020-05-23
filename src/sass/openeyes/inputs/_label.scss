@@ -8,49 +8,45 @@
 
 label,
 .label {
-
-	// assuming thats labels will only
-	// be used next to an input:
+	// labels should be used next to an input:
 	margin:0 10px 0 0;
 	white-space: nowrap;
 	
-	
-	&.inline {
-		display: inline-block;
-	}
-	
-	// wrap and visually group label with input
+	// highlight is there standard usage
+	// wrap and visually group label with it's input
 	&.highlight {
-		padding:3px 6px 3px 6px; 
+		display: inline-flex;
+		align-items:center;				// vertical
+		justify-content:space-between; 	// horizontal
+		
+		line-height: 1.5;
+		padding:3px 6px; 
 		margin:1px 3px 1px 0;
-		color:$oe-user-input-text;
-		background:$oe-user-inputs-hint;
-		border-radius:3px;
-		cursor:pointer;
-		
-		input {
-			margin-right:2px; // pad between input - text
-		}
-		
-		&:hover, &:focus, &:active {
-			background:$oe-user-inputs;
-		}
-		
 		&:last-child {
 			margin-right:0;
+		}
+		
+		input {
+			margin-right:5px; // pad between input - text
+		}
+		
+		border-radius:3px;
+		cursor:pointer;
+		color:$oe-user-input-text;
+		background:$oe-user-inputs-hint;
+		&:hover, &:focus, &:active {
+			background:$oe-user-inputs;
 		}
 		
 		&.error {
 			color:rgb(255,255,255);
 			background-color: $oe-alert-red;
 		}
-		
-		// if used in a OE UI themed area 	
+			
 		&.pro-theme {
 			color: $oe-dark-user-input-text;
 			background-color: $oe-dark-user-inputs;
 		}	
-		
 	}
 
 	.required {

@@ -1,0 +1,22 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-popup {
+		
+	input, 
+	textarea, 
+	select {
+		color: $oe-dark-user-input-text;
+		background-color: $oe-dark-user-inputs;
+		margin:0 0; // override defaults
+	}
+	
+	// make pro-theme
+	label.highlight {
+		color: $oe-dark-user-input-text;
+		background-color: $oe-dark-user-inputs;
+	}
+	
+	
+}

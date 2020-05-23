@@ -2,8 +2,17 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Popups
-// notes: see openeyes/components/popups
+// OE Popups (Generic)
+//
+// All popups are wrapped with '.oe-popup-wrap' (see openeyes/popup-wrap)
+// There are also ALL Pro-themed!
+// 
+// DOM notes: 
+// 	.oe-popup-wrap // generic UI full screen wrapper, provides flex.
+// 		.oe-popup 
+// 			.title 
+//			.close-icon-btn 
+//			.oe-popup-content  (wraps all popup content)
 
 .oe-popup {
 	margin:auto; /* flex (wrapper) */ 
@@ -12,20 +21,5 @@
 	min-width: 600px;
 	max-width: $oe-eyedraw-app-width; 
 	padding: 20px;
-	color:$oe-dark-text;
-
-	.title {
-		@include font-size(18);
-		font-weight:300;
-		color:$oe-dark-text;
-		padding:0 0 10px 0;
-	}
-	
-	// wraps the remove icon
-	.close-icon-btn {
-		position:absolute;
-		top:20px;
-		right:20px;
-	}
-	
+	color:$oe-dark-text;	
 }

@@ -1,0 +1,27 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-popup {
+		
+	.title {
+		@include font-size(18);
+		font-weight:$oe-font-light;
+		color:$oe-dark-text;
+		padding:0 0 10px 0;
+		
+		// bold is sometimes used in the title.
+		b { 
+			font-weight: $oe-font-bold; 
+		}
+		
+	}
+	
+	// wraps the remove icon
+	.close-icon-btn {
+		position:absolute;
+		top:18px;
+		right:20px;
+	}
+	
+}

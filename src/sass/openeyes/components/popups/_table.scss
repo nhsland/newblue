@@ -7,22 +7,53 @@
 
 .oe-popup {
 	
-	// default table layout for popups.
-	// note: this may need updating but will do for now.
 	table {
-		margin:20px auto 0 auto;
-		width:90%;
+		width:100%;
+		margin:15px 0; // same as HR.divider
+		
+		&.large-text {
+			th, td {
+				@include font-size(14);
+				padding:10px 0; 
+			}
+		}
+		
+		thead {
+			th {
+				vertical-align: top;
+				text-align: left;
+				@include font-size(15);
+				color:$oe-dark-text-light;
+				font-weight: 500;
+			}
+		}
+		
+		
 		tbody {
+			tr {
+				border-top:1px dotted $oe-dark-line;
+				
+				&:first-child,
+				&.no-line { 
+					border-top: none;
+				}
+			}
+			
 			th, td {
 				vertical-align: top;
 				text-align: left;
 				padding:8px 0;  
-				@include font-size(13);
-				font-weight: 500;
+				@include font-size(12);
+				font-weight: 400;
 				
+				// not sure this is used?
 				&.align-right {
 					text-align: right;
 				}
+			}
+			
+			th {
+				opacity: 0.7; // match "fade"
 			}
 		}
 		

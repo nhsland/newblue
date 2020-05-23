@@ -12,21 +12,9 @@
 	&.popup-search-query {
 
 		// step sub-titles
-		h3 {
-			@include font-size(14);
-			color:$oe-dark-text-light;
-			margin:10px 0;
-			&:first-child{
-				margin-top:0;
-			}
-		}
 		
-		hr.divider {
-			display:block;
-			border: 0;
-			margin:15px 0;  // reduced was 20px 0 15px 0;
-			border-bottom:1px solid $oe-dark-line;
-		}
+		
+		
 		
 		// control width of sections
 		.all-searches {

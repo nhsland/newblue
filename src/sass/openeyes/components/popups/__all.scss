@@ -2,33 +2,22 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Popups (Generic)
-//
-// All popups are wrapped with '.oe-popup-wrap' (see openeyes/popup-wrap)
-// There are also ALL Pro-themed!
-// 
-// DOM notes: 
-// 	.oe-popup-wrap
-// 		.oe-popup 
-// 			.title 
-//			.close-icon-btn 
-//			.oe-popup-content  (wraps all popup content)
+@import "_base";  
 
-// Generic UI Popup setup
-// includes: title and close-btn
-@import "popup";  
-
+@import "title_close";
 // Content wrap. Handle scrolling for contnet (min res displays)
 @import "popup-content"; 
-@import "popup-attachment"; 
+@import "popup-actions"; 
 
-// Default Tables		
-@import "table";  
+// popup UI elements
+@import "table"; 
+@import "typography"; 
+@import "inputs";
 
-// Specific Popups: 
-@import "specific/previous-elements";   	// Previous Elements (popup for coping data from previous elements)
-@import "specific/popup-add-psd";			// Popup Add to PSD
-@import "specific/popup-search-query";		// Popup Search Query (save and load)
+// Specific content: 
+@import "content-specific/previous-elements";   	// Previous Elements (popup for coping data from previous elements)
+@import "content-specific/popup-add-psd";			// Popup Add to PSD
+@import "content-specific/popup-search-query";		// Popup Search Query (save and load)
 
-
-
+// attachments
+@import "attachments/popup-attachment"; 
