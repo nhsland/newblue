@@ -11,9 +11,8 @@
 	.oe-popup-content {
 		// height is unknown for AJAX content load
 		// however need a minimum otherwise it is 
-		// jarring; also the spinner needs space.
 		// then allow content to expand if needed
-		min-height: 200px;
+		min-height: 100px; // also the spinner needs space.
 		max-height: calc(100vh - 300px); 
 		overflow-y: auto;	// scroll overflow
 		overflow-x: hidden; // otherwise breaks out of popup.
