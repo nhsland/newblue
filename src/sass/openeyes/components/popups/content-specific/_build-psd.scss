@@ -1,0 +1,74 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-popup-content {
+	
+	// modifying the standard "oe-popup-content" class
+	// Build PSD is used in Worklists.
+	&.build-psd {
+
+		// step sub-titles
+		h3 {
+			@include font-size(13);
+		}
+		
+		// control width of sections
+		.psd-selected-patients {			
+			width:150px;
+			
+			ul {
+				li {
+					@include font-size(11);
+					padding:3px 0;
+				}
+			}
+		}
+		
+		// widths in here are limited by btn-list.fixed-width
+		.psd-options {
+			// space out the columns
+			.flex-layout > div {
+				margin:0 5px 0 0;
+				&:last-child{
+					margin-right:0;
+				}
+			}
+			
+			// create a vertical line divider either side
+			padding:0 10px;
+			margin:0 10px;
+			border-left:1px solid $oe-dark-line;
+			border-right:1px solid $oe-dark-line;
+		}
+		
+		.psd-build {
+			width:400px;
+			
+			
+			table {
+				td {
+					// Restricted width layout
+					// Grouped Drug Name with Drops / Interval settings
+					// Drug name:
+					.drug {
+						@include font-size(13);
+						margin:0 0 5px 0;
+					}
+					
+					// 3 Dropdowns: Drops No / xN / Interval in mins:
+					.administration {
+						text-align: right;
+						select {
+							margin:0 0 0 5px;
+						}
+					}				
+				}
+			}
+		}
+	
+		
+	
+	}
+
+}

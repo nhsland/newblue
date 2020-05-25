@@ -11,28 +11,47 @@
 		width:100%;
 		margin:15px 0; // same as HR.divider
 		
-		&.large-text {
+		&.large-text,
+		tr.large-text {
 			th, td {
 				@include font-size(14);
 				padding:10px 0; 
 			}
 		}
 		
-		thead {
-			th {
-				vertical-align: top;
-				text-align: left;
-				@include font-size(15);
-				color:$oe-dark-text-light;
-				font-weight: 500;
+		&.lines {
+			tbody {
+				tr {
+					// match HR divider
+					border-top:2px solid $oe-dark-line;
+				}
 			}
 		}
 		
+		thead {
+			th {
+				position: sticky;
+				top: 0;
+				z-index: 10;
+				vertical-align: top;
+				text-align: left;
+				
+				// match H3
+				@include font-size(15);
+				color:$oe-dark-text-light;
+				font-weight: 400;
+				
+				// as the table headers are sticky:
+				background: $oe-dark-popup-bg;
+				border-bottom:1px solid $oe-dark-line;
+				padding:0 0 8px 0;
+				margin:0;
+			}
+		}
 		
 		tbody {
 			tr {
 				border-top:1px dotted $oe-dark-line;
-				
 				&:first-child,
 				&.no-line { 
 					border-top: none;

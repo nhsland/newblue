@@ -26,7 +26,7 @@ $ed3-button-height:32px;
 		left: #{$oe-event-sidebar-width + $oe-event-extension - 38px};			
 	}
 	
-	width: $oe-event-main-default-width; // 1080px
+	width: $oe-eyedraw-app-width; // 1080px
 	min-height:530px;  // whilst loading placeholder
 	
 	// need to allow for the action buttons which are absolutely positioned

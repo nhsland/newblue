@@ -5,8 +5,18 @@
 .oe-popup {
 	// button actions
 	.popup-actions {
-		@include flex(center, flex-start);
+		@include flex(center, space-between);
+		// should be used as last DOM element
 		margin-top:20px;
+		
+		// horizontal alignments
+		&.flex-right {
+			justify-content:flex-end; 		// group items to the right
+		}
+		&.flex-left {
+			justify-content:flex-start; 	// group items to the left
+		}
+		
 		button {
 			margin:0 5px 0 0;
 			&:last-child {

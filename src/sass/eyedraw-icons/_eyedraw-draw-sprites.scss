@@ -5,10 +5,10 @@
 // --- OE Eyedraw Icons - sprite positions
 //
 .icon-ed-ACIOL {
-  background-position: -64px -320px;
+  background-position: -96px -320px;
   &.small {
 	  background-size: 256px 240px;
-	  background-position: -32px -160px;
+	  background-position: -48px -160px;
   }
 }
 .icon-ed-ACMaintainer {
@@ -19,10 +19,10 @@
   }
 }
 .icon-ed-AngleNV {
-  background-position: -128px -352px;
+  background-position: -160px -352px;
   &.small {
 	  background-size: 256px 240px;
-	  background-position: -64px -176px;
+	  background-position: -80px -176px;
   }
 }
 .icon-ed-AntSynech {
@@ -613,172 +613,179 @@
 	  background-position: -144px -96px;
   }
 }
-.icon-ed-APattern {
+.icon-ed-ACInflammation {
   background-position: -288px -224px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -144px -112px;
   }
 }
-.icon-ed-Abrasion {
+.icon-ed-APattern {
   background-position: -288px -256px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -144px -128px;
   }
 }
-.icon-ed-AdenoviralKeratitis {
+.icon-ed-Abrasion {
   background-position: 0px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: 0px -144px;
   }
 }
-.icon-ed-Ahmed {
+.icon-ed-AdenoviralKeratitis {
   background-position: -32px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -16px -144px;
   }
 }
-.icon-ed-AngleRecession {
+.icon-ed-Ahmed {
   background-position: -64px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -32px -144px;
   }
 }
-.icon-ed-AntPVR {
+.icon-ed-AngleRecession {
   background-position: -96px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -48px -144px;
   }
 }
-.icon-ed-AntSeg {
+.icon-ed-AntPVR {
   background-position: -128px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -64px -144px;
   }
 }
-.icon-ed-ArcuateScotoma {
+.icon-ed-AntSeg {
   background-position: -160px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -80px -144px;
   }
 }
-.icon-ed-Arrow {
+.icon-ed-ArcuateScotoma {
   background-position: -192px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -96px -144px;
   }
 }
-.icon-ed-Baerveldt {
+.icon-ed-Arrow {
   background-position: -224px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -112px -144px;
   }
 }
-.icon-ed-BiopsySite {
+.icon-ed-Baerveldt {
   background-position: -256px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -128px -144px;
   }
 }
-.icon-ed-Bruising {
+.icon-ed-BiopsySite {
   background-position: -288px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -144px -144px;
   }
 }
-.icon-ed-Bruit {
+.icon-ed-Bruising {
   background-position: -320px 0px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px 0px;
   }
 }
-.icon-ed-Buckle {
+.icon-ed-Bruit {
   background-position: -320px -32px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px -16px;
   }
 }
-.icon-ed-BuckleSuture {
+.icon-ed-Buckle {
   background-position: -320px -64px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px -32px;
   }
 }
-.icon-ed-BuckleWithMargin {
+.icon-ed-BuckleSuture {
   background-position: -320px -96px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px -48px;
   }
 }
-.icon-ed-BusaccaNodule {
+.icon-ed-BuckleWithMargin {
   background-position: -320px -128px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px -64px;
   }
 }
-.icon-ed-Bypass {
+.icon-ed-BusaccaNodule {
   background-position: -320px -160px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px -80px;
   }
 }
-.icon-ed-CapsularTensionRing {
+.icon-ed-Bypass {
   background-position: -320px -192px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px -96px;
   }
 }
-.icon-ed-Chalazion {
+.icon-ed-CapsularTensionRing {
   background-position: -320px -224px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px -112px;
   }
 }
-.icon-ed-ChandelierDouble {
+.icon-ed-Chalazion {
   background-position: -320px -256px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px -128px;
   }
 }
-.icon-ed-ChandelierSingle {
+.icon-ed-ChandelierDouble {
   background-position: -320px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px -144px;
   }
 }
-.icon-ed-CiliaryInjection {
+.icon-ed-ChandelierSingle {
   background-position: 0px -320px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: 0px -160px;
   }
 }
-.icon-ed-CircumferentialBuckle {
+.icon-ed-CiliaryInjection {
   background-position: -32px -320px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -16px -160px;
+  }
+}
+.icon-ed-CircumferentialBuckle {
+  background-position: -64px -320px;
+  &.small {
+	  background-size: 256px 240px;
+	  background-position: -32px -160px;
   }
 }
 .icon-ed-ColourWell {
@@ -789,164 +796,164 @@
   }
 }
 .icon-ed-ConjunctivalFlap {
-  background-position: -96px -320px;
-  &.small {
-	  background-size: 256px 240px;
-	  background-position: -48px -160px;
-  }
-}
-.icon-ed-ConjunctivalSuture {
   background-position: -128px -320px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -64px -160px;
   }
 }
-.icon-ed-Conjunctivitis {
+.icon-ed-ConjunctivalSuture {
   background-position: 0px -32px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: 0px -16px;
   }
 }
-.icon-ed-CornealAbrasion {
+.icon-ed-Conjunctivitis {
   background-position: -192px -320px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -96px -160px;
   }
 }
-.icon-ed-CornealEpithelialDefect {
+.icon-ed-CornealAbrasion {
   background-position: -224px -320px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -112px -160px;
   }
 }
-.icon-ed-CornealErosion {
+.icon-ed-CornealEpithelialDefect {
   background-position: -256px -320px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -128px -160px;
   }
 }
-.icon-ed-CornealFB {
+.icon-ed-CornealErosion {
   background-position: -288px -320px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -144px -160px;
   }
 }
-.icon-ed-CornealGraft {
+.icon-ed-CornealFB {
   background-position: -320px -320px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px -160px;
   }
 }
-.icon-ed-CornealLaceration {
+.icon-ed-CornealGraft {
   background-position: -352px 0px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px 0px;
   }
 }
-.icon-ed-CornealOedema {
+.icon-ed-CornealLaceration {
   background-position: -352px -32px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px -16px;
   }
 }
-.icon-ed-CornealOpacity {
+.icon-ed-CornealOedema {
   background-position: -352px -64px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px -32px;
   }
 }
-.icon-ed-CornealPigmentation {
+.icon-ed-CornealOpacity {
   background-position: -352px -96px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px -48px;
   }
 }
-.icon-ed-CornealStriae {
+.icon-ed-CornealPigmentation {
   background-position: -352px -128px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px -64px;
   }
 }
-.icon-ed-CornealSuture {
+.icon-ed-CornealStriae {
   background-position: -352px -160px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px -80px;
   }
 }
-.icon-ed-Crepitations {
+.icon-ed-CornealSuture {
   background-position: -352px -192px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px -96px;
   }
 }
-.icon-ed-Cryo {
+.icon-ed-Crepitations {
   background-position: -352px -224px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px -112px;
   }
 }
-.icon-ed-CutterPI {
+.icon-ed-Cryo {
   background-position: -352px -256px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px -128px;
   }
 }
-.icon-ed-Dendrite {
+.icon-ed-CutterPI {
   background-position: -352px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px -144px;
   }
 }
-.icon-ed-DendriticUlcer {
+.icon-ed-Dendrite {
   background-position: -352px -320px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px -160px;
   }
 }
-.icon-ed-Dialysis {
+.icon-ed-DendriticUlcer {
   background-position: 0px -352px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: 0px -176px;
   }
 }
-.icon-ed-DiscHaem {
+.icon-ed-Dialysis {
   background-position: -32px -352px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -16px -176px;
   }
 }
-.icon-ed-DrainageRetinotomy {
+.icon-ed-DiscHaem {
   background-position: -64px -352px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -32px -176px;
   }
 }
-.icon-ed-DrainageSite {
+.icon-ed-DrainageRetinotomy {
   background-position: -96px -352px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -48px -176px;
+  }
+}
+.icon-ed-DrainageSite {
+  background-position: -128px -352px;
+  &.small {
+	  background-size: 256px 240px;
+	  background-position: -64px -176px;
   }
 }
 .icon-ed-DrawingControl {
@@ -957,125 +964,118 @@
   }
 }
 .icon-ed-DrugStent {
-  background-position: -160px -352px;
-  &.small {
-	  background-size: 256px 240px;
-	  background-position: -80px -176px;
-  }
-}
-.icon-ed-Effusion {
   background-position: -192px -352px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -96px -176px;
   }
 }
-.icon-ed-EncirclingBand {
+.icon-ed-Effusion {
   background-position: -224px -352px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -112px -176px;
   }
 }
-.icon-ed-EntrySiteBreak {
+.icon-ed-EncirclingBand {
   background-position: -256px -352px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -128px -176px;
   }
 }
-.icon-ed-EyeWithLids {
+.icon-ed-EntrySiteBreak {
   background-position: -288px -352px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -144px -176px;
   }
 }
-.icon-ed-GRT {
+.icon-ed-EyeWithLids {
   background-position: -320px -352px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -160px -176px;
   }
 }
-.icon-ed-Grommet {
+.icon-ed-GRT {
   background-position: -352px -352px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -176px -176px;
   }
 }
-.icon-ed-Haematoma {
+.icon-ed-Grommet {
   background-position: -384px 0px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -192px 0px;
   }
 }
-.icon-ed-Hyphaema {
+.icon-ed-Haematoma {
   background-position: -384px -32px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -192px -16px;
   }
 }
-.icon-ed-Hypopyon {
+.icon-ed-Hyphaema {
   background-position: -384px -64px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -192px -32px;
   }
 }
-.icon-ed-ILMPeel {
+.icon-ed-Hypopyon {
   background-position: -384px -96px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -192px -48px;
   }
 }
-.icon-ed-IatrogenicBreak {
+.icon-ed-ILMPeel {
   background-position: -384px -128px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -192px -64px;
   }
 }
-.icon-ed-InjectionSite {
+.icon-ed-IatrogenicBreak {
   background-position: -384px -160px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -192px -80px;
   }
 }
-.icon-ed-InnerLeafBreak {
+.icon-ed-InjectionSite {
   background-position: -384px -192px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -192px -96px;
   }
 }
-.icon-ed-InverseYPattern {
+.icon-ed-InnerLeafBreak {
   background-position: -384px -224px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -192px -112px;
   }
 }
-.icon-ed-IrisHook {
+.icon-ed-InverseYPattern {
   background-position: -384px -256px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -192px -128px;
   }
 }
-.icon-ed-IrisNaevus {
+.icon-ed-IrisHook {
   background-position: -384px -288px;
   &.small {
 	  background-size: 256px 240px;
 	  background-position: -192px -144px;
   }
 }
-.icon-ed-KeraticPrecipitates {
+.icon-ed-IrisNaevus {
   background-position: -384px -320px;
   &.small {
 	  background-size: 256px 240px;
