@@ -20,8 +20,10 @@ label,
 		justify-content:space-between; 	// horizontal
 		
 		line-height: 1.5;
-		padding:3px 6px; 
-		margin:1px 3px 1px 0;
+		height:26px; // add line height to match input and select heights
+		padding:0 5px; // this was 3px 6px
+		margin:1px 3px 1px 0; 
+		
 		&:last-child {
 			margin-right:0;
 		}
