@@ -20,6 +20,10 @@ input, textarea {
 		color:$oe-input-placeholder; // Future?
 	}
 	
+	&:disabled {
+		opacity:0.4;
+	}
+	
 	// this fixes the issues where the browser
 	// will use the system-ui fonts:
 	font-family: inherit;

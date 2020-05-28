@@ -20,6 +20,10 @@ select {
 		width: 110px; // old css v2.0 (not used?)
 	}
 	
+	&:disabled {
+		opacity:0.4;
+	}
+	
 	@media print {
 		// Fixed Chrome print bug when selects have transparent background.
 		// See: https://code.google.com/p/chromium/issues/detail?id=282918
@@ -31,8 +35,5 @@ select {
 	// will use the system-ui fonts:
 	font-family: inherit;
 	
-	// this will remove all the default appearances for inputs:
-	// -moz-appearance: none; 
-	// -webkit-appearance: none; 
-	// appearance: none;
+	
 }
