@@ -7,7 +7,9 @@
 // have therefore wrapped like with OE date approach
 .oe-systemic-icons,
 .oe-eye-lat-icons {
-	display:inline-block;
+	display:inline-flex;
+	align-items:center;				// vertical alignment (no stretch)
+	justify-content:space-between;
 	white-space: nowrap;
 	
 	// eye lat icons can contain a single icon.
