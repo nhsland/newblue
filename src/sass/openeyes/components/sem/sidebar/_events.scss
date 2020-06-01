@@ -90,14 +90,25 @@
 			.oe-i.laterality {
 				// the vertical-align middle isn't quite middle. 
 				position:relative;
-				top:-1px;
+				top:2px;
 				&.R { 	background-image: url( svg-path('icons/lat-R-green') ); }
 				&.L { 	background-image: url( svg-path('icons/lat-L-red') ); }
 				&.NA {	background-image: url( svg-path('icons/lat-NA') ); }
 			}
+		}
 
+		// monochrome eyelat icons on user interaction ;) 
+		&.selected,
+		a:hover {
+			.event-extra {
+				.oe-i.laterality {
+					&.R { 	background-image: url( svg-path('ui/lat-R.pro') ); }
+					&.L { 	background-image: url( svg-path('ui/lat-L.pro') ); }
+				}
+			}
 		}
 		
+				
 		// <span>
 		// event date layout
 		.event-date {

@@ -22,12 +22,12 @@
 	
 	// provide greater specificity to override the 'pad' class in icons
 	.oe-i.pad {
-		margin:0 3px; // .pad is set to 4px either side for normal icons
+		margin:1px 3px; // .pad is set to 4px either side for normal icons
 	}
 	
 	// no 'pad' class
 	.oe-i {
-		margin:0 1px;
+		margin:1px 1px;
 		// turn off interaction UI
 		cursor:auto;
 		pointer-events: none;
