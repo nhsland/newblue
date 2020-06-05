@@ -37,35 +37,6 @@
 				padding:0 0 0 5px;
 			}
 		}
-		
-		// a new feature to change an Element (show more features)
-		// default "simple" / "complex"... make this a toggle button?
-		// use on a <button> to be semantically correct
-		.change-complexity {
-			cursor: pointer;
-			display:inline-block;
-			@include font-size(11);
-			font-weight: $oe-font-medium;
-			color:$oe-element-headers;
-			background: $oe-btn-default;
-			height:auto; // override button defaults
-			vertical-align: text-top; // override button defaults
-			padding:2px 6px 3px 6px;
-			margin:0 0 0 10px; 
-			border-radius:3px !important;
-			
-			@include media($oe-extended-browser-size){
-				margin-top:8px;
-			}
-			
-			// .active class allows JS control
-			&:hover, &:focus, &:active {
-				color: rgb(255,255,255);
-				background: $oe-btn-blue;
-			}
-				
-			
-		}
 	}
 
 }

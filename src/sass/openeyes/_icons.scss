@@ -157,20 +157,24 @@
 	// 'pro-theme' concept was a bit of a disaster - devs struggled to implement
 	// this correctly. Therefore, taking over control of icons used in the
 	// 'dark' areas:
+	.oe-popup-content &,
 	.oe-patient-popup & {
-		&.laterality.R { 	@include oe3-icon-dark-area('lat-R-green'); }
-		&.laterality.L { 	@include oe3-icon-dark-area('lat-L-red'); }
-		&.laterality.NA {	@include oe3-icon-dark-area('lat-NA'); }
-		&.laterality.Ri { 	@include oe3-icon-dark-area('lat-R-inactive'); }
-		&.laterality.Li { 	@include oe3-icon-dark-area('lat-L-inactive'); }
-		&.d-slash 					{ @include oe3-icon-dark-area('double-slash'); }
+		&.laterality.R 		{ @include oe3-icon-dark-area('lat-R-green'); }
+		&.laterality.L 		{ @include oe3-icon-dark-area('lat-L-red'); }
+		&.laterality.NA 	{ @include oe3-icon-dark-area('lat-NA'); }
+		&.laterality.Ri 	{ @include oe3-icon-dark-area('lat-R-inactive'); }
+		&.laterality.Li 	{ @include oe3-icon-dark-area('lat-L-inactive'); }
+		&.d-slash 			{ @include oe3-icon-dark-area('double-slash'); }
+		&.direction-right 	{ @include oe3-icon-dark-area('direction-right'); }
 		&.direction-right-circle 	{ @include oe3-icon-dark-area('direction-right-circle'); }
-		&.person					{ @include oe3-icon-dark-area('person'); }
+		&.person			{ @include oe3-icon-dark-area('person'); }
 		&.comments 			{ @include oe3-icon-dark-area('comments'); }
 		&.comments-added 	{ @include oe3-icon-dark-area('comments-added'); }
 		&.comments-who 		{ @include oe3-icon-dark-area('comments-who'); }
 		&.info 				{ @include oe3-icon-dark-area('info'); }
 		&.child-arrow  		{ @include oe3-icon-dark-area('child-arrow'); }
+		&.audit-trail 		{ @include oe3-icon-dark-area('audit-trail'); }
+		&.drug-rx			{ @include oe3-icon-dark-area('drug-rx'); }
 	} 
 	
 	// icons
