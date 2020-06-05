@@ -44,7 +44,7 @@
 		// added this in to handle the popups in Meds
 		// basically the same "change-complexity" but more obviously a button
 		.extra-btn {
-			color:$oe-text-inverted;
+			color: $oe-btn-text-on-hint; // always on blue!
 			background: $oe-btn-blue-hint;
 		}
 	}

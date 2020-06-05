@@ -144,15 +144,15 @@
 	// give a hint of the button colour to the user
 	&.hint {
 		&.green {
-			color: rgba(255,255,255,0.9);
+			color: $oe-btn-text-on-hint;
 			background: $oe-btn-green-hint;
 		}
 		&.red {
-			color: rgba(255,255,255,0.9);
+			color: $oe-btn-text-on-hint;
 			background: $oe-btn-red-hint;
 		}
 		&.blue {
-			color: rgba(255,255,255,0.9);
+			color: $oe-btn-text-on-hint;
 			background: $oe-btn-blue-hint;
 		}
 	}

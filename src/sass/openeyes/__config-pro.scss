@@ -59,6 +59,7 @@ $oe-dark-btn-blue-hint:		shade( $oe-dark-btn-blue,30 );
 $oe-dark-btn-green-hint:		shade( $oe-dark-btn-green,30 );
 $oe-dark-btn-red-hint:		shade( $oe-dark-btn-red,30 );
 
+$oe-btn-text-on-hint: 	rgba(255,255,255,0.75);
 $oe-btn-default:		$oe-blue;
 $oe-btn-selected:		$oe-dark-blue-dark3;
 $oe-btn-event-header:	shade($oe-grey,10); // event header buttons need to work like tabs
