@@ -113,9 +113,10 @@
 	// Generally icons will be used for interaction
 	// sometimes however they are only used for graphical purposes
 	// use 'no-click' to turn off interaction behaviour
-	&.start, 
+	&.start, // graphic icons only
 	&.stop,  
-	&.d-slash, // graphic icons only	
+	&.d-slash, 
+	&.line-break,	
 	&.no-click {
 		cursor:default;
 		pointer-events: none;
