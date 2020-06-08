@@ -165,6 +165,7 @@
 		&.laterality.Ri 	{ @include oe3-icon-dark-area('lat-R-inactive'); }
 		&.laterality.Li 	{ @include oe3-icon-dark-area('lat-L-inactive'); }
 		&.d-slash 			{ @include oe3-icon-dark-area('double-slash'); }
+		&.line-break		{ background-image: url( svg-path('ui/line-break.pro') ); }
 		&.direction-right 	{ @include oe3-icon-dark-area('direction-right'); }
 		&.direction-right-circle 	{ @include oe3-icon-dark-area('direction-right-circle'); }
 		&.person			{ @include oe3-icon-dark-area('person'); }
@@ -312,7 +313,7 @@
 	&.warning 			{ background-image: url( svg-path('ui/warning') ); } 
 	
 	// Tick and Cross
-	&.tick-green 		{ background-image: url( svg-path-theme('ui/tick-green') ); }
+	&.tick-green 			{ background-image: url( svg-path-theme('ui/tick-green') ); }
 	&.cross-red 			{ background-image: url( svg-path('ui/cross-red') ); } 	
 
 	// R = Green; L = Red; B = Green/Red 
@@ -346,6 +347,15 @@
 		opacity: 1;
 		cursor:auto;
 		@include oe3-icons('lat-NA');
+	}
+	
+	// single line break for collapsed text (double slash icon is used for 2+ breaks)
+	&.line-break {
+		width:9px; 
+		height:$size-small;
+		margin:0 2px 0 1px;
+		background-size: $size-small;
+		background-image: url( svg-path-theme('ui/line-break') );
 	}
 	
 }
