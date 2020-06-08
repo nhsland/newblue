@@ -351,9 +351,9 @@
 	
 	// single line break for collapsed text (double slash icon is used for 2+ breaks)
 	&.line-break {
-		width:9px; 
+		width:5px; 
 		height:$size-small;
-		margin:0 2px 0 1px;
+		margin:0 3px 0 1px;
 		background-size: $size-small;
 		background-image: url( svg-path-theme('ui/line-break') );
 	}
