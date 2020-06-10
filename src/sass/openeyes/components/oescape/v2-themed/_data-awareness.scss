@@ -1,0 +1,58 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OESCAPE
+// updated data-awareness (v2)
+.oe-full-header {
+	// info-banner for groups: e.g. CCT and IOP data
+	.data-awareness {
+		height: $oe-event-header-height;
+		display:inline-flex;
+		justify-content:flex-start;
+		align-items:center;
+		margin:0 0 0 10px; 
+		border-left:2px solid $oe-line;
+		
+		
+		.group {
+			position: relative;
+			height: $oe-event-header-height;
+			padding:6px 0 0 8px;
+			
+			color:$oe-text;
+			@include font-size(12);
+			
+			border-right:1px dotted $oe-line;
+			&:last-child {
+				border-right:none;
+			}
+			
+			// <span>'s around info:
+			.type {
+				display: inline-block;
+				margin:0 5px 0 0;
+				@include font-size(11.5);
+				font-weight:$oe-font-medium;
+			}
+			
+			.data {
+				display: inline-block;
+				margin:0 5px 0 0;
+				@include font-size(12.5);
+				font-weight:$oe-font-bold;
+			}
+			
+			.date {
+				display:block;
+				@include font-size(10);
+				font-weight:$oe-font-medium;
+				opacity:0.6;
+				padding:2px 0 0 0;
+			}	
+		}
+	}
+}
+
+
+

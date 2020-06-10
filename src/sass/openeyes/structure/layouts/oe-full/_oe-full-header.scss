@@ -9,9 +9,9 @@
 .oe-full-header {
 	position:relative;
 	background:$oe-grey;
-	padding:0 20px;
+	padding:0 0 0 20px;
 	
-	@include flex(center, space-between);
+	@include flex(center, flex-start);
 
 	// left hand side
 	.title {
@@ -44,7 +44,11 @@
 	}
 	
 	// right hand options/actions/extras
-	// .options-right { Nothing needed as yet }
+	.options-right { 
+		position: absolute;
+		right:0;
+		top:0;
+	}
 
 	// create 'tab' buttons (like Event Header)
 	@include buttons {

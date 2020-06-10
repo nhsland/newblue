@@ -2,15 +2,17 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// Oescape Header
+// OESCAPE - data awareness
+// There are 2 versions of this, this is first one
+// the updated new one is for the generic layout.
+// Keeping this to support current implementations
+// in the future it can be removed.
 
 .oescape-header {
-	
 	// info-banner for CCT and IOP data
 	// but needs to be flexible
 	.data-awareness {
 		height: $oe-event-header-height;
-		
 		display:inline-flex;
 		justify-content:flex-start;
 		align-items:center;

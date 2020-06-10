@@ -45,7 +45,6 @@
 		display:inline-block;
 		padding:0 3px 5px 5px;
 		border-left:1px solid $oe-dark-line;	
-		
 		span { 
 			opacity:0.5; 
 		}
@@ -58,6 +57,7 @@
 	// NHS Number Trace warning
 	// uses an orange exclamination mark
 	// small size (13px) is too big so tweak it
+	.hospital-number,
 	.nhs-number {
 		.oe-i.small {
 			width:11px;
