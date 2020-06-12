@@ -1,0 +1,47 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-full-header {
+	
+	.oes-hd-data-side {
+		position:relative;
+		height: $oe-event-header-height;
+		padding:6px 10px;
+		margin:0 10px;
+		cursor: pointer;
+		
+		&:hover, 
+		&:focus,
+		&.active {
+			background:$oe-btn-blue;
+			.oe-i.laterality {
+				&.R { 	background-image: url( svg-path('ui/lat-R.pro') ); }
+				&.L { 	background-image: url( svg-path('ui/lat-L.pro') ); }
+			}
+			
+			
+			&:after {
+				color:rgb(255,255,255);
+				opacity:0.8;
+			}
+		}
+		
+		
+		&:after {
+			position: absolute;
+			left:0;
+			right:0;
+			bottom:4px;
+			text-align: center;
+			content: 'change';
+			@include font-size(8.5);
+			font-weight:$oe-font-medium;
+			color:$oe-text;
+			opacity:0.2;
+		}
+	}
+}
+
+
+
