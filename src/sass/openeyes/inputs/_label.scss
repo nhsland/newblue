@@ -15,29 +15,46 @@ label,
 	// highlight is there standard usage
 	// wrap and visually group label with it's input
 	&.highlight {
-		display: inline-flex;
+		display: flex;
 		align-items:center;				// vertical
-		justify-content:space-between; 	// horizontal
-		
+		justify-content: flex-start; 	// horizontal
 		line-height: 1.5;
 		height:26px; // add line height to match input and select heights
 		padding:0 5px; // this was 3px 6px
-		margin:1px 3px 1px 0; 
+		margin:1px 0; 
 		
-		&:last-child {
-			margin-right:0;
+		&.inline {
+			display: inline-flex;
+			justify-content:space-between; 	// horizontal
+			margin:1px 3px 1px 0; 
+			&:last-child {
+				margin-right:0;
+			}
 		}
 		
+				
+		
+		
+		
+		// checkbox or radio within the <label>
 		input {
 			margin-right:5px; // pad between input - text
+			opacity:0.8; // tone down the inputs slightly unless checked
+			&:checked {
+				opacity:1;
+			}
 		}
 		
 		border-radius:3px;
 		cursor:pointer;
 		color:$oe-user-input-text;
 		background:$oe-user-inputs-hint;
+		
 		&:hover, &:focus, &:active {
 			background:$oe-user-inputs;
+			input {
+				opacity:1;
+			}
 		}
 		
 		&.error {

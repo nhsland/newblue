@@ -27,9 +27,26 @@
 	&.flex-stretch {
 		align-items:stretch;			// fill vertical space
 	}
-	
-	// direct child items of Flex container
-	.flex-item-bottom {
-		align-self: flex-end;			// item - bottom 
-	}
+}
+
+// as far as i know this only used by the adder button in Elements
+// it could probably be better named and moved in with the Element stuff
+// however, leaving it here in case used somewhere else! 
+.flex-item-bottom {
+	align-self: flex-end;			// item - bottom 
+}
+
+// Update 
+// Using Flex all over the place, simplifying class usage
+// for common usages
+.flex {
+	@include flex(center, space-between);
+}
+
+.flex-t {
+	@include flex(flex-start, space-between);	
+}
+
+.flex-t-l {
+	@include flex(flex-start, flex-start);	
 }
