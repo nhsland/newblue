@@ -51,8 +51,6 @@ const svgmin = require('gulp-svgmin');
 const spritesmith = require('gulp.spritesmith');
 const buffer = require('vinyl-buffer');
 const imagemin = require('gulp-imagemin');
-// BrowserSync
-// const bs = require("browser-sync").create();
 // Fix for file modifications datetime
 const through2 = require('through2');
 
