@@ -65,9 +65,20 @@
 		// Numbers:
 		&.number {
 			li {
-				min-width:21px;		// provide a minimal hit area for touch
+				min-width:32px;		// provide a minimal hit area for touch
+				text-align: center;
+				font-weight: $oe-font-bold;
 			}
-			
+		}
+		
+		// + - % etc:
+		&.symbols {
+			li {
+				padding:10px 8px;
+				min-width:32px;		// provide a minimal hit area for touch
+				text-align: center;
+				@include font-size(16);
+			}
 		}
 		
 		
@@ -99,6 +110,16 @@
 				background-position:right 2px center;
 				background-repeat: no-repeat;
 				background-size:8px;
+				padding-right:14px;
+			}
+		}
+		
+		&.input-templates {
+			li {
+				background-image:url( svg-path( 'ui/filter' ) );
+				background-position:right 2px center;
+				background-repeat: no-repeat;
+				background-size:13px;
 				padding-right:14px;
 			}
 		}
