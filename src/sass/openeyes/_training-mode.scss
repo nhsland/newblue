@@ -1,0 +1,66 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// When OE is nearlive it can be confusing for Users 
+// as they are unable to visually tell the difference. 
+// by adding "training-mode" to <body> we can target
+// elements and make them more obvious!
+.training-mode {
+	
+	// Make OE logo yellow:
+	.openeyes-brand .oe-logo {
+		.oe-openeyes {
+			fill:#ff0;
+			opacity:1;
+		}
+		&.open, 
+		&.active {
+			.oe-openeyes {
+				fill:#ff0;
+				opacity:1;
+			}
+		}
+	}
+	
+	// make login 
+	.oe-login .login h1 {
+		@include font-size(50);
+		color:#ff0;
+		padding:15px 30px;
+		background: rgba(0,0,0,0.5);
+		border-radius:9px
+	}
+		
+	// increase banner visibility
+	#oe-admin-notifcation {
+		bottom:15px;
+		height:35px;	
+		background:rgb(255,255,0);
+		color:rgb(0,0,0);
+		@include font-size(15);
+		font-weight:500;
+		
+		@include boxshadow();
+		
+		a { 
+			color:rgb(0,0,200); 
+		}
+		
+		#notification-short {
+			opacity:1;
+		}
+		
+		// make icon black rather than white
+		.oe-i.info.pro-theme { 
+			background-image: url( svg-path( "icons/_classic/info" ) );
+		}
+	}
+	
+	// patient name
+	.oe-patient .patient-name {
+		color:#ff0;
+	}
+
+}
+

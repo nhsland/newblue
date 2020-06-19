@@ -78,6 +78,13 @@
 					display:flex;
 					align-items:flex-start;
 					justify-content:flex-start;
+					
+					.list-wrap {
+						margin:0 0 0 2px;
+						&:first-child {
+							margin:0 0 0 0;
+						}
+					}
 
 				}				
 			}
