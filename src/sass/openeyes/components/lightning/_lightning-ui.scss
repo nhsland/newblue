@@ -15,7 +15,7 @@
 		height:20px;
 		width:$oe-event-main-default-width;
 		
-		@include media($oe-extended-browser-size){		
+		@include extended(){		
 			width:$oe-event-main-extended-width;			
 		}
 	

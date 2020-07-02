@@ -20,7 +20,7 @@
 			margin:0 0 5px 10px;	
 		}
 
-		@include media($oe-extended-browser-size){
+		@include extended(){
 			// make icons stack up
 			max-width:30px; 	 
 			// reverses the order to ensure remove is ideally placed, can handle 3 icons

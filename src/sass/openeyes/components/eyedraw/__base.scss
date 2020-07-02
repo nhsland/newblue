@@ -20,7 +20,7 @@ $ed3-button-height:32px;
 	// this works anchors nicely and looks good
 	left:$oe-event-sidebar-width; 
 	
-	@include media($oe-extended-browser-size){	
+	@include extended(){	
 		// but this is a bit messy and requires
 		// some jiggling to get it in the right place	
 		left: #{$oe-event-sidebar-width + $oe-event-extension - 38px};			

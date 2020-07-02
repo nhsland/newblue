@@ -28,7 +28,7 @@
 			overflow: hidden;
 			text-overflow: ellipsis;
 			
-			@include media($oe-extended-browser-size){
+			@include extended(){
 				width:auto;
 			}
 		}

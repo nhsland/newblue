@@ -11,28 +11,20 @@
 	position:absolute;
 	top:0; 
 	right:215px; // positioned by eye
-	@include media($oe-extended-browser-size){
-		// on large displays shift the user group
-		// give right nav icons a bit more space
-		right:245px; 
-	}
 	
 	// use flex to position user-profile
 	display:flex;
 	height:$oe-header-height;
+
+	transition: right 0.5s ease-out; // smooth it
 	
-	// introduced to handle 1280px viewports with window border
-	@include below-minimum(){
+	@include extended(){
+		right:245px; 
+	}
+	
+	@include squeeze(){
 		right:195px;
 	}
-	
-	// and this is a hack to support tablets a bit better 
-	// OE is not optimsied for this, but anyway:
-	@media only screen and (max-width: 1260px){
-		display:block;
-		top:5px;
-	}
-	
 
 	.oe-user-profile-context {
 		// uses flex to vertically center
@@ -42,7 +34,7 @@
 		// at minimum screen res this must be 
 		// restriced to stop over-lap with icons 
 		width:250px; 
-		@include media($oe-extended-browser-size){
+		@include extended(){
 			width:350px; 
 		}
 	
@@ -79,18 +71,6 @@
 				
 			}
 			
-		}
-		
-		// this is a hack to support tablets a bit better 
-		// OE is not optimsied for this, but anyway:
-		@media only screen and (max-width: 1260px){
-			li {
-				display:none;
-				&:first-child,
-				&:last-child {
-					display:block;
-				}
-			}
 		}
 								
 	}

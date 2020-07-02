@@ -15,19 +15,19 @@
 	// 'tile' elements don't do this.
 	
 	.element.full {
-		@include media($oe-extended-browser-size){
+		@include extended(){
 			padding:10px 30px 10px $oe-event-extension - 25px; 	// provide left space for header and right space for actions
 		}
 		
 		.element-header {
-			@include media($oe-extended-browser-size){
+			@include extended(){
 				// reduced by 22px because DOM was overlapping in extended view
 				// and stopping user clicking on a checkbox that was right by the title: 
 				width:$oe-event-extension - 22px; // make sure header isn't covering elements
 			}
 			
 			.element-title {
-				@include media($oe-extended-browser-size){
+				@include extended(){
 					max-width:$oe-event-extension - 25px; // force long names to wrap	
 				}
 			}

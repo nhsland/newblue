@@ -28,7 +28,7 @@
 			background-repeat: repeat-y;
 			background-size:19px;
 
-			@include media($oe-extended-browser-size){
+			@include extended(){
 				background-position-x: 54.5%; // needs offseting because headers have dropped left
 			}
 		}

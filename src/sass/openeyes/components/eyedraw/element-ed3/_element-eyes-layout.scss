@@ -31,7 +31,7 @@
 				padding-left:0;
 				padding-right:9px; // balances up the imbalance
 				
-				@include media($oe-extended-browser-size){		
+				@include extended(){		
 					padding-right:13px;		
 				}
 				
@@ -41,7 +41,7 @@
 				padding-left:9px;
 				padding-right:0;
 				
-				@include media($oe-extended-browser-size){		
+				@include extended(){		
 					padding-left:13px;		
 				}
 				

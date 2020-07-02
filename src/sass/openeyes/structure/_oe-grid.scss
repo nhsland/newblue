@@ -19,7 +19,12 @@
 	display: grid;
 	width:	100vw;
 	height:	100vh;
-	// max-height:100vh; // maybe required for Edge < 16?
+	// max-height:100vh; // maybe required for Edge < 16
+	
+	// anything outside the grid should be hidden
+	// the grid contains everything
+	overflow:hidden;
+	
 	
 	// switched to 'grid' shorthand: (instead of individual templates)
 	grid: 	"header header" #{$oe-header-height} 
@@ -27,14 +32,13 @@
 			"sidebar main" 1fr 
 			/ #{$oe-event-sidebar-width} 1fr;
 			
-
-	// when browser/device is below minimum supported width
-	// turn off overflow because scrollbars appear and ruin layout.
-	// leaving it on by default as it flags DOM errors.
-	@media only screen and (max-width: $oe-minimum-supported-width - 1) {
-		overflow:hidden;
-  	}		
-		
+	@include handheld(){
+		grid: 	"header header" #{$oe-header-height * 2} 
+				"addevent eventheader" #{$oe-event-header-height} 
+				"sidebar main" 1fr 
+				/ #{$oe-event-sidebar-width} 1fr;
+	}		
+			
 	
 	// grid items MUST be direct descendants
 	// Logo, Patient, User:
@@ -42,8 +46,7 @@
 		// for Edge < 16
 		-ms-grid-column: 1; 
 		-ms-grid-row: 1; 
-		-ms-grid-column-span: 2; 
-		height:$oe-header-height; 	
+		-ms-grid-column-span: 2; 	
 		
 		// CSS3	
 		grid-area: header;
@@ -58,6 +61,7 @@
 		// for Edge < 16
 		-ms-grid-column: 1; 
 		-ms-grid-row: 2;
+		
 		// CSS3		
 		grid-area: addevent;
 	}
@@ -69,6 +73,7 @@
 		// for Edge < 16
 		-ms-grid-column: 1;
 		-ms-grid-row: 3;
+		
 		// CSS3
 		grid-area: sidebar;
 		overflow-y:auto;
@@ -81,30 +86,23 @@
 	.oe-lightning-viewer,
 	.main-event {
 		width:$oe-event-main-default-width;
-		@include media($oe-extended-browser-size){	  // 1440px
-			width:$oe-event-main-extended-width;      // 1240px (not including sidebar: 200px = 1440px )
+		
+		@include extended(){						// 1440px
+			width:$oe-event-main-extended-width;    // 1240px (not including sidebar: 200px = 1440px )
 		}
 		
-		// stretch to fill for events will need some tweaking in other areas
-		// e.g. position of face and split elements background divider line
-		//@include media($oe-super-wide-display){	  	 		// 2048px+
-		//	width: calc(100% - #{$oe-hotlist-panel-max});      
-		//}
-		
-		
-		// introduced to handle 1280px viewports with window borders
+		// between 1280px and 1200px the content needs some flexibilty!
+		// this was added later. 1280px was the minimum supported width
+		// but this didn't allow for the scrollbar or handheld support
+		@include stretching(){
+			width:100%;
+		}
+	
 		@include below-minimum(){
-			width: 100%; 
-			min-width: 824px; 
-			// this is to keep David H happy. 
-			// if i don't add this OE collapses down to fit his tablets
-			// if i force a minimum width it will "work" for him 
-			// altho, he has to pinch zoom to fit it in ;) 
+			// this is now below anything supported 
+			// now restrict the width
+			width: #{$oe-minimum-viewport-width - $oe-event-sidebar-width}; 
 			
-			// calc(100vw - #{$oe-event-sidebar-width});  --- replaced
-			// calc worked on initally testing but failed on tablets
-			// (even tho we're not yet supporting them ;)
-			// 100% seems to work across all devices.
 		}
 	}
 	

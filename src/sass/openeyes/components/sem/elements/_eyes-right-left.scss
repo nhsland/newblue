@@ -30,7 +30,7 @@
 				
 				// handle 1280px  viewports with window borders
 				// trim a total of 20px
-				@include below-minimum(){
+				@include stretching(){
 					padding-right:10px;
 				};
 				
@@ -42,7 +42,7 @@
 								
 				// handle 1280px  viewports with window borders
 				// trim a total of 20px
-				@include below-minimum(){
+				@include stretching(){
 					padding-left:10px;
 				};
 			}

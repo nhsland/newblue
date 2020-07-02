@@ -51,6 +51,13 @@
 			background-image: url( svg-path('icons/_classic/triangle') );
 			color:$oe-dark-bg;
 		}
+		
+		@include squeeze(){
+			text-indent: -9999px;
+			padding:0;
+			width:25px;
+			background-position: center center;
+		}
 	}
 	
 

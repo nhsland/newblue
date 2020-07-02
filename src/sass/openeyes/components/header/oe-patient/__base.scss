@@ -12,7 +12,23 @@
 	height:$oe-header-height;
 	width:605px;
 	
+	// Alerts and Allergies text is hidden
+	@include squeeze(){
+		width:530px;
+	}
+	
+	@include handheld(){
+		height:$oe-header-height * 2;
+	}
+	
+	
 	background:transparent url( svg-path('backgrounds/patient-watermark.pro') ) top -4px right 18px no-repeat;
 	background-size:90px 90px;	
+	
+	@include handheld(){
+		background-position: top -4px right 5px;
+		background-size: 140px 140px;
+	}
+	
 }
 

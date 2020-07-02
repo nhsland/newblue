@@ -47,9 +47,14 @@
 				
 				transition: padding 0.5s ease-out; // smooth it
 				// extra stuff - increase hit area for button
-				padding:0 2px;
-				@include media($oe-extended-browser-size){
+				padding:0 3px;
+				
+				@include extended(){
 					padding:0 10px;
+				}
+				
+				@include squeeze(){
+					padding:0 0;
 				}
 				
 				

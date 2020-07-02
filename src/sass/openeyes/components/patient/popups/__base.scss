@@ -23,8 +23,17 @@
 	padding:15px 15px 20px 15px;
 	
 	// stretch popup to match width of extended Event area
-	@include media($oe-extended-browser-size){
+	@include extended(){
 		width:$oe-event-main-extended-width; 
+	}
+	
+	@include stretching(){
+		width:auto;
+		right:0; 
+	}
+	
+	@include handheld(){
+		top:$oe-header-height * 2;
 	}
 	
 	// overflow wrappers for all data in Patient Popups

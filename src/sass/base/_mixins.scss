@@ -9,27 +9,76 @@
   font-size: ($sizePixel / 16) + rem;
 }
 
+// Specific widths
+// OE needs to work on Galaxy Tabs and iPad (Pro)
+// HTML viewport scaling gives us: 1200 (600) and 768 (1536)
+// note: Although, it fits fine on iPad, it will be half sized
+// therefore, handheld modifications need to be below 1600 
+// BUT only if it's in portrait.
+@mixin handheld() {
+	@media only screen 
+		and (max-width: 1600px)
+		and (orientation: portrait){
+		@content;
+	}	
+}
 
-// Media query wrapper
+// Stretching width
+// There is a layout "grey" area between 1280px and 1200px 
+// some elements in this size need to be flexible 
+@mixin stretching(){
+	@media only screen 
+		and (min-width: $oe-minimum-viewport-width) 
+		and (max-width: #{$oe-event-main-default-width + $oe-event-sidebar-width} ){
+		@content;
+	}
+}
+
+// Squeeze (special elements)
+// Elements hat have to be squeezed to make the UI work below 1265px.
+// (1280px is actually 1265px, allowing for scroll bars)
+@mixin squeeze(){
+	@media only screen 
+		and (max-width: 1265px ){
+		@content;
+	}
+	
+}
+
+// Extended width 
+@mixin extended(){
+	@media only screen 
+		and (min-width: $oe-extended-browser-size){
+		@content;
+	}
+}
+
+// Flag a minimum width issue on any device
+@mixin below-minimum(){
+	@media only screen 
+		and (max-width: #{$oe-minimum-viewport-width - 1px}) {
+		@content;
+	}
+}
+
+
+
+// Media queries
+// Generic media query for minimum width
 @mixin media($width) {
   @media only screen and (min-width: $width) {
     @content;
   }
 }
 
-// Below minimum support
-@mixin below-minimum(){
-	@media only screen and (max-width: #{$oe-minimum-supported-width - 1px}){
-		@content;
-	}
-}
 
 // IPad 3+, portrait
+// actually tablets 608px - for whiteboard
 @mixin ipad() {
 	@media only screen 
 		and (min-device-width: 768px) 
 		and (max-device-width: 1024px) 
-		and (orientation: portrait) 
+		and (orientation: landscape) 
 		and (-webkit-min-device-pixel-ratio: 2) {
 		@content;
 	}	

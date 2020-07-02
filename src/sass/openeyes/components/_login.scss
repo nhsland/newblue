@@ -13,7 +13,9 @@
 		margin:auto; // flex centering
 		
 		position: relative;
-		top:-50px; // offset visual vertical balance 
+		top:-10vh; // offset visual vertical balance 
+		
+	
 		
 		h1 {
 			margin:0 0 40px 0;
@@ -21,11 +23,20 @@
 			text-align: center;
 			font-weight:100;
 			color:$oe-text-light;
+			
+			@include handheld(){
+				@include font-size(120);
+			}
+			
 		}
 		
 		.user {
 			width:250px;
 			margin:0 auto;
+			
+			@include handheld(){
+				width:50vw;
+			}
 			
 			input, button {
 				display:block;
@@ -34,6 +45,13 @@
 				@include font-size(16);
 				margin:0 0 15px 0;
 				text-align: center;
+				
+				@include handheld(){
+					height: 64px;
+					@include font-size(32);
+					margin:0 0 45px 0;
+				}
+				
 			}
 		}
 		

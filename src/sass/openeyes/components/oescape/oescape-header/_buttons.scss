@@ -16,7 +16,7 @@
 		// squeeze padding on minimum spec
 		padding:0 10px;
 	
-		@include media($oe-extended-browser-size){
+		@include extended(){
 			padding:0 15px;
 		}
 		

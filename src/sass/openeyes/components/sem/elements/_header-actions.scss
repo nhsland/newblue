@@ -9,7 +9,7 @@
 		.element-header {
 			.extra-btn,
 			.change-complexity {
-				@include media($oe-extended-browser-size){
+				@include extended(){
 					margin-top:8px;
 				}
 			}

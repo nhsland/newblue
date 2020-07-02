@@ -51,7 +51,7 @@
 						
 						// after extended browser 
 						// change back to original design style
-						@include media($oe-extended-browser-size){
+						@include extended(){
 							@include font-size(14);
 							font-weight:$oe-font-medium;
 						}

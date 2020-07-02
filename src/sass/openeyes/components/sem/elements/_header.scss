@@ -23,7 +23,7 @@
 			padding:0 0 0 10px;
 			
 			// on extended browser width tweak the font-size:
-			@include media($oe-extended-browser-size){
+			@include extended(){
 				@include font-size(13); 					// reduce font size slightly, need to fit in 3 line header
 				font-weight:$oe-font-medium;
 				line-height:1.1;

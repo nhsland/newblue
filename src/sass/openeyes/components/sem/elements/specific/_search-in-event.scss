@@ -19,7 +19,7 @@
 	background:$oe-grey;
 	padding:10px;
 	
-	@include media($oe-extended-browser-size){
+	@include extended(){
 		width:$oe-event-main-extended-width;
 	}
 	
