@@ -14,6 +14,11 @@
 	height: calc(100vh - #{$oe-header-height}); 	
 	overflow-y:auto;		// otherwise this over-flow doesn't work.
 	
+	@include handheld(){
+		top:$oe-header-height * 2;
+		height: calc(100vh - #{$oe-header-height * 2});
+	}
+	
 	width:#{$oe-hotlist-panel-width - 50px};	
 	
 	background:tint( $oe-dark-bg,10 );

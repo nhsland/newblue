@@ -40,7 +40,7 @@
 		cursor: pointer;
 		
 		@include handheld(){
-			left:10px;
+			left:15px;
 			// create a big hit area, visually position logo:
 			padding:30px 10px 40px 10px;
 		}

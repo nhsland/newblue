@@ -55,17 +55,18 @@
 		}
 		
 		button {
+			height: $oe-event-header-height;
+			@include flex(center, center);
 			@include font-size(16);
-			padding: 0 16px; // tab is 16px  
-			height: 38px;    // tab is 38px
+			padding:0 16px;
 			margin:0 32px 0 0;
 			&:last-child {
 				margin-right:0;
 			}
 			
 			@include handheld(){
-				@include font-size(24);
 				height:#{$oe-header-height * 2};
+				@include font-size(24);
 				margin:0 10px 0 0;
 			}
 		}

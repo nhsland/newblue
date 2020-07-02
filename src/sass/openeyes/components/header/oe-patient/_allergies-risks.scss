@@ -16,6 +16,10 @@
 		bottom:0;
 		right:155px;
 		
+		@include handheld(){
+			right: 205px;	
+		}
+		
 		cursor:pointer;
 		
 		// Allergies, Alerts text
@@ -43,8 +47,7 @@
 		&.no-risk {
 			background-color:$oe-btn-green-hint;
 		}
-		
-		
+
 		// js controlled interaction... 
 		&.open, &.active {
 			background-color: $oe-dark-text-highlight;
@@ -58,6 +61,13 @@
 			width:25px;
 			background-position: center center;
 		}
+		
+		@include handheld(){
+			height:38px;
+			width:40px;
+			background-size:23px;
+		}
+		
 	}
 	
 

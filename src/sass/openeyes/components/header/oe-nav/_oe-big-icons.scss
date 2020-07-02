@@ -20,10 +20,19 @@
 			
 			.icon-btn, 
 			.nav-js-btn	{
-				display: flex;
-				align-items: center;
+				@include flex(center, center);
 				height: $oe-header-height;
 				
+				transition: padding 0.5s ease-out; // smooth it
+				// extra stuff - increase hit area for button
+				padding:0 2px;
+				
+				@include extended(){
+					padding:0 5px;
+				}
+				@include handheld(){
+					padding:0 7px;	
+				}
 				svg {
 					pointer-events: none; // stops JS Delegation
 				}
@@ -39,25 +48,35 @@
 				}
 			}
 			
+			// svg icon
+			.icon {
+				display:inline-block;
+				width:40px;  
+				height:20px;
+				fill:rgb(255,255,255);
+				opacity: 0.5;
+				
+				@include handheld(){
+					width:60px;
+					height:30px;
+				}
+				
+				&.open {
+					fill:$oe-dark-text-highlight;
+				}			
+				
+				// hotlist in VC mode:
+				&.hotlist.vc {
+					fill: $oe-vc-orange;
+					opacity: 0.9;
+				}
+			}	
+			
 			// JS controlled nav btn
-			// as these have extra functionality 
-			// e.g. nav-shortcuts and hotlist
+			// Shortcuts, worklist and hotlist
 			.nav-js-btn {
 				cursor: pointer;
-				
-				transition: padding 0.5s ease-out; // smooth it
-				// extra stuff - increase hit area for button
-				padding:0 3px;
-				
-				@include extended(){
-					padding:0 10px;
-				}
-				
-				@include squeeze(){
-					padding:0 0;
-				}
-				
-				
+						
 				&.active {
 					background:$oe-btn-blue;
 					.icon {
@@ -77,25 +96,7 @@
 				}	
 			}
 			
-			// svg icon
-			.icon {
-				display:inline-block;
-				width:40px;  
-				height:20px;
-				fill:rgb(255,255,255);
-				opacity: 0.5;	
-				
-				&.open {
-					fill:$oe-dark-text-highlight;
-				}			
-				
-				// hotlist in VC mode:
-				&.hotlist.vc {
-					fill: $oe-vc-orange;
-					opacity: 0.9;
-	
-				}
-			}	
+			
 		}	
 	}
 }

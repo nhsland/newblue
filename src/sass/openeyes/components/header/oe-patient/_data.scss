@@ -17,8 +17,8 @@
 		font-weight:400;
 		
 		@include handheld(){
-			top:20px; 
-			@include font-size(19);
+			top:22px; 
+			@include font-size(20);
 			font-weight:500;
 		}
 		
@@ -38,8 +38,8 @@
 		padding:0 20px 0 0;
 		
 		@include handheld(){
-			bottom: $oe-event-header-height; 
-			@include font-size(19);
+			bottom: #{$oe-event-header-height + 5px}; 
+			@include font-size(16);
 			font-weight:500;
 		}
 		
@@ -89,7 +89,7 @@
 		@include font-size(13);
 		
 		@include handheld(){
-			@include font-size(19);
+			@include font-size(18);
 		}
 	}
 	
