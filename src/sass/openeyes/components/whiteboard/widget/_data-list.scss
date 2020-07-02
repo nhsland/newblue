@@ -22,10 +22,6 @@
 						padding-bottom:10px;
 					}	
 					
-					@include ipad(){
-						font-size: $wb3-font-base + 0.7vw;
-					}
-		
 					// for data-list, handle the scrolling here
 					// so that header does not scroll
 					height:85%;

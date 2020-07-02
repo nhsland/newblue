@@ -20,12 +20,10 @@
 	color:$oe-dark-text-light; 	// not themed
 	font-weight: 300;
 	
-	
-	// iPad 3, 4 and Pro 9.7 - Portrait
-	@include ipad(){
-		@include font-size(12);
+	@include handheld(){
+		@include font-size(28);
 		font-weight: 400;
-		width:50%;
+		top:10px;
 	}
 	
 	
@@ -45,13 +43,16 @@
 	top:0; 
 	right:10px; 
 	height:$oe-header-height;
-	
-	display:flex;
-	align-items:center;	
-	justify-content:flex-start;
+	@include flex(center, flex-start);
 	
 	@include font-size(16);
 	color:$oe-dark-text-light; 	// not themed
+	
+	@include handheld(){
+		top:auto;
+		bottom:5px;
+		@include font-size(20);
+	}
 	
 	button {
 		margin:0 8px 0 0;

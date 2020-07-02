@@ -13,32 +13,24 @@
 		left:0;
 		height:50px;
 		width:100%;
+		@include flex(center, center);
 		background:$oe-dark-bg;
 		
+		// slide up & down:
 		transition: bottom 0.2s ease-in-out;
+		&.down { bottom:-50px; }
+		&.up { bottom:0; }
 		
-		// shift position
-		&.down {
-			bottom:-50px;
+		// assign actions to an overflow row in the grid
+		@include handheld(){
+			position: static;
+			grid-area: 6 / 1 / 7 / 3 ;
+			height:#{$oe-header-height * 2};
+			
+			//
+			overflow-x: auto;
 		}
 		
-		&.up {
-			bottom:0;
-		}
-		
-		
-		// iPad 3, 4 and Pro 9.7 - Portrait
-		@include ipad(){
-			// there are ISSUEs
-			// with fixed positioning on iOS
-			// avoiding them ... 
-			position:static !important;
-		}
-		
-		
-		// actions by default are hidden.
-		// JS controlled icon btn.
-		// CSS handles the animation
 		.openclose-icon-btn {
 			position:absolute;
 			bottom:100%; 
@@ -56,21 +48,11 @@
 				background-image: url( svg-path('icons/remove-circle') );
 			}
 			
-			@include ipad(){
-				display: none; // not needed. actions not hidden.
+			@include handheld(){
+				display: none;
 			}
+			
 		}
-		
-		// center buttons because of
-		// the version 'tag' label (bottom, right):
-		@include flex(center, center);
-		
-		@include ipad(){
-			height:auto;
-			flex-wrap:wrap;
-			padding:10px 0 5px 0;
-		}
-		
 		
 		button {
 			@include font-size(16);
@@ -81,15 +63,10 @@
 				margin-right:0;
 			}
 			
-			// iPad 3, 4 and Pro 9.7 - Portrait
-			@include ipad(){
-				padding:0 10px; 
-				margin:0 15px 10px 0;
-				
-				// refresh & exit
-				.icon-text {
-					display: none;
-				}
+			@include handheld(){
+				@include font-size(24);
+				height:#{$oe-header-height * 2};
+				margin:0 10px 0 0;
 			}
 		}
 	}

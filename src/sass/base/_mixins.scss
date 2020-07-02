@@ -72,18 +72,6 @@
 }
 
 
-// IPad 3+, portrait
-// actually tablets 608px - for whiteboard
-@mixin ipad() {
-	@media only screen 
-		and (min-device-width: 768px) 
-		and (max-device-width: 1024px) 
-		and (orientation: landscape) 
-		and (-webkit-min-device-pixel-ratio: 2) {
-		@content;
-	}	
-}
-
 // ------------------------------ Patterns
 // Flex
 // vertical | horizontal

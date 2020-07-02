@@ -47,30 +47,21 @@
 				
 				&.down {
 					background-image: url( svg-path('icons/direction-down-circle') );
-				}
-				
+				}	
 			}
-		}
-		
-		
-		
+		}	
 	}
 	
 	.multipage-stack {
-		
 		width:70vw;
 		// set the height of page wrap
 		height:calc(100vh - #{$oe-header-height});
 		
-		// iPad 3, 4 and Pro 9.7 - Portrait
-		@include ipad(){
-			// ...so on iOS there is an issue with
-			// viewport height... so best guess
-			height:$wb-ipad-height-guess;
+		@include handheld(){
+			height:calc(90vh - #{$oe-header-height * 4});
 		}
 		
 		overflow-y:auto;
-		
 		background:$oe-blue-dark3;
 		// assumes <img> stack
 		img {

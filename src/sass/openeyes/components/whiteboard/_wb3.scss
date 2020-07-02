@@ -10,34 +10,28 @@
 .oe-whiteboard {
 
 	.wb3 {
+		height:calc(100vh - #{$oe-header-height});
+		// set up the grid
 		display: grid;
-		// create a 3 x 3 grid, this flows L to R
+		// Create a 3 x 3 grid, this flows L to R
+		// the data blocks fill in the grid as they are 
+		// added into the DOM, flow controls this.
 		grid: repeat(3, 1fr) / repeat(3, 1fr);
-		// fill the COLUMNs automatically, 
-		// ... special layouts: Risks / Eye Canvas on the right
-		// outside of explict grid, make sure it's the same width:
 		grid-auto-flow: row;
+		
+		// Risks and Allergies assigns ITSELF explicitly to a column 
+		// OUTSIDE the above Grid, therefore make sure it's the has the same width:
 		grid-auto-columns: 1fr;
 		
-		// iPad 3, 4 and Pro 9.7 - Portrait
-		@include ipad(){
+		@include handheld(){
+			height:calc(90vh - #{$oe-header-height * 4});
+			// change the layout and flow:
 			grid: repeat(5, 1fr) / repeat(2, 1fr);
 			grid-auto-flow: column;
-			// ...so on iOS there is an issue with
-			// viewport height (to do with the way
-			// iOS UI slides in and out, or something)
-			// so this is a guess, it allows for the header
-			// and for 44px of iOS bits... 
-			height:$wb-ipad-height-guess;
+			
+			// in handheld show the hidden actions down the bottom
+			grid-auto-rows: #{$oe-header-height * 2};
 		}
-		
-		
-		// set the height of the grid area
-		height:calc(100vh - #{$oe-header-height});
-		
-		// shouldn't happen on desktop but may do 
-		// on mobile devices
-		overflow-y: auto;
 		
 		.oe-wb-widget,
 		.oe-wb-special {

@@ -39,6 +39,12 @@
 		padding:20px; 	// increase hit area
 		cursor: pointer;
 		
+		@include handheld(){
+			left:10px;
+			// create a big hit area, visually position logo:
+			padding:30px 10px 40px 10px;
+		}
+		
 		// SVG logo
 		.oe-openeyes {
 			pointer-events: none; // otherwise it will block JS event delegation
@@ -51,6 +57,15 @@
 			height:$svg-height;
 			fill:#fff;
 			opacity:0.3;
+			
+			@include handheld(){
+				$svg-width:130px;
+				$svg-height: ( $svg-width * 0.1844 );
+				width:$svg-width; 
+				height:$svg-height;
+				opacity:0.5;
+			}
+			
 		}
 		
 		// little sexy touch.
@@ -73,6 +88,10 @@
 		display:none; // js controlled.
 		margin:$oe-header-height 0 0 20px;
 		padding:0 10px 10px 0;	
+		
+		@include handheld(){
+			padding:40px 10px 10px 0;
+		}
 		
 		.group {
 			margin:5px 0;

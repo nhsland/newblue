@@ -22,10 +22,6 @@
 						// but it's height is unknown
 						height:calc(100% - 45px);
 						
-						@include ipad(){
-							height:calc(100% - 30px);
-						}
-						
 					}
 				}
 			}

@@ -32,7 +32,7 @@
 						font-size: $wb3-font-base;
 						line-height:1;
 						
-						@include ipad(){
+						@include handheld(){
 							font-size: $wb3-font-base + 0.8vw;
 						}
 					}
@@ -45,7 +45,7 @@
 							margin-bottom: 0;
 						}	
 						
-						@include ipad(){
+						@include handheld(){
 							font-size: $wb3-font-header + 0.8vw;
 						}
 									
@@ -66,7 +66,7 @@
 				.wb-data {
 					font-size: $wb3-font-large;
 					
-					@include ipad(){
+					@include handheld(){
 						font-size: $wb3-font-large + 2vw;
 					}
 				}
@@ -77,7 +77,7 @@
 				.wb-data {
 					font-size: $wb3-font-medium;
 					
-					@include ipad(){
+					@include handheld(){
 						font-size: $wb3-font-medium + 1.8vw;
 					}
 					
