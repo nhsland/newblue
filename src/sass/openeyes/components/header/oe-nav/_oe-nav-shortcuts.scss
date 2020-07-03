@@ -15,6 +15,10 @@
 		width:230px; // allow enough space for all text
 		background:$oe-btn-blue;
 		padding:10px 0; 
+		
+		@include handheld(){
+			width:350px;
+		}
 	
 		li > a { 
 			display:block;
@@ -23,7 +27,16 @@
 			font-weight:400;
 			padding:6px 30px 6px 18px;
 			background: url( svg-path('ui/shortcut-arrow') ) right 8px top 6px no-repeat;
-			background-size: 10px 10px;
+			background-size: 10px;
+			
+			@include handheld(){
+				@include font-size(19);
+				color:#fff;
+				font-weight:400;
+				padding:12px 30px 12px 12px;
+				background-size: 18px;
+			}
+			
 			
 			&:hover, &:focus, &:active {
 				color:#fff;

@@ -27,12 +27,11 @@
 				// extra stuff - increase hit area for button
 				padding:0 2px;
 				
+				// this is also used in handheld in landscape!
 				@include extended(){
-					padding:0 5px;
+					padding:0 7px;
 				}
-				@include handheld(){
-					padding:0 7px;	
-				}
+				
 				svg {
 					pointer-events: none; // stops JS Delegation
 				}
@@ -40,12 +39,16 @@
 			
 			// <a>
 			.icon-btn {
+				@include handheld(){
+					padding:0 5px;	
+				}
 				&:hover, &:focus, &:active {
 					background:$oe-btn-blue;
 					.icon {
 						opacity: 1;
 					}
 				}
+				
 			}
 			
 			// svg icon
@@ -76,6 +79,10 @@
 			// Shortcuts, worklist and hotlist
 			.nav-js-btn {
 				cursor: pointer;
+				
+				@include handheld(){
+					padding:0 9px; // more common on touch! 
+				}
 						
 				&.active {
 					background:$oe-btn-blue;
