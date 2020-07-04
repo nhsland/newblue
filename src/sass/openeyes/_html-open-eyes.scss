@@ -1,0 +1,28 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Main DOM structure
+// Default monitor size is 1280px (1268px with scrollbars)
+// Supporting down to 1200px and adjusting up to 1600px
+
+html {
+	background: $html-bg;
+	// default base font-size, 
+	// fixing this to ensure greater control of UI display.
+	// all fonts are set relative to this (rem)
+	font-family: $font-stack;
+	font-size:16px;  
+	font-weight:400;
+}
+
+// body
+.open-eyes {
+	background: $html-bg;
+	// note: CSS px!
+	min-width: 1199px;
+	padding:0;
+	margin:0;
+}
+
+

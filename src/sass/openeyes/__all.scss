@@ -12,10 +12,11 @@
 // * load all Modules here.
 // (except theme '__config' files)
 
+@import "html-open-eyes";
 /* Structure */
-@import "structure/html-open-eyes";			// DOM base structure
+				
 @import "structure/oe-grid"; 					// CSS3 grid for page layout 
-@import "structure/layouts/oe-full/_all";		// Layouts. Full-width with ooption to sub-divide (Clinic, Theatre Diaries, Worklist )
+@import "structure/layouts/oe-full/_all";		// Layouts. 		Full-width with ooption to sub-divide (Clinic, Theatre Diaries, Worklist )
 
 /* Restrict Printing */
 @import "print";								// Restrict Print (from Browser Ctrl-P not allowed)
@@ -107,6 +108,3 @@
 
 /* V2 OLD CSS */
 @import "v2/dashboard.scss";
-
-
-
