@@ -160,9 +160,20 @@
 	.patient-local-edit {
 		top:5px;
 		right:-7px;
+		
+		@include handheld(){
+			right:-55px; // allows for the padding
+		}
+		
 		.icon {
 			width:15px;  
 			height:15px;
+			
+			@include handheld(){
+				width:18px;  
+				height:18px;	
+			}
+			
 			
 			&:hover, 
 			&:focus, 

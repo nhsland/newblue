@@ -39,7 +39,7 @@
 		// restriced to stop over-lap with icons 
 		@include extended(){
 			width:365px; 
-			border-left:1px solid $oe-dark-line;
+			border-left:3px solid $oe-dark-line;
 		}
 		@include handheld(){
 			width:375px;
@@ -62,8 +62,9 @@
 			@include handheld(){
 				display:inline-block;
 				padding:0 15px 0 0;
-				@include font-size(14); 
-				
+				@include font-size(13); 
+				font-weight:500;
+				opacity:0.5; 
 			}
 			
 			// this handles: user / site / context 

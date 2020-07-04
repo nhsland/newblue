@@ -17,8 +17,8 @@
 		font-weight:400;
 		
 		@include handheld(){
-			top:22px; 
-			@include font-size(20);
+			top:18px; 
+			@include font-size(22);
 			font-weight:500;
 		}
 		

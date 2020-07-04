@@ -64,6 +64,8 @@
 		
 		@include handheld(){
 			text-indent: -9999px;
+			padding:0;
+			background-position: center center;
 			height:38px;
 			width:50px;
 			background-size:23px;
