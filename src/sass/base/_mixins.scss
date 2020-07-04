@@ -17,7 +17,7 @@
 // BUT only if it's in portrait.
 @mixin handheld() {
 	@media only screen 
-		and (max-width: 1600px)
+		//and (max-width: 1600px)
 		and (orientation: portrait){
 		@content;
 	}	

@@ -17,7 +17,7 @@
 		right:155px;
 		
 		@include handheld(){
-			right: 205px;	
+			right: 260px;	
 		}
 		
 		cursor:pointer;
@@ -63,8 +63,9 @@
 		}
 		
 		@include handheld(){
+			text-indent: -9999px;
 			height:38px;
-			width:40px;
+			width:50px;
 			background-size:23px;
 		}
 		

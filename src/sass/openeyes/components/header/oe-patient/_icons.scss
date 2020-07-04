@@ -18,6 +18,10 @@
 		padding:6px 8px 4px 8px; // increase icon hitarea
 		cursor:pointer;
 		
+		@include handheld(){
+			padding:10px 14px 4px 14px; // increase icon hitarea
+		}
+		
 		svg {
 			pointer-events: none; // allow JS delegation
 		}
@@ -38,13 +42,16 @@
 		
 	}
 	
+	// this will space out the icons on handhelds
+	$space-out-icons:20px;
+	
 	// info 
 	.patient-demographics {
 		bottom:0;
 		right:119px;
 		
 		@include handheld(){
-			right:159px;	
+			right:#{($space-out-icons * 4) + 119px};	
 		}
 		
 		.icon {
@@ -71,7 +78,7 @@
 		padding-bottom:3px;
 		
 		@include handheld(){
-			right:116px;	
+			right:#{($space-out-icons * 3) + 86px};	
 		}
 		
 		.icon {
@@ -93,7 +100,7 @@
 		right:56px;	
 		
 		@include handheld(){
-			right:76px;	
+			right:#{($space-out-icons * 2) + 56px};
 		}
 		
 		.icon {
@@ -114,7 +121,7 @@
 		right:24px;	
 		
 		@include handheld(){
-			right:34px;	
+			right:24px + $space-out-icons;	
 		}
 		
 		.icon {

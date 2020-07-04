@@ -81,7 +81,7 @@
 				cursor: pointer;
 				
 				@include handheld(){
-					padding:0 9px; // more common on touch! 
+					padding:0 11px; // more common on touch! 
 				}
 						
 				&.active {

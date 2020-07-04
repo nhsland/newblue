@@ -11,38 +11,43 @@
 	position:absolute;
 	top:0; 
 	right:210px; // positioned allow for the big icon nav!
-	
-	// use flex to position user-profile
-	display:flex;
+	display:flex;	// use flex to position user-profile
 	height:$oe-header-height;
 
-	@include extended(){ right:250px; }
-	@include handheld(){ 
-		top:7px;
-		right:0; 
+	@include extended(){ 
+		right:250px; 
 	}
-	transition: right 0.5s ease-out; // smooth it
+	@include handheld(){ 
+		top:12px;
+		right:0; 
+		display:block;
+		height: auto;
+	}
+	
+	// animate
+	transition: right 0.5s ease-out; 
 
+	// <ul>
 	.oe-user-profile-context {
 		// uses flex to vertically center
 		// the user profile info within container
 		margin:auto 0; // flex magic.
 		width:255px;
+		color:$oe-dark-text;
+		padding:0 0 0 8px;
 		
-		// at minimum screen res this must be 
 		// restriced to stop over-lap with icons 
 		@include extended(){
 			width:365px; 
 			border-left:1px solid $oe-dark-line;
 		}
 		@include handheld(){
-			width:375px; 
-			border-left:2px solid $oe-dark-line;
+			width:375px;
+			text-align: right; 
 		}
 		
+		// animate
 		transition: width 0.5s ease-out; // smooth it 
-		color:$oe-dark-text;
-		padding:0 0 0 8px;
 			
 		li {  
 			position: relative;
@@ -55,7 +60,10 @@
 			}
 			
 			@include handheld(){
-				@include font-size(12); 
+				display:inline-block;
+				padding:0 15px 0 0;
+				@include font-size(14); 
+				
 			}
 			
 			// this handles: user / site / context 
