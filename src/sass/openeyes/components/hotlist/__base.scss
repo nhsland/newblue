@@ -22,14 +22,17 @@
 	
 	width:$oe-hotlist-panel-width;
 	
-	@include media($oe-js-browser-fix-size){		// 1890px
+	@include fix-hotlist(){		// 1890px
 		// as we are going up to 1920px we have an extra 30px... use them
 		width: calc(100vw - #{$oe-js-browser-fix-size - $oe-hotlist-panel-width}); 
 		// for those with crazy big monitors restrict it
-		max-width: $oe-hotlist-panel-max !important;			
+		// max-width: $oe-hotlist-panel-max !important;			
 	}
 	
-	
+	@include super-wide(){	  	 			// 2048px+
+		width: calc(100vw - #{($oe-js-browser-fix-size - $oe-hotlist-panel-width) + 100px}); 
+	}
+
 	background:tint( $oe-dark-bg,10 );
 	padding:0 0 20px 0;	
 	border-left:2px solid rgba($oe-bg-highlight,0.5);

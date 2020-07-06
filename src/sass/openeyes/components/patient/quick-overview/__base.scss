@@ -53,7 +53,7 @@
 		}
 		
 		// when super wide!... hotlist extends to maximum width
-		@include media($oe-super-wide-display){
+		@include super-wide(){
 			left:auto;
 			right: $oe-hotlist-panel-max;
 		}

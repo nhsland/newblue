@@ -21,8 +21,9 @@
 		}
 
 		@include extended(){
+			width:2.5%;
 			// make icons stack up
-			max-width:30px; 	 
+			//max-width:30px; 	 
 			// reverses the order to ensure remove is ideally placed, can handle 3 icons
 			flex-direction: row;
 			flex-wrap: wrap-reverse;

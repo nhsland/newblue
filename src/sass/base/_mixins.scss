@@ -42,7 +42,6 @@
 		and (max-width: 1265px ){
 		@content;
 	}
-	
 }
 
 // Extended width 
@@ -56,12 +55,26 @@
 // Flag a minimum width issue on any device
 @mixin below-minimum(){
 	@media only screen 
-		and (max-width: #{$oe-minimum-viewport-width - 1px}) {
+		and (max-width: #{$oe-minimum-viewport-width - 1px}){
 		@content;
 	}
 }
 
+// Fix hotlist
+@mixin fix-hotlist(){
+	@media only screen
+		and (min-width: $oe-js-browser-fix-size){
+		@content;	
+	}
+}
 
+// Super Wide!
+@mixin super-wide(){
+	@media only screen
+		and (min-width: $oe-super-wide-display){
+		@content;	
+	}
+}
 
 // Media queries
 // Generic media query for minimum width
