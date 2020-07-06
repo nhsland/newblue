@@ -11,14 +11,14 @@
 	.wb3-actions {
 		position:fixed;
 		left:0;
-		height:50px;
+		height:70px;
 		width:100%;
 		@include flex(center, center);
 		background:$oe-dark-bg;
 		
 		// slide up & down:
 		transition: bottom 0.2s ease-in-out;
-		&.down { bottom:-50px; }
+		&.down { bottom:-70px; }
 		&.up { bottom:0; }
 		
 		// assign actions to an overflow row in the grid
@@ -34,13 +34,13 @@
 		.openclose-icon-btn {
 			position:absolute;
 			bottom:100%; 
-			left:71vw;
+			right:10vw;
 			
 			background:$oe-btn-blue url( svg-path('icons/direction-up-circle') ) center center no-repeat;
-			background-size:25px;
+			background-size:35px;
 			
-			width:50px;
-			height:45px;
+			width:60px;
+			height:55px;
 			border-radius:15px 15px 0 0;
 			cursor: pointer;
 			
@@ -59,7 +59,7 @@
 			@include flex(center, center);
 			@include font-size(16);
 			padding:0 16px;
-			margin:0 32px 0 0;
+			margin:10px 32px 10px 0;
 			&:last-child {
 				margin-right:0;
 			}

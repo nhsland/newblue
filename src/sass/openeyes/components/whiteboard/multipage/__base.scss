@@ -24,13 +24,14 @@
 				display:inline-flex;
 				align-items: center;
 				justify-content: center;
-				width:35px;
-				height:35px;
-				margin:0 5px 5px 0;
+				width:45px;
+				height:45px;
+				margin:0 10px 5px 0;
 				border-radius:50%;
 				cursor: pointer;
 				color:white;
-				font-weight:400px
+				font-weight:500;
+				@include font-size(22);
 			}	
 		}
 		
@@ -38,10 +39,10 @@
 			.page-scroll-btn {
 				display:inline-block;
 				background:$oe-btn-blue url( svg-path('icons/direction-up-circle') ) center center no-repeat;
-				background-size:25px;			
-				width:35px;
-				height:35px;
-				margin:0 5px 0 0;
+				background-size:35px;			
+				width:45px;
+				height:45px;
+				margin:0 20px 0 0;
 				border-radius:50%;
 				cursor: pointer;
 				
@@ -69,6 +70,11 @@
 			margin:20px auto;
 			width:90%;
 		}
+		
+		scroll-behavior: smooth;
+		@media only screen and (prefers-reduced-motion: reduce) {
+			scroll-behavior: auto;
+		} 
 	}
 }
 
