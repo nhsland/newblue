@@ -13,7 +13,6 @@
 	// browser is wide enough the header moves over to 
 	// reduce the vertical height of the data layout
 	// 'tile' elements don't do this.
-	
 	.element.full {
 		@include extended(){
 			padding:10px 2.5% 10px 11.1%; 	// provide left space for header and right space for actions
@@ -33,4 +32,26 @@
 			}
 		}
 	}
+	
+	// The same layout is used in Patient Overview but the page is split into 
+	// two columns. Make sure the element header isn't squeezed when used there
+	// used fixed sizes in this situation
+	.cols-half {
+		.element.full {
+			@include extended(){
+				padding:10px 30px 10px $oe-event-extension - 25px; 	// provide left space for header and right space for actions
+			}
+			.element-header {
+				@include extended(){
+					width:$oe-event-extension - 22px;
+				}
+				
+				.element-title {
+					@include extended(){
+						max-width:$oe-event-extension - 25px; // force long names to wrap	
+					}
+				}
+			}
+		}
+	}	
 }

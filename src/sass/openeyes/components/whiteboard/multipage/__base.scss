@@ -9,7 +9,7 @@
 	.multipage-nav {
 		position: absolute;
 		right:10px;
-		top:40%;
+		top:25vh;
 		width:25vw;
 		
 		h3 {
@@ -17,8 +17,21 @@
 			color: $oe-text;
 		}
 		
+		h4 {
+			font-size: $wb3-font-small-header;
+			color: $oe-text;
+			margin:10px 0;			
+		}
+		
+		
 		.page-jump {
 			padding:20px 0;
+			
+			// seperate reports, linked
+			h4 {
+				margin:0 0 15px 0;
+			}
+			
 			.page-num-btn {
 				background:$oe-btn-blue;			
 				display:inline-flex;

@@ -92,7 +92,8 @@
 			width:$oe-event-main-extended-width;    // 1240px (not including sidebar: 200px = 1440px )
 		}
 		
-		@include super-wide(){	  	 			// 2048px+
+		// the 100px improves the screen balance between the content and the hotlist
+		@include super-wide(){	 // 2048px+
 			width:$oe-event-main-extended-width + 100px;      
 		}
 		

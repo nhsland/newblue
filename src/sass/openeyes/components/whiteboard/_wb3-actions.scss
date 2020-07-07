@@ -15,11 +15,17 @@
 		width:100%;
 		@include flex(center, center);
 		background:$oe-dark-bg;
-		
-		// slide up & down:
+		border-top:3px solid $oe-dark-bg;
 		transition: bottom 0.2s ease-in-out;
-		&.down { bottom:-70px; }
-		&.up { bottom:0; }
+		// slide up & down:
+		&.down { 
+			bottom:-70px; 
+			border-top-color: $oe-dark-bg;
+		}
+		&.up { 
+			bottom:0; 
+			border-top-color: $oe-btn-blue;
+		}
 		
 		// assign actions to an overflow row in the grid
 		@include handheld(){
