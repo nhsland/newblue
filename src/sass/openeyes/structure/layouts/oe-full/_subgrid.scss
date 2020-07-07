@@ -34,6 +34,10 @@
 			width: auto !important; // override defaults
 			height: calc(100vh - #{$oe-header-height + $oe-event-header-height}); 
 			overflow-y:auto;
+			
+			@include handheld(){
+				height: calc(100vh - #{($oe-header-height * 2) + $oe-event-header-height});
+			}
 		}
 		
 		.oe-full-side-panel {
