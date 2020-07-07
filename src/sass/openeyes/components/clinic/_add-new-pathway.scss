@@ -31,10 +31,6 @@
 	padding:0 30px 15px 15px;
 	width:310px;
 	transform: translateX( -310px ); // and shift left
-	
-	@include media($oe-browser-size-hotlist-fixed){
-		left: $oe-browser-size-hotlist-fixed - $oe-hotlist-panel-width;
-	}
 }
 
 // Add to individual pathway

@@ -120,10 +120,8 @@
 		// so how best to do this? ... decided to a negating class:
 		&:not(.use-full-screen){
 			
-			@include media($oe-browser-size-hotlist-fixed){		// 1800px
-				// content using these widths stretch to fill width until 
-				// they are restricted and hotlist pops in
-				width: $oe-extended-browser-size; 				// 1440px;
+			@include fix-hotlist(){
+				width: $oe-extended-browser-size; // 1440px;
 			}
 
 			// stretch to fill on super wide displays

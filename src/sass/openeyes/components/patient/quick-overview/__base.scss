@@ -47,7 +47,7 @@
 		
 		// when hotlist locks in need to change the right
 		// need to allow for it...
-		@include media($oe-browser-size-hotlist-fixed){		// 1800px
+		@include fix-hotlist(){
 			right: auto;
 			left: #{$oe-extended-browser-size - 500px};
 		}
