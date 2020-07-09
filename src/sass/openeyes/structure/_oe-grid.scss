@@ -96,7 +96,7 @@
 		
 		// the 100px improves the screen balance between the content and the hotlist
 		@include super-wide(){	 // 2048px+
-			width:$oe-event-main-extended-width + 100px;      
+			width:53vw;      
 		}
 		
 	
@@ -127,7 +127,7 @@
 			// stretch to fill on super wide displays
 			// works for most standard page layouts
 			@include super-wide(){	  	 		// 2048px+
-				width: calc(100% - #{$oe-hotlist-panel-max});      
+				width: 53vw;      
 			}
 		}
 	}

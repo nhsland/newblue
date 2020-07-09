@@ -17,10 +17,9 @@ $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 // the minimum supported handheld tablets (e.g. 600 x 2)
 $oe-minimum-viewport-width: 1200px;
 
-// OE was built to only support upto 1920px, however users 
 // are now using it on super-wide screens e.g. 2560x1440
-// going to target screens above supported 1920px to add enhancements
-$oe-super-wide-display: 	2047px;  // And above!
+// and above! However OE starts to look unbalanced above 2300px (hotlist goes too wide)
+$oe-super-wide-display: 	2300px;  // And above!
 
 // grid px
 $oe-header-height:						60px; 	// top UI bar

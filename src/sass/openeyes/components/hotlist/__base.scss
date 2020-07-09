@@ -31,7 +31,7 @@
 	
 	// the 100px improves the screen balance between the content and the hotlist
 	@include super-wide(){	// 2048px+
-		width: calc(100vw - #{($oe-js-browser-fix-size - $oe-hotlist-panel-width) + 100px}); 
+		width: 34vw; 
 	}
 
 	background:tint( $oe-dark-bg,10 );
