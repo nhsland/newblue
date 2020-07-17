@@ -9,7 +9,7 @@
 	// layout and positioning is all handled
 	// by CSS grid (.sidebar) is all set up
 	&.element-overlay {
-		z-index: $oe-z-quicklook;
+		z-index: $oe-z-element-search;
 		.element-structure {
 			padding:0 0 20px 0;	
 		}

@@ -39,7 +39,22 @@
 				/ #{$oe-event-sidebar-width} 1fr;
 				
 		-ms-grid-rows: #{$oe-header-height * 2} $oe-event-header-height 1fr;
-	}		
+	}
+
+	// This fixes a bug that arose with the use of TinyMCE. 
+	// and may fix (future issues). So, what happened? 
+	// Rather than adjust the basic (default) event grid, 
+	// the .oe-full-content was set up to span 2 grid items: 'sidebar' and 'main'
+	// However, later, I then added the "subgrid" to the full-content.
+	// Here is the problem. A second grid over 2 grid items! 
+	// TinyMCE popups where somehow width adjusting to the underlaying "sidebar" item 
+	&.simple {
+		grid: 	"header" #{$oe-header-height} 
+				"eventheader" #{$oe-event-header-height} 
+				"main" 1fr 
+				/  1fr;
+	}
+			
 			
 	
 	// grid items MUST be direct descendants
