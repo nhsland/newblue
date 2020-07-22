@@ -15,11 +15,13 @@
 		tbody {
 			
 			td {
-				padding:4px 5px; 
+				vertical-align: top;
+				padding:6px 5px 4px 5px; 
 				@include font-size(12);
 				font-weight:400;
 				color:$oe-dark-text-light; 
 				line-height:1.4;
+				
 				
 				// icons 
 				&:last-child {
@@ -48,6 +50,18 @@
 					padding:0 0 0 4px;
 					
 				}
+				
+				// updated DOM to handle the patient comments better
+				// wraps <textarea> and <div class="user-comment
+				.patient-comments {
+					margin:3px 0 0 0;
+			
+					.user-comment {
+						@include font-size(11);
+					}
+				}
+				
+				
 				
 			}
 			

@@ -34,8 +34,8 @@
 		width: 34vw; 
 	}
 
+	padding:0 0 35px 0;	// allow for Admin tag
 	background:tint( $oe-dark-bg,10 );
-	padding:0 0 20px 0;	
 	border-left:2px solid rgba($oe-bg-highlight,0.5);
 }
 

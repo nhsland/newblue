@@ -26,6 +26,9 @@
 	overflow:hidden;
 	
 	// set up grid
+	// actually this is the Grid for only SEM pages 
+	// v4.0 adjustment requires an "sem" class to implement it
+	// &.sem {} (from v4 I can make the "simple" grid the default...)
 	grid: 	"header header" #{$oe-header-height} 
 			"addevent eventheader" #{$oe-event-header-height} 
 			"sidebar main" 1fr 
@@ -54,6 +57,8 @@
 				"main" 1fr 
 				/  1fr;
 	}
+	
+	
 			
 			
 	
