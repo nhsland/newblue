@@ -15,6 +15,13 @@ $element-selector-height: 550px;
 	height:$element-selector-height;
 	background:$oe-dark-popup-bg;
 	z-index:$oe-z-event-quick-view;
+	
+	.close-icon-btn {
+		button {
+			height:32px; // large button height	
+		}
+		
+	}
 		
 }
 

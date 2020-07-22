@@ -12,7 +12,7 @@
 		
 		// match container
 		width:$oe-event-main-default-width;
-		height:$element-selector-height;
+		height: #{$element-selector-height - 32px}; // allow for the big close button
 		
 		padding:10px;
 	}		
