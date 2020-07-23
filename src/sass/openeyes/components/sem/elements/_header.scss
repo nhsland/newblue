@@ -30,6 +30,15 @@
 				overflow-wrap: break-word;					// do not allow overflow into the element data
 			}
 			
+			
+			// Meds Mgt has the prescription icon to show its linked
+			.oe-i-e {
+				@include extended(){
+					display: block;
+					margin:0 0 8px 0;
+				}
+			}
+			
 			// this hasn't been implemented but kept
 			// as a reference. it is demo'd on IDG
 			&.error {
