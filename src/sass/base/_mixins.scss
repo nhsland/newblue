@@ -94,6 +94,12 @@
 	align-items: $v;	
 }
 
+@mixin inline-flex($v,$h){
+	display:inline-flex;
+	justify-content: $h;
+	align-items: $v;	
+}
+
 // standardise box-shadows for popups
 @mixin boxshadow(){
 	// offset-x | offset-y | blur-radius | spread-radius | color

@@ -62,7 +62,7 @@
 		
 		button {
 			height: $oe-event-header-height;
-			@include flex(center, center);
+			@include inline-flex(center, center);
 			@include font-size(16);
 			padding:0 16px;
 			margin:10px 32px 10px 0;
