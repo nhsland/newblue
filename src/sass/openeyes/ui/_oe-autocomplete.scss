@@ -40,6 +40,12 @@
 			.autocomplete-match {
 				font-weight:700;
 			}
+			
+			// used in ED2.5 for searching Doodles
+			&.add-ed-doodle {
+				padding:2px 2px;
+				@include flex(center, space-between);
+			}
 		}
 	}
 }
