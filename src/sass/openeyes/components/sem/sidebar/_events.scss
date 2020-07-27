@@ -58,10 +58,22 @@
 				background-image:url( svg-path('sidebar/flag') );
 			}
 			
-			// draft (Correspondence)
+			// draft (Correspondence) - Orange pencil
 			&.draft {
 				background-image:url( svg-path('sidebar/draft') );
 			}
+			
+			// edit - grey pencil
+			&.edit {
+				background-image:url( svg-path('sidebar/edit') );
+			}
+			
+			// edit-done - green pencil
+			&.edit-done {
+				background-image:url( svg-path('sidebar/edit-done') );
+			}
+			
+			
 			
 			// scheduled
 			&.clock,

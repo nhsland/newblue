@@ -63,6 +63,7 @@
 		}
 		
 		&.confirmed,
+		&.edit-done,
 		&.done,
 		&.ready {
 			background-color:$oe-btn-green-hint;
