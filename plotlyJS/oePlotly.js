@@ -69,24 +69,28 @@ const oePlotly = {
 	
 	
 	/**
-	* Build Plotly layout: colours and layout based on theme and simplified settings
+	* Build Plotly layout: colours and layout based on theme and standardised settings
 	* @param {Object} options - quick reminder of 'options':
-{
-	theme: "dark" || "light",  // OE Theme  
-	colors: 'varied', // Optional - colour settings for traces, currenly only "varied"
-	plotTitle: false, // false || String
-	legend: true, // Optional
-	titleX: 'Weeks', // Optional
-	titleY: 'VA (change) from baseline', // Optional
-	numTicksX: 20, // Required (unless someone suggests a better way)
-	numTicksY: 20, // Required
-	rangeX: [-20, 220], // Optional
-	rangeY: [70, 110], // Optional
-	y2: {title:'IOP (mm Hg)'}, // Optional
-	rangeslider: true, // Optional 
-	zoom: false, // Optional 
-}
 	* @returns {Object} layout themed for Plot.ly
+	* options...
+	{
+		theme: "dark",  		// OE Theme  
+		colors: 'varied', 		// Default: "varied" or "twoPosNeg" or "rightEye"
+		plotTitle: false, 		// Optional {String}
+		legend: false, 			// Optional {Boolean}
+		titleX: false, 			// Optional {String}
+		titleY: false, 			// Optional {String}
+		numTicksX: 20, 			// Required (unless someone suggests a better way)
+		numTicksY: 20, 			// Required
+		rangeX: false, 			// Optional {Array} e.g. [0, 100]
+		rangeY: false, 			// Optional {Array} e.g. [0, 100]
+		y2: false, 				// Optional {Obejct} e.g {title: "y2 title", range: [0, 100]}
+		rangeslider: false, 	// Optional {Boolean}
+		zoom: false, 			// Optional {Boolean}
+		subplot: false,			// Optional {Boolean}
+		domain: false, 			// Optional {Array} e.g. [0, 0.75]
+		spikes: false, 			// Optional {Boolean} 
+	}
 	*/
 	getLayout(options){
 		// set up layout colours based on OE theme settings: "dark" or "light"
