@@ -77,14 +77,14 @@ const oePlotly = {
 		theme: "dark",  		// OE Theme  
 		colors: 'varied', 		// Default: "varied" or "twoPosNeg" or "rightEye"
 		plotTitle: false, 		// Optional {String}
-		legend: false, 			// Optional {Boolean}
+		legend: true, 			// Required {Boolean}
 		titleX: false, 			// Optional {String}
 		titleY: false, 			// Optional {String}
-		numTicksX: 20, 			// Required (unless someone suggests a better way)
-		numTicksY: 20, 			// Required
+		numTicksX: 20, 			// Required {Number}
+		numTicksY: 20, 			// Required	{Number}
 		rangeX: false, 			// Optional {Array} e.g. [0, 100]
 		rangeY: false, 			// Optional {Array} e.g. [0, 100]
-		y2: false, 				// Optional {Obejct} e.g {title: "y2 title", range: [0, 100]}
+		y2: false, 				// Optional {Object} e.g {title: "y2 title", range: [0, 100]}
 		rangeslider: false, 	// Optional {Boolean}
 		zoom: false, 			// Optional {Boolean}
 		subplot: false,			// Optional {Boolean}
