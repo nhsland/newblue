@@ -3,16 +3,15 @@
 //
 
 // OE Oescape
-// 
-// OEscape uses the full width of the screen, 2 areas:
-// 1) 'oescape-header' - <nav> title, view controls
-// 2) 'oescape' - <main> - highcharts, summary, OCTs
+// used in V1 and V2 and in Event sidebar
+@import "oescape-icon-btns";
 
-@import "oescape-header/_all";
-@import "oes-oescape";
-@import "oescape-icons";
+// v1 OEscape
+@import "v1/oes-oescape";
+@import "v1/oescape-header/_all";
 
-// update to v2 (generic layout structure as Analytics)
+// v2 OEscape
+// Generic layout structure as Analytics (themed)
 @import "v2-themed/_all";
 
 

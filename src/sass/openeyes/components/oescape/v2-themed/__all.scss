@@ -1,8 +1,9 @@
 // ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
-//
 
-
-// update to v2 (generic layout structure as Analytics)
+// update to v2 
+// (generic themed layout structure as per Analytics)
+@import "oes-v2";
 @import "data-awareness";
-@import "oes-hd-data-side";
+@import "oes-hd-data-layout";
+@import "oes-layout-icons";

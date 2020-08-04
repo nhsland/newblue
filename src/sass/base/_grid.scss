@@ -87,7 +87,8 @@ width: 100%;
 // either flex or tables:
 .col-gap {
 	> div[class^="cols-"], 
-	> td {
+	tbody > tr > td,  	// when added to <table> stop it applying to nested tables 
+	> td {				// added to <tr>
 		padding-right:	25px !important; // need to overide <td> css in elements, keeping this here for clarity
 		padding-left:	5px;
 		

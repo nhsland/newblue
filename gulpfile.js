@@ -54,6 +54,9 @@ const imagemin = require('gulp-imagemin');
 // Fix for file modifications datetime
 const through2 = require('through2');
 
+// Delete and clean before building
+const del = require('del');
+
 /*
 - Datestamp (for debug)
 - Legal header for CSS files
@@ -267,14 +270,20 @@ var watchCSS = function(done){
 	done();
 }
 
-
+var cleanDist = function(done){
+	del.sync([paths.dist.svg]);
+	// check what is deleted!
+	// const deletedPaths = del.sync([paths.dist.svg], {dryRun: true});
+	// console.log('Files and directories that would be deleted:\n', deletedPaths.join('\n'));
+	done();
+}
 
 /*
 -----------------------------
 Export Tasks
 -----------------------------
 */
-exports.svg = series(optimiseSVG);
+exports.svg = series(cleanDist, optimiseSVG);
 
 // Build all OE CSS files: "gulp buildCSS"
 exports.buildCSS = parallel( proCSS, classicCSS, printCSS );
@@ -287,5 +296,6 @@ exports.eyedrawIcons = series( buildEyedrawIcons, eyedrawCSS, exports.buildCSS);
 
 // Default task: "gulp"
 exports.default = series( exports.buildCSS, watchCSS );
+
 
 

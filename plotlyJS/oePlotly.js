@@ -1,7 +1,7 @@
 /**
 OE Layout helper for Plot.ly JS
+https://plot.ly/javascript/reference/
 */
-// https://plot.ly/javascript/reference/
 const oePlotly = {
 	/**
 	* Some elements require colour setting to be made
@@ -11,7 +11,7 @@ const oePlotly = {
 	* @param {String} theme - OE Theme setting "dark" || "light"?
 	* @returns {String} colour for request element (or "pink" if fails)
 	*/
-	getColorFor: function(plotlyElement, theme){
+	getColorFor(plotlyElement, theme){
 		// create a way to consistently style the Plot.ly elements
 		// based on theme: "dark" or "light"
 		const dark = theme === "dark" ? true : false;
@@ -25,6 +25,49 @@ const oePlotly = {
 		}
 		
 	},
+	
+	/**
+	* Can not just set layout to dark theme bases on oeTheme setting
+	* layout may be used in "pro" area (such as patient popup)
+	* @param {String} theme
+	* @returns {Boolean}
+	*/
+	isDarkTheme( theme ){
+		return theme === "dark" ? true : false;	
+	},
+	
+	/**
+	* Build an axis object IN layout lines 
+	* @param {Object} customise - overwrite or add to default settings
+	* @param {Boolean} dark - use dark theme options?
+	*/
+	defaultAxis( customise, dark ){
+		if( typeof dark === "string" ){
+			dark = this.isDarkTheme( dark );
+		}
+		
+		let axisDefaults = {
+			// color: '#fff', // override base font
+			linecolor: dark ? '#666' : '#999', // axis line colour
+			linewidth:1,
+			showgrid: true,
+			gridcolor: dark ? '#292929' : '#c9c9c9',
+			
+			tickmode: "auto",
+			nticks: 50, // number of ticks
+			ticks: "outside",
+			ticklen: 3, // px
+			tickcolor: dark ? '#666' : '#ccc',
+			automargin: true, //  long tick labels automatically grow the figure margins.
+			
+			mirror: true, //  ( true | "ticks" | false | "all" | "allticks" )
+		}
+		
+		return Object.assign( axisDefaults, customise );
+	},
+
+	
+	
 	/**
 	* Build Plotly layout: colours and layout based on theme and simplified settings
 	* @param {Object} options - quick reminder of 'options':
@@ -45,9 +88,9 @@ const oePlotly = {
 }
 	* @returns {Object} layout themed for Plot.ly
 	*/
-	getLayout: function(options){
+	getLayout(options){
 		// set up layout colours based on OE theme settings: "dark" or "light"
-		const dark = options.theme === "dark" ? true : false;
+		const dark = this.isDarkTheme( options.theme );
 		
 		// build the Plotly layout obj
 		let layout = {
@@ -122,6 +165,10 @@ const oePlotly = {
 					// assumes Postive trace is first! 
 					layout.colorway = dark ? ['#3f0aea','#7b3131'] : ['#0a4198','#874e4e'];
 				break;
+				
+				case "rightEye": 
+					layout.colorway = dark ? ['#65d235', '#94d712', '#0aa919', '#33be7e', '#9bd727'] : ['#418c20'];
+				break; 
 			}
 			
 		}
@@ -144,27 +191,20 @@ const oePlotly = {
 			// adjust the margin area
 			layout.margin.t = 60;
 		}
-
+		
 		/*
 		Axes
 		*/
-		let axis = {
-			// color: '#fff', // override base font
-			linecolor: dark ? '#666' : '#999', // axis line colour
-			linewidth:1,
-			showgrid: true,
-			gridcolor: dark ? '#292929' : '#c9c9c9',
-	
-			tickmode: "auto",
-			nticks: 50, // number of ticks
-			ticks: "outside",
-			ticklen: 3, // px
-			tickcolor: dark ? '#666' : '#ccc',
-			automargin: true, //  long tick labels automatically grow the figure margins.
-			
-			mirror: true, //  ( true | "ticks" | false | "all" | "allticks" )	
-		}
+		let axis = this.defaultAxis( {}, dark );
 		
+		// spikes
+		if(options.spikes){
+			axis.showspikes = true; 
+			axis.spikecolor = dark ? '#0ff' : '#003';
+			axis.spikethickness = 0.5;
+			axis.spikedash = "1px,3px";
+		}
+
 		// set up X & Y axis
 		layout.xaxis = Object.assign({},axis); 
 		layout.xaxis.nticks = options.numTicksX;
@@ -187,6 +227,16 @@ const oePlotly = {
 			layout.yaxis.range = options.rangeY;
 		}
 		
+		// OE data formatting
+		if(options.datesOnAxis){
+			switch(options.datesOnAxis){
+				case "x": layout.xaxis.tickformat = "%e %b %Y";
+				break; 
+				case "y": layout.yaxis.tickformat = "%e %b %Y";
+				break; 
+			}	
+		}
+			
 		// add titles to Axes?
 		if(options.titleX){
 			layout.xaxis.title = {
@@ -212,12 +262,17 @@ const oePlotly = {
 		
 		// two Y axes? 
 		if(options.y2){
-			layout.yaxis2 = Object.assign({},axis);
+			
+			layout.yaxis2 = Object.assign({}, axis);
 			layout.yaxis2.nticks = options.numTicksY;
 			layout.yaxis2.overlaying = 'y';
 			layout.yaxis2.side = 'right';
 			layout.yaxis2.showgrid = false;
 			
+			if(options.y2.range){
+				layout.yaxis2.range = options.y2.range; 
+			}
+
 			// and need a title as well??
 			if(options.y2.title){
 				layout.yaxis2.title = {
@@ -229,6 +284,22 @@ const oePlotly = {
 				}
 				// make space for Y title
 				layout.margin.r = 80;
+			}
+		}
+		
+		/*
+		Subplots (2 charts on a single plot)
+		*/
+		if(options.subplot){
+			layout.grid = {
+		    	rows: 2,
+				columns: 1,
+				pattern: 'independent',
+			}
+			
+			layout.yaxis.domain = options.domain;
+			if(layout.yaxis2){
+				layout.yaxis2.domain = options.domain;
 			}
 		}
 		
@@ -257,13 +328,16 @@ const oePlotly = {
 		// ok, all done
 		return layout;
 	}, 
+	
+	
+	
 	/**
 	* Build Regression lines for scatter data
 	* @param {Array} values_x 
 	* @param {Array} values_y
 	* @returns {Object} - {[x],[y]}
 	*/
-	findRegression: function(values_x, values_y) {
+	findRegression(values_x, values_y) {
 		// Find Line By Least Squares
 	    let sum_x = 0,
 	    	sum_y = 0,
