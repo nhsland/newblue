@@ -26,6 +26,31 @@ const oePlotly = {
 	},
 	
 	/**
+	* Get color series
+	* @param {String} colour name
+	* @param {Boolean} dark 
+	* @returns {Array} of colour series
+	*/
+	getColorSeries( colorName, dark ){
+		let colorWay = null;
+		
+		switch( colorName ){
+			case "varied": colorWay = dark ?  this.colours.dark.varied : this.colours.light.varied;
+			break;	
+			case "twoPosNeg": colorWay = dark ?  this.colours.dark.dual : this.colours.light.dual;   // assumes Postive trace is first! 
+			break;
+			case "rightEye": colorWay = dark ?  this.colours.dark.greenSeries : this.colours.light.greenSeries;
+			break; 
+			case "leftEye": colorWay = dark ?  this.colours.dark.redSeries : this.colours.light.redSeries;
+			break; 
+			default: 
+				colorWay = dark ? this.colours.dark.standard : this.colours.light.standard;
+		}	
+		
+		return colorWay;
+	},
+	
+	/**
 	* Some elements require colour setting to be made
 	* in the data (trace) objects. This provides a way to 
 	* theme and standardise 
@@ -113,8 +138,23 @@ const oePlotly = {
 		if(all) axis.range = [0, categories.length];
 		return axis; 
 	},
-
 	
+	/**
+	* Change layout properties
+	* Right and Left plot layouts are identical except for titles and colours, so ...
+	*/
+	changeTitle( layout, newTitle ){
+		if( layout.title.text ){
+			layout.title.text = newTitle;
+		}	
+	},
+	changeColorSeries( layout, colorSeries, dark ){
+		if( typeof dark === "string" ){
+			dark = this.isDarkTheme( dark );
+		}
+		
+		layout.colorway = this.getColorSeries( colorSeries, dark );
+	},
 	
 	/**
 	* Build Plotly layout: colours and layout based on theme and standardised settings
@@ -133,8 +173,8 @@ const oePlotly = {
 		rangeX: false, 			// Optional {Array} e.g. [0, 100]
 		rangeY: false, 			// Optional {Array} e.g. [0, 100]
 		useCategories: 			// Optional {Object} e.g. {showAll:true, categoryarray:[]}
-		y2: false, 				// Optional {Object} e.g {title: "y2 title", range: [0, 100], useCategories: {showAll:true, categoryarray:[]}}
-		rangeslider: false, 	// Optional {Boolean}
+		y2: false,				// Optional {Object} e.g {title: "y2 title", range: [0, 100], useCategories: {showAll:true, categoryarray:[]}}
+		rangeslider: false,		// Optional {Boolean}
 		zoom: false, 			// Optional {Boolean}
 		subplot: false,			// Optional {Boolean}
 		domain: false, 			// Optional {Array} e.g. [0, 0.75] (if subplot)
@@ -195,45 +235,18 @@ const oePlotly = {
 			},
 			
 		};
-		
-		/*
-		Colour theme for Plotly?
-		set up as subtle blues
-		*/
-		layout.colorway = dark ? this.colours.dark.standard : this.colours.light.standard;
-		
+	
 		/*
 		Colour themes!	
 		*/ 
 		if(options.colors){
-			switch(options.colors){
-				case "varied":
-					layout.colorway = dark ?  this.colours.dark.varied : this.colours.light.varied;
-					// override default settings and let Plotly use trace colours
-					layout.hoverlabel = {
-						font: {
-							size:13,
-						}
-					};
-				break;	
-				
-				case "twoPosNeg": layout.colorway = dark ?  this.colours.dark.dual : this.colours.light.dual;   // assumes Postive trace is first! 
-				break;
-				
-				case "rightEye": layout.colorway = dark ?  this.colours.dark.greenSeries : this.colours.light.greenSeries;
-				break; 
-				
-				case "leftEye": layout.colorway = dark ?  this.colours.dark.redSeries : this.colours.light.redSeries;
-				break; 
-				
-				default: 
-					layout.colorway = dark ? this.colours.dark.standard : this.colours.light.standard;
-			}
-			
+			layout.colorway = this.getColorSeries( options.colors, dark );			
+		} else {
+			layout.colorway = this.getColorSeries( "default", dark );
 		}
 		
 		/*
-		Plot title?	
+		Plot title
 		*/
 		if(options.plotTitle){
 			layout.title = {
