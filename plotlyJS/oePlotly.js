@@ -3,6 +3,28 @@ OE Layout helper for Plot.ly JS
 https://plot.ly/javascript/reference/
 */
 const oePlotly = {
+	colours: {
+		electricBlue: '#63d7d6',
+		dark: {
+			green: '#65d235',
+			greenSeries: ['#65d235', '#94d712', '#36be8d', '#099f18', '#9bd727'],
+			red: '#ea2b34',
+			redSeries: ['#ea2b34','#D41C81','#F65B20','#D4341C'],
+			standard: ['#1451b3', '#175ece', '#1a69e5'],
+			varied:  ['#0a83ea', '#18949f', '#781cea','#3f0aea'],
+			dual: ['#3f0aea','#7b3131'],
+		}, 
+		light: {
+			green: '#418c20',
+			greenSeries: ['#418c20','#99991C','#1DA323','#74A31D','#1C9944'],
+			red: '#da3e43',
+			redSeries: ['#da3e43', '#F0379A', '#E66735', '#F05037'],
+			standard: ['#0a4198', '#1451b3', '#175ece'],
+			varied: ['#0a2aea', '#ea0a8e', '#00b827','#890aea'],
+			dual: ['#0a4198','#874e4e'],
+		}
+	},
+	
 	/**
 	* Some elements require colour setting to be made
 	* in the data (trace) objects. This provides a way to 
@@ -11,19 +33,19 @@ const oePlotly = {
 	* @param {String} theme - OE Theme setting "dark" || "light"?
 	* @returns {String} colour for request element (or "pink" if fails)
 	*/
-	getColorFor(plotlyElement, theme){
-		// create a way to consistently style the Plot.ly elements
-		// based on theme: "dark" or "light"
-		const dark = theme === "dark" ? true : false;
+	getColorFor(plotlyElement, dark){
+		if( typeof dark === "string" ){
+			dark = this.isDarkTheme( dark );
+		}
+		
 		switch(plotlyElement){
-			case 'rightEye': return dark ? '#65d235' : '#418c20';
-			case 'leftEye': return dark ? '#ea2b34' : '#da3e43';	
+			case 'rightEye': return dark ? this.colours.dark.green : this.colours.light.green;
+			case 'leftEye': return dark ? this.colours.dark.red : this.colours.light.red;	
 			case 'error_y': return dark ? '#5b6c77' : '#7da7cb';
 			
 			default: 
 				return 'pink'; // no match, flag failure to match as pink!
 		}
-		
 	},
 	
 	/**
@@ -34,6 +56,18 @@ const oePlotly = {
 	*/
 	isDarkTheme( theme ){
 		return theme === "dark" ? true : false;	
+	},
+	
+	/**
+	* return settings for "line" style in data
+	* @param {Number} optional
+	* @returns {Object}
+	*/
+	dashedLine( n ){
+		return {
+			dash: "2px,2px",
+			width: 2,
+		}
 	},
 	
 	/**
@@ -51,7 +85,7 @@ const oePlotly = {
 			linecolor: dark ? '#666' : '#999', // axis line colour
 			linewidth:1,
 			showgrid: true,
-			gridcolor: dark ? '#292929' : '#c9c9c9',
+			gridcolor: dark ? '#292929' : '#e6e6e6',
 			
 			tickmode: "auto",
 			nticks: 50, // number of ticks
@@ -65,6 +99,20 @@ const oePlotly = {
 		
 		return Object.assign( axisDefaults, customise );
 	},
+	
+	/**
+	* set up to show all catorgies or just the ones with data
+	* @param {Object} axis
+	* @param {Array} categories (for axis)
+	* @param {Boolean} all - show all categories (even if they don't have data)
+	* @returns {Object} updated axis
+	*/
+	makeCategoryAxis( axis, categories, all = true){
+		axis.type = "category";
+		axis.categoryarray = categories;
+		if(all) axis.range = [0, categories.length];
+		return axis; 
+	},
 
 	
 	
@@ -72,10 +120,10 @@ const oePlotly = {
 	* Build Plotly layout: colours and layout based on theme and standardised settings
 	* @param {Object} options - quick reminder of 'options':
 	* @returns {Object} layout themed for Plot.ly
-	* options...
+	* All options...
 	{
 		theme: "dark",  		// OE Theme  
-		colors: 'varied', 		// Default: "varied" or "twoPosNeg" or "rightEye"
+		colors: 'varied', 		// Optional {String} varied" or "twoPosNeg" or "rightEye" (defaults to "blues")
 		plotTitle: false, 		// Optional {String}
 		legend: true, 			// Required {Boolean}
 		titleX: false, 			// Optional {String}
@@ -84,11 +132,12 @@ const oePlotly = {
 		numTicksY: 20, 			// Required	{Number}
 		rangeX: false, 			// Optional {Array} e.g. [0, 100]
 		rangeY: false, 			// Optional {Array} e.g. [0, 100]
-		y2: false, 				// Optional {Object} e.g {title: "y2 title", range: [0, 100]}
+		useCategories: 			// Optional {Object} e.g. {showAll:true, categoryarray:[]}
+		y2: false, 				// Optional {Object} e.g {title: "y2 title", range: [0, 100], useCategories: {showAll:true, categoryarray:[]}}
 		rangeslider: false, 	// Optional {Boolean}
 		zoom: false, 			// Optional {Boolean}
 		subplot: false,			// Optional {Boolean}
-		domain: false, 			// Optional {Array} e.g. [0, 0.75]
+		domain: false, 			// Optional {Array} e.g. [0, 0.75] (if subplot)
 		spikes: false, 			// Optional {Boolean} 
 	}
 	*/
@@ -105,7 +154,7 @@ const oePlotly = {
 				r:60, // change if y2 axis is added
 				t:30, // if there is a title will need upping to 60
 				b:80, // allow for xaxis title
-				pad:2, // px between plotting area and the axis lines
+				pad:5, // px between plotting area and the axis lines
 				autoexpand:true, // auto margin expansion computations
 			},
 			// Paper = chart area. Set at opacity 0.5 for both, to hide the 'paper' set to: 0
@@ -140,8 +189,8 @@ const oePlotly = {
 				bgcolor: dark ? "#003" : '#fff',
 				bordercolor: dark ? '#003' : '#00f',
 				font: {
-					size:13, // override base font
-					color: dark ? '#63d7d6' : '#00f',
+					size:11, // override base font
+					color: dark ? this.colours.electricBlue : '#00f',
 				}
 			},
 			
@@ -151,12 +200,15 @@ const oePlotly = {
 		Colour theme for Plotly?
 		set up as subtle blues
 		*/
-		layout.colorway = dark ? ['#1451b3', '#175ece', '#1a69e5'] : ['#0a4198', '#1451b3', '#175ece'];
+		layout.colorway = dark ? this.colours.dark.standard : this.colours.light.standard;
 		
+		/*
+		Colour themes!	
+		*/ 
 		if(options.colors){
 			switch(options.colors){
 				case "varied":
-					layout.colorway = dark ? ['#0a83ea', '#18949f', '#781cea','#3f0aea'] : ['#0a2aea', '#ea0a8e', '#00b827','#890aea'];
+					layout.colorway = dark ?  this.colours.dark.varied : this.colours.light.varied;
 					// override default settings and let Plotly use trace colours
 					layout.hoverlabel = {
 						font: {
@@ -165,14 +217,17 @@ const oePlotly = {
 					};
 				break;	
 				
-				case "twoPosNeg":
-					// assumes Postive trace is first! 
-					layout.colorway = dark ? ['#3f0aea','#7b3131'] : ['#0a4198','#874e4e'];
+				case "twoPosNeg": layout.colorway = dark ?  this.colours.dark.dual : this.colours.light.dual;   // assumes Postive trace is first! 
 				break;
 				
-				case "rightEye": 
-					layout.colorway = dark ? ['#65d235', '#94d712', '#0aa919', '#33be7e', '#9bd727'] : ['#418c20'];
+				case "rightEye": layout.colorway = dark ?  this.colours.dark.greenSeries : this.colours.light.greenSeries;
 				break; 
+				
+				case "leftEye": layout.colorway = dark ?  this.colours.dark.redSeries : this.colours.light.redSeries;
+				break; 
+				
+				default: 
+					layout.colorway = dark ? this.colours.dark.standard : this.colours.light.standard;
 			}
 			
 		}
@@ -204,9 +259,9 @@ const oePlotly = {
 		// spikes
 		if(options.spikes){
 			axis.showspikes = true; 
-			axis.spikecolor = dark ? '#0ff' : '#003';
-			axis.spikethickness = 0.5;
-			axis.spikedash = "1px,3px";
+			axis.spikecolor = dark ? '#0ff' : '#00f';
+			axis.spikethickness = dark ? 0.5 : 1;
+			axis.spikedash = dark ? "1px,3px" : "2px,3px";
 		}
 
 		// set up X & Y axis
@@ -229,6 +284,15 @@ const oePlotly = {
 		
 		if(options.rangeY){
 			layout.yaxis.range = options.rangeY;
+		}
+		
+		// categories (assuming this will only be used for yAxis)
+		if(options.useCategories){
+			layout.yaxis = this.makeCategoryAxis(
+				layout.yaxis,
+				options.useCategories.categoryarray,
+				options.useCategories.showAll,
+			);
 		}
 		
 		// OE data formatting
@@ -275,6 +339,15 @@ const oePlotly = {
 			
 			if(options.y2.range){
 				layout.yaxis2.range = options.y2.range; 
+			}
+			
+			// categories
+			if(options.y2.useCategories){
+				layout.yaxis2 = this.makeCategoryAxis(
+					layout.yaxis2,
+					options.y2.useCategories.categoryarray,
+					options.y2.useCategories.showAll,
+				);
 			}
 
 			// and need a title as well??
