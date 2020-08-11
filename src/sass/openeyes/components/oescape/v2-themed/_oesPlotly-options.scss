@@ -1,0 +1,25 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// some Plot.ly plots require a single option control
+// for R & L. This will probably only happen in OES but 
+// keeping this de-coupled in case it's needed elsewhere
+.oesplotly-options {
+	background:$oe-grey;
+	border-radius: 3px;
+	padding: 2px 4px;
+	
+	@include font-size(11);
+	color: $oe-text-light;
+	
+	select {
+		margin:0 0 0 5px;
+	}
+	
+}
+
+
+
+
+
