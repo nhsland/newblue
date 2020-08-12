@@ -41,7 +41,7 @@
 			border-top: 1px solid $oe-btn-blue;
 			background:$oe-grey; // match header
 			padding:0 10px; 
-			//transform: translateX(-40%);
+			transform: translateX(-33%);
 			height: $oe-event-header-height;
 			@include flex(center, center);
 			
