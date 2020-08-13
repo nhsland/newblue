@@ -7,8 +7,9 @@
 // this is content pulled from the pop
 
 .main-event {
-	// used in flex wrapper
-	// left / right blocks
+	
+	// patient overview content is split over 2 columns
+	// it's wrapped inside 'flex' 
 	.patient-overview {
 
 		width:50%;
@@ -20,6 +21,25 @@
 		
 		&:first-child {
 			margin-left:3px;
+		}
+		
+		// when adding a 4th row for CCT it was requested 
+		// the text was the same size as other date. 
+		// overide the font size in "standard"
+		
+		table.standard {
+			td {
+				@include font-size( 12 );
+			}
+			
+			// reduce height of <td> as Event icons increase it
+			&.clickable-rows {
+				td {
+					// careful! only update the required ones:
+					padding-top: 3px;
+					padding-bottom: 3px;
+				}
+			}
 		}
 	}
 	
