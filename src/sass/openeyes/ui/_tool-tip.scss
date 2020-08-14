@@ -102,6 +102,12 @@
 		}
 	}
 	
+	// used for "Copied to clipboard"
+	&.fade-out {
+	  display:block;
+	  animation: 2s ease-in forwards fadeout;
+	}
+	
 	// "click for details" will launch a popup on click
 	// <span>
 	.click-more {
@@ -114,4 +120,7 @@
 			content: '\2026 '; // "... "
 		}
 	}
+	
+	
+	
 }
