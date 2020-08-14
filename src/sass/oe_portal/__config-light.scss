@@ -1,0 +1,181 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// -------------
+// *** Light ***
+// -------------
+
+$html-bg: rgb(37,35,35); 
+
+// Text
+$oe-text: 				rgb(10,10,10);
+$oe-text-light:			rgb(80,80,100);
+$oe-text-highlight:		rgb(0,0,255); 		// selected
+$oe-text-active:		rgb(0,0,180);		// hover, hint 
+$oe-text-inverted: 		rgb(240,240,240);	// inverted!
+
+// White text on a dark background visually bleeds (and Vice versa) 
+$oe-font-light: 	400; 
+$oe-font-medium: 	500;
+$oe-font-bold: 		700; 
+
+// BLUEs
+// called 'blue' as they overwrite the default PRO theme vars
+$oe-dark-blue:				rgb(68,66,66);
+$oe-dark-blue-dark: 			shade( $oe-dark-blue, 20% );
+$oe-dark-blue-dark2: 		shade( $oe-dark-blue, 35% );
+$oe-dark-blue-dark3: 		shade( $oe-dark-blue, 25% );
+$oe-dark-blue-light: 		tint( $oe-dark-blue, 30% );
+
+$oe-blue:				rgb(240,240,240); 
+$oe-blue-dark: 			rgb(180,180,180);
+$oe-blue-dark1: 		$oe-blue-dark; // because I keep using 'dark1' instead of 'dark'
+$oe-blue-dark2: 		rgb(215,215,215);  
+$oe-blue-dark3:			rgb(115,120,132); // - exception dark3 is not 'inverted' in classic
+$oe-blue-light: 		shade( $oe-blue-dark,30);
+
+// 
+$oe-dark-grey:			rgb(78,76,76);
+$oe-grey:				rgb(220,220,220); // 'grey' because PRO is default scheme
+
+$oe-dark-line: 			rgb(60,60,60);
+$oe-line:				rgb(162,160,160); // don't use alphas! - tables with td colspan 2 overlap
+
+
+// Buttons
+$oe-dark-btn-blue:			rgb(7,69,152);
+$oe-dark-btn-green:			rgb(14,144,25);
+$oe-dark-btn-red:			rgb(153,14,14);
+// hints
+$oe-dark-btn-blue-hint:		shade( $oe-dark-btn-blue,30 );
+$oe-dark-btn-green-hint:		shade( $oe-dark-btn-green,30 );
+$oe-dark-btn-red-hint:		shade( $oe-dark-btn-red,30 );
+
+$oe-btn-text-on-hint: 	rgba(255,255,255,0.8);
+$oe-btn-default:		rgb(235,235,240);
+$oe-btn-selected:		rgb(220,220,230);
+$oe-btn-event-header: 	tint($oe-grey,10); // event header buttons need to work like tabs
+$oe-btn-blue:			rgb(40,110,224);
+$oe-btn-green:			rgb(14,154,51);
+$oe-btn-red:			rgb(225,57,57);
+// button hints
+$oe-btn-blue-hint: 		tint( $oe-btn-blue,20% );
+$oe-btn-green-hint: 	shade( $oe-btn-green,10% );
+$oe-btn-red-hint: 		shade( $oe-btn-red,10% );
+// button shades
+$oe-btn-blue-dark: 		shade( $oe-btn-blue, 25% );
+
+$oe-dark-popup-bg:		rgb(77,75,75);
+$oe-popup-bg:			rgb(245,245,245); // tool-tip, add-select-search, element-search-popup
+
+// for btn-lists
+$oe-dark-popup-btn-hint: 	shade( $oe-dark-popup-bg,20% );
+
+// input colours:
+$oe-dark-user-inputs: 		rgb(53,51,51);
+$oe-dark-user-input-text: 	$oe-dark-text;
+
+$oe-user-inputs:		rgb(255,255,255);
+$oe-user-inputs-hint: 	shade($oe-user-inputs,10); // label/input highlight
+$oe-user-input-text: 	rgb(0,0,0);
+$oe-input-placeholder: 	rgb(181,181,181);
+
+// flags
+$oe-highlighter: 		rgba(255,210,72,0.7);
+$oe-risks-warning:		rgb(117,30,0);
+
+$oe-alert-green: 		rgb(0,155,0);
+$oe-alert-red:			rgb(205,0,0);
+$oe-alert-orange: 		rgb(220,115,5);
+$oe-alert-grey: 		rgb(140,140,140); 
+
+$oe-status-green:		rgb(0,190,0);
+$oe-status-red:			rgb(210,0,0);
+$oe-status-amber:		rgb(225,152,0);
+
+// Pathsteps 
+$oe-step-green: 		rgb(20,150,0);
+$oe-step-orange:		rgb(200,80,22);
+$oe-step-red:			rgb(200,40,10);
+$oe-step-grey:			rgb(100,100,100);
+$oe-step-text:			rgb(245,245,245);
+
+$oe-dark-bg-highlight: 	shade($oe-dark-blue-dark3,30); // used as hover highlight
+$oe-bg-highlight: 		rgba(230,230,230,0.7); // used as hover highlight 
+// colors 
+$oe-bg-hint-green:		rgb(180,200,180);
+$oe-bg-hint-red:		rgb(230,180,180);
+
+// icon opacity (default)
+$oe-icon-opacity: 		0.6;
+
+// spinner color 
+$oe-spinner:			rgb(0,180,255);	
+
+// ED colours
+// 2.5
+$oe-ed2-panel: 			tint(rgb(218,230,241),30);
+// 3
+$oe-ed3-blue:			rgb(218,230,241); 
+$oe-ed3-app-blue:		$oe-ed3-blue;
+$oe-ed3-text:			rgb(50,50,60); 	
+$oe-ed3-panels: 		shade( $oe-ed3-app-blue, 10 );
+$oe-ed3-inputs:			shade( $oe-ed3-app-blue, 40 );
+$oe-ed3-input-text:		rgb(240,240,240);
+
+
+// SPECIFIC colours for areas
+$oe-dark-bg:				$oe-dark-blue-dark2; // top header strip
+
+$sidebar-event-selected: rgb(10,100,155);;
+$sidebar-event-selected-text: rgb(255,255,255);
+
+$oe-element-selector-green:	rgb(10,110,10);
+
+$oe-sem-main-event-bg: 		rgb(245,245,245);   // was oe-blue but needed to tweak the colour balance
+$oe-sem-element-bg: 		rgb(220,220,220);	// removed 2 colour scheme (priority/normal) made bg 1 colour
+$oe-sem-tile-element-bg: 	rgb(230,230,230);
+
+$oe-dark-element-headers:   	rgb(105,147,158);
+$oe-element-headers:   	rgb(20,20,150); 	// element default header colour
+$oe-home-search-bg:   	rgb(80,92,106);		// Home page Search area background
+$oe-tooltip-bg:			rgb(250,250,250);
+
+// clinic ... (became Pathsteps)
+$oe-clinic-green: 			rgb(20,100,0);
+$oe-clinic-orange:			rgb(180,80,22);
+$oe-clinic-red:				rgb(160,40,10);
+$oe-clinic-grey:			rgb(50,50,55);
+
+// Virtual Clinic
+$oe-vc-orange: 				rgb(255,180,0);
+
+// Theatre Diaries
+$oe-theatre-bookings-bg: 	rgb(230,230,230);
+$oe-theatre-available: 		rgb(160,190,160);
+$oe-theatre-nearfull:		$oe-theatre-bookings-bg; //rgb(230,195,128); // was orange
+$oe-theatre-unavailable:	rgb(235,180,180);
+
+// Whiteboard - PRO is good but classic needs a different approach
+$oe-wb-bg: 				rgb(140,130,130);
+$oe-wb-widget-bg:		rgb(205,195,195);
+$oe-wb-data-text:		rgb(60,50,50);	
+$oe-wb-headers:			rgb(60,60,140);	
+
+$oe-pagination-blue: 	rgb(140,140,255);
+
+// ... different SVGs for 'pro' & 'classic' theme
+@function svg-icon-path-theme($svg){
+	@return "../svg/in-css/icons/_classic/" + $svg + ".svg";
+}
+
+// ... add theme suffix
+@function svg-path-theme($svg){
+	@return "../svg/in-css/" + $svg + ".classic.svg";
+}
+
+
+
+
+

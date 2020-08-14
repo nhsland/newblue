@@ -12,7 +12,8 @@ Newblue OE UI (CSS & SVG) - Gulp generates:
 
 const config = {
 	version: '3',
-	css: 'style_oe'
+	css: 'style_oe',
+	portal: 'style_portal',
 }
 
 const paths = {
@@ -25,12 +26,17 @@ const paths = {
 		svg:		'./src/svg/**/*.svg',
 		watch: 		'./src/sass/**/*.{scss,sass}',		
 	},
+	portal: {
+		dark: 		'./src/sass/style_portal_dark.scss',
+		light: 		'./src/sass/style_portal_light.scss',
+	},
 	dist: {
 		css: 		'./css/',
 		img:		'./img/',
 		svg:		'./svg/',
 	},
 };
+
 /*
 Packages
 */
@@ -145,6 +151,24 @@ var eyedrawCSS = function(){
 	return minifyCSS(	paths.src.eyedraw, 
 						'eyedraw_draw_icons.min.css');
 };
+
+
+var proCSS = function () {
+	return minifyCSS(	paths.src.pro, 
+						config.css + config.version + '_dark.min.css');
+};
+
+/*
+Portal
+*/
+var portalDarkCSS = function () {
+	return minifyCSS( paths.portal.dark, config.portal + '_dark.min.css');
+};
+
+var portalLightCSS = function () {
+	return minifyCSS( paths.portal.light, config.portal + '_light.min.css');
+};
+
 
 /*
 -----------------------------
@@ -270,6 +294,11 @@ var watchCSS = function(done){
 	done();
 }
 
+var portalWatchCSS = function(done){
+	watch(paths.src.watch, series(exports.buildPortalCSS));
+	done();
+}
+
 var cleanDist = function(done){
 	del.sync([paths.dist.svg]);
 	// check what is deleted!
@@ -288,11 +317,17 @@ exports.svg = series(cleanDist, optimiseSVG);
 // Build all OE CSS files: "gulp buildCSS"
 exports.buildCSS = parallel( proCSS, classicCSS, printCSS );
 
+// Build all OE CSS files: "gulp buildCSS"
+exports.buildPortalCSS = parallel( portalDarkCSS, portalLightCSS );
+
 // Build Event sprite sheet and then update all CSS files
 exports.eventIcons = series( buildEventIcons, exports.buildCSS );
 
 // Build Eyedraw sprite sheet and CSS
 exports.eyedrawIcons = series( buildEyedrawIcons, eyedrawCSS, exports.buildCSS);
+
+// Build OE Portal
+exports.portal = series( exports.buildPortalCSS, portalWatchCSS );
 
 // Default task: "gulp"
 exports.default = series( exports.buildCSS, watchCSS );

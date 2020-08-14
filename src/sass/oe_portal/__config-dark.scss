@@ -1,0 +1,49 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// ------------
+// *** Dark ***
+// ------------
+
+$html-bg: rgb(16,25,37);
+
+// Text 
+$oe-text:				rgb(214,214,214);
+$oe-text-light:			rgb(140,140,140);
+$oe-text-highlight:		rgb(0,255,255);
+$oe-text-active:		rgb(90,180,180);
+
+// White text on a dark background visually bleeds (and Vice versa) 
+$oe-font-light:		300;	
+$oe-font-medium:	400;	
+$oe-font-bold: 		500;	
+
+$oe-bg1: rgb(33,33,33);
+$oe-bg2: rgb(66,66,66);
+
+$oe-line: rgb(38,48,61);
+
+// Buttons
+$oe-btn-blue:			rgb(7,69,152);
+$oe-btn-green:			rgb(14,144,25);
+$oe-btn-red:			rgb(153,14,14);
+
+// input colours:
+$oe-user-input-bg: 		rgb(0,0,0);
+$oe-user-input-text: 	rgb(255,255,255);
+$oe-input-placeholder:	rgb(100,100,100);
+
+// spinner color 
+$oe-spinner:			rgb(0,255,255);
+
+// icon opacity (default)
+$oe-icon-opacity: 		0.5;	
+
+// ... different SVGs for 'pro' (dark) & 'classic' (light) theme
+@function svg-icon-path-theme($svg){
+	@return "../svg/in-css/icons/" + $svg + ".svg";
+}
+
+
+
