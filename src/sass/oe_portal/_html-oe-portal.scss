@@ -1,0 +1,22 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+html {
+	background: $html-bg;
+	// default base font-size, 
+	// fixing this to ensure greater control of UI display.
+	// all fonts are set relative to this (rem)
+	font-family: $font-stack;
+	font-size: 18px;  
+	font-weight: 400;
+}
+
+// body
+.oe-portal {
+	background: $html-bg;
+	padding:0;
+	margin:0;
+}
+
+
