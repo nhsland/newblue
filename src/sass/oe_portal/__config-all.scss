@@ -7,7 +7,11 @@
 $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 
 // grid px
-$oe-header-height: 180px; // top UI bar
+$header-height: 150px; // fixed top UI bar
+$logo-area: 250px; 
+
+$input-height: 32px;
 
 // z
-$oe-z-logo: 100; // was 150			
+$z-logo: 100;	
+$z-header: 50; 			

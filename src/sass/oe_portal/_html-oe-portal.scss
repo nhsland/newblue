@@ -8,15 +8,18 @@ html {
 	// fixing this to ensure greater control of UI display.
 	// all fonts are set relative to this (rem)
 	font-family: $font-stack;
-	font-size: 18px;  
+	font-size: 16px;  
 	font-weight: 400;
+	color: $text;
 }
 
 // body
 .oe-portal {
 	background: $html-bg;
-	padding:0;
+	padding:$header-height 0 0 0; // allow for fixed header space
 	margin:0;
+	
+	@include font-size(16);
 }
 
 

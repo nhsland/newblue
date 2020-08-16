@@ -6,39 +6,46 @@
 // *** Light ***
 // -------------
 
-$html-bg: rgb(230,230,230);
+$html-bg: rgb(233,230,230);
+
+$bg1: rgb(223,220,220);
+$bg2: rgb(203,200,200);
+
+$hd-shadow: rgba(55,50,50,0.4);
 
 // Text 
-$oe-text:				rgb(20,20,20);
-$oe-text-light:			rgb(50,50,50);
-$oe-text-highlight:		rgb(0,0,200);
-$oe-text-active:		rgb(90,180,180);
+$text:				rgb(10,10,10);
+$text-light:		rgb(100,100,100);
+
+// <a>
+$a-text: 	rgb(0,0,220); 
+$a-bg: 		rgb(170,240,255);
 
 // White text on a dark background visually bleeds (and Vice versa) 
-$oe-font-light:		300;	
-$oe-font-medium:	400;	
-$oe-font-bold: 		500;	
+$font-light:	300;	
+$font-medium:	400;	
+$font-bold: 	500;	
 
-$oe-bg1: rgb(200,200,200);
-$oe-bg2: rgb(150,150,150);
-
-$oe-line: rgb(38,48,61);
+$line: rgb(150,150,150);
 
 // Buttons
-$oe-btn-blue:			rgb(7,69,152);
-$oe-btn-green:			rgb(14,144,25);
-$oe-btn-red:			rgb(153,14,14);
+$btn-text: 		rgb(255,255,255);
+$btn-default:	rgb(7,69,152); // blue
+$btn-green:		rgb(14,144,25);
+$btn-red:		rgb(153,14,14);
+$btn-disabled:	rgb(150,150,150);
+$btn-highlight: rgb(180,180,220);
 
 // input colours:
-$oe-user-input-bg: 		rgb(0,0,0);
-$oe-user-input-text: 	rgb(255,255,255);
-$oe-input-placeholder:	rgb(100,100,100);
+$user-input-bg: 	rgb(0,0,0);
+$user-input-text: 	rgb(255,255,255);
+$input-placeholder:	rgb(100,100,100);
 
 // spinner color 
-$oe-spinner:			rgb(0,255,255);
+$spinner:	rgb(0,255,255);
 
 // icon opacity (default)
-$oe-icon-opacity: 		0.5;	
+$icon-opacity: 	0.5;	
 
 // ... different SVGs for 'pro' & 'classic' theme
 @function svg-icon-path-theme($svg){

@@ -1,0 +1,118 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Logo
+
+// Logo popup info panel
+// Help, themes, etc:
+.openeyes-brand {
+	z-index: $z-logo;
+	position: fixed;
+	top: 0; 
+	left: 0;
+	bottom: 0;
+	width: $logo-area;
+	
+	
+	// OE SVG and Portal text
+	.oe-logo {
+		// create hit area
+		height: $header-height;
+		cursor: pointer;
+	
+		// <SVG> logo
+		.oe-openeyes {
+			
+			position: absolute; 
+			top: 45px; 
+			left: 40px;
+			
+			pointer-events: none; // otherwise it will block JS event delegatio
+			display: block;
+			
+			// SVG logo maintain aspect ratio
+			$svg-width: 150px;
+			$svg-height: ( $svg-width * 0.1844 );
+	
+			width: $svg-width; 
+			height: $svg-height;
+			
+			fill: $text;
+			opacity: 0.5;
+
+		}
+		
+		// PORTAL 
+		h1.portal {
+			position: absolute;
+			top: 80px;
+			left: 45px; 
+			@include font-size( 16 );
+			font-weight: 400;	
+			text-transform: uppercase;
+			letter-spacing: 16px; 
+			color: $text;
+			opacity: 0.5;
+			
+		}
+		
+		// js controlled interaction... 
+		&.open, 
+		&.active {
+			
+		}
+	}
+
+	.oe-portal-info {
+		margin:0;
+		padding:0;	
+		background: $bg2;
+		height: calc( 100vh - #{$header-height});
+		
+		.select-portal-theme {
+			button {
+				margin: 5px 0;
+			}
+			.dark-theme {
+				color: rgba(#eee, 0.8);
+				background: rgba(#111, 0.9);
+			}
+			.light-theme {
+				color: rgba(#111, 0.8);
+				background: rgba(#eee, 0.9);
+			}
+		}
+
+		.group {
+			margin:0 15px; 
+			padding:20px 0;
+			border-top: 1px dotted $line;
+			@include font-size(16);
+			
+			&.copyright {
+				position: absolute;
+				bottom: 0;
+				border-top: none;
+			}
+			
+		} 
+		
+		p {
+			@include font-size(14);
+			color:$text;
+			font-weight:400;
+			line-height:1.3;
+			margin:0 0 8px 0;
+		}
+		
+		h4 {
+			@include font-size(14);
+			font-weight:400;
+			color:$text-light;
+			margin:0 0 8px 0;
+		}
+
+	}
+}
+

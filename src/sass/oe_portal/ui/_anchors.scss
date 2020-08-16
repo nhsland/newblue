@@ -1,0 +1,36 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-portal {
+	
+	a {
+		color: $a-text;
+		background: none;
+		text-decoration: underline;
+		border:0;
+		outline:0; // remove glow effect
+		
+		&:active {
+			color: $btn-text;
+			background: shade( $btn-default, 30 );
+			text-decoration: none;
+		}	
+		
+		&:visited {
+			color: $text;
+			background: none;
+			text-decoration: none;
+		}
+		
+		// needs to be last...
+		&:hover, 
+		&:focus {
+			color: $text;
+			background: $a-bg;
+			text-decoration: none;
+		}
+		
+	}
+	
+}
