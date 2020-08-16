@@ -23,43 +23,42 @@
 	
 		// <SVG> logo
 		.oe-openeyes {
-			
+			pointer-events: none;
 			position: absolute; 
 			top: 45px; 
-			left: 40px;
-			
-			pointer-events: none; // otherwise it will block JS event delegatio
+			left: 45px;
 			display: block;
 			
 			// SVG logo maintain aspect ratio
 			$svg-width: 150px;
 			$svg-height: ( $svg-width * 0.1844 );
-	
 			width: $svg-width; 
 			height: $svg-height;
-			
 			fill: $text;
 			opacity: 0.5;
-
 		}
 		
 		// PORTAL 
 		h1.portal {
+			pointer-events: none;
 			position: absolute;
 			top: 80px;
-			left: 45px; 
+			left: 50px; 
 			@include font-size( 16 );
 			font-weight: 400;	
 			text-transform: uppercase;
 			letter-spacing: 16px; 
 			color: $text;
 			opacity: 0.5;
-			
 		}
 		
 		// js controlled interaction... 
-		&.open, 
 		&.active {
+			.oe-openeyes,
+			h1.portal {
+				transition: opacity ease-out 0.5s;
+				opacity: 1;
+			}
 			
 		}
 	}
@@ -70,6 +69,15 @@
 		background: $bg2;
 		height: calc( 100vh - #{$header-height});
 		
+		// JS controlled slide panel in and out. 
+		// default: slide/hide off screen
+		transition: transform ease-out 0.5s;
+		transform: translateX( #{ 0 - $logo-area });
+		&.show {
+			transform: translateX( 0 ); // JS adds this class to slide it in
+		}
+	
+		// hard coded colors for these buttons
 		.select-portal-theme {
 			button {
 				margin: 5px 0;
@@ -95,7 +103,6 @@
 				bottom: 0;
 				border-top: none;
 			}
-			
 		} 
 		
 		p {
