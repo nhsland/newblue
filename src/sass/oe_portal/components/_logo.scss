@@ -2,22 +2,17 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Logo
+// OE Logo and Panel
 
-// Logo popup info panel
-// Help, themes, etc:
 .openeyes-brand {
-	z-index: $z-logo;
-	position: fixed;
-	top: 0; 
-	left: 0;
-	bottom: 0;
-	width: $logo-area;
-	
 	
 	// OE SVG and Portal text
 	.oe-logo {
-		// create hit area
+		z-index: $z-logo;
+		position: fixed;
+		top: 0; 
+		left: 0;
+		width: $logo-area;
 		height: $header-height;
 		cursor: pointer;
 	
@@ -64,17 +59,21 @@
 	}
 
 	.oe-portal-info {
+		z-index: $z-logo;
+		position: fixed;
+		top: $header-height; 
+		left: #{ 0 - $logo-area };
+		width: $logo-area;
+		height: calc( 100vh - #{$header-height});
 		margin:0;
 		padding:0;	
 		background: $bg2;
-		height: calc( 100vh - #{$header-height});
 		
 		// JS controlled slide panel in and out. 
 		// default: slide/hide off screen
-		transition: transform ease-out 0.5s;
-		transform: translateX( #{ 0 - $logo-area });
+		transition: left ease-out 0.5s;
 		&.show {
-			transform: translateX( 0 ); // JS adds this class to slide it in
+			left: 0; // JS adds this class to slide it in
 		}
 	
 		// hard coded colors for these buttons
