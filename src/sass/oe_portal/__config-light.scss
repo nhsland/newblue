@@ -26,7 +26,7 @@ $font-light:	300;
 $font-medium:	400;	
 $font-bold: 	500;	
 
-$line: rgb(150,150,150);
+$line: rgb(193,190,190);
 
 // Buttons
 $btn-text: 		rgb(255,255,255);
@@ -36,25 +36,23 @@ $btn-red:		rgb(153,14,14);
 $btn-disabled:	rgb(150,150,150);
 $btn-highlight: rgb(180,180,220);
 
-// input colours:
-$user-input-bg: 	rgb(0,0,0);
-$user-input-text: 	rgb(255,255,255);
-$input-placeholder:	rgb(100,100,100);
-
 // spinner color 
 $spinner:	rgb(0,255,255);
 
 // icon opacity (default)
 $icon-opacity: 	0.5;	
 
+// inputs
+$user-input-blue: 		rgb(0,50,255);
+$user-inputs:			rgb(255,255,255);
+$user-inputs-border: 	rgb(210,210,210);
+$user-inputs-hint: 		rgba(255,255,255, 0.5); // label/input highlight
+$user-input-text: 		rgb(0,0,0);
+$input-placeholder: 	rgb(181,181,181);
+
 // ... different SVGs for 'pro' & 'classic' theme
 @function svg-icon-path-theme($svg){
 	@return "../svg/in-css/icons/_classic/" + $svg + ".svg";
-}
-
-// ... add theme suffix
-@function svg-path-theme($svg){
-	@return "../svg/in-css/" + $svg + ".classic.svg";
 }
 
 

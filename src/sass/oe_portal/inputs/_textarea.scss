@@ -1,0 +1,22 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// <textarea>
+// default set up for all textareas
+textarea {
+	height: auto;
+	padding:5px;
+	resize: none; // hide corner resize
+	overflow: auto; // for IE
+	word-wrap: break-word; // allow long words to break and wrap
+	
+	// this fixes the issues where the browser
+	// will use the system-ui fonts:
+	font-family: inherit;	
+	
+	// dull out the readonly fields
+	&:read-only { 
+    	background-color: rgba($user-inputs,0.75);
+	}
+}

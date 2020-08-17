@@ -76,6 +76,24 @@
 	}
 }
 
+// add for OE Portal
+// specific device sizes: iphone 8+ is 414px
+// but actuall UI fails below 600px (Galaxy Tab)
+@mixin phone(){
+	@media only screen 
+		and (max-width: 590px ){
+		@content;
+	}
+}
+
+// specific device sizes: Galaxy Tab is 800px
+@mixin tablet(){
+	@media only screen 
+		and (max-width: 801px ){
+		@content;
+	}
+}
+
 // Media queries
 // Generic media query for minimum width
 @mixin media($width) {

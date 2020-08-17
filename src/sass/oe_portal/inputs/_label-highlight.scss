@@ -1,0 +1,103 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Labels
+// used as a wrapper around inputs 
+// and next to inputs
+
+label {
+	&.highlight {
+		position: relative;
+		white-space: nowrap;
+		
+		@include flex( center, flex-start );
+		&.inline {
+			display: inline-flex;
+		}
+		
+		height: $input-height; // add line height to match input and select heights
+		padding: 0 15px;  
+		margin:2px 0;
+		
+		> input[type="radio"],
+		> input[type="checkbox"] {
+			margin-right: 10px; // pad between input - text
+			opacity: 0.8; // tone down the inputs slightly unless checked
+			&:checked {
+				opacity:1;
+			}
+		}
+		
+		border-radius: 5px;
+		cursor:pointer;
+		color:$user-input-text;
+		background:$user-inputs-hint;
+		
+		&:hover, 
+		&:focus {
+			background:$user-inputs;
+			input {
+				opacity:1;
+			}
+		}
+		
+		// enhanced OE radio
+		&.oe-radio {
+			padding-left: 38px;
+			
+			> input[type="radio"] {
+				display: none;
+				// CSS magic '+' next sibling! 
+				&:checked + .radio-btn {
+					background-color: $user-input-blue;
+					border-color: $user-input-blue;
+				}
+			}
+			
+			.radio-btn {
+				position: absolute;
+				top: 4px;
+				left: 4px;
+				height: 24px;
+				width: 24px;
+				cursor: pointer;
+				padding: 3px;
+				background-color: rgba(120,120,120,0.2);
+				background-clip: content-box;
+				border: 2px solid $text-light;
+				border-radius: 50%;
+			}
+		}
+		
+		// enhanced OE checkboxes
+		&.oe-checkbox {
+			padding-left: 38px;
+			
+			> input[type="checkbox"] {
+				display: none;
+				// CSS magic '+' next sibling! 
+				&:checked + .checkbox-btn {
+					background: $user-input-blue url( svg-icon-path('tick-chunky')) center center no-repeat;
+					background-size:19px;
+					border-color: $user-input-blue;
+				}
+			}
+			
+			.checkbox-btn {
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				height: 22px;
+				width: 22px;
+				cursor: pointer;
+				padding: 1px;
+				background: rgba(120,120,120,0.2);
+				background-clip: content-box;
+				border: 2px solid $text-light;
+			}
+		}
+		
+			
+	}
+}

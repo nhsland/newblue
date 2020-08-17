@@ -1,0 +1,58 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Typography
+
+h2,
+h3 {
+	@include font-size(21); // 1rem
+	font-weight:300;
+	line-height: 1.5;
+}
+
+h4,
+h5,
+h6,
+p {
+	@include font-size(16); // 1rem
+	font-weight:400;
+}
+
+// set weighting (depends on theme) 
+strong, b {
+	font-weight:$font-bold;
+}
+
+// used to de-emphasis
+// this will work across both PRO & Classic themes
+.fade {
+	opacity:0.7; 
+}
+
+// horizontal "tab" space
+// many occassions ended up requiring a bigger
+// horizonal space than &nbsp; or &emsp; provided
+.tabspace {
+	display:inline-block;
+	width:25px;	
+	&.double {
+		width:50px;
+	}
+	
+}
+
+// No wrapping. 
+// Used sometimes on <td> 
+// but available to used everywhere 
+.nowrap {
+	white-space: nowrap;
+}
+
+
+
+
+
+
+
+		

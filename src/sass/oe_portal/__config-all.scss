@@ -7,11 +7,24 @@
 $font-stack: ('Roboto','Helvetica','Arial',sans-serif);
 
 // grid px
-$header-height: 150px; // fixed top UI bar
+$header-height: 130px; // fixed top UI bar
+
 $logo-area: 250px; 
+$logo-area-tablet: 180px; 
+
+$menu-btn: 150px;
+$menu-btn-tablet: 80px;
+
+
+
 
 $input-height: 32px;
 
 // z
 $z-logo: 100;	
-$z-header: 50; 			
+$z-header: 50; 	
+
+// general svg icon path
+@function svg-icon-path($svg){
+	@return "../svg/in-css/icons/" + $svg + ".svg";
+}		

@@ -16,9 +16,16 @@
 @import "components/logo";
 @import "components/header";
 @import "components/login";
+@import "components/menu";
 
+
+// inputs
+@import "inputs/_all";
 
 // UI
 @import "ui/flex";
 @import "ui/buttons";
 @import "ui/anchors";
+@import "ui/table";
+@import "ui/row";
+@import "ui/typography";

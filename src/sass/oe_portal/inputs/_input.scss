@@ -1,0 +1,32 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// <input>
+// default set up for all inputs
+input {
+	padding:5px;
+	height: $input-height;
+	
+	// this fixes the issues where the browser
+	// will use the system-ui fonts:
+	font-family: inherit;
+	
+	// add SEARCH icon to input	
+	&.search {
+		padding-left:32px;
+		background: $user-inputs url( svg-icon-path-theme('search')) left 5px center no-repeat;
+		background-size: 24px;
+	}
+	
+	&.fix-small {
+		width: 70px;
+		text-align: center;
+	}
+	
+	&.fix-medium {
+		width: 100px;
+		text-align: center;
+	}
+}
+

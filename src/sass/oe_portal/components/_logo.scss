@@ -16,11 +16,19 @@
 		height: $header-height;
 		cursor: pointer;
 	
+		@include tablet(){
+			width: $logo-area-tablet;
+		}
+		
+		@include phone(){
+			height: 60px;
+		}
+	
 		// <SVG> logo
 		.oe-openeyes {
 			pointer-events: none;
 			position: absolute; 
-			top: 45px; 
+			top: 35px; 
 			left: 45px;
 			display: block;
 			
@@ -31,20 +39,44 @@
 			height: $svg-height;
 			fill: $text;
 			opacity: 0.5;
+			
+			@include tablet(){
+				$svg-width: 110px;
+				width: $svg-width; 
+				height: $svg-height;
+				left: 30px;
+			}
+			
+			@include phone(){
+				top: 12px;
+				left: 10px;
+			}
+			
 		}
 		
 		// PORTAL 
 		h1.portal {
 			pointer-events: none;
 			position: absolute;
-			top: 80px;
-			left: 50px; 
+			top: 70px;
+			left: 51px; 
+			
 			@include font-size( 16 );
 			font-weight: 400;	
 			text-transform: uppercase;
-			letter-spacing: 16px; 
+			letter-spacing: 17px; 
 			color: $text;
 			opacity: 0.5;
+			
+			@include tablet(){
+				left: 35px; 
+				@include font-size( 12 );
+				letter-spacing: 12px;
+			}
+			
+			@include phone(){
+				display: none;
+			}
 		}
 		
 		// js controlled interaction... 
@@ -62,7 +94,7 @@
 		z-index: $z-logo;
 		position: fixed;
 		top: $header-height; 
-		left: #{ 0 - $logo-area };
+		left: #{ 0 - $logo-area }; // default position offscreen
 		width: $logo-area;
 		height: calc( 100vh - #{$header-height});
 		margin:0;
@@ -71,7 +103,7 @@
 		
 		// JS controlled slide panel in and out. 
 		// default: slide/hide off screen
-		transition: left ease-out 0.5s;
+		transition: left ease-out 0.4s;
 		&.show {
 			left: 0; // JS adds this class to slide it in
 		}
@@ -93,13 +125,19 @@
 
 		.group {
 			margin:0 15px; 
-			padding:20px 0;
-			border-top: 1px dotted $line;
+			padding:15px 0;
 			@include font-size(16);
+			
+			@include phone(){
+				@include font-size(12);
+				margin:0 10px; 
+				padding:10px 0;
+			}
 			
 			&.copyright {
 				position: absolute;
 				bottom: 0;
+				left:0; 
 				border-top: none;
 			}
 		} 
@@ -110,6 +148,12 @@
 			font-weight:400;
 			line-height:1.3;
 			margin:0 0 8px 0;
+			
+			@include phone(){
+				@include font-size(12);
+				margin:0 0 4px 0;
+			}
+			
 		}
 		
 		h4 {
@@ -117,6 +161,11 @@
 			font-weight:400;
 			color:$text-light;
 			margin:0 0 8px 0;
+			
+			@include phone(){
+				@include font-size(12);
+				margin:0 0 4px 0;
+			}
 		}
 
 	}
