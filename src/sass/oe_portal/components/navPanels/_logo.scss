@@ -28,7 +28,7 @@
 		.oe-openeyes {
 			pointer-events: none;
 			position: absolute; 
-			top: 35px; 
+			top: 40px; 
 			left: 45px;
 			display: block;
 			
@@ -58,7 +58,7 @@
 		h1.portal {
 			pointer-events: none;
 			position: absolute;
-			top: 70px;
+			top: 75px;
 			left: 51px; 
 			
 			@include font-size( 16 );
