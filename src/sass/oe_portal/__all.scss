@@ -13,10 +13,10 @@
 // (except theme '__config' files)
 @import "html-oe-portal";
 
-@import "components/logo";
-@import "components/header";
+@import "components/header/_all";
+@import "components/navPanels/_all";
 @import "components/login";
-@import "components/menu";
+@import "components/collapsables/_all";
 
 
 // inputs

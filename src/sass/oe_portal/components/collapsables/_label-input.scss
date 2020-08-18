@@ -1,0 +1,36 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-portal {
+	// collapses to a stack on small devices
+	// UI pattern
+	// |- <span class="label"> ...
+	// |- <div class="input"> ... wrap ALL items with this
+	
+	.f-c-l-i {
+		@include flex( flex-start, flex-start );
+		
+		@include tablet(){
+			display: block;
+		}
+		
+		span.label {
+			width: 33%;
+			@include tablet(){
+				display:block;
+				width: auto;
+				margin:0 0 5px 0;
+			}
+		}
+		
+		// all input structures needs wrapping so that the
+		// layouts can be lined up
+		div.input {
+			width: 60%;
+			@include tablet(){
+				width: auto;
+			}
+		}	
+	}
+}

@@ -1,0 +1,30 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+header {
+
+	.portal-state {
+		
+		// Login, Find a patient, etc
+		h2.area {
+			@include font-size(18);
+			font-weight: 400;
+			color: $text-light;
+			margin:0 0 4px 0;
+			
+			@include tablet(){
+				@include font-size(14);
+				margin:0 0 3px 0;
+			}
+			
+			@include phone(){
+				@include font-size(12);
+			}
+			
+		}
+	}
+}
+
+
+

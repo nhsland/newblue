@@ -3,8 +3,7 @@
 //
 
 table {
-	width:100%;
-		
+	width:100%;		
 	// set table up like SEM edit state (assume icons is last <td>)
 	&.last-right {
 		th, td {
@@ -34,7 +33,7 @@ table {
 		th,
 		td {
 			vertical-align: top;
-			padding:10px 5px;			
+			padding:10px 5px;				
 		}
 		
 		// use th like a label for a row

@@ -3,16 +3,6 @@
 //
 
 header {
-	z-index: $z-header; 
-	position: fixed; 
-	top: 0; 
-	left: 0;
-	right: 0;
-	height: $header-height;
-	background: $bg2;
-	
-	// soften the border (this also helps with content scroll)
-	box-shadow: 0 6px 10px 0 $hd-shadow; 
 	
 	// Openeyes logo & menu occupy left and right areas
 	// Portal state is a HUD of current activity
@@ -22,13 +12,14 @@ header {
 		left: $logo-area;
 		right: $menu-btn; 
 		transform: translateY( -50% );
-		padding: 10px 20px;
+		padding: 8px 20px;
 		border-left: 3px solid $text-light;
 		
 		@include tablet(){
 			left: $logo-area-tablet;
 			right: $menu-btn-tablet; 
 			border-left-width: 2px;
+			padding: 5px 10px;
 		}
 		
 		@include phone(){
@@ -37,29 +28,9 @@ header {
 			bottom: 10px; 
 			left: 10px;
 			right: 10px; 
-			padding: 5px 10px;
-			@include font-size( 14 );
+			padding: 4px 8px;
 		}
-		
-		
-		// Login, Find a patient, etc
-		h2.area {
-			@include font-size(18);
-			font-weight: 500;
-			margin:0 0 8px 0;
-			
-			@include phone(){
-				@include font-size( 14 );
-				margin:0 0 4px 0;
-			}
-			
-		}
-		
-		
-		
 	}
-	
-	
 }
 
 

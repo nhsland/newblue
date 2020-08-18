@@ -11,6 +11,11 @@ html {
 	font-size: 16px;  
 	font-weight: 400;
 	color: $text;
+	
+	@include phone(){
+		font-size: 14px; // reduce base font (all fonts are in REM)
+	}
+	
 }
 
 // body
@@ -24,6 +29,15 @@ html {
 		padding:45px; // matches logo left position 
 		max-width: 1400px; // stop content stretching out too much
 		margin: 0 auto;
+		
+		@include tablet(){
+			padding:30px 30px 40px 30px;
+		}
+		
+		@include phone(){
+			padding:20px 15px 40px 15px;
+		}
+		
 	}
 }
 

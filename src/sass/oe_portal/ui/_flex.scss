@@ -3,14 +3,20 @@
 //
 
 // Flex is all over the place
+
 .flex {
-	@include flex(center, space-between);
+	@include flex( center, space-between );
+}
+
+.flex-c {
+	@include flex( center, center );
 }
 
 .flex-t {
-	@include flex(flex-start, space-between);	
+	@include flex( flex-start, space-between );	
 }
 
 .flex-t-l {
-	@include flex(flex-start, flex-start);	
+	@include flex( flex-start, flex-start );	
 }
+

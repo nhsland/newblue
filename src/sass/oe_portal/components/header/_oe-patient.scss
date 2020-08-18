@@ -1,0 +1,53 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Header - Patient
+
+.oe-patient {
+	
+	.patient-name {
+		@include font-size(20);
+		font-weight:500;
+		padding:0 0 5px 0;
+		
+		@include tablet(){
+			@include font-size(16);
+			// text-overflow: ellipsis;
+		}
+		
+	}
+	
+	.patient-details {
+		@include flex( center, flex-start);
+		
+	}
+	
+	.hospital-number, 
+	.nhs-number, 
+	.patient-gender, 
+	.patient-age, 
+	.patient-died,
+	.warning {
+		display:inline-block;
+		@include font-size(14);
+		padding:0 5px;
+		border-left:1px solid $line;
+		
+		@include tablet(){
+			@include font-size(11);
+		}
+			
+		span {
+			&:first-of-type{
+				opacity:0.5;
+			} 
+			 
+		}
+		em {
+			opacity:0.5;
+			font-size: 80%;
+		}	
+	}
+}
+

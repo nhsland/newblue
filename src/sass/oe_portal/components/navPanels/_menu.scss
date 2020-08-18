@@ -2,11 +2,8 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Portal menu
-
 .portal-menu {
 	
-	// Classic menu icon
 	.menu-btn {
 		z-index: $z-logo + 1;
 		position: fixed;
@@ -15,7 +12,7 @@
 		width: $menu-btn;
 		height: $header-height;
 		cursor: pointer;
-		
+		// classic menu 
 		background: transparent url( svg-icon-path-theme('menu')) center center no-repeat;
 		background-size: 36px;
 		opacity: 0.5;
@@ -58,8 +55,6 @@
 			height: 100vh;
 			padding: 35px 0 10px 0;
 		}
-
-		
 		
 		// JS controlled slide panel in and out. 
 		// default: slide/hide off screen
@@ -67,41 +62,14 @@
 		&.show {
 			right: 0; // JS adds this class to slide it in
 		}
-	
-		.group {
-			margin:0 15px; 
-			padding:15px 0;
-			@include font-size(16);
-			
-			@include phone(){
-				@include font-size(14);
-				margin:0 10px; 
-				padding:10px 0;
-			}
-			
-			&.logout {
-				margin-top: 20px;
-				
-				button {
-					width: 100%;
-				}
-			}
-		} 
 		
-		
-		h4 {
-			@include font-size(14);
-			font-weight:400;
-			color:$text-light;
-			margin:0 0 8px 0;
-			
-			@include phone(){
-				@include font-size(12);
-				margin:0 0 4px 0;
+		// logout button
+		.group.logout {
+			margin-top:20px; 
+			button { 
+				width:100%;
 			}
 		}
-		
-
 	}
 }
 
