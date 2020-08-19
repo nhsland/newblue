@@ -10,7 +10,9 @@
 @import 'base/mixins'; 		// mixins 
 @import "base/resets";		// reset (selected normalize)
 @import "base/h5bp";		// H5BP, some opinionated defaults 
-@import "base/grid";		// Simple grid layout 
+@import "base/grid";		// Simple grid layout
+ 
+@import "base/keyframes";	// Keyframes
 
 /* OpenEyes Portal  */
 @import "oe_portal/_config-all";

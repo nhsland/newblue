@@ -1,0 +1,36 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-portal {
+	
+	// confirmation page 
+	ul.checklist {
+		list-style: none;
+		
+		li {
+			@include font-size( 18 );
+			font-weight: 500;
+			margin:0 0 20px 0;
+			padding: 0 0 0 20px;
+			
+			background: transparent url( svg-icon-path-theme('tick-chunky')) top 4px left no-repeat;
+			background-size: 12px;
+			
+			&:last-child{
+				margin:0;
+			}	
+			
+			table {
+				margin:5px 0 0 0;
+			}
+			
+			@include phone(){
+				padding: 0 0 0 12px;
+				background-size:8px;
+				@include font-size( 16 );
+			}
+		}
+		
+	}
+}

@@ -7,9 +7,10 @@ header {
 	position: fixed; 
 	top: 0; 
 	left: 0;
-	right: 0;
+	width: 100vw;
 	height: $header-height;
 	background: $bg2;
+	
 	
 	// soften the border (this also helps with content scroll)
 	box-shadow: 0 6px 10px 0 $hd-shadow; 

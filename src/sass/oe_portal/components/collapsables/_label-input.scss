@@ -16,7 +16,7 @@
 		}
 		
 		span.label {
-			width: 33%;
+			width: 35%;
 			@include tablet(){
 				display:block;
 				width: auto;
@@ -27,9 +27,11 @@
 		// all input structures needs wrapping so that the
 		// layouts can be lined up
 		div.input {
+			margin: 0 0 0 5%;
 			width: 60%;
 			@include tablet(){
 				width: auto;
+				margin: 0;
 			}
 		}	
 	}

@@ -38,6 +38,9 @@ header {
 					opacity: 0.7;
 					background-image: url( svg-icon-path-theme('tick-chunky'));
 					background-size: 12px;
+					@include phone(){
+						background-size: 10px;
+					}
 				}
 				
 				&.active {
