@@ -1,0 +1,24 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-portal {
+	// simple split.
+	// 50/50
+	.f-c-split {
+		@include flex( flex-start, space-between );
+		
+		@include tablet(){
+			display: block;
+		}
+		
+		> div {
+			width: 48%;	
+			@include tablet(){
+				width: auto;
+				margin:0 0 20px 0;
+				// don't use padding (see eye-inputs!)
+			}
+		}	
+	}
+}

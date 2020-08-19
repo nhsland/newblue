@@ -1,0 +1,36 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-portal {
+	
+	.right-eye-inputs,
+	.left-eye-inputs {
+		padding: 50px 0 20px 0;
+		background: transparent none top left no-repeat;
+		background-size: 35px;
+		
+		@include tablet(){
+			padding-top: 40px;
+			background-size: 30px;
+		}
+	}
+	
+	.right-eye-inputs {
+		background-image: url( svg-icon-path-theme('lat-R-green'));
+		// right eye is always above left one
+		@include tablet(){
+			border-bottom: 4px solid $text-light;
+		}
+	}
+	
+	.left-eye-inputs {
+		background-image: url( svg-icon-path-theme('lat-L-red'));
+	}
+	
+	
+	
+}
+
+
+
