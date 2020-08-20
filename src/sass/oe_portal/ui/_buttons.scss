@@ -71,4 +71,10 @@
 		}
 	}
 	
+	&.logout {
+		color: $text-invert;
+		background: $text;
+		font-weight: 700;
+	}
+	
 }
