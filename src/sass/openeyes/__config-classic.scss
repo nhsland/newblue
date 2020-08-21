@@ -35,7 +35,7 @@ $oe-font-bold: 		700; // push 500 weights to 700 (no 600)
 // BLUEs
 // called 'blue' as they overwrite the default PRO theme vars
 $oe-dark-blue:				rgb(68,66,66);
-$oe-dark-blue-dark: 			shade( $oe-dark-blue, 20% );
+$oe-dark-blue-dark: 		shade( $oe-dark-blue, 20% );
 $oe-dark-blue-dark2: 		shade( $oe-dark-blue, 35% );
 $oe-dark-blue-dark3: 		shade( $oe-dark-blue, 25% );
 $oe-dark-blue-light: 		tint( $oe-dark-blue, 30% );

@@ -1,0 +1,38 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// common UI elements for both nav panels
+.portal-menu {
+	.user {
+		margin:0 15px; 
+		padding:15px 0;
+		@include font-size(16);
+		
+		@include phone(){
+			margin:0 10px; 
+			padding:10px 0;
+		}
+		
+		.sub {
+			margin:0 0 8px 0;
+			h5 {
+				@include font-size(11);
+				font-weight: 400;
+				color: $text-light;
+				margin: 0 0 2px 0;
+			}
+			
+			a {
+				display: block;
+				margin:0 0 4px 0;
+				
+			}
+			
+		}
+		
+		
+		
+	} 
+	
+}

@@ -91,6 +91,7 @@
 	&.triangle-amber,
 	&.triangle-orange,
 	&.triangle-red,
+	&.triangle-grey,
 	&.exclamation-green,
 	&.exclamation-amber,
 	&.exclamation-orange,
@@ -309,6 +310,7 @@
 	&.triangle-amber, 
 	&.triangle-orange	{ background-image: url( svg-path('ui/triangle-amber') ); }
 	&.triangle-red		{ background-image: url( svg-path('ui/triangle-red') ); }
+	&.triangle-grey		{ background-image: url( svg-path('ui/triangle-grey') ); }
 
 	// exclamation mark (amber, red)
 	// ONLY for NHS Number status
