@@ -1,0 +1,29 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Handle long procedure names
+
+.wb3 {
+	.oe-wb-widget {
+		
+		.overflow-icon-btn {
+			position:absolute;
+			bottom:1px; 
+			right:1px;
+			
+			background:$oe-btn-blue url( svg-path('icons/more-h') ) center center no-repeat;
+			background-size:30px;
+			
+			width:50px;
+			height:35px;
+			border-radius:10px;
+			cursor: pointer;
+		}
+		
+	}
+}
+
+
+
+
