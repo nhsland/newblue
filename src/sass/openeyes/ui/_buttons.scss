@@ -179,4 +179,24 @@
 		}
 	}	
 	
+	position: relative;
+	
+	// some buttons may have keypress events
+	// provide a hint...
+	.keyhint {
+		display:block; 
+		position: absolute;
+		top: 3px; 
+		right: 5px;
+		@include font-size(11);
+		font-weight: $oe-font-medium;
+		opacity: 0.4;
+		&:before {
+			content:"' ";		
+		}
+		&:after {
+			content:" '";		
+		}
+	}
+	
 }
