@@ -1,0 +1,28 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// highlighter 
+
+.highlighter {
+	padding: 3px 6px;
+	font-weight: $font-bold;
+	border-radius: 3px;
+
+	&.red {
+		background: $btn-red;
+		color:rgb(255,255,255);
+	}
+	
+/*
+	&.orange {
+		background: $btn-green;
+		color:rgb(250,250,250);
+	}
+*/
+	
+	&.green {
+		background: $btn-green;
+		color:rgb(250,250,250);
+	}	
+}

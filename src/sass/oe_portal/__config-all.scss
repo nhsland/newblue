@@ -27,3 +27,7 @@ $z-header: 50;
 @function svg-icon-path($svg){
 	@return "../svg/in-css/icons/" + $svg + ".svg";
 }		
+// svgs
+@function svg-path($svg){
+	@return "../svg/in-css/" + $svg + ".svg";
+}	

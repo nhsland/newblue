@@ -1,0 +1,18 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-patient-popup {
+	
+	.plotly-container {
+		// center the layout
+		margin: 0 auto;
+		
+		// set a min-height whilst JS loads in plotly
+		min-height: 415px;
+		
+		// fixed to match JS, couldn't get plotly to load full width so had to set a size in JS
+		// this will make the button line up with the chart edges, MUST match JS.
+		width: 1020px;  
+	}
+}
