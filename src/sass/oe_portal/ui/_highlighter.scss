@@ -8,6 +8,10 @@
 	padding: 3px 6px;
 	font-weight: $font-bold;
 	border-radius: 3px;
+	
+	// this solves an issue with <span> wrapping
+	// on the phones: e.g. Accepted 1 Jan 2020 
+	display: inline-block;
 
 	&.red {
 		background: $btn-red;
