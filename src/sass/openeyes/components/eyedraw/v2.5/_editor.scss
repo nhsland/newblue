@@ -11,3 +11,14 @@
 	position: relative;
 }
 
+
+// side options if there is only a front view
+.ed2-editor {
+	// targeting only this structure because
+	// I am not sure where this class maybe user	
+	> .eyedraw-fields {
+		width: 198px; // match the sideview canvas width
+		padding: 5px;
+	}
+
+}
