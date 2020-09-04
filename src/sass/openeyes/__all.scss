@@ -37,7 +37,7 @@
 @import "ui/flex";							// flex layout
 @import "ui/lists/_all";					// ul and ol defaults.
 @import "ui/tables/_all"; 					// standard table class.
-@import "ui/typography"; 					// defaults and general typographics.
+@import "ui/typography/_all"; 				// defaults and general typographics.
 @import "ui/collapse-group";				// collapse and expand groups
 @import "ui/collapse-data";					// collapse and expand data
 @import "ui/buttons"; 						// button and .button
@@ -45,6 +45,7 @@
 @import "ui/alert-box";						// alerts
 @import "ui/status-box";					// status
 @import "ui/tool-tip"; 						// tool tip (js generated)
+@import "ui/qtag"; 							// qTag (js generated)
 @import "ui/scrollbars";					// appy some feel
 @import "ui/spinner"; 						// load spinner
 @import "ui/inline";						// helpers

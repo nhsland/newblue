@@ -1,0 +1,27 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Quick Tags
+// DOM is created and positioned by JS
+
+.oe-qtags {
+	// container to show all the qtags
+	// for now show ALL qtags, no-scrolling (but this can be changed)
+	z-index:$oe-z-tooltip;
+	position:fixed; // positioned by JS
+	width:300px;
+	padding:10px;
+	border:1px solid $oe-text-highlight;
+	background:$oe-tooltip-bg;
+	@include boxshadow();
+}
+
+// this will have a few states
+// 1) highlight back to the user it's a tag
+// 2) selected (in popup, as user types)
+// 3) btn to be clicked... actually 'selected' can cover this
+.qtag {
+	display: inline; 
+	
+}

@@ -1,0 +1,50 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// highlighter (like the pen)
+// applied to text with <span>
+.highlighter {
+	background:$oe-highlighter;
+	color:rgb(0,0,0);
+	padding:2px 6px;
+	font-weight:500;
+	border-radius:2px;
+	
+	&.large-text {
+		font-size:115%;
+	}
+
+	&.warning,
+	&.red {
+		background:$oe-alert-red;
+		color:rgb(255,255,255);
+	}
+	
+	&.issue,
+	&.orange {
+		background:$oe-alert-orange;
+		color:rgb(250,250,250);
+	}
+	
+	&.good,
+	&.green {
+		background: $oe-alert-green;
+		color:rgb(250,250,250);
+	}
+	
+	&.inverted {
+		background: $oe-text;
+		color: $oe-text-inverted;
+	} 
+	
+	&.subtle-invert {
+		background: rgba($oe-text,0.5);
+		color: $oe-text-inverted;
+	}
+	
+}
+
+
+
+		

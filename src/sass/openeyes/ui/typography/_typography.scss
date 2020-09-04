@@ -1,0 +1,47 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Typography
+
+html {
+	// Experimented with this and decided to leave it set to default values	
+	// but may return to it in the future... so leaving it here
+	-webkit-font-smoothing: subpixel-antialiased; // this is the default setting in Chrome, including it incase it helps Safari (iPads).
+	//-webkit-font-smoothing: antialiased; // this is crisper but looks shit
+	// text-rendering: optimizeLegibility; // default 'auto'
+}
+
+// deliberately all setup to be too big. 
+// all typography should be controlled specifically
+h1,h2,h3,h4,h5,h6,p {
+	@include font-size(16); // default 16px / 1rem
+	font-weight:400;
+}
+
+// <p> are pretty rare, but styled in
+// (used in Correspondence)
+p {
+	margin-bottom:10px;
+	&:last-child {
+		margin-bottom:0;
+	}
+}
+
+// set weighting (depends on theme) 
+strong, b {
+	font-weight:$oe-font-bold;
+}
+
+// text colour for R / L sides
+// not sure if this used anywhere...
+.right-color-text {
+	color: $oe-text;
+}
+
+.left-color-text {
+	color: $oe-text;
+}
+
+
+		

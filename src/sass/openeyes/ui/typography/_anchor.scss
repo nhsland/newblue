@@ -1,0 +1,29 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// default <a>
+a {
+	color:inherit;
+	text-decoration: none;
+	
+	&.hint {
+		text-decoration: underline;
+	}
+
+	&:hover, &:focus, &:active {
+		color:$oe-text-active;
+		text-decoration: none;
+	}
+	
+	&.selected {
+		color:$oe-text-highlight;
+		font-weight:$oe-font-medium;
+	}
+}
+
+
+
+
+
+		
