@@ -22,6 +22,18 @@
 // 2) selected (in popup, as user types)
 // 3) btn to be clicked... actually 'selected' can cover this
 .qtag {
-	display: inline; 
+	display: inline-block; 
+	background: rgba( $oe-text-active, 0.2 ); // provide a hint
+	font-weight: $oe-font-medium; // set because of inversion
+	padding:2px 6px;
+	border-radius:2px;
 	
+	&.selected {
+		background: $oe-btn-blue-hint;
+	}
+	
+	// when showing all the tags in the popup
+	.oe-qtags & {
+		cursor: pointer;
+	}
 }
