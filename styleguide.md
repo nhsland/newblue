@@ -67,11 +67,7 @@ the following conventions if you want to make changes to the stylesheet.
 
 ## Finally...
 
-This is a bespoke web app for very specific uses and, as such, it would be limiting to try to 
-squeeze it into a generic framework. The smallest acceptable running size is 1280px (default
-monitor size) and we are actually only targeting 2 screen sizes and are optimizing for 
-these: 1280px (default) and 1920px (pro-users). We are not concerned with mobile devices, 
-as these will be served by a custom app in the future, but we would like it to work well on 
-iPads and Surface Pro (touch devices), therefore all interaction is set up for touch with extra
-mouse / trackpad functionality for those that have this.
+This is a bespoke web app designed for very specific uses and, as such, it would be limiting to try to 
+squeeze it into a generic framework. The smallest acceptable running size is 1200px. The UI has been optimised 
+to run on handheld tablets, as well as on super-wide displays. 
 

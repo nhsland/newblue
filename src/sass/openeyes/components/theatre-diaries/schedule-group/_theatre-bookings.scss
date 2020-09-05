@@ -6,7 +6,9 @@
 	.schedule-group {
 		
 		table.theatre-bookings {
-			width:100%;
+			// it's a flex item. 
+			// 20% is for the overview column
+			width:80%; 
 			color:$oe-text;
 			margin:0 0 10px 0;
 			@include font-size(13);	
