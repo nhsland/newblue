@@ -3,32 +3,42 @@
 //
 
 // OE Quick Tags
-// DOM is created and positioned by JS
 
 .oe-qtags {
-	// container to show all the qtags
-	// for now show ALL qtags, no-scrolling (but this can be changed)
-	z-index:$oe-z-tooltip;
-	position:fixed; // positioned by JS
+	// container to show the qtags for adding to inputs
+	z-index: 1; // added via a wrapper around the input
+	position:absolute; // positioned by JS
 	width:300px;
-	padding:10px;
+	padding: 4px 15px 4px 4px; // allow for the icon
+	background:$oe-tooltip-bg url( svg-icon-path-theme('remove-circle')) top 5px right 5px no-repeat;
+	background-size: 13px;
 	border:1px solid $oe-text-highlight;
-	background:$oe-tooltip-bg;
+	border-radius: 3px;
 	@include boxshadow();
+
+	// JS add this DOM for: "No matching Patient Tags"
+	.no-matching-tags {
+		padding:4px;
+		@include font-size(11);
+		color: $oe-text-highlight;
+		font-style: italic;
+	}
+
 }
 
-// this will have a few states
-// 1) highlight back to the user it's a tag
-// 2) selected (in popup, as user types)
-// 3) btn to be clicked... actually 'selected' can cover this
+// qtags, used in the popup and used to highlight 
+// a successful matching #tag in a string.
 .qtag {
 	display: inline-block; 
-	background: rgba( $oe-text-active, 0.2 ); // provide a hint
+	color: $oe-text;
+	background: rgba( $oe-text-active, 0.15 ); // provide a hint
+	@include font-size(12);
 	font-weight: $oe-font-medium; // set because of inversion
 	padding:2px 6px;
 	border-radius:2px;
 	
 	&.selected {
+		color:#fff; // fixed.
 		background: $oe-btn-blue-hint;
 	}
 	

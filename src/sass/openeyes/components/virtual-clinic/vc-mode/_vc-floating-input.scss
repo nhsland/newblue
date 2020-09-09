@@ -6,7 +6,7 @@
 // ScatchPad
 
 .vc-floating-input {
-	z-index: $oe-z-vc;
+	z-index: $oe-z-top;
 	position:fixed;
 	// default start position
 	top:$oe-header-height + 15px;

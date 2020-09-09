@@ -1,0 +1,21 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// JS sometimes need to freeze UI events.
+// this can be used to freeze them at different levels
+.freeze-ui {
+	position:fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background: transparent;
+	
+	z-index: #{ $oe-z-popup - 1 }; // default level cover everything
+	
+	&.under-hotlist {
+		z-index: #{ $oe-z-hotlist - 1 };
+	}
+	
+}

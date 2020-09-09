@@ -70,6 +70,7 @@
 @import "ui/pathstep/_all";					// pathstep (clinic, worklist, examination)
 @import "ui/oe-step-progress";				// steps through a process
 @import "ui/oe-percentage";					// visually show a percentage
+@import "ui/freeze-ui";						// freeze UI interactions below a level
 
 /*  iconography */
 @import "icons";							// oe icons 
@@ -79,7 +80,7 @@
 @import "components/logo";						// OE logo and Version info
 @import "components/header/_all";				// site wide header bar: Logo, Patient & User Nav
 @import "components/hotlist/_all";				// Hotlist: Open and Closed Patients
-@import "components/shortlists/_all";			
+@import "components/patientgroups/_all";		// Patient Groups (worklists, theatre diaries)	
 @import "components/popups/_all";				// Popups: GUI for popups
 @import "components/patient/_all";				// Patient Data: Popups, overview, mini-overview
 @import "components/login";						// Login
