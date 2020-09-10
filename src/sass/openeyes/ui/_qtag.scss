@@ -6,7 +6,7 @@
 
 .oe-qtags {
 	// container to show the qtags for adding to inputs
-	z-index: 1; // added via a wrapper around the input
+	z-index: 2; // added via a wrapper around the input
 	position:absolute; // positioned by JS
 	width:300px;
 	padding: 4px 15px 4px 4px; // allow for the icon
@@ -23,7 +23,26 @@
 		color: $oe-text-highlight;
 		font-style: italic;
 	}
+}
 
+// UI flag that tagging is available on this input
+// it can also be clicked to open the pane;
+.oe-qtags-flag {
+	z-index: 1; 
+	position:absolute; 	
+	top:-25px; 
+	left:0;
+	
+	@include flex( center, center );
+	height:25px;
+	padding:0 10px;
+	
+	@include font-size( 16 );
+	font-weight:500;
+	color:#fff; // fixed.
+	background: $oe-btn-blue-hint;
+	cursor: pointer;
+		
 }
 
 // qtags, used in the popup and used to highlight 
