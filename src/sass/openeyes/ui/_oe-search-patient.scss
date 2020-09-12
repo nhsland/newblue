@@ -3,19 +3,19 @@
 //
 
 // OE Home
-// Search for Patient (home)
+// Home | Message | Search results
 
 .oe-search-patient {
 	height:$oe-event-header-height * 2;
 	@include flex( center, center );
-
-	background: $oe-home-search-bg;
+	
+	background: $oe-big-search-bg;
 	
 	.search-patient {
 		position: relative;
 		@include flex( center, space-between );
 		width:560px;
-		padding:14px 0 20px 0;
+		padding:8px 0 16px 0;
 		
 		// increase the defaults for input
 		input {
@@ -34,20 +34,22 @@
 			width: 160px;
 			padding:0 10px;
 		}
+		
+		// notes for acceptable search terms
+		.find-by {
+			position:absolute;
+			left:0; 
+			right:0; 
+			bottom:0;
+			text-align: center;
+			@include font-size(10);
+			font-weight: 500;
+			color: $oe-text-light;
+			
+		}
 	}
 	
-	// notes for acceptable search terms
-	.find-by {
-		position:absolute;
-		left:0; 
-		right:0; 
-		bottom:5px;
-		text-align: center;
-		@include font-size(10);
-		font-weight: 500;
-		color:$oe-dark-text-light;
-		
-	}
+	
 }
 
 
