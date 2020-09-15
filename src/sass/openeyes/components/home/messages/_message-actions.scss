@@ -9,7 +9,7 @@
 	
 	.message-actions {
 		padding:20px;
-		border-right:1px solid $oe-blue-light;
+		border-right:1px solid $oe-big-search-bg; // vertical divider
 		@include font-size(12);
 		
 		// user name
@@ -42,15 +42,14 @@
 			}
 		}
 		
-		// search
-		.search-messages {
-			
-			h3 {
-				margin:16px 0 8px 0;
-				@include font-size(15);
-				font-weight: 300;
-				color:$oe-blue-light;
+		h3 {
+			margin:16px 0 8px 0;
+			&:first-child {
+				margin-top:0;
 			}
+			@include font-size(15);
+			font-weight: 300;
+			color:$oe-blue-light;
 		}
 	}
 }

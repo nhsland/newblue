@@ -16,6 +16,8 @@
 			color: $oe-dark-text;
 			font-weight:300;
 			
+			pointer-events: none;
+			
 			.count {
 				display: inline-block;
 				padding:0 0 0 8px;
@@ -51,9 +53,52 @@
 				position:absolute;
 				top:15px;
 				right:0;
+			}	
+		}
+		
+		&.header-icon {
+			position: relative;
+			cursor:pointer; 
+			
+			margin-bottom:10px; // space holder for expandable content area
+			
+			&:after {
+				content: "";
+				position: absolute;
+				top:0;
+				bottom:0;  		// fill vertical area
+				right:10px; 	// visual alignment tweak
+				width:19px; 	// allow for bigger icons (if needed)
+	
+				// put the expand collapse icon into the background
+				background: url( svg-icon-path-theme('plus-bold') ) right center no-repeat;
+				background-size: 17px;
+				
+				opacity:$oe-icon-opacity; //  now i can use opacity
 			}
 			
+			// show user interaction
+			&:hover,
+			&:focus,
+			&:active {
+				h3 {
+					color:$oe-text-highlight;
+				}
+				
+				&:after {
+					opacity: 1;
+				}	
+			}
+			
+			// in EXPANDED state
+			&.collapse {
+				margin-bottom: 0;
+				&:after {
+					background-image: url( svg-path('icons/arrow-up') );	
+				}
+			}
 		}
+		
 	}
 	
 }

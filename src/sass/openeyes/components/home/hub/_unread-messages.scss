@@ -1,0 +1,40 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Messages (unread) on the homepage
+.home-hub {
+	
+	// condensed version of the full messages hub
+	.unread-messages {
+		padding:20px;
+		border-right:1px solid $oe-big-search-bg; // vertical divider
+		color: $oe-text;
+		
+		
+		header {
+			position: relative;
+			@include flex( center, space-between );
+			margin:0 0 10px 0;
+			padding: 0 0 0 30px;
+			
+			.oe-i-e {
+				position: absolute;
+				top:2px;
+				left:0;
+			}
+			
+			// "Unread Messages (0)"
+			h2 {
+				color:$oe-text-highlight;
+				@include font-size( 16 );
+				font-weight: $oe-font-medium;
+			}			
+			
+		}
+		
+		
+		
+	}
+
+}

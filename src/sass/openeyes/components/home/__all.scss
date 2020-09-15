@@ -3,20 +3,12 @@
 //
 
 // OE Home
-// Dashboard for widgets  
-// + pages that can only be accessed through the home hub
-
 @import "_base";
 
-// Home Widgets
-@import "home-dashboard";					// sub-grid layout
-@import "home-widget";     
+// Messages (Full), this is the current the "Home" page
+@import "messages/_all"; 	
 
-
-// Messages (Full)
-// currently only linked to through the Home Widget
-@import "messages/subgrid"; 				// sub-grid layout (retro added to layout, hence this approach)
-@import "messages/messages";
-@import "messages/message-actions";
+// Home (new Hub)
+@import "hub/_all";
 
 

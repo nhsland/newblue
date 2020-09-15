@@ -2,13 +2,9 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Home (& messages)
-// <main> wrapper is used for both
-// - Home 
-// - & Messages
-// (because "messages" was the HOME page.)
+// OE Home Hub
+@import "_base";			
+@import "home-dashboard";     
+@import "unread-messages"; 
 
-.oe-home {
-	background:$oe-blue-dark2;	
-}
 

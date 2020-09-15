@@ -55,6 +55,13 @@
 	padding:2px 6px;
 	border-radius:2px;
 	
+	// used in patient popups (dark)
+	.oe-patient-popup & {
+		color: $oe-dark-text;
+		background: rgba( $oe-dark-text-active, 0.15 );
+	}
+	
+	
 	&.selected {
 		color:#fff; // fixed.
 		background: $oe-btn-blue-hint;
