@@ -50,7 +50,6 @@
 	display: inline-block; 
 	color: $oe-text;
 	background: rgba( $oe-text-active, 0.15 ); // provide a hint
-	@include font-size(12);
 	font-weight: $oe-font-medium; // set because of inversion
 	padding:2px 6px;
 	border-radius:2px;
@@ -70,5 +69,6 @@
 	// when showing all the tags in the popup
 	.oe-qtags & {
 		cursor: pointer;
+		@include font-size(12);
 	}
 }
