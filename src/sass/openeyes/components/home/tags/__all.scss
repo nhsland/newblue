@@ -2,14 +2,8 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Home
-@import "_base";
-
-// Messages (Full), this is the current the "Home" page
-@import "messages/_all"; 	
-@import "tags/_all";
-
-// Home (new Hub)
-@import "hub/_all";
+// OE #Tags (added to Message homepage)
+@import "tags-table";
+@import "tags-actions";
 
 

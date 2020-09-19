@@ -3,30 +3,14 @@
 //
 
 // OE Home
-// Message actions
+// Tags actions are using "message-actions"
 
 .home-messages {
-	
+
 	.message-actions {
-		padding:20px;
-		border-right:1px solid $oe-big-search-bg; // vertical divider
-		@include font-size(12);
-		
-		// user name
-		.user {
-			@include font-size(20);
-			font-weight:300;
-			color:$oe-text;
-			margin:0 0 20px 0;
-		}
-		
-		// <button>
-		.send-message {
-			margin:0 0 20px 0;
-		}
-		
+
 		// <ul> filters (unread etc)
-		.filter-messages {	
+		.filter-tags {	
 			li {
 				@include font-size(13);
 				color:$oe-text-light;
@@ -41,16 +25,6 @@
 					}
 				}
 			}
-		}
-		
-		h3 {
-			margin:16px 0 8px 0;
-			&:first-child {
-				margin-top:0;
-			}
-			@include font-size(15);
-			font-weight: 300;
-			color:$oe-blue-light;
 		}
 	}
 }

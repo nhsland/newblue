@@ -66,13 +66,14 @@
 	}
 	
 	// when used in patient popups (dark)
-	// when used in hotlist comment
 	.oe-patient-popup & {
 		padding:4px 6px;
 		@include font-size(12);
 		color: $oe-dark-text;
 		background: rgba( $oe-dark-text-inverted , 0.4 );
 	}
+	
+	// when used in hotlist comment
 	.oe-hotlist-panel .user-comment &  {
 		padding:1px 4px;
 		color: rgba( $oe-dark-text, 0.8 );
