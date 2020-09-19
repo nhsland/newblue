@@ -49,17 +49,10 @@
 .qtag {
 	display: inline-block; 
 	color: $oe-text;
-	background: rgba( $oe-text-active, 0.15 ); // provide a hint
+	background: rgba( $oe-text-active, 0.1 ); // provide a hint
 	font-weight: $oe-font-medium; // set because of inversion
 	padding:2px 6px;
 	border-radius:2px;
-	
-	// used in patient popups (dark)
-	.oe-patient-popup & {
-		color: $oe-dark-text;
-		background: rgba( $oe-dark-text-active, 0.15 );
-	}
-	
 	
 	&.selected {
 		color:#fff; // fixed.
@@ -71,4 +64,22 @@
 		cursor: pointer;
 		@include font-size(12);
 	}
+	
+	// when used in patient popups (dark)
+	// when used in hotlist comment
+	.oe-patient-popup & {
+		padding:4px 6px;
+		@include font-size(12);
+		color: $oe-dark-text;
+		background: rgba( $oe-dark-text-inverted , 0.4 );
+	}
+	.oe-hotlist-panel .user-comment &  {
+		padding:1px 4px;
+		color: rgba( $oe-dark-text, 0.8 );
+		background: rgba( $oe-dark-text-inverted , 0.2 );
+	}
+	
+	
+	
+	
 }
