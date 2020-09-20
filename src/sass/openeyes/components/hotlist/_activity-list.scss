@@ -51,6 +51,10 @@
 					
 				}
 				
+				.patient-fullname {
+					color:rgb(190,190,190);	
+				}
+				
 				// updated DOM to handle the patient comments better
 				// wraps <textarea> and <div class="user-comment
 				.patient-comments {
@@ -59,10 +63,7 @@
 					.user-comment {
 						@include font-size(11);
 					}
-				}
-				
-				
-				
+				}	
 			}
 			
 			// show <tr> as a clickable row
@@ -73,6 +74,16 @@
 					background:$oe-btn-blue; // row is a big button
 					td {
 						color:rgb(255,255,255);	
+						
+						.patient-fullname {
+							color:rgb(255,255,255);	
+						}
+						
+						// target this precisely, or it will affect 
+						// the qtag swarm!
+						.user-comment > .qtag {
+							color:rgb(255,255,255);	
+						}
 					}
 				}
 				

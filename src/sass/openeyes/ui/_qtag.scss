@@ -76,7 +76,7 @@
 	// when used in hotlist comment
 	.oe-hotlist-panel .user-comment &  {
 		padding:1px 4px;
-		color: rgba( $oe-dark-text, 0.8 );
+		color: $oe-dark-text-light; // rgba( $oe-dark-text, 0.8 );
 		background: rgba( $oe-dark-text-inverted , 0.2 );
 	}
 	

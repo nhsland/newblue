@@ -43,6 +43,10 @@
 	@include flex(center, space-between);
 }
 
+.flex-l {
+	@include flex(center, flex-start);
+}
+
 .flex-t {
 	@include flex(flex-start, space-between);	
 }

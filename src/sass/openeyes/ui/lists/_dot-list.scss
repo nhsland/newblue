@@ -15,11 +15,8 @@ ul {
 			margin:0 5px 5px 2px;
 			padding:0 0 0 12px;
 			
-
-			background-position:left center;
-			background-repeat: no-repeat;
+			background: transparent url( svg-path( 'ui/list-dot' )) left center no-repeat;
 			background-size:6px;
-			background-image:url( svg-path( 'ui/list-dot' ) );
 			
 			&:first-child {
 				margin-left:0;
@@ -28,6 +25,18 @@ ul {
 			}
 		}
 	}
-	
+}
+
+// dot-list single divider
+// Added to divide '#tags' from 'comments'
+// Needed a UI element like the dotlist but 
+// without the <li> DOM wrappings
+span.dot-list-divider {
+	display:inline-block;
+	margin:0 5px; 
+	width:12px;
+	height: 8px;
+	background: transparent url( svg-path( 'ui/list-dot' )) center center no-repeat;
+	background-size:6px;
 }
 
