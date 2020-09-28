@@ -2,7 +2,7 @@
 OE Layout helper for Plot.ly JS
 https://plot.ly/javascript/reference/
 */
-const oePlotly_v1 = {
+const oePlotly = {
 	colours: {
 		electricBlue: '#63d7d6',
 		dark: {
