@@ -179,8 +179,15 @@
 		}
 	}	
 	
-	position: relative;
+	// devs have added 'hint' to <a> styled as 'button'
+	// override this
+	a.hint {
+		text-decoration: none;
+	}
 	
+	
+	// sub-elements
+	position: relative;
 	// some buttons may have keypress events
 	// provide a hint...
 	.keyhint {
