@@ -18,9 +18,10 @@
 			
 			pointer-events: none;
 			
+			// <small>
 			.count {
 				display: inline-block;
-				padding:0 0 0 8px;
+				padding:0 0 0 6px;
 				color: $oe-dark-text-light;
 			}
 		}
@@ -60,8 +61,13 @@
 		&.header-icon {
 			position: relative;
 			cursor:pointer; 
+			margin-bottom:10px; // placeholder for expandable content area
 			
-			margin-bottom:10px; // space holder for expandable content area
+			h3 {
+				// emphasis on the header to show it expands
+				font-weight: 400;
+			}
+			
 			
 			&:after {
 				content: "";
@@ -96,6 +102,10 @@
 				margin-bottom: 0;
 				&:after {
 					background-image: url( svg-path('icons/arrow-up') );	
+				}
+				
+				h3 {
+					font-weight: 300;
 				}
 			}
 		}

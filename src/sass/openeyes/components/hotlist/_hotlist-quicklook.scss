@@ -7,6 +7,15 @@
 // Enhancement for Mouse/Trackpad users
 
 .patient-activity {
+	
+	// divider add if there is e-Sign
+	// standardise HR divider
+	hr.divider {
+		margin:10px 0;  // reduced was 20px 0 15px 0;
+		border-bottom:2px solid $oe-dark-blue-dark;
+	}
+	
+	
 	position: relative;
 	
 	.hotlist-quicklook {
