@@ -237,8 +237,10 @@
 	&.increase-height 	{ @include oe3-icons('increase-height'); }
 	&.increase-height-orange 	{ @include oe3-icons('increase-height-orange'); }
 	&.downup 			{ @include oe3-icons('downup'); }
-	&.history 			{ @include oe3-icons('rotate-left'); }
-	&.rotate-left 		{ @include oe3-icons('rotate-left'); }	// added a rotate right (made 'history' more descriptive but kept support)
+	&.history,			// uses this icon in different places
+	&.rewind, 			
+	&.rotate-left 		{ @include oe3-icons('rotate-left'); }	
+	&.forward,
 	&.rotate-right 		{ @include oe3-icons('rotate-right'); }
 	&.tick 				{ @include oe3-icons('tick'); }
 	&.triangle			{ @include oe3-icons('triangle'); }
