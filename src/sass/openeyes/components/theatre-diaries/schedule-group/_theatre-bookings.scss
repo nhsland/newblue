@@ -64,6 +64,14 @@
 						vertical-align: middle;
 					}
 					
+					// biometry icon is pulled out of <a>
+					// to allow tooltip
+					.operation-actions {
+						> i {
+							margin:2.5px 2px; // match button height
+						}
+					}
+					
 				}
 			}
 			
