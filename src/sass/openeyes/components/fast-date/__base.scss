@@ -1,0 +1,28 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-fastdate {
+	
+	z-index: $oe-z-popup;
+	position:fixed; 
+	top: 100px;
+	left: 100px;
+	
+	@include flex( flex-start, flex-start );
+	
+	width:455px;
+	background: $oe-popup-bg; 
+	
+	color: $oe-text;
+	@include font-size(13);
+	font-weight: $oe-font-bold;
+	
+	padding: 5px;
+	@include boxshadow();
+	
+}
+
+
+
+

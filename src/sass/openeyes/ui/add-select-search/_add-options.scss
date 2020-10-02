@@ -15,9 +15,6 @@
 		margin:0 2px 0 0;
 		max-width: 400px; 		// Meds can be really long
 		
-		$bg-default: shade( $oe-popup-bg, 10 );
-		$bg-default-hover: shade( $oe-popup-bg, 30 );
-		
 		li {
 			display:block;
 			cursor: pointer;
@@ -25,7 +22,7 @@
 			margin:0 0 2px 0;
 			color:$oe-text;
 			// border-radius:3px;
-			background-color: $bg-default;
+			background-color: $oe-adder-option;
 			min-width:60px;		// provide a minimum for things like "No DR"
 			
 			// data has a span wrapper to control the width
@@ -48,7 +45,7 @@
 			
 			&:hover, &:focus, &:active, &.selected {
 				color:#fff;
-				background: $bg-default-hover !important;  // must override any type styling
+				background: $oe-adder-option-hover !important;  // must override any type styling
 			}
 			
 			&.selected {
@@ -90,12 +87,12 @@
 		&.multi,
 		&.number {
 			&.required {
-				li { background-image: linear-gradient(to right,$oe-alert-orange $list-hint-w, $bg-default $list-hint-w); }
+				li { background-image: linear-gradient(to right,$oe-alert-orange $list-hint-w, $oe-adder-option $list-hint-w); }
 			}
 		}
 		// multi
 		&.multi {
-			li { background-image: linear-gradient(to right, $oe-text-light $list-hint-w, $bg-default $list-hint-w); }
+			li { background-image: linear-gradient(to right, $oe-text-light $list-hint-w, $oe-adder-option $list-hint-w); }
 		}
 		
 		// linked

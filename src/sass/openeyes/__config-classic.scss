@@ -82,8 +82,13 @@ $oe-btn-blue-dark: 		shade( $oe-btn-blue, 25% );
 $oe-dark-popup-bg:		rgb(77,75,75);
 $oe-popup-bg:			rgb(245,245,245); // tool-tip, add-select-search, element-search-popup
 
-// for btn-lists
-$oe-dark-popup-btn-hint: 	shade( $oe-dark-popup-bg,20% );
+// adder options
+$oe-adder-option: shade( $oe-popup-bg, 10 );
+$oe-adder-option-hover: shade( $oe-popup-bg, 30 );
+$oe-adder-line: shade( $oe-popup-bg, 20 );
+
+// for btn-lists (popup)
+$oe-dark-popup-btn-hint: 	shade( $oe-dark-popup-bg, 20% );
 
 // input colours:
 $oe-dark-user-inputs: 		rgb(53,51,51);

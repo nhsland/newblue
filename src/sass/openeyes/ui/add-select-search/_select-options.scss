@@ -55,8 +55,7 @@
 				text-align: left;
 				padding:0 5px 0 6px; // space the list groups 
 				
-				border-left:2px solid shade( $oe-popup-bg, 20 );
-				
+				border-left:2px solid $oe-adder-line;
 				
 				&:last-child {
 					@include font-size(12);

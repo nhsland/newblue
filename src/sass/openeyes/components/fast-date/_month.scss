@@ -1,0 +1,35 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-fastdate {
+	
+	.month {
+		// rows / columns
+		display: grid;
+		grid: repeat( 6, 36.5px ) / repeat( 2, 38px );
+		gap: 2px 2px;
+		
+		margin: 0 5px;
+		padding: 0 5px;
+		
+		border-left: 2px solid $oe-adder-line;
+		border-right: 2px solid $oe-adder-line;
+		
+		div {
+			@include flex( center, center ); 
+			background-color: $oe-adder-option;
+			cursor: pointer;
+			
+			&:hover, 
+			&:focus { 
+				color: #fff; 
+				background-color: $oe-adder-option-hover;
+			}
+		}
+	}
+}
+
+
+
+
