@@ -7,21 +7,23 @@ const oePlotly_v1 = {
 		electricBlue: '#63d7d6',
 		dark: {
 			green: '#65d235',
-			greenSeries: ['#65d235', '#94d712', '#36be8d', '#099f18', '#9bd727'],
 			red: '#ea2b34',
-			redSeries: ['#ea2b34','#D41C81','#F65B20','#D4341C'],
+			greenSeries: ['#65d235', '#A5D712','#02B546'],
+			redSeries: ['#ea2b34','#F64A2D','#C92845'],
+			yellowSeries: ['#FAD94B','#E8B131','#F1F555'], // BEO
 			standard: ['#1451b3', '#175ece', '#1a69e5'],
 			varied:  ['#0a83ea', '#18949f', '#781cea','#3f0aea'],
-			dual: ['#3f0aea','#7b3131'],
+			dual: ['#1472DE','#2E4259'],
 		}, 
 		light: {
 			green: '#418c20',
-			greenSeries: ['#418c20','#99991C','#1DA323','#74A31D','#1C9944'],
 			red: '#da3e43',
-			redSeries: ['#da3e43', '#F0379A', '#E66735', '#F05037'],
+			greenSeries: ['#418c20','#598617','#139149'],
+			redSeries: ['#da3e43', '#E64C02', '#E64562'],
+			yellowSeries: ['#FCCE14','#E69812','#FCBB21'], // BEO
 			standard: ['#0a4198', '#1451b3', '#175ece'],
 			varied: ['#0a2aea', '#ea0a8e', '#00b827','#890aea'],
-			dual: ['#0a4198','#874e4e'],
+			dual: ['#2126C2','#8FAEC2'],
 		}
 	},
 	
