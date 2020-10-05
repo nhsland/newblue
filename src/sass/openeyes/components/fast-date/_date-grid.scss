@@ -2,7 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-.oe-fastdate {
+.fast-date-picker {
 	
 	.date-grid {
 		// rows / columns
@@ -12,14 +12,8 @@
 		
 		div {
 			@include flex( center, center ); 
-			background-color: $oe-adder-option;
+			background-color: $oe-adder-option-hover;
 			cursor: pointer;
-			
-			&:hover, 
-			&:focus { 
-				color: #fff; 
-				background-color: $oe-adder-option-hover;
-			}
 			
 			// saturday and sunday 
 			&:nth-child(7n - 1), 
@@ -29,8 +23,23 @@
 				opacity: 0.5;
 			}
 			
+			&.today {
+				color: $oe-text-highlight;
+				border: 1px dotted $oe-text;
+			}
 			
+			&.next,
+			&.prev {
+				color: $oe-text-light;
+				background-color: $oe-adder-option;
+			}
 			
+			&:hover, 
+			&:focus, 
+			&.selected { 
+				color: #fff; 
+				background-color: $oe-btn-blue;
+			}	
 		}
 	}
 }

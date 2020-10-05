@@ -2,7 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-.oe-fastdate {
+.fast-date-picker {
 	
 	.year {
 		@include flex( flex-start, flex-start ); 
@@ -12,7 +12,7 @@
 				@include flex( center, center ); 
 				background-color: $oe-adder-option;
 				cursor: pointer;
-				@include font-size(22);
+				@include font-size(21);
 				
 				height: 113px;
 				width: 50px;
@@ -27,6 +27,11 @@
 				&:focus { 
 					color: #fff; 
 					background-color: $oe-adder-option-hover;
+				}
+				
+				&.selected {
+					color: #fff; 
+					background-color: $oe-btn-blue;
 				}
 			}
 		}
@@ -48,6 +53,11 @@
 				&:focus { 
 					color: #fff; 
 					background-color: $oe-adder-option-hover;
+				}
+				
+				&.selected {
+					color: #fff; 
+					background-color: $oe-btn-blue;
 				}
 				
 			}

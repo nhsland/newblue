@@ -2,12 +2,11 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-.oe-fastdate {
+.fast-date-picker {
 	
-	z-index: $oe-z-popup;
+	z-index: $oe-z-tooltip;
 	position:fixed; 
-	top: 100px;
-	left: 100px;
+	// JS will position
 	
 	@include flex( flex-start, flex-start );
 	
