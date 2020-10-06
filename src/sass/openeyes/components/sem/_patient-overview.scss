@@ -23,12 +23,15 @@
 			margin-left:3px;
 		}
 		
-		// when adding a 4th row for CCT it was requested 
-		// the text was the same size as other date. 
-		// overide the font size in "standard"
 		
 		table.standard {
+			// allow the wrapper to pad this:
+			margin-top:0; 
+			
 			td {
+				// when adding a 4th row for CCT it was requested 
+				// the text was the same size as other data in Overview. 
+				// overide the font size in "standard"
 				@include font-size( 12 );
 			}
 			

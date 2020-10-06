@@ -4,15 +4,14 @@
 
 // OEscape ICONS
 // Oescape 2 letter blocks (i.e. GL for Glaucoma)
-// I think there are 14 approx
-// used in Sidebar, OEscape header and Analytics
-// OEscapes = Specialities
+// Maximum: 4 per User + Lightning + Overview
 
 // <ul>
 .oescape-icon-btns {
 	display: inline-flex;
+	margin:2px 0 0 2px; // visually balances the icons
 	
-	// big version in the oe-full-header (analytics & oescape)
+	// OEScape and Analytics header
 	.oe-full-header & {
 		margin:0 10px;
 	}	
@@ -22,15 +21,17 @@
 		display: block;
 		margin:0 2px 2px 0;
 		
+		// OEScape and Analytics header
 		.oe-full-header & {
-			margin-bottom:0; // these can't wrap, only on 1 line
+			margin-bottom:0;
 		}
 		
 		a {
 			@include flex(center, center);
-			height:28px;
-			width:28px; 
+			height:31px; // was 28px
+			width:31px; 
 			
+			// OEScape and Analytics header
 			.oe-full-header & {
 				height: $oe-event-header-height;
 				width: $oe-event-header-height;

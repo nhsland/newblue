@@ -8,7 +8,7 @@
 	position:relative;
 	background: $oe-sem-main-event-bg;
 	color:$oe-text;
-	padding:10px 0 40px 0; 
+	padding:8px 0 40px 0; 
 	@include font-size(12);
 	line-height:1.5;
 	
@@ -17,23 +17,22 @@
 	
 	// Event title <h2>
 	.event-title {
-		@include font-size(18);
-		font-weight:$oe-font-light;
+		@include font-size(15);
+		font-weight:$oe-font-medium;
 		color:$oe-text-highlight;
-		padding:0 0 10px 10px;
+		padding:0 0 8px 11px;
 	}
 	
 	// event specific elements within the Event header space
 	// currently for injection:
 	.event-title-extra-info {
 		position:absolute;
-		top:10px;
+		top:8px; // match the main event padding
 		right:20px;
-		
-		
+		@include flex( center, flex-end );
 		
 		.extra-info {
-			@include font-size(18);
+			@include font-size(15);
 			font-weight:$oe-font-light;
 			color:$oe-text;
 			margin:0 0 0 20px;

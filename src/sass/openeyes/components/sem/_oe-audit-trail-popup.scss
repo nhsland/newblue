@@ -7,7 +7,7 @@
 .oe-popup-event-audit-trail {
 	z-index:$oe-z-quicklook - 1; // make sure it's under the Patient popups
 	position: absolute;
-	top:47px ;
+	top:38px ;
 	left:0;
 	width:400px; // arbitary (by eye)
 	background: $oe-blue;
