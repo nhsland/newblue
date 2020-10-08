@@ -62,6 +62,8 @@
 			margin:0 0;
 			
 			// for filters
+			// 'normal-text' is a bit weird renamed it to match Analytics
+			&.custom-filters, 
 			&.normal-text {
 				tbody {
 					td {
