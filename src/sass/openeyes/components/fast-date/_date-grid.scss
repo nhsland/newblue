@@ -7,7 +7,7 @@
 	.date-grid {
 		// rows / columns
 		display: grid;
-		grid: repeat( 6, 36.5px ) / repeat( 7, 30px );
+		grid: repeat( 6, 36.5px ) / repeat( 7, 28px );
 		gap: 2px 2px;
 		
 		div {
@@ -34,11 +34,16 @@
 				background-color: $oe-adder-option;
 			}
 			
-			&:hover, 
-			&:focus, 
 			&.selected { 
 				color: #fff; 
 				background-color: $oe-btn-blue;
+			}
+			
+			// this will 'add' instantly
+			&:hover, 
+			&:focus {
+				color: #fff; 
+				background-color: $oe-btn-green;
 			}	
 		}
 	}
