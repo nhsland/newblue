@@ -79,6 +79,13 @@
 				.reply-message {
 					fill:$oe-text-active;
 				}
+				
+				// modify oe-date slighly
+				.oe-date {
+					.mth {
+						width:22px;
+					}
+				}
 			}
 		}
 			
