@@ -25,4 +25,8 @@ hr.divider {
 	border : 0;
 	margin:15px 0;  // reduced was 20px 0 15px 0;
 	border-bottom:2px solid $oe-line;
+	
+	.oe-tooltip & {
+		margin:5px 0;
+	}
 }
