@@ -85,6 +85,12 @@
 			&.virtual-clinic {
 				background-image:url( svg-path('sidebar/vc') );
 			}
+			
+			// Urgent (messages)
+			&.urgent {
+				background-image:url( svg-path('sidebar/urgent') );
+			}
+			
 		}
 		
 		// <span>

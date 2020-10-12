@@ -69,6 +69,10 @@
 			background-color:$oe-btn-green-hint;
 		}
 		
+		&.urgent {
+			background-color: $oe-step-orange;
+		}
+		
 		&.virtual-clinic {
 			background-color:$oe-vc-orange;
 			color:#000;	
