@@ -64,6 +64,11 @@
 						vertical-align: middle;
 					}
 					
+					// div wrapper for meta and extra patient icons under Patient name
+					.theatre-patient-icons {
+						margin: 10px 0 0 0;
+					}
+					
 					// biometry icon is pulled out of <a>
 					// to allow tooltip
 					.operation-actions {
@@ -71,6 +76,7 @@
 							margin:2.5px 2px; // match button height
 						}
 					}
+					
 					
 				}
 			}
