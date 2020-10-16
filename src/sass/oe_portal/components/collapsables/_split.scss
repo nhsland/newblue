@@ -12,6 +12,20 @@
 			display: block;
 		}
 		
+		> button {
+			flex:1; 
+			margin:0 10% 0 0;
+			&:last-child {
+				margin-right: 0;
+			}
+			
+			@include tablet(){
+				width: 100%;
+				margin: 20px 0;
+			}
+		}
+		
+		
 		> div {
 			width: 48%;	
 			@include tablet(){

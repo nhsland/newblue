@@ -19,7 +19,8 @@
 	}
 	
 	table.standard {
-		input, select {
+		input[type="text"], 
+		select {
 			width:75%;
 		}
 	}
