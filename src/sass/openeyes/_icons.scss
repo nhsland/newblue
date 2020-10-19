@@ -271,6 +271,8 @@
 	&.person			{ @include oe3-icons('person'); }
 	&.person-green		{ @include oe3-icons('person-green'); }
 	&.person-split		{ @include oe3-icons('person-split'); }
+	&.reset 			{ @include oe3-icons('reset'); }
+	&.sync 				{ @include oe3-icons('sync'); }
 	
 	// monochromatic Eye Lat icons:
 	&.eyelat-L			{ @include oe3-icons('lat-L'); }
