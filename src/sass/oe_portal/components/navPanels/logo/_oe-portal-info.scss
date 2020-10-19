@@ -1,0 +1,43 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.openeyes-brand {
+
+	// info is a seperately controlled area
+	.oe-portal-info {
+		z-index: $z-logo;
+		position: fixed;
+		top: $header-height; 
+		left: #{ 0 - $logo-area }; // default position offscreen
+		width: $logo-area;
+		height: calc( 100vh - #{$header-height});
+		margin:0;
+		padding:0;	
+		background: $bg2;
+		
+		// JS controlled slide panel in and out. 
+		// default: slide/hide off screen
+		transition: left ease-out 0.4s;
+		
+		&.show {
+			left: 0; // JS adds this class to slide it in
+		}
+	
+		// hard coded colors for the theme buttons
+		.select-portal-theme {
+			button {
+				margin: 5px 0;
+			}
+			.dark-theme {
+				color: rgba(#eee, 0.8);
+				background: rgba(#111, 0.9);
+			}
+			.light-theme {
+				color: rgba(#111, 0.8);
+				background: rgba(#eee, 0.9);
+			}
+		}
+	}
+}
+

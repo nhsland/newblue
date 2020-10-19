@@ -1,0 +1,50 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-portal {
+	// End Page Action
+	// Either under a column or under whole page
+	// Mostly a single button but needs to allow for two or three buttons
+	
+	// Single button action
+	.e-p-a {
+		padding:20px 0px;
+		margin:20px 0;
+		border-top: 4px solid $line;
+		
+		// for single buttons
+		@include buttons {
+			width: 66%;
+			margin:0 auto;
+			@include phone(){
+				width:100%;
+			}
+		}
+		
+		// Button choice?
+		// 2+ buttons requires a different approach
+		&.choice {
+			@include flex( flex-start, space-between );
+			
+			@include tablet(){
+				display:block;
+			}
+			@include buttons {
+				flex: 1;
+				margin: 0 5%;
+				
+				@include tablet(){
+					width: 66%;
+					margin:0 auto 20px auto;
+				}
+				
+				@include phone(){
+					width:100%;
+				}
+			}
+				
+		}
+			
+	}
+}

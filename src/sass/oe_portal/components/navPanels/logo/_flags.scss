@@ -1,0 +1,39 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.openeyes-brand {
+	
+	.oe-logo {
+		&.flag {
+			&:after {
+				content: '';
+				position: absolute;
+				top:32px; 
+				left:-16px;
+				height:64px;
+				width:64px;
+				background: transparent url('../img/flags/wales.png') top left no-repeat;
+				background-size: 64px;
+				
+				@include tablet(){
+					top: 45px; 
+					left:-12px;
+					height:48px;
+					width:48px;
+					background-size: 48px;
+				}
+				
+				@include phone(){
+					top: 7px; 
+					left: -16px;
+					height: 32px;
+					width: 32px;
+					background-size: 32px
+				}
+				
+			}
+		}
+	}
+}
+

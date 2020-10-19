@@ -2,7 +2,9 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-@import "logo/_all";
-@import "menu";
-@import "panels";
-@import "user";
+@import "oe-logo";
+@import "h1";
+@import "oe-openeyes";
+@import "flags";
+
+@import "oe-portal-info";

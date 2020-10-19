@@ -3,36 +3,28 @@
 //
 
 .oe-portal {
-	// simple split.
-	// 50/50
+	// column split, create 2 columns 50/50
 	.f-c-split {
 		@include flex( flex-start, space-between );
 		
 		@include tablet(){
 			display: block;
-		}
-		
-		> button {
-			flex:1; 
-			margin:0 10% 0 0;
-			&:last-child {
-				margin-right: 0;
-			}
-			
-			@include tablet(){
-				width: 100%;
-				margin: 20px 0;
-			}
-		}
-		
+		} 
 		
 		> div {
-			width: 48%;	
+			width: 48%;	// creates a 4% middle gutter (could be used for a vertical line)
 			@include tablet(){
 				width: auto;
-				margin:0 0 20px 0;
-				// don't use padding (see eye-inputs!)
+				margin:0 0 20px 0; // don't use padding (see eye-inputs!)
+			}
+		}
+		
+		// rather than create 2 columns, push content out to the edges
+		&.edge {
+			> div {
+				width: auto; 
 			}
 		}	
 	}
+	
 }

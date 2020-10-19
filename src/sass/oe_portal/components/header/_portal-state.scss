@@ -26,9 +26,10 @@ header {
 			transform: none;
 			top: auto;
 			bottom: 10px; 
-			left: 10px;
+			left: 8px;
 			right: 10px; 
-			padding: 3px 8px;
+			padding: 1px 5px 0 10px;
+			border-left: 2px solid $line;
 		}
 	}
 }

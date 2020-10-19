@@ -2,79 +2,87 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-@include buttons {
-	@include flex( center, center );
-	
-	// Don't let button text wrap
-	white-space: nowrap;
-	
-	// resets
-	border: 0;
-	outline: 0; // remove glow effect
-	border-radius: 5px;
-	cursor: pointer;
-	
-	// sizes - standard:
-	padding:0 12px;	// increase hit area
-	height: $input-height; 	// matches inputs heights
-	
-	// default button is blue
-	@include font-size(16);
-	color: $btn-text;
-	background: $btn-default;
-	
-
-	&:disabled {
-		cursor:default;
-		color: rgba( $btn-text, 0.5) !important; // priority over "green" or "red"
-		background: $btn-disabled !important;
-		pointer-events: none; // disable pseudos
-	}
-	
-	// a little UI help to improve accessibility	
-	border:3px solid transparent;
-
-	&:hover, 
-	&:focus {
-		border-color: rgba( 200,200,200, 0.5);
-	}
-	
-	&:active,
-	&.selected {
-		background: shade( $btn-default, 50 );
-	}	
-	
-	// primary actions
-	&.green {
+.oe-portal {
+	@include buttons {
+		@include flex( center, center );
+		
+		// Don't let button text wrap
+		white-space: nowrap;
+		
+		// resets
+		border: 0;
+		outline: 0; // remove glow effect
+		border-radius: 5px;
+		cursor: pointer;
+		
+		// sizes - standard:
+		padding:0 12px;	// increase hit area
+		height: $input-height; 	// matches inputs heights
+		
+		// default button is blue
+		@include font-size(16);
 		color: $btn-text;
-		background: $btn-green;
-		&:hover, 
-		&:focus, {
-			background: shade( $btn-green, 20 );
+		background: $btn-default;
+		
+		// if 'button' is used on <a>
+		// need to override some things on anchors
+		text-decoration: none;
+		&:visited {
+			color: $btn-text; 
 		}
 		
-		&:active{
-			background: shade( $btn-green, 50 );
+		&:disabled {
+			cursor:default;
+			color: rgba( $btn-text, 0.5) !important; // priority over "green" or "red"
+			background: $btn-disabled !important;
+			pointer-events: none; // disable pseudos
 		}
 		
-	}
+		// a little UI help to improve accessibility	
+		border:3px solid transparent;
 	
-	&.red {
-		color: $btn-text;
-		background: $btn-red;
 		&:hover, 
-		&:focus, {
-			background: shade( $btn-red, 10 );
+		&:focus {
+			border-color: rgba( 200,200,200, 0.5);
+			background: $btn-default; // otherwise <a> styles will take over here
 		}
-		&:active{
-			background: shade( $btn-red, 40 );
+		
+		&:active,
+		&.selected {
+			background: shade( $btn-default, 50 );
+		}	
+		
+		// primary actions
+		&.green {
+			color: $btn-text;
+			background: $btn-green;
+			&:hover, 
+			&:focus, {
+				background: shade( $btn-green, 20 );
+			}
+			
+			&:active{
+				background: shade( $btn-green, 50 );
+			}
+			
+		}
+		
+		&.red {
+			color: $btn-text;
+			background: $btn-red;
+			&:hover, 
+			&:focus, {
+				background: shade( $btn-red, 10 );
+			}
+			&:active{
+				background: shade( $btn-red, 40 );
+			}
+		}
+		
+		&.logout {
+			color: $text-invert;
+			background: $text;
+			font-weight: 700;
 		}
 	}
-	
-	&.logout {
-		color: $text-invert;
-		background: $text;
-		font-weight: 700;
-	}
-	
 }

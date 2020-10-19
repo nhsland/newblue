@@ -1,0 +1,37 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.openeyes-brand {
+	
+	// OE SVG and h1 Portal title
+	.oe-logo {
+		z-index: $z-logo;
+		position: fixed;
+		top: 0; 
+		left: 0;
+		width: $logo-area;
+		height: $header-height;
+		cursor: pointer;
+		
+		@include tablet(){
+			width: $logo-area-tablet;
+		}
+		
+		@include phone(){
+			height: 60px;
+		}
+			
+		// js controlled UI - highlight the SVG and the <h1>
+		// keeping these seperate because of Flags
+		&.active {
+			.oe-openeyes,
+			h1.portal {
+				transition: opacity ease-out 0.5s;
+				opacity: 1;
+			}
+			
+		}
+	}
+}
+
