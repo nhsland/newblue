@@ -34,6 +34,7 @@ const paths = {
 		css: 		'./css/',
 		img:		'./img/',
 		svg:		'./svg/',
+		portal: 	'./dist/portal/',
 	},
 };
 
@@ -67,24 +68,24 @@ const del = require('del');
 - Datestamp (for debug)
 - Legal header for CSS files
 */
-let headerDateStamp = () => '/* ' + new Date( Date.now() ) + ' */';
-
-const headerLegals = [	'/**',
-					'*  (C) OpenEyes Foundation, 2018 ',
-					'*  This file is part of OpenEyes. ',
-					'*',
-					'* OpenEyes is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.',
-					'* OpenEyes is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.',
-					'* You should have received a copy of the GNU Affero General Public License along with OpenEyes in a file titled COPYING. If not, see <http://www.gnu.org/licenses/>.',
-					'*',
-					'* @link http://www.openeyes.org.uk',
-					'*',
-					'* @author OpenEyes <info@openeyes.org.uk>',
-					'* @copyright Copyright (C) 2017, OpenEyes Foundation',
-					'* @license http://www.gnu.org/licenses/agpl-3.0.html The GNU Affero General Public License V3.0',
-					'*',
-					'*/',
-					'',''].join('\n');
+const headerDateStamp = () => '/* ' + new Date( Date.now() ) + ' */';
+const headerLegals = [
+	'/**',
+	'*  (C) OpenEyes Foundation, 2018 ',
+	'*  This file is part of OpenEyes. ',
+	'*',
+	'* OpenEyes is free software: you can redistribute it and/or modify it under the terms of the GNU Affero General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.',
+	'* OpenEyes is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.',
+	'* You should have received a copy of the GNU Affero General Public License along with OpenEyes in a file titled COPYING. If not, see <http://www.gnu.org/licenses/>.',
+	'*',
+	'* @link http://www.openeyes.org.uk',
+	'*',
+	'* @author OpenEyes <info@openeyes.org.uk>',
+	'* @copyright Copyright (C) 2017, OpenEyes Foundation',
+	'* @license http://www.gnu.org/licenses/agpl-3.0.html The GNU Affero General Public License V3.0',
+	'*',
+	'*/',
+	'',''].join('\n');
 					
 /*
 -----------------------------
@@ -92,7 +93,7 @@ Process and minify SASS files
 -----------------------------
 Build compressed CSS file for deployment
 */
-var minifyCSS = function(scss, cssFileName){
+var minifyCSS = function(dist, scss, cssFileName){
 	// return stream (async task)
 	return src(scss)
 		.pipe(sass({
@@ -119,10 +120,10 @@ var minifyCSS = function(scss, cssFileName){
 			file.stat.mtime = date;
 			cb( null, file );
 		}))
-		.pipe(header( headerDateStamp() ))
-		.pipe(header( headerLegals ))
-		.pipe(rename( cssFileName ))
-		.pipe(dest(paths.dist.css));
+		.pipe( header( headerDateStamp() ))
+		.pipe( header( headerLegals ))
+		.pipe( rename( cssFileName ))
+		.pipe( dest( dist ));
 }
 
 /*
@@ -133,40 +134,42 @@ CSS
 - EyeDraw (icons for ED3)
 */
 var proCSS = function () {
-	return minifyCSS(	paths.src.pro, 
+	return minifyCSS(	paths.dist.css,
+						paths.src.pro, 
 						config.css + config.version + '_dark.min.css');
 };
 
 var classicCSS = function () {
-	return minifyCSS(	paths.src.classic, 
+	return minifyCSS(	paths.dist.css,
+						paths.src.classic, 
 						config.css + config.version + '_light.min.css');
 };
 
 var printCSS = function () {
-	return minifyCSS(	paths.src.print, 
+	return minifyCSS(	paths.dist.css,
+						paths.src.print, 
 						config.css + config.version + '_print.min.css');
 };
 
 var eyedrawCSS = function(){
-	return minifyCSS(	paths.src.eyedraw, 
+	return minifyCSS(	paths.dist.css,
+						paths.src.eyedraw, 
 						'eyedraw_draw_icons.min.css');
-};
-
-
-var proCSS = function () {
-	return minifyCSS(	paths.src.pro, 
-						config.css + config.version + '_dark.min.css');
 };
 
 /*
 Portal
 */
 var portalDarkCSS = function () {
-	return minifyCSS( paths.portal.dark, config.portal + '_dark.min.css');
+	return minifyCSS( 	paths.dist.portal,
+						paths.portal.dark, 
+						config.portal + '_dark.min.css');
 };
 
 var portalLightCSS = function () {
-	return minifyCSS( paths.portal.light, config.portal + '_light.min.css');
+	return minifyCSS( 	paths.dist.portal,
+						paths.portal.light, 
+						config.portal + '_light.min.css');
 };
 
 

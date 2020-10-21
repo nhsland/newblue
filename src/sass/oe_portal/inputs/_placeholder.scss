@@ -22,13 +22,3 @@ textarea {
 }
 
 
-input {
-	// add SEARCH icon to input	
-	&.search {
-		padding-left:32px;
-		background: $user-inputs url( svg-icon-path-theme('search')) left 5px center no-repeat;
-		background-size: 24px;
-	}
-}
-
-
