@@ -18,6 +18,12 @@
 hr.divider {
 	display:block;
 	border : 0;
-	margin:30px 0;  // reduced was 20px 0 15px 0;
+	margin:30px 0;  
 	border-bottom:2px solid $line;
+	
+	// like a <tr>
+	&.soft {
+		margin:15px 0; 
+		border-bottom:1px dotted $line;
+	}
 }

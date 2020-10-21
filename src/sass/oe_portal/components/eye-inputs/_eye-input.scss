@@ -4,9 +4,10 @@
 
 .oe-portal {
 	
+	// uses the standard f-c-split for layout
 	.right-eye-inputs,
 	.left-eye-inputs {
-		padding: 50px 0 20px 0;
+		padding-top: 50px; // make space for the background icons
 		background: transparent none top left no-repeat;
 		background-size: 35px;
 		
@@ -18,18 +19,11 @@
 	
 	.right-eye-inputs {
 		background-image: url( svg-icon-path-theme('lat-R-green'));
-		// right eye is always above left one
-		@include tablet(){
-			border-bottom: 4px solid $text-light;
-		}
 	}
 	
 	.left-eye-inputs {
 		background-image: url( svg-icon-path-theme('lat-L-red'));
 	}
-	
-	
-	
 }
 
 

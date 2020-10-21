@@ -11,11 +11,19 @@
 			display: block;
 		} 
 		
+		.sticky {
+			position: sticky; 
+			top: #{$header-height + 20px}; 
+			@include tablet(){
+				position: static; // or it will be under the scrolling content
+			}
+		}
+		
 		> div {
-			width: 48%;	// creates a 4% middle gutter (could be used for a vertical line)
+			width: 45%;	// creates a 4% middle gutter (could be used for a vertical line)
 			@include tablet(){
 				width: auto;
-				margin:0 0 20px 0; // don't use padding (see eye-inputs!)
+				margin:0 0 20px 0; 	
 			}
 		}
 		
@@ -25,6 +33,26 @@
 				width: auto; 
 			}
 		}	
+		
+		// reverse the Flex flow
+		&.reverse {
+			flex-direction: row-reverse;
+		}
+		
+		// content split (on tablets and mobiles this needs clearly showing)
+		&.show {
+			> div {
+				@include tablet(){
+					margin:0 0 30px 0; 
+					padding-bottom: 30px; // be specific, see eye-inputs!
+					&:first-child {
+						border-bottom: $text-light solid 3px;
+					}
+					
+				}
+			}
+		}
+
 	}
 	
 }

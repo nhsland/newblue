@@ -8,6 +8,14 @@
 	@include flex( center, space-between );
 }
 
+.flex-l {
+	@include flex( center, flex-start );
+}
+
+.flex-r {
+	@include flex( center, flex-end );
+}
+
 .flex-c {
 	@include flex( center, center );
 }
@@ -20,3 +28,13 @@
 	@include flex( flex-start, flex-start );	
 }
 
+
+// btn flex layouts 
+// this assumes there are only <button> elements
+.btns-r {
+	@include flex( center, flex-end );
+	margin:10px 0;
+	button {
+		margin:0 0 0 15px;
+	}
+}

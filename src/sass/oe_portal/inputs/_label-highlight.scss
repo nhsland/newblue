@@ -10,16 +10,27 @@ label {
 	&.highlight {
 		position: relative;
 		white-space: nowrap;
-		
 		@include flex( center, flex-start );
+		
+		height: $input-height; // add height to match input and select heights
+		padding: 0 15px;  
+		margin:2px 0;
+		
+		// allow to wrap on phones
+		@include phone(){
+			align-items: flex-start;
+			white-space: normal;
+			height: auto;
+			min-height: $input-height;
+			padding: 6px 0 3px 0;
+			line-height: 1.4;
+		}
+		
 		&.inline {
 			display: inline-flex;
 			margin: 2px 8px 6px 0;
 		}
 		
-		height: $input-height; // add height to match input and select heights
-		padding: 0 15px;  
-		margin:2px 0;
 		
 		> input[type="radio"],
 		> input[type="checkbox"] {

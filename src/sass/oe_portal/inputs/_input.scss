@@ -7,6 +7,7 @@
 input {
 	padding:5px;
 	height: $input-height;
+	line-height: $input-height; 
 	
 	// this fixes the issues where the browser
 	// will use the system-ui fonts:

@@ -8,18 +8,22 @@ h2 {
 	@include font-size(32); 
 	font-weight:400;
 	line-height: 1.5;
-	margin:0 0 20px 0;
+	margin:0 0 15px 0;
 	
 	@include tablet(){
-		@include font-size(28); 
-		margin:0 0 15px 0;
+		@include font-size(26); 
+		line-height: 1.2;
+		
+		small {
+			font-size: 60%;
+		}
 	}
 }
 
 h3 {
 	@include font-size(20);
 	font-weight:300;
-	line-height: 1.5;
+	line-height: 1.4;
 	margin:0 0 10px 0;
 	
 	@include tablet(){
@@ -32,12 +36,21 @@ h3 {
 	}
 }
 
-h4,
+h4 {
+	@include font-size(18);
+	font-weight:400;
+	line-height: 1.3;
+	margin:0 0 10px 0;
+	color: $text-light;
+}
+
 h5,
 h6,
-p {
+p, 
+address {
 	@include font-size(16); // 1rem
 	font-weight:400;
+	font-style: normal;
 }
 
 // set weighting (depends on theme) 
