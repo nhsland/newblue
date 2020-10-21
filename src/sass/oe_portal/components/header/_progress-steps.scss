@@ -28,10 +28,13 @@ header {
 					background: none;
 				}
 				
+				// 1st step: Title of the process we are stepping through
 				&.process {
-					background-image: url( svg-icon-path-theme('arrow-right-bold'));
-					font-weight: 300;
-					opacity: 1;	
+					color:$text-invert;
+					background: $text;
+					padding: 2px;
+					border-radius: 3px;
+					font-weight: 500;	
 				}
 				
 				&.done {

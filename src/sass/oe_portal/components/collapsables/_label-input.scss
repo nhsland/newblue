@@ -34,6 +34,12 @@
 				width: auto;
 				margin: 0;
 			}
+			
+			// had to add this because within a <td> the fieldset wasn't
+			// stretching to fill the inputs <div> (see glaucoma IOP layout)
+			fieldset {
+				width: 100%;
+			}
 		}	
 	}
 }
