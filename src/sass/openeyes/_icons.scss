@@ -273,6 +273,7 @@
 	&.person-split		{ @include oe3-icons('person-split'); }
 	&.reset 			{ @include oe3-icons('reset'); }
 	&.sync 				{ @include oe3-icons('sync'); }
+	&.event-in-draft 		{ @include oe3-icons('event-in-draft'); }
 	
 	// monochromatic Eye Lat icons:
 	&.eyelat-L			{ @include oe3-icons('lat-L'); }

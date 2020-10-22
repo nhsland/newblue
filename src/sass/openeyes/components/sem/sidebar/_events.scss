@@ -63,6 +63,11 @@
 				background-image:url( svg-path('sidebar/draft') );
 			}
 			
+			// Event in Draft state (counld be any!) wavey blue line
+			&.event-in-draft {
+				background-image:url( svg-path('sidebar/event-in-draft') );
+			}
+			
 			// edit - grey pencil
 			&.edit {
 				background-image:url( svg-path('sidebar/edit') );
