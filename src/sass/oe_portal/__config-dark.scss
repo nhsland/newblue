@@ -56,7 +56,7 @@ $input-placeholder: 	rgb(100,100,100);
 
 // ... different SVGs for 'pro' (dark) & 'classic' (light) theme
 @function svg-icon-path-theme($svg){
-	@return "assets/svg/in-css/icons/" + $svg + ".svg";
+	@return "./assets/svg/in-css/icons/" + $svg + ".svg";
 }
 
 

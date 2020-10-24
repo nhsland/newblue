@@ -13,12 +13,20 @@ table {
 		}
 	}
 	
+	th, td {
+		text-align: left;
+		padding:10px 10px 10px 0;
+		&:last-child {
+			padding-right:0;
+		}
+		
+	}
+	
 	thead {
 		th {
-			text-align: left;
 			color:$text-light;
 			font-weight: $font-light;
-			padding:10px 5px 0 5px;
+			padding-bottom: 5px;
 			font-size: 90%;
 		}
 	}
@@ -34,9 +42,7 @@ table {
 		
 		th,
 		td {
-			text-align: left; // <th> needs this
-			vertical-align: top;
-			padding:10px 5px;				
+			vertical-align: top;				
 		}
 		
 		// use th like a label for a row
@@ -45,4 +51,11 @@ table {
 			font-weight: $font-light;
 		}
 	}
+	
+	&.squeeze {
+		@include tablet(){
+			font-size:85%;
+		}
+	}
+	
 }

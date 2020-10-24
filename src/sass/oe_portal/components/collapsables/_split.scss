@@ -3,7 +3,10 @@
 //
 
 .oe-portal {
-	// column split, create 2 columns 50/50
+	// split screen
+	// simple pattern UI pattern
+	// |- <div> 
+	// |- <div>
 	.f-c-split {
 		@include flex( flex-start, space-between );
 		
@@ -11,33 +14,69 @@
 			display: block;
 		} 
 		
-		.sticky {
-			position: sticky; 
-			top: #{$header-height + 20px}; 
-			@include tablet(){
-				position: static; // or it will be under the scrolling content
-			}
-		}
-		
 		> div {
-			width: 45%;	// creates a 4% middle gutter (could be used for a vertical line)
-			@include tablet(){
-				width: auto;
-				margin:0 0 20px 0; 	
+			flex: 1;
+			
+			// create a gap between the columns
+			&:first-child{
+				margin:0 5% 0 0;
 			}
+			
+			&:last-child{
+				margin:0 0 0 5%;
+			}
+			
+			// allow a column to be 2/3's wide
+			&.wide {
+				flex:2;
+			}
+			
+			@include tablet(){
+				&:first-child {
+					margin:0 0 20px 0;
+				} 
+				&:last-child {
+					margin:0;
+				}	
+			}
+			
+			// stick a side
+			.sticky {
+				position: sticky; 
+				top: #{$header-height + 20px}; 
+				@include tablet(){
+					position: static; // or it will be under the scrolling content
+				}
+			}	
 		}
 		
-		// rather than create 2 columns, push content out to the edges
+		// rather than create 2 columns
+		// push content out to the edges
 		&.edge {
 			> div {
-				width: auto; 
+				flex: 0;
 			}
 		}	
 		
 		// reverse the Flex flow
+		// need to reverse the margins
 		&.reverse {
 			flex-direction: row-reverse;
+			> div {				
+				&:last-child{
+					margin:0 5% 0 0;
+				}
+				&:first-child{
+					margin:0 0 0 5%;
+				}
+			}
 		}
+		
+		// when used in table <tr> need a bit of space to next column
+		// see Select patient <table>
+		&.pad-r {
+			margin:0 20px 0 0;
+		} 
 		
 		// content split (on tablets and mobiles this needs clearly showing)
 		&.show {
@@ -49,6 +88,17 @@
 						border-bottom: $text-light solid 3px;
 					}
 					
+				}
+			}
+		}
+		
+		// when stacked make vertical gap closer
+		&.close-v {
+			> div {
+				@include tablet(){
+					&:first-child {
+						margin-bottom: 10px;
+					}
 				}
 			}
 		}

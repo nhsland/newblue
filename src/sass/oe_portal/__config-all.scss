@@ -15,7 +15,6 @@ $logo-area-tablet: 180px;
 $menu-btn: 150px;
 $menu-btn-tablet: 80px;
 
-
 $input-height: 32px;
 
 // z
@@ -25,9 +24,9 @@ $z-header: 50;
 
 // general svg icon path
 @function svg-icon-path($svg){
-	@return "assets/svg/in-css/icons/" + $svg + ".svg";
+	@return "./assets/svg/in-css/icons/" + $svg + ".svg";
 }		
 // svgs
 @function svg-path($svg){
-	@return "assets/svg/in-css/" + $svg + ".svg";
+	@return "./assets/svg/in-css/" + $svg + ".svg";
 }	

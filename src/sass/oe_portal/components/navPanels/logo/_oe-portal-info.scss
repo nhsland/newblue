@@ -38,6 +38,17 @@
 				background: rgba(#eee, 0.9);
 			}
 		}
+		
+		// copyright
+		.copyright {
+			position: absolute;
+			bottom: 5px;
+			left:0; 
+			right:0; 
+			text-align: center;
+			@include font-size(11);
+			color: $text-light;
+		}
 	}
 }
 

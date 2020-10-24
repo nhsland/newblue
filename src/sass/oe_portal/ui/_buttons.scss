@@ -67,11 +67,9 @@
 			&:focus, {
 				background: shade( $btn-green, 20 );
 			}
-			
 			&:active{
 				background: shade( $btn-green, 50 );
 			}
-			
 		}
 		
 		&.red {
