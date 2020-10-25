@@ -1,0 +1,34 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.portal-menu {
+	
+	.menu-btn {
+		z-index: $z-logo + 1;
+		position: fixed;
+		top: 0; 
+		right: 0;
+		width: $menu-btn;
+		height: $header-height;
+		cursor: pointer;
+		// classic menu 
+		background: transparent url( svg-icon-path-theme('menu')) center center no-repeat;
+		background-size: 36px;
+		opacity: 0.5;
+		
+		@include tablet(){
+			background-size: 28px;
+			width: $menu-btn-tablet;
+		}
+		
+		@include phone(){
+			background-position-y: 15px;
+		}
+
+		// js controlled interaction... 
+		&.active {
+			opacity: 1;		
+		}
+	}
+}

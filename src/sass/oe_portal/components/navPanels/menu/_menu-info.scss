@@ -1,0 +1,42 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.portal-menu {
+
+	.menu-info {
+		z-index: $z-logo;
+		position: fixed;
+		top: $header-height; 
+		right: -350px; // default position offscreen
+		width: 350px;
+		height: calc( 100vh - #{$header-height});
+		margin:0;
+		padding:0;	
+		background: $bg2;
+		
+		@include tablet(){
+			right: -300px; // default position offscreen
+			width: 300px;
+		}
+		
+		@include phone(){
+			top: 0;
+			right: -250px; // default position offscreen
+			width: 250px;
+			height: 100vh;
+			padding: 35px 0 10px 0;
+			border-left:2px solid $line;
+		}
+		
+		// JS controlled slide panel in and out. 
+		// default: slide/hide off screen
+		transition: right ease-out 0.4s;
+		
+		&.show {
+			right: 0; // JS adds this class to slide it in
+		}
+		
+	}
+}
+

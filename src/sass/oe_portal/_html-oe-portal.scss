@@ -30,6 +30,11 @@ html {
 		max-width: 1400px; // stop content stretching out too much
 		margin: 0 auto;
 		
+		// this fixes an issue on Touch devices
+		// if a table goes off-screen, users may try to pinch-zoom
+		// without this, it messes up the UI.
+		overflow-x: auto;
+		
 		@include tablet(){
 			padding:30px 30px 40px 30px;
 		}

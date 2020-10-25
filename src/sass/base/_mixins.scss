@@ -94,6 +94,14 @@
 	}
 }
 
+// above/wider! : Galaxy Tab is 800px
+@mixin wider-than-tablet(){
+	@media only screen 
+		and (min-width: 801px ){
+		@content;
+	}
+}
+
 // Media queries
 // Generic media query for minimum width
 @mixin media($width) {

@@ -9,26 +9,29 @@
 label {
 	&.highlight {
 		position: relative;
-		white-space: nowrap;
-		@include flex( center, flex-start );
 		
-		height: $input-height; // add height to match input and select heights
-		padding: 0 15px;  
+		@include flex( flex-start, flex-start );
+		flex-direction: column;
+		
+		min-height: $input-height;
+		padding: 5px 15px 5px 15px;  
 		margin:2px 0;
+		line-height: 1.4;
 		
-		// allow to wrap on phones
+		// font-size change needs some tweaking...
 		@include phone(){
-			align-items: flex-start;
-			white-space: normal;
-			height: auto;
-			min-height: $input-height;
-			padding: 6px 0 3px 0;
-			line-height: 1.4;
+			padding: 6px 5px 3px 0;
 		}
 		
+		// labels inline! 
 		&.inline {
 			display: inline-flex;
 			margin: 2px 8px 6px 0;
+		}
+		
+		&.urgent {
+			color: $text-urgent;
+			font-weight: $font-bold;
 		}
 		
 		
