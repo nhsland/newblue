@@ -12,31 +12,24 @@
 			&:last-child {
 				margin: 0;
 			}
+			
+			@include phone-all(){
+				@include font-size(15);
+				font-weight: 500;
+			}
 		}
 	}
 	
 	
 	// move logout aways from other actions
+	// it's pushed down by the 'overflow' wrapper
+	
 	.logout-btn {
-		position:absolute;
-		bottom: 20px;
-		left:0; 
-		right:0;
+		margin:20px 0 0 0;
 		
 		button.logout {
 			width:50%;
 			margin:0 auto;
-		}
-		
-		// handhelds push down the viewport when
-		// first loaded because of the location bar
-		// allow for this to show logout without scrolling
-		@include tablet(){
-			bottom:15vh;	
-		}
-		
-		@include phone(){
-			bottom:20vh;	
 		}
 	}
 }

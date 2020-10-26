@@ -9,8 +9,18 @@
 	ul {
 		padding:4px 0;
 		
+		@include phone-all(){
+			padding:2px 0; 
+		}
+		
+		
 		li {
 			margin:4px 0;
+			
+			@include phone-all(){
+				margin:2px 0; 
+			}
+			
 		}
 	}
 	

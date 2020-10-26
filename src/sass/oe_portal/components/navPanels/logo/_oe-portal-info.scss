@@ -16,6 +16,19 @@
 		padding:0;	
 		background: $bg2;
 		
+		@include phone-landscape(){
+			top: #{ $header-height - $phone-landscape-adjust };
+			height: calc( 100vh - #{ $header-height - $phone-landscape-adjust });
+		}
+		
+		// wrap for group content
+		// scroll overflow on smartphones in landscape (gets very squashed!)
+		// note: Theme switch and copyright are excluded
+		.overflow {
+			height: calc( 100vh - #{ ($header-height - $phone-landscape-adjust) + 90px });
+			overflow-y: auto;
+		}
+		
 		// JS controlled slide panel in and out. 
 		// default: slide/hide off screen
 		transition: left ease-out 0.4s;
@@ -24,18 +37,26 @@
 			left: 0; // JS adds this class to slide it in
 		}
 	
-		// hard coded colors for the theme buttons
+		// wrap for 2 buttons, just for the theme change
 		.select-portal-theme {
+			@include flex( flex-start, flex-start)
+			
 			button {
-				margin: 5px 0;
+				flex:1; 
+				@include font-size(14);
+				font-weight: 500;
 			}
+			
 			.dark-theme {
 				color: rgba(#eee, 0.8);
 				background: rgba(#111, 0.9);
 			}
+			
+			// JS will hide this button on mobile if local storage isn't available.
 			.light-theme {
 				color: rgba(#111, 0.8);
 				background: rgba(#eee, 0.9);
+				margin:0 5px 0 0;
 			}
 		}
 		

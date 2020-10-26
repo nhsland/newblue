@@ -12,11 +12,12 @@
 	
 	.group {
 		padding:10px 15px;
+		
 		&:first-child{
 			padding-top:5px;
 		}
 		
-		@include phone(){ 
+		@include phone-all(){ 
 			padding:10px 10px;
 		}
 		
@@ -51,5 +52,10 @@
 		&:first-child{
 			margin-top:0;
 		}
+		
+		@include phone-all(){
+			margin:4px 0 2px 0;
+		}
+		
 	}
 }

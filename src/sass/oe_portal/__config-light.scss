@@ -26,9 +26,9 @@ $a-bg: 		rgb(170,240,255);
 $oe-spinner: rgb(0,0,255);
 
 // White text on a dark background visually bleeds (and Vice versa) 
-$font-light:	300;	
-$font-medium:	400;	
-$font-bold: 	500;	
+$font-light: 	400; // push 300 weights to 400 in 'light'
+$font-medium: 	500; // push 400 weights to 500
+$font-bold: 	700; // push 500 weights to 700 (no 600)	
 
 $line: rgb(193,190,190);
 

@@ -20,7 +20,7 @@
 			width: 300px;
 		}
 		
-		@include phone(){
+		@include phone-all(){
 			top: 0;
 			right: -250px; // default position offscreen
 			width: 250px;
@@ -28,6 +28,22 @@
 			padding: 35px 0 10px 0;
 			border-left:2px solid $line;
 		}
+		
+		// wrap for group content
+		// to handle scroll overflow on smartphones in landscape
+		// but as this is the main menu it handles ANY overflow issues
+		// note: allow  90px for logout button
+		.overflow {
+			height: calc( 100vh - #{ $header-height + 90px });
+			overflow-y: auto;
+	
+			@include phone-all(){
+				// menu is shifted up to maximise vertical space
+				// allow for browser bar
+				height: calc( 85vh - 90px );
+			}
+		}
+		
 		
 		// JS controlled slide panel in and out. 
 		// default: slide/hide off screen

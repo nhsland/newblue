@@ -21,8 +21,15 @@ html {
 // body
 .oe-portal {
 	background: $html-bg;
-	padding:$header-height 0 0 0; // allow for fixed header space
 	margin:0;
+	padding:$header-height 0 0 0; // allow for fixed header space
+	
+	// smartphones, in landscape need this a bit smaller
+	@include phone-landscape(){
+		padding-top: #{ $header-height - $phone-landscape-adjust };
+	}
+	
+	
 	@include font-size(16);
 	
 	main {

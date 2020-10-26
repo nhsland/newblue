@@ -12,7 +12,7 @@
 				@include tablet(){
 					left: 40px;
 				}
-				@include phone(){
+				@include phone-all(){
 					left: 20px; // need this or it will use tablet left setting.
 				}
 			}
@@ -43,8 +43,8 @@
 				left: 30px;
 			}
 			
-			@include phone(){
-				$svg-width: 80px;
+			@include phone-all(){
+				$svg-width: 85px;
 				$svg-height: ( $svg-width * 0.1844 );
 				width: $svg-width; 
 				height: $svg-height;

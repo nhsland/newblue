@@ -24,7 +24,7 @@
 					background-size: 48px;
 				}
 				
-				@include phone(){
+				@include phone-all(){
 					top: 7px; 
 					left: -16px;
 					height: 32px;

@@ -22,7 +22,7 @@ header {
 			padding: 5px 10px;
 		}
 		
-		@include phone(){
+		@include phone-all(){
 			transform: none;
 			top: auto;
 			bottom: 10px; 

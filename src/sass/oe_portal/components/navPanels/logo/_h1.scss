@@ -39,7 +39,7 @@
 				letter-spacing: 12px;
 			}
 			
-			@include phone(){
+			@include phone-all(){
 				display: none;
 			}
 		}

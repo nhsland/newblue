@@ -36,7 +36,7 @@
 
 // Squeeze (special elements)
 // Elements hat have to be squeezed to make the UI work below 1265px.
-// (1280px is actually 1265px, allowing for scroll bars)
+// (1280px is actually 1265px, allowing for old skool scroll bars)
 @mixin squeeze(){
 	@media only screen 
 		and (max-width: 1265px ){
@@ -76,7 +76,12 @@
 	}
 }
 
-// add for OE Portal
+// -----------------------
+// !! OE Portal only !!
+// OE is running at initial scale of 0.5 to be able to work on tablets
+// Portal is running at scale 1.0
+// -----------------------
+
 // specific device sizes: iphone 8+ is 414px
 // but actuall UI fails below 600px (Galaxy Tab)
 @mixin phone(){
@@ -86,7 +91,34 @@
 	}
 }
 
-// specific device sizes: Galaxy Tab is 800px
+// landscape - need to be carefully here. 
+// target smartphones using height and width 
+@mixin phone-landscape(){
+	@media only screen 
+		and (orientation: landscape)
+		and (max-height: 420px )
+		and (max-width: 900px ){
+		@content;
+	}
+}
+
+// some settings need to be applied to both of the above
+@mixin phone-all(){
+	@media only screen 
+		and (max-width: 590px ){
+		@content;
+	}
+	@media only screen 
+		and (orientation: landscape)
+		and (max-height: 420px )
+		and (max-width: 900px ){
+		@content;
+	}
+}
+
+
+
+// specific device sizes: Galaxy Tab 3 is 800px
 @mixin tablet(){
 	@media only screen 
 		and (max-width: 801px ){
@@ -95,6 +127,7 @@
 }
 
 // above/wider! : Galaxy Tab is 800px
+// iPad Pro can run like as normal
 @mixin wider-than-tablet(){
 	@media only screen 
 		and (min-width: 801px ){

@@ -22,8 +22,11 @@
 			width: $menu-btn-tablet;
 		}
 		
-		@include phone(){
+		@include phone-all(){
 			background-position-y: 15px;
+			// menu bumps up, which means the icon hit area
+			// overlaps with the overflow scroll area, make it smaller:
+			height: 50px;
 		}
 
 		// js controlled interaction... 
