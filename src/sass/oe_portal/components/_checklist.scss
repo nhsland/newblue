@@ -9,28 +9,60 @@
 		list-style: none;
 		
 		li {
-			@include font-size( 18 );
-			font-weight: 500;
-			margin:0 0 25px 0;
-			padding: 0 0 0 25px;
-			
-			background: transparent url( svg-icon-path-theme('tick-chunky')) top 4px left no-repeat;
+			background: url( svg-icon-path-theme('tick-chunky')) top 4px left no-repeat;
 			background-size: 12px;
 			
-			&:last-child{
+			margin:0 0 25px 0;
+			padding: 0 0 0 25px; // allow for the icon
+			
+			&:last-child {
 				margin:0;
-			}	
-			
-			table {
-				margin:5px 0 0 0;
 			}
 			
-			@include phone(){
+			@include phone-all(){
 				padding: 0 0 0 12px;
-				background-size:8px;
-				@include font-size( 16 );
+				background-size: 8px;
 			}
+			
+			
+			// always has an overview
+			.overview {
+				margin:0 0 10px 0;
+				@include font-size( 18 );
+				font-weight: $font-medium;
+				
+				@include phone-all(){
+					@include font-size( 16 );
+				}
+			}
+			
+			// details are optional 
+			.details {
+				position: relative;
+				left: -20px;
+				padding: 0 0 0 25px;
+				border-left:1px dotted rgba( $text-light, 0.5 );
+				font-size:85%;
+				font-weight: $font-medium;
+				
+				@include phone-all(){
+					left: -8px;
+					padding: 0 0 0 8px;
+				}
+				
+				// squeeze everything
+				// override the required settings.
+				table {
+					td, th {
+						padding-top:4px;
+						padding-bottom: 4px;
+					}
+				}
+				
+				.row {
+					margin:15px 0;
+				}				
+			}	
 		}
-		
 	}
 }

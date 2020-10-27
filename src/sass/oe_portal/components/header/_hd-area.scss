@@ -15,9 +15,7 @@ header {
 			
 			@include tablet(){
 				@include font-size(14);
-				margin:0 0 1px 0;
 			}
-			
 		}
 	}
 }

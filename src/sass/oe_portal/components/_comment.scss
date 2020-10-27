@@ -6,4 +6,13 @@
 	span.comment {
 		font-style: italic;
 	}
+	
+	// textarea for comment 
+	// JS adds a character counter
+	.charcounter {
+		margin: 8px 0 0 4px;
+		@include font-size(12);
+		font-weight: $font-medium;
+		color: $text-light; 
+	}
 }
