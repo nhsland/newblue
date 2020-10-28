@@ -64,6 +64,12 @@ strong, b {
 	opacity:0.7; 
 }
 
+// Urgent text	
+.urgent-text {
+	color: $text-urgent;
+	font-weight: $font-bold;
+}
+
 // horizontal "tab" space
 // many occassions ended up requiring a bigger
 // horizonal space than &nbsp; or &emsp; provided

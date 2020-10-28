@@ -29,4 +29,9 @@
 		background: $btn-green;
 		color:rgb(250,250,250);
 	}	
+	
+	&.invert {
+		background: $text;
+		color: $text-invert;
+	}	
 }
