@@ -23,6 +23,15 @@
 			font-size: $details-font-size;
 		}
 		
+		// e.g. reason why it was returned!
+		.oe-comments {
+			margin:8px 0 0 0;
+			@include font-size( 14 );
+			font-style: italic;
+			font-weight:$font-medium;
+			
+		}
+		
 		// reference number 
 		.oep-ref {
 			margin:0 0 5px 0;
