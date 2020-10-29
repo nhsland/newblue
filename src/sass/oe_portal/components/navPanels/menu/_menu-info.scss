@@ -36,6 +36,10 @@
 		.overflow {
 			height: calc( 100vh - #{ $header-height + 90px });
 			overflow-y: auto;
+			
+			@include tablet(){
+				height: calc( 70vh - 90px );
+			}
 	
 			@include phone-all(){
 				// menu is shifted up to maximise vertical space
