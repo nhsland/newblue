@@ -94,6 +94,22 @@
 				
 			}
 			
+			// initially, when doing all the data layouts
+			// it seemed vertical-align middle was the best approach
+			// however, in hindsight this maybe wasn't such a good move. 
+			// but to change it all now is a bit too risky
+			// therefore provide a class that does it...
+			&.atop {
+				tbody {
+					th, 
+					td {
+						vertical-align: top;	// top!
+						padding-top:4px;		// adjust specific padding
+						padding-bottom:4px;
+					}
+				}
+			}
+			
 			// underline to help with reading data
 			tr {
 				border-top:1px solid $oe-line;
