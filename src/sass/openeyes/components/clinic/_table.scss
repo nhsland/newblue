@@ -10,13 +10,7 @@ table.oe-clinic-list {
 	width:100%;
 	margin:1px 0 0 0;
 	
-	thead {
-		tr {
-			background:$oe-blue-dark;
-			height:30px;
-		}
-	}
-	
+
 	tbody {
 		// add line to help with reading data
 		tr {
@@ -29,72 +23,72 @@ table.oe-clinic-list {
 			&:hover {
 				background-color: $oe-bg-highlight;
 			}
-			
-			
-			// future appointments for that day i.e. haven't arrived yet
-			&.future {
-				background-color: $oe-blue-dark;	
-				&:hover {
-					background-color: $oe-bg-highlight;
-				}			
-			}
 		}	
 	}
-				
-	th, td, {
 		
+		
+	// align with title		
+	th, td, {
 		&:first-child {
-			padding-left:20px; // align with title
+			padding-left:20px; 
 		}
 	}
 	
 	// <th>
 	th {
+		height:30px;
 		@include font-size(12);
 		text-align: left;  // overide default 'middle'
 		font-weight: $oe-font-light;
-		color:$oe-text-light;
+		color: $oe-text-light;
 	}
 	
 	// <td>
 	td {
 		@include font-size(14);
-		color:$oe-text;
+		color: $oe-text;
 		vertical-align: middle;	
-		padding:5px 0;
+		padding: 5px 0;
 		
-		// patient links
-		a {
-			color:$oe-text;
-			&:hover, &:focus, &:active {
-				color:$oe-text-highlight;
+		// time
+		&:first-child{
+			font-weight: $oe-font-bold;
+			width: 90px;
+		}
+		
+		&:nth-child( 2 ){
+			width: 90px; // Hospital Num
+		}
+		
+		// Speciality and Type
+		&:nth-child( 3 ){
+			@include font-size(12); 
+			width:120px;
+			padding-right: 20px;
+			
+			small {
+				@include font-size(11); 
+				color: $oe-text-light;
+				font-weight: $oe-font-bold;
 			}
 		}
-		
-		.specialty {
-			@include font-size(11);
-			opacity:0.5;
+	
+		&:nth-child( 4 ){
+			width: 50px; // PDQ icon
 		}
 		
-		// applied to duration td when completed - tick!
-		&.complete {
-			background-position:right 10px center;
-			background-repeat: no-repeat;
-			background-size:19px;
-			background-image:url( svg-path('ui/tick-green') );
+		&:nth-child( 5 ){
+			width: 300px; // Patient name
+		}
+		
+		&:nth-child( 7 ){
+			width: 300px; // Assigned
 		}
 		
 		
-		&.nowrap {
-			width:1%;
-			white-space: nowrap;
-			padding-right:20px;
-		}
 		
-		&.center {
-			text-align: center;
-			padding:0 10px;
-		}
+		
+	
 	}
 }
 

@@ -115,6 +115,11 @@ $oe-step-red:			rgb(160,40,10);
 $oe-step-grey:			rgb(70,70,80);
 $oe-step-text:			rgb(240,240,240);
 
+$oe-wait-green: 		rgb(0,200,0);
+$oe-wait-yellow: 		rgb(200,180,50);
+$oe-wait-orange:		rgb(255,150,0);
+$oe-wait-red:			rgb(255,0,0);
+
 $oe-dark-bg-highlight: 	shade($oe-dark-blue-dark3,30); // used as hover highlight
 $oe-bg-highlight: 		$oe-dark-bg-highlight; // used as hover highlight
 // colors 

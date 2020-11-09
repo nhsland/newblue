@@ -60,6 +60,10 @@ textarea {
     display: none;
 }
 
+.invisible {
+	visibility: hidden;
+}
+
 // use visibilty to 'hide' a <tr>
 // hidden & space occupied is removed (as if display: none). 
 // BUT: rows and columns are still calculated as though the cells 

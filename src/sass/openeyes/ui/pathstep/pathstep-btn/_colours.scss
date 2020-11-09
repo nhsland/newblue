@@ -1,0 +1,28 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Path path step btn
+// Used in Worklists, Clinic list, etc
+// e.g. PSDs
+
+// <span>
+.oe-pathstep-btn {
+	
+	// default grey
+	color: $oe-step-text; 
+	background: $oe-step-grey;
+	
+	// colours
+	&.green { 
+		background: $oe-step-green; 
+	}
+	
+	&.orange { 
+		background: $oe-step-orange; 
+	}
+
+	&.red { 
+		background:$oe-step-red; 
+	}
+}

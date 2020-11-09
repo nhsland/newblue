@@ -2,11 +2,8 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Path Step
-// Used in Worklist (e.g. PSD), Clinic to build the pathway, examination
-
 // btn
-@import "oe-pathstep-btn";
-
-// pathstep popup
-@import "popup/_all";
+@import "_base";
+@import "colours";
+@import "states";
+@import "time";

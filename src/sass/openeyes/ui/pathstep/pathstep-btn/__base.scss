@@ -8,36 +8,26 @@
 
 // <span>
 .oe-pathstep-btn {
-	display:inline-block;
+	
+	display:inline-flex;
+	align-items:center;		
+	justify-content:center;
+	
+	// if it has two children (e.g name and time) then it needs stacking
+	flex-direction: column;
+	
 	// setup with margin-left to space btns 
 	// so if tbn used in last <table> col it lines up
-	margin:1px 0 1px 3px;  
-	&:first-child {
-		margin-left:0;
+	padding:4px 8px;
+	margin:2px 3px 2px 0; 
+	 
+	&:last-child {
+		margin-right:0;
 	}
 	
-	padding:4px 8px 3px 8px;
 	@include font-size(12);
 	font-style: italic;
 	border-radius:3px;
-	cursor: pointer;
-	
-	// default 'grey' to work across themes
-	color:			$oe-step-text; 
-	background:		$oe-step-grey;
-	
-	// colours
-	&.green { 
-		background: $oe-step-green; 
-	}
-	
-	&.orange { 
-		background: $oe-step-orange; 
-	}
+	cursor: pointer;	
 
-	&.red { 
-		background:$oe-step-red; 
-	}
-	
-	
 }
