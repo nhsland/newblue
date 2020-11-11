@@ -29,5 +29,11 @@
 	font-style: italic;
 	border-radius:3px;
 	cursor: pointer;	
+	
+	// turn off point events for all children
+	// JS needs this:
+	* {
+		pointer-events: none;
+	}
 
 }

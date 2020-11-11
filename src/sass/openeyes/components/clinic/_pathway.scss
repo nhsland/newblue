@@ -6,8 +6,11 @@ table.oe-clinic-list {
 	// container for pathway-steps, used by js
 	.pathway {
 		&.complete {
-			filter: grayscale( 1 );
-			opacity: 0.8;
+			.oe-pathstep-btn {
+				background: $oe-step-blue;
+				color: $oe-step-text;
+				border-color: transparent;
+			}
 		}
 	}
 }

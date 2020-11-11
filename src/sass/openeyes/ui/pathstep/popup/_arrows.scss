@@ -1,0 +1,25 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-pathstep-popup {
+	// arrow 
+	&.a-t-l {
+		$arrowSize: 7px; 
+		
+		&:after {
+			top: #{ 0 - $arrowSize * 2 };
+			left: 0;
+			right: auto;
+			border: solid transparent;
+			content: " ";
+			height: 0;
+			width: 0;
+			position: absolute;
+			pointer-events: none;
+			border-color: rgba(0,0,0,0);
+			border-bottom-color: $oe-text-highlight;
+			border-width: $arrowSize;
+		}
+	}
+}
