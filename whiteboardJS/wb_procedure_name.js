@@ -1,5 +1,5 @@
 /*
-Handle Whitenboard Procedure name
+Handle Whiteboard Procedure name
 DOM structure: 
 - js hook: "js-handle-procedure-name"
 - JSON for procedure short and long name
