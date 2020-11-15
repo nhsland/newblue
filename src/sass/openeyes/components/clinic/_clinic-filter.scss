@@ -1,0 +1,47 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+
+// <ul>
+ul.oe-clinic-filter {
+	// inline the list items
+	@include flex( flex-start, flex-start );
+	
+	// <li>
+	li.filter-btn {
+		@include flex( center, center );
+		
+		height:$oe-event-header-height;
+		min-width: 60px;
+		background: $oe-btn-default;
+		cursor:pointer;
+		color:$oe-text-light;
+		
+		.filter {
+			padding: 0 12px;
+			@include font-size(13);
+			
+			// if it's a shortcode JS will expand to show it's fullname
+			.fullname {
+				@include font-size(9);
+			}
+		}
+		
+		
+		&:hover, 
+		&:focus, 
+		&.selected {
+			background:$oe-btn-blue;
+			color:#fff;
+		}
+		
+		// turn off JS events in Children
+		* {
+			pointer-events: none;
+		}
+	}
+
+	
+	
+}
