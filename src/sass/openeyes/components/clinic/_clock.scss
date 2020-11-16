@@ -1,0 +1,23 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-clinic-clock {
+	position: fixed;
+	z-index: $oe-z-tooltip;
+	left: 0;
+	top: 0;
+	
+	background:$oe-text-highlight;
+	
+	@include font-size(10);
+	font-weight:500;
+	color:$oe-text-inverted;
+	
+	padding: 2px 15px 2px 20px;
+	border-radius: 0 4px 4px 0;
+	
+	transition:top 0.3s ease-out; 
+}
+
+	

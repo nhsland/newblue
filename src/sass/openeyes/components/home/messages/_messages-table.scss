@@ -90,8 +90,21 @@
 		.message {
 			// message has 2 states: collapsed (single line with ellipsis) and expanded (multi-line)
 			// in order to get the single line overflow working the container
-			// needs to be width restricted (could NOT get it to be the <td>!) 			
-			width:18vw; 		// tested with long patient and sender names (all width layouts)
+			// needs to be width restricted (could NOT get it to work on the <td>!)
+			 			
+			width:15vw; 		
+			
+			@include extended(){
+				width:22vw; 
+			}
+			@include fix-hotlist(){
+				width:37vw;
+			}
+			@include super-wide(){
+				width:45vw;
+			}
+			
+			
 			height:1.2rem;		// not sure what this does.
 			color: inherit;
 			

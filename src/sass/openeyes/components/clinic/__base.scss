@@ -10,22 +10,5 @@
 
 .oe-clinic {
 	position:relative;
-	background:$oe-blue-dark;
-	
-	// show the current time in the clinic
-	// controlled and positioned by js
-	.clinic-time {
-		position:absolute;
-		top:100%;  // make sure it animates from the bottom up.
-		left:0;
-		z-index: $oe-z-tooltip;
-		background:$oe-text-highlight;
-		@include font-size(10);
-		font-weight:500;
-		color:$oe-blue-dark2;
-		padding:3px 23px 3px 23px;
-		
-		transition:top 0.3s ease-out; 
-	}
-		
+	background:$oe-blue-dark;		
 }
