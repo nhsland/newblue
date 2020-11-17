@@ -30,6 +30,7 @@
 				.session-unavailable {
 					margin:10px 0 0 0;
 					padding:3px;
+					border: 1px solid $oe-alert-red;
 					background: shade( $oe-theatre-bookings-bg, 20% );
 				}
 			}
