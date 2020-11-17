@@ -1,0 +1,50 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-clinic-adder {
+	$oec-adder-pad: 10px;
+	$oec-adder-panel-w: 190px;
+	$oec-header-gap: 10px; 
+	
+	position:fixed;
+	top: #{ $oe-header-height + $oe-event-header-height };
+	right:0; 
+	bottom:0; 
+	width:410px;
+	
+	z-index: $oe-z-tooltip + 1; // above pathSteps popup
+	
+	// use popup styling
+	background: $oe-dark-popup-bg;
+	color:$oe-dark-text;
+	
+	border-left:1px solid $oe-btn-blue;
+	padding: $oec-adder-pad; 
+	
+	h3 {
+		@include font-size(17);
+		color:$oe-dark-text-light;
+		font-weight: 300;
+		margin: 0 0 5px 0;
+	}
+	
+	// 2 columns, patients to select and actions to update their pathway
+	.patients {	
+		position: absolute; 
+		left: $oec-adder-pad;
+		top: $oec-header-gap; 
+		width: $oec-adder-panel-w; 
+		bottom: $oec-adder-pad; 
+		overflow-y: auto;
+	}
+	
+	.update-actions {
+		position: absolute; 
+		right: $oec-adder-pad;
+		top: $oec-header-gap; 
+		width: $oec-adder-panel-w; 
+		bottom: $oec-adder-pad;
+		overflow-y: auto;
+	}
+}

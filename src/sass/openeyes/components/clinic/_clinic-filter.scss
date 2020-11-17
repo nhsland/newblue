@@ -41,6 +41,25 @@ ul.oe-clinic-filter {
 			pointer-events: none;
 		}
 	}
+	
+	// make use of the adder button, change it blue
+	button.adder {
+		width:60px;
+		background: $oe-btn-blue-hint;
+		
+		// centered with flex
+		&:after {
+			height:17px;
+			width:17px;
+			background-image: url( svg-path('icons/plus-circle'));
+			background-size: 17px;
+		}
+		
+		&:hover
+		&:focus {
+			background: $oe-btn-blue;
+		}	
+	}
 
 	
 	

@@ -10,5 +10,7 @@
 
 .oe-clinic {
 	position:relative;
-	background:$oe-blue-dark;		
+	background:$oe-blue-dark;	
+	
+	padding-bottom: 100px; // to help with the popup on Path Steps.	
 }

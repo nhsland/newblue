@@ -25,6 +25,13 @@
 				.theatre {
 					margin:5px 0 0 0;
 				}
+				
+				// edit mode Admin can make it unavailable
+				.session-unavailable {
+					margin:10px 0 0 0;
+					padding:3px;
+					background: shade( $oe-theatre-bookings-bg, 20% );
+				}
 			}
 		}
 	}
