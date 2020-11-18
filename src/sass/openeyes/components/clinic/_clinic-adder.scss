@@ -11,22 +11,34 @@
 	top: #{ $oe-header-height + $oe-event-header-height };
 	right:0; 
 	bottom:0; 
-	width:410px;
+	width:430px;
 	
-	z-index: $oe-z-tooltip + 1; // above pathSteps popup
+	z-index: $oe-z-quicklook - 1; // make it under Patient Quick View popup
 	
-	// use popup styling
-	background: $oe-dark-popup-bg;
-	color:$oe-dark-text;
+	background: $oe-blue-dark2; // same as the table
+	color:$oe-text;
 	
 	border-left:1px solid $oe-btn-blue;
 	padding: $oec-adder-pad; 
 	
+	@include font-size(12);
+	
 	h3 {
-		@include font-size(17);
-		color:$oe-dark-text-light;
-		font-weight: 300;
-		margin: 0 0 5px 0;
+		@include font-size(11);
+		color:$oe-text-light;
+		font-weight: $oe-font-light;
+		margin: 0 0 8px 0;
+	}
+	
+	h4 {
+		@include font-size(13);
+		color:$oe-text-light;
+		font-weight: $oe-font-medium;
+		margin: 0 0 4px 0;
+	}
+	
+	.row {
+		margin: 0;
 	}
 	
 	// 2 columns, patients to select and actions to update their pathway
@@ -37,6 +49,17 @@
 		width: $oec-adder-panel-w; 
 		bottom: $oec-adder-pad; 
 		overflow-y: auto;
+		padding:0 0 40px 0; // allow for 'tag'
+	
+		.row-list {
+			margin:0 0 4px 0;
+			li {
+				font-weight: $oe-font-medium;
+				padding: 1px 0;
+			}
+		}
+		
+		
 	}
 	
 	.update-actions {
@@ -46,5 +69,25 @@
 		width: $oec-adder-panel-w; 
 		bottom: $oec-adder-pad;
 		overflow-y: auto;
+		padding:0 0 40px 0; // allow for 'tag'
+		
+		.btn-list {
+			margin:0 0 15px 0;
+			li {
+				color: $oe-text; 
+				background:$oe-user-inputs-hint; 
+				padding:2px 2px;
+				height:auto;
+				line-height: auto;	
+				&:hover, &:focus {
+					background:$oe-btn-blue;
+					color:#fff;
+				}
+			}
+		}
+		
+		.steps {
+			margin:10px 0;
+		}
 	}
 }

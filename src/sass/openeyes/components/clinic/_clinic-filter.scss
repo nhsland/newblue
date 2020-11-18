@@ -42,10 +42,19 @@ ul.oe-clinic-filter {
 		}
 	}
 	
+	
 	// make use of the adder button, change it blue
+	// changes icons when open as it toggles the panel
 	button.adder {
 		width:60px;
 		background: $oe-btn-blue-hint;
+		
+		&.close {
+			&:after {
+				background-image: url( svg-path('icons/remove-circle'));
+				opacity: 1;
+			}
+		}
 		
 		// centered with flex
 		&:after {

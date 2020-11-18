@@ -9,7 +9,7 @@
 
 .oe-patient-quick-overview {
 	position:fixed; // must be FIXED or may be cropped by Grid
-	z-index:$oe-z-quicklook;
+	z-index: $oe-z-quicklook;
 	padding:5px 10px;
 	width:500px;
 	min-height:100px; // provide a min-heigh for my load spinner thing
