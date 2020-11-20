@@ -10,6 +10,7 @@ ul.oe-clinic-filter {
 	
 	// <li>
 	li.filter-btn {
+		position:relative; 
 		@include flex( center, center );
 		
 		height:$oe-event-header-height;
@@ -25,6 +26,15 @@ ul.oe-clinic-filter {
 			// if it's a shortcode JS will expand to show it's fullname
 			.fullname {
 				@include font-size(9);
+			}
+			
+			.count {
+				position: absolute;
+				top: 2px; 
+				right: 2px; 
+				@include font-size( 10 );
+				font-weight: $oe-font-bold;
+				color: $oe-text-highlight;
 			}
 		}
 		
