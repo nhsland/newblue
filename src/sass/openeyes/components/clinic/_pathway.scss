@@ -5,6 +5,7 @@
 table.oe-clinic-list {
 	// container for pathway-steps, used by js
 	.pathway {
+		padding:0 20px 0 0;
 		&.complete {
 			.oe-pathstep-btn {
 				background: $oe-step-blue;
