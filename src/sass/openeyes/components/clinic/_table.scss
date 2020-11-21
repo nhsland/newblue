@@ -23,6 +23,17 @@ table.oe-clinic-list {
 			&:hover {
 				background-color: $oe-tr-highlight;
 			}
+			
+			// patient states are added by JS to the <tr>
+			// "todo", "active" and "complete"
+			&.complete {
+				td {
+					color: $oe-text-light;
+					&:first-child {
+						font-weight: $oe-font-light;
+					}
+				}
+			}
 		}	
 	}
 		
@@ -85,10 +96,14 @@ table.oe-clinic-list {
 			width: 220px; // Assigned
 		}
 		
+		&:nth-child( 8 ){
+			width: 160px; // Wait Duration
+		}
 		
-		
-		
-	
+		&:nth-child( 9 ){
+			text-align: center;
+			width: 50px; // Tick
+		}
 	}
 }
 
