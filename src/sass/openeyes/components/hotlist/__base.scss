@@ -24,14 +24,12 @@
 	
 	@include fix-hotlist(){		// 1890px
 		// as we are going up to 1920px we have an extra 30px... use them
-		width: calc(100vw - #{$oe-js-browser-fix-size - $oe-hotlist-panel-width}); 
-		// for those with crazy big monitors restrict it
-		// max-width: $oe-hotlist-panel-max !important;			
+		width: calc(100vw - #{$oe-js-browser-fix-size - $oe-hotlist-panel-width}); 			
 	}
 	
 	// the 100px improves the screen balance between the content and the hotlist
 	@include super-wide(){	// 2048px+
-		width: 34vw; 
+		width: $oe-hotlist-panel-max; 
 	}
 
 	padding:0 0 35px 0;	// allow for Admin tag

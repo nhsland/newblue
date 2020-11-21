@@ -13,6 +13,19 @@
 	bottom:0; 
 	width:430px;
 	
+	// when hotlist locks in need to change the right
+	// need to allow for it...
+	@include fix-hotlist(){
+		right: auto;
+		left: #{$oe-extended-browser-size - 430px};
+	}
+	
+	// when super wide!... hotlist extends to maximum width
+	@include super-wide(){
+		left:auto;
+		right: $oe-hotlist-panel-max;
+	}
+	
 	z-index: $oe-z-quicklook - 1; // make it under Patient Quick View popup
 	
 	background: $oe-blue-dark2; // same as the table
