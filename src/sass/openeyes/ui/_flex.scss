@@ -36,21 +36,41 @@
 	align-self: flex-end;			// item - bottom 
 }
 
+
+.flex-col-gap {
+	> * {
+		margin:0 5px;
+		&:first-child {
+			margin-left: 0;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}
+
 // Update 
 // Using Flex all over the place, simplifying class usage
 // for common usages
 .flex {
-	@include flex(center, space-between);
+	@include flex( center, space-between );
 }
 
 .flex-l {
-	@include flex(center, flex-start);
+	@include flex( center, flex-start );
 }
 
 .flex-t {
-	@include flex(flex-start, space-between);	
+	@include flex( flex-start, space-between) ;	
+}
+
+.flex-c {
+	@include flex( center, center );
 }
 
 .flex-t-l {
-	@include flex(flex-start, flex-start);	
+	@include flex(flex-start, flex-start );	
+}
+.flex-t-r {
+	@include flex(flex-start, flex-end );	
 }

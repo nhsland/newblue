@@ -31,8 +31,8 @@ ul.oe-clinic-filter {
 			.count {
 				position: absolute;
 				top: 2px; 
-				right: 2px; 
-				@include font-size( 10 );
+				right: 4px; 
+				@include font-size( 11 );
 				font-weight: $oe-font-bold;
 				color: $oe-text-highlight;
 			}

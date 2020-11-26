@@ -50,6 +50,11 @@
 			padding:0 12px 2px 0;
 			border-bottom: 1px dotted $oe-ed3-text;
 			text-align: right;
+			
+			&:last-child {
+				border-bottom: none;
+			}
+			
 		}
 		
 		// these are wrapped by the above div

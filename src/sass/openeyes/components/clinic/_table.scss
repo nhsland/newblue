@@ -97,12 +97,17 @@ table.oe-clinic-list {
 		}
 		
 		&:nth-child( 8 ){
-			width: 160px; // Wait Duration
+			text-align: center;
+			width: 60px; // Plus
 		}
 		
 		&:nth-child( 9 ){
+			width: 180px; // Wait Duration
+		}
+		
+		&:nth-child( 10 ){
 			text-align: center;
-			width: 50px; // Tick
+			width: 60px; // Tick
 		}
 	}
 }

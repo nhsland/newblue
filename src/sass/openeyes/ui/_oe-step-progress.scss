@@ -1,11 +1,9 @@
 // ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
-//
-
 
 // should be <ul>
 .oe-step-progress {
-	display:inline-block;
+	display:inline-flex;
 
 	&.pad {
 		margin:0 15px;
@@ -13,38 +11,59 @@
 	
 	li {
 		position:relative;
-		display:inline-flex;
-		align-items: center;
-		vertical-align: top; // this sorts the vertical layout
+		@include inline-flex( center, center );
+		cursor: pointer;
+		user-select: none;
+		
 		line-height:normal; // watch out for this, it can mess up vertical layouts
-		height:30px;
-		padding:0 12px 1px 12px; // flex layout 'looks' slightly below center the 2px padding visually corrects this
+		height:24px;
+		min-width: 25px;
+		padding:0 8px 1px 8px; // flex layout 'looks' slightly below center the 1px padding visually corrects this
 		margin:0;
-		border: 2px solid $oe-text-light;
-		border-right: none;
-		&:last-child {
-			border-right: 2px solid $oe-text-light;
-			border-radius: 0 3px 3px 0;
-		}
-		&:first-child {
-			border-radius: 3px 0 0 3px;
-		}
 		
-		// highlight the icon in a step
-		.oe-i-e {
-			cursor: pointer;
-			box-shadow: 0 0 3px 1px rgba($oe-text,0.4);
-		}
-		
-		text-align: center;
-		@include font-size(13);
+		@include font-size(14);
 		color:$oe-text-light;
 		
+		// outline the <li>
+		border: 2px solid $oe-text-light;
+		border-right: none;
+		
+		&:first-child {
+			border-top-left-radius: 3px;
+			border-bottom-left-radius: 3px
+		}
+		
+		&:last-child {
+			border-right: 2px solid $oe-text-light;
+			border-top-right-radius: 3px;
+			border-bottom-right-radius: 3px;
+		}
+		
+		&.single,
+		&.todo {
+			color:$oe-text;
+			font-weight: $oe-font-bold;
+			
+			&.injection {
+				background: url( svg-icon-path-theme( 'injection' )) left 8px center no-repeat;
+				background-size: 13px;
+				padding-left: 26px;
+			}
+		}
+	
+	
 		&.completed {
 			z-index:1;
-			background-color:$oe-text-light;
-			color:$oe-text-inverted;
-			font-weight:$oe-font-bold;
+			background:$oe-text-light;
+			color: rgba( $oe-text-inverted, 0.8 );
+			font-weight: 500;
+			
+			&.injection {
+				background: $oe-text-light url( svg-path-theme('ui/step-injection-complete')) left 3px center no-repeat;
+				background-size: 13px;
+				padding-left: 21px;
+			}
+			
 			
 			// no arrow on the last one!
 			&:last-child {
@@ -57,7 +76,7 @@
 			&:after {
 				top: 50%;
 				left: 100%;
-				margin-top: -15px;
+				margin-top: -12px;
 				content: " ";
 				position: absolute;
 				pointer-events: none;
@@ -65,13 +84,12 @@
 				height: 0;
 				width: 0;
 				border: solid transparent;
-				border-top-width: 15px;
-				border-bottom-width: 15px;
-				border-left: 15px solid $oe-text-light;
+				border-top-width: 12px;
+				border-bottom-width: 12px;
+				border-left: 12px solid $oe-text-light;
 				
 				transform: scale(0.5, 1);
 				transform-origin: left;
-				
 			}
 		}
 		
@@ -88,8 +106,8 @@
 		
 		&.redated {
 			background: radial-gradient( circle at center, 
-					rgba(0,0,0,0) 40%,
-					$oe-alert-orange 70%, 
+					rgba(0,0,0,0) 20%,
+					$oe-alert-orange 60%, 
 					rgba(0,0,0,0) 90%
 				)
 		}

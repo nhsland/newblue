@@ -10,10 +10,13 @@ ul {
 	// &.dslash-list,
 	
 	&.dot-list {
+		display: flex;
+		flex-wrap: wrap;
+		
 		li {
-			display:inline-block;
-			margin:0 5px 5px 2px;
-			padding:0 0 0 12px;
+			@include inline-flex( center, flex-start );
+			margin:2px 0;
+			padding:0 8px 0 12px;
 			
 			background: transparent url( svg-path( 'ui/list-dot' )) left center no-repeat;
 			background-size:6px;

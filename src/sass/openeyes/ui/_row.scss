@@ -16,6 +16,13 @@
 	}	
 }
 
+// match a standard list
+.small-row { 
+	margin:6px 0; 
+	&:first-child { margin-top:0; }
+	&:last-child { margin-bottom:0; }	
+}
+
 
 // provides exactly the same design
 // as a "row" with a 'divider' class
