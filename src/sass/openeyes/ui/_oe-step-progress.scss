@@ -17,8 +17,8 @@
 		
 		line-height:normal; // watch out for this, it can mess up vertical layouts
 		height:24px;
-		min-width: 25px;
-		padding:0 8px 1px 8px; // flex layout 'looks' slightly below center the 1px padding visually corrects this
+		min-width: 20px;
+		padding:0 6px 1px 6px; // flex layout 'looks' slightly below center the 1px padding visually corrects this
 		margin:0;
 		
 		@include font-size(14);
@@ -39,31 +39,35 @@
 			border-bottom-right-radius: 3px;
 		}
 		
-		&.single,
-		&.todo {
-			color:$oe-text;
+		// interval between steps
+		&.interval {
+			@include font-size(11);
+			font-weight:500;
+			padding:0 8px 1px 8px;
+		}
+		
+		&.next {
+			color:$oe-text-highlight;
 			font-weight: $oe-font-bold;
 			
 			&.injection {
 				background: url( svg-icon-path-theme( 'injection' )) left 8px center no-repeat;
 				background-size: 13px;
 				padding-left: 26px;
+				padding-right:12px;
 			}
 		}
-	
-	
+		
+		&.todo {
+			color:$oe-text;
+			font-weight: $oe-font-bold;
+		}
+		
 		&.completed {
 			z-index:1;
 			background:$oe-text-light;
 			color: rgba( $oe-text-inverted, 0.8 );
 			font-weight: 500;
-			
-			&.injection {
-				background: $oe-text-light url( svg-path-theme('ui/step-injection-complete')) left 3px center no-repeat;
-				background-size: 13px;
-				padding-left: 21px;
-			}
-			
 			
 			// no arrow on the last one!
 			&:last-child {
@@ -73,7 +77,7 @@
 			}
 		
 			// progress arrow 
-			&:after {
+			&::after {
 				top: 50%;
 				left: 100%;
 				margin-top: -12px;
@@ -91,6 +95,30 @@
 				transform: scale(0.5, 1);
 				transform-origin: left;
 			}
+			
+			&:not( :first-child ){
+				&::before {
+					top: 50%;
+					left: -15px;
+					margin-top: -12px;
+					content: " ";
+					position: absolute;
+					pointer-events: none;
+					
+					height: 0;
+					width: 0;
+					border: solid transparent;
+					border-top-width: 12px;
+					border-bottom-width: 12px;
+					border-right: 12px solid $oe-text-light;
+					
+					transform: scale(0.5, 1);
+					transform-origin: right;
+				}
+			}
+			
+			
+			
 		}
 		
 		&.cancelled {

@@ -12,8 +12,7 @@
 // DOM: <i class="oe-i [name] [size] [...]"></i> 
 
 .oe-i {
-	display:inline-block;
-	vertical-align: middle;  
+	display:inline-flex;
 	
 	$size-large:		19px;
 	$size-medium:		16px;
