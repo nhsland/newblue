@@ -41,9 +41,15 @@
 		
 		// interval between steps
 		&.interval {
-			@include font-size(11);
+			@include font-size(10);
 			font-weight:500;
-			padding:0 8px 1px 8px;
+			padding:0 8px;
+			
+			&.series-gap,
+			&.actual {
+				background:$oe-text-light;
+				color: rgba( $oe-text-inverted, 0.8 );
+			}
 		}
 		
 		&.next {
@@ -68,6 +74,9 @@
 			background:$oe-text-light;
 			color: rgba( $oe-text-inverted, 0.8 );
 			font-weight: 500;
+			
+			padding-left: 3px;
+			padding-right: 3px;
 			
 			// no arrow on the last one!
 			&:last-child {
@@ -116,9 +125,7 @@
 					transform-origin: right;
 				}
 			}
-			
-			
-			
+				
 		}
 		
 		&.cancelled {
