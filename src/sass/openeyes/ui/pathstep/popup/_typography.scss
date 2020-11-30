@@ -26,6 +26,11 @@
 			padding-top:0;
 		}
 	}
+	
+	p {
+		@include font-size(12);
+		margin-bottom: 3px; // override default
+	}
 
 }
 

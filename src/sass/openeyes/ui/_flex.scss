@@ -54,6 +54,9 @@
 // for common usages
 .flex {
 	@include flex( center, space-between );
+	&.f-w {
+		flex-wrap: wrap;
+	}
 }
 
 .flex-l {
@@ -74,3 +77,5 @@
 .flex-t-r {
 	@include flex(flex-start, flex-end );	
 }
+
+
