@@ -140,11 +140,14 @@
 		}
 		
 		&.redated {
-			background: radial-gradient( circle at center, 
-					rgba(0,0,0,0) 20%,
-					$oe-alert-orange 60%, 
-					rgba(0,0,0,0) 90%
-				)
+			@include font-size(9)
+			font-weight: 500;
+			background: 
+				radial-gradient( circle at center, 
+				rgba(0,0,0,0) 20%,
+				$oe-alert-orange 60%, 
+				rgba(0,0,0,0) 90%
+			)
 		}
 		
 	}

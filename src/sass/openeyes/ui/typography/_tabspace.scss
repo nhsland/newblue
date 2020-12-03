@@ -6,7 +6,7 @@
 // many occassions ended up requiring a bigger
 // horizonal space than &nbsp; or &emsp; provided
 .tabspace {
-	display:inline-block;
+	display:inline-flex;
 	width:25px;	
 	&.double {
 		width:50px;

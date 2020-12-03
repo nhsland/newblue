@@ -6,6 +6,11 @@
 // (View)
 
 .sidebar { 
+	
+	ul.events.drafts {
+		margin:0 0 10px 0;	
+	}
+	
 	// <li> 
 	.event {
 		// <span>
@@ -61,6 +66,10 @@
 			// draft (Correspondence) - Orange pencil
 			&.draft {
 				background-image:url( svg-path('sidebar/draft') );
+			}
+			
+			&.draft-warning {
+				background-image:url( svg-path('sidebar/draft-warning') );
 			}
 			
 			// Event in Draft state (counld be any!) wavey blue line
