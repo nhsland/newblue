@@ -3,9 +3,10 @@
 //
 
 // OE Event Lightning Viewer.
-// Was: 
+// v3 was: "oe-event-quickview" (no )
 
 .oe-event-quick-view {
+	
 	display:none; // js controlled.
 	z-index:$oe-z-event-quick-view; 
 	
@@ -14,7 +15,8 @@
 	left:$oe-event-sidebar-width;
 	bottom:0;
  
-	width: $oe-event-main-default-width;
+	// needs to fit in below 1200px (minimum)
+	width: 900px;
 
 	overflow:hidden;
 	

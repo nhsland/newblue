@@ -14,12 +14,18 @@ ul {
 		flex-wrap: wrap;
 		
 		li {
-			@include inline-flex( center, flex-start );
-			margin:2px 0;
+			@include inline-flex( flex-start, flex-start );
+			margin:0 0 5px 0;
 			padding:0 8px 0 12px;
+			line-height: 1;
 			
 			background: transparent url( svg-path( 'ui/list-dot' )) left center no-repeat;
 			background-size:6px;
+			
+			.lightning-event & {
+				background-size:4px;
+				padding-left: 10px;
+			}
 			
 			&:first-child {
 				margin-left:0;

@@ -29,12 +29,14 @@
 		width:$size-small; 
 		height:$size-small;
 		background-size: $size-small;
+		vertical-align: middle;
 	}
 
 	&.medium {
 		width:$size-medium; 
 		height:$size-medium;
 		background-size: $size-medium;
+		vertical-align: middle;
 	}
 	
 	&.large {
@@ -45,10 +47,12 @@
 	// not really used but anyway... 
 	&.small-icon {
 		background-size: $size-small;
+		vertical-align: text-top;
 	}
 	// medium icon
 	&.medium-icon {
 		background-size: $size-medium;
+		vertical-align: text-top;
 	}
 	
 	
