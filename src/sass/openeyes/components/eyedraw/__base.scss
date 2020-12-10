@@ -36,16 +36,7 @@ $ed3-button-height:32px;
 	@include font-size(12);
 	@include boxshadow();
 
-	// colours for scrollbars (chrome) in EyeDraw App
-	::-webkit-scrollbar-track {  
-		background: tint( $oe-ed3-app-blue,10 );
-	}
-	::-webkit-scrollbar-track-piece { 
-		background: tint( $oe-ed3-app-blue,30 );
-	}
-	::-webkit-scrollbar-thumb { 
-		background-color: shade( $oe-ed3-app-blue,50 );
-	}
+	
 	
 }
 

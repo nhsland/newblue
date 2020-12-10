@@ -9,7 +9,7 @@
 	.quick-view-content {
 		position:relative;
 		// need a height setting to center the spinner
-		height: 90%; 
+		height: calc( 100vh - #{$oe-header-height + $oe-event-header-height}); 
 		
 		overflow-y: auto;
 	}

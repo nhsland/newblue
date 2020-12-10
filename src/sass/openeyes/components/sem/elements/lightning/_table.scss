@@ -15,7 +15,7 @@
 				}
 				
 				td {
-					@include font-size(10);
+					@include font-size(9);
 					vertical-align: top;
 					padding:2px 15px 1px 0; 
 					line-height: 1.2;
@@ -24,13 +24,10 @@
 						padding-right:0;
 					} 
 					
+					// tile in tile group
 					.lightning-tile-group & {
 						padding-right: 5px;
-						&:last-child {
-							text-align: right;
-						}
 					}
-					
 				}
 			}
 		}
