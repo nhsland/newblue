@@ -33,6 +33,11 @@ label {
 			font-weight: $font-bold;
 		}
 		
+		&.good {
+			color: $text-good;
+			font-weight: $font-bold;
+		}
+		
 		
 		> input[type="radio"],
 		> input[type="checkbox"] {

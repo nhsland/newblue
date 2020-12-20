@@ -33,20 +33,24 @@
 		margin:auto; 
 	
 		h1 {
+			@include flex( flex-start, flex-start );
+			flex-direction: column;
 			margin:0 0 40px 0;
-			@include font-size(58);
+			@include font-size(42);
 			text-align: center;
 			font-weight:100;
 			color:$text-light;
 			
+			
 			@include phone(){
 				margin:0 0 20px 0;
-				@include font-size(44);
+				@include font-size(32);
 			}
 			
 			&.flag.wales {
+				min-height: 64px;
 				padding:0 80px 0 0;
-				background: transparent url('assets/img/flags/wales.png') center right no-repeat;
+				background: transparent url('assets/img/flags/wales.png') top right no-repeat;
 				background-size: 64px;
 				
 				@include phone(){

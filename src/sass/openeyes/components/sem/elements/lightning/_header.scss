@@ -21,5 +21,12 @@
 			width: auto;
 		}
 	}
+	
+	// expanded groups within Element
+	.group-header {
+		color:$oe-element-headers;
+		@include font-size(9); 
+		margin:0 0 2px 0;
+	}
 
 }
