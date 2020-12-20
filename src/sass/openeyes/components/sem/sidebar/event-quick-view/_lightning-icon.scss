@@ -3,18 +3,16 @@
 //
 
 .oe-event-quick-view {
-	// e.g. Examination, 21 Jul 2019
-	.title-date {
+
+	.lightning-icon {
 		position:absolute;
-		top:9px;
-		left:75px;	
+		top:4px;
+		left:45px;	
+		width:30px;
+		height:30px;
 		
-		@include font-size(18);
-		color:$oe-dark-text;
-		font-weight:$oe-font-light;
-		
+		background:url( svg-path( 'sidebar/lightning' )) center center no-repeat ;
+		background-size:15px;
 	}
-	
-	
 }
 
