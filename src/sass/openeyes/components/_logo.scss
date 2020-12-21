@@ -13,6 +13,9 @@
 	position:absolute;
 	top:22px; 			// positioned by eye
 	left:200px;
+	
+	@include flex( center, flex-start );
+	
 	color:$oe-dark-text-light;
 	@include font-size(14);
 	font-weight:300;	
