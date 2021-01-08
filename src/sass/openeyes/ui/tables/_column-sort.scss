@@ -37,8 +37,7 @@ table {
 				&.descend {
 					background-image: url( svg-icon-path-theme('direction-down') );
 				}
-				
-				
+
 				&.active {
 					color: $oe-text;
 					opacity:1;
@@ -46,10 +45,7 @@ table {
 					//&.ascend {	background-image: url( svg-icon-path-theme('direction-up-blue') ); }
 					//&.descend { background-image: url( svg-icon-path-theme('direction-down-blue') ); }
 				}
-				
-				
-				
-				
+
 			}
 		}
 	}

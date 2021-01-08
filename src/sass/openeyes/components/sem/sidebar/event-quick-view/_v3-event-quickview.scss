@@ -1,0 +1,46 @@
+
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Old implementation (3.6), still currently supported in the CSS
+// DOM was...
+// .oe-event-quickview -|- .event-quickview -|- .quickview-details 
+//											 |- .quickview-screenshots
+//
+.oe-event-quickview {
+	// main wrapper
+	.event-quickview {
+		position: relative;
+		.quickview-details {
+			// pushes down PNGs so that they line up with Event Header baseline
+			height: $oe-event-header-height; 
+			
+			// not actually needed, as DOM contains <i>
+			//.event-icon {
+			//	position:absolute;
+			//	top:0;
+			//	left:0;
+			//}
+			
+			// not used in 3.6
+			//.event-date {
+				//margin:auto; /* flex */
+				//@include font-size(14);
+				//color:$oe-dark-text;
+				//font-weight:$oe-font-light;
+			//}
+		}
+		
+		// all <img> for all Events were included in here.
+		.quickview-screenshots {
+			padding:5px 0 0 5px;
+			img {
+				width: 537px; // this was '537px' but <img> data was unreadable.
+				height :auto;
+			}
+		}
+		
+	}	
+}
+

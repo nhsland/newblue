@@ -5,7 +5,7 @@
 // OE Event Lightning Viewer.
 // v3 was: "oe-event-quickview" (no )
 
-.oe-event-quick-view {
+.oe-event-quickview {
 	
 	display:none; // js controlled.
 	z-index:$oe-z-event-quick-view; 
@@ -14,12 +14,12 @@
 	top: $oe-header-height;
 	left:$oe-event-sidebar-width;
 	bottom:0;
- 
+	
 	// needs to fit in below 1200px (minimum)
 	width: 900px;
-
+	height: calc(100vh - #{$oe-header-height});
 	overflow:hidden;
-	
+ 
 	background: $oe-dark-popup-bg; // colour to match sidebar quicklook	
 	
 	// animation were previously in JS (jQuery)
@@ -34,8 +34,5 @@
 	  display:block;
 	  animation: 0.2s ease-in forwards fadeout; // note: JS needs to remove class after 300 microseconds
 	}
-
-	
-
 }
 

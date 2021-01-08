@@ -14,8 +14,23 @@ $oe-sidebar-event-height:19px;
 	padding:2px 0 0 0; // pad bottom to allow for quicklook popup 
 	background: $html-bg;
 	
-	.oescape-icons {
-		margin:0 0 0 6px;
+	&.subgrid {	
+		// for Edge < 16
+		display: -ms-grid;
+		-ms-grid-columns: 1fr;
+		-ms-grid-rows: auto 1fr;		
+		
+		// CSS3: Grid 
+		display: grid;
+		grid: auto 1fr / 1fr;
+		
+		.sidebar-fixed-top {
+			height:auto;
+		}
+		.sidebar-eventlist {
+			padding:0 0 80px 0; // padding required to allow for last event popup (quicklook) info
+			overflow-y:auto;
+		}
 	}
 }
 

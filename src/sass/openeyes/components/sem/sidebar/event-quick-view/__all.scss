@@ -5,16 +5,13 @@
 // OE SEM Events Lightning Viewer
 
 @import "_base";
-@import "title-date";
-@import "lightning-icon";
-
-@import "icon-btns";
+@import "title";
+@import "i-btns";
 
 @import "quick-view-content/_all";
 
-
-// support initial v3 implementation:
-@import "v3-oe-quickview-panel";
+// support old implementation... until this can be removed.
+@import "v3-event-quickview";
 
 
 

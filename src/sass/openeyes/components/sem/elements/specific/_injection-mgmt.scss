@@ -42,11 +42,23 @@
 				flex:1;
 			}
 			
-			.actions {
+			.buttons {
 				flex:1;
 			}
 			
-		
+			.actions {
+				flex:1;
+				@include flex(center, center);
+				> button {
+					margin:0 2px;
+					&:first-child {
+						margin-left: 0;
+					}
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
 		}
 	}
 }

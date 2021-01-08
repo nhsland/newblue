@@ -1,0 +1,33 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-event-quickview {
+	// e.g. Examination, 21 Jul 2019
+	.title {
+		position:absolute;
+		top:0;
+		left:75px;	
+		padding: 9px 0 0 0;
+				
+		@include font-size(18);
+		color:$oe-dark-text;
+		font-weight: 400;
+		
+		// lightning icon
+		&:before {
+			content:"";
+			position:absolute;
+			top:0;
+			right:100%;	
+			width:30px;
+			height: $oe-event-header-height;
+			background: url( svg-path( 'sidebar/lightning' )) center center no-repeat ;
+			background-size:15px;
+		}
+		
+	}
+	
+	
+}
+

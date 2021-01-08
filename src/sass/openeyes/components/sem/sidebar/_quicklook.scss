@@ -7,12 +7,12 @@
 .sidebar 
 	// displayed on rollover of icon on left side
 	.tooltip.quicklook {
-	  display:none;
+	  display: none;
 	  position: absolute;
-	  left:0;
-	  top:$oe-sidebar-event-height;	  
-	  z-index:1;
-	  width:100%;
+	  left: 0;
+	  top: $oe-sidebar-event-height;	  
+	  z-index: 1;
+	  width: 100%;
 	  
 	  // there was a flickering issue,
 	  // unable to recreate locally
@@ -25,8 +25,7 @@
 	  padding:8px 0;
 	  
 	  // animation were previously in JS (jQuery)
-	  // moved into the CSS for speed and to have 
-	  // UI control here ;)
+	  // moved into the CSS for speed
 	  &.fade-in {
 		  display:block;
 		  animation: 0.1s ease-out forwards fadein;
@@ -79,10 +78,5 @@
 			font-weight:500;
 		}	  	  
 	}
-	
-	 &.makestatic {
-		position: static; // not sure what this is for, kept from v2 just in-case it's needed. 
-	 }
-	
 }
 

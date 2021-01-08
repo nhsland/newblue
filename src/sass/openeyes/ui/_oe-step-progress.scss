@@ -4,6 +4,7 @@
 // should be <ul>
 .oe-step-progress {
 	display:inline-flex;
+	flex-wrap: wrap;
 
 	&.pad {
 		margin:0 15px;
@@ -16,7 +17,11 @@
 		user-select: none;
 		
 		line-height:normal; // watch out for this, it can mess up vertical layouts
-		height:24px;
+		
+		height:22px;
+		// set the arrow triangle to 50% of the height
+		$progress-step-arrow: 11px;
+		
 		min-width: 20px;
 		padding:0 6px 1px 6px; // flex layout 'looks' slightly below center the 1px padding visually corrects this
 		margin:0;
@@ -56,6 +61,19 @@
 			color:$oe-text-highlight;
 			font-weight: $oe-font-bold;
 			
+			// emphasise the next step a bit more: 
+			&:after {
+			  content: " ";
+			  pointer-events: none;
+			  position: absolute;
+			  top: 100%;
+			  left: 1px;
+			  right: 0;
+			  bottom: -3px;
+			  border-bottom: 1px solid $oe-text-highlight;
+			}
+			
+			
 			&.injection {
 				background: url( svg-icon-path-theme( 'injection' )) left 8px center no-repeat;
 				background-size: 13px;
@@ -65,7 +83,7 @@
 		}
 		
 		&.todo {
-			color:$oe-text;
+			color:$oe-text-light;
 			font-weight: $oe-font-bold;
 		}
 		
@@ -89,7 +107,7 @@
 			&::after {
 				top: 50%;
 				left: 100%;
-				margin-top: -12px;
+				margin-top: -$progress-step-arrow;
 				content: " ";
 				position: absolute;
 				pointer-events: none;
@@ -97,9 +115,9 @@
 				height: 0;
 				width: 0;
 				border: solid transparent;
-				border-top-width: 12px;
-				border-bottom-width: 12px;
-				border-left: 12px solid $oe-text-light;
+				border-top-width: $progress-step-arrow;
+				border-bottom-width: $progress-step-arrow;
+				border-left: $progress-step-arrow solid $oe-text-light;
 				
 				transform: scale(0.5, 1);
 				transform-origin: left;
@@ -109,7 +127,7 @@
 				&::before {
 					top: 50%;
 					left: -15px;
-					margin-top: -12px;
+					margin-top: -$progress-step-arrow;
 					content: " ";
 					position: absolute;
 					pointer-events: none;
@@ -117,9 +135,9 @@
 					height: 0;
 					width: 0;
 					border: solid transparent;
-					border-top-width: 12px;
-					border-bottom-width: 12px;
-					border-right: 12px solid $oe-text-light;
+					border-top-width: $progress-step-arrow;
+					border-bottom-width: $progress-step-arrow;
+					border-right: $progress-step-arrow solid $oe-text-light;
 					
 					transform: scale(0.5, 1);
 					transform-origin: right;

@@ -2,21 +2,17 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-.oe-event-quick-view {
+.oe-event-quickview {
 	
 	.quick-view-content {
-	
-		.event-quick-data {
-			position:absolute;
-			top:10px; 
-			left:330px;
-			right:60px;
-			bottom:0;
-			
-			color:$oe-dark-text;
-			@include font-size(11);
+		&.img {
+			padding:10px; // to push scrollbars out
+			// <img>		
+			img {
+				width: 100%; // this was '537px' but <img> data was unreadable.
+				height :auto;
+			}
 		}
-		
 	}
 }
 
