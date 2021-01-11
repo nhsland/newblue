@@ -64,15 +64,15 @@
 			// emphasise the next step a bit more: 
 			&:after {
 			  content: " ";
-			  pointer-events: none;
 			  position: absolute;
 			  top: 100%;
-			  left: 1px;
+			  left: 0;
 			  right: 0;
-			  bottom: -3px;
-			  border-bottom: 1px solid $oe-text-highlight;
+			  background: url( svg-icon-path-theme( 'arrow-up-bold' )) top 1px center no-repeat;
+			  background-size:11px;
+			  height:20px;
+			  pointer-events: none;
 			}
-			
 			
 			&.injection {
 				background: url( svg-icon-path-theme( 'injection' )) left 8px center no-repeat;
