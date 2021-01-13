@@ -34,7 +34,7 @@ input, textarea, select {
 	
 	&.fixed-width-medium {
 		text-align: center;
-		width:90px; 		// allows for 00000000
+		width: $oe-date-width; 
 	}
 }
 
