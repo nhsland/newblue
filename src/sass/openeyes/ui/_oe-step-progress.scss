@@ -62,15 +62,14 @@
 			font-weight: $oe-font-bold;
 			
 			// emphasise the next step a bit more: 
-			&:after {
+			&::before {
 			  content: " ";
 			  position: absolute;
-			  top: 100%;
+			  top: calc( 100% + 2px );
 			  left: 0;
 			  right: 0;
-			  background: url( svg-icon-path-theme( 'arrow-up-bold' )) top 1px center no-repeat;
-			  background-size:11px;
-			  height:20px;
+			  height:2px;
+			  background-color: $oe-text-highlight;
 			  pointer-events: none;
 			}
 			
@@ -80,6 +79,18 @@
 				padding-left: 26px;
 				padding-right:12px;
 			}
+		}
+		
+		// Because before and after are used in completed steps, an empty <div> is needed to flag selected
+		div.selected-step {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background: url( svg-icon-path-theme( 'arrow-up-bold' )) top 1px center no-repeat;
+			background-size:11px;
+			height:20px;
+			pointer-events: none;
 		}
 		
 		&.todo {
