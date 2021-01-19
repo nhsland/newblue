@@ -16,6 +16,11 @@
 				background:$oe-btn-blue;
 				color:#fff;
 			}
+			
+			// JS is hooked on the <li>
+			* {
+				pointer-events: none;
+			}
 		}
 	}
 }
