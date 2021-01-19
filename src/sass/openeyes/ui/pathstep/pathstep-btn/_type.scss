@@ -9,12 +9,12 @@
 // <span>
 .oe-pathstep-btn {
 	
-	// clinic arrive & finish steps
-	&.arrive, 
-	&.finish {
-		padding:2px 6px;
-		color: $oe-text; 
-		background: none;
-		border:2px solid $oe-step-green;
+	// step is with a person not a process
+	&.person {
+		.step {
+			padding-left:13px;
+			background: url( svg-path('icons/person') ) center left no-repeat;
+			background-size: 10px;
+		}
 	}
 }

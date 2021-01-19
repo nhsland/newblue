@@ -1,0 +1,28 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-clinic-adder {
+	position:fixed;
+	top: #{ $oe-header-height + $oe-event-header-height };
+	right:0; 
+	bottom:0; 
+	z-index: $oe-z-quicklook - 1; // make it under Patient Quick View popup
+	min-width:300px;
+	
+	background: $oe-blue-dark2; // same as the table
+	color:$oe-text;
+	border-left:1px solid $oe-btn-blue; 
+	
+	@include flex( flex-start, space-between );
+	
+	// when hotlist locks in need to switch to the right
+	@include fix-hotlist(){
+		right: calc( 100vw - #{$oe-extended-browser-size });
+	}
+	
+	// when super wide!... hotlist extends to maximum width
+	@include super-wide(){
+		right: 47vw; // because .oe-full-content is now set at 53vw
+	}
+}
