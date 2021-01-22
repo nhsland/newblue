@@ -5,15 +5,13 @@
 .oe-clinic-adder {
 	position:fixed;
 	top: #{ $oe-header-height + $oe-event-header-height };
-	right:0; 
-	bottom:0; 
+	bottom: 0; 
 	z-index: $oe-z-quicklook - 1; // make it under Patient Quick View popup
 	
 	background: $oe-blue-dark2; // same as the table
 	color:$oe-text;
 	border-left:1px solid $oe-btn-blue; 
-	
-	@include flex( flex-start, space-between );
+
 	
 	// when hotlist locks in need to switch to the right
 	@include fix-hotlist(){
@@ -23,5 +21,17 @@
 	// when super wide!... hotlist extends to maximum width
 	@include super-wide(){
 		right: 47vw; // because .oe-full-content is now set at 53vw
+	}
+
+	// User CSS Animation.
+	display: none;
+	justify-content: space-between;
+	align-items: flex-start;
+	right: -10px;  // can't animate display states but can nudge over.
+	
+	&.fadein {
+		display: flex;
+		animation: 0.2s ease-out forwards fadein;
+		right:0;
 	}
 }

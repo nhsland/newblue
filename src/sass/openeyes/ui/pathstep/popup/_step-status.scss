@@ -16,16 +16,17 @@
 		color:	$oe-text-light; 
 		border-top:5px solid $oe-step-grey;
 		
-		// colours
-		&.green { 
+		// status (matches the pathstep)
+		&.complete,
+		&.done { 
 			border-top-color: $oe-step-green; 
 		}
 		
-		&.orange { 
+		&.active { 
 			border-top-color: $oe-step-orange; 
 		}
 	
-		&.red { 
+		&.warning { 
 			border-top-color:$oe-step-red; 
 		}
 	}

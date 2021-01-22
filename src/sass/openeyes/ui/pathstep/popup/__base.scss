@@ -13,6 +13,7 @@
 	width:360px;
 	border-radius:3px;
 	
+	
 	@include boxshadow();
 	
 	@include font-size(12);
@@ -25,11 +26,15 @@
 		padding:12px 10px;
 	}
 	
+	// because of the arrow ::after overlapping the button:
+	pointer-events: none;
+	
 	// cross icon
 	.close-icon-btn {
 		position: absolute;
 		top:9px;
 		right:8px;
+		pointer-events: all; // JS needs this
 	}
 	
 }

@@ -3,22 +3,34 @@
 //
 
 .oe-pathstep-popup {
+	$arrowSize: 5px; 
 	// arrow 
-	&.a-t-l {
-		$arrowSize: 7px; 
-		
+	&.arrow-t {
 		&:after {
+			content: "";
 			top: #{ 0 - $arrowSize * 2 };
-			left: 0;
-			right: auto;
-			border: solid transparent;
-			content: " ";
+			right: 1px;
 			height: 0;
 			width: 0;
 			position: absolute;
-			pointer-events: none;
+			border: solid transparent;
 			border-color: rgba(0,0,0,0);
 			border-bottom-color: $oe-text-highlight;
+			border-width: $arrowSize;
+		}
+	}
+	
+	&.arrow-b {
+		&:after {
+			content: "";
+			bottom: #{ 0 - $arrowSize * 2 };
+			right: 1px;
+			height: 0;
+			width: 0;
+			position: absolute;
+			border: solid transparent;
+			border-color: rgba(0,0,0,0);
+			border-top-color: $oe-text-highlight;
 			border-width: $arrowSize;
 		}
 	}

@@ -6,9 +6,8 @@
 	
 	// wrapper for btns e.g "Edit"
 	.step-actions {
-		
+		pointer-events: all; // JS needs this
 		@include flex( center, space-between );
-		
 		padding:10px 0 0 0;	
 		
 		button { 

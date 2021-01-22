@@ -5,7 +5,9 @@
 .oe-pathstep-popup {
 
 	// need to restrict height for the data shown
+	.popup-content, 
 	.popup-overflow {
+		min-height: 40px;
 		max-height: 180px;
 		overflow-y: auto;
 		padding:0 5px 0 0;
