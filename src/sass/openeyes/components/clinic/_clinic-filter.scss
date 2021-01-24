@@ -57,26 +57,36 @@ ul.oe-clinic-filter {
 	// changes icons when open as it toggles the panel
 	button.adder {
 		width:60px;
-		background: $oe-btn-blue-hint;
 		
-		&.close {
+		&.open {
+			background-color: $oe-btn-blue-hint;
 			&:after {
-				background-image: url( svg-path('icons/remove-circle'));
-				opacity: 1;
+				opacity: 0.7;
 			}
 		}
+		
 		
 		// centered with flex
 		&:after {
 			height:17px;
 			width:17px;
-			background-image: url( svg-path('icons/plus-circle'));
+			background-image: url( svg-path('icons/plus-bold'));
 			background-size: 17px;
+			
 		}
 		
-		&:hover
+		&.close {
+			&:after {
+				transform: rotate(45deg);
+			}
+		}
+		
+		&:hover,
 		&:focus {
-			background: $oe-btn-blue;
+			background-color: $oe-btn-blue;
+			&:after {
+				opacity: 1;
+			}
 		}	
 	}
 

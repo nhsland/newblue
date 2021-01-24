@@ -67,7 +67,6 @@
 @import "ui/oe-autocomplete"; 				// input autocomplete
 @import "ui/oe-user-pin"; 					// user PIN
 @import "ui/add-select-search/_all";		// add insert data popup (into elements)
-@import "ui/pathstep/_all";					// pathstep (clinic, worklist, examination)
 @import "ui/oe-step-progress";				// steps through a process
 @import "ui/oe-percentage";					// visually show a percentage
 @import "ui/freeze-ui";						// freeze UI interactions below a level
@@ -107,4 +106,5 @@
 @import "components/new-patient";				// Add New Patient
 @import "components/whiteboard/_all";			// Whiteboard
 @import "components/patient-search/_all";		// Patient & Advanced Search
-@import "components/fast-date/_all";				// Fast date and Fast date selectors
+@import "components/fast-date/_all";			// Fast date and Fast date selectors
+@import "components/pathstep/_all";				// pathstep (clinic, worklist, examination)
