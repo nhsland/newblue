@@ -1,0 +1,41 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Path path step btn
+// Used in Worklists, Clinic list, etc
+// e.g. PSDs
+
+// <span>
+.oe-pathstep-btn {	
+	display:inline-flex;
+	align-items:center;		
+	justify-content:center;
+	
+	line-height: 1.2; // this needs fixing or else it will affect the layout
+	
+	// if it has two children (e.g name and time) then it needs stacking
+	flex-direction: column;
+	
+	// setup with margin-left to space btns 
+	// so if tbn used in last <table> col it lines up
+	padding:4px 8px;
+	margin:2px 3px 2px 0; 
+	
+	min-height:24px;
+	 
+	&:last-child {
+		margin-right:0;
+	}
+	
+	@include font-size(12);
+	font-style: italic;
+	cursor: pointer;	
+	
+	// turn off point events for all children
+	// JS needs this:
+	* {
+		pointer-events: none;
+	}
+
+}

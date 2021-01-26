@@ -1,0 +1,40 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-pathstep-popup {
+	
+	.step-status {
+		margin:5px 0 0 0;
+		padding:5px 9px 5px 9px;
+		
+		@include font-size(11);
+		font-weight: $oe-font-bold;
+		text-align: center;
+		
+		// colours... these matches the pathstep (for now)
+		// "todo" - default 'grey' to work across themes
+		color:	$oe-text-light; 
+		border-top:5px solid $oe-step-grey;
+		
+		&.config {
+			border-top-color: $oe-text-highlight;
+		}
+		
+		&.active { 
+			border-top-color: $oe-step-orange; 
+		}
+		
+		&.complete,
+		&.done { 
+			border-top-color: $oe-step-green; 
+		}
+		
+		// so far not used, maybe for DNA?
+		&.flag { 
+			border-top-color:$oe-step-red; 
+		}
+	}
+	
+}
+

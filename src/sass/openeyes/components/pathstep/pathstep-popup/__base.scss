@@ -1,0 +1,33 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-pathstep-popup {
+	
+	position:fixed; // JS positioned
+	z-index:$oe-z-tooltip;
+	width: 380px;
+
+	padding:10px;
+	
+	background:$oe-tooltip-bg;
+	border:1px solid $oe-text-highlight;
+	border-radius:3px;
+	@include font-size(12);
+	color:$oe-text;
+	
+	@include boxshadow();
+	
+	// because of the arrow ::after overlapping the button:
+	pointer-events: none;
+	
+	// cross icon
+	.close-icon-btn {
+		position: absolute;
+		top:9px;
+		right:8px;
+		pointer-events: all; // JS needs this
+	}
+	
+}
+
