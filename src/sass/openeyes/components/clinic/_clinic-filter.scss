@@ -55,24 +55,24 @@ ul.oe-clinic-filter {
 	
 	// make use of the adder button, change it blue
 	// changes icons when open as it toggles the panel
-	button.adder {
+	button.add-to-all {
 		width:60px;
+		background-color: $oe-btn-blue-hint;
+		
+		// add plus icon centered with flex
+		&:after {
+			content: '';
+			height:17px;
+			width:17px;
+			background-image: url( svg-path('icons/plus-bold'));
+			background-size: 17px;
+		}
 		
 		&.open {
 			background-color: $oe-btn-blue-hint;
 			&:after {
 				opacity: 0.7;
 			}
-		}
-		
-		
-		// centered with flex
-		&:after {
-			height:17px;
-			width:17px;
-			background-image: url( svg-path('icons/plus-bold'));
-			background-size: 17px;
-			
 		}
 		
 		&.close {

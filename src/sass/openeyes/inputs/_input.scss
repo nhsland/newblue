@@ -60,7 +60,11 @@ input[type="radio"]{
 	// middle looks great on Win Chrome, but is dropped slight on Mac Chrome, go figure!
 	// (trying to switch layouts over to Flex to sort this)
 	vertical-align: middle; 
-	
+}
+
+input[type="time"]{
+	padding-top: 3.5px;
+	padding-bottom: 3.5px;
 }
 
 // Normalize for range
