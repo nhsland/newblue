@@ -279,6 +279,7 @@
 	&.reset 			{ @include oe3-icons('reset'); }
 	&.sync 				{ @include oe3-icons('sync'); }
 	&.flux	 			{ @include oe3-icons('flux'); }
+	&.cog	 			{ @include oe3-icons('cog'); }
 	
 	// monochromatic Eye Lat icons:
 	&.eyelat-L			{ @include oe3-icons('lat-L'); }
