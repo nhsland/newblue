@@ -33,6 +33,7 @@ hr.divider {
 	margin:15px 0;  // reduced was 20px 0 15px 0;
 	border-bottom:2px solid $oe-line;
 	
+	.oe-pathstep-popup &,
 	.oe-tooltip & {
 		margin:5px 0;
 	}

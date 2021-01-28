@@ -12,6 +12,8 @@
 	align-items:center;		
 	justify-content:center;
 	
+	min-height:24px; // matches buttons
+	
 	line-height: 1.2; // this needs fixing or else it will affect the layout
 	
 	// if it has two children (e.g name and time) then it needs stacking
@@ -21,8 +23,7 @@
 	// so if tbn used in last <table> col it lines up
 	padding:4px 8px;
 	margin:2px 3px 2px 0; 
-	
-	min-height:24px;
+
 	 
 	&:last-child {
 		margin-right:0;

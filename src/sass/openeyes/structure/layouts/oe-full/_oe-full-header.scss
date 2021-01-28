@@ -9,9 +9,9 @@
 .oe-full-header {
 	position:relative;
 	background:$oe-grey;
-	padding:0 0 0 20px;
+	padding:0 0 0 20px; // this aligns with content in sidepanel
 	
-	@include flex(center, flex-start);
+	@include flex( center, flex-start );
 
 	// left hand side
 	.title {

@@ -8,7 +8,6 @@
 .oe-login {
 	display:flex;
 	height:100%;
-	
 	// overlay timeout
 	// same DOM structure
 	&.timeout {
@@ -26,15 +25,66 @@
 		}
 	}
 	
-
 	.login {
 		margin:auto; // flex centering
-		
 		position: relative;
 		top:-10vh; // offset visual vertical balance 
 		
-	
+		// Multi-tenancy stuff
+		&.multisite {
+			top:-5vh;
+			h1 { margin-bottom: 20px; }	
+			.info { margin-top: 15px; }
+			
+			// this shows the Institution and Site selected
+			.login-details {
+				padding:0 10px 25px 10px;
+				@include font-size(14);
+				font-weight: $oe-font-medium;
+				color: $oe-text;
+				
+				ul.row-list {
+					li {
+						@include flex( center, center );
+					}
+				}
+					
+			}
+			.login-steps {
+				border:3px solid $oe-text-light;
+				border-radius: 10px;
+				padding:10px 20px;
+				
+				overflow-y: auto;
+				min-height: 40px; 
+				max-height: 145px;
+				
+				ul.step-options {
+					// make like buttons
+					li {
+						margin:0 0 4px 0;
+						width: 100%;
+						@include flex( center, flex-start );
+						@include font-size(13);
+						font-weight:$oe-font-medium;
+						color: $oe-text;
+						background: $oe-btn-default;
+						cursor: pointer;
+						padding:0 8px;	
+						height:24px;
+						
+						&:hover, 
+						&:focus, 
+						&.selected {
+							color: rgb(255,255,255);
+							background: $oe-btn-blue;
+						}
+					}
+				}
+			}
+		}
 		
+
 		h1 {
 			margin:0 0 40px 0;
 			@include font-size(58);
@@ -45,13 +95,11 @@
 			@include handheld(){
 				@include font-size(120);
 			}
-			
 		}
 		
 		.user {
 			width:250px;
 			margin:0 auto;
-			
 			@include handheld(){
 				width:50vw;
 			}
@@ -73,8 +121,6 @@
 			}
 		}
 		
-		
-		
 		.info {
 			width:250px;
 			margin:30px auto 0 auto;
@@ -82,9 +128,7 @@
 			border-top:1px solid $oe-line;
 			color:$oe-text-light;
 			@include font-size(12);
-			line-height: 1.5;
-			
-			
+			line-height: 1.5;			
 		}
 	}
 }

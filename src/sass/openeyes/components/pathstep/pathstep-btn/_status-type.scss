@@ -18,8 +18,10 @@
 	}
 	
 	&.config {
-		// needs a min-height for the icon
-		background: $oe-step-grey;
+		background: $oe-step-grey url( svg-path('icons/cog')) left 4px top 5px no-repeat;
+		background-size: 13px;
+		padding-left: 22px;
+		
 	}
 	
 	&.active { 
@@ -40,7 +42,7 @@
 	&.active {
 		&:hover, 
 		&:focus {
-			background: $oe-btn-blue;
+			background-color: $oe-btn-blue;
 		}
 	}
 	

@@ -24,7 +24,7 @@
 	$spinner-large:60px;
 	$spinner-icon:16px; // medium icon sizes
 	
-	&:before {
+	&::before {
 		content: '';
 		position: absolute;
 		width: $spinner-large;
@@ -47,7 +47,7 @@
 	 margin:0 5px;
 	 vertical-align: middle;
 	 
-	 &:before {
+	 &::before {
 		content: '';
 		position: absolute;
 		width: $spinner-icon;
