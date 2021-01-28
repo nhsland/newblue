@@ -23,7 +23,28 @@
 				text-align: center;
 			}
 		}
+		
+		.login-details {
+			color: $oe-dark-text;
+		}
+		
 	}
+	
+	// this shows the Institution and Site selected
+	// it's also used on the timeout popup
+	.login-details {
+		padding:0 10px 25px 10px;
+		@include font-size(14);
+		font-weight: $oe-font-medium;
+		color: $oe-text;
+		
+		ul.row-list {
+			li {
+				@include flex( center, center );
+			}
+		}	
+	}
+	
 	
 	.login {
 		margin:auto; // flex centering
@@ -36,20 +57,7 @@
 			h1 { margin-bottom: 20px; }	
 			.info { margin-top: 15px; }
 			
-			// this shows the Institution and Site selected
-			.login-details {
-				padding:0 10px 25px 10px;
-				@include font-size(14);
-				font-weight: $oe-font-medium;
-				color: $oe-text;
-				
-				ul.row-list {
-					li {
-						@include flex( center, center );
-					}
-				}
-					
-			}
+			
 			.login-steps {
 				border:3px solid $oe-text-light;
 				border-radius: 10px;
