@@ -2,7 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// File structure
+// Module structure
 // 
 // |-- modules/              # Folder for all SCSS files
 // |   |-- __all.scss        # Include to get all files for module
@@ -108,3 +108,4 @@
 @import "components/patient-search/_all";		// Patient & Advanced Search
 @import "components/fast-date/_all";			// Fast date and Fast date selectors
 @import "components/pathstep/_all";				// pathstep (clinic, worklist, examination)
+@import "components/annotate-image";			// annotate image
