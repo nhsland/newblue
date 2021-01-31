@@ -11,24 +11,24 @@
 	border-radius:3px;
 	
 	// default 'grey' to work across themes
+	background-color: $oe-step-grey;
+	
+	// if icon is added	
 	background-position: left 5px center;
 	background-repeat: no-repeat;
 	background-size: 15px;
 	
-	// couldn't use "right-eye" class
-	// conflicts with the other class!
-	&.pin-right-eye {
+	// couldn't use "right-eye" class as it conflicts with the other class
+	&.pin-right {
 		padding-left:27px;
 		background-image: url( svg-path('icons/lat-R') );
 	}
 	
-	&.pin-left-eye {
+	&.pin-left {
 		padding-left:27px;
 		background-image: url( svg-path('icons/lat-L') );
 	}
-	
-	background-color: $oe-step-grey;
-	
+
 	&.accepted-pin { 
 		background-color: $oe-step-green;
 	}
@@ -39,7 +39,7 @@
 
 	// PIN input
 	input.user-pin-entry {
-		width:50px;
+		width:60px;
 		padding:2px 5px;
 		text-align: center;
 		font-weight:$oe-font-medium;

@@ -12,7 +12,7 @@
 		height: 50vh;
 		background:transparent url() center center no-repeat;
 		background-size: contain;
-		padding-right: $toolbox-width; // match toolbox!
+		margin-right: #{$toolbox-width + 10px}; // match toolbox and add a gutter
 	}
 	
 	position: relative; 
@@ -31,34 +31,38 @@
 			border-bottom:1px dotted $oe-line;
 		}
 		
+		svg.colors {
+			.selected {
+				stroke: $oe-text;
+				stroke-width: 2px;
+			}
+		}
+		
 		button {
 			width: 100%;
 			margin:0 0 5px 0;
-		}
-		
-		// button!
-		.tool-btn {
-			width: 50px;
-			height: 50px; // buttons are 24px high
 			
-			svg {
-				pointer-events: none; // stops JS Delegation
-				fill: $oe-text;
-				width:25px;  
-				height:25px;
-			}
-			
-			&:hover, 
-			&:focus,
-			&.selected {
+			&.tool-btn {
+				width: 50px;
+				height: 50px; // buttons are 24px high
+				
 				svg {
-					fill: #fff;
+					pointer-events: none; // stops JS Delegation
+					fill: $oe-text;
+					width:25px;  
+					height:25px;
+				}
+				
+				&:hover, 
+				&:focus,
+				&.selected {
+					svg {
+						fill: #fff;
+					}	
 				}	
-			}
-			
+			}	
 		}
 	}
-	
 }
 
 

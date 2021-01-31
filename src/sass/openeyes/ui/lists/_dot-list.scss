@@ -19,7 +19,7 @@ ul {
 			padding:0 8px 0 12px;
 			line-height: 1;
 			
-			background: transparent url( svg-path( 'ui/list-dot' )) left center no-repeat;
+			background: transparent url( svg-path( 'ui/list-dot' )) left 45% no-repeat;
 			background-size:6px;
 			
 			.lightning-event & {
