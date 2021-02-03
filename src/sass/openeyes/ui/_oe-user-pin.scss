@@ -7,28 +7,12 @@
 
 	display:inline-block;
 	
-	padding:2px 4px;
+	padding:2px 4px 2px 30px;
 	border-radius:3px;
-	
-	// default 'grey' to work across themes
-	background-color: $oe-step-grey;
-	
-	// if icon is added	
-	background-position: left 5px center;
-	background-repeat: no-repeat;
+	// User PIN
+	background: $oe-step-orange url( svg-path('icons/person')) left 5px center no-repeat;
 	background-size: 15px;
 	
-	// couldn't use "right-eye" class as it conflicts with the other class
-	&.pin-right {
-		padding-left:27px;
-		background-image: url( svg-path('icons/lat-R') );
-	}
-	
-	&.pin-left {
-		padding-left:27px;
-		background-image: url( svg-path('icons/lat-L') );
-	}
-
 	&.accepted-pin { 
 		background-color: $oe-step-green;
 	}
@@ -36,10 +20,19 @@
 	&.wrong-pin {
 		background-color:$oe-step-red;
 	}
+	
+	// Make PIN Eye specific...
+	&.pin-right {
+		background-image: url( svg-path('icons/lat-R') );
+	}
+	
+	&.pin-left {
+		background-image: url( svg-path('icons/lat-L') );
+	}
 
 	// PIN input
 	input.user-pin-entry {
-		width:60px;
+		width:70px; // 8 digits
 		padding:2px 5px;
 		text-align: center;
 		font-weight:$oe-font-medium;

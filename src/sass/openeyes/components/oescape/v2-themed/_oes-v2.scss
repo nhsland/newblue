@@ -5,12 +5,20 @@
 // OESCAPE
 .oes-v2 {
 	@include flex( stretch, space-between );
-	
+
 	// JS controls these widths
 	.oes-left-side,
 	.oes-right-side {
-		padding:20px 10px;
-		flex-grow: 1; // JS will set widths and overide this. 
+		// default to fill the width
+		// if not JS width is set it will use this:
+		flex-grow: 1;  
+		padding:0 5px;	
+		
+		// <div> wrapper for plotly 
+		.oeplot-wrap {
+			min-height: 600px; // stop it squeezing to much 
+			height: 100%; // allow it expand on bigger monitors
+		}
 	}
 }
 

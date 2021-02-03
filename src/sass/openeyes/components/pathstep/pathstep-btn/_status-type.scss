@@ -14,18 +14,17 @@
 	background: pink; // flag any in-correct CSS classes!
 	
 	&.todo {
-		background: $oe-step-grey;
+		background: $oe-step-orange;
 	}
 	
 	&.config {
 		background: $oe-step-grey url( svg-path('icons/cog')) left 4px top 5px no-repeat;
 		background-size: 13px;
-		padding-left: 22px;
-		
+		padding-left: 22px;	
 	}
 	
 	&.active { 
-		background: $oe-step-orange; 
+		background: $oe-step-yellow; 
 	}
 	
 	&.complete,

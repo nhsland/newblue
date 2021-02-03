@@ -1,6 +1,7 @@
 /**
 OE Layout helper for Plot.ly JS
 https://plot.ly/javascript/reference/
+Remove once blueJS is in OE and handling the plot layouts
 */
 const oePlotly_v1 = {
 	colours: {

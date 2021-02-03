@@ -7,15 +7,18 @@
 	// modifying the standard "oe-popup-content" class
 	// Build PSD is used in Worklists.
 	&.build-psd {
-
+		width:1040px; // max width (same as "max" class)
+	
 		// step sub-titles
 		h3 {
 			@include font-size(13);
 		}
 		
 		// control width of sections
-		.psd-selected-patients {			
-			width:150px;
+		.psd-selected-patients {	
+			position: sticky; // stick short lists
+			top:0;	
+			width:240px;
 			
 			ul {
 				li {
@@ -27,6 +30,7 @@
 		
 		// widths in here are limited by btn-list.fixed-width
 		.psd-options {
+			width:400px;
 			// space out the columns
 			.flex-layout > div {
 				margin:0 5px 0 0;
@@ -47,14 +51,23 @@
 			
 			
 			table {
+				margin:0 0 10px 0;
+				
 				td {
 					// Restricted width layout
 					// Grouped Drug Name with Drops / Interval settings
 					// Drug name:
 					.drug {
-						@include font-size(13);
-						margin:0 0 5px 0;
+						@include font-size(12);
+						margin:0 0 2px 0;
 					}
+					.options {
+						@include flex( center, space-between );
+						* {
+							flex: 1;
+						}
+					}
+					
 					
 					// 3 Dropdowns: Drops No / xN / Interval in mins:
 					.administration {

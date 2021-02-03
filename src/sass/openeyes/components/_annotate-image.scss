@@ -10,6 +10,7 @@
 	.image {
 		// background URL is set in the DOM
 		height: 50vh;
+		min-height: 380px; // otherwise the toolbox will overflow
 		background:transparent url() center center no-repeat;
 		background-size: contain;
 		margin-right: #{$toolbox-width + 10px}; // match toolbox and add a gutter
