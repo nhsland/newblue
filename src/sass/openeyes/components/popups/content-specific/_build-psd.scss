@@ -58,13 +58,15 @@
 					// Grouped Drug Name with Drops / Interval settings
 					// Drug name:
 					.drug {
-						@include font-size(12);
-						margin:0 0 2px 0;
+						@include font-size(13);
+						margin:0 0 4px 0;
 					}
 					.options {
-						@include flex( center, space-between );
-						* {
-							flex: 1;
+						@include flex( center, flex-start );
+						
+						fieldset,
+						select {
+							margin: 0 3px 0 0;
 						}
 					}
 					

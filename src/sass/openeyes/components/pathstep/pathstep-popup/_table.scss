@@ -10,7 +10,7 @@
 			width: 100%;
 			tbody {
 				tr {
-					border-top:1px solid $oe-line;
+					border-top:1px dotted rgba( $oe-line, 0.5 );
 					&.no-line,
 					&:first-child { 
 						border-top: none;
