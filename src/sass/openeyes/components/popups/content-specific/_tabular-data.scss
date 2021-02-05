@@ -1,0 +1,47 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Popups
+// notes: see openeyes/components/popups
+
+.oe-popup {
+	
+	// tabular data mostly used in oePlot to 
+	// show raw data in a very boring way
+	// extend the base table styles
+	
+	table.tabular-data {
+		margin:0;
+		
+		tbody {
+			tr {
+				border-top:1px solid $oe-dark-line;
+				&:first-child,
+				&.no-line { 
+					border-top: none;
+				}
+				
+				&:nth-child( odd ){
+					background: shade( $oe-dark-popup-bg, 10 ); 
+				}
+				
+				&:hover {
+					background: shade( $oe-dark-popup-bg, 40 ); 
+				}
+			}
+			
+			th, td {
+				padding:4px 8px 4px 4px; 
+				line-height:1.2;
+				border-right:1px solid $oe-dark-line;
+				&:last-child {
+					border-right: none;
+				}
+								
+				@include font-size(12);
+				font-weight: 400;
+			}
+		}
+	} 
+}
