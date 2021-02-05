@@ -38,5 +38,22 @@
 			color: $alert-text-color;
 			background: $oe-alert-red;
 		}
+		
+		p {
+			margin:0 0 5px 0;
+		}
+		
+		// if there are list of issues or warnings:
+		ul {
+			list-style: disc;
+			list-style-position: inside;
+			margin:5px 0;
+			li {
+				margin-bottom: 3px; 
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
 	}
 }
