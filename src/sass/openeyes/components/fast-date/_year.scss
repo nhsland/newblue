@@ -14,13 +14,17 @@
 				cursor: pointer;
 				@include font-size(21);
 				
-				height: 113px;
 				width: 45px;
-				
 				margin:0 2px 0 0;
 				
+				// 1900
 				&:first-child{
+					height: 93px;
 					margin-bottom: 2px;
+				}
+				// 2000
+				&:last-child{
+					height:133px;
 				}
 				
 				&:hover, 
@@ -36,6 +40,41 @@
 			}
 		}
 		
+		// decade and single combined
+		ul.years {
+			height: 231px; // #{38.5px * 6};
+			overflow-x: hidden; 
+			overflow-y: auto; 
+			
+			&::-webkit-scrollbar { display: none; } // Chrome, Safari
+			-ms-overflow-style: none;  //  Edge
+			scrollbar-width: none;  // Firefox
+			
+			// style the same as 'numbers' in 'add-options' in adder
+			li {
+				@include flex( center, center );
+				@include font-size(16);
+				width: 64px;
+				height: 36.5px;
+				cursor: pointer;
+				margin:0 2px 2px 0;
+				background-color: $oe-adder-option;
+				
+				&:hover, 
+				&:focus { 
+					color: #fff; 
+					background-color: $oe-adder-option-hover;
+				}
+				
+				&.selected {
+					color: #fff; 
+					background-color: $oe-btn-blue;
+				}
+				
+			}
+		}
+		
+		// grid
 		// <ul>
 		.decade, 
 		.single {

@@ -11,16 +11,7 @@
 		// and HR dividers
 		.row {
 			margin:4px 0 6px 0; // reduce height gap
-			&.divider {
-				border-bottom-color:shade($oe-vc-orange,20); // change the color
-				padding:0 0 8px 0;
-			}
 		}	
-		
-		hr.divider {
-			margin:8px 0;  // reduced was 20px 0 15px 0;
-			border-bottom-color:shade($oe-vc-orange,20); // change the color
-		}
 	}
 }
 

@@ -13,9 +13,9 @@
 			width:100%;
 			
 			&.borders {
-				border: 3px solid shade($oe-vc-orange,20);
+				border: 3px solid $oe-text-light;
 				th,td {
-					border: 1px solid shade($oe-vc-orange,30);
+					border: 1px solid $oe-text-light;
 					border-bottom: none;
 					padding:1px 2px;
 				}

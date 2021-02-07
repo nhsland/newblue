@@ -14,9 +14,11 @@
 	width:300px;
 	padding:8px 0 8px 0; // allow for scrolling
 
-	// add SVG icon to show that it is draggable:	
-	background:$oe-vc-orange url( svg-path('ui/vc-move') ) top 5px right 5px no-repeat;
-	background-size:30px;
+	// add SVG icon to show that it is draggable:
+	border: 3px solid $oe-vc-orange;	
+	border-radius: 8px;
+	background:$oe-vc-bg url( svg-path('ui/vc-move') ) top 5px right 5px no-repeat;
+	background-size:20px;
 	
 	@include boxshadow();
 	

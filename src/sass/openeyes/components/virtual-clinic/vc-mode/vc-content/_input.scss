@@ -8,16 +8,11 @@
 	
 	.vc-content {
 		
-		input, 
-		textarea,
-		select {
-			color:rgb(0,0,0);
-			background-color:rgb(246,226,190);	
-		}
-		
 		textarea {
 			&:read-only {
-				background-color:rgb(246,192,99);
+				color: $oe-text-light;
+				font-style: italic;
+				background-color: $oe-vc-bg;
 			}
 		}
 		
