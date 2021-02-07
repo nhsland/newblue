@@ -9,18 +9,21 @@
 	
 	.hotlist-search-patient {
 		background:tint( $oe-dark-bg,5 );
-		padding:12px 0;
-		margin:0 0 10px 0;
+		height: $oe-event-header-height;
+		@include flex( center, flex-start );
 
 		.search-patient {
-			// line up with Headers
-			margin:0 0 0 14px; 
+			flex:1;
+			// line up with Headers in hotlist
+			margin:0 14px; 
+			
+			@include flex( center, space-between )
 			
 			// increase the defaults for input
 			input {
+				flex: 2;
 				border-radius: 0;
 				height: 28px;
-				width:70%;
 				@include font-size(15);
 				font-weight:400;
 				margin:0 0;
@@ -31,8 +34,8 @@
 			
 			// increase defaults.
 			button {
+				flex: 1;
 				height: 28px;
-				width: 24%;
 				@include font-size(13);
 				margin:0 0 0 2px;
 			}
