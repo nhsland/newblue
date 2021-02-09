@@ -30,12 +30,12 @@
 		"gulp-sass": "4.1.0",
 		"gulp-svgmin": "3.0.0",
 		"gulp.spritesmith": "6.11.0",
+		"jpeg-js": "^0.4.3",
 		"lazypipe": "1.0.2",
 		"node-sass": "5.0.0",
+		"postcss": "8.2.5",
 		"through2": "4.0.2",
-		"vinyl-buffer": "1.0.1", 
-		"postcss": "8.2.5"
+		"vinyl-buffer": "1.0.1"
 	},
-	"dependencies": {
-	}
+	"dependencies": {}
 }
