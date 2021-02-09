@@ -12,6 +12,10 @@ header {
 			font-weight: 400;
 			color: $text-light;
 			margin:0 0 4px 0;
+			&:first-child {
+				margin:0;
+			}
+			
 			
 			@include tablet(){
 				@include font-size(14);
