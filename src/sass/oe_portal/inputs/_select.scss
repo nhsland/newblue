@@ -11,6 +11,13 @@ select {
 	// <input> and <selects> looking the same 
 	height: $input-height;
 	padding: 0 5px;
+	
+	width: 100%;
+	
+	&.inline {
+		width: auto;
+	}
+	
 		
 	&:disabled {
 		opacity:0.4;

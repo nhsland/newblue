@@ -49,8 +49,11 @@ h6,
 p, 
 address {
 	@include font-size(16); // 1rem
-	font-weight:400;
 	font-style: normal;
+	font-weight: $font-medium;
+	color: $text-light;
+	line-height: 1.4;
+	margin:0 0 10px 0;
 }
 
 // set weighting (depends on theme) 
