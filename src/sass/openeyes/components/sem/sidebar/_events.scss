@@ -23,6 +23,7 @@
 			
 			.oe-i-e {
 				// fix y-offset position issue
+				pointer-events: none; // JS needs this for the lightning previews
 				vertical-align: top;
 			}
 				

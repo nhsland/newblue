@@ -63,6 +63,10 @@
 	@include flex( center, flex-start );
 }
 
+.flex-r {
+	@include flex( center, flex-end );
+}
+
 .flex-t {
 	@include flex( flex-start, space-between) ;	
 }
@@ -76,6 +80,13 @@
 }
 .flex-t-r {
 	@include flex(flex-start, flex-end );	
+}
+
+.flex-btns {
+	@include flex( center, space-between );
+	> button {
+		flex: 1;
+	}
 }
 
 

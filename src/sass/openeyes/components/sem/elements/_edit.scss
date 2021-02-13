@@ -38,6 +38,7 @@
 			}
 			// if an adder button is flex-right under it's edit content 
 			// add a top margin to provide breathing space:
+			.flex-r > .add-data-actions,
 			.flex-right > .add-data-actions {
 				margin-top:8px;
 			}

@@ -14,7 +14,11 @@
 	background: pink; // flag any in-correct CSS classes!
 	
 	&.todo {
-		background: $oe-step-orange;
+		background-color: $oe-step-orange;
+		&:hover, 
+		&:focus {
+			background-color: shade( $oe-step-orange, 10 );
+		}
 	}
 	
 	&.config {
@@ -24,25 +28,16 @@
 	}
 	
 	&.active { 
-		background: $oe-step-yellow; 
+		background-color: $oe-step-yellow; 
 	}
 	
 	&.complete,
 	&.done { 
-		background: $oe-step-green; 
+		background-color: $oe-step-green; 
 	}
 	
 	&.flag { 
-		background:$oe-step-red; 
-	}
-	
-	&.todo,
-	&.config,
-	&.active {
-		&:hover, 
-		&:focus {
-			background-color: $oe-btn-blue;
-		}
+		background-color:$oe-step-red; 
 	}
 	
 	// types...
@@ -64,12 +59,5 @@
 			background-size: 10px;
 		}
 	}
-	
-	// pathway as completed
-	.complete & {
-		background: $oe-step-blue;
-		color: $oe-step-text;
-		border-color: transparent;
-	}	
 }
 

@@ -259,6 +259,7 @@
 	&.drug-rx			{ @include oe3-icons('drug-rx'); }
 	&.formulary			{ @include oe3-icons('formulary'); }
 	&.injection			{ @include oe3-icons('injection'); }
+	&.drop				{ @include oe3-icons('drop'); }
 	&.star				{ @include oe3-icons('star'); }
 	&.starline			{ @include oe3-icons('starline'); }
 	&.letter-1			{ @include oe3-icons('letter-1'); }
@@ -280,6 +281,7 @@
 	&.sync 				{ @include oe3-icons('sync'); }
 	&.flux	 			{ @include oe3-icons('flux'); }
 	&.cog	 			{ @include oe3-icons('cog'); }
+	&.padlock	 		{ @include oe3-icons('padlock'); }
 	
 	// monochromatic Eye Lat icons:
 	&.eyelat-L			{ @include oe3-icons('lat-L'); }

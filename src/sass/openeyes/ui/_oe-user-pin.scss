@@ -5,13 +5,14 @@
 // OE User PIN Entry
 .oe-user-pin {
 
-	display:inline-block;
+	@include inline-flex( center, space-between );
 	
-	padding:2px 4px 2px 30px;
+	padding:2px 4px 2px 30px; // allow for icon
 	border-radius:3px;
-	// User PIN
-	background: $oe-step-orange url( svg-path('icons/person')) left 5px center no-repeat;
-	background-size: 15px;
+	
+	// PIN icon
+	background: $oe-step-orange url( svg-path('icons/padlock')) left 6px center no-repeat;
+	background-size: 16px;
 	
 	&.accepted-pin { 
 		background-color: $oe-step-green;
@@ -32,10 +33,18 @@
 
 	// PIN input
 	input.user-pin-entry {
+		height:24px; 	// matches button
 		width:70px; // 8 digits
 		padding:2px 5px;
 		text-align: center;
 		font-weight:$oe-font-medium;
+	}
+	
+	// Enter PIN
+	button.try-pin {
+		font-weight:$oe-font-bold;
+		margin: 0 0 0 8px;
+		padding: 0 16px;
 	}
 	
 	

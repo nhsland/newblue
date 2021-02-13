@@ -1,0 +1,46 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.drug-admin-box {
+	// default
+	color: rgba(250,250,250,0.9);
+	
+	@include font-size(13);
+	line-height:1.4;
+
+	border-radius:3px;
+	
+	margin:3px 2px;
+	padding:4px 10px 4px 25px; // allow for Drop Icons
+	
+	background: $oe-step-orange url( svg-path('icons/drop')) 4px 5px no-repeat;
+	background-size: 15px;
+	
+	
+	&.todo {
+		background-color: $oe-step-orange;
+	}
+	
+	&.active { 
+		background-color: $oe-step-yellow; 
+	}
+	
+	&.done { 
+		background-color: $oe-step-green; 
+	}
+	
+	
+	
+	&.has-actions {
+		position:relative;
+		padding-right:200px; 	// allow space for a long named button 
+		min-height: 32px;  		// otherwise button overlaps button background
+		
+		.alert-actions {
+			position: absolute;
+			right:8px;
+			top:4px;
+		}
+	}
+}

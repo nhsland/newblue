@@ -2,8 +2,15 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// btn
-@import "_base";
-@import "status-type";
-@import "info";
-@import "i-drug-admin";
+
+.oe-pathstep-btn {
+	// 
+	.step.i-drug-admin {
+		display: block;
+		width:15px;
+		height:15px;
+		background: url( svg-path('icons/drop')) center center no-repeat;
+		background-size: 15px;
+	}
+}
+
