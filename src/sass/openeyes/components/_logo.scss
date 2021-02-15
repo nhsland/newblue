@@ -68,14 +68,40 @@
 				height:$svg-height;
 				opacity:0.5;
 			}
-			
 		}
+		
+		// OpenERS skin
+		.oe-openers {
+			pointer-events: none; // otherwise it will block JS event delegation
+			display:inline-block;
+			// SVG logo maintain aspect ratio
+			$svg-width:120px;
+			$svg-height: ( $svg-width * 0.22 );
+	
+			width:$svg-width; 
+			height:$svg-height;
+			fill:#fff;
+			opacity:0.3;
+			
+			@include handheld(){
+				$svg-width:140px;
+				$svg-height: ( $svg-width * 0.22 );
+				width:$svg-width; 
+				height:$svg-height;
+				opacity:0.5;
+			}
+		}
+		
 		
 		// little sexy touch.
 		transition:left 0.5s ease;
 		
 		// js controlled interaction... 
 		&.open, &.active {
+			.oe-openers {
+				fill:#fff;
+				opacity:0.9;
+			}
 			.oe-openeyes {
 				fill:#0ff;
 				opacity:0.8;
