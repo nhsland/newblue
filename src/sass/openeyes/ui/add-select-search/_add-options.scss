@@ -10,7 +10,9 @@
 	
 	// All options lists <ul>:
 	.add-options{
-		height:$oe-add-insert-popup-height + 20;		// fix height (based on 0-9, shows all options without scroll!)  
+		// fix height (based on 0-9, shows all options without scroll!)  
+		// also, needs fixing because there may be hidden columns! multi-choice pathways!
+		height:$oe-add-insert-popup-height + 20;		
 		overflow-y: auto;
 		overflow-x: hidden;
 		margin:0 2px 0 0;
