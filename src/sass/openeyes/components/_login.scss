@@ -64,8 +64,8 @@
 				padding:10px 20px;
 				
 				overflow-y: auto;
-				min-height: 40px; 
-				max-height: 145px;
+				min-height: 50px; 
+				max-height: calc( 100vh - #{ $oe-header-height + 320px }); // was 145px
 				
 				ul.step-options {
 					// make like buttons
