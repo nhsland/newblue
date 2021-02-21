@@ -1,0 +1,97 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+
+.oe-queue-mgmt {
+	// layout queues	
+	@include flex( stretch, flex-start );
+	
+	.queue {
+		//background: $oe-line;
+		border-right:1px solid $oe-line;
+		border-left:1px solid $oe-line;
+		margin:0 5px 0 0;
+		width:300px;
+		
+		header {
+			@include flex(center, center);
+			height:50px;
+			
+			@include font-size(14);
+			font-weight: $oe-font-medium;
+			
+		}
+		
+		.patient-list {
+			position: relative;
+			&.add-to-end {
+				&:after {
+					pointer-events: none; // need to stop the flickering
+					content:'';
+					position: absolute;
+					top: 100%;
+					left:0;
+					width:100%;
+					height:35px;
+					background: $oe-btn-blue-hint url( svg-path( 'icons/plus-bold' ) ) center center no-repeat;
+					background-size: 13px;
+				}
+			}
+			
+			.patient {
+				position:relative;
+				
+				@include flex( center, flex-start );
+				height: 35px; // need to use a height for CSS animation
+				
+				@include font-size(11);
+				font-weight: $oe-font-medium;
+				border:1px solid transparent;
+				border-top-color: $oe-line;
+				
+				&:last-child{
+					border-bottom-color: $oe-line;
+				}
+				
+				padding:0 5px;
+				
+				
+				background: url( svg-path('ui/patient-grey')) right 5px bottom 9px no-repeat;
+				background-size: 15px;
+				
+	
+				transition: height .2s ease-out;
+				
+				&.over {
+					color: #fff;
+					background-color: $oe-btn-blue-hint;
+				}
+				
+				&.moving {
+					background-color: $oe-tooltip-bg;
+					border:1px dotted $oe-text-highlight;
+				}
+				
+				&.add-above {
+					padding-top: 35px;
+					height: 75px; 
+					
+					&:after {
+						content:'';
+						position: absolute;
+						top: 0;
+						left:0;
+						width:100%;
+						height:40px;
+						background: $oe-btn-blue-hint url( svg-path( 'icons/plus-bold' ) ) center center no-repeat;
+						background-size: 13px;
+						
+					}
+				}
+			}
+		}
+	}
+	
+	
+}

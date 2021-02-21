@@ -8,6 +8,11 @@
 		
 		padding:20px 20px 40px 20px; // allow for 'oe-admin-notifcation' tag (bottom right)
 		
+		// If an app needs the whole space
+		&.no-pad {
+			padding:0;
+		}
+		
 		h2 {
 			@include font-size(19);
 			font-weight:$oe-font-light; 

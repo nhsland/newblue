@@ -20,8 +20,8 @@
 		// CSS3: Grid 
 		display: grid;
 		grid: 1fr / 300px 1fr;
-		grid-column-gap: 20px;  // may not work on Edge < 16
 		
+		grid-column-gap: 20px;  // may not work on Edge < 16
 		
 		// wider side panel area
 		&.wide-side-panel {
