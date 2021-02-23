@@ -325,6 +325,8 @@
 	&.triangle-orange	{ background-image: url( svg-path('ui/triangle-amber') ); }
 	&.triangle-red		{ background-image: url( svg-path('ui/triangle-red') ); }
 	&.triangle-grey		{ background-image: url( svg-path('ui/triangle-grey') ); }
+	// Optom has flag as Urgent.. needs a Risk:
+	&.triangle-urgent	{ background-image: url( svg-path('ui/triangle-orange') ); }
 
 	// exclamation mark (amber, red)
 	// ONLY for NHS Number status
