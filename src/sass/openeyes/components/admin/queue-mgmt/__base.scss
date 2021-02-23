@@ -14,12 +14,30 @@
 		margin:0 5px 0 0;
 		width:300px;
 		
+		height: calc( 100vh - #{$oe-header-height + $oe-event-header-height });
+		overflow-y: auto;
+		
+		&::-webkit-scrollbar { display: none; } // Chrome, Safari
+		-ms-overflow-style: none;  //  Edge
+		scrollbar-width: none;  // Firefox
+		
 		header {
+			position: sticky;
+			top:0;
+			z-index:1;
+			background:$oe-blue-dark2;
+			border-bottom:2px solid $oe-line;
+			
+			
 			@include flex(center, center);
 			height:50px;
 			
 			@include font-size(14);
 			font-weight: $oe-font-medium;
+			
+			&.in-flow {
+				color:$oe-text-active;
+			}
 			
 		}
 		
