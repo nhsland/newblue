@@ -21,7 +21,7 @@ $text-urgent: 		rgb(220,70,0);
 $text-good:	 		rgb(20,100,20);
 
 // <a>
-$a-text: 	rgb(0,0,220); 
+$a-text: 	$text; // rgb(0,0,220); 
 $a-bg: 		rgb(170,240,255);
 
 $oe-spinner: rgb(0,0,255);
