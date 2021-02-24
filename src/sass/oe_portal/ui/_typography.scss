@@ -56,6 +56,10 @@ address {
 	margin:0 0 10px 0;
 }
 
+h5 {
+	@include font-size(14); // 1rem
+}
+
 // set weighting (depends on theme) 
 strong, b {
 	font-weight:$font-bold;

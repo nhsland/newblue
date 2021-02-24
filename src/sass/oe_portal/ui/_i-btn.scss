@@ -12,10 +12,20 @@
 			
 			// "..." icon
 			&.more {
-				
 				background: $btn-default url( svg-icon-path('more-h')) center center no-repeat;
 				background-size:19px;
 			}
+			
+			&.expand {
+				background: $btn-default url( svg-icon-path('increase-height')) center center no-repeat;
+				background-size:17px;
+			}
+			
+			&.contract {
+				background: $btn-default url( svg-icon-path('reduce-height')) center center no-repeat;
+				background-size:17px;
+			}
+			
 		}
 	}
 }
