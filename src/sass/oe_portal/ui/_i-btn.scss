@@ -1,0 +1,21 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-portal {
+	button {		
+		&.i-btn {
+			display:block;
+			height: $input-height; 	// matches inputs heights
+			width: 40px;
+			padding:0;	// handled with the width
+			
+			// "..." icon
+			&.more {
+				
+				background: $btn-default url( svg-icon-path('more-h')) center center no-repeat;
+				background-size:19px;
+			}
+		}
+	}
+}

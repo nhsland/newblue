@@ -2,8 +2,11 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-@import 'menu-btn';
-@import 'menu-info';
-@import 'btn-stack';
-@import 'lists';
-@import 'care';
+// common UI elements for both nav panels
+.portal-menu {
+	
+	.care {
+		padding:15px 0;
+		border-bottom: 1px solid $line;	
+	}
+}

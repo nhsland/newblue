@@ -2,6 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
+// for icon buttons see "i-btn";
 .oe-portal {
 	@include buttons {
 		@include flex( center, center );
@@ -22,7 +23,9 @@
 		// default button is blue
 		@include font-size(16);
 		color: $btn-text;
-		background: $btn-default;
+		
+		// use background-colour because of icon buttons (i-btn)
+		background-color: $btn-default;
 		
 		&.small {
 			height: auto;
@@ -41,7 +44,7 @@
 		&:disabled {
 			cursor:default;
 			color: rgba( $btn-text, 0.5) !important; // priority over "green" or "red"
-			background: $btn-disabled !important;
+			background-color: $btn-disabled !important;
 			pointer-events: none; // disable pseudos
 		}
 		
@@ -51,42 +54,42 @@
 		&:hover, 
 		&:focus {
 			border-color: rgba( 200,200,200, 0.5);
-			background: $btn-default; // otherwise <a> styles will take over here
+			background-color: $btn-default; // otherwise <a> styles will take over here
 		}
 		
 		&:active,
 		&.selected {
-			background: shade( $btn-default, 50 );
+			background-color: shade( $btn-default, 50 );
 		}	
 		
 		// primary actions
 		&.green {
 			color: $btn-text;
-			background: $btn-green;
+			background-color: $btn-green;
 			&:hover, 
 			&:focus, {
-				background: shade( $btn-green, 20 );
+				background-color: shade( $btn-green, 20 );
 			}
 			&:active{
-				background: shade( $btn-green, 50 );
+				background-color: shade( $btn-green, 50 );
 			}
 		}
 		
 		&.red {
 			color: $btn-text;
-			background: $btn-red;
+			background-color: $btn-red;
 			&:hover, 
 			&:focus, {
-				background: shade( $btn-red, 10 );
+				background-color: shade( $btn-red, 10 );
 			}
 			&:active{
-				background: shade( $btn-red, 40 );
+				background-color: shade( $btn-red, 40 );
 			}
 		}
 		
 		&.logout {
 			color: $text-invert;
-			background: $text;
+			background-color: $text;
 			font-weight: 700;
 		}
 	}

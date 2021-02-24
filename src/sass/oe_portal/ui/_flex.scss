@@ -8,6 +8,10 @@
 	@include flex( center, space-between );
 }
 
+.flex-gap {
+	@include flex( center, space-around );
+}
+
 .flex-l {
 	@include flex( center, flex-start );
 }
