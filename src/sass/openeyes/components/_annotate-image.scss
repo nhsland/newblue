@@ -61,6 +61,8 @@
 					}	
 				}
 				
+				
+				
 			}
 			
 			&.tool-btn {
@@ -81,6 +83,14 @@
 						fill: #fff;
 					}	
 				}	
+				
+				// hack, drawing tools not well implemented
+				&.draw {
+					background-color: $oe-btn-green;
+					svg {
+						fill: #fff;
+					}
+				}
 			}	
 		}
 	}
