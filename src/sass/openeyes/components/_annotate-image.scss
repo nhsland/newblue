@@ -9,7 +9,7 @@
 	
 	.image {
 		// background URL is set in the DOM
-		height: 50vh;
+		height: calc( 100vh - #{$oe-header-height + $oe-event-header-height});
 		min-height: 380px; // otherwise the toolbox will overflow
 		background:transparent url() center center no-repeat;
 		background-size: contain;
