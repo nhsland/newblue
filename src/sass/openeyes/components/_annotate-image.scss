@@ -2,6 +2,27 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
+.oe-upload-orientation {
+	position: relative;
+	@include flex( center, center );
+	
+	.adjustments {
+		position:absolute;
+		margin: auto;
+		background: rgba(0,0,0,0.8);
+		@include font-size(14);
+		color: #fff;
+		padding:5px;
+		border-radius: 5px;
+		text-align: center;
+		
+		.flex-btns {
+			margin: 10px 0 0 0;
+		}
+		
+	}
+}
+
 
 .oe-annotate-image {
 	
@@ -95,5 +116,7 @@
 		}
 	}
 }
+
+
 
 
