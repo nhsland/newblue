@@ -25,26 +25,23 @@
 
 
 .oe-annotate-image {
+	position: relative; 
+	min-height: 350px; // otherwise the toolbox will overflow
+	max-height: calc( 100vh - #{$oe-header-height + $oe-event-header-height});
 	
-	$toolbox-width: 150px;
+	@include flex( stretch, flex-start );
 	
-	.image {
-		// background URL is set in the DOM
-		height: calc( 100vh - #{$oe-header-height + $oe-event-header-height});
-		min-height: 380px; // otherwise the toolbox will overflow
-		background:transparent url() center center no-repeat;
-		background-size: contain;
-		margin-right: #{$toolbox-width + 10px}; // match toolbox and add a gutter
+	.canvas-js {
+		overflow-y: auto;
 	}
 	
-	position: relative; 
-	
 	.toolbox {
+		z-index: 1;
 		position: absolute; 
 		top: 0; 
 		right: 0;
 		bottom: 0;
-		width: $toolbox-width;
+		width:  150px;
 		
 		hr {
 			display:block;
@@ -57,6 +54,17 @@
 			.selected {
 				stroke: $oe-text;
 				stroke-width: 2px;
+			}
+		}
+		
+		// input ranges are a nightmare to style: https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+		.line-width {
+			border-radius: 5px;
+			padding:2px 3px;
+			background: rgba(0,0,0,0.1);
+			
+			small {
+				padding:0 0 0 5px;
 			}
 		}
 		
@@ -80,6 +88,14 @@
 					svg {
 						fill: #fff;
 					}	
+				}
+				
+				// UI hack, drawing tools not well implemented
+				&.draw {
+					background-color: $oe-btn-green;
+					svg {
+						fill: #fff;
+					}
 				}
 				
 				
@@ -113,7 +129,7 @@
 					}
 				}
 			}	
-		}
+		}	
 	}
 }
 
