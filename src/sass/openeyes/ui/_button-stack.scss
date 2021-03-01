@@ -18,6 +18,12 @@
 		}
 	}
 	
+	&.tight {
+		button {
+			margin-bottom:2px;
+		}
+	}
+	
 	&.divider {
 		border-bottom:2px solid $oe-line;
 		padding:0 0 15px 0;
