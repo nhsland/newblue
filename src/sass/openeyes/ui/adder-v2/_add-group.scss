@@ -1,0 +1,31 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-adder {	
+	@include flex( stretch, flex-start );
+	
+	.add-in {
+		
+		@include flex( stretch, flex-start );
+		
+		// group wrapper, contains at least 1 list
+		.a-g {
+			// optional title for group
+			h5 {
+				@include font-size(10);
+				color:$oe-text-light;
+				font-weight:$oe-font-medium;
+				padding:0 2px 3px 5px;
+			}
+			
+			@include font-size(12);
+			padding:0 5px; // space the list groups
+			
+			border-left:2px solid $oe-adder-line;
+		}
+	}
+	
+	
+}
+

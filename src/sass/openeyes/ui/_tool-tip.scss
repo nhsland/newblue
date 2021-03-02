@@ -94,12 +94,20 @@
 	}
 	
 	// this is going to be rare
+	// positioned below...
 	&.inverted {
 		border-bottom:none;
 		border-top:1px solid $oe-text-highlight;
 		&:after {
 			display:none;
 		}
+	}
+	
+	// copy to clipboard!
+	&.copied {
+		background-color: $oe-btn-green;
+		color:#fff;
+		text-align: center;
 	}
 	
 	// used for "Copied to clipboard"

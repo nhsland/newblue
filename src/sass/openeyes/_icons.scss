@@ -98,6 +98,8 @@
 	&.triangle-urgent,
 	&.mpr,
 	&.mpr-red,
+	&.mpr-amber,
+	&.mpr-green,
 	&.exclamation-green,
 	&.exclamation-amber,
 	&.exclamation-orange,
@@ -330,6 +332,8 @@
 	&.triangle-grey		{ background-image: url( svg-path('ui/triangle-grey') ); }
 	&.mpr				{ @include oe3-icons('mpr'); }
 	&.mpr-red			{ background-image: url( svg-path('ui/mpr-red') ); }
+	&.mpr-amber			{ background-image: url( svg-path('ui/mpr-amber') ); }
+	&.mpr-green			{ background-image: url( svg-path('ui/mpr-green') ); }
 	// Optom has flag as Urgent.. needs a Risk:
 	&.triangle-urgent	{ background-image: url( svg-path('ui/triangle-orange') ); }
 

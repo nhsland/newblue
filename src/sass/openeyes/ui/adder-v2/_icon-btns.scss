@@ -1,0 +1,45 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-adder {	
+	
+	.close-i-btn,
+	.add-i-btn {
+		position: absolute;
+		bottom:0;
+		height:32px; // large button height		
+		
+		// Flex: justify-content (h), align-items (v)
+		@include flex(center, center);
+		
+		cursor: pointer;
+	}
+	
+	.close-i-btn {
+		right:0;
+		width:40px;
+		background-color:$oe-btn-blue-hint;
+		&:hover, &:focus, &:active {
+			background-color:$oe-btn-blue;
+		}
+	}
+	
+	// <div>
+	// icon + text message
+	.add-i-btn {
+		left:0;
+		width: calc(100% - 40px);
+		background-color:$oe-btn-green-hint;
+		&:hover, &:focus, &:active {
+			background-color:$oe-btn-green;
+			color:rgba(255,255,255,1);
+		}
+		
+		@include font-size(13);
+		font-weight:300;
+		color:rgba(255,255,255,0.8);
+		
+	}
+}
+
