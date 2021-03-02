@@ -15,7 +15,8 @@
 	.close-i-btn {
 		right:0;
 		width:40px;
-		background-color:$oe-btn-blue-hint;
+		background:$oe-btn-blue-hint url( svg-path('icons/remove')) center center no-repeat;
+		background-size:14px;
 		&:hover, &:focus, &:active {
 			background-color:$oe-btn-blue;
 		}
@@ -26,7 +27,8 @@
 	.add-i-btn {
 		left:0;
 		width: calc(100% - 40px);
-		background-color:$oe-btn-green-hint;
+		background:$oe-btn-green-hint url( svg-path('icons/plus-bold')) center center no-repeat;
+		background-size:16px;
 		&:hover, &:focus, &:active {
 			background-color:$oe-btn-green;
 			color:rgba(255,255,255,1);
