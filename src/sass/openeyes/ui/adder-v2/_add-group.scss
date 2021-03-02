@@ -3,26 +3,37 @@
 //
 
 .oe-adder {	
-	@include flex( stretch, flex-start );
-	
 	.add-in {
-		
 		@include flex( stretch, flex-start );
 		
 		// group wrapper, contains at least 1 list
 		.a-g {
+			position: relative;
+			@include flex( flex-start, flex-start );
 			// optional title for group
 			h5 {
+				position: absolute;
+				top:-2px;
+				left:6px;
+				right:2px;
+				@include flex( center, flex-start );
+				height:25px;
 				@include font-size(10);
 				color:$oe-text-light;
 				font-weight:$oe-font-medium;
-				padding:0 2px 3px 5px;
+				line-height:1;
 			}
 			
 			@include font-size(12);
 			padding:0 5px; // space the list groups
 			
+			// visually divide groups
 			border-left:2px solid $oe-adder-line;
+			
+			&:first-child{
+				border-left: none;
+			}
+			
 		}
 	}
 	

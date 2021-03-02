@@ -7,12 +7,8 @@
 	.close-i-btn,
 	.add-i-btn {
 		position: absolute;
-		bottom:0;
+		top:100%; // move outside the scrolling list space
 		height:32px; // large button height		
-		
-		// Flex: justify-content (h), align-items (v)
-		@include flex(center, center);
-		
 		cursor: pointer;
 	}
 	

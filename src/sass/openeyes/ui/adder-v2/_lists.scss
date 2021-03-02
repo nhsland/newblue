@@ -1,0 +1,50 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-adder {	
+	// lists <ul> wrapper
+	.a-l {
+		// this handles the overflow
+		height: 100%;
+		overflow: hidden auto;
+		padding:0 5px 0 0; // allows for scroll bars
+		
+		// actual lists <ul>
+		ul {
+			max-width: 400px;
+			
+			// fix the widths
+			&.w-f {
+				li { width: 140px; }
+			}
+			&.w-x {
+				li { width: 250px; }
+			}
+			
+			
+			li {
+				display:list-item;
+				cursor: pointer;
+				padding:3px 8px; // do not change this!
+				margin:0 0 2px 0;
+				word-break: break-word;	// ensure that long clincial words are broken up
+				color:$oe-text;
+				// border-radius:3px;
+				background-color: $oe-adder-option;
+				min-width:60px;		// provide a minimum for things like "No DR"
+			}
+		}
+	}
+	
+	// the group has a header, allow for space for <h5>
+	// 24px allows for 2 lines of header title text
+	.a-g.hd {
+		.a-l {
+			height: calc( 100% - 24px );
+			margin:24px 0 0 0;
+		}
+	}
+	
+}
+
