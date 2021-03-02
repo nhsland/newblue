@@ -22,6 +22,12 @@
 				li { width: 250px; }
 			}
 			
+			// no wrap 
+			&.w-nowrap {
+				li { white-space: nowrap; }
+			}
+			
+			
 			
 			li {
 				display:list-item;
@@ -32,7 +38,18 @@
 				color:$oe-text;
 				// border-radius:3px;
 				background-color: $oe-adder-option;
-				min-width:60px;		// provide a minimum for things like "No DR"
+				min-width:80px;		// provide a minimum for things like "No DR"
+				
+				&:hover, 
+				&:focus {
+					color:#fff;
+					background: $oe-adder-option-hover;  // must override any type styling
+				}
+			
+				&.selected {
+					color:#fff;
+					background:$oe-btn-blue;
+				}
 			}
 		}
 	}
