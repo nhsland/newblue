@@ -13,8 +13,6 @@
 		// use radios or checkboxes
 		// but make them look like <li>
 		fieldset {
-			
-			
 			&.multi {
 				.li { background-image: linear-gradient(to right, $oe-text-light 3px, $oe-adder-option 3px); }
 			}
