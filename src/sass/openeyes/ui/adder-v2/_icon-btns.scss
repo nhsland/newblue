@@ -17,27 +17,21 @@
 		width:40px;
 		background:$oe-btn-blue-hint url( svg-path('icons/remove')) center center no-repeat;
 		background-size:14px;
-		&:hover, &:focus, &:active {
+		&:hover, 
+		&:focus {
 			background-color:$oe-btn-blue;
 		}
 	}
 	
-	// <div>
-	// icon + text message
 	.add-i-btn {
 		left:0;
 		width: calc(100% - 40px);
 		background:$oe-btn-green-hint url( svg-path('icons/plus-bold')) center center no-repeat;
 		background-size:16px;
-		&:hover, &:focus, &:active {
+		&:hover, 
+		&:focus {
 			background-color:$oe-btn-green;
-			color:rgba(255,255,255,1);
 		}
-		
-		@include font-size(13);
-		font-weight:300;
-		color:rgba(255,255,255,0.8);
-		
 	}
 }
 
