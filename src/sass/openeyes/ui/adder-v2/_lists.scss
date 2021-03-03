@@ -14,52 +14,55 @@
 		// but make them look like <li>
 		fieldset {
 			
+			
 			&.multi {
-				.li {
-					background-image: linear-gradient(to right, $oe-text-light 3px, $oe-adder-option 3px);
-				}
+				.li { background-image: linear-gradient(to right, $oe-text-light 3px, $oe-adder-option 3px); }
 			}
+			
+			// fix the widths
+			&.w-f {
+				.li { width: 140px; }
+			}
+			&.w-x {
+				.li { width: 250px; }
+			}
+			// no wrap 
+			&.w-nowrap {
+				.li { white-space: nowrap; }
+			}
+			
+			.li {
+				display: list-item;
+				cursor: pointer;
+				padding:3px 8px; // do not change this!
+				margin:0 0 2px 0;
+				word-break: break-word;	// ensure that long clincial words are broken up
+				color:$oe-text;
+				// border-radius:3px;
+				background-color: $oe-adder-option;
+				min-width: 80px; // provide a minimum for things like "No DR"
+				max-width: 400px;
+			}
+			
 
 			label {
+				// reset the cascade
+				display: block; 
+				white-space: normal; 
 				margin:0;
 				padding:0;
-				max-width: 400px;
-				
-				// fix the widths
-				&.w-f {
-					li { width: 140px; }
-				}
-				&.w-x {
-					li { width: 250px; }
-				}
-				
-				// no wrap 
-				&.w-nowrap {
-					li { white-space: nowrap; }
-				}
 				
 				> input[type="radio"],
 				> input[type="checkbox"] {
 					display: none;
 					// CSS magic '+' next sibling! 
 					+ .li {
-						display:list-item;
-						cursor: pointer;
-						padding:3px 8px; // do not change this!
-						margin:0 0 2px 0;
-						word-break: break-word;	// ensure that long clincial words are broken up
-						color:$oe-text;
-						// border-radius:3px;
-						background-color: $oe-adder-option;
-						min-width:80px;		// provide a minimum for things like "No DR"
-						
 						&:hover, 
 						&:focus {
 							color:#fff;
 							background: $oe-adder-option-hover;  // must override any type styling
 						}
 					}
-					
 					&:checked + .li {
 						color:#fff;
 						background:$oe-btn-blue;
