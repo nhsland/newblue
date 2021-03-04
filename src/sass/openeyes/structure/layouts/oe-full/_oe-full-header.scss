@@ -26,8 +26,8 @@
 			text-transform: capitalize;
 		}
 		
-		&.allcaps {
-			text-transform: uppercase;
+		&.nocaps {
+			text-transform: none;
 		}
 
 		b, strong {
