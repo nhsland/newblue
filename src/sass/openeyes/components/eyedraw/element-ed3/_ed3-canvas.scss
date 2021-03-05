@@ -21,6 +21,7 @@
 		// change the ed3 canvas layout
 		.ed3 {
 			.ed3-canvas {
+				
 				@include flex(flex-start, center);
 			}
 		}
@@ -29,10 +30,7 @@
 	.ed3 {
 		// wrapper for both canvases
 		.ed3-canvas {
-			// canvas area for front and side
-			// should always occupy same area
-			// even if no side view:
-			width:335px; 
+			
 			
 			@include flex(flex-start, space-between);	
 			// .ed3-front {} 	// 200 x 200

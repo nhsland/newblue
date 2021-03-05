@@ -17,7 +17,7 @@
 		// if ED3 is full width element 
 		.ed3 {
 			.ed3-data-stack {
-				width:440px; // this is a guess, it allows for the surgeon orientation  
+				flex:1; 
 				margin:0 0 0 15px;
 			}
 		}
@@ -30,7 +30,7 @@
 			// when used on R / L sides the data needs to be restricted
 			// so that it anchors to the right (if there is only 1 canvas)
 			// it won't stretch and will always be in the same place
-			width:180px; // fixed.
+			flex:1;
 			
 			@include font-size(10);
 			font-weight:500;
