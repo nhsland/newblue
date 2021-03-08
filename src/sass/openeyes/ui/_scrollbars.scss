@@ -6,7 +6,8 @@
 // Chrome & Safari... (make it Appy!)
 
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
+    height: 5px;
 }
 ::-webkit-scrollbar-track {  
 	background: tint( $html-bg,10 );

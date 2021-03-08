@@ -12,20 +12,20 @@
 					// JS needs this to use Event delegation pattern
 					pointer-events: none;
 					
-					.a,.b,.c,.e,.f {
+					.a,.b,.c,.e,.f,.g,.h {
 						fill:none;
 						stroke: $oe-text-light;
 					}
 					.eb {
 						fill: $oe-text-light; // eyebrows
 					}
-					.a,.b,.c { 
+					.a,.b,.c,.g,.h { 
 						stroke-miterlimit:10;
 					}
 					.a {
 						stroke-width:6px;
 					}
-					.b,.e,.f { 
+					.b,.e,.f,.h { 
 						stroke-linecap:round;
 					}
 					.b,.c,.e {
@@ -36,8 +36,11 @@
 					}
 					.e,.f {
 						stroke-linejoin:round;
-					}.f{
+					}.f {
 						stroke-width:4px;
+					}
+					.g,.h { 
+						stroke-width:0.5px;
 					}
 				}
 				
