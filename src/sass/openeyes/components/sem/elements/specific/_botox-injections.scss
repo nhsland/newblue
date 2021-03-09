@@ -48,18 +48,38 @@
 					position: absolute;
 					pointer-events: none;
 					
-					@include flex( flex-end, flex-end );
-					height:28px;
-					width:40px;
-					padding:4px;
+					@include flex( center, center );
+					height:24px;
+					width:24px;
+					color: $oe-text-active;
+					background: rgba( $oe-sem-element-bg, 0.5 );
+					border-radius: 50%;
 					
-					background: rgba($oe-highlighter, 0.5) url( svg-path('icons/_classic/injection')) left 2px center no-repeat;
-					background-size:24px;
-					border-radius: 15px 15px 15px 0; 
+					@include font-size(15);
+					font-weight: 700; 
 					
-					color: #000;
-					@include font-size(14);
-					font-weight:700;
+					.agent {
+						position: absolute;
+						top:4px;
+						left:19px;
+						@include font-size(10);
+						background: rgba( $oe-sem-element-bg, 0.5 );
+						padding:1px;
+					}
+					
+					&::after {
+						content: '';
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						transform: translate(-9px, 9px);
+						width: 18px;
+						height: 18px; 
+						background: rgba($oe-highlighter, 0.7) url( svg-path('icons/_classic/remove')) center center no-repeat;
+						background-size:14px;
+						border-radius: 50%;
+												
+					}
 					
 					
 				}

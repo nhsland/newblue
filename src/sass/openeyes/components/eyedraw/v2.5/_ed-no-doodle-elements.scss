@@ -7,11 +7,11 @@
 
 .ed2-no-doodle-elements {
 	margin:1px 0 1px 0;
-	padding:0 0 2px 3px;
-	background: $oe-ed2-panel;
+	
 	
 	// ul
 	.no-doodles {
+		background: $oe-ed2-panel;
 		li {
 			display:inline-flex;
 			align-items: center;
