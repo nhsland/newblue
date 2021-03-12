@@ -1,0 +1,55 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.main-event {
+	.element {
+		.btx-inj {
+			.inj-marker {
+				position: absolute;
+				pointer-events: none;
+				height:30px;
+				
+				color: $oe-text-active;
+				background: rgba( $oe-sem-element-bg, 0.9 );
+				padding:0 1px 8px 2px;
+				
+				@include font-size(12);
+				font-weight: 500; 
+				line-height:1;
+					
+				.agent {
+					@include font-size(9);
+					font-weight: 400; 	
+				}
+					
+				// just for editing, need to know which is which
+				.inj-num {
+					position: absolute;
+					top:100%;
+					left:11px;
+					transform: translateY(-5px);
+					@include font-size(10);
+					font-weight: 700;
+					color: $oe-text;
+				}
+					
+				// X marks the injection position
+				&::after {
+					content: '';
+					position: absolute;
+					z-index: 1;
+					left: 0;
+					bottom: 0;
+					transform: translate(-9px, 9px);
+					width: 18px;
+					height: 18px; 
+					background: $oe-highlighter url( svg-path('icons/_classic/remove')) center center no-repeat;
+					background-size:14px;
+					border-radius: 50%;
+											
+				}
+			}
+		}
+	}
+}

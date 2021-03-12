@@ -1,0 +1,23 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.main-event {
+	.element {
+		.btx-inj {
+			position: relative;
+			
+			.btx-muscles {
+				position: absolute;
+				z-index:2;
+				
+				@include flex( center, center );
+				
+				background: rgba( $oe-sem-element-bg, 0.9 );
+				padding:1px 4px;
+				border-bottom: 1px solid $oe-line;
+				
+			}			
+		}
+	}
+}
