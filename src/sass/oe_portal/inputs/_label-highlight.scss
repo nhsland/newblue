@@ -97,7 +97,7 @@ label {
 				display: none;
 				// CSS magic '+' next sibling! 
 				&:checked + .checkbox-btn {
-					background: var(--input-blue) var(--i-tick-chunky) center center no-repeat;
+					background: var(--input-blue) var(--i-white-tick-chunky) center center no-repeat;
 					background-size:19px;
 					border-color: var(--input-blue);
 				}
