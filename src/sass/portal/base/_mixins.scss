@@ -1,0 +1,71 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Create REM font-sizes. based on 16px base font-size
+// @access public
+// @param {sizePixel} $sizePixel - size as px
+@mixin font-size($sizePixel) {
+  font-size: ($sizePixel / 16) + rem;
+}
+
+// specific device sizes: iphone 8+ is 414px
+// but actuall UI fails below 600px (Galaxy Tab)
+@mixin phone(){
+	@media only screen 
+		and (max-width: 590px ){
+		@content;
+	}
+}
+
+// landscape - need to be carefully here. 
+// target smartphones using height and width 
+@mixin phone-landscape(){
+	@media only screen 
+		and (orientation: landscape)
+		and (max-height: 420px )
+		and (max-width: 900px ){
+		@content;
+	}
+}
+
+// some settings need to be applied to both of the above
+@mixin phone-all(){
+	@media only screen 
+		and (max-width: 590px ){
+		@content;
+	}
+	@media only screen 
+		and (orientation: landscape)
+		and (max-height: 420px )
+		and (max-width: 900px ){
+		@content;
+	}
+}
+
+
+
+// specific device sizes: Galaxy Tab 3 is 800px
+@mixin tablet(){
+	@media only screen 
+		and (max-width: 801px ){
+		@content;
+	}
+}
+
+
+
+// ------------------------------ Patterns
+// Flex
+// vertical | horizontal
+@mixin flex($v,$h){
+	display:flex;
+	justify-content: $h;
+	align-items: $v;	
+}
+
+@mixin inline-flex($v,$h){
+	display:inline-flex;
+	justify-content: $h;
+	align-items: $v;	
+}

@@ -4,7 +4,8 @@
 
 // for icon buttons see "i-btn";
 .oe-portal {
-	@include buttons {
+	
+	.button, button {
 		@include flex( center, center );
 		
 		// Don't let button text wrap

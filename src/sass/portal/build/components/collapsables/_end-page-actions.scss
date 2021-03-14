@@ -14,7 +14,8 @@
 		border-top: 4px solid var(--gui-line);
 		
 		// for single buttons
-		@include buttons {
+		button,
+		.button {
 			width: 66%;
 			margin:0 auto;
 			@include phone(){
@@ -30,7 +31,9 @@
 			@include tablet(){
 				display:block;
 			}
-			@include buttons {
+			
+			button, 
+			.button {
 				flex: 1;
 				margin: 0 5%;
 				

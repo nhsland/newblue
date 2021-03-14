@@ -4,17 +4,16 @@
 
 @charset "UTF-8";
 
-@import 'style_portal_fonts'; // local host for Roboto https://fonts.google.com/specimen/Roboto 
+@import 'style_fonts'; // local host for Roboto https://fonts.google.com/specimen/Roboto 
 
 // Based on HTML5 Boilerplate v4.3.0
 @import 'base/mixins'; 		// mixins 
 @import "base/resets";		// reset (selected normalize)
 @import "base/h5bp";		// H5BP, some opinionated defaults 
 @import "base/grid";		// Simple grid layout 
-
 @import "base/keyframes";	// Keyframes
 
-/* OpenEyes Portal  */
-@import "oe_portal/_config-all"; 	
-@import "oe_portal/_config-theme";  	
-@import "oe_portal/_all"; 				
+/* OpenERS Portal  */
+@import "build/_config-all"; 	
+@import "build/_config-theme";  	
+@import "build/_all"; 				

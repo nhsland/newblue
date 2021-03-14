@@ -27,7 +27,7 @@ const paths = {
 		watch: 		'./src/sass/**/*.{scss,sass}',		
 	},
 	portal: {
-		all: 		'./src/sass/style_portal.scss',
+		all: 		'./src/sass/portal/style_portal.scss',
 	},
 	dist: {
 		css: 		'./css/',
