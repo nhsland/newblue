@@ -58,7 +58,7 @@ header {
 						background: var(--btn-base);
 						padding: 2px 5px;
 						&:hover {
-							border-bottom: 2px solid rgba( var(--text-base), 0.8);
+							border-bottom: 2px solid var(--text-base);
 						}
 					}
 					
