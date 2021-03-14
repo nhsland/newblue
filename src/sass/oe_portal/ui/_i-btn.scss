@@ -12,17 +12,17 @@
 			
 			// "..." icon
 			&.more {
-				background: var(--btn-base) var(--i-more-h) center center no-repeat;
+				background: var(--btn-base) var(--i-white-more-h) center center no-repeat;
 				background-size:19px;
 			}
 			
 			&.expand {
-				background: var(--btn-base) var(--i-increase-height) center center no-repeat;
+				background: var(--btn-base) var(--i-white-increase-height) center center no-repeat;
 				background-size:17px;
 			}
 			
 			&.contract {
-				background: var(--btn-base) var(--i-reduce-height) center center no-repeat;
+				background: var(--btn-base) var(--i-white-reduce-height) center center no-repeat;
 				background-size:17px;
 			}
 			
