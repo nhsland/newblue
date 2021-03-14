@@ -15,6 +15,7 @@
 // ---- Backgrounds
 $bg:(
 	"html": rgb(23,20,20),
+	"popup": rgba(23,20,20,0.8),
 	"anchor": rgb(0, 80, 120),
 	"one": rgb(43,40,40),
 	"shadow": rgba(0,0,0,0.5)
@@ -22,6 +23,7 @@ $bg:(
 
 $bg-light:(
 	"html": rgb(233,230,230),
+	"popup": rgba(233,230,230,0.8),
 	"anchor": rgb(170,240,255),
 	"one": rgb(203,200,200),
 	"shadow": rgba(55,50,50,0.4)
@@ -60,12 +62,14 @@ $font-weight-light:(
 // ---- GUI
 $gui:(
 	"spinner": rgb(0,200,255),
-	"line": rgb(53,50,50)	
+	"line": rgb(53,50,50),	
+	"hardline": rgb(83,80,80),
 );
 
 $gui-light:(
 	"spinner": rgb(0,0,255),
-	"line": rgb(193,190,190)	
+	"line": rgb(193,190,190),	
+	"hardline": rgb(153,150,150),
 );
 
 // ---- Buttons 

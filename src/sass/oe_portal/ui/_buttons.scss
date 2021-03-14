@@ -42,10 +42,12 @@
 		}
 		
 		&:disabled {
-			cursor:default;
-			color: rgba( var(--btn-text), 0.5) !important; // priority over "green" or "red"
-			background-color: var(--btn-disabled) !important;
 			pointer-events: none; // disable pseudos
+			cursor:default;
+			color: var(--btn-text) !important; // priority over "green" or "red"
+			background-color: var(--btn-disabled) !important;
+			opacity:0.5;
+			
 		}
 		
 		// a little UI help to improve accessibility	
