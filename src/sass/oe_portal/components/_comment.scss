@@ -12,7 +12,7 @@
 	.charcounter {
 		margin: 8px 0 0 4px;
 		@include font-size(12);
-		font-weight: $font-medium;
-		color: $text-light; 
+		font-weight: var(--font-medium);
+		color: var(--text-light); 
 	}
 }

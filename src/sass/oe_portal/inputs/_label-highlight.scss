@@ -29,13 +29,13 @@ label {
 		}
 		
 		&.urgent {
-			color: $text-urgent;
-			font-weight: $font-bold;
+			color: var(--text-urgent);
+			font-weight: var(--font-bold);
 		}
 		
 		&.good {
-			color: $text-good;
-			font-weight: $font-bold;
+			color: var(--text-good);
+			font-weight: var(--font-bold);
 		}
 		
 		
@@ -50,12 +50,12 @@ label {
 		
 		border-radius: 5px;
 		cursor:pointer;
-		color:$user-input-text;
-		background:$user-inputs-hint;
+		color:var(--input-text);
+		background:var(--input-label);
 		
 		&:hover, 
 		&:focus {
-			background:$user-inputs;
+			background:var(--input-base);
 			input {
 				opacity:1;
 			}
@@ -69,8 +69,8 @@ label {
 				display: none;
 				// CSS magic '+' next sibling! 
 				&:checked + .radio-btn {
-					background-color: $user-input-blue;
-					border-color: $user-input-blue;
+					background-color: var(--input-blue);
+					border-color: var(--input-blue);
 				}
 			}
 			
@@ -84,7 +84,7 @@ label {
 				padding: 3px;
 				background-color: rgba(120,120,120,0.2);
 				background-clip: content-box;
-				border: 2px solid $text-light;
+				border: 2px solid var(--text-light);
 				border-radius: 50%;
 			}
 		}
@@ -97,9 +97,9 @@ label {
 				display: none;
 				// CSS magic '+' next sibling! 
 				&:checked + .checkbox-btn {
-					background: $user-input-blue url( svg-icon-path('tick-chunky')) center center no-repeat;
+					background: var(--input-blue) var(--i-tick-chunky) center center no-repeat;
 					background-size:19px;
-					border-color: $user-input-blue;
+					border-color: var(--input-blue);
 				}
 			}
 			
@@ -113,7 +113,7 @@ label {
 				padding: 1px;
 				background: rgba(120,120,120,0.2);
 				background-clip: content-box;
-				border: 2px solid $text-light;
+				border: 2px solid var(--text-light);
 			}
 		}
 		

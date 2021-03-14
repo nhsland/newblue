@@ -13,7 +13,7 @@ header {
 		right: $menu-btn; 
 		transform: translateY( -50% );
 		padding: 8px 20px;
-		border-left: 3px solid $text-light;
+		border-left: 3px solid var(--text-light);
 		
 		@include tablet(){
 			left: $logo-area-tablet;
@@ -29,7 +29,7 @@ header {
 			left: 8px;
 			right: 10px; 
 			padding: 1px 5px 0 10px;
-			border-left: 2px solid $line;
+			border-left: 2px solid var(--gui-line);
 		}
 	}
 }

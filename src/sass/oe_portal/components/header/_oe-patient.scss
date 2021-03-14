@@ -35,7 +35,7 @@
 		display:inline-block;
 		@include font-size(14);
 		padding:0 5px;
-		border-left:1px solid $line;
+		border-left:1px solid var(--gui-line);
 		
 		@include tablet(){
 			@include font-size(12);

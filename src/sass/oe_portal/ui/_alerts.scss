@@ -8,8 +8,8 @@
 		margin:5px 0;
 	
 		// default
-		color: $text-invert;
-		background: $text;
+		color: var(--text-invert);
+		background: var(--text-base);
 		border-radius:5px;
 		
 		@include font-size(14);
@@ -20,23 +20,23 @@
 		
 		&.info {
 			color: $alert-text-color;
-			background: $oe-alert-grey;
+			background: var(--alert-grey);
 		}
 		
 		&.success {
 			color: $alert-text-color;
-			background: $oe-alert-green;
+			background: var(--alert-green);
 		}
 		
 		&.issue {
 			color: $alert-text-color;
-			background:$oe-alert-orange;
+			background:var(--alert-orange);
 		}
 		
 		&.warning,
 		&.error {
 			color: $alert-text-color;
-			background: $oe-alert-red;
+			background: var(--alert-red);
 		}
 		
 		p {

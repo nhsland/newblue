@@ -6,7 +6,7 @@
 
 h2 {
 	@include font-size(32); 
-	font-weight: $font-light;
+	font-weight: var(--font-light);
 	line-height: 1.4;
 	margin:0 0 40px 0;
 	
@@ -23,7 +23,7 @@ h2 {
 
 h3 {
 	@include font-size(20);
-	font-weight: $font-light;
+	font-weight: var(--font-light);
 	line-height: 1.4;
 	margin:0 0 10px 0;
 	
@@ -32,16 +32,16 @@ h3 {
 	}
 	
 	small {
-		color: $text-light; 
+		color: var(--text-light); 
 	}
 }
 
 h4 {
 	@include font-size(18);
-	font-weight: $font-medium;
+	font-weight: var(--font-medium);
 	line-height: 1.4;
 	margin:0 0 10px 0;
-	color: $text-light;
+	color: var(--text-light);
 }
 
 h5,
@@ -50,8 +50,8 @@ p,
 address {
 	@include font-size(16); // 1rem
 	font-style: normal;
-	font-weight: $font-medium;
-	color: $text-light;
+	font-weight: var(--font-medium);
+	color: var(--text-light);
 	line-height: 1.4;
 	margin:0 0 10px 0;
 }
@@ -62,7 +62,7 @@ h5 {
 
 // set weighting (depends on theme) 
 strong, b {
-	font-weight:$font-bold;
+	font-weight:var(--font-bold);
 }
 
 // used to de-emphasis
@@ -73,8 +73,8 @@ strong, b {
 
 // Urgent text	
 .urgent-text {
-	color: $text-urgent;
-	font-weight: $font-bold;
+	color: var(--text-urgent);
+	font-weight: var(--font-bold);
 }
 
 // horizontal "tab" space

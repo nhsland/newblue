@@ -7,13 +7,13 @@
 input, 
 textarea {
 	&::-webkit-input-placeholder { 
-		color:$input-placeholder; // Chrome
+		color:var(--input-placeholder); // Chrome
 	}
 	&:-ms-input-placeholder { // IE 10+ 
-	  	color:$input-placeholder;
+	  	color:var(--input-placeholder);
 	}
 	&::placeholder {
-		color:$input-placeholder; // Future?
+		color:var(--input-placeholder); // Future?
 	}
 	
 	&:disabled {

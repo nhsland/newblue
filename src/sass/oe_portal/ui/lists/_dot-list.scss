@@ -21,7 +21,7 @@ ul {
 			margin: 3px 6px;
 			padding:0 0 0 18px;
 			
-			background: transparent url(svg-path( 'ui/list-dot' )) left center no-repeat;
+			background: transparent var(--i-ui-list-dot) left center no-repeat;
 			background-size:6px;
 			
 			// stack the list on a phone

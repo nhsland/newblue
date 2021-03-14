@@ -17,6 +17,6 @@ textarea {
 	
 	// dull out the readonly fields
 	&:read-only { 
-    	background-color: rgba($user-inputs,0.75);
+    	background-color: rgba(var(--input-base),0.75);
 	}
 }

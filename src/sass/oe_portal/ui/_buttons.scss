@@ -22,10 +22,10 @@
 		
 		// default button is blue
 		@include font-size(16);
-		color: $btn-text;
+		color: var(--btn-text);
 		
 		// use background-colour because of icon buttons (i-btn)
-		background-color: $btn-default;
+		background-color: var(--btn-base);
 		
 		&.small {
 			height: auto;
@@ -38,13 +38,13 @@
 		// need to override some things on anchors
 		text-decoration: none;
 		&:visited {
-			color: $btn-text; 
+			color: var(--btn-text); 
 		}
 		
 		&:disabled {
 			cursor:default;
-			color: rgba( $btn-text, 0.5) !important; // priority over "green" or "red"
-			background-color: $btn-disabled !important;
+			color: rgba( var(--btn-text), 0.5) !important; // priority over "green" or "red"
+			background-color: var(--btn-disabled) !important;
 			pointer-events: none; // disable pseudos
 		}
 		
@@ -54,42 +54,42 @@
 		&:hover, 
 		&:focus {
 			border-color: rgba( 200,200,200, 0.5);
-			background-color: $btn-default; // otherwise <a> styles will take over here
+			background-color: var(--btn-base); // otherwise <a> styles will take over here
 		}
 		
 		&:active,
 		&.selected {
-			background-color: shade( $btn-default, 50 );
+			background-color: var(--btn-base-hover);
 		}	
 		
 		// primary actions
 		&.green {
-			color: $btn-text;
-			background-color: $btn-green;
+			color: var(--btn-text);
+			background-color: var(--btn-green);
 			&:hover, 
 			&:focus, {
-				background-color: shade( $btn-green, 20 );
+				background-color: var(--btn-green-hover);
 			}
 			&:active{
-				background-color: shade( $btn-green, 50 );
+				background-color: var(--btn-green-active);
 			}
 		}
 		
 		&.red {
-			color: $btn-text;
-			background-color: $btn-red;
+			color: var(--btn-text);
+			background-color: var(--btn-red);
 			&:hover, 
 			&:focus, {
-				background-color: shade( $btn-red, 10 );
+				background-color: var(--btn-red-hover);
 			}
 			&:active{
-				background-color: shade( $btn-red, 40 );
+				background-color: var(--btn-red-active);
 			}
 		}
 		
 		&.logout {
-			color: $text-invert;
-			background-color: $text;
+			color: var(--text-invert);
+			background-color: var(--text-base);
 			font-weight: 700;
 		}
 	}

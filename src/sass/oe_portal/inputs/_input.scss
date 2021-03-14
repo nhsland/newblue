@@ -16,7 +16,7 @@ input {
 	// add SEARCH icon to input	
 	&.search {
 		padding-left:32px;
-		background: $user-inputs url( svg-path('ui/search')) left 5px center no-repeat;
+		background: var(--input-base) var(--i-ui-search) left 5px center no-repeat;
 		background-size: 18px;
 	}
 	

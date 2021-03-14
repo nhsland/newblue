@@ -85,7 +85,7 @@
 					margin:0 0 30px 0; 
 					padding-bottom: 30px; // be specific, see eye-inputs!
 					&:first-child {
-						border-bottom: $text-light solid 3px;
+						border-bottom: var(--text-light) solid 3px;
 					}
 					
 				}

@@ -10,7 +10,7 @@ ul {
 			
 			// match <table> styling
 			padding:10px 5px;
-			border-top:1px dotted $line;
+			border-top:1px dotted var(--gui-line);
 			&:first-child { 
 				border-top: none;
 			}

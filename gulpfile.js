@@ -27,8 +27,7 @@ const paths = {
 		watch: 		'./src/sass/**/*.{scss,sass}',		
 	},
 	portal: {
-		dark: 		'./src/sass/style_portal_dark.scss',
-		light: 		'./src/sass/style_portal_light.scss',
+		all: 		'./src/sass/style_portal.scss',
 	},
 	dist: {
 		css: 		'./css/',
@@ -160,16 +159,10 @@ var eyedrawCSS = function(){
 /*
 Portal
 */
-var portalDarkCSS = function () {
+var portalCSS = function () {
 	return minifyCSS( 	paths.dist.portal,
-						paths.portal.dark, 
-						config.portal + '_dark.min.css');
-};
-
-var portalLightCSS = function () {
-	return minifyCSS( 	paths.dist.portal,
-						paths.portal.light, 
-						config.portal + '_light.min.css');
+						paths.portal.all, 
+						config.portal + '.min.css');
 };
 
 
@@ -298,7 +291,7 @@ var watchCSS = function(done){
 }
 
 var portalWatchCSS = function(done){
-	watch(paths.src.watch, series(exports.buildPortalCSS));
+	watch(paths.src.watch, series( portalCSS ));
 	done();
 }
 
@@ -320,9 +313,6 @@ exports.svg = series(cleanDist, optimiseSVG);
 // Build all OE CSS files: "gulp buildCSS"
 exports.buildCSS = parallel( proCSS, classicCSS, printCSS );
 
-// Build all OE CSS files: "gulp buildCSS"
-exports.buildPortalCSS = parallel( portalDarkCSS, portalLightCSS );
-
 // Build Event sprite sheet and then update all CSS files
 exports.eventIcons = series( buildEventIcons, exports.buildCSS );
 
@@ -330,7 +320,7 @@ exports.eventIcons = series( buildEventIcons, exports.buildCSS );
 exports.eyedrawIcons = series( buildEyedrawIcons, eyedrawCSS, exports.buildCSS);
 
 // Build OE Portal
-exports.portal = series( exports.buildPortalCSS, portalWatchCSS );
+exports.portal = series( portalCSS, portalWatchCSS );
 
 // Default task: "gulp"
 exports.default = series( exports.buildCSS, watchCSS );

@@ -13,7 +13,7 @@
 		margin:0 5% 20px 0; // needs a bit of breathing space (5%)
 		padding: 20px;
 		border-radius: 10px;
-		background: $bg2;
+		background: var(--bg-one);
 		
 		h4 {
 			@include font-size(20);
@@ -27,7 +27,7 @@
 			right: 10px;
 			@include font-size(14);
 			font-weight: 400;
-			color: $text-light;
+			color: var(--text-light);
 		}
 		
 		.message {

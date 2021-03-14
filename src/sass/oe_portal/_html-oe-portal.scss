@@ -3,14 +3,14 @@
 //
 
 html {
-	background: $html-bg;
+	background: var(--bg-html);
 	// default base font-size, 
 	// fixing this to ensure greater control of UI display.
 	// all fonts are set relative to this (rem)
 	font-family: $font-stack;
 	font-size: 16px;  
 	font-weight: 400;
-	color: $text;
+	color: var(--text-base);
 	
 	@include phone(){
 		font-size: 14px; // reduce base font (all fonts are in REM)
@@ -19,7 +19,7 @@ html {
 
 // body
 .oe-portal {
-	background: $html-bg;
+	background: var(--bg-html);
 	margin:0;
 	padding:$header-height 0 0 0; // allow for fixed header space
 	

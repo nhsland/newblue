@@ -14,7 +14,7 @@
 		height: calc( 100vh - #{$header-height});
 		margin:0;
 		padding:0;	
-		background: $bg2;
+		background: var(--bg-one);
 		
 		@include phone-landscape(){
 			top: #{ $header-height - $phone-landscape-adjust };
@@ -68,7 +68,7 @@
 			right:0; 
 			text-align: center;
 			@include font-size(11);
-			color: $text-light;
+			color: var(--text-light);
 		}
 	}
 }

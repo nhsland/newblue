@@ -9,7 +9,7 @@ header {
 	left: 0;
 	width: 100vw;
 	height: $header-height;
-	background: $bg2;
+	background: var(--bg-one);
 	
 	// smartphones, in landscape need this a bit smaller
 	@include phone-landscape(){
@@ -17,7 +17,7 @@ header {
 	}
 	
 	// soften the border (this also helps with content scroll)
-	box-shadow: 0 6px 10px 0 $hd-shadow; 
+	box-shadow: 0 6px 10px 0 var(--bg-shadow); 
 	
 }
 

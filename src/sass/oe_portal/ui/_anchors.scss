@@ -5,20 +5,20 @@
 .oe-portal {
 	
 	a {
-		color: $a-text;
+		color: var(--text-base);
 		background: none;
 		text-decoration: underline;
 		border:0;
 		outline:0; // remove glow effect
 		
 		&:active {
-			color: $btn-text;
-			background: shade( $btn-default, 30 );
+			color: var(--btn-text);
+			background: var(--btn-base-hover);
 			text-decoration: none;
 		}	
 		
 		&:visited {
-			color: $text;
+			color: var(--text-base);
 			background: none;
 			text-decoration: none;
 		}
@@ -26,8 +26,8 @@
 		// needs to be last...
 		&:hover, 
 		&:focus {
-			color: $text;
-			background: $a-bg;
+			color: var(--text-base);
+			background: var(--bg-anchor);
 			text-decoration: none;
 		}
 		

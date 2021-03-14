@@ -24,12 +24,4 @@ $details-font-size: 85%;
 $z-loader: 150;
 $z-logo: 100;	
 $z-header: 50; 	
-
-// general svg icon path
-@function svg-icon-path($svg){
-	@return "./assets/svg/in-css/icons/" + $svg + ".svg";
-}		
-// svgs
-@function svg-path($svg){
-	@return "./assets/svg/in-css/" + $svg + ".svg";
-}	
+	

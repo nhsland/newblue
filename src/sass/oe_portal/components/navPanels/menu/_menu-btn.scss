@@ -13,7 +13,7 @@
 		height: $header-height;
 		cursor: pointer;
 		// classic menu 
-		background: transparent url( svg-icon-path-theme('menu')) center center no-repeat;
+		background: transparent var(--i-menu) center center no-repeat;
 		background-size: 36px;
 		opacity: 0.5;
 		

@@ -24,8 +24,8 @@ table {
 	
 	thead {
 		th {
-			color:$text-light;
-			font-weight: $font-light;
+			color:var(--text-light);
+			font-weight: var(--font-light);
 			padding-bottom: 5px;
 			font-size: 90%;
 		}
@@ -33,7 +33,7 @@ table {
 	
 	tbody {
 		tr {
-			border-top:1px dotted $line;
+			border-top:1px dotted var(--gui-line);
 			&.no-line,
 			&:first-child { 
 				border-top: none;
@@ -47,8 +47,8 @@ table {
 		
 		// use th like a label for a row
 		th { 
-			color:$text-light;		
-			font-weight: $font-light;
+			color:var(--text-light);		
+			font-weight: var(--font-light);
 		}
 	}
 	

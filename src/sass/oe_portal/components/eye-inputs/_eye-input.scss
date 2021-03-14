@@ -18,11 +18,11 @@
 	}
 	
 	.right-eye-inputs {
-		background-image: url( svg-icon-path-theme('lat-R-green'));
+		background-image: var(--i-lat-R-green);
 	}
 	
 	.left-eye-inputs {
-		background-image: url( svg-icon-path-theme('lat-L-red'));
+		background-image: var(--i-lat-L-red);
 	}
 }
 

@@ -8,7 +8,7 @@
 
 .oe-i {
 	display:inline-block;
-	vertical-align: bottom;  // setting this to bottom 
+	vertical-align: bottom;  // I hate vertical-align - setting this to bottom 
 
 	// show interaction
 	cursor:pointer;
@@ -39,11 +39,11 @@
 
 
 	// Risk triangles G / A / R
-	&.triangle-green	{ background-image: url( svg-path('ui/triangle-green')); }
+	&.triangle-green	{ background-image: var(--i-ui-triangle-green); }
 	&.triangle-amber, 
-	&.triangle-orange	{ background-image: url( svg-path('ui/triangle-amber')); }
-	&.triangle-red		{ background-image: url( svg-path('ui/triangle-red')); }
-	&.triangle-grey		{ background-image: url( svg-path('ui/triangle-grey')); }
+	&.triangle-orange	{ background-image: var(--i-ui-triangle-amber); }
+	&.triangle-red		{ background-image: var(--i-ui-triangle-red); }
+	&.triangle-grey		{ background-image: var(--i-ui-triangle-grey); }
 	
 }
 

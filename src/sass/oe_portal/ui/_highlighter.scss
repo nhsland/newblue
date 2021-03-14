@@ -6,7 +6,7 @@
 
 .highlighter {
 	padding: 3px 6px;
-	font-weight: $font-bold;
+	font-weight: var(--font-bold);
 	border-radius: 3px;
 	
 	// this solves an issue with <span> wrapping
@@ -14,24 +14,24 @@
 	display: inline-block;
 
 	&.red {
-		background: $btn-red;
+		background: var(--btn-red);
 		color:rgb(255,255,255);
 	}
 	
 /*
 	&.orange {
-		background: $btn-green;
+		background: var(--btn-green);
 		color:rgb(250,250,250);
 	}
 */
 	
 	&.green {
-		background: $btn-green;
+		background: var(--btn-green);
 		color:rgb(250,250,250);
 	}	
 	
 	&.invert {
-		background: $text;
-		color: $text-invert;
+		background: var(--text-base);
+		color: var(--text-invert);
 	}	
 }

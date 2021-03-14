@@ -17,7 +17,7 @@
 		svg.oe-openers {
 			pointer-events: none;
 			position: absolute; 
-			fill: $text;
+			fill: var(--text-base);
 			opacity: 0.5;
 			
 			$viewportRatio: 0.2201;

@@ -21,12 +21,12 @@ header {
 				display: block;
 				white-space: nowrap;
 				margin: 0 14px 6px 0;
-				color: $text;
+				color: var(--text-base);
 				@include font-size( 14 );
 				opacity: 0.5;
 				
 				padding: 0 14px 0 0;
-				background: transparent url( svg-icon-path-theme('direction-right')) right center no-repeat;
+				background: transparent var(--i-direction-right) right center no-repeat;
 				background-size: 12px;
 			
 				
@@ -43,8 +43,8 @@ header {
 				
 				// 1st step: Title of the process we are stepping through
 				&.process {
-					color:$text-invert;
-					background: $text;
+					color:var(--text-invert);
+					background: var(--text-base);
 					padding: 2px;
 					border-radius: 3px;
 					font-weight: 500;	
@@ -52,13 +52,13 @@ header {
 				
 				&.done {
 					opacity: 0.8;
-					background-image: url( svg-icon-path-theme('tick-chunky'));
+					background-image: var(--i-tick-chunky);
 					a {
-						color:$btn-text;
-						background: $btn-default;
+						color:var(--btn-text);
+						background: var(--btn-base);
 						padding: 2px 5px;
 						&:hover {
-							border-bottom: 2px solid rgba( $text, 0.8);
+							border-bottom: 2px solid rgba( var(--text-base), 0.8);
 						}
 					}
 					

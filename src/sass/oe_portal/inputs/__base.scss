@@ -10,9 +10,9 @@ select {
 	outline:none;
 
 	@include font-size(16);
-	color: $user-input-text;
-	background-color: $user-inputs;
-	border: 2px solid $user-inputs-border;
+	color: var(--input-text);
+	background-color: var(--input-base);
+	border: 2px solid var(--input-border);
 	border-radius: 5px;
 	
 	margin:0;

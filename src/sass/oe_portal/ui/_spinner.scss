@@ -16,8 +16,8 @@
 		margin-top: 0 - ($spinner-large / 2);
 		margin-left: 0 - ($spinner-large / 2);
 		border-radius: 50%;
-		border: 4px solid $oe-spinner;
-		border-top-color: rgba($oe-spinner,0);
+		border: 4px solid var(--gui-spinner);
+		border-top-color: rgba(0,0,0,0);
 		animation: spinner .8s linear infinite;
   }
   
@@ -39,8 +39,8 @@
 		margin-top: 0 - ($spinner-icon / 2);
 		margin-left: 0 - ($spinner-icon / 2);		
 		border-radius: 50%;
-		border: 2px solid $oe-spinner;
-		border-top-color: rgba($oe-spinner,0);
+		border: 2px solid var(--gui-spinner);
+		border-top-color: rgba(0,0,0,0);
 		animation: spinner .8s linear infinite;
   	}	
   } 
@@ -51,11 +51,11 @@
 	margin:auto; /* flex (magic) */ 
 	@include font-size(14);
 	font-weight:400;
-	color:$oe-spinner;
+	color: var(--gui-spinner);
 	position: relative;
 	top: 80px;
 	// make it readable
-	background: rgba( $html-bg, 0.5);
+	background: rgba( var(--bg-html), 0.5);
 	padding: 10px 12px;
 	border-radius: 5px; 
 	
