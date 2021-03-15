@@ -6,10 +6,16 @@
 // Default :root is "dark", JS can add a theme class
 // to <HTML> to change the theme colours e.g. "theme-light"
 
-@mixin cssVars( $group, $list ){
-	@each $type, $prop in $list {
+@mixin cssVars( $group, $map ){
+	@each $type, $prop in $map {
 		--#{$group}-#{$type}: #{$prop};
 	}
+}
+
+// using Vars, use dark (default colours as fallbacks)
+@mixin useVars( $property, $map, $group, $type ){
+	$fallback: map-get($map, $type);
+	#{$property}: var(--#{$group}-#{$type}, #{$fallback});
 }
 
 // ---- Backgrounds
@@ -20,6 +26,7 @@ $bg:(
 	"one": rgb(43,40,40),
 	"shadow": rgba(0,0,0,0.5)
 );
+
 
 $bg-light:(
 	"html": rgb(233,230,230),
@@ -141,7 +148,6 @@ $uiIcons:("list-dot", "search", "triangle-amber", "triangle-blue", "triangle-gre
 
 // *********************
 // CSS custom properties
-// dark ("theme-dark")
 :root {
 	
 	--i-opacity: 0.5; // (same across themes)
@@ -151,10 +157,19 @@ $uiIcons:("list-dot", "search", "triangle-amber", "triangle-blue", "triangle-gre
 	}
 
 	@each $icon in $themedIcons {
-		--i-#{$icon}: url(./assets/svg/in-css/icons/#{$icon}.svg);
 		--i-white-#{$icon}: url(./assets/svg/in-css/icons/#{$icon}.svg); // dark version (fixed icon for use in light themes)
 	}
 
+}
+
+// *********************
+// dark (requires "theme-dark" class) on <HTML>
+html.theme-dark {
+	
+	@each $icon in $themedIcons {
+		--i-#{$icon}: url(./assets/svg/in-css/icons/#{$icon}.svg);
+	}
+	
 	@include cssVars( 'bg', $bg );
 	@include cssVars( 'text', $text );
 	@include cssVars( 'font', $font-weight );
@@ -162,8 +177,8 @@ $uiIcons:("list-dot", "search", "triangle-amber", "triangle-blue", "triangle-gre
 	@include cssVars( 'btn', $btn );
 	@include cssVars( 'alert', $alert );
 	@include cssVars( 'input', $input );
-	
 }
+
 
 // *********************
 // light (requires "theme-light" class) on <HTML>
