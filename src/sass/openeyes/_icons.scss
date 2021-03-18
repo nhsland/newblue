@@ -90,6 +90,11 @@
 	&.circle-orange,			
 	&.circle-red,
 	&.circle-grey,
+	&.flag-green,	// no hover for coloured graphics	
+	&.flag-amber,
+	&.flag-orange,			
+	&.flag-red,
+	&.flag-grey,
 	&.triangle-green,
 	&.triangle-amber,
 	&.triangle-orange,
@@ -269,6 +274,8 @@
 	&.drop				{ @include oe3-icons('drop'); }
 	&.star				{ @include oe3-icons('star'); }
 	&.starline			{ @include oe3-icons('starline'); }
+	&.flag				{ @include oe3-icons('flag'); }
+	&.flagline			{ @include oe3-icons('flagline'); }
 	&.letter-1			{ @include oe3-icons('letter-1'); }
 	&.letter-2			{ @include oe3-icons('letter-2'); }
 	&.letter-in			{ @include oe3-icons('letter-invitation'); }
@@ -323,6 +330,13 @@
 	&.circle-orange		{ background-image: url( svg-path('ui/circle-orange') ); }
 	&.circle-red		{ background-image: url( svg-path('ui/circle-red') ); }
 	&.circle-grey		{ background-image: url( svg-path('ui/circle-grey') ); }
+	
+	// flags G / A / R
+	&.flag-green		{ background-image: url( svg-path('ui/flag-green') ); }
+	&.flag-amber, 
+	&.flag-orange		{ background-image: url( svg-path('ui/flag-orange') ); }
+	&.flag-red			{ background-image: url( svg-path('ui/flag-red') ); }
+	&.flag-grey			{ background-image: url( svg-path('ui/flag-grey') ); }
 	
 	// triangles G / A / R
 	// Patient Risk Status

@@ -52,6 +52,11 @@ table.oe-clinic-list {
 		text-align: left;  // overide default 'middle'
 		font-weight: $oe-font-light;
 		color: $oe-text-light;
+		
+		&:nth-child( 8 ){
+			text-align: center;	// Flag icon
+		} 
+		
 	}
 	
 	// <td>
@@ -64,17 +69,13 @@ table.oe-clinic-list {
 		// time
 		&:first-child{
 			font-weight: $oe-font-bold;
-			width: 90px;
-		}
-		
-		&:nth-child( 2 ){
-			width: 90px; // Hospital Num
+			width: 70px;
 		}
 		
 		// Speciality and Type
-		&:nth-child( 3 ){
+		&:nth-child( 2 ){
 			@include font-size(12); 
-			width:120px;
+			width:110px;
 			padding-right: 20px;
 			
 			small {
@@ -82,29 +83,50 @@ table.oe-clinic-list {
 				color: $oe-text-light;
 				font-weight: $oe-font-bold;
 			}
+			
+		}
+		
+		// DOB
+		&:nth-child( 3 ){
+			width: 100px; 
 		}
 	
 		&:nth-child( 4 ){
-			width: 50px; // PDQ icon
+			width: 245px; // Patient name
 		}
 		
 		&:nth-child( 5 ){
-			width: 290px; // Patient name
+			width: 50px; // PDQ icon
+			.oe-i {
+				width: 40px;
+				height: 40px;
+			}
 		}
 		
-		&:nth-child( 6 ){
-			text-align: center;
-			width: 40px; // Plus
+		// 6 - pathway
+		
+		&:nth-child( 7 ){ // +
+			width: 45px; // Plus
+			.oe-i {
+				width: 40px;
+				height: 40px;
+			}
+		} 
+		&:nth-child( 8 ), // Flags
+		&:nth-child( 9 ){ // Risk
+			width: 40px; 
+			.oe-i {
+				width: 30px;
+				height: 27px;
+			}
 		}
 		
-		// 7 - pathway
-		// 8 - assigned
-		
-		&:nth-child( 9 ){
-			width: 180px; // Wait Duration
-		}
 		
 		&:nth-child( 10 ){
+			width: 120px; // Wait Duration, arrive / DNA 
+		}
+		
+		&:nth-child( 11 ){
 			text-align: center;
 			width: 60px; // Tick
 		}
