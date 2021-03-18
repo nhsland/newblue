@@ -53,8 +53,8 @@ table.oe-clinic-list {
 		font-weight: $oe-font-light;
 		color: $oe-text-light;
 		
-		&:nth-child( 8 ){
-			text-align: center;	// Flag icon
+		&:nth-child( 9 ){
+			padding-left:9px;
 		} 
 		
 	}
@@ -112,8 +112,8 @@ table.oe-clinic-list {
 				height: 40px;
 			}
 		} 
-		&:nth-child( 8 ), // Flags
-		&:nth-child( 9 ){ // Risk
+		&:nth-child( 8 ), // Risk
+		&:nth-child( 9 ){ // Flags
 			width: 40px; 
 			.oe-i {
 				width: 30px;

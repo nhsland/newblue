@@ -30,8 +30,9 @@
 /* Admin notifications */
 @import "admin-notification";					// OE Admin Notifications
 
-/* Training mode */
-@import "training-mode";						// OE in training mode
+/* mode */
+@import "mode-change";							// OE in change mode
+@import "mode-training";						// OE in training mode
 
 /* GUI */
 @import "ui/flex";							// flex layout

@@ -1,0 +1,54 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// Same as training but for upgrades...
+.change-mode {
+	
+	// Make OE logo yellow:
+	.openeyes-brand .oe-logo {
+		.oe-openeyes {
+			fill:#f60;
+			opacity:1;
+		}
+		&.open, 
+		&.active {
+			.oe-openeyes {
+				fill:#f60;
+				opacity:1;
+			}
+		}
+	}
+	
+	// make login 
+	.oe-login .login h1 {
+		//color:#f60;
+	}
+		
+	// increase banner visibility
+	#oe-admin-notifcation {
+		bottom:15px;
+		height:35px;	
+		background:#f60;
+		color:rgb(0,0,0);
+		@include font-size(15);
+		font-weight:500;
+		
+		@include boxshadow();
+		
+		a { 
+			color:rgb(0,0,200); 
+		}
+		
+		#notification-short {
+			opacity:1;
+		}
+		
+		// make icon black rather than white
+		.oe-i.info.pro-theme { 
+			background-image: url( svg-path( "icons/_classic/info" ) );
+		}
+	}
+
+}
+
