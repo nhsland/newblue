@@ -12,13 +12,20 @@
 	// "todo" - default colours ("next")
 	color: $oe-step-text; 
 	background: pink; // flag any in-correct CSS classes!
+	// a little UI help to improve accessibility	
+	border:2px solid transparent;
+	
+	&:hover, 
+	&:focus {
+		border-color: rgba(200,200,200,0.5);
+	}
 	
 	&.todo {
-		background-color: $oe-step-orange;
-		&:hover, 
-		&:focus {
-			background-color: shade( $oe-step-orange, 10 );
-		}
+		background-color: $oe-step-orange;	
+	}
+	
+	&.todo-later {
+		background-color: $oe-step-grey;
 	}
 	
 	&.config {
@@ -28,12 +35,13 @@
 	}
 	
 	&.active { 
-		background-color: $oe-step-yellow; 
+		background-color: $oe-step-blue; 
 	}
 	
 	&.complete,
 	&.done { 
 		background-color: $oe-step-green; 
+		border-radius: 3px;
 	}
 	
 	&.flag { 
@@ -53,7 +61,7 @@
 	&.wait {
 		color: $oe-text-light;
 		background:transparent;
-		border:1px dotted $oe-step-yellow;
+		border:1px solid $oe-step-yellow;
 		padding:3px 6px;
 		.info {
 			color: $oe-text;

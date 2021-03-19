@@ -2,9 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-
-// <ul>
-ul.oe-clinic-filter {
+ul.quick-filters {
 	// inline the list items
 	@include flex( flex-start, flex-start );
 	
@@ -20,7 +18,7 @@ ul.oe-clinic-filter {
 		color:$oe-text-light;
 		
 		.filter {
-			padding: 0 12px;
+			padding: 0 20px;
 			@include font-size(13);
 			
 			// if it's a shortcode JS will expand to show it's fullname
@@ -51,45 +49,5 @@ ul.oe-clinic-filter {
 			pointer-events: none;
 		}
 	}
-	
-	
-	// make use of the adder button, change it blue
-	// changes icons when open as it toggles the panel
-	button.add-to-all {
-		width:60px;
-		background-color: $oe-btn-blue-hint;
-		
-		// add plus icon centered with flex
-		&:after {
-			content: '';
-			height:17px;
-			width:17px;
-			background-image: url( svg-path('icons/plus-bold'));
-			background-size: 17px;
-		}
-		
-		&.open {
-			background-color: $oe-btn-blue-hint;
-			&:after {
-				opacity: 0.7;
-			}
-		}
-		
-		&.close {
-			&:after {
-				transform: rotate(45deg);
-			}
-		}
-		
-		&:hover,
-		&:focus {
-			background-color: $oe-btn-blue;
-			&:after {
-				opacity: 1;
-			}
-		}	
-	}
-
-	
 	
 }

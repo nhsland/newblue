@@ -2,13 +2,6 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Clinic
-
-@import "_base";
-@import "clock";
-@import "table";
-@import "wait-duration";
-@import "pathway";
-@import "filters/_all";
-@import "adder/_all";
-
+.clinic-filters {
+	@include flex( center, flex-end );
+}

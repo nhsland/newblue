@@ -12,17 +12,6 @@
 	color:$oe-text;
 	border-left:1px solid $oe-btn-blue; 
 
-	
-	// when hotlist locks in need to switch to the right
-	@include fix-hotlist(){
-		right: calc( 100vw - #{$oe-extended-browser-size });
-	}
-	
-	// when super wide!... hotlist extends to maximum width
-	@include super-wide(){
-		right: 47vw; // because .oe-full-content is now set at 53vw
-	}
-
 	// User CSS Animation.
 	display: none;
 	justify-content: space-between;
@@ -33,5 +22,16 @@
 		display: flex;
 		animation: 0.2s ease-out forwards fadein;
 		right:0;
+		
+		// when hotlist locks in need to switch to the right
+		@include fix-hotlist(){
+			right: calc( 100vw - #{$oe-extended-browser-size });
+		}
+		
+		// when super wide!... hotlist extends to maximum width
+		@include super-wide(){
+			right: 35vw; // because .oe-full-content is now set at 65vw
+		}
+		
 	}
 }
