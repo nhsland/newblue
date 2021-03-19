@@ -7,13 +7,24 @@
 // <span>
 .oe-pathstep-btn {	
 	
+	&.buff,  // buff notes / assigned person
 	&.arrive, 
 	&.finish {
 		border-radius:9px;
-		padding:2px 6px;
 		color: $oe-text; 
 		background: none;
 		border:2px solid rgba(150,150,150,0.3);
+	}
+	
+	&.buff {
+		margin-left:10px;
+		background: rgba($oe-text,0.1);
+		border-color: transparent;
+		
+		&.unassigned {
+			border-color: $oe-step-orange;
+			background: none;
+		}
 	}
 	
 	.step.i-Arr {

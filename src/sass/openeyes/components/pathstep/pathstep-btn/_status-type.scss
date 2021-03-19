@@ -10,7 +10,7 @@
 .oe-pathstep-btn {
 		
 	// "todo" - default colours ("next")
-	color: $oe-step-text; 
+	color: $oe-text; 
 	background: pink; // flag any in-correct CSS classes!
 	// a little UI help to improve accessibility	
 	border:2px solid transparent;
@@ -20,53 +20,75 @@
 		border-color: rgba(200,200,200,0.5);
 	}
 	
-	&.todo {
-		background-color: $oe-step-orange;	
+
+	&.todo,
+	&.todo-later {
+		color: $oe-text; 
+		background: none;
+		border-color: rgba(150,150,150,0.3);
 	}
 	
-	&.todo-later {
-		background-color: $oe-step-grey;
+	&.todo {
+		border-color: rgba(150,150,150,0.5);
 	}
 	
 	&.config {
-		background: $oe-step-grey url( svg-path('icons/cog')) left 4px top 5px no-repeat;
-		background-size: 13px;
-		padding-left: 22px;	
+		border-color: rgba(150,150,150,0.3);
+		background: url( svg-icon-path-theme('cog')) left 4px top 5px no-repeat;
+		background-size: 11px;
+		padding-left: 20px;	
 	}
 	
 	&.active { 
+		color: $oe-step-text;
 		background-color: $oe-step-blue; 
+		border-radius: 3px;
 	}
 	
 	&.complete,
 	&.done { 
-		background-color: $oe-step-green; 
-		border-radius: 3px;
-	}
-	
-	&.flag { 
-		background-color:$oe-step-red; 
+		color: $oe-step-text;
+		background-color: $oe-step-green;
+		border-radius: 3px;	
+		
+		&.person {
+			.step {
+				background-image: url( svg-path('icons/person'));
+			}
+		}
 	}
 	
 	// person process
 	&.person {
 		.step {
 			padding-left:13px;
-			background: url( svg-path('icons/person') ) center left no-repeat;
-			background-size: 10px;
+			background: url( svg-icon-path-theme('person')) center left no-repeat;
+			background-size: 11px;
 		}
 	}
 	
 	// waiting
 	&.wait {
-		color: $oe-text-light;
-		background:transparent;
-		border:1px solid $oe-step-yellow;
-		padding:3px 6px;
-		.info {
-			color: $oe-text;
+		color: $oe-text;
+		border-color: $oe-step-orange;
+		background: none;
+		border-radius:9px;
+		min-width: 40px; 
+		
+		&.long {
+			color: $oe-step-text;
+			background: $oe-step-orange;
+			border-color: transparent;
+		}
+		
+		.step.i-Wait {
+			display: block;
+			margin:0 0 1px 0; // visually stretch the container to match steps
+			width:13px;
+			height:13px;
+			background: url( svg-icon-path-theme('waiting')) center center no-repeat;
+			background-size: 13px;
 		}
 	}
-	
 }
 

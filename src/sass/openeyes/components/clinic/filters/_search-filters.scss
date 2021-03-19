@@ -6,6 +6,7 @@
 	.search-filters {
 		@include flex( center, flex-start );
 		width: 65vw;
+		margin:0 2px 0 0;
 		
 		input {
 			border-radius: 0;
@@ -19,7 +20,7 @@
 		
 		.group {
 			flex:1;
-			margin:0 2px;
+			margin:0 0 0 1px;
 			select {
 				width: 100%;
 				height: 34px;
