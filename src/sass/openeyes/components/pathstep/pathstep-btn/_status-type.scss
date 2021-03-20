@@ -25,15 +25,15 @@
 	&.todo-later {
 		color: $oe-text; 
 		background: none;
-		border-color: rgba(150,150,150,0.3);
+		border-color: rgba(130,130,130,0.2);
 	}
 	
 	&.todo {
-		border-color: rgba(150,150,150,0.5);
+		border-color: rgba(130,130,130,0.5);
 	}
 	
 	&.config {
-		border-color: rgba(150,150,150,0.3);
+		border-color: rgba(130,130,130,0.2);
 		background: url( svg-icon-path-theme('cog')) left 4px top 5px no-repeat;
 		background-size: 11px;
 		padding-left: 20px;	
