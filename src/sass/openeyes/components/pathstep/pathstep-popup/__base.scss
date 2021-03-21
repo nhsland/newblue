@@ -7,8 +7,6 @@
 	position:fixed; // JS positioned
 	z-index:$oe-z-quicklook;
 	width: 380px;
-	min-height: 100px;
-
 	padding:10px;
 	
 	background:$oe-tooltip-bg;
@@ -17,12 +15,28 @@
 	@include font-size(12);
 	color:$oe-text;
 	
+	// initial state is empty.
+	// JS adds a spinner.
+	// when content is loaded JS works out the height
+	// updates this
+	height: 40px;
+	min-height: 40px;
+	transition: height 0.3s ease-out;
+	
+	// in order to slide open, overflow needs to be hidden
+	// if this is done on the base the arrows (::after) will 
+	// be hidden too! 
+	.slide-open {
+		height:100%;
+		overflow: hidden; // no scrollbars whilst animating
+	}
+	
+	
 	@include boxshadow();
 	
 	// because of the arrow ::after overlapping the button:
 	pointer-events: none;
 
-	
 	// cross icon
 	.close-icon-btn {
 		position: absolute;

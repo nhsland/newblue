@@ -8,6 +8,7 @@
 .oe-pathstep-btn {	
 	
 	&.buff,  // buff notes / assigned person
+	&.stop,
 	&.arrive, 
 	&.finish {
 		border-radius:9px;
@@ -15,6 +16,7 @@
 		background: none;
 		border:2px solid rgba(150,150,150,0.3);
 	}
+	
 	
 	&.buff {
 		margin-left:10px;
@@ -33,6 +35,15 @@
 		width:13px;
 		height:13px;
 		background: url( svg-icon-path-theme('direction-right')) center center no-repeat;
+		background-size: 13px;
+	}
+	
+	.step.i-Stop {
+		display: block;
+		margin:0 0 1px 0; // visually stretch the container to match steps
+		width:13px;
+		height:13px;
+		background: url( svg-icon-path-theme('stop')) center center no-repeat;
 		background-size: 13px;
 	}
 	

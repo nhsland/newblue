@@ -15,14 +15,10 @@
 		// colours... these matches the pathstep (for now)
 		// "todo" - default 'grey' to work across themes
 		color:	$oe-text-light; 
-		border-top:5px solid $oe-step-orange;
-		
-		&.config {
-			border-top-color: $oe-text-highlight;
-		}
+		border-top:5px solid $oe-step-grey;
 		
 		&.active { 
-			border-top-color: $oe-step-yellow; 
+			border-top-color: $oe-step-blue; 
 		}
 		
 		&.complete,

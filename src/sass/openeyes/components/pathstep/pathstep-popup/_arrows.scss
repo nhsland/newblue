@@ -6,7 +6,7 @@
 	$arrowSize: 5px; 
 	// arrow 
 	&.arrow-t {
-		&:after {
+		&::after {
 			content: "";
 			top: #{ 0 - $arrowSize * 2 };
 			right: 1px;
@@ -21,7 +21,7 @@
 	}
 	
 	&.arrow-b {
-		&:after {
+		&::after {
 			content: "";
 			bottom: #{ 0 - $arrowSize * 2 };
 			right: 1px;
