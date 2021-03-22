@@ -14,7 +14,12 @@
 		border-radius:9px;
 		color: $oe-text; 
 		background: none;
-		border:2px solid rgba(150,150,150,0.3);
+		border:2px solid $oe-step-outline;
+		
+		&:hover, 
+		&:focus {
+			border-color: rgba( $oe-step-blue, 0.7);
+		}
 	}
 	
 	

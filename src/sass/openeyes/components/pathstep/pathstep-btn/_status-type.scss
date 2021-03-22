@@ -10,47 +10,57 @@
 .oe-pathstep-btn {
 		
 	// "todo" - default colours ("next")
-	color: $oe-text; 
-	background: pink; // flag any in-correct CSS classes!
-	// a little UI help to improve accessibility	
+	color: $oe-text;
+	// flag any in-correct CSS classes 
+	background: pink; 
+	
+	// all steps have a border for consistent layout	
 	border:2px solid transparent;
 	
-	&:hover, 
-	&:focus {
-		border-color: rgba(200,200,200,0.5);
-	}
 	
-
-	&.todo,
-	&.todo-later {
-		color: $oe-text; 
-		background: none;
-		border-color: rgba(130,130,130,0.2);
-	}
-	
-	&.todo {
-		border-color:  $oe-step-orange;
-	}
-	
+	// --- Outlined steps
+	// Configure is possible first state
 	&.config {
-		border-color: rgba(130,130,130,0.2);
-		background: url( svg-icon-path-theme('cog')) left 4px top 5px no-repeat;
+		border-color: $oe-step-outline;
+		background: $oe-step-outline-bg url( svg-icon-path-theme('cog')) left 4px top 5px no-repeat;
 		background-size: 11px;
 		padding-left: 20px;	
 	}
 	
-	&.active { 
-		color: $oe-step-text;
-		background-color: $oe-step-blue; 
-		border-radius: 3px;
+	// todo or todo-later
+	// essientally the small but "todo" should be used as "todo next"
+	// if turned on as option in admin
+	&.todo-later {
+		background-color: $oe-step-outline-bg;
+		border-color: $oe-step-outline;
+	}
+	&.todo {
+		background: $oe-step-outline-bg;
+		border-color:  $oe-step-orange;
 	}
 	
-	&.complete,
+	&.config,
+	&.todo-later,
+	&.todo {
+		&:hover, 
+		&:focus {
+			border-color: rgba( $oe-step-blue, 0.7);
+		}
+	}
+	
+
+	// --- Solid steps
+	// active then done
+	&.active,
 	&.done { 
 		color: $oe-step-text;
-		background-color: $oe-step-green;
-		border-radius: 3px;	
+		border-radius: 3px;
+		&:hover, 
+		&:focus {
+			border-color: rgba(200,200,200,0.3);
+		}
 		
+		// person icon
 		&.person {
 			.step {
 				background-image: url( svg-path('icons/person'));
@@ -58,7 +68,15 @@
 		}
 	}
 	
-	// person process
+	&.active {
+		background-color: $oe-step-blue; 
+	}
+	
+	&.done {
+		background-color: $oe-step-green;
+	}
+	
+	// person icon (step type)
 	&.person {
 		.step {
 			padding-left:13px;
@@ -66,6 +84,7 @@
 			background-size: 11px;
 		}
 	}
+	
 	
 	// waiting
 	&.wait {

@@ -21,7 +21,7 @@
 	// updates this
 	height: 40px;
 	min-height: 40px;
-	transition: height 0.3s ease-out;
+	transition: height 0.1s ease-out;
 	
 	// in order to slide open, overflow needs to be hidden
 	// if this is done on the base the arrows (::after) will 
