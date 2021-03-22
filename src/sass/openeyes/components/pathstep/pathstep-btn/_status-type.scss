@@ -44,7 +44,7 @@
 	&.todo {
 		&:hover, 
 		&:focus {
-			border-color: rgba( $oe-step-blue, 0.7);
+			border-color: $oe-text-light;
 		}
 	}
 	
