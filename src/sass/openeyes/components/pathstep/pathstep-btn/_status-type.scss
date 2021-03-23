@@ -5,6 +5,8 @@
 // Path path step btn
 // Used in Worklists, Clinic list, etc
 // e.g. PSDs
+// status: config, todo, todo-later, active, done
+// type: person, process
 
 // <span>
 .oe-pathstep-btn {
@@ -60,7 +62,7 @@
 			border-color: rgba(200,200,200,0.3);
 		}
 		
-		// person icon
+		// person icon, needs to be white
 		&.person {
 			.step {
 				background-image: url( svg-path('icons/person'));
@@ -76,36 +78,13 @@
 		background-color: $oe-step-green;
 	}
 	
-	// person icon (step type)
+	// person/ownner icon (step type)
+	&.owner,
 	&.person {
 		.step {
 			padding-left:13px;
 			background: url( svg-icon-path-theme('person')) center left no-repeat;
 			background-size: 11px;
-		}
-	}
-	
-	
-	// waiting
-	&.wait {
-		color: $oe-text;
-		border-color: $oe-step-orange;
-		background: none;
-		border-radius:9px; 
-		
-		&.long {
-			color: $oe-step-text;
-			background: $oe-step-orange;
-			border-color: transparent;
-		}
-		
-		.step.i-Wait {
-			display: block;
-			margin:0 0 1px 0; // visually stretch the container to match steps
-			width:13px;
-			height:13px;
-			background: url( svg-icon-path-theme('waiting')) center center no-repeat;
-			background-size: 13px;
 		}
 	}
 }

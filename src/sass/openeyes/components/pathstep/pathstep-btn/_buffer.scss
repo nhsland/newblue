@@ -2,15 +2,13 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// Buffers: Arr(ived) / Ass(igned) / Fin(ished)
-
 // <span>
 .oe-pathstep-btn {	
 	
-	&.buff,  // buff notes / assigned person
-	&.stop,
-	&.arrive, 
-	&.finish {
+	// Buffers: 
+	// // status: buff
+	// type: arrive, wait, finish, auto-finish, owner
+	&.buff {
 		border-radius:9px;
 		color: $oe-text; 
 		background: none;
@@ -22,43 +20,54 @@
 		}
 	}
 	
-	
-	&.buff {
+	// pathway owner column
+	&.owner {
 		margin-left:10px;
-		background: rgba($oe-text,0.1);
+		background-color: rgba($oe-text,0.1);
 		border-color: transparent;
+	}
+	
+	// waiting
+	&.wait {
+		color: $oe-text;
+		border-color: $oe-step-orange;
+		background: none;
+		border-radius:9px; 
 		
-		&.unassigned {
-			border-color: $oe-step-orange;
-			background: none;
+		&.long {
+			color: $oe-step-text;
+			background: $oe-step-orange;
+			border-color: transparent;
 		}
 	}
 	
-	.step.i-Arr {
-		display: block;
-		margin:0 0 1px 0; // visually stretch the container to match steps
-		width:13px;
-		height:13px;
-		background: url( svg-icon-path-theme('direction-right')) center center no-repeat;
-		background-size: 13px;
-	}
-	
-	.step.i-Stop {
-		display: block;
-		margin:0 0 1px 0; // visually stretch the container to match steps
-		width:13px;
-		height:13px;
-		background: url( svg-icon-path-theme('stop')) center center no-repeat;
-		background-size: 13px;
-	}
-	
+	// Buffer icons instead of text
+	.step.i-Wait,
+	.step.i-Arr,
+	.step.i-Stop,
 	.step.i-Fin {
 		display: block;
 		margin:0 0 1px 0; // visually stretch the container to match steps
 		width:13px;
 		height:13px;
-		background: url( svg-icon-path-theme('tick')) center center no-repeat;
+		background: center center no-repeat;
 		background-size: 13px;
+	}
+	
+	.step.i-Arr {
+		background-image: url( svg-icon-path-theme('direction-right'));
+	}
+	
+	.step.i-Wait {
+		background-image: url( svg-icon-path-theme('waiting'));
+	}
+	
+	.step.i-Stop {
+		background-image: url( svg-icon-path-theme('stop'));
+	}
+	
+	.step.i-Fin {
+		background-image: url( svg-icon-path-theme('tick'));
 	}
 
 }

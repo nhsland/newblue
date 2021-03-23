@@ -15,7 +15,7 @@
 			content: '';
 			height:17px;
 			width:17px;
-			background-image: url( svg-path('icons/plus-bold'));
+			background-image: url( svg-path('icons/plus-circle'));
 			background-size: 17px;
 			opacity: 0.7;
 		}
@@ -23,7 +23,7 @@
 		// when open become a cross
 		&.close {
 			&:after {
-				background-image: url( svg-path('icons/remove'));
+				background-image: url( svg-path('icons/remove-circle'));
 				opacity: 1;
 			}
 		}

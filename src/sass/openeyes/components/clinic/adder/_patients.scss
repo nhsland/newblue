@@ -4,7 +4,6 @@
 
 .oe-clinic-adder {
 	.patients {
-		
 		width:220px;
 		overflow-y: auto;
 		overflow-x: hidden;
@@ -12,5 +11,21 @@
 		height: 100%;
 		margin:0 10px;
 		padding:10px 0 0 0;
+		
+		// Select "All" 
+		li:first-child {
+			label {
+				color: $oe-text-light;
+			}
+		}
+		
+		// Patients
+		label {	
+			> input[type="checkbox"] {
+				&:not(:checked) + span {
+					opacity: 0.2
+				}
+			}
+		}
 	}
 }

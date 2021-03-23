@@ -17,6 +17,12 @@
 				color:#fff;
 			}
 			
+			&.red {
+				color: #fff;
+				background: $oe-btn-red;
+			}
+			
+			
 			// JS is hooked on the <li>
 			* {
 				pointer-events: none;
