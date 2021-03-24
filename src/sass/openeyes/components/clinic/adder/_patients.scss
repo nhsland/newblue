@@ -10,17 +10,21 @@
 		
 		height: 100%;
 		margin:0 10px;
-		padding:10px 0 0 0;
+		padding:0 0 0 0;
 		
 		// Select "All" 
 		li:first-child {
+			padding: 2px 0;
 			label {
+				height:26px;
 				color: $oe-text-light;
 			}
 		}
 		
 		// Patients
 		label {	
+			height:38px;	
+
 			> input[type="checkbox"] {
 				&:not(:checked) + span {
 					opacity: 0.2

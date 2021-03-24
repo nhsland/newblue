@@ -31,7 +31,18 @@
 		padding:2px 5px 2px 0;
 		// border-left:1px solid $oe-dark-line;	
 		
-		span, em { opacity:0.5; padding:0 2px 0 0; }
+		span, em { 
+			opacity:0.5; padding:0 2px 0 0; 
+			&.yrs {
+				opacity:1;
+				&:before {
+					content: '(';
+				}
+				&:after {
+					content: ')';
+				}
+			}
+		}	
 	}
 
 }

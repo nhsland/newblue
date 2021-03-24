@@ -26,7 +26,7 @@ table.oe-clinic-list {
 			
 			// patient states are added by JS to the <tr>
 			// "todo", "active" and "complete"
-			&.complete {
+			&.done {
 				td {
 					color: $oe-text-light;
 					&:first-child {
@@ -53,7 +53,8 @@ table.oe-clinic-list {
 		font-weight: $oe-font-light;
 		color: $oe-text-light;
 		
-		&:nth-child( 9 ){
+		&:nth-child( 7 ),
+		&:nth-child( 8 ){
 			padding-left:9px;
 		} 
 		
@@ -85,18 +86,13 @@ table.oe-clinic-list {
 			}
 			
 		}
-		
-		// DOB
-		&:nth-child( 3 ){
-			width: 100px; 
-			@include font-size(12);
-		}
 	
-		&:nth-child( 4 ){
-			width: 245px; // Patient name
+	
+		&:nth-child( 3 ){
+			width: 300px; // Patient
 		}
 		
-		&:nth-child( 5 ){
+		&:nth-child( 4 ){
 			width: 50px; // PDQ icon
 			.oe-i {
 				width: 40px;
@@ -104,18 +100,22 @@ table.oe-clinic-list {
 			}
 		}
 		
-		// 6 - pathway
+		// 5 - pathway
 		
-		&:nth-child( 7 ){ // +
+		&:nth-child( 6 ){ // +
 			width: 45px; // Plus
 			.oe-i {
 				width: 40px;
 				height: 40px;
 			}
 		} 
-		&:nth-child( 8 ), // Risk
-		&:nth-child( 9 ){ // Flags
-			width: 40px; 
+		
+		&:nth-child( 7 ){
+			width:80px; // Owner
+		} 
+		
+		&:nth-child( 8 ){ 
+			width: 40px; // Flags
 			.oe-i {
 				width: 30px;
 				height: 27px;
@@ -123,11 +123,11 @@ table.oe-clinic-list {
 		}
 		
 		
-		&:nth-child( 10 ){
+		&:nth-child( 9 ){
 			width: 120px; // Wait Duration, arrive / DNA 
 		}
 		
-		&:nth-child( 11 ){
+		&:nth-child( 10 ){
 			text-align: center;
 			width: 60px; // Tick
 		}
