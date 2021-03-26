@@ -1,0 +1,36 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// OE Clinic List
+
+.oe-clinic {	
+	// enhanced OE checkboxes
+	label.patient-checkbox {
+		@include flex( center, center );
+		height:40px;
+		width: 40px;
+		background: rgba(0,0,0,0); // without this the label hitarea for checkbox isn't used
+		
+		> input[type="checkbox"] {
+			display: none;
+			// CSS magic '+' next sibling! 
+			&:checked + .checkbox-btn {
+				background-color: $oe-btn-blue;
+				opacity: 1;
+			}
+		}
+		
+		.checkbox-btn {
+			height: 20px;
+			width: 20px;
+			cursor: pointer;
+			background:$oe-line url( svg-path('icons/tick-chunky')) center center no-repeat;
+			background-size:18px;
+			border-radius: 50%;
+			opacity:0.5;
+		}
+	}
+}
+
+
