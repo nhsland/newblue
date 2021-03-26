@@ -15,7 +15,7 @@
 	// if it has two children (e.g name and time) then it needs stacking
 	flex-direction: column;
 	
-	min-height:24px; // matches buttons
+	min-height: 26px;
 	min-width: 40px;
 	
 	line-height: 1.2; // this needs fixing or else it will affect the layout

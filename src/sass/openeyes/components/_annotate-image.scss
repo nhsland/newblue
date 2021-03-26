@@ -51,9 +51,12 @@
 		}
 		
 		svg.colors {
+			rect {
+				stroke-width:2px;
+				stroke:$oe-user-inputs;
+			}
 			.selected {
-				stroke: $oe-text;
-				stroke-width: 2px;
+				stroke:none;
 			}
 		}
 		
