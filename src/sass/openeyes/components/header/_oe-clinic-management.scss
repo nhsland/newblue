@@ -13,31 +13,24 @@
 	height:$oe-header-height;
 	width:545px;
 	
-	background:transparent url( svg-path('backgrounds/clinic-watermark') ) top 0 right 10px no-repeat;
+	background:transparent url( svg-path('backgrounds/clinic-watermark') ) top 0 right no-repeat;
 	background-size:70px;	
-
 	
-	@include font-size(11);
-	
-	$patient-padding:6px;
+	@include flex( center, flex-start );
 	
 	.current-clinic {
-		position:absolute;
-		top:12px; 
-		left:0;
-		@include font-size(23);
+		@include font-size(32);
 		font-weight:100;
 		color:$oe-dark-text-light;
 	}
 	
 	.change-clinic {
 		position:absolute;
-		bottom:10px; 
-		left:0; 
+		bottom:11px; 
+		right:25px; 
 		a { 
-			@include font-size(10); 
-			color:#fff;
-			opacity:0.5;
+			@include font-size(11); 
+			color: $oe-dark-text-light;
 			&:hover, &:focus, &:active {
 				opacity:1;
 				color:$oe-dark-text-highlight;

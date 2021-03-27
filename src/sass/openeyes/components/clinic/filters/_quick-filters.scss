@@ -42,6 +42,10 @@ ul.quick-filters {
 		&.selected {
 			background:$oe-btn-blue;
 			color:#fff;
+			.count {
+				color: #fff;
+			}
+			
 		}
 		
 		// turn off JS events in Children
