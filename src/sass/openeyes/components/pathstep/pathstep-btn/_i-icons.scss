@@ -3,14 +3,22 @@
 //
 
 .oe-pathstep-btn {
-	// use an icon instead of text for this step
+	// Drug admin - PSD (drop icon)
 	.step.i-drug-admin {
 		display: block;
 		width:14px;
 		height:14px;
-		background: url( svg-path('icons/drop')) center top no-repeat;
+		background: url( svg-icon-path-theme('drop')) center top no-repeat;
 		background-size: 14px;
 	}
 	
+	// --- Solid steps
+	// active then done
+	&.active,
+	&.done { 
+		.step.i-drug-admin {
+			background-image: url( svg-path('icons/drop'));
+		}		
+	}
 }
 

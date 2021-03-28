@@ -53,9 +53,12 @@ table.oe-clinic-list {
 		font-weight: $oe-font-light;
 		color: $oe-text-light;
 		
-		&:nth-child( 7 ),
-		&:nth-child( 8 ){
+		&:nth-child( 7 ){
 			padding-left:9px;
+		} 
+		
+		&:nth-child( 8 ){
+			padding-left:22px;
 		} 
 		
 	}
@@ -110,17 +113,19 @@ table.oe-clinic-list {
 			}
 		} 
 		
-		&:nth-child( 7 ){
-			width:80px; // Owner
-		} 
 		
-		&:nth-child( 8 ){ 
+		
+		&:nth-child( 7 ){ 
 			width: 40px; // Flags
 			.oe-i {
 				width: 30px;
 				height: 27px;
 			}
 		}
+		
+		&:nth-child( 8 ){
+			width:80px; // Comments
+		} 
 		
 		
 		&:nth-child( 9 ){

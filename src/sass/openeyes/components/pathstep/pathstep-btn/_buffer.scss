@@ -21,10 +21,17 @@
 	}
 	
 	// pathway owner column
-	&.owner {
+	&.comments {
 		margin-left:10px;
 		background-color: rgba($oe-text,0.1);
 		border-color: transparent;
+		
+		&.added {
+			.step.i-Comments {
+				background-image: url( svg-icon-path-theme('comments-added'));
+				opacity: 0.7;
+			}
+		}
 	}
 	
 	// waiting
@@ -45,7 +52,8 @@
 	.step.i-Wait,
 	.step.i-Arr,
 	.step.i-Stop,
-	.step.i-Fin {
+	.step.i-Fin, 
+	.step.i-Comments {
 		display: block;
 		margin:0 0 1px 0; // visually stretch the container to match steps
 		width:13px;
@@ -68,6 +76,11 @@
 	
 	.step.i-Fin {
 		background-image: url( svg-icon-path-theme('tick'));
+	}
+	
+	.step.i-Comments {
+		background-image: url( svg-icon-path-theme('comments'));
+		opacity: 0.5;
 	}
 
 }
