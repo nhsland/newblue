@@ -1,0 +1,53 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// PAC icons from external MEH App
+// use them and follow their colours
+
+span.pac-state-icon {
+	@include inline-flex( center, flex-start );
+	
+	// match the height of icons
+	height:19px; // medium is 16px;
+	width: 44px;
+	margin:0 4px;
+	padding:0 0 0 3px;
+	
+	@include font-size(9);
+	font-weight: 500;
+	color: rgb(255,255,255);
+	
+	opacity: 0.8;
+	
+	border-radius:5px;
+	
+	vertical-align: middle;
+	
+	// PAC 
+	background: url('../img/MEH-PAC-icons.png') 100px 100px  no-repeat; // green
+	
+		
+	&.fit {
+		background-color:#2BAD6A; // green
+		background-position: 20px -7px; 
+	}	
+	
+	&.reschedule {
+		background-color:#2BAD6A; // green
+		background-position: 18px -39px; 
+	}
+	
+	&.hold {
+		background-color:#F4A700; // yellow
+		background-position: 18px -72px; 
+		color: rgba(0,0,0,0.8);
+		
+	}
+	
+	&.not-fit {
+		background-color:#DA334C; // red
+		background-position: 18px -103px; 
+	}
+	
+}

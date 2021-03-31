@@ -112,6 +112,11 @@
 				width:50vw;
 			}
 			
+			// email before multi-tenancy options
+			&.pre-id {
+				padding:20px 0;
+			}
+			
 			input, button {
 				display:block;
 				width:100%;

@@ -29,6 +29,7 @@
 	.slide-open {
 		height:100%;
 		overflow: hidden; // no scrollbars whilst animating
+		pointer-events: all; // and turn back on stop content behind being clicked!
 	}
 	
 	
