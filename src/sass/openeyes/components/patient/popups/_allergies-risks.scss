@@ -25,14 +25,11 @@ table.risks {
 	
 	td {
 		@include font-size(12);
-		padding:1px 0 1px 4px;
-		vertical-align: middle;
-		height:28px; 				// to match the comment button
+		padding:6px 0 6px 4px;
+		vertical-align: top;
+		//min-height:24px; 				// to match the comment button (with padding)
 		color:$oe-dark-text;			// theme pro locked
-					
-		&:last-child {
-			text-align: right;		// trash icon
-		}	
+						
 			
 		textarea {
 			vertical-align: middle; // ensure correct vertical alignment in <td>
