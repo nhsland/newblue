@@ -112,6 +112,7 @@
 	&.tick-green,
 	&.cross-red,
 	&.warning,
+	&.warning-none,
 	&.doubt,
 	&.person-green,
 	{ 
@@ -360,7 +361,8 @@
 	&.exclamation-red		{ background-image: url( svg-path('ui/exclamation-red') ); }
 	
 	// RED warning triangle
-	&.warning 			{ background-image: url( svg-path('ui/warning') ); } 
+	&.warning 				{ background-image: url( svg-path('ui/warning') ); } 
+	&.warning-none 			{ background-image: url( svg-path('ui/warning-none') ); } 
 	
 	// Tick and Cross
 	&.tick-green 			{ background-image: url( svg-path-theme('ui/tick-green') ); }
