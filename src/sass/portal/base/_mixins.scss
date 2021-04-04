@@ -46,9 +46,10 @@
 
 
 // specific device sizes: Galaxy Tab 3 is 800px
+// and iPad Pro is 834px!
 @mixin tablet(){
 	@media only screen 
-		and (max-width: 801px ){
+		and (max-width: 835px ){
 		@content;
 	}
 }

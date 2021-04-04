@@ -47,9 +47,25 @@
 		}
 			
 		span {
+	
 			&:first-of-type{
 				opacity:0.5;
+				
+				@include tablet(){
+					// with the dob and age, for tablets and phones
+					// can't use the labels.
+					display: none;
+				}
+				
 			} 
+			
+			// yrs in age group
+			&.yrs {
+				opacity:1;
+				margin:0 0 0 3px;
+				padding: 0 0 0 8px;
+				border-left:1px solid var(--gui-line);	
+			}
 			 
 		}
 		em {

@@ -36,7 +36,7 @@
 				@include svgLogoPositionSize(60px, 50px, 110px);
 			}
 			@include phone-all(){
-				@include svgLogoPositionSize(15px, 24px, 85px);
+				@include svgLogoPositionSize(10px, 24px, 75px);
 			}
 		}
 	}

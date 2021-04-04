@@ -8,7 +8,7 @@ header {
 		margin:10px 0 0 0;
 		
 		@include phone-all(){
-			margin: 5px 0 0 0;
+			margin: 4px 0 0 0;
 		}
 		
 		ul.steps {
@@ -20,7 +20,7 @@ header {
 			li {
 				display: block;
 				white-space: nowrap;
-				margin: 0 14px 6px 0;
+				margin: 4px 14px 4px 0;
 				color: var(--text-base);
 				@include font-size( 14 );
 				opacity: 0.5;
@@ -34,7 +34,7 @@ header {
 					@include font-size( 12 );
 					background-size: 10px;
 					padding-right: 11px;
-					margin: 0 8px 2px 0;
+					margin: 4px 8px 2px 0;
 				}
 				
 				&:last-child {

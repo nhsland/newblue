@@ -12,11 +12,11 @@
 	}
 }
 
-// using Vars, use dark (default colours as fallbacks)
-@mixin useVars( $property, $map, $group, $type ){
-	$fallback: map-get($map, $type);
-	#{$property}: var(--#{$group}-#{$type}, #{$fallback});
-}
+// Safari and in iOS has a bug on the var url relative paths!
+// For url() to work in a var it needs a full root path
+// Therefore iDG and liveserver need to match locations
+$rootToCSS: '/newblue/dist/portal';
+
 
 // ---- Backgrounds
 $bg:(
@@ -153,11 +153,12 @@ $uiIcons:("list-dot", "search", "triangle-amber", "triangle-blue", "triangle-gre
 	--i-opacity: 0.5; // (same across themes)
 	
 	@each $icon in $uiIcons {
-		--i-ui-#{$icon}: url(./assets/svg/in-css/ui/#{$icon}.svg);
+		--i-ui-#{$icon}: url("#{$rootToCSS}/assets/svg/in-css/ui/#{$icon}.svg");
 	}
-
+	
+	// white icons version (fixed icon for use in light themes on buttons)
 	@each $icon in $themedIcons {
-		--i-white-#{$icon}: url(./assets/svg/in-css/icons/#{$icon}.svg); // dark version (fixed icon for use in light themes)
+		--i-white-#{$icon}: url("#{$rootToCSS}/assets/svg/in-css/icons/#{$icon}.svg"); 
 	}
 
 }
@@ -167,7 +168,7 @@ $uiIcons:("list-dot", "search", "triangle-amber", "triangle-blue", "triangle-gre
 html.theme-dark {
 	
 	@each $icon in $themedIcons {
-		--i-#{$icon}: url(./assets/svg/in-css/icons/#{$icon}.svg);
+		--i-#{$icon}: url("#{$rootToCSS}/assets/svg/in-css/icons/#{$icon}.svg");
 	}
 	
 	@include cssVars( 'bg', $bg );
@@ -185,7 +186,7 @@ html.theme-dark {
 html.theme-light {
 	
 	@each $icon in $themedIcons {
-		--i-#{$icon}: url(./assets/svg/in-css/icons/_classic/#{$icon}.svg);
+		--i-#{$icon}: url("#{$rootToCSS}/assets/svg/in-css/icons/_classic/#{$icon}.svg");
 	}
 	
 	@include cssVars( 'bg', $bg-light );
