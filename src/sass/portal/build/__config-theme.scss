@@ -71,12 +71,14 @@ $gui:(
 	"spinner": rgb(0,200,255),
 	"line": rgb(53,50,50),	
 	"hardline": rgb(83,80,80),
+	"note": #dda01d
 );
 
 $gui-light:(
 	"spinner": rgb(0,0,255),
 	"line": rgb(193,190,190),	
 	"hardline": rgb(153,150,150),
+	"note": #dda01d
 );
 
 // ---- Buttons 
@@ -144,7 +146,7 @@ $input-light:(
 
 $themedIcons:("arrow-right-bold", "direction-right", "increase-height", "lat-L-inactive", "lat-L-red", "lat-L", "lat-NA", "lat-R-green", "lat-R-inactive", "lat-R", "menu", "more-h", "reduce-height", "search", "tick-chunky");
 	
-$uiIcons:("list-dot", "search", "triangle-amber", "triangle-blue", "triangle-green", "triangle-grey", "triangle-red");
+$uiIcons:("list-dot", "search", "triangle-amber", "triangle-blue", "triangle-green", "triangle-grey", "triangle-red", "note");
 
 // *********************
 // CSS custom properties

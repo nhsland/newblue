@@ -56,6 +56,12 @@ address {
 	margin:0 0 10px 0;
 }
 
+// address in a radio Providers full address
+.oe-radio address {
+	display: block;
+	font-size: 80%;
+}
+
 h5 {
 	@include font-size(14); // 1rem
 }
