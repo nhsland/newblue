@@ -8,15 +8,14 @@
 		
 		margin:20px 0;
 		
-		.signature-pad-sign {
-			
+		.signature-e-sign {
 			@include flex( center, center );
+			background: #fff;
 			
 			canvas {
-				width:500px;
-				border-radius:10px;
+				width:600px;
+				height:200px;
 			}	
 		}
 	}
-
 }

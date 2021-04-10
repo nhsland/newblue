@@ -29,6 +29,12 @@
 			background: url( svg-path('ui/shortcut-arrow') ) right 8px top 6px no-repeat;
 			background-size: 10px;
 			
+			&.popup {
+				background-image: url( svg-path('icons/duplicate'));
+				background-size: 12px;
+			}
+			
+			
 			@include handheld(){
 				@include font-size(19);
 				color:#fff;
