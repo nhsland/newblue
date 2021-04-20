@@ -55,7 +55,6 @@
 	&.active,
 	&.done { 
 		color: $oe-step-text;
-		border-radius: 3px;
 		&:hover, 
 		&:focus {
 			border-color: rgba(200,200,200,0.3);
