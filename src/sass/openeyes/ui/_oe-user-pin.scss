@@ -7,7 +7,7 @@
 
 	@include inline-flex( center, space-between );
 	
-	padding:1px 4px 1px 30px; // allow for icon
+	padding:2px 4px 2px 30px; // allow for icon
 	border-radius:3px;
 	
 	// PIN icon
@@ -31,17 +31,21 @@
 		background-image: url( svg-path('icons/lat-L') );
 	}
 
+	// to allow the PIN entry to fit on a <tr>
+	// and be in 
+
 	// PIN input
 	input.user-pin-entry {
-		height:24px; 	// matches button
+		height:22px; 	// matches button (allow for PIN wrapping)
+		margin:0;
 		width:70px; // 8 digits
-		padding:2px 5px;
 		text-align: center;
 		font-weight:$oe-font-medium;
 	}
 	
 	// Enter PIN
 	button.try-pin {
+		height:22px; 	// matches button (allow for PIN wrapping)
 		font-weight:$oe-font-bold;
 		margin: 0 0 0 8px;
 		padding: 0 16px;
