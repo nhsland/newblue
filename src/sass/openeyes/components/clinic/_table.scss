@@ -72,8 +72,9 @@ table.oe-clinic-list {
 		
 		// time
 		&:first-child{
+			@include font-size(12);
 			font-weight: $oe-font-bold;
-			width: 70px;
+			width: 65px;
 		}
 		
 		// Speciality and Type

@@ -5,8 +5,13 @@
 .clinic-filters {
 	.search-filters {
 		@include flex( center, flex-start );
-		width: 69vw;
 		margin:0 2px 0 0;
+		
+		width: 69vw;
+		// need to allow for the hotlist!
+		@include fix-hotlist(){						
+			width: #{$oe-event-main-extended-width - 130px}; // allow for the date and the "sync" UI
+		}
 		
 		input {
 			width:220px;
