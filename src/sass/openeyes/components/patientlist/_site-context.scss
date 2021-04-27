@@ -8,6 +8,8 @@
 		width:100%;
 		margin:10px 0;
 		
+		@include font-size(12);
+		
 		tbody {
 			tr {
 				background:tint( $oe-dark-bg, 10 );
