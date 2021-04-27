@@ -6,10 +6,10 @@
 // 
 // 
 
-.oe-clinic-management {
+.clinic-context {
 	position:absolute;
 	top:0; 
-	left:$oe-event-sidebar-width;
+	left: #{$oe-event-sidebar-width - 22px};
 	height:$oe-header-height;
 	width:545px;
 	
@@ -18,25 +18,17 @@
 	
 	@include flex( center, flex-start );
 	
-	.current-clinic {
-		@include font-size(32);
-		font-weight:100;
-		color:$oe-dark-text-light;
+	color:$oe-dark-text-light;
+	font-weight: $oe-font-medium;
+	
+	.context {
+		@include font-size(16);	
 	}
 	
-	.change-clinic {
-		position:absolute;
-		bottom:11px; 
-		right:25px; 
-		a { 
-			@include font-size(11); 
-			color: $oe-dark-text-light;
-			&:hover, &:focus, &:active {
-				opacity:1;
-				color:$oe-dark-text-highlight;
-			}	
-		}
+	.date-range {
+		@include font-size(14);
+		margin:3px 0 0 0;	
+		font-weight: $oe-font-bold;
 	}
-
 }
 

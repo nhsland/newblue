@@ -1,0 +1,29 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-clinic {
+	// group wraps the title (Worklist name)
+	// and the table clinic list
+	.clinic-group {
+		header {
+			position:sticky;
+			top: 0;
+			z-index: 1;
+			height: $oe-event-header-height;
+			
+			@include flex(center, space-between);
+			padding:0 20px;
+			
+			h3 {
+				@include font-size(17);
+				font-weight:$oe-font-light; 
+				color:$oe-text-highlight;
+				transform: translateY(-2px); // visual tweak to vertically center the baseline
+			}
+			
+			background:$oe-blue-dark;
+			box-shadow: 0px 6px 12px 0px $oe-blue-dark;
+		}
+	}
+}

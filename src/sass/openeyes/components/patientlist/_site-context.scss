@@ -1,0 +1,29 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-patientlist-panel {
+	// <table>
+	.site-context {
+		width:100%;
+		margin:10px 0;
+		
+		tbody {
+			tr {
+				background:tint( $oe-dark-bg, 10 );
+				
+				td {
+					padding: 5px 10px;
+					
+					&:first-child {
+						@include font-size(11);
+						color: $oe-dark-text-light;
+					}
+				}
+				
+			}
+		}
+	}	
+}
+
+

@@ -10,13 +10,14 @@
 	
 	.patient-name {
 		@include font-size(14);
-		font-weight: $oe-font-medium; // same for both themes
+		font-weight: $oe-font-medium; 
 		margin:0 0 2px 0;
 		
 		// wrapper for newmeta icons
-		// duplicate name / safeguards (alerts/allergies / risks)
+		// duplicate name / safeguards (alerts/allergies / risks) / Flags, etc
 		.patient-icons {
 			@include inline-flex( center, flex-start );
+			padding:0 0 0 5px;
 		}
 		
 	}
