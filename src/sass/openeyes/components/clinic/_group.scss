@@ -3,17 +3,29 @@
 //
 
 .oe-clinic {
-	// group wraps the title (Worklist name)
-	// and the table clinic list
-	.clinic-group {
+	// Groups
+	// Could be a single list or list merged
+	// wraps: title (Worklist name)
+	// & table patient list
+	.oec-group {
+		margin:0 0 20px 0;	
+
+		
 		header {
 			position:sticky;
 			top: 0;
-			z-index: 1;
+			z-index: 2;
 			height: $oe-event-header-height;
+			line-height:1;
 			
-			@include flex(center, space-between);
+			@include flex( center, flex-start );
 			padding:0 20px;
+			
+			// star icon
+			.favourite {
+				// make space and shift up slightly to improve alignment
+				padding:0 8px 4px 0;
+			}
 			
 			h3 {
 				@include font-size(17);

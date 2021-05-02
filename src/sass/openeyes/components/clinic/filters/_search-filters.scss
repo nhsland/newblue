@@ -7,10 +7,10 @@
 		@include flex( center, flex-start );
 		margin:0 2px 0 0;
 		
-		width: 69vw;
+		width: 75vw;
 		// need to allow for the hotlist!
 		@include fix-hotlist(){						
-			width: #{$oe-event-main-extended-width - 130px}; // allow for the date and the "sync" UI
+			width: #{$oe-event-main-extended-width - 40px}; // allow for the date and the "sync" UI
 		}
 		
 		input {

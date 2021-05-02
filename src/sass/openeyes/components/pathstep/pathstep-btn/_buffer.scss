@@ -49,6 +49,7 @@
 	}
 	
 	// Buffer icons instead of text
+	.step.i-RedFlag,
 	.step.i-Wait,
 	.step.i-Arr,
 	.step.i-Stop,
@@ -60,6 +61,11 @@
 		height:13px;
 		background: center center no-repeat;
 		background-size: 13px;
+	}
+	
+	.step.i-RedFlag {
+		//background-image: url( svg-icon-path-theme('waiting'));
+		background-image: url( svg-path('ui/flag-red'));
 	}
 	
 	.step.i-Arr {

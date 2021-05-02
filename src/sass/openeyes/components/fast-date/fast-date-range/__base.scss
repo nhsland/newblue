@@ -2,10 +2,19 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-.fast-date-range {
+.set-date-range {
 	// fast date range is used in sidebars
 	// under 'from' and 'to' dates
-	margin: 0 0 15px 0;
+	margin: 0 0 10px 0;
+	
+	// used in worklist panel
+	.oe-worklists-panel & {
+		margin:0 10px 15px 10px;
+	} 
+	
+	.date-inputs {
+		margin: 0 0 5px 0;
+	}
 	
 	// group selectors together
 	// and layout in a row
@@ -27,9 +36,11 @@
 				width: 100%;
 				@include flex( center, flex-start );
 				cursor: pointer;
-				height:28px;
+				height:24px; // 28px is btn height.
 				padding:0 2px;
+				@include font-size(11);
 				color: $oe-text-light;
+				
 			}
 			
 			

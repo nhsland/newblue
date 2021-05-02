@@ -2,10 +2,24 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-.oe-patientlist-panel {
+.oe-worklists-panel {
+	// Lists title
+	h3 {
+		@include font-size(11);
+		color: $oe-text-light;
+		font-weight: $oe-font-medium;
+		padding:0 5px 5px 10px; 
+	}
+	
+	
+	// all, single, multi
+	.list-mode {
+		border-bottom: 2px solid $oe-btn-blue;
+	}
+	
 	.worklists {
 		fieldset {
-			background:tint( $oe-dark-bg,5 );
+			background: $oe-btn-default;
 			
 			label {
 				// reset the cascade
@@ -14,7 +28,7 @@
 				margin:0;
 				padding:0;
 				background: transparent;
-				color: $oe-dark-text-light;
+				color: $oe-text-light;
 				
 				.btn {
 					display: block;

@@ -2,32 +2,31 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-.oe-clinic-clock {
+.oec-clock {
 	position: fixed;
-	z-index: 10;
+	z-index: 1;
 	left: 0;
-	top: 0;
-	
-	color:$oe-text-inverted;
-	background:$oe-text-highlight;
+	top: 0; // JS positions by top
 	
 	@include font-size(10);
-	font-weight:500;
+	font-weight:$oe-font-bold;
+	color:$oe-text-highlight;
 	
-	@include flex( center, flex-start );
-	height:18px;
-	// position the text in the shape
-	padding: 0 12px 0 23px;
-	border-radius: 0 5px 5px 0;
+	transition:top 0.2s ease-out; 
 	
-	transition:top 0.3s ease-out; 
 	
+	// position the text in relation to the bottom of the <tr>
+	// JS sets it's "top" position...
+	padding: 0 0 0 20px;
+	transform: translateY( -12px );
+	
+	// dotted line
 	&::after {
 		content: "";
 		position:absolute; 
-		left: 100%;
-		top: 9px;
-		width: 420px;
+		left:0;
+		top: 12px;
+		width: 65px;
 		height:1px;
 		border-top: 1px dotted $oe-text-highlight;
 		opacity:0.5;

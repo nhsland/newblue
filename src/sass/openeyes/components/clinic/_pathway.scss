@@ -2,7 +2,7 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-table.oe-clinic-list {
+table.oec-patients {
 	// container for pathway-steps, used by js
 	.pathway {
 		@include flex( flex-start, flex-start );

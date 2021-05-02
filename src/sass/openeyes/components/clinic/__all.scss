@@ -3,7 +3,6 @@
 //
 
 // OE Clinic
-
 @import "_base";
 @import "group";
 @import "clock";
@@ -14,3 +13,11 @@
 @import "filters/_all";
 @import "adder/_all";
 
+// Worklist button behaves as currently, but
+// when you are on the actual page it now has 
+// all the options in a popup panel
+@import "worklists-panel/_all";
+
+// Worklists V1 (pretty simple standard layout)
+// Clinic Manager is basically v2 of this:
+@import "v1/worklists";
