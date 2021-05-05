@@ -1,0 +1,72 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-worklists-panel {
+	.favourites {
+				
+		// Lists title
+		h3 {
+			@include font-size(11);
+			color: $oe-text-light;
+			font-weight: $oe-font-medium;
+			padding:10px; 
+		}
+		
+		.fav {
+			
+			@include flex( stretch, space-between );
+			margin:2px 0;
+			
+			.details {
+				flex: 1;
+				background: $oe-btn-default;
+				padding:10px 10px 10px 30px;
+				
+				font-weight: $oe-font-medium;
+				color: $oe-text;
+				cursor: pointer;
+				
+				&:hover, 
+				&:focus {
+					color:#fff;
+					background: $oe-btn-blue url(  svg-path('ui/shortcut-arrow') ) bottom 10px left 5px no-repeat;
+					background-size:15px;
+				}
+				
+				.site {
+					opacity: 0.5;
+				}
+				
+				.context {
+					padding:3px 0;
+					@include font-size(13);
+					font-weight: $oe-font-light;
+				}
+				
+				ul.lists {
+					padding:5px 0;
+					li {
+						padding:3px 0;
+						@include font-size(13);
+						border-top:1px dotted $oe-blue-dark2;
+						&:last-child { 
+							border-bottom:1px dotted $oe-blue-dark2;
+						}
+					}
+					
+				}
+			}
+			
+			.remove {
+				width:30px;
+				background: $oe-btn-default;
+				margin:0 0 0 1px;
+				@include flex(center, center);
+			}
+			
+		}
+	}	
+}
+
+

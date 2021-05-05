@@ -3,55 +3,61 @@
 //
 
 .oe-worklists-panel {
-	// Lists title
-	h3 {
-		@include font-size(11);
-		color: $oe-text-light;
-		font-weight: $oe-font-medium;
-		padding:0 5px 5px 10px; 
-	}
-	
-	
-	// all, single, multi
-	.list-mode {
-		border-bottom: 2px solid $oe-btn-blue;
-	}
-	
-	.worklists {
-		fieldset {
-			background: $oe-btn-default;
-			
-			label {
-				// reset the cascade
-				display: block;
-				white-space: normal;
-				margin:0;
-				padding:0;
-				background: transparent;
-				color: $oe-text-light;
+	.context-lists {		
+		// Lists title
+		h3 {
+			@include font-size(11);
+			color: $oe-text-light;
+			font-weight: $oe-font-medium;
+			padding:5px 10px; 
+		}
+		
+		// combine lists checkbox
+		.combine-lists {
+			padding:5px 10px;
+		}
+		
+		// all, single, multi
+		.list-mode {
+			border-bottom: 2px solid $oe-btn-blue;
+		}
+		
+		.worklists {
+			fieldset {
+				background: $oe-btn-default;
 				
-				.btn {
+				label {
+					// reset the cascade
 					display: block;
-					width: 100%;
-					@include font-size(12);
-					font-weight:400;
-					padding:5px 10px;
-					cursor: pointer;
-				}
-				
-				> input[type="checkbox"] {
-					display: none;
-					// CSS magic '+' next sibling! 
-					+ .btn {
-						&:hover, 
-						&:focus {
-							color:#fff;
-							background: $oe-btn-blue-dark;
-						}
+					white-space: normal;
+					margin:0;
+					padding:0;
+					background: transparent;
+					color: $oe-text-light;
+					
+					.btn {
+						display: block;
+						width: 100%;
+						@include font-size(12);
+						font-weight:400;
+						padding:5px 10px;
+						cursor: pointer;
 					}
-					&:checked + .btn {
-						color:#fff;
-						background: $oe-btn-blue;
+					
+					> input[type="checkbox"] {
+						display: none;
+						// CSS magic '+' next sibling! 
+						+ .btn {
+							&:hover, 
+							&:focus {
+								color:#fff;
+								background: $oe-btn-blue-dark;
+							}
+						}
+						&:checked + .btn {
+							color:#fff;
+							background: $oe-btn-blue;
+						}
 					}
 				}
 			}
