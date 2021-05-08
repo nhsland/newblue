@@ -1,0 +1,47 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-popup-content {
+	
+	// generalised approach based on build-psd
+	&.config-pathstep {
+		@include flex( flex-start, space-between );
+		width:1040px; // max width (same as "max" class)
+	
+		// step sub-titles
+		h3 {
+			@include font-size(13);
+		}
+		
+		// flex able blocks
+		.block {
+			flex:1 0 0; // grow, shrink, basis
+			&.wide {
+				flex:2 0 0; 
+			}
+			
+			padding:0 15px 10px 15px;
+			border-left:1px solid $oe-dark-line;
+			
+			&:first-child {
+				padding-left: 0;
+				border-left: none;
+			}
+			
+			&:last-child {
+				padding-right: 0;
+			}
+			
+			// slight tweaks
+			table {
+				th {
+					@include font-size(11);
+				}
+			}
+			
+		}
+	
+	}
+
+}

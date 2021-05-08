@@ -2,61 +2,57 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-ul {
-	// based on the Add New Event UI
-	// PRO-themed by default because it's
-	// nearly always used in popups
+
+// based on the Add New Event UI
+// PRO-themed by default because it's
+// nearly always used in popups
+ul.btn-list {			
+	li {
+		cursor: pointer;		// used as a button
+		padding:0 10px;
+		margin:0 0 2px 0;
+		
+		height:19px;			// 19px matches Event icon type small size
+		line-height:19px; 
+		white-space: nowrap; 	// using line-height to center so no-wrap!
+		
+		@include font-size(12);
+		font-weight:400;
+		
+		// assumes the button list will be used in PRO blue background colour
+		color: $oe-dark-text-light; 
+		background:$oe-dark-popup-btn-hint; 
 	
-	&.btn-list {			
-		li {
-			cursor: pointer;		// used as a button
-			padding:0 10px;
-			margin:0 0 2px 0;
-			
-			height:19px;			// 19px matches Event icon type small size
-			line-height:19px; 
-			white-space: nowrap; 	// force single line (can't remember why tho?)
-			
-			@include font-size(12);
-			font-weight:400;
-			
-			// assumes the button list will be used in PRO blue background colour
-			color: $oe-dark-text-light; 
-			background:$oe-dark-popup-btn-hint; 
-		
-			&:hover, &:focus, &:active, 
-			&.selected {
-				background:$oe-btn-blue; 	// THEME related (as interaction)
-				color:#fff;
-			}
-		
-			.oe-i-e { 
-				margin-right:10px; 	 	// pad it out (always on the left of the text)
-				vertical-align: top;	// change otherwise icon pushes down 
-			}			
+		&:hover, &:focus, &:active, 
+		&.selected {
+			background:$oe-btn-blue; 	// THEME related (as interaction)
+			color:#fff;
 		}
-		
-		// fixed with btn-list
-		&.fixed-width {
-			li {
-				height:auto;			// reset
-				line-height:normal;		// reset
-				white-space: normal;	// can now wrap
-				word-break: break-word;	
-				width: 180px;	 		// setup to handle PSD popup (180px is a best guess)			
-				padding:3px 8px;
-			}
+	
+		.oe-i-e { 
+			margin-right:10px; 	 	// pad it out (always on the left of the text)
+			vertical-align: top;	// change otherwise icon pushes down 
+		}			
+	}
+	
+	// fixed with btn-list
+	&.fixed-width {
+		li {
+			height:auto;			// reset
+			line-height:normal;		// reset
+			white-space: normal;	// can now wrap
+			word-break: break-word;	
+			width: 180px;	 		// setup to handle PSD popup (180px is a best guess)			
+			padding:3px 8px;
 		}
 	}
-}
-
-// Although nicely standardised, the problem occured with it's use
-// in the new Event Type filter pop out & the old filter both of which 
-// needs to be on a blue
- 
-.filter-options-popup,
-.sidebar-filter-options {
-	ul.btn-list {
+	
+	
+	// Although nicely standardised, the problem occured with it's use
+	// in the new Event Type filter pop out & the old filter both of which 
+	// needs to be on a blue
+	.filter-options-popup &,
+	.sidebar-filter-options & {
 		li {
 			padding:0 10px;
 			color:rgba(255,255,255,0.5);

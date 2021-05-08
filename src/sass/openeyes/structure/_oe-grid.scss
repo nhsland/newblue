@@ -51,6 +51,8 @@
 	// However, later, I then added the "subgrid" to the full-content.
 	// Here is the problem. A second grid over 2 grid items! 
 	// TinyMCE popups where somehow width adjusting to the underlaying "sidebar" item 
+	// orginially was "simple" but "basic" is more descriptive
+	&.basic, 
 	&.simple {
 		grid: 	"header" #{$oe-header-height} 
 				"eventheader" #{$oe-event-header-height} 
