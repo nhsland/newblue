@@ -2,14 +2,14 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Management Summaries
+// OE Genetics (MEH gap, only used by a few people)
 // this is used in a few places:
 // - Patient Overview
 // - Patient popup (header)
-// - Patient Quickview popup
+// - Patient Quickview popup (maybe?)
 
-// set up as themeable by default (most common)
-table.management-summaries {
+// set up as themeable by default
+table.genetics {
 	width:100%;
 	margin:0 0 10px 0;
 	
@@ -18,9 +18,13 @@ table.management-summaries {
 		tr {
 			border-top-color:$oe-dark-line;
 		}
+		th {
+			color:$oe-dark-text-light;
+		}
 		td {
 			color:$oe-dark-text;
 		}
+		
 	}
 
 	// themed
@@ -34,27 +38,21 @@ table.management-summaries {
 		
 		td {
 			color:$oe-text;
-			@include font-size(11);
+			@include font-size(12);
 			padding:6px 3px; 
-			line-height:1.4;
+			line-height:1.2;	
+		}
+		
+		th {
+			width: 130px;
+			padding:8px 3px 4px 3px; 
+			vertical-align: top;
+			text-align: left;
+			color:$oe-text-light;
+			@include font-size(10);
+			font-weight:400;
 			
-			// summary title (old <h6>)
-			&:first-child {
-				@include font-size(12);
-				font-weight: $oe-font-light;
-				padding-left:0;
-				width:120px;
-			}
 			
-			// date
-			&:nth-child(2){
-				padding-right:8px;
-			}
-			
-			// info icon
-			&:last-child {
-				text-align:right;
-			}
 		}
 	}
 	

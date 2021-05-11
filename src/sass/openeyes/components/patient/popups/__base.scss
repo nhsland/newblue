@@ -59,7 +59,7 @@
 		
 		@include font-size(14);
 		font-weight:400; 
-		color:$oe-dark-text-light; 
+		color:$oe-dark-element-headers; //$oe-dark-text-light; 
 		
 		.extra-actions {
 			position:absolute;

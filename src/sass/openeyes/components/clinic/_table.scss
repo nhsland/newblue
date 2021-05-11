@@ -23,6 +23,7 @@ table.oec-patients {
 			// "todo", "active" and "complete"
 			&.done {
 				td {
+					@include font-size(12);
 					color: $oe-text-light;
 					&:first-child {
 						font-weight: $oe-font-light;
@@ -90,7 +91,6 @@ table.oec-patients {
 				@include font-size(10); 
 				font-weight: $oe-font-medium;
 			}
-			
 		}
 	
 	

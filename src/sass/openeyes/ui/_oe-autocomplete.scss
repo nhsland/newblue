@@ -26,21 +26,33 @@
 	@include boxshadow();
 	
 	li {
+		display: block;
+		@include font-size(12);
+		padding:5px 2px;
+		cursor: pointer;
 		border-bottom:1px dotted $oe-line;
+		
 		&:last-child {
 			border-bottom: none;
 		}
+		
+		// match an <a> behaviour
+		&:hover, 
+		&:focus {
+			color:$oe-text-active;
+		}
+		
+		// search string match (if used)
+		.autocomplete-match {
+			font-weight:700;
+		}
+		
+		// originally it used <a> in the autocomplete
+		// but the <a> is optional as the behavour is also 
+		// on the <li> element
 		a {
 			display:block;
-			cursor: pointer;
-			@include font-size(12);
-			padding:5px 2px;
-			
-			// search string match:
-			.autocomplete-match {
-				font-weight:700;
-			}
-			
+		
 			// used in ED2.5 for searching Doodles
 			&.add-ed-doodle {
 				padding:2px 2px;

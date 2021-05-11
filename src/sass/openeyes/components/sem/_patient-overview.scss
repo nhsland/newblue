@@ -43,6 +43,12 @@
 					padding-bottom: 3px;
 				}
 			}
+			
+			tbody {
+				tr {
+					border-top-color: $oe-sem-element-bg;
+				}
+			}
 		}
 	}
 	
