@@ -22,9 +22,12 @@
 			width:800px;
 		}
 		
-	
 		&.max {
 			width:1040px; // allow for padding in wrapper!
+		}
+		
+		&.max-height {
+			height: calc(100vh - 200px); // force to max height;	
 		}
 		
 		// don't allow content to push right up to scrollbar

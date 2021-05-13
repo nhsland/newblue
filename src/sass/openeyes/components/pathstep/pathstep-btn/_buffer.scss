@@ -49,6 +49,7 @@
 	}
 	
 	// Buffer icons instead of text
+	.step.i-Break,
 	.step.i-Fork,
 	.step.i-RedFlag,
 	.step.i-Wait,
@@ -62,6 +63,11 @@
 		height:14px;
 		background: center center no-repeat;
 		background-size: contain;
+	}
+	
+	.step.i-Break {
+		//background-image: url( svg-icon-path-theme('waiting'));
+		background-image: url( svg-icon-path-theme('path-break'));
 	}
 	
 	.step.i-Fork {
