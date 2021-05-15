@@ -8,6 +8,7 @@
 
 // <span>
 .oe-pathstep-btn {	
+	position: relative; // for the shift buttons
 	display:inline-flex;
 	align-items:center;		
 	justify-content:center;
