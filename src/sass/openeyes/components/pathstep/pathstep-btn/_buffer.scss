@@ -35,15 +35,14 @@
 	}
 	
 	// waiting
-	&.wait {
+	&.wait, 
+	&.break {
 		color: $oe-text;
 		border-color: $oe-step-orange;
-		background: none;
-		border-radius:9px; 
 		
 		&.long {
 			color: $oe-step-text;
-			background: $oe-step-orange;
+			background-color: $oe-step-orange;
 			border-color: transparent;
 		}
 	}
