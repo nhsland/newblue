@@ -12,12 +12,23 @@
 		background-size: 14px;
 	}
 	
+	.step.i-discharge {
+		display: block;
+		width:14px;
+		height:14px;
+		background: url( svg-icon-path-theme('stop')) center top no-repeat;
+		background-size: 14px;
+	}
+	
 	// --- Solid steps
 	// active then done
 	&.active,
 	&.done { 
 		.step.i-drug-admin {
 			background-image: url( svg-path('icons/drop'));
+		}
+		.step.i-discharge {
+			background-image: url( svg-path('icons/stop'));
 		}		
 	}
 }

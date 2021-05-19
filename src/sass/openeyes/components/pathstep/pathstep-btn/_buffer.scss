@@ -27,16 +27,19 @@
 		border-color: transparent;
 		
 		&.added {
-			.step.i-Comments {
+			.step.i-comments {
 				background-image: url( svg-icon-path-theme('comments-added'));
 				opacity: 0.7;
 			}
 		}
 	}
 	
-	// waiting
-	&.wait, 
 	&.break {
+		border-color: $oe-step-blue;
+	}
+	
+	// waiting
+	&.wait {
 		color: $oe-text;
 		border-color: $oe-step-orange;
 		
@@ -48,14 +51,14 @@
 	}
 	
 	// Buffer icons instead of text
-	.step.i-Break,
-	.step.i-Fork,
-	.step.i-RedFlag,
-	.step.i-Wait,
-	.step.i-Arr,
-	.step.i-Stop,
-	.step.i-Fin, 
-	.step.i-Comments {
+	.step.i-break,
+	.step.i-fork,
+	.step.i-redflag,
+	.step.i-wait,
+	.step.i-arr,
+	.step.i-stop,
+	.step.i-fin, 
+	.step.i-comments {
 		display: block;
 		margin:0 0 1px 0; // visually stretch the container to match steps
 		width:14px;
@@ -64,38 +67,34 @@
 		background-size: contain;
 	}
 	
-	.step.i-Break {
+	.step.i-break {
 		//background-image: url( svg-icon-path-theme('waiting'));
 		background-image: url( svg-icon-path-theme('path-break'));
 	}
 	
-	.step.i-Fork {
+	.step.i-fork {
 		//background-image: url( svg-icon-path-theme('waiting'));
 		background-image: url( svg-icon-path-theme('fork'));
 	}
 	
-	.step.i-RedFlag {
+	.step.i-redflag {
 		//background-image: url( svg-icon-path-theme('waiting'));
 		background-image: url( svg-path('ui/flag-red'));
 	}
 	
-	.step.i-Arr {
+	.step.i-arr {
 		background-image: url( svg-icon-path-theme('direction-right'));
 	}
 	
-	.step.i-Wait {
+	.step.i-wait {
 		background-image: url( svg-icon-path-theme('waiting'));
 	}
 	
-	.step.i-Stop {
-		background-image: url( svg-icon-path-theme('stop'));
-	}
-	
-	.step.i-Fin {
+	.step.i-fin {
 		background-image: url( svg-icon-path-theme('tick'));
 	}
 	
-	.step.i-Comments {
+	.step.i-comments {
 		background-image: url( svg-icon-path-theme('comments'));
 		opacity: 0.5;
 	}
