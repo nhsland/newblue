@@ -5,6 +5,27 @@
 table.oec-patients {	
 	width:100%;
 	margin:1px 0 0 0;
+	
+	// popup in events/overview
+	&.in-event {
+		td {
+			&:nth-child( 3 ){ // pathway
+				width: auto;
+			}
+			
+			&:nth-child( 4 ), // +
+			&:nth-child( 5 ){ // priority
+				width: 45px;			
+			}
+			
+			&:nth-child( 6 ), // comments
+			&:nth-child( 7 ), // wait time
+			&:nth-child( 8 ){
+				width: 90px;			
+			}
+			
+		}
+	}
 
 	tbody {
 		// add line to help with reading data
@@ -115,9 +136,7 @@ table.oec-patients {
 				height: 40px;
 			}
 		} 
-		
-		
-		
+	
 		&:nth-child( 7 ){ 
 			width: 40px; // Flags
 			.oe-i {

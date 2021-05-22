@@ -3,6 +3,13 @@
 //
 
 .oe-pathstep-popup {
+	// all popups need to show the patient name 
+	.patient {
+		@include font-size(10);
+		font-weight: $oe-font-bold;
+		color:$oe-text-light;
+		padding:0 0 5px 0;		
+	}
 
 	// popup has .title class (if needed)
 	// current just using the <h3> for the title

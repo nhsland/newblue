@@ -12,15 +12,23 @@
 	position: fixed;
 	top:$oe-header-height + $oe-event-header-height;
 	left:$oe-event-sidebar-width;
-	width:$oe-event-main-default-width;
+	width: calc(  100vw - #{$oe-event-sidebar-width });
 	border-bottom:3px solid $oe-popup-bg; 
 	border-top:1px solid $oe-popup-bg; 
 	
 	background:$oe-grey;
 	padding:10px;
 	
-	@include extended(){
-		width:$oe-event-main-extended-width;
+	// this needs to match the padding added to the Events 
+	min-height: 80px; 
+
+	width: calc(  100vw - #{$oe-event-sidebar-width });
+	// adjust to always fill the <main> Event width
+	@include fix-hotlist(){
+		width: $oe-event-main-extended-width;
+	}
+	@include super-wide(){
+		width: 53vw;
 	}
 	
 	.close-icon-btn {

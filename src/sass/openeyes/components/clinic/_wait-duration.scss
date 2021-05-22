@@ -4,7 +4,6 @@
 
 .wait-duration {
 	position: relative;
-	width:105px; 
 	@include flex( center, space-between );
 	
 	&.stopped {

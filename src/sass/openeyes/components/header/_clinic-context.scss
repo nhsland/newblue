@@ -13,8 +13,8 @@
 	height:$oe-header-height;
 	width:545px;
 	
-	background:transparent url( svg-path('backgrounds/clinic-watermark') ) top 0 right no-repeat;
-	background-size:70px;	
+	background:transparent url( svg-path('backgrounds/clinic-watermark') ) center right no-repeat;
+	background-size:52px;	
 	
 	@include flex( center, flex-start );
 	

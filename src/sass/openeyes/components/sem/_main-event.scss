@@ -47,11 +47,11 @@
 		
 	}
 	
-	// Examination Edit Search requires
-	// space so that the overlapping search
-	// doesn't cover the page data
+	// Pathways & Examination Edit Search 
+	// this is so doesn't cover any page data
+	&.allow-for-pathway,
 	&.examination-search-active {
-		padding-top:70px;
+		margin-top:80px;
 	}
 
 	// Enable smooth scrolling on Events for 

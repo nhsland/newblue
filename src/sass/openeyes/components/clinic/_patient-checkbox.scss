@@ -2,9 +2,8 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Clinic List
-
-.oe-clinic {	
+// <table> used in Events! 
+.oec-patients {	
 	// enhanced OE checkboxes
 	label.patient-checkbox {
 		@include flex( center, center );
