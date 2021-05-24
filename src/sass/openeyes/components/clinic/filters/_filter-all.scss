@@ -6,7 +6,7 @@
 	
 	// make use of the adder button, change it blue
 	// changes icons when open as it toggles the panel
-	button.search-all {
+	button.filter-all {
 		width:60px;
 		background-color: $oe-btn-blue-hint;
 		
@@ -14,18 +14,11 @@
 		// add plus icon centered with flex
 		&:after {
 			content: '';
-			height:17px;
-			width:17px;
-			background-image: url( svg-path('icons/search'));
-			background-size: 17px;
+			height:18px;
+			width:18px;
+			background-image: url( svg-path('icons/filter'));
+			background-size: contain;
 			opacity: 0.7;
-		}
-		
-		&.close {
-			&:after {
-				background-image: url( svg-path('icons/remove'));
-				opacity: 1;
-			}
 		}
 		
 		&:hover,

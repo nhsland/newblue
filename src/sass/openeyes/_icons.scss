@@ -310,6 +310,7 @@
 	
 	// save and cancel icons
 	&.save				{ @include oe3-icons('save'); }
+	&.save-blue			{ @include oe3-icons('save-blue'); }
 	&.cancel 			{ @include oe3-icons('cancel'); }
 	&.finish 			{ @include oe3-icons('finish'); }
 
