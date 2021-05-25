@@ -23,7 +23,7 @@
 		}
 		
 		&.max {
-			width:1040px; // allow for padding in wrapper!
+			width: #{$oe-minimum-viewport-width - 40px}; // allow for padding 20px
 		}
 		
 		&.max-height {

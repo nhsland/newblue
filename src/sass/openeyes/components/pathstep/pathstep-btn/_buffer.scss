@@ -9,6 +9,7 @@
 	// // status: buff
 	// type: arrive, wait, finish, auto-finish, owner
 	&.buff {
+		padding:0 8px;
 		border-radius:9px;
 		color: $oe-text; 
 		background: none;
@@ -42,61 +43,11 @@
 	&.wait {
 		color: $oe-text;
 		border-color: $oe-step-orange;
-		
-		&.long {
-			color: $oe-step-text;
-			background-color: $oe-step-orange;
-			border-color: transparent;
-		}
 	}
 	
-	// Buffer icons instead of text
-	.step.i-break,
-	.step.i-fork,
-	.step.i-redflag,
-	.step.i-wait,
-	.step.i-arr,
-	.step.i-stop,
-	.step.i-fin, 
-	.step.i-comments {
-		display: block;
-		margin:0 0 1px 0; // visually stretch the container to match steps
-		width:14px;
-		height:14px;
-		background: center center no-repeat;
-		background-size: contain;
+	&.delayed-wait {
+		background-color: $oe-step-orange;
+		border-color: transparent;
 	}
 	
-	.step.i-break {
-		//background-image: url( svg-icon-path-theme('waiting'));
-		background-image: url( svg-icon-path-theme('path-break'));
-	}
-	
-	.step.i-fork {
-		//background-image: url( svg-icon-path-theme('waiting'));
-		background-image: url( svg-icon-path-theme('fork'));
-	}
-	
-	.step.i-redflag {
-		//background-image: url( svg-icon-path-theme('waiting'));
-		background-image: url( svg-path('ui/flag-red'));
-	}
-	
-	.step.i-arr {
-		background-image: url( svg-icon-path-theme('direction-right'));
-	}
-	
-	.step.i-wait {
-		background-image: url( svg-icon-path-theme('waiting'));
-	}
-	
-	.step.i-fin {
-		background-image: url( svg-icon-path-theme('tick'));
-	}
-	
-	.step.i-comments {
-		background-image: url( svg-icon-path-theme('comments'));
-		opacity: 0.5;
-	}
-
 }

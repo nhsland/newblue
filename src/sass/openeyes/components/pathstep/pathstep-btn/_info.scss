@@ -5,8 +5,8 @@
 .oe-pathstep-btn {
 	.info {
 		margin:1px 0 0 0;
-		@include font-size(10);
+		@include font-size(9.5);
 		font-weight: $oe-font-medium;
-		opacity:0.8;
+		opacity:0.7;
 	}
 }

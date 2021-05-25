@@ -3,25 +3,74 @@
 //
 
 .oe-pathstep-btn {
-	// Drug admin - PSD (drop icon)
-	.step.i-drug-admin {
+	
+	
+	.step.i-break,
+	.step.i-fork,
+	.step.i-redflag,
+	.step.i-wait,
+	.step.i-delayed,
+	.step.i-arr,
+	.step.i-stop,
+	.step.i-fin, 
+	.step.i-comments, 
+	.step.i-drug-admin,
+	.step.i-discharge {
 		display: block;
-		width:14px;
-		height:14px;
-		background: url( svg-icon-path-theme('drop')) center top no-repeat;
-		background-size: 14px;
+		width:15px;
+		height:15px;
+		background: center center no-repeat;
+		background-size: contain;
+	}
+	
+	.step.i-break {
+		//background-image: url( svg-icon-path-theme('waiting'));
+		background-image: url( svg-icon-path-theme('path-break'));
+	}
+	
+	.step.i-fork {
+		//background-image: url( svg-icon-path-theme('waiting'));
+		background-image: url( svg-icon-path-theme('fork'));
+	}
+	
+	.step.i-redflag {
+		//background-image: url( svg-icon-path-theme('waiting'));
+		background-image: url( svg-path('ui/flag-red'));
+	}
+	
+	.step.i-arr {
+		background-image: url( svg-icon-path-theme('direction-right'));
+	}
+	
+	.step.i-wait {
+		background-image: url( svg-icon-path-theme('waiting'));
+	}
+	
+	// on solid colour
+	.step.i-delayed {
+		background-image: url( svg-path('icons/waiting'));
+	}
+	
+	.step.i-fin {
+		background-image: url( svg-icon-path-theme('tick'));
+	}
+	
+	.step.i-comments {
+		background-image: url( svg-icon-path-theme('comments'));
+		opacity: 0.5;
+	}
+
+	// Drug admin - PSD (drop icon)
+	.step.i-drug-admin{
+		background-image: url( svg-icon-path-theme('drop'));
 	}
 	
 	.step.i-discharge {
-		display: block;
-		width:14px;
-		height:14px;
-		background: url( svg-icon-path-theme('stop')) center top no-repeat;
-		background-size: 14px;
+		background-image: url( svg-icon-path-theme('stop'));
 	}
 	
-	// --- Solid steps
-	// active then done
+	
+	// icons on solid steps need to have icon change:
 	&.active,
 	&.done { 
 		.step.i-drug-admin {

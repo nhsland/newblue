@@ -5,9 +5,10 @@
 .oe-popup-content {
 	
 	// generalised approach based on build-psd
-	&.config-pathstep {
+	// used on <div> wrapper within content area
+	// this allow things above and below it
+	.block-layout {
 		@include flex( flex-start, space-between );
-		width:1040px; // max width (same as "max" class)
 	
 		// step sub-titles
 		h3 {
@@ -21,7 +22,7 @@
 				flex:2 0 0; 
 			}
 			
-			padding:0 15px 10px 15px;
+			padding:0 10px 10px 10px;
 			border-left:1px solid $oe-dark-line;
 			
 			&:first-child {

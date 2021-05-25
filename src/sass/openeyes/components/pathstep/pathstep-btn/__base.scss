@@ -8,34 +8,32 @@
 
 // <span>
 .oe-pathstep-btn {	
-	position: relative; // for the shift buttons
+	@include inline-flex( center, center );
 	
-	display:inline-flex;
-	align-items:center;		
-	justify-content:center;
 	
 	// if it has two children (e.g name and time) then it needs stacking
 	flex-direction: column;
 	
-	min-height: 26px;
-	min-width: 40px;
+	// fixed height: 
+	height:34px; // arbitary, seems ideal
 	
-	line-height: 1.2; // this needs fixing or else it will affect the layout
-	
-	// setup with margin-left to space btns 
-	// so if tbn used in last <table> col it lines up
-	padding:2px 8px;
+	padding:0 10px;
 	margin:2px 2px 2px 0; 
-
-	 
 	&:last-child {
 		margin-right:0;
 	}
+	
+	line-height: 1; // this needs fixing or else it will affect the layout
 	
 	@include font-size(12);
 	font-style: italic;
 	font-weight: $oe-font-medium;
 	cursor: pointer;	
+	
+	.step {
+		// visual fix!
+		transform: translateY(-1px);
+	}
 	
 	// turn off point events for all children
 	// JS needs this:
