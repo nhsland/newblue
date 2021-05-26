@@ -14,12 +14,10 @@
 
 	// User CSS Animation.
 	display: none;
-	justify-content: space-between;
-	align-items: flex-start;
 	right: -10px;  // can't animate display states but can nudge over.
 	
 	&.fadein {
-		display: flex;
+		display: block;
 		animation: 0.2s ease-out forwards fadein;
 		right:0;
 		
