@@ -10,14 +10,14 @@
 	
 	@include font-size(10);
 	font-weight:$oe-font-bold;
-	color:$oe-text-highlight;
+	color:$oe-text-active;
 	
 	transition:top 0.2s ease-out; 
 	
 	
 	// position the text in relation to the bottom of the <tr>
 	// JS sets it's "top" position...
-	padding: 0 0 0 22px;
+	padding: 0 0 0 21px;
 	transform: translateY( -12px );
 	
 	// dotted line
@@ -26,9 +26,9 @@
 		position:absolute; 
 		left:0;
 		top: 12px;
-		width: 65px;
+		width: 48px;
 		height:1px;
-		border-top: 1px dotted $oe-text-highlight;
+		border-top: 1px solid $oe-text-active;
 		opacity:0.5;
 	}
 	
