@@ -299,6 +299,8 @@
 	&.padlock	 		{ @include oe3-icons('padlock'); }
 	&.fork	 			{ @include oe3-icons('fork'); }
 	&.path-break	 	{ @include oe3-icons('path-break'); }
+	&.happy	 			{ @include oe3-icons('happy'); }
+	&.crying	 		{ @include oe3-icons('crying'); }
 	
 	// monochromatic Eye Lat icons:
 	&.eyelat-L			{ @include oe3-icons('lat-L'); }
