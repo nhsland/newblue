@@ -5,7 +5,7 @@
 .clinic-filters {
 	
 	// make use of the adder button, change it blue
-	// changes icons when open as it toggles the panel
+	// changes icons when open as it toggles the panel 
 	button.waiting-for {
 		background-color: $oe-btn-blue-hint;
 		@include font-size(12);
@@ -16,6 +16,21 @@
 			color: #fff;
 		}	
 	}
+	
+	button.table-sort {
+		margin:0 4px 0 0;
+		background-color: none;
+		@include font-size(12);
+		font-weight: $oe-font-bold;
+		color: rgba(255,255,255,0.6);
+		&:hover,
+		&:focus {
+			background-color: $oe-btn-blue;
+			color: #fff;
+		}	
+	}
+	
+	
 	
 	button.filter-all {
 		width:60px;

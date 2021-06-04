@@ -1,0 +1,45 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-worklists-panel {
+	// Build your search critera
+	.search-filters {
+		margin:10px;
+		color: $oe-text;
+		
+		// using row-list idea to layout the filters
+		table.filters {
+			width:100%;
+			
+			margin:0 0 10px 0;
+			tbody {
+				tr {
+					border-top:1px solid $oe-line;
+					&:first-child { 
+						border-top: none;
+					}
+				}
+				
+				td {
+					padding: 5px; 
+					@include font-size(13);
+					line-height:1.3;
+					
+					&:last-child{
+						text-align: right;
+					}
+					
+				}
+				
+				th {
+					@include font-size(11);
+					font-weight: $oe-font-medium;
+					color: $oe-text-light;
+				}
+			}
+		} 
+	}	
+}
+
+

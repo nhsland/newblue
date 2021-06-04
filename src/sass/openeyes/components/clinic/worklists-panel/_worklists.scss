@@ -12,6 +12,7 @@
 			padding:5px 10px; 
 		}
 		
+		
 		// combine lists checkbox
 		.combine-lists {
 			padding:5px 10px;
@@ -22,46 +23,6 @@
 			border-bottom: 2px solid $oe-btn-blue;
 		}
 		
-		.worklists {
-			fieldset {
-				background: $oe-btn-default;
-				
-				label {
-					// reset the cascade
-					display: block;
-					white-space: normal;
-					margin:0;
-					padding:0;
-					background: transparent;
-					color: $oe-text-light;
-					
-					.btn {
-						display: block;
-						width: 100%;
-						@include font-size(12);
-						font-weight:400;
-						padding:5px 10px;
-						cursor: pointer;
-					}
-					
-					> input[type="checkbox"] {
-						display: none;
-						// CSS magic '+' next sibling! 
-						+ .btn {
-							&:hover, 
-							&:focus {
-								color:#fff;
-								background: $oe-btn-blue-dark;
-							}
-						}
-						&:checked + .btn {
-							color:#fff;
-							background: $oe-btn-blue;
-						}
-					}
-				}
-			}
-		}
 	}	
 }
 

@@ -91,7 +91,7 @@ table.oec-patients {
 		&:first-child{
 			@include font-size(12);
 			font-weight: $oe-font-bold;
-			width: 65px;
+			width: 70px;
 		}
 		
 		// List name and code
@@ -151,7 +151,7 @@ table.oec-patients {
 		
 		
 		&:nth-child( 9 ){
-			width: 120px; // Wait Duration, arrive / DNA 
+			width: 110px; // Wait Duration, arrive / DNA 
 		}
 		
 		&:nth-child( 10 ){

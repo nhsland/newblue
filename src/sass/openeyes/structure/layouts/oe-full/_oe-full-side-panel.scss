@@ -2,84 +2,82 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-.oe-full-content {
+.oe-full-side-panel {
 	
-	.oe-full-side-panel {
-		
-		// standardised styles for the side-panel
-		padding:20px;
-		
-		// set a default text size 
-		// this will cover <a> 
+	// standardised styles for the side-panel
+	padding:20px;
+	
+	// set a default text size 
+	// this will cover <a> 
+	@include font-size(12);
+	font-weight: $oe-font-medium;
+
+	h3 {
+		margin:16px 0 8px 0;
+		@include font-size(15);
+		font-weight: $oe-font-light;
+		color:$oe-blue-light;
+	}
+	
+	
+	h4 {
 		@include font-size(12);
+		margin:12px 0 6px 0;
 		font-weight: $oe-font-medium;
+		color:$oe-blue-light;
+		line-height:1.4;
+	}
 	
-		h3 {
-			margin:16px 0 8px 0;
-			@include font-size(15);
-			font-weight: $oe-font-light;
-			color:$oe-blue-light;
-		}
-		
-		
-		h4 {
-			@include font-size(12);
-			margin:12px 0 6px 0;
-			font-weight: $oe-font-medium;
-			color:$oe-blue-light;
-			line-height:1.4;
-		}
-		
-		// if first element in the sidepanel move to top
-		// might be in a group, ignore these for now (i think)
-		h3:first-child,
-		h4:first-child {
-			margin-top:0;
-		}
-		
-		p {
-			@include font-size(12);
-			margin:6px 0;
-			line-height:1.4; 
-		}
+	// if first element in the sidepanel move to top
+	// might be in a group, ignore these for now (i think)
+	h3:first-child,
+	h4:first-child {
+		margin-top:0;
+	}
 	
-		// lists
-		ul {
-			margin:10px 0;
-			li {
-				@include font-size(13);
-				color:$oe-text-light;
-				padding:0 0 10px 0;
-				
-				.count {
-					@include font-size(12);
-					padding:0 0 0 5px;
-				}
-			}
-		}
-		
-		table.standard {
-			margin:0 0;
-			
-			// for filters
-			// 'normal-text' is a bit weird renamed it to match Analytics
-			&.custom-filters, 
-			&.normal-text {
-				tbody {
-					td {
-						@include font-size(12);
-						line-height:1.3;
-					}
-					
-					th {
-						@include font-size(11);
-						font-weight: $oe-font-medium;
-					}
-				}
-			}
-			
-			
-		}	
+	p {
+		@include font-size(12);
+		margin:6px 0;
+		line-height:1.4; 
 	}
 
+	// lists
+	ul {
+		margin:10px 0;
+		li {
+			@include font-size(13);
+			color:$oe-text-light;
+			padding:0 0 10px 0;
+			
+			.count {
+				@include font-size(12);
+				padding:0 0 0 5px;
+			}
+		}
+	}
+	
+	table.standard {
+		margin:0 0;
+		
+		// for filters
+		// 'normal-text' is a bit weird renamed it to match Analytics
+		&.custom-filters, 
+		&.normal-text {
+			tbody {
+				td {
+					@include font-size(12);
+					line-height:1.3;
+				}
+				
+				th {
+					@include font-size(11);
+					font-weight: $oe-font-medium;
+				}
+			}
+		}
+		
+		
+	}	
 }
+
+

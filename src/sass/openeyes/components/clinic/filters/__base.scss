@@ -3,5 +3,9 @@
 //
 
 .clinic-filters {
+	// position within the header
+	position: absolute;
+	top:0; 
+	left: 185px; // visually align with the clinc table
 	@include flex( center, flex-end );
 }

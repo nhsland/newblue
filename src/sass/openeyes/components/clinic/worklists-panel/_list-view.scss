@@ -1,0 +1,58 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.oe-worklists-panel {
+	// after filtering and loading still need a way to quickly flick
+	// between lists (IF there is more that one)
+	.list-view {	
+		// all button
+		button {
+			justify-content: flex-start;
+			padding:5px 10px;
+		}
+			
+		.worklists {
+			fieldset {
+				background: $oe-btn-default;
+				
+				label {
+					// reset the cascade
+					display: block;
+					white-space: normal;
+					margin:0;
+					padding:0;
+					background: transparent;
+					color: $oe-text-light;
+					
+					.btn {
+						display: block;
+						width: 100%;
+						@include font-size(12);
+						font-weight:400;
+						padding:5px 10px;
+						cursor: pointer;
+					}
+					
+					> input[type="checkbox"] {
+						display: none;
+						// CSS magic '+' next sibling! 
+						+ .btn {
+							&:hover, 
+							&:focus {
+								color:#fff;
+								background: $oe-btn-blue-dark;
+							}
+						}
+						&:checked + .btn {
+							color:#fff;
+							background: $oe-btn-blue;
+						}
+					}
+				}
+			}
+		}
+	}	
+}
+
+

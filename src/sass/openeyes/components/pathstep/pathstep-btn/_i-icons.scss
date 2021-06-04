@@ -73,11 +73,14 @@
 	// icons on solid steps need to have icon change:
 	&.active,
 	&.done { 
-		.step.i-drug-admin {
-			background-image: url( svg-path('icons/drop'));
+		.step.i-arr {
+			background-image: url( svg-path('icons/direction-right'));
 		}
 		.step.i-discharge {
 			background-image: url( svg-path('icons/stop'));
+		} 
+		.step.i-drug-admin {
+			background-image: url( svg-path('icons/drop'));
 		}		
 	}
 }
