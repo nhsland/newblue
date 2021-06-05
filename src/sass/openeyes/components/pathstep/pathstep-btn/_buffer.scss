@@ -45,9 +45,13 @@
 		border-color: $oe-step-orange;
 	}
 	
+	// after a config < mins wait becomes a ...
 	&.delayed-wait {
 		background-color: $oe-step-orange;
 		border-color: transparent;
+		.info {
+			color: #fff;
+		}
 	}
 	
 }

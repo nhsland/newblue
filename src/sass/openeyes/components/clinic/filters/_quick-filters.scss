@@ -4,7 +4,7 @@
 
 ul.quick-filters {
 	// inline the list items
-	@include flex( flex-start, flex-start );
+	@include flex( center, flex-start );
 	
 	// <li>
 	li.filter-btn {
@@ -21,12 +21,7 @@ ul.quick-filters {
 			padding: 0 10px 0 15px; // visually better 
 			@include flex( center, flex-start );
 			@include font-size(13);
-			
-			// if it's a shortcode JS will expand to show it's fullname
-			.fullname {
-				@include font-size(9);
-			}
-			
+		
 			.count {
 				padding: 0 0 0 5px;
 				@include font-size( 11 );
@@ -46,7 +41,6 @@ ul.quick-filters {
 			.count {
 				color: #fff;
 			}
-			
 		}
 		
 		// turn off JS events in Children

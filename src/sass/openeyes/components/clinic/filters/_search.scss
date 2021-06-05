@@ -8,9 +8,11 @@
 		width:200px;
 		height: $oe-event-header-height;
 		line-height: $oe-event-header-height;
-		@include font-size(15);
+		margin:0 2px 0 0; // overide the default for this.
+		
+		@include font-size(13);
 		font-weight:400;
-		margin:0 4px 0 0; // overide the default for this.
+		
 		border-radius: 0;
 		background-color: $oe-btn-default; // match other quick search buttons (check in classic!)
 		

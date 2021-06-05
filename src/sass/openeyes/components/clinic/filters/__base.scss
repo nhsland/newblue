@@ -3,9 +3,10 @@
 //
 
 .clinic-filters {
-	// position within the header
+	// position within the header 'oe-full-header'
+	// requires a wrapper: <nav class="options-left"> to work
 	position: absolute;
 	top:0; 
-	left: 185px; // visually align with the clinc table
-	@include flex( center, flex-end );
+	left: 185px; // visually align with the clinc table Patient names
+	@include flex( center, flex-start );
 }

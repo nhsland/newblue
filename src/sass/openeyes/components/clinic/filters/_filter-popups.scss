@@ -3,57 +3,48 @@
 //
 
 .clinic-filters {
-	
-	// make use of the adder button, change it blue
-	// changes icons when open as it toggles the panel 
-	button.waiting-for {
-		background-color: $oe-btn-blue-hint;
-		@include font-size(12);
-		color: rgba(255,255,255,0.6);
+	// buttons in the filters than open popups
+	button {
+		@include font-size(13);
+		font-weight: $oe-font-medium;
+		background-color: $oe-btn-default;
+		color:$oe-text-light;
+		
 		&:hover,
 		&:focus {
 			background-color: $oe-btn-blue;
 			color: #fff;
-		}	
-	}
-	
-	button.table-sort {
-		margin:0 4px 0 0;
-		background-color: none;
-		@include font-size(12);
-		font-weight: $oe-font-bold;
-		color: rgba(255,255,255,0.6);
-		&:hover,
-		&:focus {
-			background-color: $oe-btn-blue;
-			color: #fff;
-		}	
-	}
-	
-	
-	
-	button.filter-all {
-		width:60px;
-		background-color: $oe-btn-blue-hint;
-		
-		
-		// add plus icon centered with flex
-		&:after {
-			content: '';
-			height:18px;
-			width:18px;
-			background-image: url( svg-path('icons/filter'));
-			background-size: contain;
-			opacity: 0.7;
 		}
 		
-		&:hover,
-		&:focus {
-			background-color: $oe-btn-blue;
+		&.table-sort {
+			position: relative;
+			margin:0 2px 0 0;
+			padding-left:28px; // 16px default allow for the icon
+			
 			&:after {
-				opacity: 1;
+				content:'';
+				position: absolute;
+				top:12px;
+				left:8px; 
+				height:13px;
+				width:13px;
+				background: url( svg-icon-path-theme('downup')) center center no-repeat;
+				background-size: contain;
+				opacity:0.4;
 			}
-		}	
+			
+			&:hover,
+			&:focus {
+				&:after {
+					background-image: url( svg-path('icons/downup'));
+					opacity:1;
+				}
+			}
+		}
+		
+		&.to-do {
+			margin:0 0 0 2px;
+		}
 	}
 
 }
