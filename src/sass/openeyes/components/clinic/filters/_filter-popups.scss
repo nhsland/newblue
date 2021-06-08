@@ -10,6 +10,8 @@
 		background-color: $oe-btn-default;
 		color:$oe-text-light;
 		
+		margin:0 1px;
+		
 		&:hover,
 		&:focus {
 			background-color: $oe-btn-blue;
@@ -18,7 +20,7 @@
 		
 		&.table-sort {
 			position: relative;
-			margin:0 2px 0 0;
+			
 			padding-left:28px; // 16px default allow for the icon
 			
 			&:after {
@@ -42,9 +44,32 @@
 			}
 		}
 		
-		&.to-do {
-			margin:0 0 0 2px;
+		&.help {
+			position: relative;
+			margin: 0 0 0 18px;
+			background:none;
+			
+			&:after {
+				content:'';
+				position: absolute;
+				top:0;
+				left:0; 
+				right:0;
+				bottom:0;
+				background: url( svg-icon-path-theme('info')) center center no-repeat;
+				background-size: 13px;
+				opacity:0.4;
+			}
+			
+			&:hover,
+			&:focus {
+				&:after {
+					opacity:0.8;
+				}
+			}
+			
 		}
+		
 	}
 
 }

@@ -1,0 +1,56 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.context-help-overlay {
+	width: 100%;
+	height: 100%; 
+	cursor: pointer;
+	
+	.help-note {
+		position: fixed;
+		color: #fff;
+		background:rgba($html-bg, 0.8);
+		padding:10px;
+		border-radius:5px;
+		@include font-size(12);
+		@include boxshadow();
+		line-height: 1.4;
+		
+		// arrow 
+		&:after {
+			content:"";
+			position: absolute;
+			height: 0;
+			width: 0;
+			border: solid transparent;
+			pointer-events: none;
+			border-color: rgba(0,0,0,0);
+			border-width: 7px;
+		}
+		
+		&.top {
+			border-top: 1px solid $oe-dark-text-highlight;
+			&:after {
+				top: 0;
+				left: 50%;
+				border-bottom-color: $oe-dark-text-highlight;
+				transform: translate(-7px, -14px);
+			}
+		}
+		
+		&.bottom {
+			border-bottom: 1px solid $oe-dark-text-highlight;
+			&:after {
+				bottom: 0;
+				left: 50%;
+				border-top-color: $oe-dark-text-highlight;
+				transform: translate(-7px, 14px);
+			}
+		}
+		
+		
+		
+	}
+	
+}

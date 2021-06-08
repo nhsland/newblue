@@ -22,16 +22,16 @@
 	}
 	
 	// pathway owner column
-	&.comments {
+	&[class*="comments"] {
 		margin-left:10px;
 		background-color: rgba($oe-text,0.1);
 		border-color: transparent;
-		
-		&.added {
-			.step.i-comments {
-				background-image: url( svg-icon-path-theme('comments-added'));
-				opacity: 0.7;
-			}
+	}
+	
+	&.comments-added {
+		.step.i-comments {
+			background-image: url( svg-icon-path-theme('comments-added'));
+			opacity: 0.7;
 		}
 	}
 	
