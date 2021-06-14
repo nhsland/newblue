@@ -1,0 +1,44 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.clinic-filters {
+	
+	.filter-btn {
+		@include flex( center, flex-start );
+		height:$oe-event-header-height;
+		min-width: 60px;
+		background: $oe-btn-default;
+		cursor:pointer;
+		color:$oe-text-light;
+		padding: 0 10px 0 15px; // visually better 
+		
+		.name {
+			@include font-size(13);
+		}
+		
+		.count {
+			padding: 0 0 0 5px;
+			@include font-size( 11 );
+			font-weight: $oe-font-bold;
+			color: $oe-text-highlight;
+			transform: translateY(-6px);			
+		}
+		
+		&:hover, 
+		&:focus, 
+		&.selected {
+			background:$oe-btn-blue;
+			color:#fff;
+			.count {
+				color: #fff;
+			}
+		}
+		
+		// turn off JS events in Children
+		* {
+			pointer-events: none;
+		}
+	}
+	
+}

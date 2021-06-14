@@ -293,6 +293,7 @@
 	&.person-green		{ @include oe3-icons('person-green'); }
 	&.person-split		{ @include oe3-icons('person-split'); }
 	&.reset 			{ @include oe3-icons('reset'); }
+	&.undo 				{ @include oe3-icons('undo'); }
 	&.sync 				{ @include oe3-icons('sync'); }
 	&.flux	 			{ @include oe3-icons('flux'); }
 	&.cog	 			{ @include oe3-icons('cog'); }
@@ -313,6 +314,7 @@
 	// save and cancel icons
 	&.save				{ @include oe3-icons('save'); }
 	&.save-blue			{ @include oe3-icons('save-blue'); }
+	&.save-plus			{ @include oe3-icons('save-plus'); }
 	&.cancel 			{ @include oe3-icons('cancel'); }
 	&.finish 			{ @include oe3-icons('finish'); }
 

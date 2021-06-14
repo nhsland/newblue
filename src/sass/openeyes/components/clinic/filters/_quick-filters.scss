@@ -4,49 +4,5 @@
 
 ul.quick-filters {
 	// inline the list items
-	@include flex( center, flex-start );
-	
-	// <li>
-	li.filter-btn {
-		position:relative; 
-		@include flex( center, center );
-		
-		height:$oe-event-header-height;
-		min-width: 60px;
-		background: $oe-btn-default;
-		cursor:pointer;
-		color:$oe-text-light;
-		
-		.filter {
-			padding: 0 10px 0 15px; // visually better 
-			@include flex( center, flex-start );
-			@include font-size(13);
-		
-			.count {
-				padding: 0 0 0 5px;
-				@include font-size( 11 );
-				font-weight: $oe-font-bold;
-				color: $oe-text-highlight;
-				transform: translateY(-6px);
-				
-			}
-		}
-		
-		
-		&:hover, 
-		&:focus, 
-		&.selected {
-			background:$oe-btn-blue;
-			color:#fff;
-			.count {
-				color: #fff;
-			}
-		}
-		
-		// turn off JS events in Children
-		* {
-			pointer-events: none;
-		}
-	}
-	
+	@include flex( center, flex-start );	
 }
