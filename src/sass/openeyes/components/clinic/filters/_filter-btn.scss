@@ -5,9 +5,9 @@
 .clinic-filters {
 	
 	.filter-btn {
-		@include flex( center, flex-start );
+		@include flex( center, center );
 		height:$oe-event-header-height;
-		min-width: 60px;
+		min-width: 45px;
 		background: $oe-btn-default;
 		cursor:pointer;
 		color:$oe-text-light;
@@ -30,6 +30,9 @@
 		&.selected {
 			background:$oe-btn-blue;
 			color:#fff;
+			.oe-i {
+				opacity: 1;
+			}
 			.count {
 				color: #fff;
 			}

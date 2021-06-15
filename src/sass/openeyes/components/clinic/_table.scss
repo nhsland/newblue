@@ -18,9 +18,9 @@ table.oec-patients {
 				width: 45px;			
 			}
 			
-			&:nth-child( 6 ), // comments
-			&:nth-child( 7 ), // wait time
-			&:nth-child( 8 ){
+			&:nth-child( 7 ), // comments
+			&:nth-child( 8 ), // wait time
+			&:nth-child( 9 ){
 				width: 90px;			
 			}
 			
@@ -70,11 +70,11 @@ table.oec-patients {
 		font-weight: $oe-font-light;
 		color: $oe-text-light;
 		
-		&:nth-child( 7 ){
+		&:nth-child( 8 ){
 			padding-left:9px;
 		} 
 		
-		&:nth-child( 8 ){
+		&:nth-child( 9 ){
 			padding-left:22px;
 		} 
 		
@@ -135,26 +135,30 @@ table.oec-patients {
 				width: 40px;
 				height: 40px;
 			}
+		}
+		
+		&:nth-child( 7 ){ // Assignee
+			width: 45px;
 		} 
 	
-		&:nth-child( 7 ){ 
-			width: 40px; // Flags
+		&:nth-child( 8 ){ 
+			width: 40px; // Risk
 			.oe-i {
 				width: 30px;
 				height: 27px;
 			}
 		}
 		
-		&:nth-child( 8 ){
+		&:nth-child( 9 ){
 			width:80px; // Comments
 		} 
 		
 		
-		&:nth-child( 9 ){
-			width: 110px; // Wait Duration, arrive / DNA 
+		&:nth-child( 10 ){
+			width: 100px; // Wait Duration, arrive / DNA 
 		}
 		
-		&:nth-child( 10 ){
+		&:nth-child( 11 ){
 			text-align: center;
 			width: 60px; // Tick
 		}
