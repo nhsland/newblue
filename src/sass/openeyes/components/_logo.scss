@@ -31,22 +31,13 @@
 	width:280px;
 	background: tint( $oe-dark-bg,10 );
 	
-	@include handheld(){
-		width:33vw;
-	}
-	
 	.oe-logo {
 		position:absolute;
 		top:0; 			// allow for padding
 		left:25px;
 		padding:20px; 	// increase hit area
 		cursor: pointer;
-		
-		@include handheld(){
-			left:15px;
-			// create a big hit area, visually position logo:
-			padding:30px 10px 40px 10px;
-		}
+
 		
 		// SVG logo
 		.oe-openeyes {
@@ -60,14 +51,6 @@
 			height:$svg-height;
 			fill:#fff;
 			opacity:0.3;
-			
-			@include handheld(){
-				$svg-width:130px;
-				$svg-height: ( $svg-width * 0.1844 );
-				width:$svg-width; 
-				height:$svg-height;
-				opacity:0.5;
-			}
 		}
 		
 		// OpenERS skin
@@ -82,14 +65,6 @@
 			height:$svg-height;
 			fill:#fff;
 			opacity:0.3;
-			
-			@include handheld(){
-				$svg-width:140px;
-				$svg-height: ( $svg-width * 0.22 );
-				width:$svg-width; 
-				height:$svg-height;
-				opacity:0.5;
-			}
 		}
 		
 		
@@ -118,10 +93,6 @@
 		margin:$oe-header-height 0 0 20px;
 		padding:0 10px 10px 0;	
 		
-		@include handheld(){
-			padding:40px 10px 10px 0;
-		}
-		
 		.group {
 			margin:5px 0;
 			padding:5px 0 10px 0;
@@ -138,12 +109,6 @@
 			font-weight:300;
 			line-height:1.4;
 			margin:0 0 5px 0;
-			
-			@include handheld(){
-				@include font-size(20);
-				font-weight:400;
-				margin:0 0 30px 0;
-			}
 			
 			&:last-child {
 				margin:0 0 0 0;
@@ -164,11 +129,6 @@
 			color:$oe-dark-text;
 			margin:0 0 10px 0;
 			
-			@include handheld(){
-				@include font-size(32);
-				font-weight:300;
-				margin:0 0 20px 0;
-			}
 		}
 		
 		h4 {
@@ -176,11 +136,6 @@
 			font-weight:300;
 			color:$oe-dark-text-light;
 			margin:0 0 5px 0;
-			
-			@include handheld(){
-				@include font-size(16);
-				margin:0 0 15px 0;
-			}
 			
 		}
 

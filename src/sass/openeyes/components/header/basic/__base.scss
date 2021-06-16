@@ -21,9 +21,8 @@
 	font-weight: 300;
 	
 	@include handheld(){
-		@include font-size(28);
+		@include font-size(24);
 		font-weight: 400;
-		top:10px;
 	}
 	
 	
@@ -47,12 +46,6 @@
 	
 	@include font-size(16);
 	color:$oe-dark-text-light; 	// not themed
-	
-	@include handheld(){
-		top:auto;
-		bottom:5px;
-		@include font-size(20);
-	}
 	
 	button {
 		margin:0 8px 0 0;

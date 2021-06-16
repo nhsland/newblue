@@ -9,11 +9,5 @@
 	top:0; 
 	right:0;
 	height:$oe-header-height;
-	
-	@include handheld(){
-		top:auto;
-		bottom:0;
-	}
-	
 }
 

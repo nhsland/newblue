@@ -16,10 +16,6 @@
 		bottom:0;
 		right:155px;
 		
-		@include handheld(){
-			right: 260px;	
-		}
-		
 		cursor:pointer;
 		
 		// Allergies, Alerts text
@@ -60,15 +56,6 @@
 			padding:0;
 			width:25px;
 			background-position: center center;
-		}
-		
-		@include handheld(){
-			text-indent: -9999px;
-			padding:0;
-			background-position: center center;
-			height:38px;
-			width:50px;
-			background-size:23px;
 		}
 		
 	}

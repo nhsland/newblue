@@ -16,12 +16,6 @@
 		@include font-size(17);
 		font-weight:400;
 		
-		@include handheld(){
-			top:18px; 
-			@include font-size(22);
-			font-weight:500;
-		}
-		
 		a {
 			&:hover, 
 			&:focus, 
@@ -36,13 +30,6 @@
 		bottom:0; 
 		left:0;
 		padding:0 20px 0 0;
-		
-		@include handheld(){
-			bottom: #{$oe-event-header-height + 5px}; 
-			@include font-size(16);
-			font-weight:500;
-		}
-		
 	}
 	
 	.patient-demo-icon {
@@ -90,10 +77,6 @@
 		padding-left:0;
 		border-left:none;
 		@include font-size(13);
-		
-		@include handheld(){
-			@include font-size(18);
-		}
 	}
 	
 	// DECEASED

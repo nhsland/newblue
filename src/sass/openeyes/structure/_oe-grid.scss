@@ -33,16 +33,6 @@
 			"addevent eventheader" #{$oe-event-header-height} 
 			"sidebar main" 1fr 
 			/ #{$oe-event-sidebar-width} 1fr;
-		
-	// increase the "header" row on handhelds		
-	@include handheld(){
-		grid: 	"header header" #{$oe-header-height * 2} 
-				"addevent eventheader" #{$oe-event-header-height} 
-				"sidebar main" 1fr 
-				/ #{$oe-event-sidebar-width} 1fr;
-				
-		-ms-grid-rows: #{$oe-header-height * 2} $oe-event-header-height 1fr;
-	}
 
 	// This fixes a bug that arose with the use of TinyMCE. 
 	// and may fix (future issues). So, what happened? 
