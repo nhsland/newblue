@@ -18,9 +18,10 @@
 		right:250px; 
 	}
 	
-	// Nav icons are increased to fill space
+	// No space for User info in handheld mode!!
 	// Turnning this off makes changing context impossible!
-	// However this should be dealt with in a differnt way! 
+	// But, this should be dealt with in a differnt way. 
+	// Note: Officially still not supporting tablets.
 	@include handheld(){ 
 		display: none;
 	}

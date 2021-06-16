@@ -32,10 +32,6 @@
 		right:0; 
 	}
 	
-	@include handheld(){
-		top:$oe-header-height * 2;
-	}
-	
 	// overflow wrappers for all data in Patient Popups
 	// only used in Patient Popups; in generic (centered!) popups 'oe-popup-content' handles this	
 	.oe-popup-overflow, 
