@@ -7,6 +7,6 @@
 	// requires a wrapper: <nav class="options-left"> to work
 	position: absolute;
 	top:0; 
-	left: 185px; // visually align with the clinc table Patient names
+	left: 145px; // visually align with the clinc table Patient names
 	@include flex( center, flex-start );
 }

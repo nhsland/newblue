@@ -8,8 +8,8 @@
 
 // <span>
 .oe-pathstep-btn {	
+	position: relative;
 	@include inline-flex( center, center );
-	
 	
 	// if it has two children (e.g name and time) then it needs stacking
 	flex-direction: column;

@@ -10,8 +10,6 @@
 		background-color: $oe-btn-default;
 		color:$oe-text-light;
 		
-		margin:0 1px;
-		
 		&:hover,
 		&:focus {
 			background-color: $oe-btn-blue;
@@ -20,7 +18,6 @@
 		
 		&.table-sort {
 			position: relative;
-			
 			padding-left:28px; // 16px default allow for the icon
 			
 			&:after {

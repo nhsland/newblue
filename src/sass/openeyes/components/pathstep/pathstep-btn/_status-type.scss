@@ -10,10 +10,8 @@
 
 // <span>
 .oe-pathstep-btn {
-		
-	// "todo" - default colours ("next")
 	color: $oe-text;
-	// flag any in-correct CSS classes 
+	// flag any in-correct CSS classes! ;)  
 	background: pink; 
 	
 	// all steps have a border for consistent layout	
@@ -82,6 +80,46 @@
 			padding-left:13px;
 			background: url( svg-icon-path-theme('person')) center left no-repeat;
 			background-size: 11px;
+		}
+	}
+	
+	// // hold patient for specific mins
+	&.hold {
+		border-radius:25%;
+		width:34px; // see base
+		
+		.step {
+			@include font-size(11);
+			font-weight: 500;
+		}
+		
+		// viewBox="0 0 34 34";
+		svg.progress-ring {
+			position: absolute;
+			width: 34px;
+			height: 34px;
+			// rotatate so that effect starts at 12 o'clock
+			transform: rotate(-90deg);
+			transform-origin: 50% 50%;
+			
+			circle {
+				stroke: rgba(240,255,240,0.4);
+				stroke-width: 4; 
+				// dont' use transition it messes it up!
+			}
+		}
+	}
+	
+	// locked! another user is using this step
+	&.locked {
+		background-color: $oe-step-outline-bg;
+		border-style: dashed;
+		border-color: $oe-step-outline;
+		.step {
+			padding-left:14px;
+			background: url( svg-icon-path-theme('no-permissions')) center left no-repeat;
+			background-size: 11px;
+			opacity: 0.6;
 		}
 	}
 }
