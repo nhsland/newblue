@@ -113,13 +113,13 @@
 	// locked! another user is using this step
 	&.locked {
 		background-color: $oe-step-outline-bg;
-		border-style: dashed;
+		border-style: dotted;
 		border-color: $oe-step-outline;
 		.step {
-			padding-left:14px;
-			background: url( svg-icon-path-theme('no-permissions')) center left no-repeat;
-			background-size: 11px;
-			opacity: 0.6;
+			//padding-left:14px;
+			//background: url( svg-icon-path-theme('no-permissions')) center left no-repeat;
+			//background-size: 11px;
+			color: $oe-text-light;
 		}
 	}
 }
