@@ -73,7 +73,7 @@
 	&.done {
 		background-color: $oe-step-green;
 		.step {
-			opacity:0.8; // use opacity because of the icons
+			// opacity:0.8; // reduce the contrast - use opacity because of the icons
 		}
 	}
 	
