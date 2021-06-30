@@ -72,6 +72,9 @@
 	
 	&.done {
 		background-color: $oe-step-green;
+		.step {
+			opacity:0.8; // use opacity because of the icons
+		}
 	}
 	
 	// person
@@ -119,7 +122,7 @@
 			//padding-left:14px;
 			//background: url( svg-icon-path-theme('no-permissions')) center left no-repeat;
 			//background-size: 11px;
-			color: $oe-text-light;
+			opacity:0.5; // use opacity because of the icons
 		}
 	}
 }
