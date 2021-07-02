@@ -24,6 +24,15 @@ input, textarea {
 		opacity:0.4;
 	}
 	
+	// within SEM Element highlight focus on inputs and textareas
+	.element & { 
+		&:focus {
+			box-shadow: $oe-input-focus-shadow;	
+		} 
+	}
+	
+	
+	
 	// this fixes the issues where the browser
 	// will use the system-ui fonts:
 	font-family: inherit;

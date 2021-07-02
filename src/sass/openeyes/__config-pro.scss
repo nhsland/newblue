@@ -94,6 +94,8 @@ $oe-user-inputs:		$oe-blue;
 $oe-user-inputs-hint:	rgba($oe-user-inputs,0.1);
 $oe-user-input-text:	$oe-text;
 $oe-input-placeholder:	rgb(101,111,101);
+$oe-input-focus-shadow: rgba( 0,0,0, 0.3) 0px 1px 2px 0px, rgba( 0,0,0, 0.15) 0px 2px 6px 2px;
+
 
 // flags
 $oe-highlighter: 		rgba(255,230,172,0.7);
