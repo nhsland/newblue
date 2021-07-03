@@ -4,18 +4,7 @@
 
 .oe-pathstep-btn {
 	
-	
-	.step.i-break,
-	.step.i-fork,
-	.step.i-redflag,
-	.step.i-wait,
-	.step.i-delayed,
-	.step.i-arr,
-	.step.i-stop,
-	.step.i-fin, 
-	.step.i-comments, 
-	.step.i-drug-admin,
-	.step.i-discharge {
+	span[class^="step i-"]{
 		display: block;
 		width:15px;
 		height:15px;
@@ -23,64 +12,67 @@
 		background-size: contain;
 	}
 	
-	.step.i-break {
-		//background-image: url( svg-icon-path-theme('waiting'));
-		background-image: url( svg-icon-path-theme('path-break'));
-	}
-	
-	.step.i-fork {
-		//background-image: url( svg-icon-path-theme('waiting'));
-		background-image: url( svg-icon-path-theme('fork'));
-	}
-	
-	.step.i-redflag {
-		//background-image: url( svg-icon-path-theme('waiting'));
-		background-image: url( svg-path('ui/flag-red'));
-	}
-	
-	.step.i-arr {
-		background-image: url( svg-icon-path-theme('direction-right'));
-	}
-	
-	.step.i-wait {
-		background-image: url( svg-icon-path-theme('waiting'));
-	}
-	
-	// on solid colour
-	.step.i-delayed {
-		background-image: url( svg-path('icons/waiting'));
-	}
-	
-	.step.i-fin {
-		background-image: url( svg-icon-path-theme('tick'));
-	}
-	
-	.step.i-comments {
-		background-image: url( svg-icon-path-theme('comments'));
-		opacity: 0.5;
-	}
-
-	// Drug admin - PSD (drop icon)
-	.step.i-drug-admin{
-		background-image: url( svg-icon-path-theme('drop'));
-	}
-	
-	.step.i-discharge {
-		background-image: url( svg-icon-path-theme('stop'));
-	}
-	
-	
-	// icons on solid steps need to have icon change:
-	&.active,
-	&.done { 
-		.step.i-arr {
-			background-image: url( svg-path('icons/direction-right'));
+	// step
+	.step {
+		&.i-break { 
+			background-image: url( svg-icon-path-theme('path-break')); 
 		}
-		.step.i-discharge {
-			background-image: url( svg-path('icons/stop'));
-		} 
-		.step.i-drug-admin {
-			background-image: url( svg-path('icons/drop'));
+		&.i-fork {
+			background-image: url( svg-icon-path-theme('fork'));
+		}
+		&.i-redflag {
+			background-image: url( svg-path('ui/flag-red'));
+		}
+		&.i-arr {
+			background-image: url( svg-icon-path-theme('direction-right'));
+		}
+		&.i-wait {
+			background-image: url( svg-icon-path-theme('waiting'));
+		}
+		&.i-drug-admin{
+			background-image: url( svg-icon-path-theme('drop'));
+		}
+		&.i-comments {
+			background-image: url( svg-icon-path-theme('comments'));
+			opacity: 0.5;
+		}
+		&.i-fin {
+			background-image: url( svg-icon-path-theme('tick'));
+		}
+		&.i-discharge {
+			background-image: url( svg-icon-path-theme('stop'));
+		}
+		&.i-delayed {
+			background-image: url( svg-path('icons/waiting')); // on solid colour background, use white icon
+		}	
+	}
+	
+	// icons on solid steps need to have always have a white icon:
+	&.active {
+		.step {
+			&.i-arr {
+				background-image: url( svg-path('icons/direction-right'));
+			}
+			&.i-discharge {
+				background-image: url( svg-path('icons/stop'));
+			} 
+			&.i-drug-admin {
+				background-image: url( svg-path('icons/drop'));
+			}	
+		}
+	}
+	
+	&.done { 
+		.step {
+			&.i-arr {
+				background-image: url( svg-path('icons/direction-right'));
+			}
+			&.i-discharge {
+				background-image: url( svg-path('icons/stop'));
+			} 
+			&.i-drug-admin {
+				background-image: url( svg-path('icons/drop-done'));
+			}	
 		}		
 	}
 }

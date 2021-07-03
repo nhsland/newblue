@@ -22,7 +22,7 @@
 	// Configure is possible first state
 	&.config {
 		border-color: $oe-step-outline;
-		background: $oe-step-outline-bg url( svg-icon-path-theme('cog')) left 4px top 5px no-repeat;
+		background: $oe-step-grey url( svg-icon-path-theme('cog')) left 4px top 5px no-repeat;
 		background-size: 11px;
 		padding-left: 20px;	
 	}
@@ -30,11 +30,11 @@
 	// todo or todo-next
 	// conceptually the same but "next" is a different colour
 	&.todo {
-		background-color: $oe-step-outline-bg;
+		background-color: $oe-step-grey;
 		border-color: $oe-step-outline;
 	}
 	&.todo-next {
-		background: $oe-step-outline-bg; 
+		background: $oe-step-grey; 
 		border-color:  $oe-step-orange;
 	}
 	
@@ -115,7 +115,7 @@
 	
 	// locked! another user is using this step
 	&.locked {
-		background-color: $oe-step-outline-bg;
+		background-color: transparent;
 		border-style: dotted;
 		border-color: $oe-step-outline;
 		.step {

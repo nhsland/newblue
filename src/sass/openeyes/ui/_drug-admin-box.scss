@@ -19,15 +19,17 @@
 	
 	
 	&.todo {
-		background-color: $oe-step-orange;
+		background-color: $oe-step-grey;
+		border:2px solid $oe-step-outline;
 	}
 	
 	&.active { 
-		background-color: $oe-step-yellow; 
+		background-color: $oe-step-blue;
 	}
 	
 	&.done { 
 		background-color: $oe-step-green; 
+		background-image: url( svg-path('icons/drop-done'))
 	}
 	
 	
