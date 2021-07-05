@@ -14,13 +14,15 @@
 	margin:3px 2px;
 	padding:4px 10px 4px 25px; // allow for Drop Icons
 	
-	background: $oe-step-orange url( svg-path('icons/drop')) 4px 5px no-repeat;
+	background: $oe-step-blue url( svg-path('icons/drop')) 4px 5px no-repeat;
 	background-size: 15px;
 	
 	
 	&.todo {
+		color: $oe-text;
 		background-color: $oe-step-grey;
 		border:2px solid $oe-step-outline;
+		background-image: url( svg-icon-path-theme('drop'));
 	}
 	
 	&.active { 
