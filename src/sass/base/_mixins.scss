@@ -9,7 +9,7 @@
 // @param {sizePixel} $sizePixel - size as px
 @mixin font-size($sizePixel) {
   $rem: math.div($sizePixel, 16);
-  font-size: $rem rem;
+  font-size: #{$rem}rem;
 }
 
 // Specific widths

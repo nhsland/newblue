@@ -10,7 +10,7 @@
 
 @mixin font-size-important($sizePixel) {
   $rem: math.div($sizePixel, 16);
-  font-size: $rem rem !important;
+  font-size: #{$rem}rem !important;
 }
 
 .user-tinymce-content {
