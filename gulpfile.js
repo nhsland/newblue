@@ -41,9 +41,6 @@ const paths = {
 Packages
 */
 const {gulp, src, dest, watch, series, parallel} = require('gulp');
-//const del = require('del');
-//const flatmap = require('gulp-flatmap');
-//const lazypipe = require('lazypipe');
 const rename = require('gulp-rename');
 const header = require('gulp-header');
 // styles
@@ -59,7 +56,6 @@ const buffer = require('vinyl-buffer');
 const imagemin = require('gulp-imagemin');
 // Fix for file modifications datetime
 const through2 = require('through2');
-
 // Delete and clean before building
 const del = require('del');
 
