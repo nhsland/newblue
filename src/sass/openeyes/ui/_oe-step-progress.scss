@@ -169,7 +169,7 @@
 		}
 		
 		&.redated {
-			@include font-size(9)
+			@include font-size(9);
 			font-weight: 500;
 			background: 
 				radial-gradient( circle at center, 

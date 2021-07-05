@@ -70,7 +70,7 @@
 	.new-added-subspecialty-service {
 		
 		// create a green version of the default one above
-		@extend li.oe-specialty-service; 
+		@extend li, .oe-specialty-service; 
 		
 		margin:10px 0 0 0; 
 		color:$oe-btn-green;

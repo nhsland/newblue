@@ -6,8 +6,11 @@
 // produce some content. It *must* be wrapped:
 
 // Be sure to override any other sizes
+@use 'sass:math';
+
 @mixin font-size-important($sizePixel) {
-  font-size: ($sizePixel / 16) + rem !important;
+  $rem: math.div($sizePixel, 16);
+  font-size: $rem rem !important;
 }
 
 .user-tinymce-content {

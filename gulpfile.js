@@ -44,7 +44,7 @@ const {gulp, src, dest, watch, series, parallel} = require('gulp');
 const rename = require('gulp-rename');
 const header = require('gulp-header');
 // styles
-const sass = require('gulp-sass');
+const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const prefix = require('autoprefixer');
 const minify = require('cssnano');			// options for CSS Nano: https://cssnano.co/guides/optimisations/

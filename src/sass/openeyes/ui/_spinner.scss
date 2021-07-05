@@ -23,6 +23,8 @@
 .spinner {
 	$spinner-large:60px;
 	$spinner-icon:16px; // medium icon sizes
+	$spiner-large-radius: 30px;
+	$spiner-icon-radius: 8px;
 	
 	&::before {
 		content: '';
@@ -31,8 +33,8 @@
 		height: $spinner-large;
 		top: 50%;
 		left: 50%;
-		margin-top: 0 - ($spinner-large / 2);
-		margin-left: 0 - ($spinner-large / 2);
+		margin-top: 0 - $spiner-large-radius;
+		margin-left: 0 - $spiner-large-radius;
 		border-radius: 50%;
 		border: 4px solid $oe-spinner;
 		border-top-color: rgba($oe-spinner,0);
@@ -54,8 +56,8 @@
 		height: $spinner-icon;
 		top: 50%;
 		left: 50%;
-		margin-top: 0 - ($spinner-icon / 2);
-		margin-left: 0 - ($spinner-icon / 2);		
+		margin-top: 0 - $spiner-icon-radius;
+		margin-left: 0 - $spiner-icon-radius;		
 		border-radius: 50%;
 		border: 2px solid $oe-spinner;
 		border-top-color: rgba($oe-spinner,0);

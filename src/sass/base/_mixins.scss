@@ -2,11 +2,14 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
+@use 'sass:math';
+
 // Create REM font-sizes. based on 16px base font-size
 // @access public
 // @param {sizePixel} $sizePixel - size as px
 @mixin font-size($sizePixel) {
-  font-size: ($sizePixel / 16) + rem;
+  $rem: math.div($sizePixel, 16);
+  font-size: $rem rem;
 }
 
 // Specific widths

@@ -17,7 +17,7 @@
 			// line up with Headers in hotlist
 			margin:0 14px; 
 			
-			@include flex( center, space-between )
+			@include flex( center, space-between );
 			
 			// increase the defaults for input
 			input {
