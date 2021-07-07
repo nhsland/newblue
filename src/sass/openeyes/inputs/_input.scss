@@ -23,21 +23,21 @@ input, textarea {
 	&:disabled {
 		opacity:0.4;
 	}
-	
-	// within SEM Element highlight focus on inputs and textareas
-	.element & { 
-		&:focus {
-			box-shadow: $oe-input-focus-shadow;	
-		} 
-	}
-	
-	
-	
 	// this fixes the issues where the browser
 	// will use the system-ui fonts:
 	font-family: inherit;
 }
 
+// within SEM Element highlight focus on inputs, text fields only, as it looks
+// strange on checkboxes and radios and textareas
+.element { 
+	input[type="text"], 
+	textarea {
+		&:focus {
+			box-shadow: $oe-input-focus-shadow;	
+		} 
+	}
+}
 
 input {
 	// add SEARCH icon to input	
