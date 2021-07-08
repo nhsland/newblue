@@ -86,6 +86,7 @@
 	&.active,
 	&.no-hover,
 	&.circle-green,	// no hover for coloured graphics	
+	&.circle-yellow,
 	&.circle-amber,
 	&.circle-orange,			
 	&.circle-red,
@@ -336,6 +337,7 @@
 	// used in more and more places, therefore
 	// making these also available as icons
 	&.circle-green		{ background-image: url( svg-path('ui/circle-green') ); }
+	&.circle-yellow		{ background-image: url( svg-path('ui/circle-yellow') ); } // inbetween green-orange
 	&.circle-amber, 
 	&.circle-orange		{ background-image: url( svg-path('ui/circle-orange') ); }
 	&.circle-red		{ background-image: url( svg-path('ui/circle-red') ); }
