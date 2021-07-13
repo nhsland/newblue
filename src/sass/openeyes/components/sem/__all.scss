@@ -9,7 +9,7 @@
 @import "event-footer-actions"; // buttons at the end of the event
 @import "oe-audit-trail-popup";	// User audit trail popup
 
-
+@import "removed-event-watermark"; // Viewing removed Event needs this.
 
 @import "sidebar-header"; 		// SEM sidebar
 @import "sidebar/_all";		
@@ -18,6 +18,8 @@
 
 @import "oe-sem-no-events";		// No SEM Events page
 @import "patient-overview";		// Patient Overview new V3 page
+
+@import "esign-check";			// MEH new esign widget
 
 // V2 CSS
 @import "v2/multi-select"; 			// pulled from v2 (still supported in the transition)			

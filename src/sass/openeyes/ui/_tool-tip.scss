@@ -110,6 +110,14 @@
 		text-align: center;
 	}
 	
+	// esign
+	&.esign {
+		width:210px; // 3:1 ratio area
+		height:70px;
+		// JS will add the background image:
+		background: center / contain no-repeat white;
+	}
+	
 	// used for "Copied to clipboard"
 	&.fade-out {
 	  display:block;
