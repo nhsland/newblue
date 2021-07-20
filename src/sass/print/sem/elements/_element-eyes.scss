@@ -6,8 +6,7 @@
 
 // R & L data split
 .element-eyes {
-	// Flex: justify-content (h), align-items (v)
-	@include flex(space-between, flex-start);
+	@include flex( flex-start, space-between );
 
 	// these are were tricky to get right
 	// had to tweak the 'left' side to get the + icon

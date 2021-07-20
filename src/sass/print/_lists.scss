@@ -6,7 +6,9 @@
 
 ul, ol {
 	 list-style-position: inside;
-	 margin:1em 0;
+	 
+	 margin:0.5rem 0;
+	 
 	 li {
 		 font-size: $fontsize-small;
 		 font-weight:500;

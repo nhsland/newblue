@@ -1,0 +1,41 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// indicate place to input data with 
+// dotted line - single line
+.dotted-write {
+	display:inline-block;
+	height:1.5rem;
+	width:100%;
+	border-bottom:1px dashed rgb(120,120,120);
+	
+	&.cols-half, 
+	&.half {
+		width:50%;
+	}
+}
+
+// assumes it will have a lable
+.dotted-area {
+	position:relative;
+	display:block;
+	height:60px; // needs to match esign img heights
+	
+	@include flex( flex-end, flex-start );
+	flex: 1 1 0;
+	
+	font-weight:500;
+	padding:0 0 5px 1rem;
+	margin: 0.2rem 0.5rem;
+	
+	border-bottom:1px dashed rgb(120,120,120);
+	
+	.label {
+		position: absolute;
+		top:0;
+		left:0;
+		font-size: $fontsize-small;
+		font-weight:400;
+	}
+}

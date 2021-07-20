@@ -2,19 +2,19 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE PRINT
-// 2 alternative font sizes available;
-// here is "large-font" - corrspondence (assumes poor vision)
-// there is also "impaired-vision" - very poor eye sight 
+// Because of the development history there are 
+// 2 classes for the same results. Both still need supporting
 
 .change-font.standard-font,
-.standard-font {
-	$large-font-increase: 1;
+.change-font.large-font,
+.standard-font,
+.large-font {
+	
+	// adjust all type sizes
+	$large-font-increase: 1; 
 	
 	font-size: $fontsize-base + $large-font-increase;
 	
-	// typography.
-	// h1,h2 are big enough
 	h3 {
 		font-size: $fontsize-h3 + $large-font-increase;
 	}
@@ -24,13 +24,10 @@
 	p {
 		font-size: $fontsize-base + $large-font-increase;
 	}
-	// small text 
 	h5 {
 		font-size: $fontsize-small + $large-font-increase;
 	}
 	
-	
-	// lists
 	ul, ol {
 		li {
 			font-size: $fontsize-small + $large-font-increase;
@@ -48,8 +45,6 @@
 		} 
 	}
 	
-	
-	// tables
 	table {
     	td, th {
 	    	font-size: $fontsize-small + $large-font-increase;

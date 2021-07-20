@@ -18,7 +18,11 @@ body {
 
 // empty <div>
 .spacer {
-	height:2em;
+	height:2rem;
+}
+
+.group {
+	margin:2rem 0;
 }
 
 .pageBreak, 
@@ -28,28 +32,29 @@ body {
 
 hr {
 	border-top:2px solid #ddd;
+	
+	&.divider {
+		display:block;
+		margin:20px 0; 
+		border: 0;
+		border-top:4px solid #bbb;
+	}
+}
+
+// match a hidden table with it's border
+.box {
+	width: 100%;
+	border:2px solid $table-border-color;
+	padding:5px;
+	margin:0.5em 0 1em 0;
+	
+	// try to avoid breaking up box data
+	page-break-inside:avoid !important;	
+	break-inside:avoid !important;
 }
 
 .nowrap {
 	white-space: nowrap;
-}
-
-.group {
-    margin:1em 0;
-}
-
-// indicate place to input data with 
-// dotted line. 
-.dotted-write {
-	display:inline-block;
-	height:1.5em;
-	width:100%;
-	border-bottom:1px dotted rgb(120,120,120);
-	
-	&.cols-half, 
-	&.half {
-		width:50%;
-	}
 }
 
 // clearfix is unnecessary (should be flex)

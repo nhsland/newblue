@@ -13,11 +13,13 @@ table {
     
     // try to avoid breaking up tabular data
     page-break-inside:avoid !important;
+	break-inside:avoid !important;
     
     // Worklist tables could be long 
     // add option to break on page
     &.allow-page-break {
 	    page-break-inside: auto !important;
+		break-inside: auto !important;
     }
     
     // setup defaults
@@ -34,6 +36,20 @@ table {
 	td {
 		font-weight:500;				// make data more readable than headers
 		border-bottom: none !important; // remove bottom border, solves a layout issue.
+	}
+	
+	&.row-lines {
+		td, th {
+			padding:6px 4px;
+		}
+		tr {
+			border-top:1px solid #ddd;
+			
+			&.no-line,
+			&:first-child { 
+				border-top: none;
+			}
+		}
 	}
 	
 	// add borders to the data (standard table)

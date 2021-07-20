@@ -7,8 +7,6 @@
 
 @import 'style_fonts'; 		// localhost for Roboto https://fonts.google.com/specimen/Roboto 
 
-
-
 // Based on HTML5 Boilerplate v4.3.0
 @import "base/resets";		// reset (selected normalize)
 @import "base/h5bp";		// H5BP, some opinionated defaults 
@@ -20,17 +18,17 @@
 /* OpenEyes UI v3.0 */
 @import "print/base"; 
 @import "print/flex";
-@import "print/typography";
 @import "print/header"; 
 @import "print/lists";
 @import "print/tables";
 @import "print/checkbox";
+@import "print/dotted"; 
 
 /* font sizes */
-@import "print/normal-font";
-@import "print/large-font";
-@import "print/impaired-vision";
-@import "print/standard-font";
+@import "print/type/typography";
+@import "print/type/normal-font";
+@import "print/type/large-font";
+@import "print/type/impaired-vision";
 
 /* UI element required in PRINT */
 @import "print/ui/oe-eye-lat-icons";
