@@ -14,11 +14,16 @@ body {
 	font-family: 'Roboto','Helvetica','Arial',sans-serif;
 	font-weight:400;
 	font-size: $fontsize-base;
+	
+	@media screen {
+		// when view in iframe in a popup it needs padding, not need when printed
+		padding:20px; 
+	}
 }
 
 // empty <div>
 .spacer {
-	height:2rem;
+	height:1rem;
 }
 
 .group {
@@ -45,7 +50,7 @@ hr {
 .box {
 	width: 100%;
 	border:2px solid $table-border-color;
-	padding:5px;
+	padding:5px 8px;
 	margin:0.5em 0 1em 0;
 	
 	// try to avoid breaking up box data

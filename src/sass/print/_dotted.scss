@@ -6,8 +6,9 @@
 // dotted line - single line
 .dotted-write {
 	display:inline-block;
-	height:1.5rem;
-	width:100%;
+	height:2rem;
+	width:98%;
+	margin: 0 1%;
 	border-bottom:1px dashed rgb(120,120,120);
 	
 	&.cols-half, 
@@ -20,7 +21,15 @@
 .dotted-area {
 	position:relative;
 	display:block;
-	height:60px; // needs to match esign img heights
+	height:50px; // needs to match esign img heights
+	
+	overflow: hidden;
+	
+	img.signature {
+		height: 45px;
+		width: auto;
+		margin:0 0 0 80px; // allow for label
+	}
 	
 	@include flex( flex-end, flex-start );
 	flex: 1 1 0;
