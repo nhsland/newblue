@@ -2,32 +2,39 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// e-sign on tablet MEH implementation
-// as we are using MEH letter signing on tablet
-// the Meta viewport is set at 1!
+
 body.e-sign-tablet {
-	background:#44444a;
-	height:100vh;
+	// e-sign on tablet based on MEH implementation
+	// including this in the print CSS for efficient
+	// Fixed dark theme
+	background: #1e2d42;
+	// fill space, or you see the white background
+	height:100vh; 
 	overflow: none;
 	
+	// center main content area using some flex magic
 	@include flex( center, center );
 	
 	main {
+		margin:auto; // flex magic
+		
+		// DOM is identical to OE one
+		// provide the minimum CSS to make it look like OE...
 		.oe-login {
-			margin:auto; // flex magic
-			transform: translateY( -10% );
-			
+			// shift up to allow for the browser bar	
+			transform: translateY( -10% ); 
 			text-align: center;
 			
 			.login {
 				h1 {
-					font-size: 8vw;
+					font-size: 7vw; // may as well make it responsive
 					font-weight:400;
-					color:#999;
+					color: #aaa;
 					margin:0 0 4vh 0;
 				}	
 				
 				.user {
+					// layout inputs for PIN and regular logins
 					@include flex( center, center );
 					flex-direction: column;
 					
@@ -46,10 +53,11 @@ body.e-sign-tablet {
 					}
 					
 					button {
-						padding:10px;
+						border-radius: 10px;
+						padding:10px 20px;
 						margin:30px 0 0 0;
 						color:#fff;
-						background: green;
+						background: green; // only 1! - "Link device"
 						
 						&:hover, 
 						&:focus, 
@@ -63,11 +71,18 @@ body.e-sign-tablet {
 					color:#aaa;
 					padding:4vh 0 0 0;
 					
-					// sync icon
-					.oe-i {
+					// sync icon animation
+					// using the white one
+					.i-sync {
+						opacity: 0.5;
 						height:64px;
 						width:64px;
-						background-size: contain;
+						background: center/contain url('../svg/in-css/icons/sync.svg') no-repeat; 
+						
+						@keyframes spin { 
+							100% { transform:rotate(360deg); } 
+						}
+						animation:spin 30s linear infinite;
 					} 
 				}
 			} 
