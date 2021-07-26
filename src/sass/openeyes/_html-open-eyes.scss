@@ -23,20 +23,6 @@ html {
 	min-width: 1199px;
 	padding:0;
 	margin:0;
-	
-	// e-sign on tablet MEH implementation
-	// as we are using MEH letter signing on tablet
-	// the Meta viewport is set at 1!
-	&.e-sign-tablet {
-		min-width: auto;
-		main {
-			height:100vh;
-			.oe-login .login h1 {
-				@include font-size(50);
-				font-weight:300;
-			}
-		}
-	}
 }
 
 

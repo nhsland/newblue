@@ -15,9 +15,17 @@ body {
 	font-weight:400;
 	font-size: $fontsize-base;
 	
+	margin:0;
+	
 	@media screen {
 		// when view in iframe in a popup it needs padding, not need when printed
 		padding:20px; 
+	}
+	
+	// Signature pad JS only screen: 
+	&.full-signature-pad{
+		height:100vh; 
+		display:flex;
 	}
 }
 

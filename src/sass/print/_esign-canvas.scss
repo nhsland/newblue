@@ -5,11 +5,16 @@
 .esign-capture {
 	background: #ccd; 
 	padding: 20px 0;
-	margin: 1rem 0;
 	border-radius: 20px;
 	border:4px solid #00a;
 	
 	text-align: center;
+	margin: 1rem 0;
+	
+	.full-signature-pad & {
+		flex: 1 1 0; // fill the flex space;
+		margin: auto 0; // vertically center the esign box
+	}
 	
 	// "Please sign here"
 	.flag-esign {
@@ -17,7 +22,6 @@
 		font-size: $fontsize-base;
 		font-weight:700;
 		padding:0 0 10px 0;
-		
 	}
 	
 	canvas {
@@ -33,6 +37,8 @@
 			font-weight:500;
 			
 			padding:6px 18px;
+			margin:0 20px;
+			
 			background:blue; 
 			color:white; 
 			border:0;
