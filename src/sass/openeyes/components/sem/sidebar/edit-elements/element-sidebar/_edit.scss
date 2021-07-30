@@ -2,11 +2,11 @@
 // ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
 //
 
-// OE Sidebar - EDIT
+// OE Sidebar Element overlay - only available in EDIT mode
+// New selector does the same thing but in a different way. Both still used.
 // 
 // DOM for Element:
 // <li class="element"><a href="#" class="[error selected]">Element</a></li>
-//
 
 .sidebar { 
 	

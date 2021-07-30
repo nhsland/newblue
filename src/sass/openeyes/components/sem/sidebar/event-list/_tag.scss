@@ -1,0 +1,26 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.sidebar { 
+	// <li>
+	.event {
+		.tag {
+			position: absolute;
+			top:0;
+			right:0;
+			width:$oe-sidebar-tag-size;
+			height:$oe-sidebar-tag-size;
+			
+			@include inline-flex( center, center );
+			
+			@include font-size(10);
+			font-weight:400;
+			
+			color: $oe-dark-text-light;
+			background:$oe-dark-blue-dark;
+		}
+	}
+}
+
+

@@ -7,28 +7,24 @@
 
 // VIEW states
 @import "_base";
-@import "view";
-@import "events";
-@import "removed-events";
-@import "quicklook";
-@import "list-controls";
-@import "grouping";
 @import "pathway";
+@import "list-controls";
+
+// Event list
+@import "event-list/_all";
+// Edit elements, old sidebar or new selector both still used
+@import "edit-elements/element-sidebar/element-overlay";
+@import "edit-elements/element-sidebar/edit";
 
 // new Element Selector 2.0:
-@import "sidebar-element-structure";
-@import "element-selector/_all";
+@import "edit-elements/element-selector/_all";
 
 @import "event-quick-view/_all";
 @import "events-user-trail/_all";
 
-
 // new V3 filters to replace old dropdown
 @import "filter/btn";	 		
 @import "filter/options";	
-
-// EDIT 
-@import "edit";
 
 
 

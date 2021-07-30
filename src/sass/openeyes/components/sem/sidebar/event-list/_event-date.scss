@@ -1,0 +1,39 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+// <span>
+// event date layout
+.event-date {
+	display: inline-block;
+	padding:0;
+		  
+	.day, .mth, .yr {
+	  display: inline-block;
+	  height:$oe-sidebar-event-height;
+	}
+	
+	.day {
+		width: 20px;
+		text-align: right;
+	}
+	
+	.mth {
+		width: 30px;
+		padding-left:4px 
+	}
+	
+	.yr { }
+	
+	// Event has been backdated:
+	// highlights when entries are made to the record with the date intentionally backdated.
+	// highlights where retrospective entries were make to the notes.
+	// It's a governance requirement:
+	&.backdated {
+		padding-right:16px; 
+		background-position:right center;
+		background-repeat: no-repeat;
+		background-size:$oe-sidebar-event-height - 6px;
+		background-image: url( svg-path('sidebar/rotate-left') );	
+	}
+}

@@ -1,0 +1,33 @@
+// ** Copyright (C) 2018, OpenEyes Foundation. This file is part of OpenEyes. 
+// ** OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+//
+
+.sidebar { 
+	// <li>
+	.event {
+		// removed/deleted events now required to be show in the list context
+		&.deleted {
+			a {
+				color: #900;
+				background: #300;
+				.event-type {
+					opacity:0.8;
+				}
+				
+				.event-date {
+					padding:0 0 0 6px;
+				}
+			}
+			
+			&.selected {
+				a {
+					color: #f00;
+					background: #600;
+				}
+			}
+		}
+		
+	}
+}
+
+
