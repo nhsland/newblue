@@ -8,6 +8,19 @@ ul, ol {
 	 
 	 margin:0.8rem 0; // match a paragraph
 	 
+	 &.layout {
+		 list-style: none;
+		 margin:0.5rem 0;
+		 
+		 li {
+			font-size: inherit;
+			font-weight: inherit;
+			padding:0 0 0.5rem 0; 
+		 }
+		
+		 
+	 }
+	 
 	 li {
 		 font-size: $fontsize-small;
 		 font-weight:500;
