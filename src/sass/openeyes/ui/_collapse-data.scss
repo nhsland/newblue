@@ -22,14 +22,16 @@
 		cursor:pointer;
 		padding:5px 0;
 		color:$oe-element-headers;
+
+		// JS 
+		* {
+			pointer-events: none;
+		}
 		
-		// JS will consider this an event target
-		// and will break the open/closing behaviour
-		// if user clicks on it...
+		// override these colors
 		h3,
 		small {
 			color: inherit;
-			pointer-events: none;
 		}
 		
 		// no background-opacity in CSS (... why not huh?!)
@@ -65,8 +67,15 @@
 				opacity: 1;
 			}
 			
-			// covers small and h3 
-			* { color: inherit; }	
+			h3,
+			small { color: inherit; }	
+			
+			// make like a blue button
+			// see WHO checklist in the OpNote
+			.highlighter {
+				color: #fff;
+				background: $oe-btn-blue;
+			}
 		}
 	}	
 }
