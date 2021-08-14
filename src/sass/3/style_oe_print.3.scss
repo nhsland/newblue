@@ -1,0 +1,57 @@
+// ** Copyright (C) 2020, OpenEyes Foundation. This file is part of OpenEyes. OpenEyes is free software; and is distributed, WITHOUT ANY WARRANTY under the terms of AGPL 3.0 licence.
+
+// * OE v3.0 Print styles
+
+@charset "UTF-8";
+
+@import 'local_fonts'; // localhost for Roboto https://fonts.google.com/specimen/Roboto 
+
+// Based on HTML5 Boilerplate v4.3.0
+@import "base/resets";		// reset (selected normalize)
+@import "base/h5bp";		// H5BP, some opinionated defaults 
+@import "base/grid";		// Simple grid layout 
+
+// config for PRINT
+@import "print/_config-print";
+
+/* OpenEyes UI v3.0 */
+@import "print/base"; 
+@import "print/flex";
+@import "print/header"; 
+@import "print/lists";
+@import "print/tables";
+@import "print/checkbox";
+@import "print/tickbox";
+@import "print/dotted"; 
+
+/* font sizes */
+@import "print/type/typography";
+@import "print/type/normal-font";
+@import "print/type/large-font";
+@import "print/type/impaired-vision";
+
+/* JS esign canvas area */
+@import "print/esign-canvas";
+
+/* esign external device */
+@import "print/esign-device";
+
+/* UI element required in PRINT */
+@import "print/ui/oe-eye-lat-icons";
+@import "print/ui/oe-date";
+
+/* icons - note _config-print setup to use '_classic' icon set */
+@import "openeyes/icons";
+// however, we need to hide some of the interaction icons such as collapse / expand
+@import "print/ui/hide-icons";
+
+/* SEM (basic) */
+// All Element styling
+@import "print/sem/elements";
+
+// Print specific styling
+// Quick fixes required for v3.0 for existing DOMs
+@import "print/sem/event/prescription";
+
+
+
