@@ -20,7 +20,6 @@
 	"scripts": {
 		"build:event-icons": "node ./node_scripts/build-iconset.js events",
 		"build:eyedraw-icons": "node ./node_scripts/build-iconset.js eyedraw",
-		"css:fast-but-no-legals": "sass -s compressed  src/sass/3:dist/css/ --no-source-map --stop-on-error --watch",
 		"css": "node node_scripts/sass-to-css.js",
 		"css:eyedraw": "node node_scripts/sass-to-css.js eyedraw",
 		"svg": "node node_scripts/svg-optimise.js"
