@@ -1,11 +1,11 @@
 ## Browser support
 
-* Chrome > 60"
-* Edge > 15"
+* Chrome > 60
+* Edge > 15
 
 ## JS hooks
 
-* CSS classed used for JS hooks (i.e. not being used by CSS to style anything) should be prefixed with `js-`. 
+* CSS classes used only as JS hooks (i.e. not being used by CSS to style anything) should be prefixed with `js-`. 
 
 ## Opinionated SCSS guides
 
