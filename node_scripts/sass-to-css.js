@@ -31,7 +31,7 @@ const config = {
 };
 
 // build a dateStamp for the CSS, useful for debugging deployments
-const dateStamp = '/* ' + new Date( Date.now() ) + ' */';
+const dateStamp = '/* ' + new Date( Date.now() ) + ' */ \n';
 
 // Legals required on the CSS files.
 const headerLegals = [
@@ -66,6 +66,7 @@ const dartSass = (style) => {
 		const result = sass.renderSync({ 
 			file: `${config.src}${style}.scss`, 
 			outputStyle: 'compressed', // "expanded" or "compressed"
+			charset: true,
 			precision: 5, // numeric precision	
 		});
 		
