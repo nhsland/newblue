@@ -21,9 +21,30 @@ Why not? Well, here are a few reasons why not:
 
 (To be clear, we are not talking about JS positional stuff, but this does include z stacking which does need considering globally)
 
+## Browser support
+
+* Chrome > 60
+* Edge > 15
+
+## JS hooks
+
+* CSS classes used only as JS hooks (i.e. not being used by CSS to style anything) should be prefixed with `js-`. 
+
 ## Theme naming
 
 Originally conceived as "Pro" & "Classic" these are now respectively "Dark" & "Light". You may find usage of "pro-theme" in some of the older sass files.
+
+## Opinionated SCSS guides
+
+Basically, follow best practices...
+
+* Never use `!important` (unless you really, really must...)
+* Never use ID's for styling. This avoids specificity issues (although, some top level elements do - for historical reasons)
+* Use lower-case for classnames, with words separated by a hyphen. (e.g. `.btn-dropdown`)
+* Generally, try and use an object orientated approach. Don't name your subclasses with a prefix of the class you're extending. 
+* Generally use semantic, descriptive classnames that hint at their function.
+* Avoid qualifying class names with type selectors e.g. `div.myclass` (Unless you want the class to be bound to a specific DOM element).
+* Keep your selectors short! And try to keep your selectors shallow. 
 
 ## Iconography
 
@@ -31,6 +52,8 @@ Originally conceived as "Pro" & "Classic" these are now respectively "Dark" & "L
 * Eyedraw icon (doodles) must be 32px x 32px, and named correctly.
 * SVGs are used in a few different flavours, see source for examples.
 
-## Styleguide
+## Finally...
 
-Please read the styleguide.md
+This is mostly a bespoke UI designed for very specific use. The smallest supported browser width is 1200px and the UI has been tailored to run on handheld tablets, as well as on super-wide displays. 
+
+
