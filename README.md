@@ -15,8 +15,8 @@ Why not? Well, here are a few reasons why not:
 
 1. Themes (any inline DOM styling could prove problematic)
 2. Responsive layout (newblue UI responsiveness is highly bespoke)
-3. UI consistency (Ophthalmologist required visually precise data layouts)
-4. Unnecessary (somewhere in the OE UI is possibly a UI solution all ready created)
+3. UI consistency (consistent data presentation has many, many benefits)
+4. Unnecessary (somewhere in the OE UI is possibly a UI solution already created)
 5. Flagging up issues with the CSS helps to improve the overall UI across the board
 
 (To be clear, we are not talking about JS positional stuff, but this does include z stacking which does need considering globally)
