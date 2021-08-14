@@ -1,69 +1,23 @@
-## Welcome
+## Browser support
 
-* OpenEyes (OE) UI v3.n. 
-* SCSS (complied using Gulp)
-
-## Browser support
-
-* Targeting: Chrome > 60 and Edge > 15
-
-
-## Commenting
-
-* Double-slash (Sass) comments will be removed from all CSS.
-* Slash-star (CSS) comments will not be removed in the expand CSS.
-* Wrap comments after 84-ish chars.
+* Chrome > 60"
+* Edge > 15"
 
 ## JS hooks
 
-* If a CSS class is being added for JS only purposes (and not being used by CSS to style)
-  prefix it with 'js-'. 
-  
-## CSS 'oe-' prefix
+* CSS classed used for JS hooks (i.e. not being used by CSS to style anything) should be prefixed with `js-`. 
 
-* Always use a prefix for main area classes. e.g.'oe-' or 'oes-' This will help avoid naming conflicts and allows
-for coupling if required.
- 
-  
-## Icons
+## Opinionated SCSS guides
 
-* Event icons must be 76px x 76px, and must be named correctly. 
-* Eyedraw icon (doodles) must be 32px x 32px, and must be named correctly.
-* Gulp creates the PNG sprite sheets and scss positioning.
-* SVGs are used in 2 ways, as a Sprite Sheet and as background-images in css
+Basically, follow best practices...
 
-## SCSS Conventions
-
-Conventions allow for code readability and maintainability. Try to follow
-the following conventions if you want to make changes to the stylesheet.
-
-* When in doubt, follow the conventions you see used in the foundation files.
-* Tabs for indentation.
-* Never use inline styles.
-* Never use `!important` (unless you really must...)
-* Never use ID's for styling. This avoids specificity issues (see also 'JS hooks' above)
-* Separate rules with new lines, eg:
-
-        .example {
-            margin: 1rem;
-            padding: 1rem;
-        }
-
-* Lower-case classnames, words separated by a hyphen. (eg `.button-dropdown`).
-* Use an object orientated approach. Don't name your subclasses with
-  a prefix of the class you're extending. For example, if you're adding a secondary
-  button style, the class list will be: 'button secondary' and NOT 'button button-secondary'.
-* Generally use semantic and descriptive classnames that describe the content.
-* Use rgb() for colors where possible or 3 character hexadecimal notation (eg `#000`).
-* Avoid qualifying class names with type selectors (eg, don't do this: `div.myclass`).
-* Keep your selectors short! Try to keep your selectors shallow. 
-* Always use double-quotes, (eg: `font-family: "Helvetica Neue"`).
-* Always quote attribute values in attribute selectors, (eg: [type="submit"])
-
-## Variables
-
-* To avoid conlicts, we have to namespace our variables, thus you must prefix 
-  the variable names with 'oe-'.
+* Never use `!important` (unless you really, really must...)
+* Never use ID's for styling. This avoids specificity issues (although, some top level elements do - for historical reasons)
+* Use lower-case for classnames, with words separated by a hyphen. (e.g. `.btn-dropdown`)
+* Generally, try and use an object orientated approach. Don't name your subclasses with a prefix of the class you're extending. 
+* Generally use semantic, descriptive classnames that hint at their function.
+* Avoid qualifying class names with type selectors e.g. `div.myclass` (Unless you want the class to be bound to a specific DOM element).
+* Keep your selectors short! And try to keep your selectors shallow. 
 
 ## Finally...
 
